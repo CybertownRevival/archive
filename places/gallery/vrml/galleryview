@@ -1,0 +1,424 @@
+#VRML V2.0 utf8
+
+
+EXTERNPROTO CasinoElevator[
+eventIn MFNode set_loaded
+eventIn MFString set_load
+field SFVec3f translation
+field SFRotation rotation
+field MFString parameter
+field SFInt32 startFloor
+field SFBool sound
+eventOut MFString nav_changed
+eventOut SFTime  loaded_changed
+]"../../ent_complex/elevator/elevator.wrl#CasinoElevator"
+
+PROTO BoxLOD[
+exposedField SFVec3f center 0 0 0
+exposedField SFVec3f size 1 1 1
+field MFNode children []
+]{
+Group{children[
+DEF p ProximitySensor{center IS center size IS size}
+DEF s Switch{whichChoice -1 choice[ Group{children IS children}]}
+DEF sc Script{eventIn SFBool set_prox eventOut SFInt32 choice_changed url"vrmlscript: function set_prox(v){if(v){choice_changed = 0;}else{choice_changed = -1;}}"}
+]}
+ROUTE p.isActive TO sc.set_prox ROUTE sc.choice_changed TO s.set_whichChoice
+}#END BoxLOD
+
+
+
+
+
+Group{
+children[
+
+Script{  
+field MFString loadUrl [ "" ]  
+field MFString loadParam [ "" ]  
+url "vrmlscript:  
+function initialize(){  
+loadUrl[0] = '/cgi-bin/colonycity/place?plc=gallery&ac=action';  
+loadParam[0] = 'target=action';  
+Browser.loadURL(loadUrl, loadParam);  
+}  
+"} 
+
+Transform{
+children DEF thisElev CasinoElevator{
+translation 40.5 0.176416 5.27582
+rotation 0 1 0  1.57079
+startFloor 2
+}
+}
+
+DEF i Inline {url"gallery1.wrl"}
+
+DEF nav NavigationInfo
+{
+  type ["NONE"]
+  avatarSize [.25 1.75 .5]
+  headlight FALSE
+}
+
+DirectionalLight
+{
+direction 1 -.25 1
+}
+DirectionalLight
+{
+direction -1 -.25 1
+}
+DirectionalLight
+{
+direction 0 .25 -1
+}
+
+]}
+
+ROUTE i.children_changed TO thisElev.set_loaded
+
+ROUTE thisElev.nav_changed TO nav.set_type
+
+
+PROTO OneShot[
+eventIn SFTime set_syncInterval
+eventIn SFInt32 play_loops
+field MFString clip ""
+field SFFloat intensity 1
+eventOut SFTime duration_changed 
+]{
+DEF track Transform{ translation 0 0 0
+children[
+DEF sound Sound{
+spatialize TRUE
+maxBack 50
+maxFront 50
+minBack 1
+minFront 1
+intensity IS intensity
+source DEF clip AudioClip{
+url IS clip
+loop FALSE
+}}
+]}
+
+DEF script Script{
+eventIn SFTime set_syncInterval IS set_syncInterval
+eventIn SFTime set_duration
+eventIn SFInt32 play_loops IS play_loops
+field SFTime syncTime 0
+field SFTime syncInterval 0
+field SFTime duration 0
+directOutput TRUE
+eventOut SFTime duration_changed IS duration_changed
+
+eventOut SFTime start_clip
+directOutput TRUE
+url"vrmlscript:
+function getSync(t){
+  eTime = (t - syncTime)/syncInterval;
+  nextSync = Math.abs(eTime - Math.ceil(eTime)) * syncInterval; 
+  sync = t + nextSync;
+  return sync;
+}
+function set_syncInterval(v,t){
+  syncInterval = v;
+}
+function set_duration(v,t){
+  duration = v;
+  duration_changed = v;
+}
+function play_loops(v,t){
+ start_clip = getSync(t); 
+}
+function initialize(){
+  syncTime = Browser.getWorldStartTime();
+}
+
+"}
+ROUTE clip.duration_changed TO script.set_duration
+ROUTE script.start_clip TO clip.set_startTime
+
+}#END PROTO
+
+
+PROTO Track[
+eventIn SFTime set_syncInterval
+eventIn SFInt32 play_loops
+field MFString clip ""
+field SFFloat intensity 1
+exposedField SFTime fade_interval 1
+eventOut SFTime duration_changed 
+]{
+DEF track Transform{ translation 0 0 -300
+children[
+DEF sound Sound{
+spatialize TRUE
+
+maxBack 500
+maxFront 500
+minBack .9
+minFront .9
+
+
+intensity IS intensity
+source DEF clip AudioClip{
+url IS clip
+loop TRUE
+}}
+]}
+
+DEF in TimeSensor{cycleInterval IS fade_interval loop FALSE enabled TRUE}
+DEF out TimeSensor{cycleInterval IS fade_interval loop FALSE enabled TRUE}
+DEF in_interp PositionInterpolator{key[0,1] keyValue[0 0 -300, 0 0 1]}
+DEF out_interp PositionInterpolator{key[0,1] keyValue[0 0 1, 0 0 -300]}
+
+DEF script Script{
+eventIn SFTime set_syncInterval IS set_syncInterval
+eventIn SFTime set_duration
+eventIn SFInt32 play_loops IS play_loops
+field SFTime syncTime 0
+field SFTime syncInterval 0
+field SFTime duration 0
+eventOut SFTime duration_changed IS duration_changed
+exposedField SFTime fade_interval IS fade_interval
+eventOut SFTime start_clip
+eventOut SFTime stop_clip 
+eventOut SFBool loop_clip
+eventOut SFTime in_changed
+eventOut SFTime out_changed
+directOutput TRUE
+url"vrmlscript:
+function getSync(t){
+  eTime = (t - syncTime)/syncInterval;
+  nextSync = Math.abs(eTime - Math.ceil(eTime)) * syncInterval; 
+  sync = t + nextSync;
+  return sync;
+}
+function set_syncInterval(v,t){
+  syncInterval = v;
+}
+function set_duration(v,t){
+  duration = v;
+  duration_changed = v;
+}
+function play_loops(v,t){
+ s = getSync(t);
+ hold = v * syncInterval;
+ start_clip = s; //Browser.getWorldStartTime(); //s;
+ in_changed = s;
+ stop_clip = s + hold;
+ out_changed = (s + hold) - fade_interval;
+
+}
+function initialize(){
+  syncTime = Browser.getWorldStartTime();
+  stop_clip = Browser.getWorldStartTime() - 5;
+}
+
+"}
+ROUTE clip.duration_changed TO script.set_duration
+ROUTE script.start_clip TO clip.set_startTime
+ROUTE script.stop_clip TO clip.set_stopTime
+ROUTE script.loop_clip TO clip.set_loop
+ROUTE script.in_changed TO in.set_startTime
+ROUTE in.fraction_changed TO in_interp.set_fraction
+ROUTE in_interp.value_changed TO track.set_translation
+ROUTE script.out_changed TO out.set_startTime
+ROUTE out.fraction_changed TO out_interp.set_fraction
+ROUTE out_interp.value_changed TO track.set_translation
+}#END PROTO
+
+
+PROTO Sequencer[
+eventIn SFTime set_syncInterval
+eventIn SFTime set_start
+field MFString url ""
+field SFFloat intensity 1
+field MFNode track []
+field SFTime fade_interval 2
+field MFRotation seq []
+field SFBool onLoadStart  TRUE
+field SFBool loop  FALSE
+field SFFloat pitch 1 
+eventOut SFTime stop
+eventOut SFTime duration_changed
+]{
+Group{ children[
+
+
+DEF track Transform{translation 0 0 -30
+children[
+Sound{
+spatialize TRUE
+intensity IS intensity
+source DEF base  AudioClip{
+pitch IS pitch
+duration_changed IS duration_changed
+url IS url
+loop TRUE
+}}
+]}
+DEF in TimeSensor{cycleInterval IS fade_interval loop FALSE enabled TRUE}
+DEF out TimeSensor{cycleInterval IS fade_interval loop FALSE enabled TRUE}
+DEF in_interp PositionInterpolator{key[0,1] keyValue[0 0 -30, 0 0 1]}
+DEF out_interp PositionInterpolator{key[0,1] keyValue[0 0 1, 0 0 -30]}
+
+
+DEF se_clock TimeSensor{cycleInterval 1 loop FALSE enabled TRUE}
+DEF se_script Script{
+eventIn SFTime set_syncInterval IS set_syncInterval
+eventIn SFTime set_start IS set_start
+eventIn SFBool set_active
+field MFNode track IS track
+field MFRotation seq IS seq
+field SFBool onLoadStart IS onLoadStart
+field SFBool loop IS loop
+field SFNode base USE base
+field SFTime syncInterval 0
+field SFTime syncTime 0
+field SFInt32 index 0
+field SFBool isOut TRUE
+eventOut SFTime interval_changed
+eventOut SFTime startTime_changed
+eventOut SFTime stop IS stop
+eventOut SFTime in_changed
+eventOut SFTime out_changed
+directOutput TRUE 
+url"vrmlscript:
+
+
+
+function getSync(t){
+  eTime = (t - syncTime)/syncInterval;
+  nextSync = Math.abs(eTime - Math.ceil(eTime)) * syncInterval; 
+  sync = t + nextSync;
+  return sync;
+}
+function set_start(v,t){
+
+  if(index >= seq.length){ index = 1; return; }
+  if (seq[index][0] >= 0){
+     track[seq[index][0]].play_loops = seq[index][1];
+  }
+  interval_changed = (seq[index][2] * syncInterval) - (syncInterval/2);
+  startTime_changed = getSync(t);
+  
+  
+  if(seq[index][3] == 1 && isOut){in_changed = getSync(t); isOut = false;}
+  if(seq[index][3] == -1 && !isOut){out_changed = getSync(t); isOut = true;}
+  
+  index ++;
+  if(index >= seq.length){
+    if(loop){index = 1;}
+    else{stop = getSync(t) + interval_changed;}
+  }
+}
+function set_syncInterval(v,t){
+  syncInterval = v; 
+  if(onLoadStart){set_start(t,t);} 
+}
+function set_active(v,t){
+ if(v){return;}
+  else{set_start(t,t);}
+}
+function initialize(){
+  syncTime = Browser.getWorldStartTime();
+  base.stopTime = syncTime - 5;
+  base.startTime = syncTime;
+}
+"}
+]}
+ROUTE se_script.interval_changed TO se_clock.set_cycleInterval
+ROUTE base.duration_changed TO se_script.set_syncInterval
+ROUTE se_script.startTime_changed TO se_clock.set_startTime
+ROUTE se_clock.isActive TO se_script.set_active
+ROUTE se_script.in_changed TO in.set_startTime
+ROUTE in.fraction_changed TO in_interp.set_fraction
+ROUTE in_interp.value_changed TO track.set_translation
+ROUTE se_script.out_changed TO out.set_startTime
+ROUTE out.fraction_changed TO out_interp.set_fraction
+ROUTE out_interp.value_changed TO track.set_translation
+}#END PROTO
+
+HUD{
+children[
+
+Transform{ translation 5 0 0 children[
+DEF t0 OneShot{clip "../sound/lgong.wav" intensity .75}
+]}
+Transform{ translation -5 0 0 children[
+DEF t1 OneShot{clip "../sound/hgong.wav" intensity .75}
+]}
+DEF t2 Track{clip "../sound/cloud.wav"   intensity .25 fade_interval 5}
+Transform{ translation 0 0 -3.5 children[ DEF t3 Track{clip "./sounds/gallery/knob1.wav"   intensity 1.1 fade_interval 3}]}
+
+DEF t4 OneShot{clip "../sound/ahh.wav"   intensity .35}
+DEF t5 OneShot{clip "../sound/oom.wav"   intensity .35}
+DEF Seq Sequencer{
+intensity .8
+
+url "../sound/cloud.wav"
+
+fade_interval 3
+
+loop TRUE
+onLoadStart TRUE
+
+track [
+
+USE t0,
+USE t1,
+USE t2,
+USE t3,
+USE t4,
+USE t5
+]
+
+seq[
+-1 1 1 0,
+2 36 3 -1,
+1 2 2 0,
+0 2 3 0,
+1 2 2 0,
+0 2 3 0,
+4 1 2 0,
+5 1 3 0,
+4 1 2 0,
+5 1 2 0,
+1 2 2 0,
+0 2 3 0,
+1 2 2 0,
+0 2 2 0,
+1 2 2 0,
+0 2 3 0,
+3 8 7 0,
+
+
+]
+
+}
+
+]}
+
+ROUTE Seq.duration_changed TO t0.set_syncInterval
+ROUTE Seq.duration_changed TO t1.set_syncInterval
+ROUTE Seq.duration_changed TO t2.set_syncInterval
+ROUTE Seq.duration_changed TO t3.set_syncInterval
+ROUTE Seq.duration_changed TO t4.set_syncInterval
+ROUTE Seq.duration_changed TO t5.set_syncInterval
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1120 @@
+#VRML V2.0 utf8
+
+
+
+PROTO PicLoader[
+field MFString loadURL []
+field MFNode pics []
+]{
+DEF loader Script{
+eventIn MFNode receive
+field MFString loadURL IS loadURL
+field MFNode pics IS pics
+field SFNode self USE loader 
+field MFNode empty []
+directOutput TRUE
+url"vrmlscript:
+function receive(v,t){
+ if(v == empty){return;}
+ for(i=0;i < v[0].pic.length;i++){
+  pics[i].imageURL = new MFString(v[0].pic[i]);
+  
+  pics[i].linkURL = v[0].img[i];
+//  print(pics[i].linkURL+'   '+v[0].img[i]);
+ }
+}
+function initialize(){Browser.createVrmlFromURL(loadURL,self,'receive');}
+"}
+}#END PicLoader PROTO 
+
+PROTO PopUp[
+eventIn SFTime set_pop
+eventIn SFString new_url
+exposedField SFString url ""
+exposedField SFString status "yes"
+exposedField SFString scrollbars "auto"
+exposedField SFInt32  height 300
+exposedField SFInt32  width 200
+exposedField SFString description "Click here for a larger view of this artwork."
+exposedField MFNode children []
+eventOut SFBool isOver
+eventOut SFTime touchTime
+]{
+Group{children[
+DEF button TouchSensor{isOver IS isOver touchTime IS touchTime}
+Group{children IS children}
+DEF pop Script{
+eventIn SFTime set_pop
+eventIn SFBool set_over
+eventIn SFString new_url IS new_url
+field SFString linkURL IS url
+field SFString status IS status
+field SFString scrollbars IS scrollbars
+field SFInt32  height IS height
+field SFInt32  width IS width
+field SFString description IS description
+field MFString param ["","","target=_self"]
+url"vrmlscript:
+function new_url(v,t){
+ linkURL = v;
+}
+function set_pop(v,t){
+ st = new MFString('OnEvent(status,'+status+')');
+ sc = new MFString('OnEvent(scrollbars,'+scrollbars+')');
+ h = new MFString('OnEvent(height,'+height+')');
+ w = new MFString('OnEvent(width,'+width+')');
+ u = new MFString('OnEvent(load,'+linkURL+')');
+ Browser.loadURL(st,param);
+ Browser.loadURL(sc,param); 
+ Browser.loadURL(h,param);
+ Browser.loadURL(w,param);
+ 
+// print((u+'  '+param));
+ 
+ Browser.loadURL(u,param);
+ Browser.setDescription('');
+}
+function set_over(v,t){
+ if(v){ Browser.setDescription(description);}
+ else{Browser.setDescription('');}
+}
+"}
+]}
+ROUTE button.touchTime TO pop.set_pop
+ROUTE button.isOver TO pop.set_over
+}#END PopUp PROTO
+
+
+PROTO GalleryPicture[
+exposedField MFString imageURL []
+exposedField SFString linkURL ""
+]{
+PopUp{
+scrollbars "yes"
+new_url IS linkURL
+description ""
+height 550
+width 750 
+status "yes"
+children [
+DEF pic_switch Switch{
+whichChoice 0
+choice[
+Group{
+children[
+Shape {
+appearance Appearance {texture ImageTexture{url IS imageURL}}
+geometry IndexedFaceSet {
+coord Coordinate {point[ 1 3 0,1 1 0,-1 1 0,-1 3 0]}
+coordIndex [ 0, 1, 2, 3, -1 ]
+texCoord TextureCoordinate{point[0 1,0 0,1 0,1 1]}
+ccw TRUE convex TRUE solid TRUE
+texCoordIndex[ 0, 1, 2, 3, -1 ]
+}}
+]}#END Group
+]}#END Switch
+DEF pic_script Script{
+eventIn MFString set_pic IS imageURL
+eventOut SFInt32 choice_changed
+directOutput TRUE
+url"vrmlscript:
+function set_pic(v,t){
+ if(v[0] == 'blank'){choice_changed = -1;}
+ else{choice_changed = 0;}
+}
+"}
+]}
+ROUTE pic_script.choice_changed TO pic_switch.set_whichChoice
+}#END GalleryPicture PROTO
+
+
+
+#######################################################################
+ 
+Transform {
+children [
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "televator03.jpg"
+}
+textureTransform DEF chsl_0 TextureTransform {
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -1.75 0 -.25 -1.25 0 1.5 -1.25 3 1.5 -1.75 3 -.25 -1 -1.19e-007 1.5
+-1 2 1.5 -1 3 1.5 1 2 1.5 1 3 1.5 1 5.96e-008 1.5 1.25 0 1.5 1.25 3 1.5 1.75
+0 -.25 1.75 3 -.25 1.25 0 -1.75 1.25 3 -1.75 -1.25 0 -1.75 -1.25 3 -1.75 ]
+}
+coordIndex [ 0 1 2 3 -1 1 4 5 6 2 -1 7 8 6 5 -1 9 10 11 8 7 -1 10 12 13 11
+-1 12 14 15 13 -1 14 16 17 15 -1 16 0 3 17 -1 ] texCoord
+TextureCoordinate { point [ .472 .00645 .0476 .00829 .0476 .99 .472 .992 .0821
+.00515 .0821 .654 .0821 .993 .926 .652 .927 .989 .926 .00305 .952 .00526 .952
+.99 .551 .00645 .551 .991 .0476 .00515 .0476 .99 .952 .00212 .952 .987 ] }
+solid FALSE
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "atriumceil.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -3.15 3 5.5 -6.57 3 -.689 -3.57 3 -5 3.5 3 -5 5.93 3 -.688 2.5 3 5.5
+] }
+coordIndex [ 0 1 2 3 4 5 -1 ]
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "atriumwal.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -6.57 3 -.689 -6.57 0 -.689 -3.58 0 -5 -3.57 3 -5 2.5 3 5.5 2.5 1.41e-009
+5.5 -3.15 1.41e-009 5.5 -3.15 3 5.5 3.5 3 -5 3.5 1.41e-009 -5 5.93 1.41e-009
+-.689 5.93 3 -.688 ] }
+coordIndex [ 0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 ] texCoord
+TextureCoordinate { point [ .00479 .984 .00372 .0101 .999 .0133 .999 .98 1
+.98 1 .0233 .000239 .0286 .00142 .977 .999 .979 .999 .0183 .000962 .0183 .00157
+.979 ] }
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+]
+translation 40.5 .177 1.68
+scale 2.36 1.66 2.36
+}
+Transform {
+children [
+Transform {
+children Shape {
+appearance Appearance {
+
+texture ImageTexture {
+url "ceilblultop.jpg"
+}
+textureTransform TextureTransform {
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -6.08 4 5.5 -8.11 4 1.88 -10.1 4.69 5.5 -6.79 4 7.25 -7.94 4 8.72
+-10.1 4 8.88 -12.1 4 8.63 -13.6 4 7.25 -13.9 4 5.5 -13.6 4 3.25 -12.1 4 1.88
+-10.1 4 1.65 ] }
+coordIndex [ 0 2 1 -1 0 3 2 -1 3 4 2 -1 4 5 2 -1 5 6 2 -1 6 7 2 -1 7 8 2 -1
+8 9 2 -1 9 10 2 -1 11 1 2 -1 10 11 2 -1 ] texCoord
+TextureCoordinate { point [ 1 .429 .742 .891 .485 .429 .909 .207 .763 .0203
+.485 0 .229 .0318 .046 .207 0 .429 .0423 .716 .236 .891 .485 .919 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 0 2 1 -1 0 3 2 -1 3 4 2 -1 4 5 2 -1 5 6 2 -1 6 7 2 -1 7 8 2 -1 8 9 2 -1 9
+10 2 -1 11 1 2 -1 10 11 2 -1 ]
+}
+}
+translation -.0201 -1.02e-005 2.82e-007
+scale .999 1 .999
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "galwalblu.jpg"
+}
+textureTransform USE chsl_0
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -4.11 4.77e-007 8.75 -4.11 3 8.75 -3.15 3 5.5 -3.15 0 5.5 -10.1 3
+-1.45 -6.57 3 -.689 -10.1 1.41e-009 -1.45 -6.57 1.41e-009 -.689 -13.5 1.41e-009
+-.688 -13.5 3 -.688 -16.3 1.41e-009 1.8 -16.3 3 1.8 -17.4 1.41e-009 5.5 -17.4
+3 5.5 -16.2 1.41e-009 8.75 -16.2 3 8.75 -13.7 1.41e-009 11.2 -13.7 3 11.2
+-10.1 -.000488 12.6 -10.1 2.98 12.6 -6.34 4.78e-007 11.3 -6.34 3 11.3 -4.11
+4.78e-007 8.75 ] }
+coordIndex [ 0 1 2 3 -1 5 4 6 7 -1 8 6 4 9 -1 10 8 9 11 -1 12 10 11 13 -1 14
+12 13 15 -1 16 14 15 17 -1 18 16 17 19 -1 20 18 19 21 -1 22 20 21 1 -1 ] texCoord
+TextureCoordinate { point [ .00364 .0132 .00318 .996 1 .993 1 .0132 .00182
+.00883 .00242 .992 .905 .992 .904 .00883 .000667 .00883 .997 .00883 .997 .991
+.000667 .993 .00172 .00883 .999 .00883 .999 .993 .000667 .996 -.00171 .00838
+.998 .00838 1 .994 .000231 .994 0 .0127 .996 .01 .996 .993 9.88e-005 .995
+.000159 .012 .998 .012 .996 .996 -.000687 .997 .000455 .996 1 .996 .999 .014
+.000611 .014 .00183 .996 .996 .0132 .000938 .0132 .000938 .996 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 0 1 2 3 -1 6 5 4 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19 -1 20 21 22
+23 -1 24 25 26 27 -1 3 0 28 29 -1 30 31 32 29 -1 33 34 35 26 -1 ]
+}
+}
+translation 0 0 2.38e-007
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "ceilblulow.jpg"
+}
+textureTransform USE chsl_0
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -10.1 4 1.65 -12.1 4 1.88 -13.5 3 -.688 -10.1 3 -1.45 -12.1 4 1.88
+-13.6 4 3.25 -16.3 3 1.8 -13.5 3 -.688 -17.4 3 5.5 -16.3 3 1.8 -13.6 4 3.25
+-13.9 4 5.5 -16.2 3 8.75 -17.4 3 5.5 -13.9 4 5.5 -13.6 4 7.25 -13.7 3 11.2
+-16.2 3 8.75 -13.6 4 7.25 -12.1 4 8.63 -10.1 2.98 12.6 -13.7 3 11.2 -12.1
+4 8.63 -10.1 4 8.88 -6.34 3 11.3 -10.1 2.98 12.6 -10.1 4 8.88 -7.94 4 8.72
+-4.11 3 8.75 -6.34 3 11.3 -7.94 4 8.72 -6.79 4 7.25 -3.15 3 5.5 -4.11 3 8.75
+-6.79 4 7.25 -6.08 4 5.5 -3.15 3 5.5 -6.08 4 5.5 -8.11 4 1.88 -6.57 3 -.689
+-8.11 4 1.88 -10.1 4 1.65 -10.1 3 -1.45 -6.57 3 -.689 ] }
+coordIndex [ 0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19
+-1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 31 -1 32 33 34 35 -1 36 37 38 39
+-1 40 41 42 43 -1 ] texCoord
+TextureCoordinate { point [ .00962 .99 .988 .99 .988 .0125 .00962 .0125 .00962
+.99 .988 .99 .988 .0125 .00962 .0125 .988 .0125 .00962 .0125 .00962 .99 .988
+.99 .988 .0125 .00962 .0125 .00962 .99 .988 .99 .988 .0125 .00962 .0125 .00962
+.99 .988 .99 .988 .0121 .00836 .0121 .00836 .992 .988 .992 .988 .0106 .00993
+.0115 .00993 .99 .988 .99 .988 .0125 .00962 .0125 .00962 .99 .988 .99 .988
+.0125 .00962 .0125 .00962 .99 .988 .993 .00927 .0123 .00927 .991 .988 .991
+.988 .0123 .00962 .99 .988 .99 .988 .0125 .00962 .0125 ] }
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+]
+translation 40.6 .177 1.75
+scale 2.36 1.66 2.36
+}
+Transform {
+children [
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "ceilredltop.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 12.8 4 3.25 11.2 4 1.76 9.13 4 1.65 7.5 4 1.77 9.13 4.69 5.5 5.09
+4 5.5 5.89 4 7.25 7.38 4 8.75 9.13 4 8.88 11.2 4 8.73 13 4 7.25 13.2 4 5.5
+] }
+coordIndex [ 3 2 4 -1 1 0 4 -1 2 1 4 -1 3 4 5 -1 6 5 4 -1 7 6 4 -1 8 7 4 -1
+9 8 4 -1 10 9 4 -1 11 10 4 -1 0 11 4 -1 ] texCoord
+TextureCoordinate { point [ .95 .198 .764 .0128 .5 0 .298 .0146 .5 .477 0
+.477 .0991 .694 .283 .88 .5 .896 .752 .878 .981 .694 1 .477 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 3 2 4 -1 1 0 4 -1 2 1 4 -1 3 4 5 -1 6 5 4 -1 7 6 4 -1 8 7 4 -1 9 8 4 -1 10
+9 4 -1 11 10 4 -1 0 11 4 -1 ]
+}
+}
+translation 0 0 2.38e-007
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "ceilredlow.jpg"
+}
+textureTransform TextureTransform {
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 5.09 4 5.5 5.89 4 7.25 3.21 3 8.75 2.5 3 5.5 7.38 4 8.75 5.88 3 11.3
+9.13 4 8.88 9.13 3 12.6 12.8 3 11.8 11.2 4 8.73 15.6 3 8.75 13 4 7.25 16.3
+3 5.5 13.2 4 5.5 15.2 3 1.8 12.8 4 3.25 12.8 3 -.688 11.2 4 1.76 9.13 3 -1.45
+9.13 4 1.65 5.93 3 -.688 7.5 4 1.77 ] }
+coordIndex [ 0 1 2 3 -1 1 4 5 2 -1 4 6 7 5 -1 8 7 6 9 -1 10 8 9 11 -1 12 10
+11 13 -1 14 12 13 15 -1 16 14 15 17 -1 18 16 17 19 -1 20 18 19 21 -1 20 21 0
+3 -1 ] texCoord
+TextureCoordinate { point [ .011 .987 .985 .987 .985 .0173 .011 .0173 .0111
+.988 .981 .988 .985 .018 .0111 .018 .014 .0233 .985 .988 .985 .0156 .0109
+.0156 .0109 .989 .985 .989 .985 .0175 .0111 .0175 .0111 .987 .985 .0177 .011
+.0177 .984 .0148 .0119 .0148 .0119 .987 .984 .987 .988 .0116 .00878 .0116
+.00878 .991 .988 .991 .988 .0127 .00888 .0127 .00888 .992 .988 .992 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 0 1 2 3 -1 0 1 2 3 -1 4 5 6 7 -1 6 8 4 9 -1 10 11 12 13 -1 14 15 16 1 -1 17
+18 0 1 -1 19 20 21 22 -1 23 24 25 26 -1 27 28 29 30 -1 7 4 9 6 -1 ]
+}
+}
+translation .0174 -1.02e-005 .00208
+scale .999 1 .999
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "galwalred.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 2.5 0 5.5 2.5 3 5.5 3.21 0 8.75 3.21 3 8.75 9.13 4.78e-007 -1.45 9.13
+3 -1.45 5.93 3 -.688 5.93 1.41e-009 -.689 9.13 4.78e-007 -1.45 12.8 4.78e-007
+-.688 12.8 3 -.688 9.13 3 -1.45 12.8 4.78e-007 -.688 15.2 4.78e-007 1.8 15.2
+3 1.8 12.8 3 -.688 15.2 4.78e-007 1.8 16.3 1.41e-009 5.5 16.3 3 5.5 15.2 3
+1.8 16.3 1.41e-009 5.5 15.6 1.41e-009 8.75 15.6 3 8.75 16.3 3 5.5 15.6 1.41e-009
+8.75 12.8 1.41e-009 11.8 12.8 3 11.8 15.6 3 8.75 12.8 1.41e-009 11.8 9.13
+1.41e-009 12.6 9.13 3 12.6 12.8 3 11.8 9.13 1.41e-009 12.6 5.88 1.41e-009
+11.3 5.88 3 11.3 9.13 3 12.6 5.88 1.41e-009 11.3 3.21 1.41e-009 8.75 3.21
+3 8.75 5.88 3 11.3 ] }
+coordIndex [ 1 3 2 0 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19
+-1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 31 -1 32 33 34 35 -1 36 37 38 39
+-1 ] texCoord
+TextureCoordinate { point [ .992 .0215 .99 .984 -.0036 .018 -.00419 .987 .994
+.0115 .995 .997 .00165 .997 .000719 .0115 .00234 .0115 .998 .0115 .998 .996
+.00425 .998 .993 .0111 .00379 .0111 .00379 .995 .993 .998 .998 .0107 .00176
+.0107 .00176 .992 .998 .994 .997 .0112 .000667 .0112 .000519 .993 .997 .993
+.999 .0112 .000412 .0112 .000667 .991 .999 .993 .999 .0112 .000187 .0133 .000716
+.993 .999 .993 .997 .0135 .000667 .0158 .00162 .989 .997 .993 .999 .0158 .000667
+.0182 -.00437 .987 .995 .989 ] }
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+]
+translation 40.5 .177 1.68
+scale 2.36 1.66 2.36
+}
+Transform {
+children [
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "ceilyeltop.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 2 4 -14 4.77e-006 4 -14.5 -2 4 -14 -3 4 -12.5 -3.5 4 -10.5 -3 4 -8.48
+-2 4 -6.98 2 4 -6.98 3 4 -8.48 3.5 4 -10.5 2.96 4 -12.5 1.34e-005 4.69 -10.5
+] }
+coordIndex [ 2 1 11 -1 1 0 11 -1 3 2 11 -1 4 3 11 -1 5 4 11 -1 6 5 11 -1 11
+7 6 -1 8 7 11 -1 9 8 11 -1 10 9 11 -1 0 10 11 -1 ] texCoord
+TextureCoordinate { point [ .0667 .733 0 .467 .0667 .2 .267 .0667 .533 0 .8
+.0667 1 .2 1 .733 .8 .867 .533 .933 .267 .862 .533 .467 ] }
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+Transform {
+children Shape {
+appearance Appearance {
+
+texture ImageTexture {
+url "ceilyellow.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -2 4 -6.98 2 4 -6.98 3.5 3 -5 -3.57 3 -5 6 3 -7.48 3 4 -8.48 3.5 4
+-10.5 6.5 3 -10.5 2.96 4 -12.5 6 3 -14 3.5 3 -16.5 2 4 -14 -2.22e-006 3 -17.5
+4.45e-006 4 -14.5 -4 3 -16.5 -2 4 -14 -6 3 -14 -3 4 -12.5 -6.5 3 -10.5 -3.5
+4 -10.5 -6 3 -7.48 -3 4 -8.48 ] }
+coordIndex [ 0 1 2 3 -1 4 2 1 5 -1 5 6 7 4 -1 6 8 9 7 -1 10 9 8 11 -1 12 10
+11 13 -1 14 12 13 15 -1 16 14 15 17 -1 18 16 17 19 -1 20 18 19 21 -1 20 21 0
+3 -1 ] texCoord
+TextureCoordinate { point [ .011 .987 .985 .987 .985 .0216 .011 .0216 .985
+.0173 .982 .0212 .0129 .0212 .0129 .986 .982 .986 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 0 1 2 3 -1 4 3 0 1 -1 0 1 2 3 -1 0 1 4 3 -1 2 3 0 1 -1 5 6 7 8 -1 2 3 0 1
+-1 2 3 0 1 -1 2 3 0 1 -1 2 3 0 1 -1 3 0 1 2 -1 ]
+}
+}
+translation .0174 -1.02e-005 .00208
+scale .999 1 .999
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "galwalyel.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 6 0 -7.48 3.5 0 -5 3.5 3 -5 6 3 -7.48 -6 4.78e-007 -7.48 -6 3 -7.48
+-3.57 3 -5 -3.58 1.41e-009 -5 -6 4.78e-007 -7.48 -6.5 4.78e-007 -10.5 -6.5
+3 -10.5 -6 3 -7.48 -6.5 4.78e-007 -10.5 -6 4.78e-007 -14 -6 3 -14 -6.5 3 -10.5
+-6 4.78e-007 -14 -4 1.41e-009 -16.5 -4 3 -16.5 -6 3 -14 -4 1.41e-009 -16.5
+-2.22e-006 1.41e-009 -17.5 -2.22e-006 3 -17.5 -4 3 -16.5 -2.22e-006 1.41e-009
+-17.5 3.5 1.41e-009 -16.5 3.5 3 -16.5 -2.22e-006 3 -17.5 3.5 1.41e-009 -16.5
+6 1.41e-009 -14 6 3 -14 6 1.41e-009 -14 6.5 1.41e-009 -10.5 6.5 3 -10.5 6
+3 -14 6.5 1.41e-009 -10.5 6 1.41e-009 -7.48 6 3 -7.48 6.5 3 -10.5 ] }
+coordIndex [ 0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 16 17 18 19
+-1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 26 -1 31 32 33 34 -1 35 36 37 38
+-1 ] texCoord
+TextureCoordinate { point [ .998 .0271 .00238 .0271 .00182 .991 .997 .989
+.99 .0117 .991 .994 .00137 .996 .00241 .00825 .00364 .0132 .996 .0132 .996
+.993 .00247 .994 .000455 .0132 1 .0164 1 .99 .000455 .993 .00364 .0164 .994
+.0184 .994 .99 .0026 .99 .00402 .0186 .998 .0231 .998 .99 .00265 .99 .00295
+.0229 .997 .0229 .997 .989 .00229 .992 .989 .0229 .00293 .0254 .000932 .988
+.997 .0269 0 .0279 0 .987 .997 .989 .997 .0269 .00105 .0269 .00105 .988 .997
+.989 ] }
+creaseAngle 3.14
+}
+}
+translation 0 0 2.38e-007
+}
+]
+translation 40.5 .177 1.68
+scale 2.36 1.66 2.36
+}
+Transform {
+children [
+Transform {
+children Shape {
+appearance Appearance {
+texture DEF _13 ImageTexture {
+url "redcolumn.jpg"
+}
+textureTransform DEF chsl_14 TextureTransform {
+scale 3.14 1
+}
+}
+geometry DEF chsl_15 Cylinder {
+radius .25
+height 3
+top FALSE
+bottom FALSE
+}
+}
+translation 54.7 2.67 -.0799
+rotation .508 -3.3e-014 .862 3.14
+scale 2.36 1.66 2.36
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture USE _13
+textureTransform USE chsl_14
+}
+geometry USE chsl_15
+}
+translation 46.4 2.67 14.7
+rotation 1 -1.16e-012 2.2e-005 3.14
+scale 2.36 1.66 2.36
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture DEF _16 ImageTexture {
+url "yelcolumn.jpg"
+}
+textureTransform USE chsl_14
+}
+geometry USE chsl_15
+}
+translation 48.8 2.67 -10.1
+rotation .864 -3.29e-014 .504 3.14
+scale 2.36 1.66 2.36
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture USE _16
+textureTransform USE chsl_14
+}
+geometry USE chsl_15
+}
+translation 32.1 2.67 -10.1
+rotation .886 9.62e-014 -.463 3.14
+scale 2.36 1.66 2.36
+scaleOrientation 1.34e-005 -1 -9.18e-006 .153
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture DEF _17 ImageTexture {
+url "blucolumn.jpg"
+}
+textureTransform USE chsl_14
+}
+geometry USE chsl_15
+}
+translation 33.1 2.67 14.7
+rotation 1 -1.52e-015 2.2e-005 3.14
+scale 2.36 1.66 2.36
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture USE _17
+textureTransform USE chsl_14
+}
+geometry USE chsl_15
+}
+translation 25 2.67 .0604
+rotation .886 9.62e-014 -.463 3.14
+scale 2.36 1.66 2.36
+scaleOrientation 1.34e-005 -1 -9.18e-006 .153
+}
+]
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture ImageTexture {
+url "daplrug02.jpg"
+}
+textureTransform TextureTransform {
+translation -.02 .04
+scale 4 4
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 3.5 0 -5 2 0 -6.98 -2 5.72e-006 -6.98 -3 0 -8.48 -6 4.77e-007 -7.48
+-3.5 0 -10.5 -6.5 4.77e-007 -10.5 -3 0 -12.5 -6 4.77e-007 -14 -2 6.41e-005
+-14 -4 0 -16.5 4.77e-006 6.41e-005 -14.5 -1.91e-006 0 -17.5 1.34e-005 0 -10.5
+2 0 -14 3.5 0 -10.5 3 0 -12.5 6.5 0 -10.5 6 0 -14 3 0 -8.48 6 0 -7.48 3.5
+0 -16.5 -3.58 0 -5 -6.57 0 -.689 5.93 0 -.689 1.25 0 1.5 -1.25 0 -1.75 1.25
+0 -1.75 -1.25 0 1.5 -1.75 0 -.25 1.75 0 -.25 -7.94 -.000261 8.74 -10.1 .000513
+8.9 -10.1 -.000488 12.7 -6.33 4.77e-007 11.3 -12.1 6.41e-005 8.65 -13.7 0
+11.3 -13.6 6.41e-005 7.28 -16.2 0 8.78 -13.9 0 5.51 -17.3 0 5.53 -13.6 -6.17e-006
+3.28 -16.3 0 1.83 -12.1 0 1.9 -13.5 0 -.661 -10.1 0 1.68 -10.1 1.53e-005 5.53
+-8.1 0 1.9 -10.1 0 -1.42 -6.08 5.72e-006 5.53 -3.14 0 5.53 -6.79 0 7.28 -4.1
+4.77e-007 8.78 11.2 0 8.73 9.13 0 8.86 9.13 0 12.6 12.8 0 11.8 7.38 0 8.75
+5.88 0 11.3 5.89 0 7.25 3.21 0 8.75 5.09 0 5.5 2.5 0 5.5 7.5 5.72e-006 1.77
+9.13 1.53e-005 5.5 11.3 .00208 1.76 9.13 7.45e-009 1.65 12.8 0 3.25 13.2 6.41e-005
+5.5 16.3 0 5.5 15.2 4.77e-007 1.8 13 6.41e-005 7.25 15.6 0 8.75 12.8 4.77e-007
+-.688 9.13 4.77e-007 -1.45 ] }
+coordIndex [ 3 5 6 4 -1 5 7 8 6 -1 7 9 10 8 -1 9 11 12 10 -1 1 13 2 -1 5 13
+9 7 -1 2 13 5 3 -1 9 13 14 11 -1 14 13 15 16 -1 16 15 17 18 -1 15 13 1 19
+-1 19 1 0 20 -1 15 19 20 17 -1 14 16 18 21 -1 11 14 21 12 -1 22 23 29 26 -1
+31 32 33 34 -1 32 35 36 33 -1 35 37 38 36 -1 37 39 40 38 -1 39 41 42 40 -1 41
+43 44 42 -1 45 43 46 -1 39 37 46 -1 37 35 46 -1 41 39 46 -1 43 41 46 -1 35 32
+31 46 -1 45 46 47 -1 43 45 48 44 -1 47 46 49 -1 49 46 31 51 -1 49 51 52 50
+-1 51 31 34 52 -1 53 54 55 56 -1 54 57 58 55 -1 57 59 60 58 -1 60 59 61 62
+-1 64 57 54 -1 64 59 57 -1 64 54 53 -1 64 61 59 -1 61 64 63 -1 63 64 65 66
+-1 67 65 64 -1 68 67 64 -1 67 68 69 70 -1 71 68 64 -1 71 64 53 -1 68 71 72 69
+-1 71 53 56 72 -1 65 67 70 73 -1 66 65 73 74 -1 48 45 47 23 -1 47 49 50 23
+-1 28 29 23 50 -1 24 30 25 62 -1 25 28 50 62 -1 62 61 63 24 -1 63 66 74 24
+-1 22 26 27 0 -1 27 30 24 0 -1 0 1 2 22 -1 2 3 4 22 -1 30 27 26 29 28 25 -1
+] texCoord
+TextureCoordinate { point [ .619 .525 .409 .525 .575 .583 .456 .583 .426 .628
+.337 .598 .411 .687 .322 .687 .426 .747 .337 .791 .456 .791 .396 .866 .515
+.806 .515 .895 .515 .687 .575 .791 .619 .687 .604 .747 .708 .687 .693 .791
+.604 .628 .693 .598 .619 .866 .32 .397 .422 .213 .589 .213 .691 .397 .552
+.332 .478 .428 .552 .428 .478 .332 .463 .384 .567 .384 .279 .117 .215 .112
+.215 0 .327 .0412 .155 .119 .108 .0412 .112 .16 .0345 .115 .101 .212 0 .212
+.111 .279 .0313 .322 .156 .32 .115 .396 .215 .326 .215 .212 .274 .32 .215
+.418 .32 .396 .335 .212 .422 .212 .314 .16 .393 .115 .847 .117 .786 .113 .786
+.00118 .894 .0272 .734 .116 .69 .042 .69 .161 .61 .116 .667 .213 .738 .324
+.786 .213 .849 .324 .786 .327 .894 .28 .906 .213 1 .213 .965 .323 .901 .161
+.979 .116 .894 .397 .786 .419 ] } texCoordIndex
+[ 4 6 7 5 -1 6 8 9 7 -1 8 10 11 9 -1 10 12 13 11 -1 2 14 3 -1 6 14 10 8 -1 3
+14 6 4 -1 10 14 15 12 -1 15 14 16 17 -1 17 16 18 19 -1 16 14 2 20 -1 20 2 0
+21 -1 16 20 21 18 -1 15 17 19 22 -1 12 15 22 13 -1 1 23 31 28 -1 33 34 35 36
+-1 34 37 38 35 -1 37 39 40 38 -1 39 41 42 40 -1 41 43 44 42 -1 43 45 46 44
+-1 47 45 48 -1 41 39 48 -1 39 37 48 -1 43 41 48 -1 45 43 48 -1 37 34 33 48
+-1 47 48 49 -1 45 47 50 46 -1 49 48 52 -1 52 48 33 54 -1 52 54 55 53 -1 54 33
+36 55 -1 56 57 58 59 -1 57 60 61 58 -1 60 62 63 61 -1 63 62 64 25 -1 66 60 57
+-1 66 62 60 -1 66 57 56 -1 66 64 62 -1 64 66 65 -1 65 66 67 68 -1 69 67 66
+-1 70 69 66 -1 69 70 71 72 -1 73 70 66 -1 73 66 56 -1 70 73 74 71 -1 73 56 59
+74 -1 67 69 72 75 -1 68 67 75 76 -1 50 47 49 51 -1 49 52 53 51 -1 30 31 23 24
+-1 26 32 27 25 -1 27 30 24 25 -1 25 64 65 26 -1 65 68 76 26 -1 1 28 29 0 -1
+29 32 26 0 -1 0 2 3 1 -1 3 4 5 1 -1 32 29 28 31 30 27 -1 ]
+}
+}
+translation 40.5 .177 1.68
+scale 2.36 1.66 2.36
+}
+
+
+
+Transform {
+children Shape {
+appearance Appearance {
+material Material {
+ambientIntensity .0733
+diffuseColor .23 .2 .43
+specularColor .173 .216 .216
+shininess .0896
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -1.3 29 1 -1.3 29 -1 -.959 -3.02 -1 -.959 -3.02 1 .699 29 -1 .699
+29 1 1.04 -3.02 1 1.04 -3.02 -1 14.7 37 .951 14.7 37 -1.05 42.9 21.8 -1.03
+42.9 21.8 .974 15.7 38.7 -1.05 15.7 38.7 .951 43.9 23.5 .974 43.9 23.5 -1.03
+43.1 2.55 .972 43.1 2.55 -1.03 15.2 -13.3 -1.03 15.2 -13.3 .974 44 .796 -1.03
+44 .797 .973 16.2 -15 .975 16.2 -15 -1.02 ] }
+coordIndex [ 0 1 2 3 -1 4 5 6 7 -1 1 4 7 2 -1 8 9 10 11 -1 12 13 14 15 -1 9
+12 15 10 -1 16 17 18 19 -1 20 21 22 23 -1 17 20 23 18 -1 ]
+creaseAngle 3.14
+}
+}
+translation 32.9 5.58 -10.1
+rotation -.573 -.579 -.579 2.1
+scale .59 .59 .416
+}
+Transform {
+children Shape {
+appearance Appearance {
+texture DEF _29 ImageTexture {
+url "g_door_map.jpg"
+}
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -2.56 0 1.68 2.56 0 1.68 -2.56 0 -1.78 2.56 0 -1.78 -2.56 .331 1.68
+2.56 .331 1.68 -2.56 .331 -1.78 2.56 .331 -1.78 2.22 0 1.68 2.22 0 -1.54 2.22
+.331 -1.54 2.22 .331 1.68 -2.22 0 -1.54 -2.22 .331 -1.54 -2.22 0 1.68 -2.22
+.331 1.68 ] }
+coordIndex [ 1 8 9 3 -1 7 10 11 5 -1 5 11 8 1 -1 7 5 1 3 -1 6 7 3 2 -1 4 6 2
+0 -1 2 3 9 12 -1 7 6 13 10 -1 0 14 15 4 -1 0 2 12 14 -1 6 4 15 13 -1 9 10 13
+12 -1 9 8 11 10 -1 14 12 13 15 -1 ] texCoord
+TextureCoordinate { point [ .00726 .716 1.01 .716 .00726 .999 1.01 .999 .942
+.716 .942 .953 .0723 .953 .0723 .716 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 1 4 5 3 -1 3 5 4 1 -1 1 4 4 1 -1 3 1 1 3 -1 2 3 3 2 -1 0 2 2 0 -1 2 3 5 6
+-1 3 2 6 5 -1 0 7 7 0 -1 0 2 6 7 -1 2 0 7 6 -1 5 5 6 6 -1 5 4 4 5 -1 7 6 6 7
+-1 ]
+}
+}
+translation 40.5 1.87 4.89
+rotation 1 0 0 1.57
+scale 1.01 1.01 1.01
+}
+
+
+
+Transform {
+children Shape {
+appearance DEF chsl_31 Appearance {
+texture USE _29
+}
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ 1.13 0 2.99 1.13 0 -1.51 1.13 .358 2.99 1.13 .358 -1.51 -2.19 0 2.98
+-2.2 0 -1.51 -2.19 .358 2.98 -2.2 .358 -1.51 -2.2 0 1.62 -2.2 .358 1.62 -1.49
+0 1.36 -1.49 .358 1.36 -1.49 0 .183 -1.49 .358 .183 -2.2 0 -.0815 -2.2 .358
+-.0815 ] }
+coordIndex [ 12 1 4 10 -1 3 2 0 1 -1 0 2 6 4 -1 0 4 1 -1 1 5 7 3 -1 2 3 11 6
+-1 13 11 3 7 -1 15 13 7 -1 10 4 8 -1 9 6 11 -1 12 14 5 1 -1 4 6 9 8 -1 10 11
+13 12 -1 14 15 7 5 -1 9 11 10 8 -1 14 12 13 15 -1 ] texCoord
+TextureCoordinate { point [ 0 0 0 39.9 .999 .999 .000557 .999 1 1 .998 .00138
+.0005 .000718 -1 -2.6e-005 .696 .000697 .417 .417 .638 .213 0 .503 .377 .213
+.319 .0005 .996 .999 .998 .576 .0005 .576 .696 .576 .638 .671 .373 .671 .315
+.576 ] }
+convex FALSE
+creaseAngle 3.14
+texCoordIndex
+[ 11 1 4 9 -1 3 2 0 1 -1 0 2 5 4 -1 0 4 1 -1 1 0 6 3 -1 14 3 18 15 -1 19 18
+3 16 -1 20 19 16 -1 9 4 7 -1 17 15 18 -1 11 0 0 1 -1 4 5 8 7 -1 9 10 12 11
+-1 0 13 6 0 -1 8 10 9 7 -1 0 11 12 13 -1 ]
+}
+}
+translation 39.8 2.77 4.81
+rotation .577 .577 .577 2.09
+scale .581 1 1
+}
+Transform {
+children Shape {
+appearance USE chsl_31
+geometry
+IndexedFaceSet {
+coord Coordinate {
+point [ -1.13 0 2.34 1.13 0 2.34 -1.13 0 .981 1.13 0 .983 -1.13 0 -.725 1.13
+0 -.719 -1.13 0 -2.15 1.13 0 -2.15 -1.13 .358 2.34 1.13 .358 2.34 -1.13 .358
+.981 1.13 .358 .983 -1.13 .358 -.725 1.13 .358 -.719 -1.13 .358 -2.15 1.13
+.358 -2.15 1.83 0 .719 1.83 0 -.455 1.83 .358 -.455 1.83 .358 .719 ] }
+coordIndex [ 0 2 3 1 -1 2 4 5 3 -1 4 6 7 5 -1 8 9 11 10 -1 10 11 13 12 -1 12
+13 15 14 -1 0 1 9 8 -1 1 3 11 9 -1 16 17 18 19 -1 5 7 15 13 -1 7 6 14 15 -1
+6 4 12 14 -1 4 2 10 12 -1 2 0 8 10 -1 3 5 17 16 -1 13 11 19 18 -1 11 3 16 19
+-1 5 13 18 17 -1 ] texCoord
+TextureCoordinate { point [ 0 0 .333 0 .667 0 1 0 0 1 .333 1 .667 1 1 1 0
+.333 1 .333 0 .667 1 .667 .999 .195 .999 .478 .697 .478 .697 .195 .318 .478
+.317 .195 .0005 .478 .0005 .195 .638 .572 .377 .572 ] }
+creaseAngle 3.14
+texCoordIndex
+[ 3 9 8 0 -1 9 11 10 8 -1 11 7 4 10 -1 12 13 14 15 -1 15 14 16 17 -1 17 16 18
+19 -1 0 3 7 4 -1 0 1 5 4 -1 1 2 6 5 -1 2 3 7 6 -1 0 3 7 4 -1 0 1 5 4 -1 1 2
+6 5 -1 2 3 7 6 -1 0 0 0 0 -1 16 14 20 21 -1 0 0 0 0 -1 0 0 0 0 -1 ]
+}
+}
+translation 40.5 .834 4.81
+rotation .577 .577 .577 2.09
+scale .581 1 1
+}
+
+
+
+#######################################################################
+
+LOD{
+range[30]
+center 16.5501 .25 14.7364
+level[
+
+Group{
+children[
+
+Transform { translation   16.5501 .25 14.7364 children[
+Inline {url "fountain.wrl"}
+Transform{children PointLight{radius 20 color 0 0 1} translation 0 2 0}
+]}
+
+DEF blue_gallery_pics Transform {
+  children      [
+    Transform {
+      children        DEF pic10 GalleryPicture{}
+
+      translation       31.2951 0 18.1431
+      rotation  0 1 0  1.28842
+    }
+    Transform {
+      children        DEF pic11 GalleryPicture{}
+
+      translation       27.7876 0 24.8967
+      rotation  0 1 0  0.848748
+    }
+    Transform {
+      children        DEF pic12 GalleryPicture{}
+
+      translation       20.6423 0 29.0407
+      rotation  0 1 0  0.348973
+    }
+    Transform {
+      children        DEF pic13 GalleryPicture{}
+
+      translation       12.2533 0 28.8016
+      rotation  0 -1 0  0.380177
+    }
+    Transform {
+      children        DEF pic14 GalleryPicture{}
+
+      translation       5.94376 0 24.8206
+      rotation  0 -1 0  0.804031
+    }
+    Transform {
+      children        DEF pic15 GalleryPicture{}
+
+      translation       1.90872 0 17.9727
+      rotation  0 -1 0  1.22035
+    }
+    Transform {
+      children        DEF pic16 GalleryPicture{}
+
+      translation       2.17669 0 10.0946
+      rotation  0 1 0  4.44505
+    }
+    Transform {
+      children        DEF pic17 GalleryPicture{}
+
+      translation       6.37388 0 3.28497
+      rotation  0 1 0  3.86304
+    }
+    Transform {
+      children        DEF pic18 GalleryPicture{}
+
+      translation       13.4863 0 -0.0235053
+      rotation  0 1 0  3.35457
+    }
+    Transform {
+      children        DEF pic19 GalleryPicture{}
+
+      translation       20.7265 0 -0.0667093
+      rotation  0 1 0  2.91637
+    }
+  ]
+}
+
+]}
+
+Group{}
+
+]}
+
+
+LOD{
+range[30]
+center 62.1197 .25 14.9631
+level[
+
+Group{
+children[
+
+Transform { translation   62.1197 .25 14.9631 children[
+Inline {url "fountain.wrl"}
+Transform{children PointLight{radius 20 color 1 0 0} translation 0 2 0}
+]}
+
+DEF red_gallery_pics Transform {
+  children      [
+    Transform {
+      children        DEF pic20 GalleryPicture{}
+
+      translation       48.3594 0 18.4787
+      rotation  0 -1 0  1.36804
+    }
+    Transform {
+      children        DEF pic21 GalleryPicture{}
+
+      translation       51.4566 0 23.9022
+      rotation  0 -1 0  0.747207
+    }
+    Transform {
+      children        DEF pic22 GalleryPicture{}
+
+      translation       58.2329 0 28.7481
+      rotation  0 -1 0  0.402071
+    }
+    Transform {
+      children        DEF pic23 GalleryPicture{}
+
+      translation       66.0665 0 29.6777
+      rotation  0 1 0  0.250353
+    }
+    Transform {
+      children        DEF pic24 GalleryPicture{}
+
+      translation       73.1876 0 25.367
+      rotation  0 1 0  0.802776
+    }
+    Transform {
+      children        DEF pic25 GalleryPicture{}
+
+      translation       77.2635 0 19.0802
+      rotation  0 1 0  1.36805
+    }
+    Transform {
+      children        DEF pic26 GalleryPicture{}
+
+      translation       77.0772 0 11.5983
+      rotation  0 1 0  1.89248
+    }
+    Transform {
+      children        DEF pic27 GalleryPicture{}
+
+      translation       72.5982 0 3.27476
+      rotation  0 1 0  2.30899
+    }
+    Transform {
+      children        DEF pic28 GalleryPicture{}
+
+      translation       65.7668 0 -0.205835
+      rotation  0 1 0  2.93048
+    }
+    Transform {
+      children        DEF pic29 GalleryPicture{}
+
+      translation       58.6418 0 -0.0723859
+      rotation  0 1 0  3.37048
+    }
+  ]
+}
+
+
+]}
+Group{}
+
+]}
+
+LOD{
+range[30]
+center 40.5818 .25 -23.1248
+level[
+
+Group{
+children[
+
+Transform {translation   40.5818 .25 -23.1248 children[      
+Inline {url "fountain.wrl"}
+Transform{children PointLight{radius 20 color 1 1 0} translation 0 2 0}
+]}
+
+DEF yellow_gallery_pics Transform {
+  children      [
+    Transform {
+      children        DEF pic30 GalleryPicture{}
+
+      translation       30.1636 0 -14.098
+      rotation  0 -1 0  0.807785
+    }
+    Transform {
+      children        DEF pic31 GalleryPicture{}
+
+      translation       51.0458 0 -13.522
+      rotation  0 1 0  0.762443
+    }
+    Transform {
+      children        DEF pic32 GalleryPicture{}
+
+      translation       26.8067 0 -19.221
+      rotation  0 -1 0  1.40567
+    }
+    Transform {
+      children        DEF pic33 GalleryPicture{}
+
+      translation       54.2773 0 -19.5592
+      rotation  0 1 0  1.38426
+    }
+    Transform {
+      children        DEF pic34 GalleryPicture{}
+
+      translation       26.6821 0 -27.4833
+      rotation  0 1 0  4.56123
+    }
+    Transform {
+      children        DEF pic35 GalleryPicture{}
+
+      translation       54.6225 0 -26.7388
+      rotation  0 1 0  1.72761
+    }
+    Transform {
+      children        DEF pic36 GalleryPicture{}
+
+      translation       29.6501 0 -34.0175
+      rotation  0 1 0  4.04385
+    }
+    Transform {
+      children        DEF pic37 GalleryPicture{}
+
+      translation       51.2425 0 -33.6741
+      rotation  0 1 0  2.36397
+    }
+    Transform {
+      children        DEF pic38 GalleryPicture{}
+
+      translation       36.9219 0 -37.6357
+      rotation  0 1 0  3.3817
+    }
+    Transform {
+      children        DEF pic39 GalleryPicture{}
+
+      translation       44.0601 0 -37.8297
+      rotation  0 1 0  2.84984
+    }
+  ]
+}
+
+]}
+
+Group{}
+
+]}
+
+
+DEF load_blue PicLoader{
+pics [
+   USE pic19,
+   USE pic14,
+   USE pic15,
+   USE pic13,
+   USE pic16,
+   USE pic12,
+   USE pic17,
+   USE pic11,
+   USE pic18,
+   USE pic10
+]
+loadURL "/cgi-bin/games/gallery/galload_1.pl"
+}
+
+DEF load_red PicLoader{
+pics [
+   USE pic29,
+   USE pic25,
+   USE pic24,
+   USE pic26,
+   USE pic23,
+   USE pic27,
+   USE pic22,
+   USE pic28,
+   USE pic21,
+   USE pic20
+]
+loadURL "/cgi-bin/games/gallery/galload_2.pl"
+}
+
+DEF load_yellow PicLoader{
+pics [
+   USE pic31,
+   USE pic38,
+   USE pic39,
+   USE pic36,
+   USE pic37,
+   USE pic34,
+   USE pic35,
+   USE pic32,
+   USE pic33,
+   USE pic30
+]
+loadURL "/cgi-bin/games/gallery/galload_3.pl"
+}
+
+Inline{url "sculpture.wrl"}
+
+#PositionSend{}
+
+NavigationInfo{
+ avatarSize [.25,1.75,.25]
+}
+
+Viewpoint{
+description "Enter"
+position 31.626 1.77698 11.6133
+orientation 0 -1 0 0.895934
+}
+Viewpoint{
+description "Red Gallery"
+position 54.1344 1.77699 8.33549
+orientation 0 -1 0 2.21197
+}
+Viewpoint{
+description "Blue Gallery"
+position 21.0003 1.77699 10.1022
+orientation 0 1 0 2.31333
+}
+Viewpoint{
+description "Yellow Gallery"
+position 39.4896 1.77699 -12.7674
+orientation 0 -1 0 0.0424233
+}
+
+
+
+
+
+        

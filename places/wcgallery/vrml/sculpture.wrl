@@ -1,0 +1,39 @@
+#VRML V2.0 utf8
+
+Transform {
+  children      Inline {
+    url "sculpture/arach.wrl"
+  }
+
+  #translation   4.06564 0.360249 21.3185
+  #rotation      0 1 0  2.12372
+  translation   4.06564 0.360249 21.3185
+  rotation      0 1 0  2.12372
+}
+Transform {
+  children Inline {
+    url "sculpture/geomancer.wrl"
+  }
+  #translation   74.3534 1.25893 20.6046
+  translation   75.3667 2.27221 20.773
+}
+Transform {
+  children      Inline {
+    url "sculpture/knot_twist.wrl"
+  }
+
+  #translation   40.5313 2.71558 -37.1536
+   translation   39 2.7 -38
+     scale 1.80385 1.80385 1.80385
+}
+Transform {
+  children      Inline {
+    url "sculpture/knot.wrl"
+  }
+
+  translation   30.65 2.30162 -4.65
+  rotation      0 1 0  0.208711
+
+  #translation   29.6859 2.36432 -4.00626
+  #rotation      0 1 0  0.949272
+}

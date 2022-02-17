@@ -1,0 +1,22 @@
+#VRML V2.0 utf8
+
+
+PROTO info[
+exposedField MFString names [] 
+exposedField MFString urls []
+exposedField SFFloat aspect .75
+exposedField SFFloat horz 320
+]{}
+
+info{
+names[
+"Stories",
+"Hallmark",
+"Coming Soon",
+]
+urls[
+"http://www.cybertown.com/realmedia/hallmark/hen1.ram",
+"http://www.cybertown.com/realmedia/hallmark/hen2.ram",
+"http://www.cybertown.com/realmedia/hallmark/hen3.ram",
+]
+}

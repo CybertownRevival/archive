@@ -1,0 +1,161 @@
+#VRML V2.0 utf8
+
+# Produced by 3D Studio MAX VRML97 exporter, Version 3.01, Revision 0
+# MAX File: water.max, Date: Thu Oct 19 16:56:30 2000
+
+DEF water Transform {
+translation -22.199 -0.38418 -18.72
+rotation 0 1 0 -1.2217
+scale 0.336 0.336 0.336
+children [
+DEF water-TIMER TimeSensor { loop TRUE cycleInterval 1.6667 },
+Shape {
+appearance Appearance {
+material Material {
+diffuseColor 0.63922 0.54902 0.19216
+ambientIntensity 0.15338
+specularColor 0.342 0.342 0.342
+shininess 0.354
+transparency 0.8
+emissiveColor 0.31961 0.27451 0.096078
+}
+texture MovieTexture {
+url "animwater.gif"
+}
+}
+geometry DEF water-FACES IndexedFaceSet {
+ccw TRUE
+solid TRUE
+coord DEF water-COORD Coordinate { point [
+0 0 0, 57.925 0 22.039, -20.862 0 58.043, -57.865 0 -22.523, 
+20.239 0 -58.928]
+}
+texCoord DEF water-TEXCOORD TextureCoordinate { point [
+0.5011 0.49769, 0.99877 0.00049949, 0.00049952 0.0079468, 0.0064136 0.9995, 
+0.9995 0.99934]
+}
+coordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+texCoordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+}
+}
+]
+}
+DEF water02 Transform {
+translation 20.581 -0.38418 20.482
+rotation 0 1 0 -1.2217
+scale 0.336 0.336 0.336
+children [
+DEF water02-TIMER TimeSensor { loop TRUE cycleInterval 1.6667 },
+Shape {
+appearance Appearance {
+material Material {
+diffuseColor 0.63922 0.54902 0.19216
+ambientIntensity 0.15338
+specularColor 0.342 0.342 0.342
+shininess 0.354
+transparency 0.8
+emissiveColor 0.31961 0.27451 0.096078
+}
+texture MovieTexture {
+url "animwater.gif"
+}
+}
+geometry DEF water02-FACES IndexedFaceSet {
+ccw TRUE
+solid TRUE
+coord DEF water02-COORD Coordinate { point [
+0 0 0, 57.925 0 22.039, -20.862 0 58.043, -57.865 0 -22.523, 
+20.239 0 -58.928]
+}
+texCoord DEF water02-TEXCOORD TextureCoordinate { point [
+0.5011 0.49769, 0.99877 0.00049949, 0.00049952 0.0079468, 0.0064136 0.9995, 
+0.9995 0.99934]
+}
+coordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+texCoordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+}
+}
+]
+}
+DEF water01 Transform {
+translation 22.456 -0.38418 -18.53
+rotation 0 1 0 -1.2217
+scale 0.336 0.336 0.336
+children [
+DEF water01-TIMER TimeSensor { loop TRUE cycleInterval 1.6667 },
+Shape {
+appearance Appearance {
+material Material {
+diffuseColor 0.63922 0.54902 0.19216
+ambientIntensity 0.15338
+specularColor 0.342 0.342 0.342
+shininess 0.354
+transparency 0.8
+emissiveColor 0.31961 0.27451 0.096078
+}
+texture MovieTexture {
+url "animwater.gif"
+}
+}
+geometry DEF water01-FACES IndexedFaceSet {
+ccw TRUE
+solid TRUE
+coord DEF water01-COORD Coordinate { point [
+0 0 0, 57.925 0 22.039, -20.862 0 58.043, -57.865 0 -22.523, 
+20.239 0 -58.928]
+}
+texCoord DEF water01-TEXCOORD TextureCoordinate { point [
+0.5011 0.49769, 0.99877 0.00049949, 0.00049952 0.0079468, 0.0064136 0.9995, 
+0.9995 0.99934]
+}
+coordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+texCoordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+}
+}
+]
+}
+DEF water03 Transform {
+translation -20.41 -0.38418 19.872
+rotation 0 1 0 -1.2217
+scale 0.336 0.336 0.336
+children [
+DEF water03-TIMER TimeSensor { loop TRUE cycleInterval 1.6667 },
+Shape {
+appearance Appearance {
+material Material {
+diffuseColor 0.63922 0.54902 0.19216
+ambientIntensity 0.15338
+specularColor 0.342 0.342 0.342
+shininess 0.354
+transparency 0.8
+emissiveColor 0.31961 0.27451 0.096078
+}
+texture MovieTexture {
+url "animwater.gif"
+}
+}
+geometry DEF water03-FACES IndexedFaceSet {
+ccw TRUE
+solid TRUE
+coord DEF water03-COORD Coordinate { point [
+0 0 0, 57.925 0 22.039, -20.862 0 58.043, -57.865 0 -22.523, 
+20.239 0 -58.928]
+}
+texCoord DEF water03-TEXCOORD TextureCoordinate { point [
+0.5011 0.49769, 0.99877 0.00049949, 0.00049952 0.0079468, 0.0064136 0.9995, 
+0.9995 0.99934]
+}
+coordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+texCoordIndex [
+0, 2, 1, -1, 0, 3, 2, -1, 0, 4, 3, -1, 0, 1, 4, -1]
+}
+}
+]
+}

@@ -1,0 +1,574 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win98; I) [Netscape]">
+   <title>Welcome to Cybertown - The Virtual Community of the Future </title>
+   <base target="_self">
+<script language=javascript>
+myInfoWin = new infowin();
+
+myCustomWin = new customwin();
+
+myPollWin = new pollwin();
+
+function infowin()
+{
+ win = self;
+}
+
+function customwin()
+{
+ win = self;
+}
+
+function pollwin()
+{
+win = self;
+}
+
+function loadInfo(par)
+{
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myInfoWin.win && !myInfoWin.win.closed) {
+ closeInfoWin();
+}
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myCustomWin.win && !myCustomWin.win.closed) {
+ closeInfoWin();
+}
+
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myPollWin.win && !myPollWin.win.closed)
+{ closeInfoWin();}
+ myInfoWin.win = window.open(par, "info", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=620,height=450");
+ myInfoWin.win.focus();
+}
+
+function loadCustom(par,h,v)
+{
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myInfoWin.win && !myInfoWin.win.closed)
+{
+closeInfoWin();
+}
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myCustomWin.win && !myCustomWin.win.closed)
+{
+closeInfoWin();
+}
+
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myPollWin.win && !myPollWin.win.closed)
+{
+ closeInfoWin();
+}
+
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=' + h + ',height=' + v;
+ myCustomWin.win = window.open(par, "info",paramstring);
+ myCustomWin.win.focus();
+}
+
+
+
+
+
+
+
+
+
+function loadMap(par)
+{
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myInfoWin.win && !myInfoWin.win.closed) { closeInfoWin();}
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myCustomWin.win && !myCustomWin.win.closed) { closeInfoWin();}
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myPollWin.win && !myPollWin.win.closed)
+{
+ closeInfoWin();
+}
+ myInfoWin.win = window.open(par, "info", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=520,height=478");
+ myInfoWin.win.focus();
+}
+
+function closeInfoWin()
+{
+
+
+
+if (myInfoWin.win && !myInfoWin.win.closed)
+
+
+
+{
+
+
+
+ if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0)
+
+
+
+ {
+
+
+
+  myInfoWin.win.close();
+
+
+
+ }
+
+
+
+ else
+
+
+
+ {
+
+
+
+  myInfoWin.win.close();
+
+
+
+ }
+
+
+
+}
+
+
+
+if (myCustomWin.win && !myCustomWin.win.closed)
+
+
+
+{
+
+
+
+ if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0)
+
+
+
+ {
+
+
+
+  myCustomWin.win.close();
+
+
+
+ }
+
+
+
+ else
+
+
+
+ {
+
+
+
+  myCustomWin.win.close();
+
+
+
+ }
+
+
+
+}
+
+
+
+if (myPollWin.win && !myPollWin.win.closed)
+
+
+
+{
+
+
+
+ if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0)
+
+
+
+ {
+
+
+
+  myPollWin.win.close();
+
+
+
+ }
+
+
+
+ else
+
+
+
+ {
+
+
+
+  myPollWin.win.close();
+
+
+
+ }
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+<!--begin added this reset -->
+
+function jumpreset( par1, par2 )
+
+{
+
+        jump( par2 );
+
+        par1[0].selected = true;
+
+}
+
+<!--end added this reset -->
+
+
+
+
+
+function jump( par )
+
+
+
+{
+
+
+
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myInfoWin.win && !myInfoWin.win.closed)
+
+{ closeInfoWin();}
+
+
+
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myCustomWin.win && !myCustomWin.win.closed)
+
+{ closeInfoWin();}
+
+
+
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myPollWin.win && !myPollWin.win.closed)
+
+{ closeInfoWin();}
+
+
+
+
+
+var parArray = new Array(4);
+
+parArray = par.split(" ");
+
+var type = parArray[0];
+
+var url = parArray[1];
+
+var h = parArray[2];
+
+var v = parArray[3];
+
+
+
+
+
+
+
+
+
+
+
+ if (url != '')
+
+
+
+ {
+
+
+
+  if ( type == "top")
+
+
+
+  {
+
+
+
+   top.location.href = url;
+
+
+
+  }
+
+
+
+  else if ( type == "info")
+
+
+
+  {
+
+
+
+   loadInfo(url);
+
+
+
+  }
+
+
+
+        else if ( type == "custom")
+
+
+
+  {
+
+
+
+   loadCustom(url,h,v);
+
+
+
+  }
+
+
+
+  else if ( type == "place")
+
+
+
+  {
+
+
+
+   top.place.location.href = url;
+
+
+
+  }
+
+
+
+  else if ( type == "poll")
+
+
+
+  {
+
+
+
+   myPollWin.win=window.open(url,'poll','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=500');
+
+
+
+  }
+
+
+
+ }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+<!-- end of include common/loadinfo.tmpl -->
+<script language=javascript>
+
+
+function checksubmit()
+
+{
+
+ if ( document.loginform.NNM.value.length > 0 && document.loginform.PWD.value.length > 0 )
+
+  document.loginform.submit();
+
+
+
+}
+
+
+</script>
+</head>
+<body text="#e6e6e6" bgcolor="#000000" link="#e6e6e6" vlink="#e6e6e6" alink="#ffffff" MARGINWIDTH=0 LEFTMARGIN=0 MARGINHEIGHT=0 TOPMARGIN=0>
+<form action="http://www.cybertown.com/cgi-bin/cybertown/community?T_MCO=mothership" method="POST" target="_self" name=loginform>
+
+<input type=hidden name="ac" value="member"><input type=hidden name="imm" value="1"><input type=hidden name="ID" value="0107000000000000">
+
+<CENTER>
+
+<TABLE CELLSPACING="0" CELLPADDING="0"  WIDTH="735" BORDER="0">
+<TR>
+<TD ROWSPAN="3" VALIGN="MIDDLE" BGCOLOR="#000000"><a href="http://www.mothership.com"><IMG SRC="../images/action/mothershipcornerlogo.gif" BORDER="0"></A></TD>
+<TD ROWSPAN="3" BGCOLOR="#000000"><IMG SRC="X.gif" WIDTH="10"></TD>
+<TD BGCOLOR="#004056"><IMG SRC="X.gif" WIDTH="444" HEIGHT="10"></TD>
+<TD BGCOLOR="#000000" COLSPAN="2"><IMG SRC="X.gif" HEIGHT="10"></TD>
+</TR>
+
+<TR>
+
+<TD HEIGHT="60" VALIGN="TOP" ALIGN="RIGHT" BGCOLOR="#004056" COLSPAN="3">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide from old browsers
+OPERA = (navigator.userAgent.indexOf('Opera') != -1);
+NAV3 = (((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) == 3) && !OPERA));
+NAV4 = ((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) == 4)); 
+NAV6 = ((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) >= 5)); 
+IE = ((navigator.userAgent.indexOf('MSIE') != -1) || (navigator.userAgent == ""));
+WEBTV = (navigator.appName.indexOf('WebTV') != -1);
+
+now = new Date();
+random = now.getTime();
+
+// Modify to reflect site specifics
+site = "http://ads.scifi.com";
+target = "/SITE=MOTHERSHIP/AREA=COLONY/AAMSZ=468X60/ACC_RANDOM=";
+
+if (IE || WEBTV || NAV6){
+        document.write('<IFRAME SRC="' + site + '/hserver' + target + random + '?"'); 
+        document.write(' NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=468 HEIGHT=60></IFRAME>');
+} else if (NAV4){
+        document.write('<SCR' + 'IPT LANGUAGE="JavaScript1.1" SRC=' + site + '/jserver' + target + random + '">');
+        document.write('</SCR' + 'IPT>');
+} else if (OPERA || NAV3){
+        document.write('<A HREF="' + site + '/accipiter/adclick.exe' + target + random + '?">');
+        document.write('<IMG SRC="' + site + '/accipiter/nserver.exe' + target + random + '?"></A>');
+}
+// End Hide -->
+</SCRIPT>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="#004056"><IMG SRC="X.gif" WIDTH="444" HEIGHT="10"></TD>
+<TD BGCOLOR="#000000" COLSPAN="2"><IMG SRC="X.gif" HEIGHT="10"></TD>
+</TR>
+
+ <TR>
+        <TD ROWSPAN="2" WIDTH="156" BGCOLOR="#003040"><IMG SRC="X.gif" WIDTH="156"></TD>
+        <TD ROWSPAN="2" WIDTH="10" BGCOLOR="#000000"><IMG SRC="X.gif" WIDTH="10"></TD>
+        <TD WIDTH="444" BGCOLOR="#004056" ALIGN="CENTER">
+<IMG SRC="X.gif" HEIGHT="15"><BR>
+<img SRC="MothershipTitle.gif" ALT="enter" height=20 width=444 BORDER="0"><BR><BR>
+<img SRC="ColonyTitle.gif" ALT="enter" height=20 width=444 BORDER="0"><BR>
+<BR><BR>
+<!img SRC="enter.gif" ALT="enter" height=60 width=444 BORDER="0"><!BR>
+<A HREF="whatis.html"><img SRC="entership.jpg" ALT="ship"  height="190" width="444" BORDER="0"></A><BR>
+<IMG SRC="X.gif" WIDTH="10" HEIGHT="10"><BR>
+
+
+<TABLE WIDTH="424" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+
+        <TR>
+      <TD BGCOLOR="#002430" ALIGN="left"><a href="/cgi-bin/cybertown/community?ID=0107000000000000&NNM=Visitor&login=true"><img SRC="visitor.gif" ALT="visitor" BORDER=0 height=20 width=107></a></TD><TD ALIGN="right" BGCOLOR="#002430"><IMG SRC="visitortext.gif"></TD>
+        </TR>
+
+        <TR>
+                <TD COLSPAN="2"><IMG SRC="X.gif" HEIGHT="10"></TD>
+        </TR>
+
+        <TR>
+      <TD BGCOLOR="#002430" ALIGN="left"><a href="/cgi-bin/cybertown/register?T_MCO=mothership"><img SRC="immigrate.gif" ALT="immigrate" BORDER="0" height="20" width="121"></a></td><TD ALIGN="right" BGCOLOR="#002430"><IMG SRC="immigratetext.gif"></TD>
+       </TR>
+
+        <TR>
+                <TD COLSPAN="2"><IMG SRC="X.gif" HEIGHT="10"></TD>
+        </TR>
+
+        <TR>
+          <TD BGCOLOR="#002430" ALIGN="left"><img SRC="member.gif" ALT="member" BORDER=0 height=20 width=83></TD><TD ALIGN="right" BGCOLOR="#002430"><IMG SRC="membertext.gif"></TD>
+       </TR>
+
+
+        <TR>
+          <TD COLSPAN="2" ALIGN="right" BGCOLOR="#003040"><IMG SRC="X.gif" WIDTH="1" HEIGHT="10"><BR><img SRC="nickname.gif" ALT="nickname" height="10" width="64">&nbsp&nbsp<input type=text name="NNM" size="15" value="" maxlength="16" tabindex="1">&nbsp;&nbsp;<BR><IMG SRC="X.gif" WIDTH="1" HEIGHT="10"></TD>
+        </TR>
+
+
+        <TR>
+          <TD COLSPAN="2" ALIGN="right" BGCOLOR="#003040"><img SRC="password.gif" ALT="password" height="10" width="71">&nbsp&nbsp<input type=password name="PWD" size="15" value="" maxlength="16" tabindex="2" onchange="checksubmit()">&nbsp;&nbsp;<BR><IMG SRC="X.gif" WIDTH="1" HEIGHT="10"></TD>
+        </TR>
+
+        <TR>
+          <TD COLSPAN="2" ALIGN="right" BGCOLOR="#003040"><input type="submit" value="ENTER" tabindex="3"> &nbsp; &nbsp;<BR><IMG SRC="X.gif" WIDTH="1" HEIGHT="10"></TD>
+        </TR>
+
+
+
+        <TR>
+          <td ALIGN="center" COLSPAN="2"><BR><font face="Arial" size="-1">Immigration or Login Problems? Check the Quick <a href="javascript:loadInfo('./quickhelp.html')">Help</a>!</font><br><font face="Arial" size="-1">If you want to change your Password, click <a href="http://www.cybertown.com/cgi-bin/cybertown/register?ac=chpass">here</a>.</font>
+          <br><font face="Arial"><font size=-1>If you forgot your Password, click <a href="http://www.cybertown.com/cgi-bin/cybertown/register?ac=forgot">here</a> and we will <a href="http://www.cybertown.com/cgi-bin/cybertown/register?ac=forgot">email</a> it to you.&nbsp;</font><BR><BR></td>
+        </TR>
+
+
+<TR><TD COLSPAN="2"><IMG SRC="/places/mothership/images/html/X.gif" HEIGHT="10"></TD></TR>
+<TR>
+ <TD COLSPAN="2" BGCOLOR="#002430" ALIGN="CENTER" VALIGN="MIDDLE">
+   <FONT FACE="arial,sans-serif" SIZE="2">DOWNLOAD 3D VIEWER</FONT>
+ </TD>
+</TR>
+<TR>
+ <TD COLSPAN="2" BGCOLOR="#003040"><IMG SRC="/places/mothership/images/html/X.gif" HEIGHT="10"></TD>
+</TR>
+<TR>
+ <TD COLSPAN="2" BGCOLOR="#003040" ALIGN="CENTER" VALIGN="MIDDLE">
+  <A HREF="javascript:loadCustom('http://www.blaxxun.com/c/s?cat=7&sub=5&url=/products/contact/index1.html','750','650');" target="_self">
+   <IMG SRC="/images/contactbtn.gif" BORDER="0">
+  </A>
+ </TD>
+</TR>
+ <TD COLSPAN="2" BGCOLOR="#003040"><IMG SRC="/places/mothership/images/html/X.gif" HEIGHT="10"></TD>
+</TR>
+<TR><TD COLSPAN="2"><IMG SRC="/places/mothership/images/html/X.gif" HEIGHT="10"></TD></TR>
+
+</table></TD>
+        <TD ROWSPAN="2" WIDTH="10" BGCOLOR="#000000"><IMG SRC="X.gif" WIDTH="10"></TD>
+        <TD ROWSPAN="2" WIDTH="115" BGCOLOR="#003040"><IMG SRC="X.gif" WIDTH="115"></TD>
+ </TR>
+        <TR>
+	  <TD VALIGN="BOTTOM" ALIGN="CENTER" BGCOLOR="#002430"> 
+
+	    <IMG SRC="X.gif" HEIGHT="5" VSPACE="0" BORDER="0"><BR> 
+	    <FONT COLOR="#738C94" SIZE="-2" FACE="arial, helvetica, sans serif">Mothership is a registered trademark of <A CLASS="clean" HREF="http://www.scifi.com">SCIFI.COM</A><BR>© <A CLASS="clean" HREF="http://www.scifi.com">SCIFI.COM</A>, all rights reserved.<BR> 
+	    <IMG SRC="X.gif" HEIGHT="7" VSPACE="0" BORDER="0"><BR></FONT> 
+
+	  </TD> 
+        </TR>
+
+</TABLE>
+
+
+
+</center>
+
+
+</form>
+</body>
+</html>

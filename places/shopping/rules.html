@@ -1,0 +1,219 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en] (Win98; U) [Netscape]">
+   <title>Cybertown - Shopping and Objects</title>
+</head>
+<body text="#FFFFFF" bgcolor="#000000" link="#00FF00" vlink="#FFFF00">
+
+<center>
+<h2>
+Rules for Creating Objects for Cybertown</h2></center>
+
+<center><font size=+1>Here are a few rules for creating Objects to be sold
+in the Mall at Cybertown. In designing Cybertown, great efforts are made
+to create VR which runs well on a wide range of computers, even older systems.
+These rules are created to promote good VRML building habits, which if
+followed, will result in objects that perform well for everyone in Cybertown.</font>
+<p><font size=+1>Objects are reviewed by experienced VRML authors before
+they are approved for Cybertown. The following rules are the criteria on
+which approval or rejection will be based.</font></center>
+
+<p><b><i><font size=+2>Nodes not to include in Objects</font></i></b>
+<p>
+<hr ALIGN=LEFT WIDTH="50%">
+<p>The following nodes should not be included in the VRML code you upload
+to the Mall. Any Objects containing the following nodes, will be refused.
+Of course if you remove the offending nodes from your Object code, the
+Objects can be re-submitted for approval.
+<p><b><i>Viewpoints</i></b>
+<p>Extra viewpoints associated with objects can cause confusion. They show
+up in the viewpoint list just like viewpoints that are part of the world.
+It's hard to predict where an owner will place an Object. Quite likely
+a viewpoint in an object will cause a viewer using it to beam into a wall,
+or some other inconvenient position.
+<br>&nbsp;
+<p><b><i>Lights</i></b>
+<p>The VRML worlds in Cybertown are thoughtfully lit to look their best.
+Extra lights in an Object can light a world too brightly, and make it appear
+washed out. Also, extra lighting is one of the worst performance drains
+in 3D applications. Too many lights will make slower computers bog and
+lag. Even though some lights are acceptable in specific situations, please
+use them sparingly, out of respect for your fellow Cybertonians.
+<ul>
+<li>
+DirectionalLights are strictly forbidden. Even though DirectionalLights
+cause little performance drain, they affect all objects in a world, regardless
+of distance. Extra DirectionalLights tend to cause worlds to appear washed
+out.</li>
+
+<li>
+Pointlights and SpotLights are acceptable in Objects such as lamps, where
+they a functional part of the Object. If you include one of these type
+of lights, you must also include a switch, so users can turn off the light.
+These sorts of lights quickly cause slower computers to perform poorly.</li>
+</ul>
+<b><i>NavigationInfo and Backgrounds</i></b>
+<p>These are less important nodes to avoid. Contact will simply ignore
+them if the are part of an Object or Avatar. In some rare situations though,
+they can cause problems. Please avoid using them.
+<p><b><i>Inlines</i></b>
+<p>We ask that Objects do not contain Inlines for two reasons.
+<ul>
+<li>
+Each time an Inline is loaded, the browser needs to make another http call.
+Too many separate connections competing for bandwidth can cause a variety
+of problems. In designing Cybertown, we avoid using Inlines whenever possible
+for this reason, and ask that you do also.</li>
+
+<li>
+We hope that Cybertown will be around for a long time. Inlines in Objects
+can lead to broken links, and errors as people change service providers,
+or get busy an forget to maintain a set of files. Help us avoid this possible
+problem in the future. Upload all your code, and we will maintain the files
+for you.</li>
+</ul>
+<b><i><font size=+2>Other Things to Consider</font></i></b>
+<p>
+<hr ALIGN=LEFT WIDTH="50%">
+<br><b><i>Animations</i></b>
+<p>Be careful with animations.&nbsp; Looping animations that run continuously
+are quite likely to cause some user's browser to bog.&nbsp; Objects containing
+too many looping animations, or a very complex shape that is continuously
+animated may be rejected.
+<p>If you choose to use animations in your Objects, please make them the
+so that they can be turned off , or are triggered by a user click.&nbsp;
+If you would like to give an animation the appearance of a constantly running
+animation, you can use a VisibilitySensor to turn the animation off when
+the Object is out of the user's view.
+<blockquote>&nbsp;
+<br>Advanced Tip:
+<br>To use a VisibilitySensor, as mentioned above:&nbsp; ROUTE&nbsp; the
+isActive EventOut of a VisibilitySensor to the set_enabled EventIn of the
+clocks that run your animations.&nbsp;&nbsp; The VisibilitySensor should
+be in the same grouping node as your Object.&nbsp;&nbsp;&nbsp;&nbsp; This
+will disable the clock when the Object is outside the user's view, and
+stop the animation.&nbsp;&nbsp; When tha Object again enters the user's
+view, the clock will be re-enabled anf the animation will begin again.</blockquote>
+
+<p><b><i>External Links</i></b>
+<p>For the same reasons we ask that you avoid Inlines, please avoid using
+Anchors or other nodes linked to sources outside Cybertown. Creating Objects
+that are spurious links to a web page is strongly discouraged. If you have
+an especially interesting and beneficial application, feel free to run
+it by the Mall staff. A special exception <i>might </i>be made. Otherwise
+avoid external links.
+<p><b><i>Appropriate Scale</i></b>
+<p>Objects created for Cybertown should be scaled to look correct in Cybertown
+environments. Exacting scale is not mandatory, in fact you might consider
+making Objects slightly (25%) bigger than in real life. Cybertown environments
+tend to be designed slightly larger to make navigation easier. Objects
+that are too big, or too small will be rejected, but can be re-scaled and
+resubmitted.
+<p><b><i>No Big Objects</i></b>
+<p>The Object system in Cybertown is not created to accommodate large objects
+such as additional rooms for houses, very large trees, etc. A good rule
+of thumb, is that any Object larger than 3 meters in any dimension is too
+big.
+<p><b><i>File size</i></b>
+<p>The following limits on file sizes are intended to keep download time
+in a reasonable range. Also, the limit on VRML file sizes is intended to
+represent a reasonable complexity. If an Object is too complex, it will
+bog and lag users computers. Please use good judgment for the sake of your
+fellow Cybertonians.
+<ul>
+<li>
+VRML files should be no larger than 40k</li>
+
+<li>
+Texture files should be no more than 20k, and should be 128 x 128 pixels
+for maximum efficiency</li>
+
+<li>
+Sound files should be no larger than 20k</li>
+
+<li>
+the cumulative size of all of an Object's files should not exceed 60k</li>
+</ul>
+Also please remember to gzip your VRML files.
+<p><b><i>Position</i></b>
+<p>All objects should be positioned so they rest on the ground.
+<p>In Cybertown, the center of a SharedObject (&lt;0 0 0>) in local coordinates
+is NOT the bottom of the object. Shared Objects are placed 1.75 meters
+above the ground. The bottom of a SharedObject must be placed at &lt;0
+-1.75 0> in local coordinates.
+<p>This is a little tricky.
+<p>Look at the example below. It is a floor standing fan, which was uploaded
+as an object.
+<p><img SRC="place.jpg" height=270 width=456>
+<p>First, remember that coordinates are relative.
+<ul>
+<li>
+The fan has a set of coordinates in the .wrl file that defines the fan.
+These coordinates are called <i>local coordinates</i>.</li>
+
+<li>
+The world in which the fan Object will be placed has it's own set of coordinates
+. These are <i>global coordinates</i>.</li>
+
+<li>
+The browser determines where to put the fan, by moving the &lt;0 0 0> coordinate
+of the <i>local coordinates </i>to fan's position expressed as a <i>global
+coordinate</i>. The the browser draws the fan.</li>
+</ul>
+Second, remember that:
+<ul>
+<li>
+When an Object is loaded into a world in Cybertown, it is placed 1.75 meters
+off the floor, or at ' <i>+1.75 y </i>'.</li>
+
+<li>
+This is so that when you beam to the Object, your viewpoint remains at
+eye level (+1.75 y). Not at 0 y, or floor level.</li>
+
+<li>
+This is a <i>global coordinate</i>.</li>
+</ul>
+Third, for the fan to work well as an Object:
+<ul>
+<li>
+The &lt;0 0 0> of the fan's <i>local coordinates</i> must be in the middle
+of the fan blades, NOT at the base of the fan.</li>
+
+<li>
+Viewed as a VRML file, and not in Cybertown as an Object, the bottom of
+the fan will hang below the floor, with the base at -1.75 y.</li>
+</ul>
+Combine all this together and you get this logic:
+<ul>
+<li>
+The base of the fan in local coordinates is at -1.75 y.</li>
+
+<li>
+When the fan is viewed in Cybertown as an Object, it is placed at + 1.75
+y.</li>
+
+<li>
+(-1.75 y ) + (+1.75 y) = 0 y</li>
+
+<li>
+The base of the fan rests on the floor.</li>
+</ul>
+This concept is equally important for Objects which would naturally
+<i>not
+</i>rest
+on the floor (such as a wall hanging picture). Cybertown uses this positioning
+to place Objects properly in the displays, in the Mall. Poorly positioned
+Objects will look funny on display and most likely not sell well. Please
+make certain that the bottom of your object, is at y = -1.75.
+<p><b><i>Copyrighted Material</i></b>
+<p>Any Object containing material copyrighted by anyone other than the
+person submitting the object will be rejected. We ask that our users respect
+other peoples creative rights, just as we respect the creative rights of
+our users.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

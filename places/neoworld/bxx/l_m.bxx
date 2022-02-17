@@ -1,0 +1,64 @@
+ 
+### blaxxun CCpro - place definition file  
+### ------------------------------------------  
+server                          ww6.blaxxun.com  
+port                            2000 
+scene                           http://www.colonycity.com/places/neoworld/bxx/l_m.bxx Energizer Booth  
+
+3dscene                         http://207.36.91.90/morph/energy/energizer.wrl
+ 
+sname                   Energizer Booth  
+
+message                 <$NNM>, time to rest up and prepare to fight again!   
+
+
+  
+### Authentication  
+authenticationid                <$MID>  
+authenticationpw                <$COOKIE>  
+nickname                        <$NNM>  
+protectnickname         1  
+protectavatarurl        1
+
+avatarhorizon     300
+maxneighbourspp   15
+nochatdetails     1
+  
+
+
+### JoinMessage
+joinmessage             0
+ 
+
+
+### Voice  
+voicesupport            1  
+clientvoiceenable       1  
+botvoiceenable          1  
+
+
+### Diverse  
+noblaxxunhelp           1
+noblaxxunicon           0  
+useversionserver        0  
+listtabflag                             100000000  
+
+htmlframe                               HTML  
+framesizes                              60  
+uselastscene    0  
+  
+  
+### Colors  
+logcolor        0  
+panelbackrgb            0,80,0  
+paneltextrgb            0,223,0  
+  
+### Chat colors  
+inputtextchatrgb        255,255,0  
+systemtextchatrgb       0,255,220  
+historytextchatrgb      250,250,250  
+bottextchatrgb          0,195,255  
+owntextchatrgb          255,255,0  
+othertextchatrgb        255,160,0  
+ 
+  

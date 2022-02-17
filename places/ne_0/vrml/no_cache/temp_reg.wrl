@@ -1,0 +1,12 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Reg[exposedField SFString url exposedField SFString mis]["http://www.colonycity.com/events/morph2/vrml/no_cache/reg.wrl#Reg"] 
+
+
+Transform{ translation -501.787 -32.0459 1680.83 rotation 0 -1 0 0.580074 children[
+Reg{url"bgldfhdf" mis"1"}
+]}
+
+Transform{ translation 1279.89 -40.7272 -1676.08 rotation 0 1 0 1.97982 children[
+Reg{url"bgldfhdf" mis"1"}
+]}

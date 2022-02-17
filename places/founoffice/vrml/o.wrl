@@ -1,0 +1,754 @@
+#VRML V2.0 utf8
+
+PROTO SharedEvent [
+field SFBool local FALSE
+exposedField SFString   name    "event"  
+exposedField SFString   type    "SFTime" 
+eventIn SFBool  boolFromServer    eventIn SFColor colorFromServer
+eventIn SFFloat floatFromServer   eventIn SFInt32 int32FromServer
+eventIn SFRotation rotationFromServer 
+eventIn SFString stringFromServer eventIn SFTime timeFromServer
+eventIn SFVec2f vec2fFromServer   eventIn SFVec3f vec3fFromServer  
+eventOut SFBool boolToServer      eventOut SFColor colorToServer  
+eventOut SFFloat floatToServer    eventOut SFInt32 int32ToServer  
+eventOut SFRotation rotationToServer  
+eventOut SFString stringToServer  eventOut SFTime timeToServer  
+eventOut SFVec2f vec2fToServer    eventOut SFVec3f vec3fToServer  
+eventIn SFBool  set_bool    eventIn SFColor set_color  
+eventIn SFFloat set_float   eventIn SFInt32 set_int32  
+eventIn SFRotation set_rotation  
+eventIn SFString set_string eventIn SFTime set_time  
+eventIn SFVec2f set_vec2f   eventIn SFVec3f set_vec3f  
+eventOut SFBool bool_changed     eventOut SFColor color_changed  
+eventOut SFFloat float_changed   eventOut SFInt32 int32_changed  
+eventOut SFRotation rotation_changed  
+eventOut SFString string_changed eventOut SFTime  time_changed  
+eventOut SFVec2f vec2f_changed   eventOut SFVec3f vec3f_changed  
+]{ 
+Script {
+field SFBool local IS local 
+#eventIn SFString set_name IS set_name  eventIn SFString set_type IS set_type eventOut SFString name_changed IS name_changed                                       eventOut SFString  type_changed IS type_changed
+eventIn SFBool    boolFromServer      IS boolFromServer 
+eventIn SFColor   colorFromServer     IS colorFromServer 
+eventIn SFFloat   floatFromServer     IS floatFromServer 
+eventIn SFInt32   int32FromServer     IS int32FromServer 
+eventIn SFRotation rotationFromServer IS rotationFromServer 
+eventIn SFString  stringFromServer    IS stringFromServer 
+eventIn SFTime    timeFromServer      IS timeFromServer 
+eventIn SFVec2f   vec2fFromServer     IS vec2fFromServer 
+eventIn SFVec3f   vec3fFromServer     IS vec3fFromServer 
+eventOut SFBool    boolToServer      IS boolToServer 
+eventOut SFColor   colorToServer     IS colorToServer 
+eventOut SFFloat   floatToServer     IS floatToServer 
+eventOut SFInt32   int32ToServer     IS int32ToServer 
+eventOut SFRotation rotationToServer IS rotationToServer 
+eventOut SFString  stringToServer    IS stringToServer 
+eventOut SFTime    timeToServer      IS timeToServer 
+eventOut SFVec2f   vec2fToServer     IS vec2fToServer 
+eventOut SFVec3f   vec3fToServer     IS vec3fToServer
+eventIn SFBool    set_bool    IS set_bool 
+eventIn SFColor   set_color   IS set_color 
+eventIn SFFloat   set_float   IS set_float 
+eventIn SFInt32   set_int32   IS set_int32 
+eventIn SFRotation set_rotation IS set_rotation 
+eventIn SFString  set_string  IS set_string 
+eventIn SFTime    set_time    IS set_time 
+eventIn SFVec2f   set_vec2f   IS set_vec2f 
+eventIn SFVec3f   set_vec3f   IS set_vec3f
+eventOut SFBool    bool_changed      IS bool_changed 
+eventOut SFColor   color_changed     IS color_changed 
+eventOut SFFloat   float_changed     IS float_changed 
+eventOut SFInt32   int32_changed     IS int32_changed 
+eventOut SFRotation rotation_changed IS rotation_changed 
+eventOut SFString  string_changed    IS string_changed 
+eventOut SFTime    time_changed      IS time_changed 
+eventOut SFVec2f   vec2f_changed     IS vec2f_changed 
+eventOut SFVec3f   vec3f_changed     IS vec3f_changed 
+url "vrmlscript: 
+function set_name(value, time) { name_changed = value; } 
+function set_type(value, time) { type_changed = value; } 
+function boolFromServer (value, time) { bool_changed = value; } 
+function colorFromServer (value, time) { color_changed = value; } 
+function floatFromServer (value, time) { float_changed = value; } 
+function int32FromServer (value, time) { int32_changed = value; } 
+function rotationFromServer (value, time) {rotation_changed = value; } 
+function stringFromServer (value, time) { string_changed = value; } 
+function timeFromServer (value, time) { time_changed = time; } 
+function vec2fFromServer (value, time) { vec2f_changed = value; } 
+function vec3fFromServer (value, time) { vec3f_changed = value; } 
+function set_bool (value, time) {boolToServer = value;if(local){boolFromServer(value,time);}} 
+function set_color (value, time) { colorToServer = value;if(local){colorFromServer(value,time);}} 
+function set_float (value, time) {floatToServer = value; if(local){floatFromServer(value,time);}} 
+function set_int32 (value, time) {int32ToServer = value; if(local){int32FromServer(value,time);}} 
+function set_rotation (value, time) {rotationToServer = value;if(local){rotationFromServer(value,time);}} 
+function set_string (value, time) {stringToServer = value;}  //if(local){stringFromServer(value,time);}} 
+function set_time (value, time) {timeToServer = value;if(local){timeFromServer(value,time);}} 
+function set_vec2f (value, time) {vec2fToServer = value;if(local){vec2fFromServer(value,time);}} 
+function set_vec3f (value, time) {vec3fToServer = value;if(local){vec3fFromServer(value,time);}} 
+"}
+} #END SharedEvent PROTO
+
+PROTO BlaxxunZone [#PROTO supplied by BLAXXUN  
+eventIn         MFNode   addEvents  
+eventIn         MFNode   removeEvents  
+eventIn         MFNode   addAvatars  
+eventIn         MFNode   removeAvatars  
+exposedField    MFNode   events NULL 
+exposedField    MFNode   avatars NULL 
+exposedField    SFString myAvatarURL "" 
+exposedField    SFString myAvatarName ""
+exposedField    SFFloat  number_avatars 0
+eventOut        MFNode   avatars_added 
+eventOut        MFNode   avatars_removed
+exposedField    MFNode   avatarLOD []
+exposedField    MFFloat   avatarRange []
+]{ 
+Transform { 
+addChildren IS addEvents 
+removeChildren IS removeEvents 
+children IS events 
+} 
+Transform { 
+        addChildren IS addAvatars
+        removeChildren IS removeAvatars 
+        children IS avatars 
+}
+}# END BlaxxunZone
+
+
+Group{
+children[
+
+DEF SharedZone BlaxxunZone{
+events[
+DEF Pic1 SharedEvent{name "F_picture1"}
+DEF Pic2 SharedEvent{name "F_picture2"}
+]}
+
+NavigationInfo {
+avatarSize [ 0.25, 1.75, 0.75 ]
+headlight FALSE
+speed 1
+type "WALK"
+visibilityLimit 200
+}
+
+Viewpoint{position 0 1.75 15 orientation 0 0 1 0 description "Enter"}
+Viewpoint{position 0 1.75 -7 orientation 0 1 0 3.142 description "At the Desk"} 
+Viewpoint{position 0 1.65 -6 orientation 0 1 0 3.142 description "Computer Screen"}
+
+PointLight {location 0 2 0}
+DirectionalLight{intensity 0.64 color 1 1 1 direction 0 1 0}
+DirectionalLight{intensity 1 color 1 1 1 direction 0.5 -0.5 1}
+DirectionalLight{intensity 0.87 color 1 1 1 direction -0.25 0 -1}
+
+Transform {children [
+
+DEF walls Transform {
+children Shape {
+appearance Appearance{material DEF _0 Material {}texture ImageTexture{url "../images/wall.jpg"}}
+geometry DEF _1 IndexedFaceSet {
+coord Coordinate {point [ -1 0 -14.5,-2 5 -14,1 0 -14.5,2 5 -14,-10.5 0 -9,-11 5 -8,-14.5 0 -1,-14 5 -2,-14.5 0 1,-14 5 2,-10.5 0 9,-11 5 8,-9 0 -10.5,-8 5 -11,10.5 0 9,11 5 8,14.5 0 1,14 5 2,14.5 0 -1,14 5 -2,10.5 0 -9,11 5 -8,9 0 -10.5,8 5 -11,-3.5 9 -8.75,3.5 9 -8.75,-9 9 -3.5,-9 9 3.5,9 9 3.5,9 9 -3.5]}
+coordIndex [ 6, 4, 5, 7, -1, 10, 8, 9,11, -1, 12, 0, 1, 13, -1, 16,14, 15, 17, -1, 20, 18, 19, 21,-1, 2, 22, 23, 3, -1, 13, 1,24, -1, 3, 23, 25, -1, 7, 5,26, -1, 11, 9, 27, -1, 17, 15,28, -1, 21, 19, 29, -1 ]
+texCoord TextureCoordinate {point [ 0 1,0.125 0.5,0 1,0.125 0.5,0 1,0.125 0.5,1 1,0.875 0.5,0 1,0.125 0.5,1 1,0.875 0.5,1 1,0.875 0.5,1 1,0.875 0.5,0 1,0.125 0.5,1 1,0.875 0.5,0 1,0.125 0.5,1 1,0.875 0.5,0.5 0,0.5 0,0.5 0,0.5 0,0.5 0,0.5 0]}
+}
+}}
+
+DEF columns Transform {
+children Shape {
+appearance Appearance {material Material {}texture ImageTexture {url "../images/column.jpg"}}
+geometry IndexedFaceSet {
+coord Coordinate {point [ 9 0 -9,13.5 0 0,12 5 0,8 5 -8,0 0 -13.5,0 5 -12,-9 0 -9,-8 5 -8,-13.5 0 0,-12 5 0,-1 0 -14.5,-2 5 -14,1 0 -14.5,2 5 -14,-10.5 0 -9,-11 5 -8,-14.5 0 -1,-14 5 -2,-14.5 0 1,-14 5 2,-9 0 -10.5,-8 5 -11,14.5 0 1,14 5 2,14.5 0 -1,14 5 -2,10.5 0 -9,11 5 -8,9 0 -10.5,8 5 -11,6.5 9 0,4.25 9 -4.5,0 9 -6.5,-4.25 9 -4.5,-6.5 9 0,-3.5 9 -8.75,3.5 9 -8.75,-9 9 -3.5,-9 9 3.5,9 9 3.5,9 9 -3.5]}
+coordIndex [ 10, 4, 5, 11, -1, 4, 12, 13,5, -1, 14, 6, 7, 15, -1, 8,16, 17, 9, -1, 18, 8, 9, 19,-1, 6, 20, 21, 7, -1, 1, 22,23, 2, -1, 24, 1, 2, 25, -1,0, 26, 27, 3, -1, 28, 0, 3,29, -1, 11, 5, 32, 35, -1, 33,7, 21, 35, -1, 32, 5, 13, 36,-1, 29, 3, 31, 36, -1, 15, 7,33, 37, -1, 34, 9, 17, 37, -1,19, 9, 34, 38, -1, 30, 2, 23,39, -1, 25, 2, 30, 40, -1, 31,3, 27, 40, -1 ]
+texCoord TextureCoordinate{point[0.666 0,0.666 0,0.666 0.5,0.666 0.5,0.666 0,0.666 0.5,0.666 0,0.666 0.5,0.666 0,0.666 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,0.36 0,0.152 0.5,1 1,1 1,1 1,1 1,1 1,0 1,0 1,0 1,0 1,0 1,0 1]}
+}
+}}
+
+DEF entryway Transform {
+children Shape {
+appearance Appearance {material Material{}texture ImageTexture {url "../images/column.jpg"}}
+geometry IndexedFaceSet {
+coord Coordinate {point [ -8 5 9,-9 0 10,-9 0 15,-8 5 15,9 0 10,8 5 15,8 5 9,-10.5 0 9,-11 5 8,9 0 15,10.5 0 9,11 5 8,-3 9 5,-3 9 15,3 9 15,3 9 5,-9 9 3.5,9 9 3.5]}
+coordIndex [ 6, 11, 10, 4, -1, 9, 5, 6,4, -1, 7, 8, 0, 1, -1, 0,3, 2, 1, -1, 3, 0, 12, 13,-1, 6, 5, 14, 15, -1, 12, 0,8, 16, -1, 11, 6, 15, 17, -1 ]
+texCoord TextureCoordinate {point [ 0.666 0.5,0.666 0,0.1 0,0 0.5,0.666 0,0 0.5,0.666 0.5,0.36 0,0.152 0.5,0.1 0,0.36 0,0.152 0.5,1 1,0 1,0 1,1 1,0 1,0 1]}
+texCoordIndex [ 6, 11, 10, 4, -1, 9, 5, 6,4, -1, 7, 8, 0, 1, -1, 0,3, 2, 1, -1, 3, 0, 12, 13,-1, 6, 5, 14, 15, -1, 12, 0,8, 16, -1, 11, 6, 15, 17, -1]
+}
+}}
+
+DEF ceiling Transform {
+children Shape {
+appearance Appearance {material Material {diffuseColor .33 .34 .6 specularColor 1 1 1 shininess 1}}
+geometry IndexedFaceSet{creaseAngle 3
+coord Coordinate {point [ -6.5 9 0,-9 9 3.5,-9 9 -3.5,-4.25 9 -4.5,-3.5 9 -8.75,0 9 -6.5,3.5 9 -8.75,4.25 9 -4.5,9 9 -3.5,6.5 9 0,9 9 3.5,3 9 5,3 9 15,-3 9 15,-3 9 5,0 10 0]}
+coordIndex [ 11, 12, 13, 14, -1, 1, 0, 15,14, -1, 15, 11, 14, -1, 15, 9,10, 11, -1, 0, 2, 3, 15, -1,3, 4, 5, 15, -1, 5, 6, 7,15, -1, 7, 8, 9, 15, -1 ]
+texCoord TextureCoordinate {point [ 0.138889 0.833333,0 0.638889,0 1.02778,0.263889 1.08333,0.305556 1.31944,0.5 1.19444,0.694444 1.31944,0.736111 1.08333,1 1.02778,0.861111 0.833333,1 0.638889,0.666667 0.555556,0.666667 0,0.333333 0,0.333333 0.555556,0.5 0.833333]}
+texCoordIndex [ 11, 12, 13, 14, -1, 1, 0, 15,14, -1, 15, 11, 14, -1, 15, 9,10, 11, -1, 0, 2, 3, 15, -1,3, 4, 5, 15, -1, 5, 6, 7,15, -1, 7, 8, 9, 15, -1]
+}
+}}
+
+DEF Floor Transform {
+children Shape {
+appearance Appearance {
+material USE _0
+texture ImageTexture{url "../images/bfloor.jpg"}
+textureTransform TextureTransform{scale 8 8}
+}
+geometry IndexedFaceSet {
+coord Coordinate {point [ -10 0 10,-10 0 -10,10 0 -10,10 0 10,0 0 -15,-15 0 0,15 0 0,-10 0 10,10 0 10,-10 0 15,10 0 15]}
+coordIndex [ 3, 2, 1, 0, -1, 4, 1, 2,-1, 5, 0, 1, -1, 6, 2, 3,-1, 7, 8, 3, 0, -1, 9, 10,8, 7, -1 ]
+}
+}}
+
+DEF doorframe Transform {
+children Shape {
+appearance Appearance {material Material { ambientIntensity 0.222222 diffuseColor 0.09 0.03 0 specularColor 0.22 0.1 0.1 shininess 0.05}}
+geometry IndexedFaceSet {
+coord Coordinate {point [ -9 0 15,-8 5 15,8 5 15,9 0 15,-3 9 15,3 9 15,8 5 15,3 9 15,5 5 14.72,1.875 7.5 14.72,-1.875 7.5 14.72,1.875 7.5 14.72,-5 5 14.72,-5 0 14.72,5 5 14.72,5 0 14.72,4.875 5 16,-5.125 5 16,-5.125 0 16,4.875 5 16,4.875 0 16,1.75 7.5 16,-2 7.5 16,1.75 7.5 16]}
+coordIndex [ 5, 2, 6, 7, -1, 6, 7, 9,8, -1, 4, 5, 11, 10, -1, 7,5, 11, 9, -1, 1, 4, 10, 12,-1, 0, 1, 12, 13, -1, 5, 2,14, 11, -1, 2, 6, 8, 14, -1,2, 3, 15, 14, -1, 13, 12, 17,18, -1, 14, 8, 16, 19, -1, 14,15, 20, 19, -1, 8, 9, 21, 16,-1, 12, 10, 22, 17, -1, 10, 11,23, 22, -1, 9, 11, 23, 21, -1,11, 14, 19, 23, -1]
+}
+}}
+
+DEF door Transform {
+children Shape {
+appearance Appearance {
+material Material { diffuseColor 0.28 0.09 0.13 specularColor 0.28 0.11 0.14 shininess 0.13}
+texture ImageTexture{url "../images/door.jpg"}
+}
+geometry IndexedFaceSet {
+coord Coordinate {point [ 1.75 7.5 16,4.875 5 16,-5.125 0 16,-5.125 5 16,0 0 16,-2 7.5 16,4.875 0 16]}
+coordIndex [ 0, 1, 6, 4, 2, 3, 5, -1 ]
+texCoord TextureCoordinate {point [ 1 0.67,0 0,0 0.67,0.5 0,0.31 1,1 0,0.68 1]}
+texCoordIndex [ 6, 0, 5, 3, 1, 2, 4, -1 ]
+}
+}}
+]}
+
+DEF desk Transform{ translation 0 0 3
+children Shape{
+appearance Appearance{material Material{diffuseColor 0 0 0 specularColor 0.72 0.72 0.72 shininess 0.18}}
+geometry IndexedFaceSet{
+coord Coordinate {point [-7 1 -5.65,7 1 -5.65,-2.25 1 -8,-9 1 -0.65,9 1 -0.65,-6 1 0.35,6 1 0.35,4.375 1 -4.15,-4.375 1 -4.15,2.25 1 -8,-1 1 -5.4,1 1 -5.4]}
+coordIndex [ 5, 8, 0, 3, -1, 1, 7, 6,4, -1, 2, 10, 11, 9, -1, 8,10, 2, 0, -1, 9, 11, 7, 1,-1]
+}
+}}
+
+DEF desk_base Transform {translation 0 0 3
+children Shape {
+appearance Appearance{material Material{}texture ImageTexture{url "../images/desk.jpg"}}
+geometry DEF _1 IndexedFaceSet {
+coord Coordinate {point [ -7 1 -5.65, 7 1 -5.65, -2.26286 1 -8, -9 1 -0.65, 9 1 -0.65, -6 1 0.35, 6 1 0.35, 4.375 1 -4.15, -4.375 1 -4.15, 2.23714 1 -8, -1 1 -5.4, 1 1 -5.4, -6.698 0 -5.38, 6.625 0 -5.417, -1.69486 0 -7.51473, -8.161 0 -1.724, 8.087 0 -1.76, -5.967 0 -0.9925, 5.893 0 -1.029, 4.705 0 -4.32, -4.779 0 -4.283, 1.59614 -0 -7.51473, -0.768 0 -5.711, 0.6945 0 -5.711]}
+coordIndex[14, 12, 0, 2, -1, 12, 15, 3, 0, -1, 16, 13, 1, 4, -1, 15, 17, 5, 3, -1, 18, 16, 4, 6, -1, 19, 18, 6, 7, -1, 17, 20, 8, 5, -1, 21, 14, 2, 9, -1, 13, 21, 9, 1, -1, 20, 22, 10, 8, -1, 22, 23, 11, 10, -1, 23, 19, 7, 11, -1]
+texCoord TextureCoordinate {point[-2 1, 0.62 1, 0.62 1, -4.5 1, 6.7 1, -5.6 1, 5.7 1, 3 1, -2.2 1, 2.57 1, 0 1, 0.9 1, -2 0, 0.62 0, 0.62 0, -4 0, 6.2 0, -4.6 0, 4.6 0, 3 0, -2.2 0, 2.5 0, 0 0,1 0]}
+texCoordIndex [ 14, 12, 0, 2, -1, 12, 15, 3, 0, -1, 16, 13, 1, 4, -1, 15, 17, 5, 3, -1, 18, 16, 4, 6, -1, 19, 18, 6, 7, -1, 17, 20, 8, 5, -1, 21, 14, 2, 9, -1, 13, 21, 9, 1, -1, 20, 22, 10, 8, -1, 22, 23, 11, 10, -1, 23, 19, 7, 11, -1]}
+}}
+
+DEF cociflag Transform {
+translation -4.08 7 -10.25
+rotation 0 1 0 0.465781
+children [
+Transform {
+rotation 0 0 1 1.57
+children Shape {
+appearance Appearance {material Material{diffuseColor .5 .26 .21 specularColor .76 .73 .23 emissiveColor .07 .07 .07 shininess .07}}
+geometry Cylinder{radius .1 height 4.5}
+}}
+
+Transform {
+children Shape {
+appearance Appearance {texture ImageTexture {url "../images/bxxlogo.jpg"}}
+geometry IndexedFaceSet {
+coord Coordinate{point [2 0 0,-2 0 0,-2 -4.5 0,2 -4.5 0,0 -7 0]}coordIndex[0,1,2,3,-1,3,2,4,-1]
+texCoord TextureCoordinate {point[1 1,0 1,0 .01,1 .01,.5 .01]}texCoordIndex [0,1,2,3,-1,3,2,4,-1]
+}
+}}
+
+]}
+
+DEF ctflag Transform {
+translation 4.08 7 -10.25
+rotation 0 -1 0 0.447072
+children [
+Transform {
+rotation 0 0 1 1.57
+children Shape {
+appearance Appearance {material Material{diffuseColor .5 .26 .21 specularColor .76 .73 .23 emissiveColor .07 .07 .07 shininess .07}}
+geometry Cylinder{radius .1 height 4.5}
+}}
+
+Transform {
+children Shape {
+appearance Appearance {texture ImageTexture {url "../images/cocilogo.jpg"}}
+geometry IndexedFaceSet {
+coord Coordinate{point [2 0 0,-2 0 0,-2 -4.5 0,2 -4.5 0,0 -7 0]}coordIndex[0,1,2,3,-1,3,2,4,-1]
+texCoord TextureCoordinate {point[1 1,0 1,0 .01,1 .01,.5 0]}texCoordIndex [0,1,2,3,-1,3,2,4,-1]
+}
+}} 
+]}
+
+Transform{ 
+rotation 0 1 0 3.142 
+translation 0 1 -3.5
+scale 2 2 2
+children[
+Transform {children Shape {
+appearance Appearance {material Material {diffuseColor 0 0.01 0.5 specularColor 0 0.91 0.01}}
+geometry IndexedFaceSet {coord Coordinate{point[-0.5 0.01 0.15,-0.5 0.01 0,0.5 0.01 0,0.5 0.01 0.15,-0.5 0.02 0.05,0.5 0.02 0.05,-0.5 0.02 0.1,0.5 0.02 0.1]}coordIndex [4, 1, 2, 5, -1, 0, 6, 7,3, -1, 6, 4, 5, 7, -1 ] solid FALSE creaseAngle 3}
+}}
+
+Transform {children Shape {
+appearance Appearance{material Material{shininess 0 diffuseColor 0.84 0.781886 0.674114 specularColor 0 0 0 emissiveColor 0.16426 0.164076 0.2}}
+geometry IndexedFaceSet{solid FALSE creaseAngle 3 coord Coordinate{point[ -0.5 0.01 0.65,0.5 0.01 0.65,-0.5 0.01 0.15,0.5 0.01 0.15]}coordIndex [ 0, 2, 3, 1, -1 ]}
+}}
+]}
+]}
+
+#####################################################################################################################
+#Monitor
+#####################################################################################################################
+PROTO Cursor [
+eventIn SFBool set_over exposedField SFVec3f position 0 0 0
+exposedField SFRotation rotation 0 1 0 0
+]{
+Transform{translation IS position rotation IS rotation
+children[
+Transform{ 
+children Shape{
+appearance Appearance{material DEF cursorMaterial Material{diffuseColor 0 0 .5}}
+geometry Extrusion{solid FALSE
+crossSection[-.0425 0,0 -.0425,.0425 0,0 .0425,-.0425 0,]
+spine[0 0 0,0 0 -.0001]
+scale[1 1,.3 .3]
+endCap FALSE beginCap FALSE
+}
+}}
+
+DEF cursorScript Script{
+eventIn SFBool set_over IS set_over
+eventOut SFColor color_changed
+url"vrmlscript:
+function set_over(v,t){
+ if(v){color_changed = new SFColor(1,.75,0);}
+ else{color_changed = new SFColor(0,0,.5);}
+}
+"}
+]}
+ROUTE cursorScript.color_changed TO cursorMaterial.set_diffuseColor
+}#END Cursor PROTO
+
+PROTO Monitor [
+exposedField SFVec3f position 0 0 0
+exposedField SFRotation rotation 0 1 0 0
+field MFRotation linkCoord [
+7 13 18 12,
+7 27 18 12,
+55 13 30 12,
+70 27 18 12,
+12 85 20 20
+]
+field MFString linkUrl [
+ "OnEvent(text,http://www.spyglassvr.com/cgi-bin/address.pl)",  #E-Mail
+ "OnEvent(text,http://www.colonycity.com/cgi-bin/colonycity/msb?DTY=P&KTY=ID&KEY=0103050604050111&MTY=i)" #Inbox
+ "OnEvent(text,http://www.colonycity.com/cgi-bin/colonycity/msb?DTY=P&KTY=ID&KEY=0103050604050111&MTY=m)", #Message
+ "OnEvent(text,http://www.colonycity.com/cgi-bin/colonycity/cal?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&LDT=P&LID=0103050604050111)" #Calendar
+ "OnEvent(text,http://www.colonycity.com/cgi-bin/colonycity/citizen?ac=action)"  #citizens
+ 
+]
+field MFString scrnImage ["../images/scrn.gif"]
+]{
+DEF monitor Transform {translation IS position rotation IS rotation
+children [
+DEF screen_assembly Transform {
+translation 0 -.1 0
+children [
+
+DEF bar Transform {translation 0 .1 0 rotation 0 0 1 1.57 scale 1 .001 1
+children Shape {
+appearance Appearance {material Material {ambientIntensity 0 diffuseColor 0 0 .2 specularColor .63 .92 1 emissiveColor 0 0 0 shininess .2}}
+geometry Cylinder {radius .02 height .8}
+}}
+
+Transform {children[
+DEF monitor_button TouchSensor {}
+DEF ball Transform {translation 0 .1 0
+children Shape {
+appearance Appearance{material Material{ambientIntensity 0 diffuseColor .5 0 0 specularColor .63 .92 1 emissiveColor 0 0 0 shininess .2}}
+geometry Sphere {radius .05}
+}}
+]}
+
+DEF piston Transform {translation 0 .03 0
+children Shape {
+appearance Appearance{material Material{ambientIntensity .0476 diffuseColor .21 .21 0 specularColor .93 .58 0 emissiveColor .07 .05 0 shininess .06}}
+geometry Cylinder{radius .02 height .1}
+}}
+
+DEF screen Transform { children [
+DEF scrn_switch Switch{
+whichChoice -1
+choice[
+DEF scrn_scale Transform{ scale 1 .01 1 children[
+
+Shape {
+appearance Appearance {material Material {diffuseColor .1 .1 .6 specularColor 0 0 0 transparency .3}}
+geometry DEF _0 IndexedFaceSet {solid FALSE coord Coordinate {point[-.375 .6 .01 -.375 .1 .01 .375 .6 .01 .375 .1 .01]}coordIndex [ 0 1 3 2 -1 ]
+}}
+
+DEF front Shape {
+appearance Appearance {
+#material Material {specularColor 0 0 0 diffuseColor .0969 .104 .15 transparency .25}
+texture ImageTexture{url IS scrnImage}
+}
+geometry DEF _1 IndexedFaceSet {creaseAngle 3
+ coord Coordinate {point [.375 .6 0 .375 .1 0 -.375 .1 0 -.375 .6 0]}coordIndex [ 0 1 2 3 -1 ]
+ texCoord TextureCoordinate {point[0 1,0 -.02,1 -.02,1 1]}texCoordIndex [ 0 1 2 3 -1 ]
+}}
+
+DEF cursor Cursor { position 0 .25 0}
+
+DEF cursor_sensor TouchSensor{}
+
+]}
+]}#END Switch
+]}
+]}
+
+DEF collar Transform {scale 1 .2 1
+children Shape {
+appearance Appearance {material Material {ambientIntensity .0476 diffuseColor .21 .21 0 specularColor .93 .58 0 emissiveColor .07 .05 0 shininess .06}}
+geometry Sphere {radius .06}
+}}
+
+Sound{intensity 1 source DEF onSound AudioClip{loop FALSE url"../images/3.wav"}spatialize FALSE maxBack 1000 maxFront 1000 minBack 1 minFront 1}
+Sound{intensity 1 source DEF offSound AudioClip{loop FALSE url"../images/beep.wav"}spatialize FALSE maxBack 1000 maxFront 1000 minBack 1 minFront 1}
+Sound{intensity 1 source DEF scrnSound AudioClip{loop FALSE url"../images/16.wav"}spatialize FALSE maxBack 1000 maxFront 1000 minBack 1 minFront 1}
+
+DEF raise PositionInterpolator{key[0,1]keyValue [0 -.1 0,0 0 0]} DEF lower PositionInterpolator{key[0,1]keyValue [0 0 0,0 -.1 0]}
+DEF scrn_on PositionInterpolator{key[0,.5,1]keyValue [0 .5 0, 0 .1 0,0 0 0]} DEF scrn_grow PositionInterpolator{key[0,.5,1]keyValue [1 .01 1,1 .01 1,1 1 1]}
+DEF bar_grow PositionInterpolator{key[0,1]keyValue [1 .01 1,1 1 1]} DEF bar_shrink PositionInterpolator{key[0,1]keyValue [1 1 1,1 .01 1]}
+DEF raise_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE} DEF lower_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE}
+DEF scrn_on_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE} DEF scrn_grow_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE}
+DEF bar_grow_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE} DEF bar_shrink_t TimeSensor{cycleInterval .5 loop FALSE enabled TRUE}
+
+DEF monitorScript Script{
+eventIn SFTime set_switch
+eventIn SFBool on_event
+eventIn SFBool off_event
+eventIn SFVec3f set_curPos
+eventIn SFBool set_click
+field SFInt32 onIndex 0
+field SFInt32 offIndex 0
+field SFBool isOn FALSE
+field SFVec2f curPos 0 0 
+field MFRotation linkCoord IS linkCoord
+field MFString linkUrl IS linkUrl
+field MFString param ["","","target=action"]
+field SFInt32 link -1
+field SFBool isOver FALSE
+eventOut SFTime raise
+eventOut SFTime lower
+eventOut SFTime scrn_on
+eventOut SFTime scrn_grow
+eventOut SFTime bar_grow
+eventOut SFTime bar_shrink
+eventOut SFInt32 scrn_choice
+eventOut SFBool curOver_changed
+url"vrmlscript:
+
+function on_event(v,t){
+ if(v || onIndex >= 3){return;}
+ if(onIndex == 0){raise = t;onIndex += 1;}
+ else{if(onIndex == 1){bar_grow = t;onIndex += 1;}
+ else{if(onIndex == 2){scrn_choice = 0;scrn_on = t;scrn_grow = t;onIndex += 1;}
+ }}
+} 
+
+function off_event(v,t){
+ if(v || offIndex >= 2){return;}
+ if(offIndex == 0){bar_shrink = t;offIndex += 1;}
+ else{if(offIndex == 1){lower = t;offIndex += 1;}}
+}
+
+function set_switch(v,t){
+ if(!isOn){onIndex = 0;on_event(false,t);isOn = true;}
+ else{offIndex = 0;off_event(false,t);scrn_choice = -1;isOn = false;}
+}
+
+function set_curPos(v){
+ curPos = new SFVec2f(100 - Math.round((v[0]+.38)/.0076),Math.round((v[1]-.1)/.005));
+ link = -1;
+
+ for(i = 0;i < linkCoord.length;i++){
+ if( curPos[0] >= linkCoord[i][0] && curPos[0] <= linkCoord[i][0]+linkCoord[i][2] && curPos[1] >= linkCoord[i][1] && curPos[1] <= linkCoord[i][1]+linkCoord[i][3]){
+ curOver_changed = true;
+ isOver = true;
+ link = i;
+ }
+ }
+ if(link < 0){curOver_changed = false; isOver = false;} 
+}
+
+function set_click(v,t){
+ if(v || !isOver ){return;}
+ else{
+ newUrl = new MFString(linkUrl[link]);
+ Browser.loadURL(newUrl,param);
+ }
+}
+
+"}
+
+]}#END monitor
+ROUTE monitor_button.touchTime TO monitorScript.set_switch 
+ROUTE monitorScript.scrn_choice TO scrn_switch.set_whichChoice
+
+ROUTE monitorScript.raise TO raise_t.set_startTime
+ROUTE monitorScript.raise TO onSound.set_startTime 
+ROUTE monitorScript.lower TO lower_t.set_startTime
+ROUTE monitorScript.scrn_on TO scrn_on_t.set_startTime 
+ROUTE monitorScript.scrn_on TO scrnSound.set_startTime
+ROUTE monitorScript.scrn_grow TO scrn_grow_t.set_startTime 
+ROUTE monitorScript.bar_grow TO bar_grow_t.set_startTime
+ROUTE monitorScript.bar_shrink TO bar_shrink_t.set_startTime 
+ROUTE monitorScript.bar_shrink TO offSound.set_startTime
+
+ROUTE raise_t.fraction_changed TO raise.set_fraction 
+ROUTE lower_t.fraction_changed TO lower.set_fraction
+ROUTE scrn_on_t.fraction_changed TO scrn_on.set_fraction 
+ROUTE scrn_grow_t.fraction_changed TO scrn_grow.set_fraction
+ROUTE bar_grow_t.fraction_changed TO bar_grow.set_fraction 
+ROUTE bar_shrink_t.fraction_changed TO bar_shrink.set_fraction
+
+ROUTE raise_t.isActive TO monitorScript.on_event 
+ROUTE lower_t.isActive TO monitorScript.off_event
+ROUTE scrn_on_t.isActive TO monitorScript.on_event 
+ROUTE scrn_grow_t.isActive TO monitorScript.on_event
+ROUTE bar_grow_t.isActive TO monitorScript.on_event 
+ROUTE bar_shrink_t.isActive TO monitorScript.off_event
+
+ROUTE raise.value_changed TO screen_assembly.set_translation 
+ROUTE lower.value_changed TO screen_assembly.set_translation
+ROUTE scrn_on.value_changed TO screen.set_translation 
+ROUTE scrn_grow.value_changed TO scrn_scale.set_scale
+ROUTE bar_grow.value_changed TO bar.set_scale 
+ROUTE bar_shrink.value_changed TO bar.set_scale
+
+ROUTE cursor_sensor.hitPoint_changed TO cursor.set_position
+ROUTE cursor_sensor.hitPoint_changed TO monitorScript.set_curPos
+ROUTE monitorScript.curOver_changed TO cursor.set_over
+ROUTE cursor_sensor.isActive TO monitorScript.set_click
+
+}#END Monitor PROTO
+
+Transform{scale 3 3 3 translation 0 1 -3 children [
+ Monitor{}
+]}
+
+#####################################################################################################################
+#Lamp
+#####################################################################################################################
+
+PROTO DeskLamp [
+exposedField SFVec3f position 0 0 0
+exposedField SFRotation rotation 0 1 0 0
+field SFColor shadeColor 0 .33 .0776
+field SFNode mainMaterial Material{diffuseColor 0 0 .2 specularColor .63 .92 1 shininess .2}
+field SFNode accentMaterial Material {ambientIntensity .27diffuseColor .37 .37 .37 specularColor .89 .89 .89 shininess .13}
+]{
+
+DEF base Transform { translation IS position rotation IS rotation children [
+
+DEF flat_base Transform {
+children Shape {
+appearance Appearance {material IS mainMaterial}
+geometry Cylinder {radius .075 height .02}
+}}
+DEF round_base Transform {translation 0 .01 0 scale 1 .35 1
+children Shape {
+appearance Appearance {material IS accentMaterial }
+geometry Sphere {radius .05}
+}}
+DEF base_joint Transform {translation 0 .025 0
+children Shape {
+appearance Appearance {material IS mainMaterial}
+geometry Sphere {radius .015}
+}}
+DEF _0 CylinderSensor {}
+]}
+
+DEF swivel Transform {rotation 0 0 1 0 center 0 .025 0
+children DEF lower_arm Transform {center 0 .025 0 children [
+
+Transform {children [
+DEF elbow Transform {translation .225 .25 0 rotation 1 0 0 1.57
+children Shape {
+appearance Appearance {material IS mainMaterial}
+geometry Cylinder {radius .02 height .03}
+}}
+DEF lower_arm_section Transform {translation .115 .14 0 rotation 0 0 -1 .785
+children Shape{
+appearance Appearance{material IS mainMaterial}
+geometry Cylinder {radius .005 height .3}
+}}
+DEF _3 CylinderSensor {}
+]}
+
+DEF upper_arm Transform {center .225 .25 0 children [
+
+DEF upper_arm_section Transform {
+children [
+Transform {translation .11 .315 0 rotation 0 0 1 1.05
+children Shape {
+appearance Appearance {material IS mainMaterial}
+geometry Cylinder{radius .005 height .6}
+}}
+DEF _5 CylinderSensor {}
+]}
+
+DEF shade_6 Transform {center -.154 .47 0 children [
+
+DEF light_bulb Transform {translation -.252 .489 0
+children Shape {
+appearance Appearance {material Material{specularColor 0.9 0.9 0.9 emissiveColor 0.622222 1 1}}
+geometry Sphere {radius .03}
+}}
+
+DEF shade Transform {translation -.25 .45 0
+children Shape {
+appearance Appearance {material Material {diffuseColor IS shadeColor specularColor 1 1 1 shininess .72 transparency .2}}
+geometry DEF _7 IndexedFaceSet {
+coord Coordinate {point [ -.011 .0887 .0146,-.0599 .0427 .05,.0921 .0413 .0146,.0921 .00239 .05,.0921 .0413 -.0146,.0921 .00239 -.05,-.011 .0887 -.0146,-.0599 .0427 -.05,]}
+coordIndex [ 0 1 3 2 -1 4 5 7 6 -1 6 7 1 0 -1 2 3 5 4 -1 6 0 2 4 -1]
+solid FALSE
+creaseAngle 3.14
+}
+}}
+
+DEF shade_joint Transform {translation -.154 .47 0
+children Shape {
+appearance Appearance {material IS mainMaterial}
+geometry Sphere {radius .015}
+}}
+DEF _8 CylinderSensor {}
+]}
+]}
+]}
+}
+DEF la_rot Script{eventIn SFRotation set_rotation eventOut SFRotation value_changed url"vrmlscript:function set_rotation(v){value_changed = new SFRotation(0,0,(v[1] * -1),v[3]);}"}
+DEF ua_rot Script{eventIn SFRotation set_rotation eventOut SFRotation value_changed url"vrmlscript:function set_rotation(v){value_changed = new SFRotation(0,0,(v[1] * -1),v[3]);}"}
+DEF sd_rot Script{eventIn SFRotation set_rotation eventOut SFRotation value_changed url"vrmlscript:function set_rotation(v){value_changed = new SFRotation(0,0,(v[1] * -1),v[3]);}"}
+ROUTE _0.rotation_changed TO swivel.set_rotation
+ROUTE _8.rotation_changed TO sd_rot.set_rotation 
+ROUTE _5.rotation_changed TO ua_rot.set_rotation 
+ROUTE _3.rotation_changed TO la_rot.set_rotation 
+ROUTE sd_rot.value_changed TO shade_6.set_rotation
+ROUTE ua_rot.value_changed TO upper_arm.set_rotation
+ROUTE la_rot.value_changed TO lower_arm.set_rotation
+}#END DeskLamp PROTO
+
+Transform{translation 1.5 1 -3.5 rotation 0 1 0 -1.1 scale 3 3 3 children DeskLamp{}}
+
+#####################################################################################################################
+#File Cabinet
+#####################################################################################################################
+
+PROTO Drawer[
+eventOut SFTime touchTime
+]{
+DEF drawer Transform{ children[
+DEF T TouchSensor{touchTime IS touchTime}
+Shape{
+appearance Appearance{material Material{diffuseColor 0 .1 0 specularColor .4 .7 .4 shininess 0.13}}
+geometry IndexedFaceSet{creaseAngle 3 
+ coord Coordinate{point[-0.8 1.8 1,-0.8 0.3 1,0.8 0.3 1,0.8 1.8 1,-0.7 0.4 1.1,0.7 0.4 1.1,0.7 1.7 1.1,-0.7 1.7 1.1]}
+ coordIndex[4, 1, 2, 5, -1, 3, 6, 5,2, -1, 7, 6, 3, 0, -1, 4,7, 0, 1, -1, 5, 6, 7, 4,-1]
+}}
+Shape {
+appearance Appearance{material Material{ diffuseColor 0 0 0}}
+geometry IndexedFaceSet { solid FALSE
+ coord Coordinate{point[-0.8 1.2 1,-0.8 0.3 1,0.8 1.2 1,0.8 0.3 1,0.8 1.2 -1.5,0.8 0.3 -1.5,-0.8 1.2 -1.5,-0.8 0.3 -1.5]}
+ coordIndex[6, 7, 1, 0, -1, 2, 3, 5,4, -1, 1, 7, 5, 3, -1]
+}}
+Transform{translation 0 1.15 1.25 children Shape {
+appearance Appearance{material Material{diffuseColor 0 0 0 specularColor 0.63 0.92 1 shininess 0.2}}
+geometry Sphere{radius 0.1}
+}}
+DEF openClock TimeSensor{cycleInterval 1 loop FALSE enabled TRUE}
+DEF closeClock TimeSensor{cycleInterval 1 loop FALSE enabled TRUE}
+DEF open PositionInterpolator{
+key[0,1]
+keyValue[0 0 0,0 0 2]
+}
+DEF close PositionInterpolator{
+key[0,1]
+keyValue[0 0 2,0 0 0]
+}
+DEF drawerScript Script{
+eventIn SFTime set_touch field SFBool isOpen FALSE
+eventOut SFTime open 
+eventOut SFTime close
+url"vrmlscript: function set_touch(v,t){if(isOpen){close = t;isOpen = false;}else{open = t;isOpen = true;}}"
+}
+]}
+ROUTE T.touchTime TO drawerScript.set_touch
+ROUTE drawerScript.open TO openClock.set_startTime
+ROUTE drawerScript.close TO closeClock.set_startTime
+ROUTE openClock.fraction_changed TO open.set_fraction
+ROUTE closeClock.fraction_changed TO close.set_fraction
+ROUTE open.value_changed TO drawer.set_translation
+ROUTE close.value_changed TO drawer.set_translation 
+}#END Drawer PROTO
+
+PROTO File_Cab[
+exposedField SFVec3f position 0 0 0
+exposedField SFRotation rotation 0 1 0 0
+]{ 
+Transform{translation IS position rotation IS rotation scale .5 .5 .5 children[
+Shape {
+appearance Appearance{material Material{diffuseColor 0.055 0 0.22 specularColor 0.5 0.5 0.5 emissiveColor 0.04 0 0.15 shininess 0.2}}
+geometry IndexedFaceSet { solid FALSE
+ coord Coordinate{point[-1 5 1,-1 0 1,1 5 1,1 0 1,1 5 -1.9,1 0 -1.9,-1 5 -1.9,-1 0 -1.9,-0.8 0.3 1,-0.8 4.8 1,0.8 4.8 1,0.8 0.3 1]}
+ coordIndex[4, 5, 7, 6, -1, 6, 7, 1,0, -1, 0, 1, 8, 9, -1, 6,0, 2, 4, -1, 9, 10, 2, 0,-1, 3, 11, 8, 1, -1, 2, 3,5, 4, -1, 10, 11, 3, 2, -1]
+}}
+Drawer{}
+Transform{translation 0 1.5 0 children Drawer{}}
+Transform{translation 0 3 0 children Drawer{}}
+]}
+}#END File_Cab PROTO
+
+Group{children[
+File_Cab{position -6.5 0 14 rotation 0 1 0 3.142}
+File_Cab{position -7.5 0 14 rotation 0 1 0 3.142}
+File_Cab{position 6.5 0 14 rotation 0 1 0 3.142}
+File_Cab{position 7.5 0 14 rotation 0 1 0 3.142}
+]}
+
+#####################################################################################################################
+#Pictures
+#####################################################################################################################
+
+PROTO CustomPicture[eventIn SFString set_url]{
+Transform{children[Shape{appearance Appearance{texture DEF thisTex ImageTexture{}}geometry IndexedFaceSet { ccw TRUE coord Coordinate {point [1 0 0,1 2.5 0,-1 2.5 0,-1 0 0,]}coordIndex [0,1,2,3,-1]texCoord TextureCoordinate{point[1 0,1 1,0 1,0 0]}texCoordIndex[0,1,2,3,-1,]}}]}
+Script{
+eventIn SFString set_url IS set_url
+field SFNode thisTex USE thisTex
+url"vrmlscript:
+function set_url(v){ thisTex.set_url = new MFString(v);}
+"}
+}#END CustomPicture PROTO
+
+Transform{translation -12.25 1 5 rotation 0 1 0 2 children DEF pic1 CustomPicture{}}
+Transform{translation 12.25 1 5 rotation 0 -1 0 2 children DEF pic2 CustomPicture{}}
+
+ROUTE Pic1.string_changed TO pic1.set_url
+ROUTE Pic2.string_changed TO pic2.set_url
+
+
+
+
+
+
+
+
+
+
+

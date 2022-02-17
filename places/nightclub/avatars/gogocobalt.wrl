@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO Avatar [
+exposedField MFFloat avatarSize
+exposedField SFFloat avatarHeight
+exposedField SFBool isAvatar
+exposedField SFTime gesture1
+exposedField SFTime gesture2
+exposedField SFTime gesture3
+exposedField SFTime gesture4
+exposedField SFTime gesture5
+exposedField SFTime gesture6
+exposedField SFTime gesture7
+exposedField SFTime gesture8
+eventIn SFVec3f set_position
+exposedField SFRotation rotation
+exposedField SFInt32 whichChoice
+exposedField SFBool isOver
+exposedField SFTime touchTime
+field MFString texture
+]"gogoalien.wrl#Avatar"
+
+Avatar{texture "/places/nightclub/avatars/gogocobalt.jpg"}

@@ -1,0 +1,20 @@
+#VRML V2.0 utf8
+
+
+PROTO info[
+exposedField MFString names [] 
+exposedField MFString urls []
+exposedField SFFloat aspect .75
+exposedField SFFloat horz 320
+]{}
+
+info{
+names[
+"Drive 2",
+"Man or Astroman",
+]
+urls[
+"http://a784.g.akamai.net/7/784/694/7fd175f5572878/dist.incanta.net/export/video/video3/d2.rm",
+"http://a144.g.akamai.net/7/144/694/87bf1f90cf8b88/dist.incanta.net/export/video/video3/man.rm",
+]
+}

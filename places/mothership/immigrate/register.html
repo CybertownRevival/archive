@@ -1,0 +1,728 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win98; I) [Netscape]">
+   <title>Mothership - the Sci-fi Community of the Future - Member Immigration</title>
+<!-- register/cregister.tmpl -->
+<!-- registration form -->
+<!-- common/loadinfo.tmpl -->
+<!-- included in action.tmpl to load an info window and close it automatically when switching the place -->
+<script language=javascript>
+
+winClose = false;
+
+winFocus = false;
+
+if (navigator.appName == "Netscape")
+
+{
+
+ winClose = true;
+
+ winFocus = true;
+
+}
+
+else
+
+{
+
+ var i = navigator.appVersion.indexOf("MSIE");
+
+ if (i >= 0)
+
+ {
+
+  var ver = parseInt(navigator.appVersion.substring(i+5,i+6));
+
+  if ( ver > 4)
+
+   winClose = true;
+
+  if ( ver > 3 )
+
+   winFocus = true;
+
+ }
+
+}
+
+
+
+myInfoWin = null;
+
+
+
+function loadInfo(par)
+
+{
+
+ loadCustom( par, 620, 450 );
+
+}
+
+
+
+function closeInfoWin()
+
+{
+
+ if (winClose && myInfoWin && !myInfoWin.closed)
+
+ {
+
+  myInfoWin.close();
+
+ }
+
+}
+
+function loadCustom(par,h,v)
+
+{
+
+ closeInfoWin();
+
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=' + h + ',height=' + v;
+
+
+
+ win = window.open(par, "info",paramstring);
+
+ if (winFocus)
+
+ {
+
+    win.focus();
+
+ }
+
+ myInfoWin = win;
+
+}
+
+
+
+function loadMap(par)
+
+{
+
+ closeInfoWin();
+
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=no,copyhistroy=no,width=520,height=478';
+
+
+
+ win = window.open(par, "info",paramstring);
+
+ if (winFocus)
+
+ {
+
+    win.focus();
+
+ }
+
+ myInfoWin = win;
+
+}
+
+
+
+<!--begin added this reset -->
+
+function jumpreset( par1, par2 )
+
+{
+
+        jump( par2 );
+
+        par1[0].selected = true;
+
+}
+
+<!--end added this reset -->
+
+
+
+
+
+function jump( par )
+
+{
+
+ closeInfoWin();
+
+
+
+var parArray = new Array(4);
+
+parArray = par.split(" ");
+
+var type = parArray[0];
+
+var url = parArray[1];
+
+var h = parArray[2];
+
+var v = parArray[3];
+
+
+
+ if (url != '') 
+
+ {
+
+  if ( type == "top")
+
+  {
+
+   top.location.href = url;
+
+  }
+
+
+
+  else if ( type == "info")
+
+  {
+
+   loadInfo(url);
+
+  }
+
+
+
+  else if ( type == "custom")
+
+  {
+
+   loadCustom(url,h,v);
+
+  }
+
+
+
+  else if ( type == "place")
+
+  {
+
+   top.place.location.href = url;
+
+  }
+
+
+
+  else if ( type == "poll")
+
+  {
+
+   loadCustom( url, 600, 500 );
+
+  }
+
+ }
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+<!-- end of include common/loadinfo.tmpl -->
+<script language=JavaScript>
+
+
+
+
+
+// --- set the IM2 pulldownfields-text! ---
+
+
+function setIM3Text()
+
+
+{
+
+
+var blank = new Array("-");
+
+
+var friend = new Array("-");
+
+
+var onlinead = new Array("-- Which Site? -- ","IGN.com","artbell.com","angelfire.com","SciFi.com","bolt.com","Other Site");
+
+
+var otheronlinearticle = new Array("-");
+
+
+var othertheaters = new Array("-- Where? --","Austin, TX","Baltimore, NC","Raleigh/Durham, NC","Santa Clara/San Jose, CA","San Francisco, CA","Seattle, WA","Washington, D.C","Denver, CO");
+
+
+var othermagarticle = new Array("-");
+
+
+var magad = new Array("-- Which Magazine? --","Sci-fi Entertainment","Science Fiction Age","Top Deck","Dragon","Star Wars Insider","Star Trek Communicator","Amazing Stories","Other");
+
+
+var tv = new Array("-- Which One? --","MTV","Other");
+
+
+var search = new Array("-- Which One? --","Yahoo","AltaVista","HotBot","Lycos","MSN","Netscape","Excite","ask.com","Webcrawler","Other");
+
+
+var link = new Array("-- Which Site? --","blaxxun.com","Intel","TheFreeSite.com","Tomorrow.de","TheForce.net","DesktopStarships.com","Other");
+
+
+var other = new Array("-");
+
+
+var minicd = new Array("-");
+
+
+var postcard = new Array("-");
+
+
+var virt = new Array("-");
+
+
+var othertradeshow = new Array("-");
+
+
+var othernewspaper = new Array("-");
+
+
+
+
+
+
+
+
+var the_select = document.im_form.IM3;
+
+
+var IM1_Index = document.im_form.IM1.selectedIndex;
+
+
+var arrayname = document.im_form.IM1.options[IM1_Index].value;
+
+
+var my_array = eval(arrayname);
+
+
+
+
+
+
+
+
+        the_select.options.length = 0; 
+
+
+        the_select.options.length = my_array.length; 
+
+
+
+
+
+        for (i=0; i < my_array.length; i+=1) 
+
+
+        { 
+
+
+                the_select.options[i].text = my_array[i]; 
+
+
+                the_select.options[i].value = my_array[i]; 
+
+
+        } 
+
+
+ 
+
+
+        the_select.selectedIndex = 0;
+
+
+}
+
+
+ 
+
+
+
+
+
+// --- set the IMText textfield-text! ---  
+
+
+function setIMText ()
+
+
+{
+
+
+var IM1_Index = document.im_form.IM1.selectedIndex;
+
+
+var IM1arrayname = document.im_form.IM1.options[IM1_Index].value;
+
+
+var IM3_Index = document.im_form.IM3.selectedIndex;
+
+
+var IM3arrayname = document.im_form.IM3.options[IM3_Index].value;
+
+
+
+
+
+        
+
+
+        if (IM1arrayname == "otheronlinearticle" || IM1arrayname == "othermagarticle" || IM1arrayname == "othertradeshow" || IM1arrayname == "othernewspaper" || IM1arrayname == "other")
+
+
+        {
+
+
+                document.im_form.IMText.value="-- Which One?!? --";
+
+
+        }
+
+
+        else if (IM1arrayname == "othertheaters")
+
+
+        {
+
+
+                document.im_form.IMText.value="-- Which Movie? --";
+
+
+        }
+
+
+        else if (IM1arrayname == "friend")
+
+
+        {
+
+
+                document.im_form.IMText.value="";
+
+
+                document.im_form.REF.focus();
+
+
+        }
+
+
+        else if (IM3arrayname.indexOf("Other") != -1 || IM3arrayname.indexOf("other") != -1)
+
+
+        {
+
+
+                window.document.im_form.IMText.value = " -- Which? --";
+
+
+        }
+
+
+ 
+
+
+        else
+
+
+        {
+
+
+                        window.document.im_form.IMText.value = "";
+
+
+        } 
+
+
+}
+
+
+
+
+
+
+
+
+// --- add on submit IM3 -text + TAB + IMText textfield-text! ---  
+
+
+function addIM3Text ()
+
+
+{
+
+
+
+
+
+// if IMText-field is blank -forget it! else:
+
+
+        if (document.im_form.IMText.value != "" || document.im_form.IMText.value != " ")
+
+
+        {
+
+
+        var IM3_Index = document.im_form.IM3.selectedIndex;
+
+
+        var IM3arrayname = document.im_form.IM3.options[IM3_Index].value;
+
+
+
+
+
+                document.im_form.IM3.options[IM3_Index].value = document.im_form.IM3.options[IM3_Index].value + "\t\t" + document.im_form.IMText.value;
+
+
+        }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function matchEmails() {
+
+
+if (window.document.im_form.EML.value != window.document.im_form.EMV.value) {
+
+
+window.document.im_form.EML.value = '';
+
+
+window.document.im_form.EMV.value = '';
+
+
+window.document.im_form.EML.focus();
+
+
+alert('The email addresses you entered do not match. Please re-enter your email address.');
+
+
+}
+
+
+}
+
+
+
+
+
+</script>
+<!-- common/body2.tmpl -->
+<!-- e.g. used for most templates -->
+</head>
+<body text="#F8F8F8" bgcolor="#000000" link="#66FFFF" vlink="#00C1EA" alink="#FFFFFF" background="file:///C|/WINDOWS/Desktop/immigrate/back.jpg" 0>
+&nbsp;
+<table CELLPADDING=8 >
+<tr>
+<td>
+<center><font face="Arial,Helvetica"><font color="#66FFFF">Immigration
+is absolutely FREE, so join NOW!</font></font><font face="Arial,Helvetica"></font>
+<p>
+<img src="./msimmigrate.gif" border="0">
+</P>
+</center>
+<font face="Arial,Helvetica"></font>&nbsp;
+<center>
+<br><font face="Arial,Helvetica"><font color="#33FF33">***</font><font color="#66FFFF">
+</font><font color="#FFFFFF">These fields are mandatory!</font></font><form method=get action="http://www.cybertown.com:1080/cgi-bin/cybertown/register" name="im_form" onSubmit=addIM3Text()><input type="hidden" name="TKT" value=""></center>
+
+<center><table BORDER=0 >
+<tr>
+<td COLSPAN="3"><font face="Arial,Helvetica"><font color="#66FFFF"><font size=+1>Create
+your Mothership Nickname and Password</font></font></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP WIDTH="150"><font face="Arial,Helvetica"><font color="#33FF33">***</font>
+Your nickname:</font></td>
+
+<td VALIGN=TOP WIDTH="200"><input NAME="NNM" VALUE="" MAXLENGTH=16 SIZE=16></td>
+
+<td VALIGN=TOP WIDTH="200"><font face="Arial,Helvetica"><font color="#66FFFF"><font size=-1>Allowed
+characters are [A-Z],[a-z],[0-9],'_','-','.'</font></font></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica"><font color="#33FF33">***</font>
+Your email address:</font></td>
+
+<td VALIGN=TOP><input NAME="EML" VALUE="" MAXLENGTH=64 SIZE=32 onChange='window.document.im_form.EMV.focus();'></td>
+
+<td VALIGN=TOP ROWSPAN="2"><font face="Arial,Helvetica"><font color="#FFFFFF">Be
+sure that you type in your <b>email address correctly</b> as you will receive
+an <b>immigration email</b> in a few seconds!</font></font>
+<br><font face="Arial,Helvetica"><font color="#FFFFFF">And don't worry,
+nobody else will see your email address later!&nbsp;</font></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Please re-type your email address:</font></td>
+
+<td VALIGN=TOP><input NAME="EMV" VALUE="" MAXLENGTH=64 SIZE=32 onBlur='matchEmails();'></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica"><font color="#33FF33">***</font>
+Choose a password:</font></td>
+
+<td VALIGN=TOP><input type=password NAME="PWD" VALUE="" MAXLENGTH=16 SIZE=16></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica"><font color="#33FF33">***</font>
+Retype your password:</font></td>
+
+<td VALIGN=TOP><input type=password NAME="PWD2" VALUE=""  MAXLENGTH=16 SIZE=16></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+
+<tr>
+<td COLSPAN="3">
+<hr>
+<br><font face="Arial,Helvetica"><font color="#66FFFF"><font size=+1>Set
+up your Personal Information</font></font></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Age range:</font></td>
+
+<td VALIGN=TOP><select name = "AGE"><option value="-"><font face="Arial,Helvetica">-Select-&nbsp;<option value="1">1-11&nbsp;<option value="12">12-17&nbsp;<option value="18">18-25&nbsp;<option value="26">26-35&nbsp;<option value="36">36-45&nbsp;<option value="46">46+&nbsp;</font></select></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Gender:</font></td>
+
+<td VALIGN=TOP><input NAME="GND" TYPE=RADIO VALUE="male" checked><font face="Arial,Helvetica">Male&nbsp;<input NAME="GND" TYPE=RADIO VALUE="female">Female&nbsp;</font></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Zip/country code:</font></td>
+
+<td VALIGN=TOP><input NAME="ZIP" VALUE="" MAXLENGTH=8 SIZE=6></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+
+<tr>
+<td COLSPAN="3">
+<hr>
+<br><font face="Arial,Helvetica"><font color="#66FFFF"><font size=+1>More
+...</font></font></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica"><font color="#33FF33">***</font>
+How did you find out about Mothership?</font></td>
+
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2"><select name="IM1" onchange=setIM3Text();setIMText();><option selected value=notselected><font face="Arial,Helvetica">-Select-&nbsp;<option value=friend>Friend/Word-of-Mouth&nbsp;<option value=link>Website
+Link&nbsp;<option value=onlinead>Web Ad&nbsp;<option value=search>Search
+Engine&nbsp;<option value=otheronlinearticle>Online Article&nbsp;<option value=othertheaters>Movie
+Screen Ad&nbsp;<option value=magad>Magazine Advertisement&nbsp;<option value=othermagarticle>Magazine
+Article&nbsp;<option value=tv>Television Show&nbsp;<option value=minicd>Mini
+CD-ROM&nbsp;<option value=postcard>Mothership Postcard&nbsp;<option value=virt>Mothership
+"VIRT" Newsletter&nbsp;<option value=othertradeshow>Tradeshow/Conference&nbsp;<option value=othernewspaper>Newspaper&nbsp;<option value=other>Other</font></option></select><select name="IM3" onchange=setIMText();><option VALUE="-" selected><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"><option VALUE="-"></select>
+<br><font face="Arial,Helvetica"></font>&nbsp;</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica"><font size=-1><font color="#00FF00">I</font><font color="#66FFFF">f
+you chose Online Advertisement, Article, Website Link, Magazine, TV show,
+Movie Screen Ad, Trade Show, or Search Engine, please tell us which one!</font></font></font>
+<br><font face="Arial,Helvetica"></font>&nbsp;
+<br><font face="Arial,Helvetica"></font>&nbsp;</td>
+
+<td VALIGN=TOP><input NAME="IMText" TYPE=text value="" MAXLENGTH=32 SIZE=32></td>
+
+<td><font face="Arial,Helvetica"></font></td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Referral Bonus (nickname):</font></td>
+
+<td VALIGN=TOP><input NAME="REF" VALUE="" MAXLENGTH=16 SIZE=16></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica"><font color="#66FFFF"><font size=-1>Enter
+the nickname of a friend who already immigrated into Mothership, and he/she
+gets a <b>Bonus (Virtual Money)</b>!</font></font></font>
+<br><font face="Arial,Helvetica"></font>&nbsp;</td>
+</tr>
+
+<tr>
+<td VALIGN=TOP><font face="Arial,Helvetica">Anything you'd like to tell
+us?</font></td>
+
+<td VALIGN=TOP><input NAME="IM2" VALUE="" MAXLENGTH=128 SIZE=32></td>
+
+<td VALIGN=TOP><font face="Arial,Helvetica">&nbsp;</font></td>
+</tr>
+</table></center>
+
+<center>
+<hr><input TYPE="checkbox" NAME="PML" VALUE="n"><font face="Arial,Helvetica">&nbsp;&nbsp;
+If you do not wish to receive occasional mailings based on your interest
+in Mothership, check this box.&nbsp;</font><font face="Arial,Helvetica"></font>
+<p><b><font face="Arial,Helvetica">Immigration or Login Problems? Here's
+our <a href="javascript:loadInfo('./help/quickhelp.html')" target="_self">Quick
+Help</a>!</font></b><font face="Arial,Helvetica"></font>
+<p><b><font face="Arial,Helvetica"><font color="#66FFFF">If you have problems
+entering Mothership after the registration process, please send email to
+<a href="mailto:Help@mothership.com">Help@mothership.com</a>.</font></font></b>
+<br><input type=hidden name="T_MCO" value="mothership"><font face="Arial,Helvetica"></font>
+<p><input type=hidden name="ac" value="register"><input type=submit name="submit" value="Immigrate"><input type=button name="cancel" value="Cancel" onClick="history.back()">
+<br></form></center>
+</td>
+</tr>
+</table>
+
+<center>
+<p><!-- These tags should be placed in all categories in the 468x60 size space (Placement: 1) --><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+
+
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C|||_admonitor|"><script LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C|||_admonitor|">
+
+
+</script>
+<noscript><a href="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C|||" TARGET="_admonitor"><img SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C|||" BORDER=0 height=60 width=468></a></noscript></IFRAME><!-- End of adMonitor v3.0 rich content tags --></center>
+
+</body>
+</html>

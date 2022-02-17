@@ -1,0 +1,104 @@
+#VRML V2.0 utf8
+
+#Polygon for banner images 
+
+Group{
+children[
+
+Transform {
+scale 2 2 2
+children [
+
+DEF WholePanel Transform {
+translation  -1.755 0 -.3377
+children [
+
+#begin banner panel
+Transform {
+children [
+DEF anch Anchor {
+url ""
+description ""
+parameter ""
+children [
+Transform {
+translation 0 0 .3377
+children [
+Shape {
+geometry DEF panelGeom IndexedFaceSet {
+coord Coordinate {
+point [
+-2.34  -0.3 0.0,
+2.34  -0.3 0.0,
+2.34 0.3  0.0,
+-2.34  0.3  0.0,
+]
+}
+coordIndex [ 0, 1, 2, 3, 
+-1, 2, 1, 0, 3 
+]
+texCoordIndex [ 0, 1, 2, 3, 
+-1, 3, 0, 1, 2
+]
+texCoord TextureCoordinate {
+point [
+0.0 0.0,
+1.0 0.0,
+1.0 1.0,
+0.0 1.0,
+]
+}
+solid TRUE
+}
+appearance Appearance {
+        texture DEF tex ImageTexture {url ""}
+}
+}
+]
+}
+
+]
+}
+]
+}
+#end banner panel
+]
+}
+]
+}
+
+DEF banner_script Script{
+
+field MFString texUrl   ["/places/banners/3d/images/ct_store.jpg","/places/banners/3d/images/wbg_2.jpg","/places/banners/3d/images/daily_news.jpg"]
+field MFString anchUrl  ["http://www.cybertown.com/citystore/store.html","http://philliphansel.com/buildersguild/become.html","http://www.cybertown.com/places/news/magazine/dailynews/index.html"]
+field MFString descript ["Cybertown Store","World Builders","Daily News"]
+field MFString param    ["target=new","target=new","target=new"]
+
+eventOut MFString tex_changed
+eventOut MFString anch_changed
+eventOut SFString des_changed
+eventOut SFString par_changed
+
+url "vrmlscript:
+
+function initialize(){
+
+r = Math.floor(Math.random() * texUrl.length) ;
+if(r > (texUrl.length - 1)){r = texUrl.length - 1;}
+
+tex_changed= new MFString(texUrl[r]);
+anch_changed=new MFString(anchUrl[r]);
+des_changed= new SFString(descript[r]); 
+des_changed= new SFString(param[r]); 
+
+}
+
+"}
+
+]}
+
+ROUTE banner_script.tex_changed  TO tex.set_url
+ROUTE banner_script.anch_changed TO anch.set_url
+ROUTE banner_script.des_changed  TO anch.set_description
+ROUTE banner_script.par_changed  TO anch.set_parameter
+

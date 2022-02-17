@@ -1,0 +1,399 @@
+#VRML V2.0 utf8
+
+#Cosmo Worlds V2.0
+
+Transform {
+  children	[
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {emissiveColor	0.513628 0.8717 1}
+     texture	ImageTexture {
+	    url	"carfront.gif"
+	  }
+
+	}
+
+	geometry	DEF _0 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	53.36 5.113 -241.4
+      rotation	0.995732 -0.065262 0.065262  1.575
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	0.489563 0.51246 1
+	  }
+
+	  texture	ImageTexture {
+	    url	"carfront.gif"
+	  }
+
+	}
+
+	geometry	DEF _1 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	64.46 16.64 -164.1
+      rotation	0.995732 -0.065262 0.065262  1.575
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	0.475138 0.79472 1
+	  }
+
+	  texture	ImageTexture {
+	    url	"carfront.gif"
+	  }
+
+	}
+
+	geometry	DEF _2 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	-55.01 20.6 -145.4
+      rotation	0.992432 0.0868321 -0.0868321  1.578
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	0.480171 0.53812 1
+	  }
+
+	  texture	ImageTexture {
+	    url	"carfront.gif"
+	  }
+
+	}
+
+	geometry	DEF _3 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	-34.4039 10.1781 -257.198
+      rotation	0.999524 0.02181 -0.02181  1.571
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	1 0 1
+	  }
+
+	  texture	ImageTexture {
+	    url	"carangled.gif"
+	  }
+
+	}
+
+	geometry	DEF _4 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	-55.4 2.311 -90.37
+      rotation	0.988223 0.108203 -0.108203  1.583
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	0.49 0 1
+	  }
+
+	  texture	ImageTexture {
+	    url	"carside.gif"
+	  }
+
+	}
+
+	geometry	DEF _5 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	-68.27 -0.9886 -48.31
+      rotation	0.977117 0.150403 -0.150403  1.594
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	  }
+
+	  texture	ImageTexture {
+	    url	"carside.gif"
+	  }
+
+	}
+
+	geometry	DEF _6 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 1 0.001,
+		      0 0,
+		      1 1,
+		      0 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	90.55 -5.405 -49.88
+      rotation	0.970284 -0.171097 0.171097  1.601
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	    emissiveColor	0.86 0 0.73
+	  }
+
+	  texture	ImageTexture {
+	    url	"carangled.gif"
+	  }
+
+	}
+
+	geometry	DEF _7 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 1 0.001,
+		      0 0,
+		      1 1,
+		      0 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	78.42 13.71 -73.16
+      rotation	0.977117 -0.150403 0.150403  1.594
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	  }
+
+	  texture	ImageTexture {
+	    url	"carangled.gif"
+	  }
+
+	}
+
+	geometry	DEF _8 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 0 0.001,
+		      1 0,
+		      0 1,
+		      1 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	-151.6 2.311 -116.3
+      rotation	0.988223 0.108203 -0.108203  1.583
+    }
+    Transform {
+      children	Shape {
+	appearance	Appearance {
+	  material	Material {
+	  }
+
+	  texture	ImageTexture {
+	    url	"carangled.gif"
+	  }
+
+	}
+
+	geometry	DEF _9 IndexedFaceSet {
+	  coord	Coordinate {
+	    point	[ -20.17 0 10.32,
+		      20.17 0 10.32,
+		      -20.17 0 -10.32,
+		      20.17 0 -10.32 ]
+	  }
+
+	  coordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	  texCoord	TextureCoordinate {
+	    point	[ 1 0.001,
+		      0 0,
+		      1 1,
+		      0 1 ]
+	  }
+
+	  creaseAngle	1
+	  normalIndex	[  ]
+	  texCoordIndex	[ 2, 0, 3, -1, 1, 3, 0, -1 ]
+	}
+
+      }
+
+      translation	88.95 0.3894 -115.1
+      rotation	0.977117 -0.150403 0.150403  1.594
+    }
+  ]
+}
+NavigationInfo {
+  avatarSize	[ 0.25, 1.6, 0.75 ]
+  headlight	TRUE
+  speed	1
+  type	"WALK"
+  visibilityLimit	0
+}

@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="Microsoft Word 97">
+   <meta name="Template" content="C:\PROGRAM FILES\MSOFFICE\OFFICE\html.dot">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>dancingavs_menu</title>
+</head>
+<body text="#00FF00" bgcolor="#000000" link="#0000FF" vlink="#800080">
+
+<center><b><font face="Arial"><font size=+3>DANCING AVATARS</font></font></b>
+<p><font face="Arial"><font color="#00FFFF">Click on your selection to
+load</font></font>
+<p><font face="Arial"><font color="#FF0000"><font size=-1>Note: Remember
+to reload your previous avatar when finished dancing!</font></font></font>
+<p><b><font face="Arial"><font color="#00FFFF"><font size=+1>MALE</font></font></font></b></center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=7 WIDTH="501" >
+<tr>
+<td VALIGN=TOP WIDTH="25%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dproteus&IE=x.bxx" target=CCpro><img SRC="dancav_guy.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">&nbsp;Proteus</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="23%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dcam&IE=x.bxx" target=CCpro><img SRC="dancav_cam.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Cam</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="25%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dice&IE=x.bxx" target=CCpro><img SRC="dancav_ice.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Ice</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="28%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dozone&IE=x.bxx" target=CCpro><img SRC="dancav_ozone.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Ozone</font></center>
+</td>
+</tr>
+</table></center>
+
+<center>
+<p><b><font face="Arial"><font color="#00FFFF"><font size=+1>FEMALE</font></font></font></b></center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=7 WIDTH="498" >
+<tr>
+<td VALIGN=TOP WIDTH="25%" HEIGHT="168">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Delectra&IE=x.bxx" target=CCpro><img SRC="dancav_gal.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Electra</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="23%" HEIGHT="168">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dprima&IE=x.bxx" target=CCpro><img SRC="gogogalprima.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Prima</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="23%" HEIGHT="168">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Druby&IE=x.bxx" target=CCpro><img SRC="dancav_ruby.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Ruby</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="29%" HEIGHT="168">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dsilver&IE=x.bxx" target=CCpro><img SRC="dancav_silver.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Silver</font></center>
+</td>
+</tr>
+</table></center>
+
+<center>
+<p><b><font face="Arial"><font color="#00FFFF"><font size=+1>ALIEN</font></font></font></b></center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=7 WIDTH="503" >
+<tr>
+<td VALIGN=TOP WIDTH="33%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dneutron&IE=x.bxx" target=CCpro><img SRC="dancav_alien.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Neutron</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="36%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ID=000000000000001c&ac=3D&tpl=nightclub/enter3Dcobalt&IE=x.bxx" target=CCpro><img SRC="dancav_cobalt.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Cobalt</font></center>
+</td>
+
+<td VALIGN=TOP WIDTH="31%">
+<center><a href="/cgi-bin/cybertown/place?plc=nightclub&ac=3D&tpl=nightclub/enter3Dnebula&IE=x.bxx" target=CCpro><img SRC="dancav_nebula.gif" BORDER=0 height=128 width=128></a>
+<p><font face="Arial">Nebula</font></center>
+</td>
+</tr>
+</table></center>
+
+<br>&nbsp;
+</body>
+</html>

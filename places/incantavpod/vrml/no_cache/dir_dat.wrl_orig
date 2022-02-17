@@ -1,0 +1,22 @@
+#VRML V2.0 utf8
+
+
+PROTO info[
+exposedField MFString names [] 
+exposedField MFString urls []
+exposedField SFFloat aspect .75
+exposedField SFFloat horz 320
+]{}
+
+info{
+names[
+"Mission to Mars",
+"Pitch Black",
+"Frequency",
+]
+urls[
+"http://tm.intervu.net/s2/entertainmentblvd/sclips/56k/mtmarspp.rm",
+"http://tm.intervu.net/s2/entertainmentblvd/sclips/56k/pblack56.rm",
+"http://tm.intervu.net/s2/entertainmentblvd/sclips/56k/frequency56.rm",
+]
+}

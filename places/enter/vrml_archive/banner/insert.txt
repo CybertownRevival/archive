@@ -1,0 +1,16 @@
+# Insert for banner
+Transform {
+translation -20.65 1.504 -42.9
+rotation 0 1 0 1
+children [
+Transform {
+rotation 1 0 0 0
+children [
+			
+Inline {
+url "banner/banner.wrl"
+}
+]
+}
+]
+}

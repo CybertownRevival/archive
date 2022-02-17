@@ -1,0 +1,825 @@
+#VRML V2.0 utf8
+
+
+PROTO BlaxxunZone [  
+eventIn         MFNode   addEvents  
+eventIn         MFNode   removeEvents  
+eventIn         MFNode   addAvatars  
+eventIn         MFNode   removeAvatars  
+exposedField    MFNode   events NULL 
+exposedField    MFNode   avatars NULL 
+exposedField    SFString myAvatarURL "" 
+exposedField    SFString myAvatarName ""
+exposedField    SFFloat  number_avatars 0
+eventOut        MFNode   avatars_added 
+eventOut        MFNode   avatars_removed
+
+]{ 
+Transform { 
+addChildren IS addEvents 
+removeChildren IS removeEvents 
+children IS events 
+}
+Transform {
+addChildren IS addAvatars
+removeChildren IS removeAvatars
+children IS avatars 
+}
+}# END BlaxxunZone 
+
+Group{
+children[
+
+DEF SharedZone BlaxxunZone{ }
+
+DEF nav NavigationInfo
+{
+  type ["WALK"]
+  avatarSize [.25 1.75 .5]
+  headlight FALSE
+  visibilityLimit 110
+}
+
+DEF Enter Viewpoint {
+  position      -0.1536 1.75 7.421
+  description   "Enter"
+}
+
+DEF L1 DirectionalLight
+{
+direction 1 -.25 1
+}
+DEF L2 DirectionalLight
+{
+direction -1 -.25 1
+}
+DEF L3 DirectionalLight
+{
+direction 0 .25 -1
+}
+]}
+
+#########################################################################################################
+# room geometry
+#########################################################################################################
+
+DEF room_switch Switch{
+whichChoice 0
+choice Group{children[
+Transform
+{
+children [
+Shape
+{
+appearance
+Appearance
+{
+material
+DEF a
+Material {
+}
+texture
+ImageTexture
+{
+url "primary_f.jpg"
+}
+}
+geometry
+IndexedFaceSet
+{
+coord Coordinate {
+point [ 84.34 0 107.3 84.34 0 -132.7 -84.34 0 -132.7 -84.34 0 107.3 ] }
+coordIndex [ 3 0 1 2 -1 ] texCoord
+TextureCoordinate { point [ .988 -.203 .988 .993 -.007 .993 -.007 -.203 ]
+} texCoordIndex
+[ 3 0 1 2 -1 ]
+}
+}
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "zquiltlo.jpg"
+}
+}
+geometry
+IndexedFaceSet
+{
+coord Coordinate {
+point [ 104.6 33.92 133 -104.6 33.92 133 104.6 77.75 133.2 -104.6 77.75 133.2
+104.6 33.92 -158.5 104.6 77.75 -158.5 -104.6 33.92 -158.5 -104.6 77.75 -158.5
+] }
+coordIndex [ 5 4 0 2 -1 2 0 1 3 -1 3 1 6 7 -1 7 6 4 5 -1 7 5 2 3 -1 ] texCoord
+TextureCoordinate { point [ .995 1.024 0 1.075 .995 1.075 .995 0 0 0 .99 1.024
+.993 .352 -.007 .352 -.01 1.024 -.005 1.024 ] } texCoordIndex
+[ 5 6 7 8 -1 0 6 7 9 -1 9 7 6 0 -1 9 7 6 0 -1 1 2 3 4 -1 ]
+}
+}
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "lights.jpg"
+}
+textureTransform
+TextureTransform
+{
+scale 8 1
+center .5 .5
+}
+}
+geometry
+IndexedFaceSet
+{
+coord
+DEF b
+Coordinate {
+point [ -84.34 0 107.3 84.34 0 107.3 -84.34 0 -132.7 84.34 0 -132.7 -84.34
+5.694 107.3 84.34 5.694 107.3 84.34 5.694 -132.7 -84.34 5.694 -132.7 -104.6
+22.89 133 104.6 22.89 133 104.6 22.89 -158.5 -104.6 22.89 -158.5 -104.6 33.92
+133 104.6 33.92 133 104.6 33.92 -158.5 -104.6 33.92 -158.5 22.1 33.59 133
+-18.11 33.59 133 22.1 .012 107.3 22.1 5.694 107.3 22.1 22.89 133 -18.11 5.694
+107.3 -18.11 .012 107.3 -18.11 22.89 133 ] }
+coordIndex [ 1 18 5 -1 3 1 6 -1 5 6 1 -1 2 3 7 -1 6 7 3 -1 0 2 4 -1 7 4 2
+-1 22 0 21 -1 4 21 0 -1 19 5 18 -1 ] texCoord
+DEF c
+TextureCoordinate { point [ 1 0 0 0 0 1 1 1 .999 0 .369 .007 .001 1 .607 .007
+.607 1 .369 1 .001 0 .999 1 .394 .97 .587 .97 1 .001 .394 0 .587 0 0 .001
+] } texCoordIndex
+[ 10 5 6 -1 1 4 2 -1 11 2 4 -1 1 0 2 -1 3 2 0 -1 10 0 6 -1 3 6 0 -1 7 0 8
+-1 3 8 0 -1 9 6 5 -1 ]
+}
+}
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "neon01.jpg"
+}
+}
+geometry
+IndexedFaceSet
+{
+coord
+USE b
+coordIndex [ 16 17 13 -1 12 13 17 -1 10 9 14 -1 13 14 9 -1 11 10 15 -1 14 15
+10 -1 8 11 12 -1 15 12 11 -1 13 9 16 -1 8 12 17 -1 16 9 20 -1 23 8 17 -1 ]
+texCoord
+USE c
+texCoordIndex
+[ 12 13 2 -1 3 2 13 -1 17 0 2 -1 3 2 0 -1 17 14 2 -1 3 2 14 -1 1 14 2 -1 3 2
+14 -1 2 10 12 -1 0 3 13 -1 12 10 15 -1 16 0 13 -1 ]
+}
+}
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "blue_triforce.jpg"
+}
+textureTransform
+TextureTransform
+{
+scale 4 1
+center .5 .5
+}
+}
+geometry
+IndexedFaceSet
+{
+coord Coordinate {
+point [ 84.34 5.694 107.3 22.1 5.694 107.3 22.1 22.89 133 104.6 22.89 133
+84.34 5.694 -132.7 104.6 22.89 -158.5 -84.34 5.694 -132.7 -104.6 22.89 -158.5
+-84.34 5.694 107.3 -104.6 22.89 133 -18.11 5.694 107.3 -18.11 22.89 133 ]
+}
+coordIndex [ 0 1 2 3 -1 11 10 8 9 -1 5 4 0 3 -1 4 5 7 6 -1 9 8 6 7 -1 ] texCoord
+TextureCoordinate { point [ 1.747 .953 -.001 .952 1.494 .952 .641 .981 .641
+0 .15 0 0 .981 .638 .006 .155 .006 .152 .952 .791 .952 1.749 .936 1.594 -.004
+.153 0 -.004 .936 1.351 0 .145 0 0 .953 .154 0 1.592 0 ] } texCoordIndex
+[ 7 8 9 10 -1 3 4 5 6 -1 11 12 13 14 -1 15 2 1 16 -1 17 18 19 0 -1 ]
+}
+}
+]
+translation -.02756 .0228 -.02856
+scale .08312 .08312 .08312
+}
+Transform
+{
+children
+Transform
+{
+children [
+Transform
+{
+translation .06888 .0502 -.7107
+rotation -.022049 -.310896 .950188 .8312
+scale .1 .1 .1
+scaleOrientation .016119 .169095 .985468 .4946
+}
+Transform
+{
+children
+DEF d
+Transform
+{
+}
+translation -.0504 .0502 -.7303
+rotation .920238 -.383616 -.077463 3.164
+scale .1 .1 .1
+scaleOrientation -.162404 0 -.986724 .1321
+}
+DEF e
+Transform
+{
+translation .00164 -.0871 -.7891
+rotation 1 0 0 3.142
+scale .1 .1 .1
+}
+USE e USE e USE e
+Transform
+{
+children
+USE d
+translation -.001585 -.0871 -.7494
+rotation 1 0 0 3.142
+scale .1 .1 .1
+}
+USE e USE e
+Transform
+{
+children
+USE d
+translation .001268 .0151 -.7785
+rotation 1 0 0 3.142
+scale .7042 .7042 .7042
+}
+Transform
+{
+translation .1179 .04863 -.7717
+rotation .918295 -.389098 .073049 3.28
+scale .1 .1 .1
+scaleOrientation 0 -.30161 -.953431 .4354
+}
+Transform
+{
+translation -.1913 .04869 -.7782
+rotation .206792 .265889 .941563 .8429
+scale .1 .1 .1
+scaleOrientation -.392618 .039751 .918842 .845
+}
+Transform
+{
+children
+USE d
+translation .004858 -.0871 -.7484
+rotation -1 0 0 0
+scale .1 .1 .1
+}
+Transform
+{
+translation -.03209 .0873 -.7727
+rotation -1 0 0 0
+}
+Transform
+{
+translation .00164 -.0871 -.7891
+rotation -1 0 0 0
+scale .1 .1 .1
+}
+USE e USE e
+]
+translation 0 4.482e-005 .000168
+rotation 1 0 0 1.571
+}
+translation -.2717 .9452 7.724
+}
+Transform
+{
+children [
+
+Anchor{
+description "Back to the Black Sun Club"
+parameter "target=_top"
+url "/cgi-bin/cybertown/place?plc=movies"
+children[
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "doovp.jpg"
+}
+}
+geometry
+IndexedFaceSet
+{
+coord
+DEF f
+Coordinate {
+point [ -1.671 0 -.109 1.671 0 -.109 -1.671 0 -2.279 1.671 0 -2.279 -1.671
+2.797 -.109 1.671 2.797 -.109 -1.671 2.797 -2.279 1.671 2.797 -2.279 -1.671
+0 -2.275 1.671 0 -2.275 -1.671 2.797 -2.275 1.671 2.797 -2.275 ] }
+coordIndex [ 4 5 7 -1 7 6 4 -1 9 8 11 -1 10 11 8 -1 ] texCoord
+TextureCoordinate { point [ 0 0 1 0 0 .001 1 1 0 1 ] } texCoordIndex
+[ 0 0 0 -1 0 0 0 -1 2 1 4 -1 3 4 1 -1 ]
+}
+}
+]}
+
+Shape
+{
+appearance
+DEF g
+Appearance
+{
+material
+USE a
+}
+geometry
+IndexedFaceSet
+{
+coord
+USE f
+coordIndex [ 0 2 3 -1 3 1 0 -1 ]
+}
+}
+Shape
+{
+appearance
+USE g
+geometry
+IndexedFaceSet
+{
+coord
+USE f
+coordIndex [ 2 0 4 -1 4 6 2 -1 ]
+}
+}
+Shape
+{
+appearance
+USE g
+geometry
+IndexedFaceSet
+{
+coord
+USE f
+coordIndex [ 1 3 7 -1 7 5 1 -1 ]
+}
+}
+Shape
+{
+appearance
+USE g
+geometry
+IndexedFaceSet
+{
+coord
+USE f
+coordIndex [ 0 1 9 -1 9 8 0 -1 5 4 10 -1 10 11 5 -1 1 5 11 -1 11 9 1 -1 4 0
+8 -1 8 10 4 -1 ]
+}
+}
+]
+translation .1381 0 11.18
+}
+Transform
+{
+translation -.06392 2.83 -9.666
+rotation -.999315 .02617 .02617 1.571
+scale .02152 .02152 .02152
+scaleOrientation .001195 .148697 -.988882 .015942
+}
+Transform
+{
+children
+Shape
+{
+appearance
+Appearance
+{
+material
+USE a
+texture
+ImageTexture
+{
+url "exit_S.jpg"
+}
+}
+geometry
+IndexedFaceSet
+{
+coord Coordinate {
+point [ -.674 .842 .82 .437 .842 .82 -.674 1.288 .82 .437 1.288 .82 ] }
+coordIndex [ 0 1 3 -1 3 2 0 -1 ] texCoord
+TextureCoordinate { point [ 0 .001 1 0 0 1 1 1 ] } texCoordIndex
+[ 0 1 3 -1 3 2 0 -1 ]
+}
+}
+translation .1639 1.955 9.726
+rotation 0 1 0 3.142
+}
+Transform
+{
+children
+DEF h
+Transform
+{
+children
+Transform
+{
+translation .09205 -.2594 .003684
+rotation 1 0 0 1.571
+scale .4658 .4658 .4658
+}
+translation .006273 0 -.02232
+scale .8772 .8772 .8772
+}
+translation 5.945 1.425 -10.1
+}
+Transform
+{
+children
+USE h
+translation -6.039 1.425 -10.1
+}
+Transform{
+#translation .8 -3.5 -9.3 scale 2 2 2
+#children DEF Dir Directory{loadUrl "./no_cache/dir_dat.wrl"}
+}
+
+]}}#END switch
+
+
+####################################################################################
+#Movie Screen
+####################################################################################
+
+
+
+DEF da Transform {   translation   0 2.5 -9.3 scale .2 .2 .2
+children[
+
+DEF dw TimeSensor { loop      TRUE }       
+  
+Group { 
+children[
+
+
+
+
+    
+DEF dt Transform {
+children [
+Shape {
+appearance Appearance {
+texture ImageTexture {
+url "screen.jpg"
+}
+}
+geometry IndexedFaceSet {
+coord Coordinate {
+point [
+9.87 -10 0, 12.652 -9.293 0, 12.641 -12.848 0, -12.771 -12.848 0,
+-12.782 -9.294 0, 12.684 9.45 0, 14.402 -7.996 0, -14.532 -7.996 0,
+-12.814 9.45 0, -10.13 -10 0, 9.87 10 0, 14.402 8.915 0, -14.532 8.915 0,
+-12.814 13.489 0, -9.758 15.212 0, 9.628 15.213 0, 12.684 13.489 0,
+-10.13 10 0, 9.87 -13.675 0, -10.13 -13.676 0,
+]
+}
+coordIndex [
+5 11 6 1 0 10 -1, 13 14 17 8 -1, 17 14 15 10 -1, 15 16 5 10 -1, 9 4 7 12 8
+17 -1, 0 1 2 18 -1, 0 18 19 9 -1, 3 4 9 19 -1,
+]
+texCoord TextureCoordinate {
+point [
+.062 .027, .942 .027, .864 -.001, .13 .002, .133 .142, .062 .143,
+.941 .147, .062 .871, -.005 .186, .996 .187, .938 .873, .86 .875,
+.138 .879, -.002 .837, .998 .837, .857 .143, .134 .138, .065 .147,
+.943 .149, .854 .142, .947 .959, .843 .992, .154 .992, .061 .959,
+.061 .88, .138 .882, .858 .882, .947 .88, .149 .002, .85 -.001,
+]
+}
+ccw FALSE
+texCoordIndex [
+7 13 8 5 4 12 -1, 20 21 26 27 -1, 26 21 22 25 -1, 22 23 24 25 -1, 15 6 9 14
+10 11 -1, 16 17 0 3 -1, 16 28 29 19 -1, 1 18 19 2 -1,
+]
+}
+}
+Transform {
+children [
+Shape {
+appearance Appearance {
+texture DEF du MovieTexture {
+url "yesmate.gif"
+}
+}
+geometry  IndexedFaceSet {
+coord Coordinate {
+point [
+-10.13 10 0, 9.87 10 0, 9.87 -10 0, -10.13 -10 0,
+]
+}
+coordIndex [
+0 1 2 3 -1,
+]
+texCoord TextureCoordinate {
+point [
+0 1, 1 1, 1 0, 0 0,
+]
+}
+ccw FALSE
+texCoordIndex [
+0 1 2 3 -1,
+]
+}
+}
+DEF dv TouchSensor {
+}
+]}
+]} 
+
+Transform{
+scale 1 .75 1 translation .5 0 1
+children DEF sw Switch{
+whichChoice -1
+choice[
+ 
+Shape{
+appearance Appearance{material Material{diffuseColor .1 .1 .1 emissiveColor 0 1 0}}
+geometry Text {
+fontStyle FontStyle {size 2 family ["SANS"] style "ITALIC" justify "MIDDLE"}
+string ["Initializing Uplink...","Please wait..."]
+}}
+
+]}}
+
+]}#END billboard
+
+]}
+
+DEF lightDown_clock TimeSensor{cycleInterval 5 loop FALSE enabled TRUE}
+DEF lightUp_clock TimeSensor{cycleInterval 5 loop FALSE enabled TRUE}
+
+DEF lightDown ScalarInterpolator{key[0,1] keyValue[1,0]}
+DEF lightUp ScalarInterpolator{key[0,1] keyValue[0,1]}
+
+DEF mov_view Viewpoint{}
+
+DEF dx Script { 
+
+  eventIn      SFFloat      set_fraction 
+  eventIn      SFTime       set_touch 
+  eventIn      SFBool       set_active
+  eventIn      SFTime       set_mediaTime 
+  eventIn      MFNode       receive
+  
+  eventIn MFString set_movs
+  eventIn SFString set_mov
+  
+  eventOut     MFString     mov_changed 
+  eventOut     SFBool       loop_changed 
+  eventOut     SFTime       startTime_changed 
+  eventOut     SFTime       stopTime_changed 
+  eventOut     SFVec3f      translation_changed
+  eventOut     SFVec3f      scale_changed
+  eventOut     SFInt32      choice_changed
+  field        SFBool       isLoading FALSE
+  field        SFNode       self USE dx
+  field        MFNode       empty []
+  field        SFBool       isPlay  FALSE
+  field        SFBool       isDir   TRUE
+  field        MFString     mov     ""
+  field        MFString     scrn    "./incanta.gif"
+  field        MFString     loadURL ["./no_cache/dir_dat.wrl"] 
+
+  eventIn      SFFloat      set_view
+  eventIn      SFBool       set_lights
+
+  field        SFNode       screen USE da
+  field        SFNode       nav USE nav
+  field        SFNode       SharedZone USE SharedZone
+  field        SFVec3f      screen_trans 0 2.5 -9.3
+  field        SFVec3f      screen_vec  0 0 0
+  field        SFFloat      horz       -2
+  
+  
+  eventOut     SFTime       lightDown_changed 
+  eventOut     SFTime       lightUp_changed
+  eventOut     SFTime       lightStop_changed
+  eventOut     SFInt32      vDromeChoice_changed
+  
+  directOutput TRUE
+
+  field        MFString     loadUrl [ "" ]  
+  field        MFString     loadParam [ "" ] 
+
+  field        SFVec3f      viewpos 0 0 0
+  field        SFVec3f      newpos  0 0 0
+  field        SFNode       viewpoint USE mov_view
+
+
+url       "vrmlscript:
+
+
+
+function set_lights(v,t){
+  if(v || !isPlay){return;}
+  Browser.set_showMyAvatar = false;
+  vDromeChoice_changed = -1;
+  
+  viewpoint.position = Browser.viewpointPosition;
+  viewpoint.orientation = Browser.viewpointOrientation;  
+  viewpoint.set_bind = true;
+  viewpos = Browser.viewpointPosition;
+  viewpoint.position = newpos;
+  
+  screen.translation = newpos.add(Browser.viewpointOrientation.multVec(screen_vec));
+  screen.rotation = Browser.viewpointOrientation;
+}
+ 
+function set_touch(v,t){ 
+ if(isPlay){ 
+  stopTime_changed = t;
+  mov_changed = scrn;
+  choice_changed = -1;
+  isLoading = false;  
+
+  screen.translation = screen_trans;
+  screen.rotation = new SFRotation(0,1,0,0);
+  viewpoint.position = viewpos;
+
+  nav.type = new MFString('WALK');
+  nav.visibilityLimit = 110;
+
+  isPlay = false;
+
+  vDromeChoice_changed = 0;
+
+  lightStop_changed = t - .1;
+  lightUp_changed = t;
+ } 
+ else{
+  if(!isDir){
+	 isDir = true;
+    isPlay = true; 
+    mov_changed = mov; 
+    startTime_changed = t;
+
+    nav.visibilityLimit = Math.abs(screen_vec[2] - 2);
+    nav.type = new MFString('NONE');
+  
+    lightStop_changed = t-.1;
+    lightDown_changed = t;
+  }
+  else{
+    isDir = false;
+	 u = new MFString('javascript:loadCustom(\"/cgi-bin/cybertown/admin2/incantavpod/movie.pl?ac=3D\",300,500)');
+    p = new MFString('target=action');
+    Browser.loadURL(u,p);
+  }
+
+ } 
+} 
+
+
+ 
+
+function set_fraction(v,t){ 
+ pos = Browser.viewpointPosition[1] + 3; 
+ if(pos > 6){pos = 6;} 
+ if(pos < 1){pos = 1;} 
+ translation_changed = new SFVec3f(0,pos,0); 
+}
+function set_mediaTime(v,t){
+ if(v == 0 && !isLoading){choice_changed = 0; isLoading = true;}
+ else{
+  if(isLoading && v != 0){choice_changed = -1; isLoading = false;}
+ }
+}
+function receive(v,t){ 
+ 
+ if(v == empty){
+    horz = -2;
+    scale_changed = new SFVec3f(1,.75,1);
+    mov = new MFString ('');
+    mov_changed = new MFString('./incanta.gif');
+ }
+ else{
+   horz = (v[0].horz/160) * -1;
+   scale_changed = new SFVec3f(1,v[0].aspect,1);
+   //mov = v[0].mov;
+   //scrn = v[0].scrn; 
+   mov_changed = new MFString('./incanta.gif');
+    
+ }
+ 
+}
+
+function set_view(){
+
+  aspect = Browser.windowAspect;
+  scrn_width = Browser.windowSize[0];
+ 
+  A = Math.atan(aspect * .414);
+  b = 10/Math.tan(A);
+  b *= ( scrn_width / 320 );
+  
+  screen_vec = new SFVec3f(0,-.5,(horz * b)*.2);
+
+}
+
+function set_movs(v,t){
+  mov = v;
+  set_touch(t,t);  
+}
+function set_mov(v,t){
+  if(isPlay){return;}
+  set_movs(new MFString(v),t);
+}
+
+function initialize(){
+  nav.set_bind = true;
+
+  newpos = new SFVec3f((Math.random()*10000) + 100,(Math.random()*10000) + 100,(Math.random()*10000) + 100);
+  //Browser.createVrmlFromURL(loadURL,self,'receive');
+  set_view();
+  Browser.addRoute( Browser, 'windowAspect', self, 'set_view' );
+
+    scale_changed = new SFVec3f(1,.75,1);
+    mov = new MFString ('');
+    mov_changed = new MFString('./incanta.gif');
+
+  loadUrl[0] = '/cgi-bin/cybertown/place?plc=incantavpod&ac=action';  
+  loadParam[0] = 'target=action';   
+  Browser.loadURL(loadUrl, loadParam);
+  
+}
+"}
+
+ROUTE dx.mov_changed TO du.set_url 
+ROUTE dx.loop_changed TO du.set_loop 
+ROUTE dx.startTime_changed TO du.set_startTime 
+ROUTE dx.stopTime_changed TO du.set_stopTime 
+ROUTE dw.fraction_changed TO dx.set_fraction 
+#ROUTE dv.touchTime TO Dir.set_go 
+ROUTE dv.touchTime TO dx.set_touch
+ROUTE du.isActive TO dx.set_active
+ROUTE du.mediaTime TO dx.set_mediaTime 
+ROUTE dx.translation_changed TO dt.set_translation 
+ROUTE dx.scale_changed TO dt.set_scale
+ROUTE dx.choice_changed TO sw.set_whichChoice
+ROUTE dx.vDromeChoice_changed TO room_switch.set_whichChoice
+
+
+ROUTE dx.lightStop_changed TO lightUp_clock.set_stopTime
+ROUTE dx.lightStop_changed TO lightDown_clock.set_stopTime
+
+ROUTE lightDown_clock.isActive TO dx.set_lights
+
+ROUTE dx.lightDown_changed TO lightDown_clock.set_startTime
+ROUTE lightDown_clock.fraction_changed TO lightDown.set_fraction
+ROUTE lightDown.value_changed TO L1.set_intensity
+ROUTE lightDown.value_changed TO L2.set_intensity
+ROUTE lightDown.value_changed TO L3.set_intensity
+
+ROUTE dx.lightUp_changed TO lightUp_clock.set_startTime
+ROUTE lightUp_clock.fraction_changed TO lightUp.set_fraction
+ROUTE lightUp.value_changed TO L1.set_intensity
+ROUTE lightUp.value_changed TO L2.set_intensity
+ROUTE lightUp.value_changed TO L3.set_intensity
+
+
+#ROUTE Dir.mov_changed TO dx.set_mov
+
+

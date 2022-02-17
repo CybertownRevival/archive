@@ -1,0 +1,322 @@
+Manifest-Version: 1.0
+
+Name: Card.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +qiSEIio4tXw2+GO5DJ5diQ7/UE=
+MD5-Digest: L2lHKel7X8e/FCNGekvEhA==
+
+Name: CardDeck.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: WNXO1YlN/pEanurl7BO9brO3EqA=
+MD5-Digest: KxB2KRW9AJpfB9l8N+cshg==
+
+Name: Hand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: /6ByWKJwxzwIgPNPwoqBSFjbHrI=
+MD5-Digest: ShSBb14wGNK1aKw2B1F4Qw==
+
+Name: RandomIntGenerator.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 8G/CA30O6BeeSlF0P8/3SAloX3A=
+MD5-Digest: dgbWWimK6yQn2C6s2CGAqg==
+
+Name: Spanish21.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6ywf7VbwPoKIiS6vKdb79NfNDMs=
+MD5-Digest: DFaYrrNcS5bTFakJYvwoVQ==
+
+Name: images/3-10.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1g7kR3OJOiGkMdz8mvvTZnYDrFc=
+MD5-Digest: zxuZrcOxw4KEHop9qiREbQ==
+
+Name: images/1-10.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Mioh2Kfa2A1x0Q5EGUbrL/xZjco=
+MD5-Digest: cNFRZDgPz4boQ4aPdvs9HA==
+
+Name: images/0-2.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HiBNsdyZMlWNVnlZsp8KyJesGRc=
+MD5-Digest: 5XdlMBcBVt7KpB5gn/xIpQ==
+
+Name: images/2-10.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 5+O6IA2eb2Nl3AwVrnsqXNzVDL4=
+MD5-Digest: o5wp7TcrV7y8BjZn0mM2xw==
+
+Name: images/2-2.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: yv9JablbrhsQ0hR/Y75rTFlqN2Y=
+MD5-Digest: mjjCLTryAknZ0+BiS3vyog==
+
+Name: images/3-2.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: b1vYsiQTd2uqLRheD/oUBBpdQuw=
+MD5-Digest: R1Fqn5xV5plQ67bHsIzpyg==
+
+Name: images/1-2.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: /wuGUNr8YjGb0VWny7Ye1ao3rvw=
+MD5-Digest: LFwb+v7FkbQDgo3+whzkfA==
+
+Name: images/0-3.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: StCqgEKG4Jry1n7Tu2urA0iy0oA=
+MD5-Digest: 3dpwLykP4xkvuo2fj5fNJQ==
+
+Name: images/2-3.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: gN0yzz93MiKEhUCDeGWE6MHx9NQ=
+MD5-Digest: b+wldzMteuRZzuYS+41njg==
+
+Name: images/3-3.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Jr3bexi50tFVEHpoJYWHwzBgjt0=
+MD5-Digest: 25UFVGpzEKvUm0Fm/vKCjg==
+
+Name: images/1-3.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ZNBbCJu2+p2gcIwMZMobxrOPLcQ=
+MD5-Digest: sh+ke7ynn/Uc2sQy6JFvEQ==
+
+Name: images/0-4.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: UQiRAe3r/QZp8RKPVMiT+QNdB8k=
+MD5-Digest: i0SBQ5jG76QQmpLuMLSwkw==
+
+Name: images/2-4.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: KCJ/LwtmIwCjZdXxFY+gA49RE+I=
+MD5-Digest: pMTfCvo+SHbrsQRV7c6tkw==
+
+Name: images/3-4.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: vzpxtGY+C2JpZAhcXUqVVK+xR3Y=
+MD5-Digest: NOIqKo00YmWXqcnoeDqo4A==
+
+Name: images/1-4.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HE3eUbCGsfCbzc0GSJJEpOW4Esg=
+MD5-Digest: AV8Df8HN9ZwGWhNfXK0VsA==
+
+Name: images/0-5.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1kcEMLVQSJG0M9PrkmplzUgw9Sg=
+MD5-Digest: F+BCy7SQGDtFwxkyIpI1Bw==
+
+Name: images/2-5.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SFgettJNrk/XN0ByX/yctXjDdQQ=
+MD5-Digest: Dpa8QUAr0biOOyN+i8fZWw==
+
+Name: images/3-5.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XnOUHIMI/q7NpZ9TJWvQYDHjzLY=
+MD5-Digest: PoC/SalI/b51k9pCsTufww==
+
+Name: images/1-5.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: VO22jhcM75jmxZNVuEwLlahFI/o=
+MD5-Digest: J6tFA+vLI/yLsGQuAVoS6Q==
+
+Name: images/0-6.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: DYG27+abhIVJEzuv0PxuoGk1wPA=
+MD5-Digest: Ut7+fJMoxVDeuklnqZfIJw==
+
+Name: images/2-6.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: p9Tw1j+XzxWPyjvDfk0EQtLXka0=
+MD5-Digest: vTbs8lPaRDjDkVG7DNKz2A==
+
+Name: images/3-6.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 7JUf6Wn4NcneqI+gc6uS8NhY5v4=
+MD5-Digest: myEfs8EV2+4q/fny50GJrA==
+
+Name: images/1-6.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2cAL8vWlFYGsV7NTEiLgG7FJ7so=
+MD5-Digest: UcteB39spOul7tmyQySisA==
+
+Name: images/0-7.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cOqQp1htv/Mwe20nVFXtDEvDR2k=
+MD5-Digest: FRQYmq/uFAr4ygyXsq3AxA==
+
+Name: images/2-7.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1xQSOAIBR3k2xvADxTsHiBjgETE=
+MD5-Digest: xKaTH6jMGw2TCYxNIVoKOg==
+
+Name: images/3-7.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QIgP+Wu1SilwboqcMjEZgRKgXCk=
+MD5-Digest: QgD1o+fXWelWS/LAEvH/BQ==
+
+Name: images/1-7.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: WQBHEJf5CO7oDHEI3zYkAh5oioY=
+MD5-Digest: EPgddz57Xo+PJTieycdHkg==
+
+Name: images/1-1.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XBsiLL7qmxa30Go7tAaHwa7Ep/0=
+MD5-Digest: yROZCYXqwt/KEwCT+vLobA==
+
+Name: images/0-11.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: kZbYfdNLKxUEHw0ubXibnWvigI0=
+MD5-Digest: viPuSfvJDB+3tX+HmqVjiw==
+
+Name: images/2-11.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: C3PVPcw1a8PZh5mnCbWf+SilEQA=
+MD5-Digest: bSdMUUKTKmo/17FUh35tOA==
+
+Name: images/3-11.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: sPKsAh9q3idXa81ONYs1pgVDrMc=
+MD5-Digest: XNvdaiRvrDUttvyGUQjZQA==
+
+Name: images/1-11.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: KRhSA9qa7FTAAmzzYKV9nPyqWSU=
+MD5-Digest: LLFYI0P21pCnYfvXidCrMg==
+
+Name: images/0-13.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HOE73z5EVgGo9SPbTGF9rHjoJn8=
+MD5-Digest: g1XYH3RbFl75YPj5j05yBA==
+
+Name: images/2-13.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SpB/v8STLAcdLxOyrfzxlwJfXUg=
+MD5-Digest: jmkpPtd4UxZaRlaMLdFWsg==
+
+Name: images/3-13.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 9EJuD1exe6ZCWoaIuPM/5gzeog0=
+MD5-Digest: tWBmFBRIUmTEWLdFPgH36g==
+
+Name: images/1-13.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Xgu+cocuRhazRdN/IqV8JABtBVA=
+MD5-Digest: VAjnQP/sdUFOyvW48TzJ7A==
+
+Name: images/0-12.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dfbFk+92q1NIL5L5Z7KAQau4NIU=
+MD5-Digest: ggNVrKVR+RXovyiL/MW3fg==
+
+Name: images/2-12.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2qQ1zMwdKLxjfiUiP8yyzOSIqtI=
+MD5-Digest: X86xM6d7Bq0gox/FzSePvQ==
+
+Name: images/3-12.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: KIMFfYCn/MaZlSIBo96+sVx2TC8=
+MD5-Digest: 21SrNd4PrwhHY/IOurIkOg==
+
+Name: images/1-12.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: avE2hohSFFA8JDDqOCqprmJXpUg=
+MD5-Digest: qWqz46HBYxpV0AzJfWU3ig==
+
+Name: images/0-0.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CSASe7uKbrkXOkAQHaNL3WqilN8=
+MD5-Digest: 4ryhPq+OI06jWABeY2AQ/A==
+
+Name: images/0-10.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wPt+SE2KKgAoGIcErvb/Z/4YfmQ=
+MD5-Digest: npmMifr+hyB8dQYxkzjcZQ==
+
+Name: images/2-1.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: RSE5Of78bocrASDUkEecuI6Uy2c=
+MD5-Digest: XiOOIyQuQfdVOfjcaX3HYA==
+
+Name: images/0-1.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0r8ffnGfKehj+BjQicMEgPoiMQg=
+MD5-Digest: hq2q+TKKM/Ipt8g5mN6AvQ==
+
+Name: images/0-8.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: AKZRCqNFex4qSZ2/l7eCkk9wSec=
+MD5-Digest: owDy2LYiVyII4bUPCG2YbA==
+
+Name: images/0-9.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: RjZoVwzfNIYqiLIrO4D4giXC1Vs=
+MD5-Digest: YoKSKA+4ieihhGt6fGsM0A==
+
+Name: images/1-8.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ytqKbD2AalPtUiHjhi+tAAM9TIs=
+MD5-Digest: kby7lW+g/UKF0/nrcoyxKQ==
+
+Name: images/2-8.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wI53ao6blm3r5qvPNVCUbxlYrsU=
+MD5-Digest: r4A9DBbYQP9gE6gGVgoTwA==
+
+Name: images/2-9.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XtAUOkenaVhZ184HrEdzn/+sd5s=
+MD5-Digest: Lg/badp8naL82kEmOqVbAQ==
+
+Name: images/3-1.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tK6y+hMBqawmiFHJzQY7w7uK4J4=
+MD5-Digest: q8qm3XEP94fc26hSiN5OXw==
+
+Name: images/3-8.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XlE6hs7H4si+4zUZi2rGTAEOrsk=
+MD5-Digest: cjauAU4geTvnegXKfhV+pg==
+
+Name: images/3-9.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: q091o3J4DC9G/Aq0HVgMZEjtyic=
+MD5-Digest: Ycm6zRXRDsIlilgcmiEMnA==
+
+Name: images/1-9.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EHQbwQgmGxaTciYeqH+MU1Xred0=
+MD5-Digest: 6uuxu3gZkujDm3M4OXMZ+A==
+
+Name: images/5-0.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ZhJmejaqEXXMcf0xdjgLIxCzsAQ=
+MD5-Digest: NtXbOu5jSj9eUEANz+dVPQ==
+
+Name: images/4-0.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cGBsoL0YUxkGNaxSAdoDmTzOltk=
+MD5-Digest: qgCcK26DdNANdh3N9/yrOQ==
+
+Name: images/100.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: StkZBUh+id9QLh5uR0nlARffY/w=
+MD5-Digest: 5UMVlIteQkmntmw575s31g==
+
+Name: images/25.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: VxIr08ylXZyX3YOboj+Fp3+cVVg=
+MD5-Digest: Euvu2zcDwqLnVzFCZiLmWQ==
+
+Name: images/5.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XfIuWBXZ46i0UbOJmidMQaqyp/w=
+MD5-Digest: NmYWY4d44B+OblkZJLAJfQ==
+
+Name: images/1.gif
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ASY3g6xsIfc6Df/d84csBvQd87Y=
+MD5-Digest: in6GCTdKv+OldG2xAQAWXw==
+

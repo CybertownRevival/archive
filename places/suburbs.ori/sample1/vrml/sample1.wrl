@@ -1,0 +1,304 @@
+#VRML V2.0 utf8
+
+DEF Scene Group {}
+NavigationInfo {
+###	avatarSize 0.25 1.6 0.75
+	headlight FALSE
+	speed 2.0
+	type "WALK"
+	visibilityLimit 50.0
+}
+
+Group {
+children [
+Viewpoint {
+position 0 1.7 20
+}
+DirectionalLight {
+direction -1 -1 -1
+}
+DirectionalLight {
+direction -1 -1 1
+}
+DirectionalLight {
+direction 1 -1 1
+}
+DEF sky Background{
+skyColor[0 0 .2,.2 .7 1,1 1 1]
+skyAngle [1.209,1.571]
+groundColor[0 0 0,0 0.1 0,.0 .8 .05,1 1 1]
+groundAngle [1.53,1.56,1.569]
+}
+DEF frameLoader Script{
+field MFString loadUrl [ "" ]
+field MFString loadParam [ "" ]
+url "vrmlscript:
+function initialize(){
+loadUrl[0] = '/cgi-bin/colonycity/place?plc=suburbs&ac=action';
+loadParam[0] = 'target=action';
+Browser.loadURL(loadUrl, loadParam);
+}
+"}
+Transform {
+scale 40 20 40 children [
+Shape {  #ceiling      
+appearance Appearance {texture ImageTexture{url"images/ceil2.jpg"}}
+geometry Extrusion{ solid FALSE creaseAngle 3 beginCap FALSE endCap FALSE crossSection[-.508 -.762,.508 -.762,.508 .762,-.508 .762,-.508 -.762] spine[0 .254 0,0 .32 0,0 .4 0,0 .45 0 ] scale[1 1,.8 .8,.65 .65,.35 .35]}
+}
+Shape { #skylight
+appearance Appearance {texture ImageTexture{url"images/wind.gif"}textureTransform TextureTransform{scale 4 3}}
+geometry IndexedFaceSet {
+coord Coordinate {point [-.1778 .45 -.2667,.1778 .45 -.2667,.1778 .45 .2667,-.1778 .45 .2667,]}
+coordIndex [3 0 1 2 -1]
+texCoord TextureCoordinate{point[0 0,1 0,1 1,0 1]}texCoordIndex[0 1 2 3 -1]
+}}
+Shape { # cornice
+appearance Appearance {material Material { diffuseColor .3 .3 .2 shininess 0 specularColor 0 0 0}}
+geometry IndexedFaceSet {
+coord Coordinate {point [-.533 .203 -.8, -.493 .203 -.747, -.533 .203 -.48, -.493 .203 -.448,
+-.533 .203 -.16, -.493 .203 -.149, -.493 .203 .149, -.533 .203 .16,
+-.493 .203 .448, -.533 .203 .48, -.493 .203 .747, -.533 .203 .8,
+-.32 .203 .8, -.296 .203 .747, -.107 .203 .8, -.099 .203 .747,
+.099 .203 .747, .107 .203 .8, .296 .203 .747, .32 .203 .8,
+.493 .203 .747, .533 .203 .8, .533 .203 .48, .493 .203 .448,
+.533 .203 .16, .493 .203 .149, .533 .203 -.16, .493 .203 -.149,
+.493 .203 -.448, .533 .203 -.48, .493 .203 -.747, .533 .203 -.8,
+.32 .203 -.8, .296 .203 -.747, .107 .203 -.8, .099 .203 -.747,
+-.107 .203 -.8, -.099 .203 -.747, -.296 .203 -.747, -.32 .203 -.8,
+-.493 .254 -.747, -.493 .254 -.448, -.493 .254 -.149, -.493 .254 .149,
+-.493 .254 .448, -.493 .254 .747, -.296 .254 .747, -.099 .254 .747,
+.099 .254 .747, .296 .254 .747, .493 .254 .747, .493 .254 .448,
+.493 .254 .149, .493 .254 -.149, .493 .254 -.448, .493 .254 -.747,
+.296 .254 -.747, .099 .254 -.747, -.099 .254 -.747, -.296 .254 -.747,
+-.542 .254 -.821, -.542 .254 -.493, -.542 .254 -.164, -.542 .254 .164,
+-.542 .254 .493, -.542 .254 .821, -.325 .254 .821, -.108 .254 .821,
+.108 .254 .821, .325 .254 .821, .542 .254 .821, .542 .254 .493,
+.542 .254 .164, .542 .254 -.164, .542 .254 -.493, .542 .254 -.821,
+.325 .254 -.821, .108 .254 -.821, -.108 .254 -.821, -.325 .254 -.821,
+]}
+coordIndex [79 60 40 -1, 59 79 40 -1, 78 79 59 -1, 58 78 59 -1, 57 78 58 -1, 57 77 78
+-1, 56 77 57 -1, 56 76 77 -1, 55 76 56 -1, 55 75 76 -1, 74 75 55 -1, 54 74
+55 -1, 73 74 54 -1, 53 73 54 -1, 52 73 53 -1, 52 72 73 -1, 51 72 52 -1, 51
+71 72 -1, 50 71 51 -1, 50 70 71 -1, 69 70 50 -1, 49 69 50 -1, 68 69 49 -1,
+48 68 49 -1, 47 68 48 -1, 47 67 68 -1, 46 67 47 -1, 46 66 67 -1, 45 66 46
+-1, 45 65 66 -1, 64 65 45 -1, 44 64 45 -1, 63 64 44 -1, 43 63 44 -1, 62 63
+43 -1, 42 62 43 -1, 41 62 42 -1, 41 61 62 -1, 40 61 41 -1, 40 60 61 -1, 59
+40 1 -1, 38 59 1 -1, 37 59 38 -1, 37 58 59 -1, 35 58 37 -1, 35 57 58 -1, 56
+57 35 -1, 33 56 35 -1, 55 56 33 -1, 30 55 33 -1, 28 55 30 -1, 28 54 55 -1,
+53 54 28 -1, 27 53 28 -1, 25 53 27 -1, 25 52 53 -1, 51 52 25 -1, 23 51 25
+-1, 50 51 23 -1, 20 50 23 -1, 49 50 20 -1, 18 49 20 -1, 16 49 18 -1, 16 48
+49 -1, 47 48 16 -1, 15 47 16 -1, 46 47 15 -1, 13 46 15 -1, 45 46 13 -1, 10
+45 13 -1, 8 45 10 -1, 8 44 45 -1, 6 44 8 -1, 6 43 44 -1, 5 43 6 -1, 5 42 43
+-1, 3 42 5 -1, 3 41 42 -1, 1 41 3 -1, 1 40 41 -1, 39 1 0 -1, 39 38 1 -1, 36
+38 39 -1, 36 37 38 -1, 35 37 36 -1, 34 35 36 -1, 33 35 34 -1, 32 33 34 -1,
+30 33 32 -1, 31 30 32 -1, 29 30 31 -1, 29 28 30 -1, 26 28 29 -1, 26 27 28
+-1, 25 27 26 -1, 24 25 26 -1, 23 25 24 -1, 22 23 24 -1, 20 23 22 -1, 21 20
+22 -1, 19 20 21 -1, 19 18 20 -1, 17 18 19 -1, 17 16 18 -1, 14 16 17 -1, 14
+15 16 -1, 13 15 14 -1, 12 13 14 -1, 10 13 12 -1, 11 10 12 -1, 9 10 11 -1,
+9 8 10 -1, 7 8 9 -1, 7 6 8 -1, 4 6 7 -1, 4 5 6 -1, 3 5 4 -1, 2 3 4 -1, 1 3
+2 -1, 0 1 2 -1]}
+}
+Shape { #walls
+appearance Appearance {
+texture ImageTexture{url"images/marb1.jpg"}
+textureTransform TextureTransform{scale 5 1}
+}
+geometry IndexedFaceSet {ccw FALSE coord 
+Coordinate {point [-.508 0 -.762,-.508 0 .762,.508 0 .762,.508 0 -.762,-.508 .203 -.762,-.508 .203 .762,.508 .203 .762,.508 .203 -.762]}
+coordIndex[5 4 0 1 -1,6 5 1 2 -1,7 6 2 3 -1,4 7 3 0 -1]
+texCoord TextureCoordinate{point[0 0,1 0,1 1,0 1]}
+texCoordIndex[0 1 2 3 -1,0 1 2 3 -1,0 1 2 3 -1,0 1 2 3 -1,]
+}}
+Shape {# floor
+appearance Appearance {
+texture ImageTexture{url"images/tile6.jpg"}
+textureTransform TextureTransform{scale 20 20}}
+geometry IndexedFaceSet {coord Coordinate {point [-.508 0 -.762,.508 0 -.762,.508 0 .762,-.508 0 .762]}coordIndex [3,2,1,0,-1]}
+}
+]}#END building resize Transform
+Transform{scale 40 40 40 children[
+Shape {# counter base
+appearance Appearance {material Material { diffuseColor .3 .3 .2 shininess 0 specularColor 0 0 0}}
+geometry IndexedFaceSet {
+coord Coordinate {point [.508 .03 -.132, .508 0 -.132, .508 .03 -.147, .508 0 -.147,-.281 .03 -.147, -.281 0 -.147, -.281 .03 -.132, -.281 0 -.132,]}
+coordIndex [7 1 0 6 -1, 4 2 3 5 -1, 7 6 4 5 -1, 3 2 0 1 -1,]
+}}
+Shape { #counter top
+appearance Appearance{texture ImageTexture{url"images/marb3.jpg"}textureTransform TextureTransform{scale 5 2}}
+geometry IndexedFaceSet {
+coord Coordinate {point [.513 .033 -.126, .513 .03 -.126, .513 .033 -.153, .513 .03 -.153,-.284 .03 -.153, -.284 .033 -.153, -.284 .033 -.126, -.284 .03 -.126,]}
+coordIndex [6 0 2 5 -1, 0 6 7 1 -1, 7 6 5 4 -1, 5 2 3 4 -1, 3 2 0 1 -1,]
+}}
+Transform{ #sign
+translation .1 .065 -.129
+children[
+Shape { #CoCi Logo
+appearance DEF wall Appearance {
+texture ImageTexture{url"images/blogo.gif"}
+}
+geometry IndexedFaceSet {
+coord Coordinate {point [-.025 -.025 0,.025 -.025 0,.025 .025 0,-.025 .025 0]}
+coordIndex [0 1 2 3 -1]
+texCoord TextureCoordinate{point[0 0,1 0,1 1,0 1]}
+texCoordIndex[0 1 2 3 -1]
+}
+}
+Shape{
+appearance Appearance{
+material Material{diffuseColor 0 0 .3 specularColor 0 0 0}}
+geometry Text{string ["      Suburbs Office"]fontStyle FontStyle {family "SANS" horizontal TRUE justify "left" leftToRight TRUE size 0.02 spacing 1.0 style "BOLD" topToBottom TRUE}}
+}                                              
+]}#END sign
+Shape { #counter wall
+appearance DEF wall Appearance {
+texture ImageTexture{url"images/marb1.jpg"}
+textureTransform TextureTransform{scale 5 1}
+}
+geometry IndexedFaceSet {
+coord Coordinate {point [.508 .03 -.132,.508 .03 -.147,.049 .03 -.147,.049 .03 -.132,.508 .11 -.132,.508 .11 -.147,.049 .11 -.147,.049 .11 -.132,]}
+coordIndex [1 2 6 5 -1,2 3 7 6 -1,3 0 4 7 -1]
+texCoord TextureCoordinate{point[0 0,1 0,1 1,0 1]}
+texCoordIndex[0 1 2 3 -1,0 1 2 3 -1,0 1 2 3 -1]
+}}
+Shape {# wall cornice
+appearance Appearance {material Material { diffuseColor .3 .3 .2 shininess 0 specularColor 0 0 0}}
+geometry IndexedFaceSet {
+coord Coordinate {point [.517 .11 -.121,.517 .1019 -.121,.517 .1019 -.158,.517 .11 -.158,.04 .1019 -.158,.04 .11 -.158,.04 .1019 -.121,.04 .11 -.121,]}
+coordIndex [6 4 2 1 -1, 0 7 6 1 -1, 7 5 4 6 -1, 5 3 2 4 -1, 3 0 1 2 -1,]
+}}
+Transform{ translation 0 0 .2 rotation 0 1 0 1.571 children[
+DEF counter Group{ children[
+Shape { # free counter top
+appearance Appearance{texture ImageTexture{url"images/marb3.jpg"}}
+geometry IndexedFaceSet {coord Coordinate {point [-.044 .025 -.008,-.044 .028 -.008,-.044 .028 .045,-.044 .025 .045,.09 .028 .045,.09 .025 .045,.09 .028 -.008,.09 .025 -.008,]}coordIndex [1 2 4 6 -1,1 6 7 0 -1,6 4 5 7 -1,4 2 3 5 -1,2 1 0 3 -1]}
+}
+Shape { # free counter base
+appearance Appearance {material Material { diffuseColor .3 .3 .2 shininess 0 specularColor 0 0 0}}
+geometry IndexedFaceSet {coord Coordinate {point [-.039 0 .003,-.039 .025 .003,-.039 0 .034,-.039 .025 .034,.086 0 .034,.086 .025 .034,.086 0 .003,.086 .025 .003,]}coordIndex [7 6 0 1 -1,5 4 6 7 -1,3 2 4 5 -1,1 0 2 3 -1]}
+}
+]}#END counter
+]}
+Transform{ translation .2 0 .2 rotation 0 1 0 1.571 children USE counter}
+Transform{ translation -.2 0 .2 rotation 0 1 0 1.571 children USE counter}
+Transform{ translation -.47 0 -.1475 scale 1.4 1.2 .5 children USE counter} 
+]}#END counter resize Transform
+Transform{translation 4 4.5 -5.65 children[
+DEF fern Group {children [
+DEF frond Transform { translation -.1 .5 0 scale 3.5 3.5 3.5 children [
+Shape {
+appearance Appearance { material Material { diffuseColor 0 .3 0 specularColor .2 .4 0}}
+geometry IndexedFaceSet { solid FALSE creaseAngle 3
+coord Coordinate {point [-.645 .486 .212, -.681 .462 .115, -.636 .474 .103, -.656 .495 -.045,
+-.679 .464 -.1, -.631 .474 -.09, -.651 .474 .007, -.658 .493 .062,
+-.637 .492 .006, -.634 .524 .112, -.647 .483 -.206, -.637 .52 -.1,
+-.794 .347 .073, -.775 .358 .127, -.765 .348 .066, -.793 .348 -.062,
+-.775 .364 -.027, -.762 .347 -.056, -.775 .35 .005, -.776 .363 .04,
+-.764 .359 .005, -.763 .379 .064, -.76 .377 -.062, -.781 .355 -.128,
+-.839 .32 .046, -.832 .322 .092, -.821 .315 .043, -.839 .321 -.044,
+-.824 .327 -.021, -.819 .314 -.04, -.826 .318 .001, -.825 .327 .025,
+-.817 .322 .001, -.809 .334 .047, -.811 .333 -.044, -.834 .321 -.087,
+-.594 .546 .128, -.548 .543 .239, -.544 .527 .114, -.591 .547 -.118,
+-.549 .56 -.055, -.541 .523 -.107, -.559 .537 .004, -.552 .559 .067,
+-.534 .544 .003, -.509 .572 .124, -.515 .571 -.118, -.549 .543 -.239,
+-.467 .574 .143, -.419 .556 .269, -.42 .538 .128, -.464 .574 -.133,
+-.414 .574 -.062, -.417 .532 -.12, -.433 .553 .004, -.418 .574 .075,
+-.403 .552 .003, -.367 .574 .14, -.374 .574 -.133, -.42 .556 -.269,
+-.313 .555 .159, -.278 .509 .299, -.29 .493 .142, -.31 .553 -.148,
+-.263 .524 -.069, -.291 .486 -.134, -.293 .515 .005, -.266 .526 .083,
+-.265 .497 .004, -.219 .497 .156, -.225 .5 -.148, -.279 .51 -.299,
+-.711 .415 .176, -.744 .399 .092, -.702 .404 .082, -.719 .422 -.045,
+-.739 .396 -.092, -.698 .403 -.084, -.715 .404 0, -.72 .42 .047,
+-.702 .419 -.001, -.699 .447 .09, -.713 .413 -.183, -.702 .444 -.092,
+-.886 .289 .021, -.865 .292 .007, -.884 .272 .006, -.885 .292 -.007,
+-.933 .283 .005, -.839 .305 .012, -.839 .305 .003, -.777 .364 .007,
+-.797 .339 .003, -.824 .327 .007, -.719 .421 .007, -.744 .384 .002,
+-.552 .558 .009, -.6 .516 .004, -.659 .493 .008, -.417 .574 .01,
+-.483 .555 .003, -.266 .526 .011, -.35 .54 .004, -.152 .431 .01,
+-.224 .471 .004, -.798 .339 .016, -.742 .384 .015, -.6 .516 .017,
+-.482 .555 .016, -.35 .541 .017, -.224 .471 .017, -.682 .449 .015,
+-.683 .447 .002, -.192 .465 .143, -.161 .431 .269, -.179 .407 .128,
+-.189 .463 -.133, -.151 .431 -.062, -.181 .401 -.12, -.179 .426 .004,
+-.154 .433 .075, -.135 .404 .004, -.115 .4 .14, -.12 .404 -.133,
+-.167 .42 -.269, -.101 .338 -.002, -.052 .29 .005, -.051 .219 0,
+-.013 .143 .007, -.031 .028 -.001, .005 .01 .005, -.099 .335 .011,
+-.051 .22 .012, -.031 .027 .012,
+]}
+coordIndex [129 133 130 -1, 129 128 133 -1, 127 132 128 -1, 127 126 132 -1, 125 131 126
+-1, 125 121 131 -1, 130 133 128 -1, 128 132 126 -1, 126 131 121 -1, 129 130
+128 -1, 127 128 126 -1, 125 126 121 -1, 115 114 122 -1, 115 120 113 -1, 118
+117 123 -1, 118 124 116 -1, 123 124 118 -1, 122 120 115 -1, 120 121 117 -1,
+117 119 120 -1, 116 117 118 -1, 113 114 115 -1, 110 104 103 -1, 101 104 110
+-1, 109 102 101 -1, 99 102 109 -1, 108 100 99 -1, 96 100 108 -1, 107 97 96
+-1, 98 97 107 -1, 112 111 94 -1, 112 98 111 -1, 106 95 94 -1, 91 95 106 -1,
+105 92 91 -1, 93 92 105 -1, 112 94 98 -1, 94 111 98 -1, 90 89 93 -1, 110 103
+101 -1, 109 101 99 -1, 108 99 96 -1, 107 96 98 -1, 106 94 91 -1, 105 91 93
+-1, 103 104 101 -1, 101 102 99 -1, 99 100 96 -1, 96 97 98 -1, 94 95 91 -1,
+91 92 93 -1, 85 89 90 -1, 86 85 87 -1, 86 88 84 -1, 87 88 86 -1, 84 85 86
+-1, 72 74 81 -1, 79 74 73 -1, 75 77 83 -1, 82 77 76 -1, 82 83 77 -1, 79 81
+74 -1, 80 79 75 -1, 78 75 79 -1, 75 76 77 -1, 72 73 74 -1, 62 61 69 -1, 62
+67 60 -1, 65 64 70 -1, 65 71 63 -1, 70 71 65 -1, 69 67 62 -1, 67 68 64 -1,
+64 66 67 -1, 63 64 65 -1, 60 61 62 -1, 50 49 57 -1, 50 55 48 -1, 53 52 58
+-1, 53 59 51 -1, 58 59 53 -1, 57 55 50 -1, 55 56 52 -1, 52 54 55 -1, 51 52
+53 -1, 48 49 50 -1, 38 37 45 -1, 38 43 36 -1, 41 40 46 -1, 41 47 39 -1, 46
+47 41 -1, 45 43 38 -1, 43 44 40 -1, 40 42 43 -1, 39 40 41 -1, 36 37 38 -1,
+26 25 33 -1, 26 31 24 -1, 29 28 34 -1, 29 35 27 -1, 34 35 29 -1, 33 31 26
+-1, 31 32 28 -1, 28 30 31 -1, 27 28 29 -1, 24 25 26 -1, 14 13 21 -1, 14 19
+12 -1, 17 16 22 -1, 17 23 15 -1, 22 23 17 -1, 21 19 14 -1, 19 20 16 -1, 16
+18 19 -1, 15 16 17 -1, 12 13 14 -1, 0 2 9 -1, 7 2 1 -1, 3 5 11 -1, 10 5 4
+-1, 10 11 5 -1, 7 9 2 -1, 8 7 3 -1, 6 3 7 -1, 3 4 5 -1, 0 1 2 -1,]}
+}
+]}
+Transform { rotation 0 1 0 1.571 children USE frond}
+Transform { rotation 0 1 0 3.142 children USE frond}
+Transform { rotation 0 1 0 -1.571 children USE frond}
+DEF bigFrond Transform { rotation 0 1 .3 .785 translation 0 .75 0 scale 1.5 .8 1.2 children USE frond}
+Transform { rotation 0 1 0 1.571 children USE bigFrond}
+Transform {rotation 0 1 0 3.142 children USE bigFrond}
+Transform {rotation 0 1 0 -1.571 children USE bigFrond}
+Transform {translation 0 .75 0 scale .8 1 .8 children [
+Shape {
+appearance Appearance {material Material { diffuseColor .7 .7 .7 specularColor .2 .2 .2}
+texture ImageTexture {url ["images/fern.jpg"]}
+}
+geometry Sphere {radius .75}
+}
+Transform{translation 0 -.9 0 rotation 1 0 0 3.142 children[
+Shape{
+appearance Appearance{ material Material {diffuseColor 0 0 0 specularColor .8 .8 1 shininess 1 }}
+geometry Cone{bottomRadius .825 height 1.5}
+}
+]}
+]}
+]}
+]}#END fern Group
+]}#END positioning Transform
+
+Transform{translation 13 4.5 -5.65 children USE fern}
+Transform{translation -18 1.25 -5.65 scale .5 .5 .5 children USE fern}
+Transform{translation -15 0 25 scale 1.5 2 1.5 children USE fern}
+
+Transform{ translation -1 0 -5.65 children[
+DEF tellerWindow Transform{translation 0 2.5 0 children[
+Transform{translation 1.5 0 0 children DEF pole Group{ children[
+Shape{appearance Appearance{material DEF steel Material {ambientIntensity  .3 diffuseColor .36 .38 .33 specularColor 1 1 1 emissiveColor 0 0 0.1 shininess .1}}geometry Cylinder{radius .05 height 3}}
+Transform{translation 0 1.5 0 scale 1 .2 1 children Shape{appearance Appearance{material USE steel}geometry Sphere{radius .125}}}
+Transform{translation 0 -1.175 0 scale 1 .2 1 children Shape{appearance Appearance{material USE steel}geometry Sphere{radius .25}}}
+]}#END pole
+}
+Transform{translation -1.5 0 0 children USE pole}
+Shape{
+appearance Appearance{material Material{transparency .4}texture ImageTexture{url"images/wind.jpg"}}
+geometry IndexedFaceSet {
+solid FALSE
+coord Coordinate {point [-1.5 .2 0,1.5 .2 0,1.5 1.45 0,-1.5 1.45 0]}
+coordIndex [3 0 1 2 -1]
+texCoord TextureCoordinate{point[0 0,1 0,1 1,0 1]}texCoordIndex[0 1 2 3 -1]
+}}
+]}#END tellerWindow
+]}
+Transform{ translation -5 0 -5.65 children USE tellerWindow}
+Transform{ translation -9 0 -5.65 children USE tellerWindow}
+Transform{ translation .8 .475 7 scale 1 .5 1 rotation 0 1 0 1.571 children USE tellerWindow}
+Transform{ translation -7.35 .475 7 scale 1 .5 1 rotation 0 1 0 1.571 children USE tellerWindow}
+Transform{ translation  8.75 .475 7 scale 1 .5 1 rotation 0 1 0 1.571 children USE tellerWindow} 
+]}#END root Group

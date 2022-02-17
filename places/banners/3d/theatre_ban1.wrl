@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+PROTO info[
+ exposedField MFString banner1 "" 
+ exposedField MFString banner2 "" 
+ exposedField MFString banner3 "" 
+
+ exposedField MFString anchor1 "" 
+ exposedField MFString anchor2 "" 
+ exposedField MFString anchor3 "" 
+
+ ]{}
+
+info{
+ banner1 "/places/banners/3d/images/ct_store.jpg"
+ banner2 "/places/banners/3d/images/wbg_2.jpg"
+ banner3 "/places/banners/3d/images/daily_news.jpg"
+
+ anchor1 "http://www.cybertown.com/citystore/store.html"
+ anchor2 "http://philliphansel.com/buildersguild/become.html"
+ anchor3 "http://www.cybertown.com/places/news/magazine/dailynews/index.html"
+
+}
