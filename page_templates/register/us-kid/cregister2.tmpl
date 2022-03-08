@@ -1,0 +1,58 @@
+<!-- register/cregister2.tmpl -->
+
+<!-- #ifndef variable="T_KID" value="US" -->
+<!-- #include virtual="<$g_Templates>register/cregister2.tmpl" -->
+<!-- #endif variable="T_KID" -->
+
+<!-- #ifdef variable="T_KID" value="US" -->
+
+<!-- #ifdef variable="T_MCO" value="mothership" -->
+<!-- #include virtual="<$g_Templates>register/us-kid/mothership/cregister2.tmpl" -->
+<!-- #endif variable="T_MCO" -->
+
+<!-- #ifndef variable="T_MCO" value="mothership" -->
+
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#00ff00">
+<font color="#00FF00" face="Arial, Helvetica, sans-serif">
+
+<form method=post action="/cgi-bin/cybertown/place">
+
+<p>
+<br>
+<center>
+<font size=5><b>Cybertown</b></font><br><br>
+<img src="/cybertown/images/kidreg/parent2.gif"><br>
+<table>
+<tr>
+<td>
+<br>
+<font color="#00FF00" face="Arial, Helvetica, sans-serif">
+We have sent an immigration code to your parents. Please check with them<br>
+to get your full access membership code.<br>
+<br>
+In the meantime, you can explore the Sci-fi City of Cybertown as a Visitor.
+<br><br>
+<br>
+</font>
+</td>
+</tr>
+</table>
+
+<input type=hidden name="NNM" value="Visitor">
+<input type=hidden name="login" value="true">
+<font size=2>
+<input type="submit" name="Submit" value="ENTER NOW">
+</font>
+</form>
+
+</center>
+
+</body>
+</html>
+<!-- #endif variable="T_MCO" -->
+<!-- #endif variable="T_KID" -->

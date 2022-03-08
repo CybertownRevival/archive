@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Cybertown - Designer Home Upload</title>
+</head>
+
+<!-- object/deshomes/upload.tmpl -->
+<!-- form to create the object category and instance in the database -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Home Upload - Stage 1</h2>
+</div>
+<p><font color="#FF0000">
+Before uploading, please read  and understand the <a href="/places/deshomes/rules.html">Guidelines and Rules for Creating Homes for Cybertown</a>
+<BR>
+These are the technical rules by which your Home will be judged fit or unfit for use in Cybertown.
+<BR>
+These Rules contain very important information you need to know, plus some technical tips. 
+<BR><b>The VRML file MUST contain the Cybertown proto's which can be found <a href="/places/deshomes/proto.html" target="_blank">Here</a>
+</b></font></p>
+<p>
+Use this form to "import" new custom 3D homes into the community and offer them
+for sale. 
+<br>
+Please read this <a href=#explain target=_self>explanation</a> of the fields in the form before filling the form in.
+</p>
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Congratulations, data successfully uploaded!
+    <$ID>
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="uploaderror001" -->
+    You have to specify a name for your object!
+<!-- #endif variable="uploaderror001" -->
+<!-- #ifdef variable="uploaderror002" -->
+    Sorry, we only accept objects with a price greater than 10 CCs!
+<!-- #endif variable="uploaderror002" -->
+<!-- #ifdef variable="uploaderror003" -->
+    Sorry, we need at least one object to sell!
+<!-- #endif variable="uploaderror003" -->
+<!-- #ifdef variable="uploaderror004" -->
+    One or both of the needed files are missing!
+<!-- #endif variable="uploaderror004" -->
+<!-- #ifdef variable="uploaderror005" -->
+    The file "<$errfile>" has the wrong type!
+<!-- #endif variable="uploaderror005" -->
+<!-- #ifdef variable="uploaderror006" -->
+    The file "<$errfile>" could not be saved!
+<!-- #endif variable="uploaderror006" -->
+<!-- #ifdef variable="uploaderror007" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_img> KB!
+<!-- #endif variable="uploaderror007" -->
+<!-- #ifdef variable="uploaderror008" -->
+    Sorry, you don't have enough money for uploading!
+<!-- #endif variable="uploaderror008" -->
+<!-- #ifdef variable="uploaderror009" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_wrl> KB!
+<!-- #endif variable="uploaderror009" -->
+</font>
+
+<!-- #ifndef variable="UPL_STATUS" value="OFF" -->
+
+<!-- #include virtual="<$g_Templates>object/deshomes/uploadblock.tmpl" -->
+<!-- #ifndef variable="Ublock" value="1" -->
+<form name=upload enctype="multipart/form-data" method=post action="/cgi-bin/cybertown2/object">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="TPL" value="object/deshomes/upload2">
+    
+    <INPUT TYPE="hidden" name="ZON" value="p00000000000044ef">
+    <INPUT TYPE="hidden" name="CLS" value="A">
+
+    
+  <table border=0>
+    <tr> 
+      <td>House Name:&nbsp;&nbsp;</td>
+      <td> 
+        <input type="text" name="NAM" value="<$NAM>" maxlength="20">
+      </td>
+      <td>Price:&nbsp;&nbsp;</td>
+      <td> 
+        <input type="text" name="TPR" value="10" maxlength="4" size=4>
+      </td>
+      <td>Quantity:&nbsp;&nbsp;</td>
+      <td> 
+        <input type="text" name="CNT" value="10" maxlength="4" size=4>
+      </td>
+    </tr>
+    <tr> 
+      <td>VRML-File:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="WRL" value="<$WRL_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+    <tr> 
+      <td>Thumbnail:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="IMG" value="<$IMG_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>
+The customised 3D home that you are uploading to the virtual shop will remain your
+property. You are giving Cybertown the right, without time limit, of use
+and of distribution to other members of this community. Cybertown does
+not grant the right to demand removal of homes already distributed.
+<p>
+<div align=center>
+    <input type="submit" name="upload" value="Continue...." width=100>
+    <input type=button name="back" value="Close" onClick="window.close()" width=100>
+</div>
+
+</form>
+<!-- #endif variable="Ublock" -->
+
+<!-- #endif variable="UPL_STATUS" -->
+
+<!-- #ifdef variable="Ublock" -->
+<br><center><b><font color="red"> Sorry <$NNM>, you have been blocked from uploading homes.</font></b></center><br>
+<!-- #endif variable="Ublock" -->
+
+<!-- #ifdef variable="UPL_STATUS" value="OFF" -->
+
+<br><center><b><font color="red"> Sorry <$NNM>, uploading of homes has been disabled.</font></b></center><br>
+<!-- #endif variable="UPL_STATUS" -->
+
+<p>
+<a name=explain></a>Below is a brief explanation of the fields in Stage 1 of the Home Upload form.
+<br>
+<table border=1>
+<tr>
+<td>Name:</td>
+<td>The name of the home you're uploading, e.g. Seaside Resort.</td>
+</tr>
+<tr>
+<td>Price:</td>
+<td>The amount of CCs a buyer will have to pay for the home.</td>
+</tr>
+<tr>
+<td>Quantity:</td>
+<td>The number of instances of the home that will be available
+for purchase, i.e. the initial "inventory."</td>
+</tr>
+<tr>
+<td>VRML file:</td>
+<td>Name of the local VRML file that represents your home.</td>
+</tr>
+<td>Thumbnail:</td>
+<td>Name of a 128 x 128 pixel .jpg file showing an image of the home you are uploading.
+    This image will be displayed to 2D users.
+</td>
+</tr>
+</table>
+<br>
+After you have filled in the fields, click on <b>Continue...</b>. If you change your mind,
+click on <b>Close</b>. 
+<p></p>
+<p>
+Notes:
+<ul>
+<li>Internet Explorer 3.x doesn't support file uploads.
+<li>The maximum VRML file size is <$so_max_size_wrl> KB. The "wrl" VRML format is required..
+<li>For thumbnails, the maximum file size is <$so_max_size_img> KB. The files
+must be in either jpg or gif format.
+
+
+
+
+</ul></body></html>
+

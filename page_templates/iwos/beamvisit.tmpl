@@ -1,0 +1,23 @@
+<HTML>
+<!-- iwos/beamvisit.tmpl -->
+<!-- temporary page for beamstation -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Beamstation</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<script>top.location.href='<$DEST>';</script>
+
+<center>
+beaming to destination page...
+</center>
+
+</BODY>
+</HTML>

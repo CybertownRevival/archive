@@ -1,0 +1,204 @@
+<html>
+<!-- club/error.tmpl -->
+<!-- error page of the club -->
+<head>
+<title><$g_title> - Club</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Club</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="cluberror001" -->
+Sorry <$NNM>,
+<P>
+You are already a member of this club!
+<!-- #endif variable="cluberror001" -->
+
+<!-- #ifdef variable="cluberror002" -->
+Sorry <$NNM>,
+<P>
+You are not member or the owner of this club!
+<!-- #endif variable="cluberror002" -->
+
+<!-- #ifdef variable="cluberror003" -->
+Sorry <$NNM>,
+<P>
+You are not the owner of the club!!!
+<!-- #endif variable="cluberror003" -->
+
+<!-- #ifdef variable="cluberror004" -->
+Sorry <$NNM>,
+<P>
+You can not close the club, there are still members!!!
+<!-- #endif variable="cluberror004" -->
+
+<!-- #ifdef variable="cluberror005" -->
+Sorry <$NNM>,
+<P>
+You must have <$EXP_POINTS> experience points, in order to open a club.
+<!-- #endif variable="cluberror005" -->
+
+<!-- #ifdef variable="cluberror006" -->
+Sorry <$NNM>,
+<P>
+a club with this title already exists!
+<!-- #endif variable="cluberror006" -->
+
+<!-- #ifdef variable="cluberror007" -->
+Sorry <$NNM>,
+<P>
+Can not write data to database!
+<!-- #endif variable="cluberror007" -->
+
+<!-- #ifdef variable="cluberror008" -->
+Sorry <$NNM>,
+<P>
+Failed to create <$INF_OBJ> for the new club!
+<!-- #endif variable="cluberror008" -->
+
+<!-- #ifdef variable="cluberror009" -->
+Sorry <$NNM>,
+<P>
+You have to specify a Name for your club!
+<!-- #endif variable="cluberror009" -->
+
+<!-- #ifdef variable="cluberror010" -->
+Sorry <$NNM>,
+<P>
+it is not allowed to have more than <$MAX_CLUBS> clubs!
+<!-- #endif variable="cluberror010" -->
+
+<!-- #ifdef variable="cluberror011" -->
+Sorry <$NNM>,
+<P>
+You are not member of this club!
+<!-- #endif variable="cluberror011" -->
+
+<!-- #ifdef variable="cluberror012" -->
+  Sorry <$NNM>,
+  <p>you are not member of this club!</p>
+<!-- #endif variable="cluberror012" -->
+
+<!-- #ifdef variable="cluberror013" -->
+  Sorry <$NNM>,
+  <p>you are the owner of this club!</p>
+<!-- #endif variable="cluberror013" -->
+
+<!-- #ifdef variable="cluberror014" -->
+  Sorry <$NNM>,
+  <p>this member is already invited.</p>
+<!-- #endif variable="cluberror014" -->
+
+<!-- #ifdef variable="cluberror015" -->
+  Sorry <$NNM>,
+  <p>you are not the owner or deputy of this club.</p>
+<!-- #endif variable="cluberror015" -->
+
+<!-- #ifdef variable="cluberror016" -->
+  Sorry <$NNM>,
+  <p>the member could not be invited to your club.</p>
+<!-- #endif variable="cluberror016" -->
+
+<!-- #ifdef variable="cluberror017" -->
+  Sorry <$NNM>,
+  <p>the member count of your club could not be decreased.</p>
+<!-- #endif variable="cluberror017" -->
+
+<!-- #ifdef variable="cluberror018" -->
+  Sorry <$NNM>,
+  <p>could not upload club image.</p>
+<!-- #endif variable="cluberror018" -->
+
+<!-- #ifdef variable="cluberror020" -->
+  Sorry <$NNM>,
+  <p>you have to specify a parent category for this subcategory.</p>
+<!-- #endif variable="cluberror020" -->
+
+<!-- #ifdef variable="cluberror021" -->
+  Sorry <$NNM>,
+  <p>you have not the rights to create/delete a category.</p>
+<!-- #endif variable="cluberror021" -->
+
+<!-- #ifdef variable="cluberror022" -->
+  Sorry <$NNM>,
+  <p>
+    you can not create a subcategory for this category,
+    because the maximum depth of categories is reached.
+  </p>
+<!-- #endif variable="cluberror022" -->
+
+<!-- #ifdef variable="cluberror023" -->
+  Sorry <$NNM>,
+  <p>you have to specify a name for the category!</p>
+  <$CK1>|<$CK2>|<$CK3>
+<!-- #endif variable="cluberror023" -->
+
+<!-- #ifdef variable="cluberror024" -->
+  Sorry <$NNM>,
+  <p>can not write data to database!</p>
+<!-- #endif variable="cluberror024" -->
+
+<!-- #ifdef variable="cluberror025" -->
+  Sorry <$NNM>,
+  <p>no valid id was given.</p>
+<!-- #endif variable="cluberror025" -->
+
+<!-- #ifdef variable="cluberror026" -->
+  Sorry <$NNM>,
+  <p>category contains clubs and/or subcategories.</p>
+<!-- #endif variable="cluberror026" -->
+
+<!-- #ifdef variable="cluberror027" -->
+  Sorry <$NNM>,
+  <p>you have to specify a club for updating.</p>
+<!-- #endif variable="cluberror027" -->
+
+<!-- #ifdef variable="cluberror028" -->
+  Sorry <$NNM>,
+  <p>you have to specify a category for the new club.</p>
+<!-- #endif variable="cluberror028" -->
+
+<!-- #ifdef variable="cluberror029" -->
+  Sorry <$NNM>,
+  <p>you have not the right to create a club in this category.</p>
+<!-- #endif variable="cluberror029" -->
+
+
+
+<!-- #ifdef variable="clubmimeerror" -->
+Sorry <$NNM>,
+<P>
+The file <$errfile> are not a .gif or .jpg file!!!
+<!-- #endif variable="clubmimeerror" -->
+
+<!-- #ifdef variable="cluberrsize" -->
+Sorry <$NNM>,
+<P>
+The file <$errfile> are larger than 15 kBytes!!!
+<!-- #endif variable="cluberrsize" -->
+
+<!-- #ifdef variable="calerror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this calendar.
+<!-- #endif variable="calerror001" -->
+
+<!-- #ifdef variable="msberror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this message board.
+<!-- #endif variable="msberror001" -->
+
+<BR>
+<BR>
+<CENTER>
+<A HREF="javascript:history.go(-1)"><SMALL><IMG SRC="<$g_Images>/images/buttons/bback.gif" BORDER=0></SMALL></A><BR>
+
+</font>
+
+</body>
+</html>

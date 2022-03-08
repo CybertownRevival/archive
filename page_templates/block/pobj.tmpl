@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html">
+	<title><$g_title></title>
+	<base target="_top">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<H2><font color=#80ff00>Check Property <$ID></font></H2>
+
+<font color=#ff0000>
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+<tr>
+	<td nowrap><font color=#80ff00>Name</td>
+  <td align="center"><input type="text" name="NAM" size="32" value="<$NAM>" maxlength="32"></td>
+</tr>
+<tr>
+  <td nowrap><font color=#80ff00>Locked</td>
+	<!--#ifdef variable="ID_STT" -->
+		<td><input type="checkbox" align="middle" name="ID_STT" checked></td>
+	<!--#endif variable="ID_STT" -->
+	<!--#ifndef variable="ID_STT" -->
+		<td><input type="checkbox" align="middle" name="ID_STT"></td>
+	<!--#endif variable="ID_STT" -->
+</tr>
+<tr>
+  <td nowrap><font color=#80ff00>Icon</td>
+	<td align=center><img src="edit<$g_exe>?DTY=U&KTY=ID&KEY=i<$ID>P&TPL=<$TPL>&ac=printimg" border=0></td>
+</tr>
+<tr>
+  <td nowrap><font color=#80ff00>Owner</td>
+  <td><input type="text" name="OWN_NNM" size="16" value="<$OWN_NNM>" maxlength="16"></td>
+</tr>
+<tr>
+  <td nowrap><font color=#80ff00>Place Usage</td>
+  <td><input type="text" name="PU2" size="1" value="<$PU2>" maxlength="1"></td>
+</tr>
+</table>
+
+</form>
+
+
+
+</center>
+<BODY>
+</HTML>

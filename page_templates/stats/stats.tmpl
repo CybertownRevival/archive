@@ -1,0 +1,70 @@
+<html>
+<head>
+<title><$g_title> - Statistics</title>
+<SCRIPT language="JavaScript">
+function deleteMessage(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2><$CNM> Statistics</h2>
+
+<p>
+This table shows interesting information concerning this <$CNM>.<br>
+<font color="FFFF00">It's updated daily</font>.
+</p>
+
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td><b>Name</b></td>
+    <td align=center colspan=2><b>Homes</b></td>
+    <td align=center><b>Money</b></td>
+    <td align=center><b>Experience</b></td>
+    <td align=center><b>Activity</b></td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td><i>Total</i></td>
+    <td><i>Free</i></td>
+    <td><i>Average</i></td>
+    <td><i>Average</i></td>
+    <td><i>Level (%)</i></td>
+</tr>
+
+<!--#for loopname="list" loopvars="TOT" -->
+
+<tr>
+<td>
+<!--#ifdef variable="CID" -->
+<font size="-1"><$CNM> <b><$NAM></b></font>
+<!--#endif variable="CID" -->
+
+<!--#ifndef variable="CID" -->
+<font size="-1"><$ENM> <b><$NAM></b></font>
+<!--#endif variable="CID" -->
+</td>
+
+<td><font size="-1"><$TOT></font></td>
+<td><font size="-1"><$FREE></font></td>
+<td><font size="-1"><$AMON></font></td>
+<td><font size="-1"><$AEXP></font></td>
+<td><font size="-1"><$ALEV></font></td>
+
+</tr>
+<!--#endfor loopname="list"  -->
+
+<!--<td><font size="-1"><$EXP></font></td>-->
+<!--<td><font size="-1"><$MON></font></td>-->
+<!--<td><font size="-1"><$NROL></font></td>-->
+
+</table>
+
+</body>
+</html>
+
+

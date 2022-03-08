@@ -1,0 +1,193 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- bank/phase2.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>CityCash Transfer - Department Funds</title>
+<meta name="Author" content="Coolkama, Simioni and Halogen">
+
+<script language="">
+<!-- Script Begin
+function checkamt() {
+	myVarToCheck = document.forms['phase1'].elements['TO_AMT'].value;
+	if (isNaN(myVarToCheck) == true)
+		alert("not a number");
+	else
+		myVarToCheck = document.forms['phase1'].submit()
+	}
+//  Script End -->
+</script>
+</head>
+<body bgcolor="#000000" text="lime">
+<!-- #ifndef variable="TO_NNM" value=""-->
+<form action="edit" method="post" name="phase1">
+<input type="hidden" name="TPL" value="shopping/funds/phase3">
+<input type="hidden" name="TO_AMT" value="<$TO_AMT>">
+<!-- #define variable="N" escape="<$TO_NAM>" -->
+<input type="hidden" name="TO_NNM" value="<$TO_NNM>">
+<input type="hidden" name="TO_NAM" value="<$N>">
+<input type="hidden" name="PLACE_ID" value="<$PLACE_ID>">
+<input type="hidden" name="KEY" value="<$PLACE_ID>">
+<input type="hidden" name="NAM" value="<$PLACE_NAM>">
+      <table border="0" cellpadding="0" cellspacing="0" width="575" align="center">
+        <!-- fwtable fwsrc="confirm.png" fwbase="confirm.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="spacer.gif" width="55" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="208" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="141" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="11" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="106" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="6" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="48" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r1_c1" src="/places/bank/images/top.jpg" width="575" height="171" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="171" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r2_c1" src="/places/bank/images/left.jpg" width="55" height="182" border="0" alt=""></td>
+          <td colspan="5">
+            <table border="0" cellspacing="10" align="center">
+              <tr> 
+                <td align="center"><font face="Arial, Helvetica, sans-serif" size="-1"> <font color="#FFFFFF">Transfer 
+                  from:</font><br>
+                  <font color="#ffff00"><$PLACE_NAM> (Current Balance: <$PLACE_MON>cc)</font><br>
+                  <font color="#FFFFFF">Employee:</font><br>
+                  <font color="#ffff00"><$NNM></font><br>
+                  <font color="#FFFFFF">The Sum of:</font><br>
+                  <font color="#ffff00"><$TO_AMT> cc</font><br>
+                	<font color="#FFFFFF">to:</font><br>
+                  <font color="#ffff00"><$TO_NNM></font></font><br>
+              </tr>
+            </table>
+            <p align="center">&nbsp;
+			
+            </p>
+          </td>
+          <td><img name="confirm_r2_c7" src="/places/bank/images/right.jpg" width="48" height="182" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="182" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r3_c1" src="/places/bank/images/bottombar.jpg" width="575" height="21" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="21" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c1" src="/places/bank/images/bottomleftconfirm.jpg" width="263" height="81" border="0" alt=""></td>
+          <td><a href="javascript:document.forms['phase1'].submit();"><img name="confirm_r4_c3" src="/places/bank/images/confirm.jpg" width="141" height="24" border="0" alt=""></a></td>
+          <td rowspan="2"><img name="confirm_r4_c4" src="/places/bank/images/bottomdivider.jpg" width="11" height="81" border="0" alt=""></td>
+          
+      <td><a href="javascript:history.go(-1);"><img name="confirm_r4_c5" src="/places/bank/images/back.jpg" width="106" height="24" border="0" alt=""></a></td>
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c6" src="/places/bank/images/bottomright.jpg" width="54" height="81" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="24" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r5_c3" src="/places/bank/images/underbuttonleft.jpg" width="141" height="57" border="0" alt=""></td>
+          <td><img name="confirm_r5_c5" src="/places/bank/images/underbuttonright.jpg" width="106" height="57" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="57" border="0" alt=""></td>
+        </tr>
+      </table>
+    </form>
+<!-- #endif variable="TO_NNM" -->
+<!-- #ifdef variable="TO_NNM" value=""-->
+<table border="0" cellpadding="0" cellspacing="0" width="575" align="center">
+    <!-- fwtable fwsrc="confirm.png" fwbase="confirm.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+    <tr> 
+      <td><img src="spacer.gif" width="55" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="208" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="141" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="11" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="106" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="6" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="48" height="1" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="1" border="0" alt=""></td>
+    </tr>
+    <tr> 
+      <td colspan="7"><img name="confirm_r1_c1" src="/places/bank/images/top.jpg" width="575" height="171" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="171" border="0" alt=""></td>
+    </tr>
+    <tr> 
+      <td><img name="confirm_r2_c1" src="/places/bank/images/left.jpg" width="55" height="182" border="0" alt=""></td>
+      <td colspan="5">
+        <div align="center">
+        <p><font color="#ff0000"><b><font face="Arial, Helvetica, sans-serif">No 
+          Such Citizen!</font></b></font></p>
+        <p><font color="#ff0000"><b><font face="Arial, Helvetica, sans-serif">Please 
+          go back and try again</font></b></font></p>
+        </div>
+      </td>
+      <td><img name="confirm_r2_c7" src="/places/bank/images/right.jpg" width="48" height="182" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="182" border="0" alt=""></td>
+    </tr>
+    <tr> 
+      <td colspan="7"><img name="confirm_r3_c1" src="/places/bank/images/bottombar.jpg" width="575" height="21" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="21" border="0" alt=""></td>
+    </tr>
+    <tr> 
+      
+    <td rowspan="2" colspan="2"><img name="confirm_r4_c1" src="/places/bank/images/bottomlefterror.jpg" width="263" height="81" border="0" alt=""></td>
+      
+    <td><img name="confirm_r4_c3" src="/places/bank/images/blank.jpg" width="141" height="24" border="0" alt=""></td>
+      <td rowspan="2"><img name="confirm_r4_c4" src="/places/bank/images/bottomdivider.jpg" width="11" height="81" border="0" alt=""></td>
+      
+    <td><a href="javascript:history.go(-1);"><img name="confirm_r4_c5" src="/places/bank/images/back.jpg" width="106" height="24" border="0" alt=""></a></td>
+      <td rowspan="2" colspan="2"><img name="confirm_r4_c6" src="/places/bank/images/bottomright.jpg" width="54" height="81" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="24" border="0" alt=""></td>
+    </tr>
+    <tr> 
+      <td><img name="confirm_r5_c3" src="/places/bank/images/underbuttonleft.jpg" width="141" height="57" border="0" alt=""></td>
+      <td><img name="confirm_r5_c5" src="/places/bank/images/underbuttonright.jpg" width="106" height="57" border="0" alt=""></td>
+      <td><img src="spacer.gif" width="1" height="57" border="0" alt=""></td>
+    </tr>
+  </table>
+</body>
+</html>

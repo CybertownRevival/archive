@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</script>
+
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<FONT face="Arial, Helvetica, sans-serif" size=+2 color="#00FFFF">
+<center>
+<br><br>
+<b>Update Passwords</b>
+<br><br>
+</font>
+
+<!-- #ifdef variable="T_pass" == variable="PASS2" -->
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 ><tr><td>
+<form name="pass_form" method="POST" action="/cgi-bin/cybertown/edit">
+<input type="hidden" name="TPL" value="ne_game/passupdate">
+
+<FONT face="Arial, Helvetica, sans-serif" size=-1 color="#00FFFF">
+
+<center>
+Blue Team Password       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="PASS1" value="<$PASS1>" size="30"><BR>
+Red Team Password  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="PASS2" value="<$PASS2>" size="30"><BR>
+</center><br>
+<b><input type="submit" name="sub" value="UPDATE"></b>
+</font>
+</form>
+</td></tr></table>
+<!-- #endif variable="T_pass" -->
+
+
+
+<!-- #ifdef variable="isAdmin" -->
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 ><tr><td>
+<form name="pass_form" method="POST" action="/cgi-bin/cybertown/edit">
+<input type="hidden" name="TPL" value="ne_game/passupdate">
+
+<FONT face="Arial, Helvetica, sans-serif" size=-1 color="#00FFFF">
+
+<center>
+Blue Team Password       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="PASS1" value="<$PASS1>" size="30"><BR>
+Red Team Password  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="PASS2" value="<$PASS2>" size="30"><BR>
+</center><br>
+<b><input type="submit" value="UPDATE"></b>
+</font>
+</form>
+</td></tr></table>
+<!-- #endif variable="isAdmin" -->
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,21 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+[LIST]	10
+
+[DTY]  CL
+[KTY]  ID
+
+ID	rw
+NAM	rw
+NAK	rw
+CK1	rw
+CK2	rw
+CK3	rw
+KK1	rw
+KK2	rw
+KK3	rw
+CDA	rw 14 DATE
+CNT	rw 8  NUM

@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<script language="JavaScript">
+function goback()
+{
+history.go(-1);
+}
+</script>
+</HEAD>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<!-- #ifdef variable="no" -->
+<div align=center><font color="#00ff00">
+<h2>Choose your House</h2>
+</font>
+<font color=red>
+<p>Sorry, <$NNM>, you have already settled down!</p>
+<a href="javascript:goback()"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a>
+</font>
+</div>
+<!-- #endif variable="no" -->
+
+<!-- #ifndef variable="no" -->
+<div align=center><font color="#00ff00">
+<h2>Choose your House - Make it Personal</h2>
+</font>
+Okay, we're almost done now. Give your house it's own <a href="#name"><b>special
+name</b></a>, choose one of the free <a href="#2D"><b>2D houses</b></a> for the map and then onto
+the <a href="#3D"><b>3D houses</b></a>.
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="newsubmit">
+<input type=hidden name="ID" value="<$ID>">
+<input type=hidden name="T_MODE" value="<$T_MODE>">
+
+<a name="name"></a>
+<p><b>Home Name</b>: <INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=20> (mandatory)</p>
+<hr>
+
+<table border=0 width=100%>
+<tr>
+<td valign=top colspan=3><a name="2D"></a><h3>Choose a free 2D House</h3></td>
+</tr>
+
+<tr>
+<!--#for loopname="2dicons" loopvars="index2i" -->
+<td valign=top width=33%>
+<input type="Radio" name="IC2" value="<$index2i>" <$chk2i>>
+<img src="<$g_HTMLRoot>/home/<$path>block/<$prefix2i><$index2i>.gif" border=0 ALT="<$name2i>">
+<!--#ifdef variable="name2i" -->
+<br><$name2i>
+<!--#endif variable="name2i" -->
+<!--#ifdef variable="text2i" -->
+<br><$text2i>
+<!--#endif variable="text2i" -->
+<!--<p>Price: <b>$<$price2i></b>-->
+</td>
+
+<!--#ifdef variable="col3_2i" -->
+</tr><tr>
+<!--#endif variable="col3_2i" -->
+
+<!--#endfor loopname="2dicons" -->
+</tr>
+
+<!--#ifndef variable="index2i0" -->
+No 2D Houses available!
+<!-- #endif variable="index2i0" -->
+</tr>
+</table>
+
+<table border=0 width=100%>
+<tr>
+<td valign=top colspan=4><hr><a name="3D"></a><h3>Your 3D House</h3>
+Now it's time to choose your fabulous 3D home.
+Please check your bank account at: My Info > Personal Info >Money 
+(MyInfo button on Control Panel in right frame) before deciding because
+it's really tough to get a loan around here.
+<p><font color=#FFFF00><b>Note:</b> You need the free download, blaxxun Contact, to view your 3D home.</font>
+</td>
+</tr>
+
+<tr>
+<td colspan=4>
+<input type="Radio" name="IC3" value="" checked>None<br>
+</td>
+</tr>
+
+<tr>
+<!--#for loopname="3dicons" loopvars="index3i" -->
+<td valign=top width=50%>
+<input type="Radio" name="IC3" value="<$index3i>" <$chk3i>>
+<img src="<$g_HTMLRoot>/home/<$path>block/<$prefix3i><$index3i>.gif" border=0 ALT="<$name3i>">
+<!--#ifdef variable="name3i" -->
+<br><$name3i>
+<!--#endif variable="name3i" -->
+<!--#ifdef variable="text3i" -->
+<br><$text3i>
+<!--#endif variable="text3i" -->
+<p>Price: <b>$<$price3i></b>
+</td>
+<td width=10>&nbsp;</td>
+
+<!--#ifdef variable="col2_3i" -->
+</tr><tr><td height=10>&nbsp;</td></tr><tr>
+<!--#endif variable="col2_3i" -->
+
+<!--#endfor loopname="3dicons" -->
+</tr>
+
+<!-- #ifndef variable="index3i0" -->
+No 3D Houses available!
+<!-- #endif variable="index3i0" -->
+</tr>
+
+</table>
+
+<div align=center>
+<hr>
+<input type=submit name="yes" value=Yes>
+<input type=button name="no" value=No onClick="history.back()">
+</div>
+</form>
+
+<!-- #endif variable="no" -->
+
+<!-- #ifdef variable="error001" -->
+<font color="red">
+Data could not be stored in the database.
+</font>
+<!-- #endif variable="error001" -->
+
+<BODY>
+</HTML>

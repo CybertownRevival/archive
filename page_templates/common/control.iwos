@@ -1,0 +1,98 @@
+<!-- common/control.tmpl -->
+<!-- included in action.tmpl to show common control panel-->
+<!-- JUMP GATE - Navigation Bar -->
+<IMG SRC="<$g_HTMLRoot>/images/finalcontx.gif" BORDER="0" USEMAP="#controlmap" ALT="Cybertown Control Panel">
+<select name="jumpgate" size="1" onchange="jump(this.options[this.selectedIndex].value)"><option value="" selected>JUMP GATE</option>
+<option value=""></option>  
+<option value="">COLONIES:</option>
+<option value="top community<$g_exe>?ID=0102000000000000">Sci-fi</option>
+<option value="top community<$g_exe>?ID=0104000000000000">Entertainment</option>
+<option value="top community<$g_exe>?ID=0101000000000000">Games</option>
+<option value="top community<$g_exe>?ID=0103000000000000">Virtual Worlds</option>
+<option value="top community<$g_exe>?ID=0105000000000000">Inner Realms</option>
+<option value="top community<$g_exe>?ID=0106000000000000">Teens</option>
+<option value="">-----------------------</option>
+<option value="top place<$g_exe>?plc=enter">The Plaza</option>
+<option value="top place<$g_exe>?plc=ent_complex">ePlex</option>
+<option value="top place<$g_exe>?plc=clubdir&T_level=top">The
+Clubs</option>
+<option value="top place<$g_exe>?plc=fleamarket">Flea Market</option>
+<option value="top place<$g_exe>?plc=shopping">The Mall</option>
+<option value="custom http://www.colonycity.com/homebuilder 784 480">Homebuilder</option>
+<option value="top place<$g_exe>?plc=employment">Employment</option>
+<option value="top place<$g_exe>?plc=cafe">Le Caf&eacute;</option>
+<option value="top place<$g_exe>?plc=library">Library</option>
+<option value="top place<$g_exe>?plc=funpark">Fun Park</option>
+<option value="top place<$g_exe>?plc=waterpark">Water Park</option>
+<option value="top place<$g_exe>?plc=themepark">Theme Park</option>
+<option value="top place<$g_exe>?plc=cityhall">City Hall</option>
+<option value="top place<$g_exe>?plc=theatre">The Theater</option>                                 
+<option value="top place<$g_exe>?plc=pool">The Pool</option>
+<option value="top place<$g_exe>?plc=stadium">The Stadium</option>     
+<option value="top place<$g_exe>?plc=suburbs">The Suburbs</option>
+<option value="top place<$g_exe>?plc=post">Post Office</option>
+<option value="place <$g_HTMLRoot>/info/portals.html">The Portals</option>
+<option value="">-----------------------</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=m">Feedback</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0101030301030104&MTY=m">City Council</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000013&MTY=i">Security In-box</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000007&MTY=m">Guides Board</option>
+<option value="poll http://www.cybertown.com/wallpaper/ctpaper.html">Free Wallpaper</option>
+<option value="info citizen<$g_exe>?ac=action">Citizens List</option>
+<option value="info <$g_HTMLRoot>/info/controlpanel/index.html">How Do I?</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/dailynews/index.html">Daily News</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/index.html">Weekly News</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000010001&MTY=m&T_TYPE=announce">What's New?</option>
+<option value="info <$g_HTMLRoot>/info/help/index.html">FAQ/Help</option>
+<option value="info <$g_HTMLRoot>/info/VisitorCenter/VisitorCenter.html">Tourist Info</option>
+<!-- #ifndef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&plc=enter&LDT=O&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<!-- #ifdef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&LDT=<$T_LDT>&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<option value="poll http://www.cybertown.com/pascal/press/index.html">Cybertown Media</option>
+<option value="">-----------------------</option>
+<option value="poll <$g_HTMLRoot>/places/post/post.html">Send Postcard</option>
+<option value="poll http://www.cybertown.com/friends/tellfriends.html">Win Prizes!</option>
+<option value="custom minisurvey/minisurvey.pl?NNM=<$NNM> 600 500">Instant Polls</option>
+<option value="top http://www.cybertown.com/index2.html">Old Town</option>
+</select>
+
+
+<!-- #ifndef variable="CLB" -->
+<!--             worldcon and realplayer 
+<P><A HREF="javascript:loadInfo('http://www.colonycity.com/events/worldcon/schedule.html')"  target="_self"><IMG SRC="http://www.colonycity.com/events/worldcon/wcsched.gif" border=0></A></P>
+            <P><A HREF="javascript:loadInfo('http://www.colonycity.com/events/worldcon/real_player.html')"  target="_self"><IMG SRC="http://www.colonycity.com/events/worldcon/rahelp.jpg" border=0></A></P>
+-->
+<!-- #endif variable="CLB" -->  
+<br><br>
+
+
+
+
+
+
+
+
+<!-- #ifdef variable="ID" value="0000000000000010" -->
+<p><a href="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self"><img src="<$g_HTMLRoot>/places/post/images/sendpostcard.jpg" alt="Send a Postcard" border="0"></a></p> 
+<!-- #endif variable="ID" -->
+
+<script language=javascript>
+var neighborid = '<$ID>';
+neighborid = neighborid.substring(0,8);
+if (neighborid == '01020206') {
+document.write('<p><a href="javascript:loadCustom(\'http://www.colonycity.com/SETI/cyber-seti2.html\',\'640\',\'450\')" target=_self><IMG src="<$gHTMLRoot>/images/clubs/SETI/jointeamseti.gif" alt="Join Team Seti" border=0></a><br>');
+}
+</script>
+
+
+
+
+<div align=center>
+
+<!-- #ifndef variable="ID" value="0000000000000023" -->
+<br>
+<!-- #endif variable="ID" -->
+<!-- end of include control.tmpl -->

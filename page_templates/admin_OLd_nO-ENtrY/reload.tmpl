@@ -1,0 +1,28 @@
+<HTML>
+<!-- admin/reload.tmpl -->
+<!-- to load the frameset from the cgi-program -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$g_HTMLRoot><$g_BGIP>" BGCOLOR=<$g_CLB> LINK=<$g_CLL>
+VLINK=<$g_CLV> ALINK=<$g_CLA> TEXT=<$g_CLT>>
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_HTMLRoot><$BGI>" BGCOLOR="<$CLB>" LINK="<$CLL>"
+VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<font face="<$g_Font>">
+
+<!-- #ifdef variable="login" -->
+<script>top.location.href='<$g_HTMLRoot>/admin/index.html'</script>
+<!-- #endif variable="login" -->
+
+<center>
+loading next page...
+</center>
+
+</BODY>
+</HTML>

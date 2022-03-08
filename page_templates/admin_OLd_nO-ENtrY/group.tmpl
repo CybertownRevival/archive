@@ -1,0 +1,77 @@
+<!-- admin/group.tmpl -->
+<!-- edit group data -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for Group <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new Group</h2>
+<!-- #endif variable="create" -->
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form name="updateForm" method=post action="<$selfurl>">
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <input type=hidden name="NNK" value="<$NNK>">
+
+    <table border=0>
+        <tr>
+            <td>Name:</td>
+            <td><INPUT NAME="NNM" VALUE="<$NNM>" MAXLENGTH=16 SIZE=16></td>
+        </tr>
+        <tr>
+            <td>Name (lower):</td>
+            <td><$NNK></td>
+        </tr>
+        <tr><td colspan=2><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <a HREF="edit<$g_exe>?DTY=GM&KTY=ID&KFT=<$ID>m*&TPL=admin/groupmems&ac=list">Members</a>
+            </td>
+        </tr>
+    </table>
+<br>
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <!--input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100-->
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

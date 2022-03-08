@@ -1,0 +1,310 @@
+<!-- common/updownerrights.tmpl -->
+<!-- update owner access -->
+<HTML>
+<HEAD>
+<title><$g_title></title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/updateok.tmpl" -->
+
+<p align=center>
+<b>Update <font color=#FFFF00>Owner Access</font></b>
+<!-- #ifdef variable="cht" -->
+<b>for <font color=#FFFF00>Chat</font></b>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<b>for <font color=#FFFF00><$NAM></font></b>
+<!-- #ifdef variable="isAdmin" -->
+<br>
+<a href="edit<$g_exe>?ac=read&DTY=I&KTY=ID&KEY=h<$KEY>&cht=1&TPL=common/updownerrights&PRI=<$PRI>" target="_self">
+<IMG SRC="<$g_HTMLRoot>/images/buttons/bchataccess.gif" BORDER=0 ALT="Chat Owner Access"></a>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="cht" -->
+</p>
+
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+</div>
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+
+<form method=post action="<$selfurl>" target="detail">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="common/updownerrights">
+
+<input type=hidden name="OWR" value="<$OWR>">
+<input type=hidden name="ASR" value="<$ASR>">
+<!-- #ifdef variable="PRI" -->
+    <input type=hidden name="PRI" value="<$PRI>">
+<!-- #endif variable="PRI" -->
+
+<!-- #ifdef variable="cht" -->
+<input type=hidden name="cht" value="1">
+<h3>Here you define citizens, who have full access to the chat at this place.</h3>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<h3>Here you define citizens, who have full access to everything at this place, e.g. read the inbox, update the place, change access rights and delete things.</h3>
+<!-- #endif variable="cht" -->
+
+<b><font color=#FFFF00>Please be sure, you ALWAYS define the owner nickname:</font></b>
+
+<div align=center>
+<table border=0>
+<tr>
+	<!-- #ifdef variable="OWR" -->
+		<td><b><$OWR_NAM></b>:</td>
+	<!-- #endif variable="OWR" -->
+	<!-- #ifndef variable="OWR" -->
+		<td><b>Owner</b>:</td>
+	<!-- #endif variable="OWR" -->
+	<!-- #ifdef variable="OWNCHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="OWN_NNM" VALUE="<$OWN_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$OWN_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="OWNCHK_G" -->
+	<!-- #ifndef variable="OWNCHK_G" -->
+            <td><INPUT NAME="OWN_NNM" VALUE="<$OWN_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="OWNCHK_G" -->
+
+    <!-- #ifdef variable="isAdmin" -->
+        <td><INPUT NAME="OWNTYP" TYPE="Radio" VALUE="G"<$OWNCHK_G>>Group<br>
+            <INPUT NAME="OWNTYP" TYPE="Radio" VALUE="M"<$OWNCHK_M>>Member</td>
+    <!-- #endif variable="isAdmin" -->
+    <!-- #ifndef variable="isAdmin" -->
+        <!-- #ifdef variable="OWNCHK_G" -->
+            <INPUT NAME="OWNTYP" TYPE="Hidden" VALUE="G"
+        <!-- #endif variable="OWNCHK_G" -->
+    <!-- #endif variable="isAdmin" -->
+</tr>
+</table>
+</div>
+
+<p>If no nickname is defined and no job is checkmarked, only the owner has owner access.<br>
+If you want to add citizens to have owner access you can explicitly define them by nickname and/or by job.
+</p>
+
+<p>You can define <b><font color=#FFFF00>up to 8 citizens
+<!-- #ifdef variable="ASR" -->
+(<b><$ASR_NAM></b>)
+<!-- #endif variable="ASR" -->
+</font></b> having <b><font color=#FFFF00>owner access</font></b>,
+a <b>club name</b> is an example for a group here.
+</p>
+
+<div align=center>
+<table border=0>
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="AS1TYP" TYPE="Radio" VALUE="G"<$AS1CHK_G>>Group<br>
+        <INPUT NAME="AS1TYP" TYPE="Radio" VALUE="M"<$AS1CHK_M>>Member</td>
+    <td><INPUT NAME="AS2TYP" TYPE="Radio" VALUE="G"<$AS2CHK_G>>Group<br>
+        <INPUT NAME="AS2TYP" TYPE="Radio" VALUE="M"<$AS2CHK_M>>Member</td>
+    <td><INPUT NAME="AS3TYP" TYPE="Radio" VALUE="G"<$AS3CHK_G>>Group<br>
+        <INPUT NAME="AS3TYP" TYPE="Radio" VALUE="M"<$AS3CHK_M>>Member</td>
+    <td><INPUT NAME="AS4TYP" TYPE="Radio" VALUE="G"<$AS4CHK_G>>Group<br>
+        <INPUT NAME="AS4TYP" TYPE="Radio" VALUE="M"<$AS4CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="AS1CHK_G" -->
+        <INPUT NAME="AS1TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS1CHK_G" -->
+	<!-- #ifdef variable="AS2CHK_G" -->
+        <INPUT NAME="AS2TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS2CHK_G" -->
+	<!-- #ifdef variable="AS3CHK_G" -->
+        <INPUT NAME="AS3TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS3CHK_G" -->
+	<!-- #ifdef variable="AS4CHK_G" -->
+        <INPUT NAME="AS4TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS4CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="AS1CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS1_NNM" VALUE="<$AS1_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS1_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS1CHK_G" -->
+	<!-- #ifndef variable="AS1CHK_G" -->
+	   <td><INPUT NAME="AS1_NNM" VALUE="<$AS1_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS1CHK_G" -->
+	<!-- #ifdef variable="AS2CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS2_NNM" VALUE="<$AS2_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS2_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS2CHK_G" -->
+	<!-- #ifndef variable="AS2CHK_G" -->
+	   <td><INPUT NAME="AS2_NNM" VALUE="<$AS2_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS2CHK_G" -->
+	<!-- #ifdef variable="AS3CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS3_NNM" VALUE="<$AS3_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS3_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS3CHK_G" -->
+	<!-- #ifndef variable="AS3CHK_G" -->
+	   <td><INPUT NAME="AS3_NNM" VALUE="<$AS3_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS3CHK_G" -->
+	<!-- #ifdef variable="AS4CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS4_NNM" VALUE="<$AS4_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS4_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS4CHK_G" -->
+	<!-- #ifndef variable="AS4CHK_G" -->
+	   <td><INPUT NAME="AS4_NNM" VALUE="<$AS4_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS4CHK_G" -->
+</tr>
+
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="AS5TYP" TYPE="Radio" VALUE="G"<$AS5CHK_G>>Group<br>
+        <INPUT NAME="AS5TYP" TYPE="Radio" VALUE="M"<$AS5CHK_M>>Member</td>
+    <td><INPUT NAME="AS6TYP" TYPE="Radio" VALUE="G"<$AS6CHK_G>>Group<br>
+        <INPUT NAME="AS6TYP" TYPE="Radio" VALUE="M"<$AS6CHK_M>>Member</td>
+    <td><INPUT NAME="AS7TYP" TYPE="Radio" VALUE="G"<$AS7CHK_G>>Group<br>
+        <INPUT NAME="AS7TYP" TYPE="Radio" VALUE="M"<$AS7CHK_M>>Member</td>
+    <td><INPUT NAME="AS8TYP" TYPE="Radio" VALUE="G"<$AS8CHK_G>>Group<br>
+        <INPUT NAME="AS8TYP" TYPE="Radio" VALUE="M"<$AS8CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="AS5CHK_G" -->
+        <INPUT NAME="AS5TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS5CHK_G" -->
+	<!-- #ifdef variable="AS6CHK_G" -->
+        <INPUT NAME="AS6TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS6CHK_G" -->
+	<!-- #ifdef variable="AS7CHK_G" -->
+        <INPUT NAME="AS7TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS7CHK_G" -->
+	<!-- #ifdef variable="AS8CHK_G" -->
+        <INPUT NAME="AS8TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="AS8CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="AS5CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS5_NNM" VALUE="<$AS5_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS5_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS5CHK_G" -->
+	<!-- #ifndef variable="AS5CHK_G" -->
+	   <td><INPUT NAME="AS5_NNM" VALUE="<$AS5_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS5CHK_G" -->
+	<!-- #ifdef variable="AS6CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS6_NNM" VALUE="<$AS6_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS6_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS6CHK_G" -->
+	<!-- #ifndef variable="AS6CHK_G" -->
+	   <td><INPUT NAME="AS6_NNM" VALUE="<$AS6_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS6CHK_G" -->
+	<!-- #ifdef variable="AS7CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS7_NNM" VALUE="<$AS7_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS7_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS7CHK_G" -->
+	<!-- #ifndef variable="AS7CHK_G" -->
+	   <td><INPUT NAME="AS7_NNM" VALUE="<$AS7_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS7CHK_G" -->
+	<!-- #ifdef variable="AS8CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="AS8_NNM" VALUE="<$AS8_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$AS8_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="AS8CHK_G" -->
+	<!-- #ifndef variable="AS8CHK_G" -->
+	   <td><INPUT NAME="AS8_NNM" VALUE="<$AS8_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="AS8CHK_G" -->
+</tr>
+</table>
+<small><i><u>Note:</u> If a nickname does not exist, it is ignored without notification.</i></small>
+</div>
+
+<p>Additionally all citizens having <b><font color=#FFFF00>checkmarked jobs</font></b> have
+<b><font color=#FFFF00>owner access</font></b>, too.
+<br>
+If you want to give owner access to all citizens, simply checkmark only 'Members' - this
+includes ALL other jobs, but not visitors.
+</p>
+
+<div align=center>
+<table border=1 cellpadding=1>
+<tr>
+<!--#for loopname="roles" loopvars="ROL_ITER_" -->
+    <td nowrap>
+
+<!-- #if variable="ROL_ITER_" != value="0" -->
+<!-- #if variable="ROL_ITER_" != value="1" -->
+    <input type="checkbox" align="middle"
+           name="ORO_BIT_<$ROL_ITER_>" <$ORO_BIT_>>
+<!-- #endif variable="ROL_ITER_" -->
+<!-- #if variable="ROL_ITER_" == value="0" -->
+    &nbsp; &nbsp; &nbsp;
+<!-- #endif variable="ROL_ITER_" -->
+<!-- #if variable="ROL_ITER_" == value="1" -->
+    &nbsp; &nbsp; &nbsp;
+<!-- #endif variable="ROL_ITER_" -->
+    
+    <$ROL_BIT_NAM_>
+    </td>
+
+	<input type=hidden name="ROL_BIT_ID_R_<$ROL_ITER_>" value="<$ROL_BIT_ID_R_>">
+	<input type=hidden name="ROL_BIT_ID_W_<$ROL_ITER_>" value="<$ROL_BIT_ID_W_>">
+<!-- #ifdef variable="ROL_4_" -->
+	</tr><tr>
+<!-- #endif variable="ROL_4_" -->
+<!--#endfor loopname="roles" -->
+</tr>
+</table>
+	</div>
+</p>
+
+<a name=submitbutton></a>
+<BR>
+<center>
+<input type=submit name="editrolem" value=Update>
+<input type=submit name="read" value=Cancel>
+</center>
+
+</form>
+
+</BODY>
+</HTML>

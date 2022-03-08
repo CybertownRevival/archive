@@ -1,0 +1,14 @@
+<!-- common/focusform.tmpl -->
+<!-- included in any template to set the focus on the first form field -->
+<script language=javascript>
+ len = document.forms[0].elements.length;
+ for (i = 0; i < len ; i++)
+ {
+  if ( document.forms[0].elements[i].type == "text" )
+  {
+   document.forms[0].elements[i].focus();
+   break;
+  }
+ }
+</script>
+<!-- end of include common/focusform.tmpl -->

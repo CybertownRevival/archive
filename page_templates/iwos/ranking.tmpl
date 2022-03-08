@@ -1,0 +1,83 @@
+<html>
+<!-- vote/rate.tmpl -->
+<!-- display the form to rate -->
+<head>
+<title><$g_title> - Ranking</title>
+
+<script language=javascript>
+
+  function closeVote(url)
+  {
+      parent.overview.location.href=url;
+      location.href="<$g_HTMLRoot>/blank.html";
+  }
+
+</script>
+</head>
+
+<BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<center>
+<img SRC="<$g_Images>/images/homebuilder/homebuilderrankhere.gif" border=0>
+
+<table width="100%" align="center">
+<tr>  
+  <!-- #ifdef variable="owneraccess" -->
+    <td align=right>
+      <a href='javascript:closeVote("vote<$g_exe>?ac=close&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")' target=_self>
+      <IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bclose.gif" BORDER=0 ALT="Close"></a>
+    </td>
+  <!--#endif variable="owneraccess" -->
+  </tr>
+</table>
+
+<br><br>
+<font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Select a radiobutton and click the "RANK-Button"</b></font>
+
+<form method=post action="<$selfurl>" name="rankForm">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="ac" value="submitrate">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="oldchoice" value="<$oldchoiceval>">
+
+  <input type="hidden" name="OBJID" value="<$OBJID>">
+  <input type="hidden" name="OBJNAM" value="<$OBJNAM>">
+
+  <input type="hidden" name="TPL" value="<$TPL>">
+  <input type="hidden" name="OBJDTY" value="<$OBJDTY>">
+  <input type="hidden" name="OBJKTY" value="<$OBJKTY>">
+
+  <font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif">Current points for this house =&gt; <$TOTAL></font><br><br>
+
+  <table>
+    <tr>
+      <td><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Select your choice:</b></font></td>
+      <td><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;&nbsp;</font></td>
+      <td><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Current Votes</b></font></td>
+    </tr>
+    <!--#for loopname="loopchoice" loopvars="CHO,TOP,checked" -->
+    <tr>
+      <td>
+        <input type="radio" name="choice" value="<$CHO>" <$checked>><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><$TOP></font></input>
+      </td>
+      <td>&nbsp;&nbsp;</td>
+      <td align=right><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><$CNT></font></td>
+    </tr>
+    <!--#endfor loopname="loopchoice" -->
+  </table>
+
+  <a name=submitbutton></a>
+    <a href="javascript:document.rankForm.submit()"><img src="<$g_Images>/images/homebuilder/ranknow.gif" BORDER=0 ALT="Rank now"></a>
+    <a href="javascript:history.back()"><IMG SRC="<$g_Images>/images/homebuilder/cancelranking.gif" BORDER=0 ALT="Cancel"></a>
+</form>
+
+<a href="vote?ac=ratelist&ID=<$ID>&TPL=iwos/ratelist&OBJID=<$OBJID>&OBJDTY=<$OBJDTY>&OBJKTY=<$OBJKTY>">
+<font color=FFCC00 size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Current Ratinglist</b></font></a>
+
+</center>
+
+</body>
+</html>

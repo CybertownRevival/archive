@@ -1,0 +1,73 @@
+<!-- object/storagecreate -->
+<HTML>
+<HEAD>
+<script language=javascript>
+var ids = new Array();
+var i = -1;
+<!-- #for loopname="objectlist" loopvars="NUM_" -->
+ids[++i] = '<$NUM_>';
+<!-- #endfor loopname="objectlist"  -->
+function create()
+{
+  var n = parseInt(ids[ids.length-1], 10);
+  n++;
+  var s = (n<10?'0':'')+n;
+  location.href = './print60<$g_exe>?CREID='+s+'&TPL=object/storagecreate';
+}
+function check()
+{
+  for(i=0 ; i < 100 ; i++ )
+  {
+    var f = eval('document.uform.UNAM'+i);
+    if( f == null )
+      break;
+    if( f.value == '' )
+    {
+      alert('Please specify a name');
+      f.focus();
+      return false;
+    }
+  }
+  return true;
+}
+</script>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2>
+Update storage area names of <$NNM>
+</h2>
+<!-- #if variable="doit" != value="" -->
+Names updated 
+<script language=javascript>
+location.replace("./property?ac=place&ID=<$HOMID>");
+</script>
+<!-- #endif variable="doit" -->
+
+<br><br>
+<form name="uform" action="<$selfurl>" method="POST" onsubmit="return check()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="doit" value="1">
+<input type="hidden" name="TPL" value="object/storageupdate">
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<input type=text name=UNAM<$loopindex> value="<$NAM_>"> (
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects)<br>
+<!-- #endfor loopname="objectlist"  -->
+<input type=submit name=Update value=Update>
+</form>
+
+<!-- #if variable="MAXITER" < value="10" -->
+<a href="javascript:create()">Create new area</a><br>
+<!-- #endif variable="MAXITER" < value="10" -->
+<a href="./print60?TPL=object/storageaccess">Change object access</a>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,62 @@
+<!-- dbbatch/nfind.html -->
+<!-- display the number of free homes for all neighborhoods of a district -->
+<html>
+<head>
+<title><$g_title> - Find a Home</title>
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FF0000" TEXT="#CCCCCC">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<center>
+<h2>WELCOME to the <$NAM0> Colony</h2>
+<img src="<$g_HTMLRoot>/home/<$CID0>000000000000/icon2.jpg" width="200" height="92">
+
+<p>Please take a look at the list below<br> 
+and choose the neighborhood that fits your area of interest.<br>
+<font color="FFFF00">This list is updated every hour.</font>
+</p>
+</center>
+
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td><b>Neighborhood</b></td>
+    <td align=center><b>Total Homes</b></td>
+    <td align=center><b>Homes Available</b></td>
+</tr>
+
+<!--#for loopname="list" loopvars="TOT" -->
+
+<tr>
+<td>
+<!--#ifdef variable="CID" -->
+Colony Total
+<!--#endif variable="CID" -->
+
+<!--#ifndef variable="CID" -->
+<a href=<$g_HTMLRoot>/home/<$CID0>000000000000/<$NID>find.html><$NAM></a>
+<!--#endif variable="CID" -->
+</td>
+
+<td align=center><$TOT></td>
+<td align=center><$FREE></td>
+
+</tr>
+<!--#endfor loopname="list"  -->
+
+</table>
+
+<hr>
+<center>
+<a href="<$g_HTMLRoot>/info/controlpanel/index.html"><img src="<$g_HTMLRoot>/info/controlpanel/buttons/howdoi.gif" width="116" height="16" alt="How Do I index" border="0"></a> 
+<a href="javascript:history.go(-1)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</center>
+
+</body>
+</html>
+
+

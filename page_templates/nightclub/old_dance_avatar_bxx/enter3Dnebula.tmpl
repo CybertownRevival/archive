@@ -1,0 +1,84 @@
+<!-- #ifdef variable="chatreadaccess" -->  
+### blaxxun CCpro - place definition file  
+### ------------------------------------------  
+server                          <$cserver>  
+port                            <$csport>  
+scene                           <$g_HttpServer><$g_cgiRoot>/<$scene> <$scenename>  
+3dscene                                 <$g_HttpServer><$g_HTMLRoot>/<$3Dscene>  
+avatarworld             <$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm  
+sname                   <$scenename>  
+<!-- #ifdef variable="chatwriteaccess" -->  
+message                 <$NNM>, welcome to <$scenename>. Please note that visitors can only watch the chat!   
+<!-- #endif variable="chatwriteaccess" -->  
+<!-- #ifndef variable="chatwriteaccess" -->  
+message                 <$NNM>, welcome to <$scenename>. Sorry, you can only watch the chat!  
+protectpublicinput      1  
+<!-- #endif variable="chatwriteaccess" -->  
+  
+### Authentication  
+authenticationid                <$MID>  
+authenticationpw                <$COOKIE>  
+nickname                        <$NNM>  
+protectnickname         1  
+
+vrmlmyavatar          http://www.cybertown.com/places/nightclub/avatars/gogonebula.wrl 
+  
+<!-- #ifdef variable="ccgi_isVisitor" -->  
+settingslistflag                101110  
+<!-- #endif variable="ccgi_isVisitor" -->  
+  
+<!-- #ifndef variable="ccgi_isVisitor" -->  
+settingslistflag                111111  
+<!-- #endif variable="ccgi_isVisitor" -->  
+  
+### Roles  
+prenickname                     <$NAM>  
+postnickname            <$EXP>  
+
+
+### JoinMessage
+joinmessage             0
+
+
+### Voice  
+voicesupport            0  
+clientvoiceenable       0  
+botvoiceenable          0  
+
+  
+### Diverse  
+noblaxxunhelp           1  
+useversionserver        0  
+listtabflag                             110010111  
+##listtabflag                           <$list_flag>  
+frameset                             <$g_HttpServer><$g_cgiRoot>/<$frameset>  
+htmlframe                               HTML  
+framesizes                              60  
+uselastscene    0  
+[ListTabs]tabPrivateObjName     My Backpack  
+[ListTabs]tabPublicObjName      Objects   
+  
+### Colors  
+logcolor        0  
+panelbackrgb            0,80,0  
+paneltextrgb            0,223,0  
+  
+### Chat colors  
+inputtextchatrgb        255,255,0  
+systemtextchatrgb       0,255,220  
+historytextchatrgb      250,250,250  
+bottextchatrgb          0,195,255  
+owntextchatrgb          255,255,0  
+othertextchatrgb        255,160,0  
+<!-- #endif variable="chatreadaccess" -->  
+  
+<!-- #ifndef variable="chatreadaccess" -->  
+### replace frameset to show correct error message  
+server                          <$cserver>  
+port                            <$csport>  
+scene                           <$g_HttpServer><$g_cgiRoot>/<$scene>  
+3dscene                                 <$g_HttpServer><$g_HTMLRoot>/<$3Dscene>  
+sname                   <$scenename>  
+frameset <$g_HttpServer><$g_cgiRoot>/place<$g_exe>?plc=<$place>&ac=index3d  
+<!-- #endif variable="chatreadaccess" -->  
+  

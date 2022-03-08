@@ -1,0 +1,193 @@
+<!-- inb/read.tmpl -->
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+<SCRIPT language="JavaScript">
+function deleteMessage(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body4.tmpl" -->
+
+<!-- #ifdef variable="msbpostallowed" -->
+<!-- #include virtual="<$g_Templates>msb/nopostpriv.tmpl" -->
+
+<!-- #ifndef variable="newallowedtopost" -->
+	<!-- #define variable="newallowedtopost" == value="1" -->		
+<!-- #endif variable="newallowedtopost" -->	
+	
+<!-- #endif variable="msbpostallowed" -->
+<!--#ifndef variable="listmsg" -->
+
+<!-- #ifdef variable="DTY" value="C" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>hi-tek/hitektoday.tmpl" -->
+<link rel=stylesheet type=text/css href="http://www.cybertown.com/places/hi-tek/content/mb.css">
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="DTY" -->
+
+<!-- #ifdef variable="DTY" value="N" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>hi-tek/hitektoday.tmpl" -->
+<link rel=stylesheet type=text/css href="http://www.cybertown.com/places/hi-tek/content/mb.css">
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="DTY" -->
+
+<center>
+<!-- #ifdef variable="msbpostallowed" -->
+<a target="_parent" href="<$selfurl>?ac=write&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>">
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<IMG SRC="<$g_Images>/places/hi-tek/images/buttons/bpost.gif" BORDER=0 ALT="Post a Message"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifdef variable="COLID" value="0105" --> 
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bpost.gif" BORDER=0 ALT="Post a Message"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" -->
+<!-- #ifndef variable="COLID" value="0105" -->
+<IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Message"></a>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="msbpostallowed" -->
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<a target="_parent" href="<$selfurl>?ac=getconf&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>">
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<IMG SRC="<$g_Images>/places/hi-tek/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the board"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifdef variable="COLID" value="0105" --> 
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the board"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" -->
+<!-- #ifndef variable="COLID" value="0105" -->
+<IMG SRC="<$g_Images>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the board"></a>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="COLID" -->
+
+<a target="_parent" href="<$selfurl>?ac=listhdr&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TPL=inb/manage">
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<IMG SRC="<$g_Images>/places/hi-tek/images/buttons/bmanage.gif" BORDER=0 ALT="Manage the board"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifdef variable="COLID" value="0105" --> 
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bmanage.gif" BORDER=0 ALT="Manage the board"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" -->
+<!-- #ifndef variable="COLID" value="0105" -->
+<IMG SRC="<$g_Images>/images/buttons/bmanage.gif" BORDER=0 ALT="Manage the board"></a>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="msbconfigallowed" -->
+<br>
+<font size=+2><b><$NAM></b></font>
+</center>
+
+<!-- #ifdef variable="DTY" value="C" -->  
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<center><img src="http://www.cybertown.com/places/hi-tek/content/htoday.jpg" border="0" usemap="#htoday" alt="Hi-Tek Today"></center>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="DTY" --> 
+
+<!-- #ifdef variable="DTY" value="N" -->  
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<center><img src="http://www.cybertown.com/places/hi-tek/content/htoday.jpg" border="0" usemap="#htoday" alt="Hi-Tek Today"></center>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="DTY" -->
+
+<p><$TXT>
+
+<hr>
+</center>
+<!--#endif variable="listmsg" -->
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>,there are no message to show.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+
+<!--#ifndef variable="listmsg" -->
+<table>
+<tr>
+<td>
+<a target="detail" href="<$selfurl>?ac=getmsg&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>"
+><$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_AP>:<$DATE_MIN> <$DATE_APM></a>,
+</td>
+<td>
+From: <$NNM>, Subject: <$sub>
+</td>
+</tr>
+</table>
+<!--#endif variable="listmsg" -->
+
+<!--#ifdef variable="listmsg" -->
+<table width=100%>
+<tr><td>
+Date: <$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_YEAR>. 
+<$DATE_AP>:<$DATE_MIN>:<$DATE_SEC> <$DATE_APM>.
+
+</td><td align=right>
+<!-- #ifdef variable="newallowedtopost" value="1" -->
+
+<a target="_parent" href="<$selfurl>?ac=reply&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&RTONNM=<$NNM>&TKT=<$TKT>"
+>
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<IMG SRC="<$g_Images>/places/hi-tek/images/buttons/breply.gif" BORDER=0 ALT="Reply"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifdef variable="COLID" value="0105" --> 
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/breply.gif" BORDER=0 ALT="Reply"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" -->
+<!-- #ifndef variable="COLID" value="0105" -->
+<IMG SRC="<$g_Images>/images/buttons/breply.gif" BORDER=0 ALT="Reply"></a>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="newallowedtopost"-->
+</td></tr>
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<tr><td>
+</td><td align=right>
+<a href='javascript:deleteMessage("msb<$g_exe>?ac=delete&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>")'
+>
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<IMG ALIGN=absbottom SRC="<$g_Images>/places/hi-tek/images/buttons/bdelete.gif" BORDER=0 ALT="Delete the Message"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifdef variable="COLID" value="0105" --> 
+<IMG ALIGN=absbottom SRC="<$g_Images>/places/inrlms_col/images/buttons/bdelete.gif" BORDER=0 ALT="Delete the Message"></a>
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" -->
+<!-- #ifndef variable="COLID" value="0105" -->
+<IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete the Message"></a>
+<!-- #endif variable="COLID" -->
+<!-- #endif variable="COLID" -->
+<!--#endif variable="msbconfigallowed" -->
+
+</td></tr>
+</table>
+<br>
+From: <$NNM><br>
+Subject: <$sub>
+<table>
+<tr><$pre><td width=100%>
+<$txt>
+</td><$endpre></tr>
+</table>
+<!--#endif variable="listmsg" -->
+
+<!--#endfor loopname="msglist"  -->
+
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<h2>Immigration - New Member</h2>
+    <h3>Hello <font color=#ff0000><$NNM></font>, your immigration was successful.</h3>
+
+<!-- #ifdef variable="m_referer" -- >
+
+<P>
+The amount of <$m_referer> Cyberdollars has been transfer to <$REF>'s
+account, because you mentioned her/him as your referring member.
+<P>
+Thank You!
+
+<!-- #endif variable="m_referer" -- >
+
+    <p>
+    <i>Log into restricted scenes with your Nickname and your Password.</i>
+
+    <p>
+<B><a href="place<$g_exe>?ac=login&NNM=<$NNM>&PWD=<$PWD>" target="_top">Enter NOW!</a></B>
+
+
+</body>
+</html>
+

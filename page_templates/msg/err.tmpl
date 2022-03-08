@@ -1,0 +1,68 @@
+<!-- msg/err.tmpl -->
+<!--- include to display any error --->
+
+<!-- #ifdef variable="errruntime" -->
+
+    <!-- #ifdef variable="errruntime001" -->
+    <br>Sorry <$MEM_NNM><$VIS_NNM>, <$REC_NNM> accepts only messages from buddies.<br>
+    <!-- #endif variable="errruntime001" -->
+
+    <!-- #ifdef variable="errruntime002" -->
+    <br>Sorry <$MEM_NNM><$VIS_NNM>, you have not enough access rights to send a <$errruntime002> message.<br>
+    <!-- #endif variable="errruntime002" -->
+
+    <!-- #ifdef variable="errruntime003" -->
+    <br>Sorry <$MEM_NNM><$VIS_NNM>, new message could not be created.<br>
+    <!-- #endif variable="errruntime003" -->
+
+    <!-- #ifdef variable="errruntime004" -->
+    <br>Sorry <$MEM_NNM><$VIS_NNM>, not enough access rights to perform this operation.<br>
+    <!-- #endif variable="errruntime004" -->
+
+    <!-- #ifdef variable="errruntime005" -->
+    <br>Sorry <$MEM_NNM><$VIS_NNM>, message could not be updated.<br>
+    <!-- #endif variable="errruntime005" -->
+
+<!-- #endif variable="errruntime" -->
+
+<!-- #ifdef variable="errparams" -->
+
+    Parameter Error:&nbsp;
+
+    <!-- #ifdef variable="errparams000" -->
+        Template parameter (TPL) is missing.<br>
+    <!-- #endif variable="errparams000" -->
+
+    <!-- #ifdef variable="errparams001" -->
+        Action (ac) is either missing or wrong.<br>
+    <!-- #endif variable="errparams001" -->
+
+    <!-- #ifdef variable="errparams002" -->
+        Text (TXT) is missing.<br>
+    <!-- #endif variable="errparams002" -->
+    
+    <!-- #ifdef variable="errparams003" -->
+        Start date (SDA) format is invalid.<br>
+    <!-- #endif variable="errparams003" -->
+    
+    <!-- #ifdef variable="errparams004" -->
+        Typ (TYP) is missing.<br>
+    <!-- #endif variable="errparams004" -->
+    
+    <!-- #ifdef variable="errparams005" -->
+        Parent key (PKE) is missing.<br>
+    <!-- #endif variable="errparams005" -->
+    
+    <!-- #ifdef variable="errparams006" -->
+        Receiver ID (REC) is either missing or invalid.<br>
+    <!-- #endif variable="errparams006" -->
+
+    <!-- #ifdef variable="errparams007" -->
+        Creator ID (MEM_ID) is invalid.<br>
+    <!-- #endif variable="errparams007" -->
+
+    <!-- #ifdef variable="errparams008" -->
+        ID <$ID> of message is missing or message with this ID does not exist.<br>
+    <!-- #endif variable="errparams008" -->
+
+<!-- #endif variable="errparams" -->

@@ -1,0 +1,724 @@
+#VRML V2.0 utf8
+
+
+PROTO PopUp[
+eventIn SFTime set_pop
+field SFString url ""
+field SFString status "yes"
+field SFString scrollbars "auto"
+field SFInt32  height 300
+field SFInt32  width 200
+field MFNode children []
+eventOut SFBool isOver
+]{
+Group{children[
+DEF button TouchSensor{isOver IS isOver}
+Group{children IS children}
+DEF pop Script{
+eventIn SFTime set_pop
+field SFString linkURL IS url
+field SFString status IS status
+field SFString scrollbars IS scrollbars
+field SFInt32  height IS height
+field SFInt32  width IS width
+field MFString param ["","","target=_self"]
+url"vrmlscript:
+function set_pop(v,t){
+ st = new MFString('OnEvent(status,'+status+')');
+ sc = new MFString('OnEvent(scrollbars,'+scrollbars+')');
+ h = new MFString('OnEvent(height,'+height+')');
+ w = new MFString('OnEvent(width,'+width+')');
+ u = new MFString('OnEvent(load,'+linkURL+')');
+ Browser.loadURL(st,param);
+ Browser.loadURL(sc,param); 
+ Browser.loadURL(h,param);
+ Browser.loadURL(w,param);
+ Browser.loadURL(u,param);
+}
+"}
+]}
+ROUTE button.touchTime TO pop.set_pop
+}#END PopUp PROTO
+
+PROTO SharedObject [
+exposedField SFVec3f translation 0 0 0
+exposedField SFRotation rotation 0 1 0 0
+exposedField SFString name ""
+exposedField SFString id ""
+exposedField MFNode children []
+eventIn SFBool startMove
+eventOut SFTime touchTime
+eventOut SFBool isOver
+eventOut SFVec3f newPosition
+eventOut SFRotation newRotation
+exposedField MFString attributes ["PRC","1","CNT","1","IMG","","CLA","B"]
+exposedField MFFloat range [10]
+
+eventIn SFVec3f set_position
+
+eventOut MFString text_changed
+
+
+]{
+
+DEF T1 Transform {
+translation IS translation
+rotation IS rotation
+children[
+DEF TS TouchSensor{ isOver IS isOver touchTime IS touchTime}
+
+DEF SOLOD LOD{range IS range level[
+
+Group{children IS children}
+
+]}#END LOD
+]}#END T1
+
+#BEGIN MOVE HUD CODE#
+DEF SOSwitch Switch{
+whichChoice -1
+choice[
+Collision{
+collide FALSE
+children[
+DEF HUD HUD { 
+children[Transform{translation 0.15 0.08 -0.3 scale 0.8 0.8 0.8 children[
+#DirectionalLight{direction 0 0 -1 }
+Transform{ #Done Button
+translation -0.033 -.063 0
+scale .08 .08 .08
+children[
+DEF DoneButton TouchSensor{}
+Shape{
+appearance Appearance{material Material{diffuseColor 0 1 0 specularColor 0 1 0}}
+geometry IndexedFaceSet{
+coord Coordinate{point[0 0 0,-.15 .1 0,-.05 .15 0,0 .05 0,.085 .3 0,.15 .4 0,.2 .25 0,.05 0 0 ]}
+coordIndex[0,3,2,1,-1,6,4,3,0,-1]
+}}
+Transform{ translation 0 .1 0
+children Shape{appearance Appearance{material Material{transparency 1}}geometry Sphere{radius .3}}
+}
+]}#END DoneButton
+Transform{ #CancelButton
+translation 0.033 -.054 0
+scale .07 .07 .07
+children[
+DEF CancelButton TouchSensor{}
+Shape{
+appearance Appearance{material Material{diffuseColor 1 0 0 specularColor 1 0 0}}
+geometry IndexedFaceSet{coord Coordinate{point[0 0 0,.15 -.1 0,.1 -.15 0,.15 .1 0,.1 .15 0,-.15 -.1 0,-.1 -.15 0,-.15 .1 0,-.1 .15 0]}coordIndex[0,2,1,-1,0,3,4,-1,0,5,6,-1,0,8,7,-1]}
+}
+Shape{appearance Appearance{material Material{transparency 1}}geometry Sphere{radius .2}}
+]}#END CancelButton
+
+Transform{ #Rotation Control
+translation 0 -.054 0
+scale .16 .16 .16
+children[
+DEF RotControlKnob Transform{ scale 1 .5 1 children[ 
+Shape{appearance Appearance{material Material{diffuseColor 0 0 .5 specularColor 1 1 1 }}geometry Sphere{radius .1}}
+]}
+DEF RotControlSensor CylinderSensor{minAngle -3.142 maxAngle 3.142}
+]}#END RotationControl
+Transform{#Panel
+translation 0 0 0 scale 0.1 0.1 0.1 children[
+Transform{
+translation .14 -.05 -.3
+children [ 
+Shape { appearance Appearance { material Material{ diffuseColor 0 0 0 transparency .5}  } geometry Box { size 1 1.2 .01 } } ] }
+Transform{# Y-axis
+children[
+Transform{translation 0 .05 0 rotation 0 0 1 0 children[ 
+Shape{appearance Appearance{material Material{transparency .1 diffuseColor 0 1 0 specularColor 0 1 0}}geometry DEF arrow IndexedFaceSet{solid FALSE coord Coordinate{point[-.05 0 0,-.05 .2 0,-.15 .2 0,0 .35 0,.15 .2 0,.05 .2 0,.05 0 0]}coordIndex[0,1,5,6,-1,2,3,4,-1]}}
+]}
+Transform{translation 0 -.05 0 rotation 0 0 1 3.142 children[
+Shape{appearance Appearance{material Material{diffuseColor 0 1 0  specularColor 0 1 0}}geometry USE arrow}
+]}
+DEF Y PlaneSensor{}
+]}#END Y-axis
+Transform{# X-axis
+children[
+Transform{translation -.05 0 0 rotation 0 0 1 1.571 children[
+Shape{appearance Appearance{material Material{diffuseColor 1 0 0 specularColor 1 0 0}}geometry USE arrow}
+]}
+Transform{translation .05 0 0 rotation 0 0 1 -1.571 children[
+Shape{appearance Appearance{material Material{diffuseColor 1 0 0 specularColor 1 0 0}}geometry USE arrow}
+]}
+DEF X PlaneSensor{}
+]}#END X-axis
+Transform{translation 0 0 0 rotation 1 -.2 0 .8 children[          
+Transform{#Z-axis
+rotation 1 0 0 1.571
+children[
+Transform{translation 0 .05 0 rotation 0 0 1 -.1 children[
+Shape{appearance Appearance{material Material{transparency .1 diffuseColor .2 .2 1 specularColor 0 0 1}}geometry USE arrow}
+]}
+Transform{translation 0 -.05 0 rotation 0 0 1 3.042 children[
+Shape{appearance Appearance{material Material{diffuseColor .2 .2 1 specularColor 0 0 1}}geometry USE arrow}
+]}
+DEF Z PlaneSensor{}
+]}#END Z-axis
+]}
+]}#END panel
+DEF SOScript Script{
+eventIn SFVec3f set_X
+eventIn SFVec3f set_Y
+eventIn SFVec3f set_Z
+eventIn SFRotation set_rotation
+eventIn SFBool set_done
+eventIn SFBool set_cancel
+eventIn SFBool set_over
+eventIn SFBool set_enable IS startMove
+exposedField SFString name IS name
+exposedField SFString id IS id
+exposedField SFFloat rate 10
+field SFVec3f initialPosition IS translation
+field SFRotation initialRotation IS rotation
+field SFVec3f currentPosition 0 0 0
+field SFRotation currentRotation 0 0 0 0
+field SFVec3f XlastChange 0 0 0
+field SFVec3f YlastChange 0 0 0
+field SFVec3f ZlastChange 0 0 0
+field SFFloat ROTlastChange 0
+eventOut SFVec3f position_changed
+eventOut SFRotation rotation_changed
+eventOut SFVec3f new_position IS newPosition
+eventOut SFRotation new_rotation IS newRotation
+eventOut SFInt32 choice_changed
+eventOut MFString text_changed IS text_changed
+eventIn SFVec3f set_position IS set_position
+url "vrmlscript:
+
+
+function set_position(v){
+ 
+ position_changed = v;
+ currentPosition = v;
+ text_changed = new MFString(currentPosition);
+}
+
+
+function set_over(v,t){if(v){Browser.setDescription(name);} else{Browser.setDescription('');}}
+function set_enable(v,t){
+ if(!v){return;}
+ choice_changed = 0;
+}
+function set_X(v,t){
+  newPosition = (Browser.viewpointOrientation.multVec((new SFVec3f(v[0],0,0)).subtract(XlastChange))).multiply(rate);
+  currentPosition = currentPosition.add(newPosition);
+  position_changed = currentPosition;
+  text_changed = new MFString(currentPosition);  
+  XlastChange = new SFVec3f(v[0],0,0);
+}
+function set_Y(v,t){
+  newPosition = (Browser.viewpointOrientation.multVec((new SFVec3f(0,v[1],0)).subtract(YlastChange))).multiply(rate);
+  currentPosition = currentPosition.add(newPosition);
+  position_changed = currentPosition;
+  text_changed = new MFString(currentPosition);
+  YlastChange = new SFVec3f(0,v[1],0);
+}
+function set_Z(v,t){
+  newPosition = (Browser.viewpointOrientation.multVec((new SFVec3f(0,0,v[1])).subtract(ZlastChange))).multiply(rate);
+  currentPosition = currentPosition.add(newPosition);
+  position_changed = currentPosition;
+  text_changed = new MFString(currentPosition);
+  ZlastChange = new SFVec3f(0,0,v[1]);
+}
+function set_rotation(v,t){
+ rotation_changed = v;
+ currentRotation = v;
+}
+function set_done(v,t){
+ if(!v){return;}
+ new_position = currentPosition;
+ new_rotation = currentRotation;
+ initialRotation = currentRotation;
+ initialPosition = currentPosition;
+ choice_changed = -1;
+}
+function set_cancel(v,t){
+ if(!v){return;}
+ choice_changed = -1;
+ position_changed = initialPosition;
+ rotation_changed = initialRotation;
+}
+function initialize() {
+ currentRotation = initialRotation;
+ currentPosition = initialPosition;
+}
+"}
+]}#END Collision
+]}#END HUD
+]}
+]}#END SOSwitch
+
+ROUTE X.translation_changed TO SOScript.set_X
+ROUTE Y.translation_changed TO SOScript.set_Y
+ROUTE Z.translation_changed TO SOScript.set_Z
+ROUTE RotControlSensor.rotation_changed TO RotControlKnob.set_rotation
+ROUTE RotControlSensor.rotation_changed TO SOScript.set_rotation
+ROUTE SOScript.position_changed TO T1.set_translation
+ROUTE SOScript.rotation_changed TO T1.set_rotation
+ROUTE DoneButton.isActive TO SOScript.set_done
+ROUTE CancelButton.isActive TO SOScript.set_cancel
+ROUTE TS.isOver TO SOScript.set_over
+ROUTE SOScript.choice_changed TO SOSwitch.set_whichChoice
+
+#END MOVE HUD CODE#
+
+}#END SharedObject PROTO
+
+
+Group{
+children[
+
+DEF nav NavigationInfo{
+type "WALK" 
+}
+
+DEF front Viewpoint{position 0 1.75 6 description "Front" }
+DEF right Viewpoint{position 6 1.75 0 description "Right" orientation 0 1 0 1.571}
+DEF top Viewpoint{position 0 6 0 orientation 1 0 0 -1.571 description "Top"}
+DEF zv Viewpoint{position 0 0 6 description "Zero Y"}
+
+
+Transform{ translation 0 1.75 0
+children[ 
+
+Shape{}
+
+DEF this_object SharedObject{
+children[
+ DEF thisObject Inline{url"<$WRL>"}
+]}
+
+]}
+
+
+HUD{
+children[
+
+
+Transform{ translation -.2 -.1 -.25
+children[
+DEF front_button TouchSensor{}
+Transform{translation -.0075 .005 -.01
+children Shape{
+appearance Appearance{material Material{transparency 1}}
+geometry Box{size .045 .02 .0001}
+}}
+Shape{
+appearance Appearance{material Material{diffuseColor 1 0 0}}
+geometry Text{ string ["<F>"] fontStyle FontStyle{ size .025 family "SANS" justify "MIDDLE" style "BOLD"}}
+}
+]}
+
+Transform{translation -.15 -.1 -.25
+children[
+DEF right_button TouchSensor{}
+Transform{translation -.0075 .005 -.01
+children Shape{
+appearance Appearance{material Material{transparency 1}}
+geometry Box{size .045 .02 .0001}
+}}
+Shape{
+appearance Appearance{material Material{diffuseColor 0 1 0}}
+geometry Text{ string ["<R>"] fontStyle FontStyle{ size .025 family "SANS" justify "MIDDLE" style "BOLD"}}
+}
+]}
+
+
+Transform{translation -.1 -.1 -.25
+children[
+DEF top_button TouchSensor{}
+Transform{translation -.0075 .005 -.01
+children Shape{
+appearance Appearance{material Material{transparency 1}}
+geometry Box{size .045 .02 .0001}
+}}
+Shape{
+appearance Appearance{material Material{diffuseColor 0 0 1}}
+geometry Text{ string ["<T>"] fontStyle FontStyle{ size .025 family "SANS" justify "MIDDLE" style "BOLD"}}
+}
+]}
+
+Transform{translation -.05 -.1 -.25
+children[
+DEF zv_button TouchSensor{}
+Transform{translation -.0075 .005 -.01
+children Shape{
+appearance Appearance{material Material{transparency 1}}
+geometry Box{size .045 .02 .0001}
+}}
+Shape{
+appearance Appearance{material Material{diffuseColor 1 0 1}}
+geometry Text{ string ["<zero>"] fontStyle FontStyle{ size .015 family "SANS" justify "MIDDLE" style "BOLD"}}
+}
+]}
+
+Transform{translation 0 -.1 -.25
+children[
+Shape{
+appearance Appearance{material Material{diffuseColor 0 0 1}}
+geometry DEF position_text Text{ string ["0 0 0"] fontStyle FontStyle{ size .0125 family "SANS" justify LEFT" style "BOLD"}}
+}
+]}
+
+Transform{translation -.195 .075 -.25 scale 1 1 .25
+children[
+DEF move_button TouchSensor{}
+Shape{
+appearance Appearance{material Material{diffuseColor 1 0 0}}
+geometry Sphere{radius .02}
+}]}
+
+Transform{translation -.195 .035 -.25 scale 1 1 .25
+children[
+DEF zero_button TouchSensor{}
+Shape{
+appearance Appearance{material Material{diffuseColor 0 0 1}}
+geometry Sphere{radius .01}
+}]}
+
+Transform{translation .2 -.085 -.25
+children[
+DEF light_button TouchSensor{}
+Shape{
+appearance Appearance{material Material{diffuseColor 1 1 0}}
+geometry Sphere{radius .01}
+}]}
+
+
+]}
+
+DEF check_script Script{
+
+eventIn SFString set_u
+
+eventIn SFTime set_move
+eventIn SFTime set_zero
+eventIn SFTime set_light
+eventIn SFTime set_front
+eventIn SFTime set_right
+eventIn SFTime set_top
+eventIn SFTime set_zv
+
+field SFBool isLight TRUE
+field SFBool isMove  FALSE
+field SFNode obj USE this_object
+field SFNode self USE check_script
+
+eventOut SFBool move_changed
+eventOut SFVec3f position_changed
+eventOut SFBool light_changed
+eventOut SFBool front_changed
+eventOut SFBool right_changed
+eventOut SFBool top_changed
+eventOut SFBool zv_changed
+
+eventIn  MFNode Get
+eventIn  MFNode read
+
+
+field    MFNode vrml Group{}
+field    MFNode group1 Group{}
+field    MFNode group2 Group{}
+
+field SFFloat dlights 0
+field SFFloat lights 0
+field SFFloat views 0
+field SFFloat backs 0
+field SFFloat navs 0 
+
+field SFFloat inlines 0
+field MFString inlineUrls []
+
+field SFFloat textures 0
+field MFString textureUrls[]
+
+field SFFloat sounds 0
+field MFString soundUrls []
+
+eventOut MFNode read_changed
+
+field SFInt32 loops 0
+
+directOutput TRUE
+
+url"vrmlscript:
+
+function set_u(v,t){
+  print(v);
+  u = new MFString(v);
+  Browser.createVrmlFromURL(u,self,'Get');
+}
+
+
+
+function read(v){
+
+ s = new SFString(v);
+
+ if(   s == 'Group{ }' || 
+       s == 'Transform{ }' || 
+       s == 'Billboard{ }' || 
+       s == 'Collision{ }' ||
+       s == 'LOD{ }' ||
+       s == 'Switch{ }'
+    ){return;}
+
+  //print(s);
+
+  if(s == 'DirectionalLight{ }'){dlights++;}
+  if(s == 'SpotLight{ }'){lights++;}
+  if(s == 'PointLight{ }'){lights++;}
+  if(s == 'NavigationInfo{ }'){navs++;}   
+  if(s == 'Background{ }'){backs++;} 
+  if(s == 'Viewpoint{ }'){views++;} 
+  if(s == 'Inline{ }'){
+     inlines++;
+     inlineUrls[inlineUrls.length] = v.url[0];
+  } 
+  if(s == 'Shape{ }'){
+     if(v.appearance.texture != 'NULL'){
+        textures++;
+        textureUrls[textureUrls.length] = v.appearance.texture.url[0];
+        //print(textureUrls[textureUrls.length - 1]);
+     }
+  }
+  if(s == 'Sound{ }'){
+     sounds++;
+     if(v[j].children[i].source.url != 'NULL'){
+        soundUrls[soundUrls.length] = v.source.url[0];
+        //print(soundUrls[soundUrls.length - 1]);
+     }   
+  } 
+}
+
+function group(v){
+
+ s = new SFString(v);
+
+ if(s == 'Group{ }' || s == 'Transform{ }' || s == 'Billboard{ }' || s == 'Collision{ }'){
+    // print(s);    
+    group1[group1.length] = v;
+ }
+
+ if(s == 'Switch{ }'){
+    //print(s);
+    
+    for(i = 0;i < v.choice.length;i++){    
+       group1[group1.length] = v.choice[i];
+    }
+ }
+
+ if(s == 'LOD{ }'){
+    //print(s);
+    
+    for(i = 0;i < v.level.length;i++){    
+       group1[group1.length] = v.level[i];
+    }
+ }
+
+}
+
+function Get(v){
+  vrml = v;
+
+  loops = 0;
+  navs=0;
+  backs=0;
+  views=0;
+  lights=0;
+  dlights=0;
+  inlines=0;    inlineUrls = new MFString();
+  textures = 0; textureUrls = new MFString();
+  sounds =0;    soundUrls = new MFString(); 
+
+  group1 = new MFNode();
+
+  length = v.length;
+  if(length < 1){return;}
+  
+  for(i = 0;i < vrml.length;i++){
+    read(vrml[i]);
+    group(vrml[i]);
+  }
+  
+  group2 = group1;
+  group1 = new MFNode();
+
+  while( 0 < 1 ){
+    
+    for(i = 0;i < group2.length;i++){
+      for(j = 0;j < group2[i].children.length;j++){
+         read(group2[i].children[j]);
+         group(group2[i].children[j]);   
+      }
+    }
+
+    loops++;
+   
+    group2 = new MFNode();
+   
+    for(i = 0;i < group1.length;i++){
+     group2[i] = group1[i];
+    }
+    group1 = new MFNode();
+    if(group2.length < 1 || loops > 100){break;}
+ }
+  
+ if(views > 0){print(views+' Viewpoints');} 
+ if(dlights > 0){print(dlights+' DirectionalLights');}
+ if(lights > 0){print(lights+' Lights');}
+ if(backs > 0){print(backs+' Backgrounds');}
+ if(navs > 0){print(navs+' NavigationInfo Nodes');}
+ 
+ if(inlines > 0){
+   print(inlines+' Inlines');
+   for(i = 0;i < inlineUrls.length;i++){
+     print('---'+inlineUrls[i]);
+   }
+ }
+ 
+ if(textures > 0){
+   print(textures+' Textures');
+   for(i = 0;i < textureUrls.length;i++){
+     print('---'+textureUrls[i]);
+   }
+ }
+ 
+ if(sounds > 0){
+   print(sounds+' Sounds');
+   for(i = 0;i < soundUrls.length;i++){
+     print('---'+soundUrls[i]);
+   }
+ }
+   
+}
+
+
+function set_move(v){
+ if(isMove){
+  move_changed = false;
+  isMove = false;
+ }
+ else{
+  move_changed = true;
+  isMove = true;
+ }
+}
+
+function set_zero(v){
+ position_changed = new SFVec3f(0,0,0);
+}
+
+function set_light(v){
+ if(isLight){
+  light_changed = false;
+  isLight = false;
+ }
+ else{
+  light_changed = true;
+  isLight = true;
+ }
+}
+
+
+function set_front(v){front_changed = true;}
+function set_right(v){right_changed = true;}
+function set_top(v){top_changed = true;}
+function set_zv(v){zv_changed = true;}
+
+function initialize(){
+
+set_u(new SFString('<$WRL>'));
+
+}
+
+"}
+
+]}
+ROUTE move_button.touchTime TO check_script.set_move
+ROUTE zero_button.touchTime TO check_script.set_zero
+ROUTE light_button.touchTime TO check_script.set_light
+ROUTE front_button.touchTime TO check_script.set_front
+ROUTE right_button.touchTime TO check_script.set_right
+ROUTE top_button.touchTime TO check_script.set_top
+ROUTE zv_button.touchTime TO check_script.set_zv 
+
+ROUTE check_script.move_changed TO this_object.set_startMove
+ROUTE check_script.position_changed TO this_object.set_position
+ROUTE check_script.light_changed TO nav.set_headlight
+ROUTE check_script.front_changed TO front.set_bind
+ROUTE check_script.right_changed TO right.set_bind
+ROUTE check_script.top_changed TO top.set_bind
+ROUTE check_script.zv_changed TO zv.set_bind
+
+ROUTE this_object.text_changed TO position_text.set_string
+
+#ROUTE thisObject.children_changed TO check_script.read_grouping
+
+Transform{#translation 0 1.75 0
+children[
+
+DEF grid Group{
+children[
+DEF halfgrid Shape {
+appearance Appearance{material Material{diffuseColor 0 1 0 transparency .75}}
+geometry IndexedLineSet {
+coord Coordinate {point[
+-2 0 2,
+-2 0 -2,
+-1.5 0 -2,
+-1.5 0 2,
+-1 0 2,
+-1 0 -2,
+-.5 0 -2,
+-.5 0 2,
+0 0 2,
+0 0 -2,
+.5 0 -2,
+.5 0 2,
+1 0 2,
+1 0 -2,
+1.5 0 -2,
+1.5 0 2,
+2 0 2,
+2 0 -2
+]}
+coordIndex [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,-1]
+}}
+Transform{ rotation 0 1 0 1.571 children USE halfgrid}
+]}
+
+Transform{
+rotation 1 0 0 1.571
+translation 0 2 0
+children[
+USE grid
+
+]}
+
+
+
+Transform{
+rotation 0 0 1 1.571
+translation 0 2 0
+children[
+USE grid
+
+]}
+
+Transform{translation 0 2 0rotation 1 0 0 0
+children DEF redline Shape{
+appearance Appearance{material Material{diffuseColor 1 .5 0 specularColor .1 .1 0 shininess 1 transparency .5}}
+geometry Cylinder{radius .025 height 4}
+}
+}
+Transform{rotation 1 0 0 1.571 children USE redline}
+Transform{rotation 0 0 1 1.571 children USE redline}
+
+
+]}
+

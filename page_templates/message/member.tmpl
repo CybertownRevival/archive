@@ -1,0 +1,52 @@
+<!-- msserver/member.tmpl -->
+<HTML>
+<HEAD>
+<TITLE><$TARGET></TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="javascript">
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+<BODY onLoad="document.MSG.TEXT.focus();" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<H3><$TARGET></H3>
+<H4>New Message:</H4>
+<FORM NAME=MSG METHOD=GET ACTION="<$g_cgiRoot>/message<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="TPL" value="<$TPL>">
+<INPUT TYPE=HIDDEN NAME="ac" value="postmessage">
+<INPUT TYPE=HIDDEN NAME="NNM" value="<$NNM>">
+<INPUT TYPE=HIDDEN NAME="TO" value="<$T_TO>">
+<INPUT TYPE=HIDDEN NAME="T_TO" value="<$T_TO>">
+<INPUT NAME="TEXT" VALUE="" MAXLENGTH=128 SIZE=48>
+<INPUT TYPE=SUBMIT NAME=SUBMIT value=Send>
+<INPUT TYPE=BUTTON NAME=Close VALUE=Close onClick="doClose()">
+</FORM>
+<!-- #ifdef variable="M_HID" value="1" -->
+<br><b>Please note you are "hidden" this person will not be able to reply!</b><br>
+<!-- #endif variable="M_HID" -->
+
+<!-- #ifdef variable="ERROR" value="001" -->
+You can't send the text:
+<br>
+<$TEXT>
+<!-- #endif variable="ERROR" -->
+<!-- #ifdef variable="ERROR" value="002" -->
+You can't send a message to a hidden member.
+<!-- #endif variable="ERROR" -->
+<!-- #ifndef variable="ERROR" -->
+<!-- #ifdef variable="TEXT" -->
+Message successfully sent.
+<!-- #endif variable="TEXT" -->
+<!-- #endif variable="ERROR" -->
+
+</BODY>
+</HTML>
+
+
+
+

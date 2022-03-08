@@ -1,0 +1,98 @@
+<!-- admin/jobowner.tmpl -->
+<!-- list of job owners -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<script language="javascript">
+<!--
+
+function onSubmit()
+{
+    kftValue = "<$KFT>";
+
+    document.FilterForm.KFT.value 
+     = kftValue.substring(0,2) + "*" + document.FilterForm.NNM.value.toLowerCase();
+}
+
+//-->
+</script>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>Owner List for <$ID_NAM_0></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <input type="hidden" name="info" value="<$info>">
+
+    Filter for Nickname:&nbsp;&nbsp;
+    <INPUT type="text" name="NNM" value="">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+    <table>
+        <tr>
+
+            <input type="hidden" name="TKT" value="<$TKT>">
+            <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+            <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+            <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+            <input type="hidden" name="LASTID" value="<$LASTID>">
+
+            <input type="hidden" name="ac" value="list">
+            <input type="hidden" name="DTY" value="<$DTY>">
+            <input type="hidden" name="KTY" value="<$KTY>">
+            <input type="hidden" name="KFT" value="<$KFT>">
+            <input type="hidden" name="TPL" value="<$TPL>">
+
+            <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+            <!--#ifdef variable="[PREV]" -->
+                <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifndef variable="[PREV]" -->
+                <td>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+            </td>
+        </tr>
+    </table>
+<br>
+    <table border=1>
+        <tr>
+            <th><font color=#80ff00>ID</th>
+            <th><font color=#80ff00>Name</th>
+        </tr>
+        <!--#for loopname="object" loopvars="ID_" -->
+        <tr>
+            <td><$ID_></td>
+            <!--#ifdef variable="NNM_" -->
+              <td><$NNM_>&nbsp;</td>
+            <!--#endif variable="NNM_" -->
+            <!--#ifndef variable="NNM_" -->
+              <td>&nbsp;</td>
+            <!--#endif variable="NNM_" -->
+        </tr>
+        <!--#endfor loopname="object" -->
+    </table>
+<br>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

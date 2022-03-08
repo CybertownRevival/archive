@@ -1,0 +1,47 @@
+<!-- ent_complex/place.tmpl -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+
+<script language="JavaScript">
+function realplayerwin() {
+myRealWin=window.open('http://www.real.com/products/player/index.html?src=hp_butn,990809home_2&hp=yes','real',"toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=620,height=450");
+myRealWin.focus();
+}
+</script>
+</head>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0 USEMAP="#entmap"><br><br>
+<A HREF="javascript:jump('top <$g_cgiRoot>/place?plc=e_lobby')">ePlex Lobby</A>
+
+<BR><BR>
+<font color="#00FF00">Note: You will need <a href="javascript:void(0)" onClick="javascript:realplayerwin();" target="_self"><font color="#FFFF33">RealPlayer G2</font></a> for some places in the ePlex.</font><br>
+<br> <font color="#00FF00">Read the ePlex <a href="javascript:loadInfo('/problem_report/eplexfaq.html');" target="_self"><font color="#FFFF33">FAQ</font></a>!</font>
+</div>
+
+<SCRIPT LANGUAGE="JavaScript">  
+//showbanner();  
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<map name="entmap">
+<AREA SHAPE=RECT COORDS="438,279,558,316" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=e_lobby')" ALT="">
+<AREA SHAPE=RECT COORDS="457,236,565,254" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=casino')" ALT="">
+<AREA SHAPE=RECT COORDS="452,202,564,218" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=arcade')" ALT="">
+<AREA SHAPE=RECT COORDS="449,154,569,173" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=gallery')" ALT="">
+<AREA SHAPE=RECT COORDS="445,67,561,85" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=movies')" ALT="">
+<AREA SHAPE=RECT COORDS="403,38,556,57" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=nightclub')" ALT="">
+</map>
+
+<!-- <AREA SHAPE=RECT COORDS="397,40,555,56" HREF="javascript:jump('top <$g_cgiRoot>/place?plc=nightclub')">
+	<AREA SHAPE=RECT COORDS="418,68,569,87" HREF="javascript:jump('top <$g_cgiRoot>/place?plc=movies')">
+	<AREA SHAPE=RECT COORDS="440,154,571,176" HREF="javascript:jump('top <$g_cgiRoot>/place?plc=gallery')">
+	<AREA SHAPE=RECT COORDS="436,199,573,222" HREF="javascript:jump('top <$g_cgiRoot>/place?plc=arcade')">
+	<AREA SHAPE=RECT COORDS="440,234,573,257" HREF="javascript:jump('top <$g_cgiRoot>/place?plc=casino')"> -->
+
+
+</body>
+</html>

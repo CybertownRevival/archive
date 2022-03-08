@@ -1,0 +1,101 @@
+<!-- clubdir/catdelete -->
+<!--- delete club subcategory --->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font1>
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" valign="top" align="center">
+<tr <$g_bgcolor5>>
+  <td><a href="<$g_cgiRoot>/edit<$g_exe>?ac=read&KEY=<$CAT>&TPL=clubdir/catupdate<$g_SessionID>"><img
+  src="<$g_HTMLRoot>/images/buttons/backbtn.gif"
+  alt="Back" border="0" align="left" vspace="0" hspace="0"></a></td>
+</tr>
+<tr <$g_bgcolor5>>
+  <td>
+    <table border="0" cellspacing="0" cellpadding="5" marginwidth="0" marginheight="0" width="100%">
+    <!-- #ifndef variable="owneraccess" -->
+      <tr>
+        <td><$g_font1><b>Sorry, you don't have enough access rights.</b></font></td>
+      </tr>
+    <!-- #endif variable="owneraccess" -->
+    <!-- #ifdef variable="cluberror021" -->
+      <tr>
+        <td><$g_font1><b>Sorry, you don't have enough access rights.</b></font></td>
+      </tr>
+    <!-- #endif variable="cluberror021" -->
+    <!-- #ifdef variable="cluberror025" -->
+      <tr>
+        <td><font size=2>No Subcategory specified.</font><br></td>
+      </tr>
+    <!-- #endif variable="cluberror025" -->
+    <!-- #ifdef variable="cluberror026" -->
+      <tr>
+        <td><font size=2>Subcategory could not be deleted since it is not empty.</font><br></td>
+      </tr>
+    <!-- #endif variable="cluberror026" -->
+
+    <!-- #ifdef variable="owneraccess" -->
+      <tr>
+        <td><$g_font1><b>Delete Subcategory of <font size=2><b><$CATNAM></b></font></td>
+      </tr>
+      <tr>
+         <td><$g_font1>The category must be empty and contain no subcategories to delete it.<br></font></td>
+      </tr>
+      <tr>
+        <td>
+          <table border="1" cellspacing="0" cellpadding="5" align="center" width="98%">
+          <tr>
+            <th><$g_font1>Name</font></th>
+            <th><$g_font1># of Clubs</font></th>
+            <th><$g_font1>Subcat.</font></th>
+            <th><$g_font1>Delete</font></th>
+          </tr>
+          <!--#for loopname="categoryloop" loopvars="CAT_ID_" -->
+            <tr>
+              <!-- #if variable="CAT_LINK_" == value="" -->
+                <!-- #define variable="SUB_ID" value="<$CAT_<$loopindex>_SUB_ID_0>"-->
+                <td><$g_font1><$CAT_NAM_><$CAT_LINK_></font></td>
+                <td align="right"><$g_font1><$CAT_CNT_>&nbsp;&nbsp;</font></td>
+                <td align="center"><$g_font1>
+                  <!-- #if variable="SUB_ID" == value=""-->
+                    No
+                  <!-- #else variable="SUB_ID" -->
+                    Yes
+                  <!-- #endif variable="SUB_ID" -->
+                </td>
+                <td><$g_font1>&nbsp;
+                  <!-- #if variable="CAT_CNT_" == value="0"-->
+                    <!-- #if variable="SUB_ID" == value=""-->
+                      <a href="<$g_cgiRoot>/club<$g_exe>?ac=catdelete&TPL=clubdir/catdelete&ID=<$CAT_ID_>&CAT=<$CAT>&CATORD=<$CATORD>&TKT=<$TKT><$g_SessionID>">Delete</a></font>
+                    <!-- #endif variable="SUB_ID" -->
+                  <!-- #endif variable="CAT_CNT_" -->
+                </td>
+              <!-- #else variable="CAT_LINK_" -->
+                <td><$g_font1><$CAT_NAM_><$CAT_LINK_></font></td>
+                <td><$g_font1>&nbsp;</font></td>
+                <td><$g_font1>&nbsp;</font></td>
+                <td><$g_font1>&nbsp;
+                      <a href="<$g_cgiRoot>/club<$g_exe>?ac=catdelete&TPL=clubdir/catdelete&ID=<$CAT_REALID_>&CAT=<$CAT>&CATORD=<$CATORD>&TKT=<$TKT><$g_SessionID>">Delete</a></font>
+                </td>
+              <!-- #endif variable="CAT_LINK_" -->
+            </tr>
+          <!--#endfor loopname="categoryloop" -->
+          </table>
+        </td>
+      </tr>
+    <!-- #endif variable="owneraccess" -->
+    </table>
+  </td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</HTML>

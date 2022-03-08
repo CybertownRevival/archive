@@ -1,0 +1,139 @@
+<!-- admin/vote.tmpl -->
+<!-- list votes -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Vote Attributes for <$CLM_CITY> <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <table border=0>
+        <tr>
+            <td align=right valign=top>Topic:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="TOP" VALUE="<$TOP>" MAXLENGTH=128 SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Initiator:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="IID_NNM" VALUE="<$IID_NNM>" MAXLENGTH=16 SIZE=16></td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Type of Vote:&nbsp;&nbsp;</td>
+            <td>
+                <select name="SEC">
+                    <option value="0"
+                    <!-- #ifdef variable="SEC" value="0" -->
+                        selected
+                    <!-- #endif variable="SEC" -->
+                    >not secret</option>
+                    <option value="1"
+                    <!-- #ifdef variable="SEC" value="1" -->
+                        selected
+                    <!-- #endif variable="SEC" -->
+                    >secret</option>
+                </select>
+            </td>
+            <td>
+                <select name="TYP">
+                    <option value="0"
+                    <!-- #ifdef variable="TYP" value="0" -->
+                        selected
+                    <!-- #endif variable="TYP" -->
+                    >not weighted</option>
+                    <option value="1"
+                    <!-- #ifdef variable="TYP" value="1" -->
+                        selected
+                    <!-- #endif variable="TYP" -->
+                    >weighted</option>
+                </select>
+            </td>
+            <td>
+                <!-- #ifdef variable="PLC_MASK" value="a" -->
+                    adhoc vote
+                <!-- #endif variable="PLC_MASK" -->
+                <!-- #ifdef variable="PLC_MASK" value="e" -->
+                    election
+                <!-- #endif variable="PLC_MASK" -->
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Place:&nbsp;&nbsp;</td>
+            <td colspan=3>&nbsp;
+                <!-- #ifdef variable="PLC_NAM" -->
+                    <$PLC_NAM>
+                <!-- #endif variable="PLC_NAM" -->
+                <!-- #ifdef variable="PLC_2NAM" -->
+                    <$PLC_2NAM>
+                <!-- #endif variable="PLC_2NAM" -->
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Number of Votes of the Member:&nbsp;&nbsp;</td>
+            <td colspan=3><$VWW>&nbsp;</td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <!-- #ifdef variable="SDA_YEAR" -->
+            <tr>
+                <td align=right>Start Date:&nbsp;&nbsp;</td>
+                <td colspan=3>&nbsp;
+                    <$SDA_MDAY>.<$SDA_MON>.<$SDA_YEAR> <$SDA_HOUR>:<$SDA_MIN>:<$SDA_SEC>
+                </td>  
+            </tr>
+        <!-- #endif variable="SDA_YEAR" -->
+        
+            <tr>
+                <td align=right>End Date:&nbsp;&nbsp;</td>
+                <td colspan=3>&nbsp;
+                    <$EDA><$EDA_MDAY>.<$EDA_MON>.<$EDA_YEAR> <$EDA_HOUR>:<$EDA_MIN>:<$EDA_SEC>
+                </td>  
+            </tr>
+        
+        <!-- #ifdef variable="SDA_YEAR" -->
+            <tr>
+                <td align=right>Deletion Date:&nbsp;&nbsp;</td>
+                <td colspan=3>&nbsp;
+                    <$DDA_MDAY>.<$DDA_MON>.<$DDA_YEAR> <$DDA_HOUR>:<$DDA_MIN>:<$DDA_SEC>
+                </td>  
+            </tr>
+        <!-- #endif variable="SDA_YEAR" -->
+    </table>
+<br>
+    <input type=submit name="edit" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,138 @@
+<!-- admin/infoentry.tmpl -->
+<!-- edit information entry (Message,...) -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifdef variable="cal" -->
+<h2>Attributes for Calendar Entry <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="cal" -->
+<!-- #ifdef variable="lnk" -->
+<h2>Attributes for Link Libraries Entry <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="lnk" -->
+<!-- #ifdef variable="inb" -->
+<h2>Attributes for Inbox Entry <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="inb" -->
+<!-- #ifdef variable="msb" -->
+<h2>Attributes for Message Board Entry <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="msb" -->
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post action="<$selfurl>">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <input type=hidden name="info" value="<$info>">
+    <input type=hidden name="<$info>" value="1">
+
+    <table border=0>
+        <tr>
+            <td align=right>Subject:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right valign=top>Text:&nbsp;&nbsp;</td>
+            <td colspan=3><TEXTAREA NAME="TXT" ROWS="5" COLS="60"><$TXT></TEXTAREA>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>From:&nbsp;&nbsp;</td>
+            <td><font color=#80ff00><$NNM></font></td>
+        </tr>
+        <!-- #ifndef variable="lnk" -->
+            <tr>
+                <td align=right>Date:&nbsp;&nbsp;</td>
+                <td colspan=3><font color=#80ff00>
+                    <$ID_MDAY>.<$ID_MON>.<$ID_YEAR>&nbsp;&nbsp;
+                    <$ID_HOUR>:<$ID_MIN>:<$ID_SEC></font>
+                </td>
+            </tr>
+            <!-- #ifdef variable="cal" -->
+                <tr>
+                    <td align=right>Location:&nbsp;&nbsp;</td>
+                    <td colspan=3>
+                        <!--#ifdef variable="LDT" value="O"-->  
+                            <font color=#80ff00><$LID_NAM> (plc=<$plc>)</font>
+                        <!--#endif variable="LDT" -->
+                        <!--#ifdef variable="LDT" value="P"-->
+                            <font color=#80ff00><$LID_2NAM> (<$PNM_CITY>)</font>
+                        <!--#endif variable="LDT" -->
+                    </td>
+                </tr>
+            <!--#endif variable="cal" -->
+        <!--#endif variable="lnk" -->
+        <!-- #ifdef variable="lnk" -->
+            <tr>
+                <td align=right>Last Access Date:&nbsp;&nbsp;</td>
+                <!--#ifdef variable="LAD_YEAR" -->
+                    <td><font color=#80ff00>
+                        <$LAD_MDAY>.<$LAD_MON>.<$LAD_YEAR>&nbsp;&nbsp;
+                        <$LAD_HOUR>:<$LAD_MIN>:<$LAD_SEC></font>
+                    </td>
+                <!--#endif variable="LAD_YEAR" -->
+                <!--#ifndef variable="LAD_YEAR" -->
+                    <td>&nbsp;</td>
+                <!--#endif variable="LAD_YEAR" -->
+            </tr>
+            <tr>
+                <td align=right>URL:&nbsp;&nbsp;</td>
+                <td colspan=3><INPUT NAME="URL" VALUE="<$URL>" MAXLENGTH=64 SIZE=32></td>
+            </tr>
+        <!-- #endif variable="lnk" -->
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right valign=top>Description:&nbsp;&nbsp;</td>
+            <td colspan=3><TEXTAREA NAME="TX2" ROWS="2" COLS="60"><$TX2></TEXTAREA>
+        </tr>
+        <!--tr>
+            <td align=right>HTML allowed:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <SELECT NAME="HTM">    
+                    <option value="no">no</option>
+                    <option value="yes"
+                        <!-- #ifdef variable="HTM" value="yes">
+                            selected
+                        <!-- #endif variable="HTM" >
+                    yes</option>
+                </SELECT>
+            </td>
+        </tr-->
+    </table>
+<br>
+    <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">Access Rights...</A><br>
+<br>
+    <input type=submit name="edit" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+<!-- #ifdef variable="T_aud" value="" -->
+<!-- #define variable="T_aud" value="audit"-->
+<!-- #endif variable="T_aud" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frame name="top" src="place<$g_exe>?ac=menu&plc=<$place>&ID=<$ID>&home=1&T_aud=<$T_aud>&T_spawn=<$T_spawn>" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+<!-- <frame name="place" src="edit<$g_exe>?ac=print&tpl=<$plc>/enter" scrolling="auto" noresize border=0> -->
+
+      <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=<$T_aud>&T_spawn=<$T_spawn>" scrolling="auto" noresize border=0>
+<frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="action" src="place<$g_exe>?ac=action&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=<$T_aud>&T_spawn=<$T_spawn>" scrolling="auto" noresize>
+    </frameset>
+  </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>

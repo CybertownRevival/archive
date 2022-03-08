@@ -1,0 +1,96 @@
+<HTML>
+<!-- iwos/photo_page.tmpl -->
+<!-- displays the pages of the photo album -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Photo Album Page</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<CENTER>
+
+<H2><$NAM>
+  <a href="<$g_HttpServer>/help/homebuilder/photoalbumhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+<!-- #ifdef variable="uploadNoFile" -->
+  <font color="red">No File <$errfile>!<br></font>
+<!-- #endif variable="uploadNoFile" -->
+<!-- #ifdef variable="uploadWrongMime" -->
+  <font color="red">Wrong Mime <$errfile>!<br></font>
+<!-- #endif variable="uploadWrongMime" -->
+<!-- #ifdef variable="uploadFailCreate" -->
+  <font color="red">Create Failed <$errfile>!<br></font>
+<!-- #endif variable="uploadFailCreate" -->
+<!-- #ifdef variable="uploadOversized" -->
+  <font color="red">Oversized <$errfile>!<br></font>
+<!-- #endif variable="uploadOversized" -->
+<!-- #ifdef variable="errordest" -->
+  <font color="red">Sorry <$NNM>, you have no destination specified!<br></font>
+<!-- #endif variable="errordest" -->
+<!-- #ifdef variable="errordest" -->
+  <font color="red">Sorry <$NNM>, you have no description specified!<br></font>
+<!-- #endif variable="errordest" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The Pictures were succesfully uploaded!<br></font>
+<!-- #endif variable="updateok" -->
+  <table width="100%" height="60%">
+  <tr>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE1" -->
+        <img src="<$IMAGE1>" border=0 alt="<$DESC1>"><br>
+        <$DESC1>
+      <!-- #endif variable="IMAGE1" -->
+    </td>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE2" -->
+        <img src="<$IMAGE2>" border=0 alt="<$DESC2>"><br>
+        <$DESC2>
+      <!-- #endif variable="IMAGE2" -->
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE3" -->
+        <img src="<$IMAGE3>" border=0 alt="<$DESC3>"><br>
+        <$DESC3>
+      <!-- #endif variable="IMAGE3" -->
+    </td>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE4" -->
+        <img src="<$IMAGE4>" border=0 alt="<$DESC4>"><br>
+        <$DESC4>
+      <!-- #endif variable="IMAGE4" -->
+    </td>
+  </tr>
+  </table>
+
+<br>
+  Page <$PAGE> out of <$PCN> pages<br>
+<br>
+
+<a href="iwos<$g_Exe>?ac=prev&ID=<$ID>&PAGE=<$PAGE>"><img src="<$g_Images>/images/iwos/bookpageback.gif" border=0 alt="previous page"></a>
+
+<!-- #ifdef variable="isOwner" -->
+  <!-- #ifdef variable="NEWPAGE" -->
+    <a href="iwos<$g_Exe>?ID=<$ID>&CAT=guest&ac=dispnew"><img src="<$g_Images>/images/iwos/booknewpage.gif" border=0 alt="new page"></a>
+  <!-- #endif variable="NEWPAGE" -->
+  <a href="iwos<$g_Exe>?ac=editpage&ID=<$ID>&PAGE=<$PAGE>"><img src="<$g_Images>/images/iwos/bookeditpage.gif" border=0 alt="edit page"></a>
+  <a href="iwos<$g_Exe>?ac=deletepage&ID=<$ID>&PAGE=<$PAGE>&TKT=<$TKT>"><img src="<$g_Images>/images/iwos/bookdeletepage.gif" border=0 alt="delete page"></a>
+<!-- #endif variable="isOwner" -->
+
+<!-- #ifdef variable="NEXTPAGE" -->
+  <a href="iwos<$g_Exe>?ac=next&ID=<$ID>&PAGE=<$PAGE>"><img src="<$g_Images>/images/iwos/booknextpage.gif" border=0 alt="next page"></a>
+<!-- #endif variable="NEXTPAGE" -->
+
+</center>
+
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en] (Win98; U) [Netscape]">
+
+<script language="Javascript">
+
+function enter_pass(mode){
+ document.passform.force.value = mode;
+ top.action.document.location.href = "/cgi-bin/cybertown/place<$g_exe>?T_SUB=Magnolia_Ballroom&T_pass="+document.passform.T_pass.value+"&ac=action&plc=<$place>&ID=<$ID>";
+ document.passform.submit();
+}
+
+function validate(v){
+ bool = false;
+ return bool;
+}
+
+</script>
+
+</head>
+<body text="#00DDDD" bgcolor="#000000" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="65%" >
+<tr>
+<td>
+<center>
+<br><font face="Arial,Helvetica">The Magnolia Ballroom is currently hosting</font>
+<br><br><b><font face="Arial,Helvetica">The</font></b>
+<br><b><font face="Arial,Helvetica"><font size=+3>Christmas Gala</font></font></b>
+<br>&nbsp;<b><font face="Arial,Helvetica"></font></b>
+<br><br><font face="Arial,Helvetica">This event is invitation only.&nbsp;</font>
+<br><font face="Arial,Helvetica">
+Please enter the password you recieved on your invitation, then click either 2D or 3D to enter the ball to enter the pageant.
+</font>
+
+<form name="passform" method="POST" action="http://www.cybertown.com/cgi-bin/cybertown/place"  onSubmit="return validate(this)">
+<input type="hidden" name="ac"  value="place">
+<input type="hidden" name="plc" value="suburbs">
+<input type="hidden" name="T_SUB" value="Magnolia_Ballroom">
+<input type="hidden" name="force" value="s">
+<br>
+<b><font face="Arial,Helvetica">Password:<BR>
+<input type="textfield" name="T_pass" value="" size="12">
+<BR><BR>
+<input type="button" name="2d" value="ENTER 2D" onClick="enter_pass('s')">
+&nbsp&nbsp&nbsp
+<input type="button" name="3d" value="ENTER 3D" onClick="enter_pass('p')">
+</font></b> 
+
+</form>
+</center>
+
+</td>
+</tr>
+</table>
+</center>
+<b><font face="Arial,Helvetica"></font></b>
+</body>
+</html>

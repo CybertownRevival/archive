@@ -1,0 +1,65 @@
+<!--club/place.tmpl-->
+<HTML>
+<!-- display the place frame with chat for places -->
+<HEAD>
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<!-- #ifndef variable="chatpro" -->
+
+<center>
+<table border=0>
+    <tr>
+        <td>
+            <!-- #ifdef variable="STC" value="0"-->
+                <IMG SRC="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image">
+            <!-- #endif variable="STC" -->
+            <!-- #ifdef variable="STC" value="1"-->
+                <IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+            <!-- #endif variable="STC" -->
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            <h3>Welcome to <$placename>!</h3>
+            <$DES>
+        </td>
+    </tr>
+</table>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+
+<!-- #ifndef variable="chatno" -->
+<!-- #include virtual="<$g_Templates>club/javachat.tmpl" -->
+<!-- #endif variable="chatno" -->
+
+
+<!-- #ifdef variable="ID" value="CL000000000007d0" -->
+<br><a href="javascript:loadInfo('http://www.seti.org')" target=_self><IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifndef variable="ID" value="CL000000000007d0" -->
+<!-- #ifndef variable="ID" value="CL00000000001b9b" -->
+
+<!-- #ifdef variable="NNM" value="Clean" -->
+<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD4>.tmpl" -->
+</tr></table>
+<!-- #endif variable="NNM" -->
+
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</center>
+</BODY>
+<!-- #endif variable="chatpro" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>place/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+</HTML>

@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<script language="JavaScript">
+function goback()
+{
+history.go(-1);
+
+}
+</script>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<font color=red>
+<h2 align=center>
+<!-- #ifdef variable="errmove" -->
+<h3>Sorry <$NNM>,<br>you dont have enough money to move your <$PNM>!</h3>
+<table border=0>
+<tr><td>Your current Money account is</td><td align=right><b><$MON></b>.</td></tr>
+<tr><td>The price for moving is</td><td align=right><b><$moveprice></b>.</td></tr>
+</table>
+<!-- #endif variable="errmove" -->
+
+<!-- #ifdef variable="errnorights" -->
+	<h3>Sorry <$NNM>,<br>you are not allowed to perform this operation!</h3>
+<!-- #endif variable="errnorights" -->
+<!-- #ifdef variable="errmget" -->
+	<h3>Internal error: ccgidb_mget returned: <$ccgidb_mget>!</h3>
+<!-- #endif variable="errmget" -->
+
+<!-- #ifdef variable="errread" -->
+<h3>Sorry <$NNM>,<br>you are not allowed to enter the <$PNM> '<$NAM>'!</h3>
+<!-- #endif variable="errread" -->
+<!-- #ifdef variable="errprint" -->
+<h3>Sorry <$NNM>,<br>this multimedia object does not exist!</h3>
+<!-- #endif variable="errprint" -->
+<!-- #ifdef variable="errused" -->
+<h3>Sorry <$NNM>,
+<br>this home is already taken, somebody just picked it, please
+try another one!</h3>
+<!-- #endif variable="errused" -->
+<!-- #ifdef variable="errprop" -->
+<h3>Sorry <$NNM>,
+<br>you cannot move, your old home seems to be invalid!</h3>
+<!-- #endif variable="errprop" -->
+<!-- #ifdef variable="errnoname" -->
+<h3>Sorry <$NNM>,
+<br>your home must have a name, please enter your favorite name!</h3>
+<!-- #endif variable="errnoname" -->
+<!-- #ifdef variable="err2dhomeprice" -->
+<h3>Sorry <$NNM>,
+<br>the 2D House is too expensive, it costs <$price> CC$, but you have only <$MON> CC$.
+<br>Please choose another house!</h3>
+<!-- #endif variable="err2dhomeprice" -->
+<!-- #ifdef variable="err3dhomeprice" -->
+<h3>Sorry <$NNM>,
+<br>the 3D House is too expensive, it costs <$price> CC$, but you have only <$MON> CC$.
+<br>Please choose another house!</h3>
+<!-- #endif variable="err3dhomeprice" -->
+<!-- #ifdef variable="erralready" -->
+<h3>Sorry <$NNM>,
+<br>you already have a home,
+therefore you cannot claim a new one!</h3>
+<!-- #endif variable="erralready" -->
+<!-- #ifdef variable="errsetnewvals" -->
+<h3>Sorry <$NNM>,
+<br>an error occured while setting the rights on the new  <$PNM>. Your <$PNM> has thereofore not been moved!
+<br>
+<!-- #include virtual="<$g_Templates>common/contact_err.tmpl" -->
+</h3>
+<!-- #endif variable="errsetnewvals" -->
+<!-- #ifdef variable="errsetnewhome" -->
+<h3>Sorry <$NNM>,
+<br>an error occured while moving. Your <$PNM> has not been moved!
+<br>
+<!-- #include virtual="<$g_Templates>common/contact_err.tmpl" -->
+</h3>
+<!-- #endif variable="errsetnewhome" -->
+<!-- #ifdef variable="errnoprop" -->
+<h2>No Home in <$g_CityDefName></h2>
+<h3>Sorry <$NNM>,
+<br>the citizen '<$other>' has no home in <$g_CityDefName>, please check the
+spelling of the nickname.
+</h3>
+<!-- #endif variable="errnoprop" -->
+
+
+</h2>
+
+
+<p align=center>
+<!-- #ifdef variable="blockid" -->
+<!-- #ifdef variable="err2dhomeprice" -->
+<a href="javascript:goback()"><i>Back</i></a>
+<!-- #endif variable="err2dhomeprice" -->
+<!-- #ifdef variable="err3dhomeprice" -->
+<a href="javascript:goback()"><i>Back</i></a>
+<!-- #endif variable="err3dhomeprice" -->
+<!-- #ifndef variable="err2dhomeprice" -->
+<!-- #ifndef variable="err3dhomeprice" -->
+<a href="block<$g_exe>?ID=<$blockid>" target="_top"><i>Back</i></a>
+<!-- #ifndef variable="err3dhomeprice" -->
+<!-- #ifndef variable="err2dhomeprice" -->
+<!-- #endif variable="blockid" -->
+
+<!-- #ifndef variable="blockid" -->
+<a href="javascript:goback()"><i>Back</i></a>
+<!-- #endif variable="blockid" -->
+</p>
+
+</font>
+<BODY>
+</HTML>

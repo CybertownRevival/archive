@@ -1,0 +1,45 @@
+<!-- admin/place_info.tmpl -->
+<!-- further information about creating a place -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<h2>Place <i><$NAM></i> succesfully created <font color=#80ff00>ID: <$ID></font></h2>
+
+The CGI-Script has created the necessary database objects for the new place.<br>
+<br>
+
+<OL>
+    <LI>Add a mapping of that name to the database id in the file <i><$g_cgiRoot>/config/global.cfg.</i><br>
+        <br>
+        The following entry have to be made:<br>
+        <br>
+        <table border=0 cellspacing=0>
+            <!--tr><td>&nbsp;&nbsp;<$globalEntry1></td><td>&nbsp;&nbsp;<$NAM></td></tr-->
+            <tr><td>&nbsp;&nbsp;<$globalEntry2></td><td>&nbsp;&nbsp;<$ID></td></tr>
+            <!--tr><td>&nbsp;&nbsp;<$globalEntry3></td><td>&nbsp;&nbsp;<$PLC_STR></td></tr-->
+       </table>
+        <br>
+        This permits using the short name instead of the ID when calling the cgi script (using the <i>plc=<$PLC_STR></i> parameter)<br>
+        <br>
+    <LI>If you want to display place specific information, create a template directory <i><$g_cgiRoot>/templates/<$PLC_STR></i><br>
+        and copy all templates that you want to change from the place folder to this new folder.<br>
+        <br>
+    <LI>Create a new folder for the place in the <i>htdocs<$g_HTMLRoot>/places</i> folder, if you want to use specific images,<br>
+        html pages or a VRML world.<br>
+        <br>
+        The VRML file MUST have the name: <i>places/<$PLC_STR>/vrml/<$PLC_STR>.wrl</i><br>
+</OL>
+<br>
+<div align=center>
+The new Place can now be accessed with the link:<br>
+<b>&lt;a href="place<$g_exe>?plc=<$PLC_STR>&ac=place&ID=<$ID>"&gt;</b><br>
+<br>
+<a href="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=<$TPL>&ac=read" target=_self>Edit Place Object</a>
+
+</body>
+</html>
+

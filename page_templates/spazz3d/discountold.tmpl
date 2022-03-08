@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>Get Spazz3D Discount</TITLE>
+</HEAD>
+
+<body bgcolor="#000000"    onLoad='setTimeout("document.form1.submit()",1500)' text="#00FF00">
+<center>
+<h1>Thank You</h1>
+<br><br>Please wait for the payment page to load . . .
+
+<FORM method=POST action="https://www.authorize.net/scripts/authnet25/WebLink.asp" name=form1 TARGET=_top>
+<INPUT type=hidden name="LOGIN" value="virtock">
+<INPUT type=hidden name="CUSTID" value="1">
+
+
+
+
+<!-- #ifdef variable="ROL" value="40000000000000000000000000000000" -->
+<INPUT type=hidden name="AMOUNT" value="45.00">
+<INPUT type=hidden name="DESCRIPTION" value="Spazz3D V1.0 - Cybertown Member Discount">
+<!-- #endif variable="ROL" -->
+
+
+<!-- #ifndef variable="ROL" value="40000000000000000000000000000000" -->
+<INPUT type=hidden name="AMOUNT" value="35.00">
+<INPUT type=hidden name="DESCRIPTION" value="Spazz3D V1.0 - Cybertown Employee Discount">
+<!-- #endif variable="ROL" -->
+
+
+
+
+
+
+</FORM>
+
+
+
+
+</BODY>
+</HTML>

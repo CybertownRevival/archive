@@ -1,0 +1,194 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- fundbox/phase7.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>CityCash Transfer - Donate</title>
+<meta name="Author" content="Coolkama, Simioni and Halogen">
+
+<script language="JavaScript">
+<!-- Script Begin
+function checkamt() {
+	myVarToCheck = document.forms['phase1'].elements['TO_AMT'].value;
+	if (isNaN(myVarToCheck) == true)
+		{
+			alert("Please enter in an amount");
+		}
+	else
+	{
+		if ( (myVarToCheck*1) < <$MON> ) 
+		{
+			if ( (myVarToCheck*1) > 0 ) 
+			{
+		
+				myVarToCheck = document.forms['phase1'].submit();
+
+			}
+			else
+			{
+				alert("You must transfer a positive amount.");
+			}
+		}
+		else
+		{
+			alert("You cannot transfer more than you have");
+		}
+	}
+}
+
+
+//  Script End -->
+</script>
+<SCRIPT LANGUAGE="Javascript">
+function insertSpace()
+{
+//This gets the value from the box
+var initialValue = document.phase1.TO_REA.value;
+//This is a pattern that matches a whitespace character
+var spacePattern = /\s+/;
+//This is what we want to replace whitespace with
+var space = "%20";
+//This searches the string and replaces the first whitespace character
+var replaceSpace = initialValue.replace(spacePattern, space);
+//Now, this is the bit I know I'm doing the long way 
+var replaceSpace2 = replaceSpace.replace(spacePattern, space);
+document.phase1.TO_REA.value = replaceSpace2;
+}
+</SCRIPT>
+
+</head>
+<body bgcolor="#000000" text="lime">
+<form action="print<$g_exe>" method="post" name="phase1">
+        <input type="hidden" name="TPL" value="fundbox/phase8">
+        <input type="hidden" name="TO_ID" value="<$TO_ID>">
+        <input type="hidden" name="TO_NAM" value="<$TO_NAM>">
+        <input type="hidden" name="ID" value="<$TO_ID>">
+        <input type="hidden" name="DTY" value="<$DTY>">
+      <table border="0" cellpadding="0" cellspacing="0" width="575" align="center">
+        <!-- fwtable fwsrc="confirm.png" fwbase="confirm.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="spacer.gif" width="55" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="208" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="141" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="11" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="106" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="6" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="48" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r1_c1" src="/places/fundbox/images/top.jpg" width="575" height="171" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="171" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r2_c1" src="/places/fundbox/images/left.jpg" width="55" height="182" border="0" alt=""></td>
+          <td colspan="5">
+            <p><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">Welcome</font><font face="Arial, Helvetica, sans-serif" size="-1"> 
+              <font color="#ffff00"><$NNM></font><font color="#FFFFFF">, You Currently 
+              have</font> <font color="#ffff00"><$MON>cc</font> <font color="#FFFFFF">in 
+              your CT Account. Using this system you can make a donation of citycash to the place named below.</font></font></p>
+            <table border="0">
+              <tr> 
+                <td align="left" width="305"><font size="-1" face="Arial, Helvetica, sans-serif" color="#FFFFFF">Payment From:</font></td>
+                <td width="137"><font size="-1"> 
+                  <font face="Arial, Helvetica, sans-serif" size="-1"><font color="#ffff00"><$NNM></font>
+                  </font></td>
+              </tr>
+              <tr> 
+                <td align="left" width="305"><font size="-1" face="Arial, Helvetica, sans-serif" color="#FFFFFF">Payment To:</font></td>
+                <td width="137"><font size="-1"> 
+                  <font face="Arial, Helvetica, sans-serif" size="-1"><font color="#ffff00"><$TO_NAM></font>
+                  </font></td>
+              </tr>
+              <tr> 
+                <td align="left" width="305"><font size="-1" face="Arial, Helvetica, sans-serif" color="#FFFFFF">Please 
+                  enter a description for this transfer:</font></td>
+                <td width="137"><font size="-1"> 
+                  <input type="text" name="TO_REA" size="16" maxlength="30">
+                  </font></td>
+              </tr>              
+              <tr> 
+                <td align="right" width="305"> 
+                  <div align="left"><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">Please 
+                    enter amount to transfer:</font></div>
+                </td>
+                <td width="137"><font size="-1"> 
+                  <input type="text" name="TO_AMT" size="16" maxlength="10">
+                  </font></td>
+              </tr>
+
+            </table>
+          </td>
+          <td><img name="confirm_r2_c7" src="/places/fundbox/images/right.jpg" width="48" height="182" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="182" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r3_c1" src="/places/fundbox/images/bottombar.jpg" width="575" height="21" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="21" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c1" src="/places/fundbox/images/bottomleft.jpg" width="263" height="81" border="0" alt=""></td>
+          <td><a href="javascript:checkamt();javascript:insertSpace();"><img name="confirm_r4_c3" src="/places/fundbox/images/transfer.jpg" width="141" height="24" border="0" alt=""></a></td>
+          <td rowspan="2"><img name="confirm_r4_c4" src="/places/fundbox/images/bottomdivider.jpg" width="11" height="81" border="0" alt=""></td>
+          <td><a href="javascript:window.close();"><img name="confirm_r4_c5" src="/places/fundbox/images/cancel.jpg" width="106" height="24" border="0" alt=""></a></td>
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c6" src="/places/fundbox/images/bottomright.jpg" width="54" height="81" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="24" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r5_c3" src="/places/fundbox/images/underbuttonleft.jpg" width="141" height="57" border="0" alt=""></td>
+          <td><img name="confirm_r5_c5" src="/places/fundbox/images/underbuttonright.jpg" width="106" height="57" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="57" border="0" alt=""></td>
+        </tr>
+      </table>
+    </form>
+</body>
+</html>

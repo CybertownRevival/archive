@@ -1,0 +1,21 @@
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/updateokstorage.tmpl" -->
+<center>
+<form name="bform" action="<$selfurl>" method="POST">
+<input type="hidden" name="DTY" value="O">
+<input type="hidden" name="KTY" value="ID">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="KEY" value="<$ID>">
+<input type="hidden" name="PID" value="<$PID>">
+<input type="hidden" name="TPL" value="storage/info">
+<input type="hidden" name="updateok" value="ok">
+
+<b>Information</b> <br><textarea rows="20" cols="70" name="TXT"><$TXT></textarea>
+<br>
+<input type="submit" value="Update">
+</form>
+<p>
+<!-- #ifndef variable="updateok" -->
+<a href="./print60?ID=<$PID>&TPL=storage/list"><img src="http://ivnwww.cybertown.com/images/buttons/bback.gif" border="0"></a>
+<!-- #endif variable="updateok" -->
+</center>

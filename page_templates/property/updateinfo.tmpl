@@ -1,0 +1,86 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Update your Information</b>
+</p>
+
+<form method=post action="<$selfurl>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+<div align=center>
+<textarea name="TXT" cols="50" rows="12"><$TXT></textarea>
+</div>
+
+<BR>
+<HR>
+<BR>
+<b>Your Collection of Links:</b>
+<BR>
+<BR>
+<table border=0>
+<tr>
+	<td></td>
+	<td><b>Description</b></td>
+	<td><b>URL</b></td>
+</tr>
+<tr>
+	<td><b>Link 1:</b></td>
+	<td><INPUT NAME="LD0" VALUE="<$LD0>" MAXLENGTH=80 size=20></td>
+	<td><INPUT NAME="LL0" VALUE="<$LL0>" MAXLENGTH=128 size=38></td>
+</tr>
+<tr>
+	<td><b>Link 2: </b></td>
+	<td><INPUT NAME="LD1" VALUE="<$LD1>" MAXLENGTH=80 size=20></td>
+	<td><INPUT NAME="LL1" VALUE="<$LL1>" MAXLENGTH=128 size=38></td>
+</tr>
+<tr>
+	<td><b>Link 3: </b></td>
+	<td><INPUT NAME="LD2" VALUE="<$LD2>" MAXLENGTH=80 size=20></td>
+	<td><INPUT NAME="LL2" VALUE="<$LL2>" MAXLENGTH=128 size=38></td>
+</tr>
+<tr>
+	<td><b>Link 4: </b></td>
+	<td><INPUT NAME="LD3" VALUE="<$LD3>" MAXLENGTH=80 size=20></td>
+	<td><INPUT NAME="LL3" VALUE="<$LL3>" MAXLENGTH=128 size=38></td>
+</tr>
+<tr>
+	<td><b>Link 5: </b></td>
+	<td><INPUT NAME="LD4" VALUE="<$LD4>" MAXLENGTH=80 size=20></td>
+	<td><INPUT NAME="LL4" VALUE="<$LL4>" MAXLENGTH=128 size=38></td>
+</tr>
+</table>
+
+<!--
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="property/updateinfosubmit">
+<input type=hidden name="ac" value="update">
+<input type=hidden name="program" value="property">
+<input type=hidden name="BODYTY" value="<$BODYTY>">
+<input type=hidden name="BODYID" value="<$BODYID>">
+<input type=hidden name="OID" value="<$OID>">
+-->
+
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="property/updateinfo">
+<input type=hidden name="ac" value="read">
+
+<a name=submitbutton></a>
+<BR>
+<CENTER>
+<input type=submit name="edit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</CENTER>
+
+</form>
+
+</BODY>
+</HTML>

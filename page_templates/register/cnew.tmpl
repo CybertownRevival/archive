@@ -1,0 +1,120 @@
+<!-- register/cnew -->
+<!--- registration form for administrators --->
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<table valign=top cellspacing=0 cellpadding=0 border=0 width=100%> <tr> <td height=10 width=15> </td></tr>
+<td> </td>
+<td>
+
+<center>
+<$font><b>Registration - New Member</b></font>
+<br>
+<br>
+
+<$errorfont>
+
+<!-- #ifdef variable="registererror001" -->
+<b>Name and passwords are required.</b>
+<!-- #endif variable="registererror001" -->
+
+<!-- #ifdef variable="registererror002" -->
+<b>Sorry, the nickname cannot contain a '/'.</b>
+<!-- #endif variable="registererror002" -->
+
+<!-- #ifdef variable="registererror003" -->
+<b>Sorry, the password and the retyped password are different.</b>
+<!-- #endif variable="registererror003" -->
+
+<!-- #ifdef variable="registererror004" -->
+	<b>Sorry, this nickname is taken, try another one.</b>
+<!-- #endif variable="registererror004" -->
+
+<!-- #ifdef variable="registererror005" -->
+	<b>Sorry, this email is taken, try another one.</b>
+<!-- #endif variable="registererror005" -->
+
+<!-- #ifdef variable="registererror006" -->
+	<b>The referring member you entered is unknown, please check.</b>
+<!-- #endif variable="registererror006" -->
+
+<!-- #ifdef variable="registererror010" -->
+	<b>Sorry, the nickname contains not allowed characters.<br>
+	Allowed are [A-Z],[a-z],[0-9],'_','-','.'</b>
+<!-- #endif variable="registererror010" -->
+
+<!-- #ifdef variable="registererror011" -->
+	<b>Sorry, the nickname must start with an alphanumeric character.</b>
+<!-- #endif variable="registererror011" -->
+
+<!-- #ifdef variable="registererror012" -->
+	<b>Sorry, the email address is not correct.<br>
+	Allowed characters are [A-Z],[a-z],[0-9],'_','-','.','@'</b>
+<!-- #endif variable="registererror012" -->
+<!-- #ifdef variable="registererror020" -->
+<b>Sorry, you don't have the right to register new members.</b>
+<!-- #endif variable="registererror020" -->
+
+<!-- #ifdef variable="registerok" -->
+Member registered successfully.
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+	
+<!-- #endif variable="registerok" -->
+</font>
+</center>
+
+<form method=post action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+<td width=50%><$font>Name:</font></td>
+<td width=50%><$font><INPUT NAME="NNM" VALUE="<$NNM>" MAXLENGTH=16 SIZE=16></font></td>
+</tr>
+<tr>
+<td><$font>Email address:</font></td>
+<td><$font><INPUT NAME="EML" VALUE="<$EML>" MAXLENGTH=64 SIZE=32></font></td>
+</tr>
+
+<tr>
+<td><$font>Choose a password:</font></td>
+<td><$font><INPUT type=password NAME="PWD" VALUE="<$PWD>" MAXLENGTH=16 SIZE=16></font></td>
+</tr>
+<tr>
+<td><$font>Retype the password:</font></td>
+<td><$font><INPUT type=password NAME="PWD2" VALUE="<$PWD2>"  MAXLENGTH=16 SIZE=16></font></td>
+</tr>
+</table>
+<br><$font>Additional attributes:
+<br>Add any additional attributes here but make sure that they are also
+specified in cnew.cfg to write them to the database. They should be stored in
+the member data table.</font>
+<br>
+<table border=0>
+<tr>
+<td><$font>Interests:</font></td>
+<td><INPUT type=text NAME="T_INT" VALUE="<$T_INT>" MAXLENGTH=32 SIZE=32></td>
+</tr>
+</table>
+<div align = center>
+<br>
+<br>
+<p>
+<input type=hidden name="ac" value="admin">
+<input type=hidden name="TPL" value="adm/cnew">
+<input type=submit name="submit" value="Register">
+<input type=button name="no" value=Cancel onClick="history.back()">
+</p>
+
+</form>
+
+</td></tr></table>
+</body>
+</html>
+

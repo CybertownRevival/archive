@@ -1,0 +1,337 @@
+<!-- vote/new.tmpl -->
+<!-- create a new vote -->
+<html>
+<head>
+
+<!--#ifdef variable="adhoc" -->
+<title><$g_title> - New Vote</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<!-- #ifdef variable="error001" -->
+<center>
+<h3><font color="red">Please enter a topic.</font></h3>
+</center>
+<!-- #endif variable="error001" -->
+
+<!-- #ifdef variable="error002" -->
+<center>
+<h3><font color="red">Please enter a valid date</font></h3>
+</center>
+<!-- #endif variable="error002" -->
+
+<!-- #ifdef variable="error003" -->
+<center>
+<h3><font color="red">Please enter a date that is not before the current date.</font></h3>
+</center>
+<!-- #endif variable="error003" -->
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ac" value="submitnew">
+<input type=hidden name="PLC" value="<$PLC>">
+<input type=hidden name="TYP" value="<$TYP>">
+<input type=hidden name="PAR" value="<$PAR>">
+
+<center>
+<h2>Insert a new vote</h2>
+<small><b>Note:</b> <i>After posting this vote, members can post their choice for <$runtime> minutes.<br>
+The vote will be deleted automatically <$deltime> minutes after it has been closed.</i></small>
+</center>
+
+<p></p>
+
+<center>
+<table border=0>
+<tr>
+<td><b>Topic:</b></td>
+<td><INPUT NAME="TOP" VALUE="<$TOP>" MAXLENGTH=256 SIZE=48></td>
+</tr>
+<tr>
+<tr></tr>
+<td><b>Secret:</b></td>
+<td><input type="Radio" name="secret" value="Yes" <$yescheck>>Yes
+</tr>
+<tr>
+<td></td>
+<td><input type="Radio" name="secret" value="No"  <$nocheck>>No
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td><b>Choices:</b></td>
+<td><small><i>(If you do not specify any choice, the member can enter any arbritrary text.)</i></small></td>
+</tr>
+</table>
+
+<INPUT NAME="CHO0" VALUE="<$CHO0>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO1" VALUE="<$CHO1>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO2" VALUE="<$CHO2>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO3" VALUE="<$CHO3>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO4" VALUE="<$CHO4>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO5" VALUE="<$CHO5>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO6" VALUE="<$CHO6>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO7" VALUE="<$CHO7>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO8" VALUE="<$CHO8>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO9" VALUE="<$CHO9>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO10" VALUE="<$CHO10>" MAXLENGTH=256 SIZE=32><br>
+
+<p></p>
+
+<a name=submitbutton></a>
+<div>
+<input type=submit name="submitnew" value="Post">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</div>
+
+</center>
+
+</form>
+<!--#endif variable="adhoc" -->
+
+<!--#ifdef variable="elect" -->
+<title><$g_title> - New Poll</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<!-- #ifdef variable="error001" -->
+<center>
+<h3><font color="red">Please enter a topic.</font></h3>
+</center>
+<!-- #endif variable="error001" -->
+
+<!-- #ifdef variable="error002" -->
+<center>
+<h3><font color="red">Please enter a valid date</font></h3>
+</center>
+<!-- #endif variable="error002" -->
+
+<!-- #ifdef variable="error003" -->
+<center>
+<h3><font color="red">Please enter a date that is not before the current date.</font></h3>
+</center>
+<!-- #endif variable="error003" -->
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ac" value="submitnew">
+<input type=hidden name="PLC" value="<$PLC>">
+<input type=hidden name="TYP" value="<$TYP>">
+<input type=hidden name="PAR" value="<$PAR>">
+
+<center>
+<h2>Post a new Poll</h2>
+</center>
+
+<!-- #include virtual="<$g_Templates>common/postbutton.tmpl" -->
+<HR>
+<center>
+<B>
+Select an end date for the poll:
+</B>
+<br>
+<B>Month:         </B>
+<SELECT name = "DATE_MON">
+<!--#for loopname="month" loopvars="monthval,monthname,monthselected" -->
+<OPTION <$monthselected> value = "<$monthval>"><$monthname>&nbsp;
+<!--#endfor loopname="month"  -->
+</SELECT>
+
+<B>Day:           </B>
+<SELECT name = "DATE_MDAY">
+<!--#for loopname="day" loopvars="dayval,dayname,dayselected" -->
+<OPTION <$dayselected> value = "<$dayval>"><$dayname>&nbsp;
+<!--#endfor loopname="day"  -->
+</SELECT>
+<B>Hour:          </B>
+<SELECT name = "DATE_HOUR">
+<!--#for loopname="hour" loopvars="hourval,hourname,hourselected" -->
+<OPTION <$hourselected> value = "<$hourval>"><$hourname>&nbsp;
+<!--#endfor loopname="hour"  -->
+</SELECT>
+<B>Minute:        </B>
+<SELECT name = "DATE_MIN">
+<!--#for loopname="minute" loopvars="minuteval,minutename,minuteselected" -->
+<OPTION <$minuteselected> value = "<$minuteval>"><$minutename>&nbsp;
+<!--#endfor loopname="minute"  -->
+</SELECT>
+<input type=hidden name="DATE_SEC" value="00">
+</center>
+<HR>
+
+<p></p>
+
+<center>
+<table border=0>
+<tr>
+<td><b>Topic:</b></td>
+<td><INPUT NAME="TOP" VALUE="<$TOP>" MAXLENGTH=256 SIZE=48></td>
+</tr>
+<tr>
+<td><b>Description:</b></td>
+<td><INPUT NAME="TXT" VALUE="<$TXT>" MAXLENGTH=256 SIZE=48></td>
+</tr>
+<tr>
+<input type="hidden" name="secret" value="Yes" 
+</tr>
+<tr>
+<td><b>Choices:</b></td>
+<td><small><i>(You MUST specify choices!)</i></small></td>
+</tr>
+</table>
+
+<INPUT NAME="CHO0" VALUE="<$CHO0>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO1" VALUE="<$CHO1>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO2" VALUE="<$CHO2>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO3" VALUE="<$CHO3>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO4" VALUE="<$CHO4>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO5" VALUE="<$CHO5>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO6" VALUE="<$CHO6>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO7" VALUE="<$CHO7>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO8" VALUE="<$CHO8>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO9" VALUE="<$CHO9>" MAXLENGTH=256 SIZE=32><br>
+<INPUT NAME="CHO10" VALUE="<$CHO10>" MAXLENGTH=256 SIZE=32><br>
+
+<p></p>
+
+<a name=submitbutton></a>
+<div>
+<input type=submit name="submitnew" value="Post">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</div>
+
+</center>
+
+</form>
+<!--#endif variable="elect" -->
+
+<!--#ifdef variable="ranking" -->
+<title><$g_title> - New Vote</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<form method=post action="<$selfurl>">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="submitnew">
+
+  <input type=hidden name="PLC" value="0000000000000000">
+
+  <input type=hidden name="TYP" value="<$TYP>">
+  <input type=hidden name="PAR" value="<$PAR>">
+
+  <input type="hidden" name="secret" value="Yes"></td>
+
+<h2 align="center">Post a new Ranking</h2>
+
+<!-- #include virtual="<$g_Templates>common/postbutton.tmpl" -->
+<HR>
+
+<center>
+<b>Select an end date for the ranking:</b>
+<br>
+<B>Month:         </B>
+  <SELECT name = "DATE_MON">
+    <!--#for loopname="month" loopvars="monthval,monthname,monthselected" -->
+      <OPTION <$monthselected> value = "<$monthval>"><$monthname>&nbsp;
+    <!--#endfor loopname="month"  -->
+  </SELECT>
+<B>Day:           </B>
+  <SELECT name = "DATE_MDAY">
+    <!--#for loopname="day" loopvars="dayval,dayname,dayselected" -->
+      <OPTION <$dayselected> value = "<$dayval>"><$dayname>&nbsp;
+    <!--#endfor loopname="day"  -->
+  </SELECT>
+<B>Hour:          </B>
+  <SELECT name = "DATE_HOUR">
+    <!--#for loopname="hour" loopvars="hourval,hourname,hourselected" -->
+      <OPTION <$hourselected> value = "<$hourval>"><$hourname>&nbsp;
+    <!--#endfor loopname="hour"  -->
+  </SELECT>
+<B>Minute:        </B>
+  <SELECT name = "DATE_MIN">
+    <!--#for loopname="minute" loopvars="minuteval,minutename,minuteselected" -->
+      <OPTION <$minuteselected> value = "<$minuteval>"><$minutename>&nbsp;
+    <!--#endfor loopname="minute"  -->
+  </SELECT>
+  <input type=hidden name="DATE_SEC" value="00">
+</center>
+<HR>
+
+<center>
+  <table border="0">
+    <tr>
+      <td><b>Topic:</b></td>
+      <td><INPUT NAME="TOP" VALUE="<$TOP>" MAXLENGTH=256 SIZE=48></td>
+    </tr>
+    <tr>
+      <td><b>Description:</b></td>
+      <td><INPUT NAME="TXT" VALUE="<$TXT>" MAXLENGTH=256 SIZE=48></td>
+    </tr>
+    <tr>
+      <td><b>Choices:</b></td>
+      <td><small><i>(You MUST specify choices!)</i></small></td>
+    </tr>
+  </table>
+  <table border="0">
+    <tr>
+      <td>0 Points</td>
+      <td><INPUT NAME="CHO0" VALUE="<$CHO0>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>1 Points</td>
+      <td><INPUT NAME="CHO1" VALUE="<$CHO1>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>2 Points</td>
+      <td><INPUT NAME="CHO2" VALUE="<$CHO2>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>3 Points</td>
+      <td><INPUT NAME="CHO3" VALUE="<$CHO3>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>4 Points</td>
+      <td><INPUT NAME="CHO4" VALUE="<$CHO4>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>5 Points</td>
+      <td><INPUT NAME="CHO5" VALUE="<$CHO5>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>6 Points</td>
+      <td><INPUT NAME="CHO6" VALUE="<$CHO6>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>7 Points</td>
+      <td><INPUT NAME="CHO7" VALUE="<$CHO7>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>8 Points</td>
+      <td><INPUT NAME="CHO8" VALUE="<$CHO8>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>9 Points</td>
+      <td><INPUT NAME="CHO9" VALUE="<$CHO9>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+      <td>10 Points</td>
+      <td><INPUT NAME="CHO10" VALUE="<$CHO10>" MAXLENGTH=256 SIZE=32></td>
+    </tr>
+    <tr>
+  </table>
+
+  <a name="submitbutton"></a>
+
+  <input type=submit name="submitnew" value="Post">
+  <input type=button name="back" value="Cancel" onClick="history.back()">
+
+</form>
+</center>
+<!--#endif variable="ranking" -->
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!-- club/newcomer_control.tmpl -->
+
+<!-- included in action.tmpl to show newcomer Club control panel-->
+
+<!-- links for Newcomers Club -->
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/about/details/nb-info.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/whatis.gif" width="116" height="16" BORDER=0 ALT="What is Cybertown?"></a><br>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/nb-findway.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/getting_around.gif" width="116" height="16" BORDER=0 ALT="Getting Around"></a><br>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/nb-2dcomm.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/communication.gif" width="116" height="16" BORDER=0 ALT="Communication"><br>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/nb-into3d.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/gi3.gif" width="116" height="16" BORDER=0 ALT="Get into 3D"></a><br>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/nb-getapet.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/get_pet.gif" width="116" height="16" BORDER=0 ALT="Get a Home & Pet"></a><br> 
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/index.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/faq_help.gif" width="116" height="16" BORDER=0 ALT="FAQ/Help"></a><br> 
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/nb-getajob.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/gaj.gif" width="116" height="16" BORDER=0 ALT="Get a Job"></a><br>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/tour/intro.htm')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/city_tour.gif" width="116" height="16" BORDER=0 ALT="City Tour"></a><br>
+
+<!-- #ifdef variable="isVisitor" -->
+<a href="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" target=_self> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/my_info.gif" width="116" height="16" BORDER=0 ALT=Info"></a><br><a href="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" target=_self><IMG SRC="<$g_Images>/images/clubs/newcomers/my_home.gif" width="116" height="16" BORDER=0 ALT="My House"></a><br>
+<a href="/cgi-bin/cybertown/edit?tpl=common/login" target="_top"><font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00" target="_top"><b>LOG IN/JOIN</b></font></a>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<a href="javascript:loadInfo('<$_exe>edit?KEY=<$NNM>&TPL=property/mydata&ac=read')"> 
+<IMG SRC="<$g_Images>/images/clubs/newcomers/my_info.gif" width="116" height="16" BORDER=0 ALT="My Info"></a><br><a href="property<$g_exe>?ac=myhouse" target="_top"><IMG SRC="<$g_Images>/images/clubs/newcomers/my_home.gif" width="116" height="16" BORDER=0 ALT="My House"></a>
+<!-- #endif variable="isVisitor" -->
+<p></p>
+
+<!-- JUMP GATE - Navigation Bar -->
+
+<!-- begin this is entirely new from SC st with onchange -->
+
+<select name="jumpgate" size="1" onchange="jumpreset(this.options, this.options[this.selectedIndex].value)">
+
+<!-- end this is entirely new from SC -->
+
+
+
+<option value="" selected>JUMP GATE</option>
+
+<option value=""></option>  
+
+<option value="">COLONIES:</option>
+
+<option value="top community<$g_exe>?ID=0102000000000000">Sci-fi</option>
+
+<option value="top community<$g_exe>?ID=0104000000000000">Entertainment</option>
+
+<option value="top community<$g_exe>?ID=0101000000000000">Games</option>
+
+<option value="top community<$g_exe>?ID=0103000000000000">Virtual Worlds</option>
+
+<option value="top community<$g_exe>?ID=0108000000000000">Cyberhood</option>
+
+<option value="top community<$g_exe>?ID=0105000000000000">Inner Realms</option>
+
+<option value="top community<$g_exe>?ID=0106000000000000">Teens</option>
+
+<option value="top community<$g_exe>?ID=0107000000000000">Mothership</option>
+
+<option value="">-----------------------</option>
+
+<option value="top place<$g_exe>?plc=enter">The Plaza</option>
+
+<option value="top place<$g_exe>?plc=ent_complex">ePlex</option>
+
+<option value="top place<$g_exe>?plc=clubdir&T_level=top">The
+
+Clubs</option>
+
+<option value="top place<$g_exe>?plc=fleamarket">Flea Market</option>
+
+<option value="top place<$g_exe>?plc=shopping">The Mall</option>
+
+<option value="top place<$g_exe>?plc=iwosmall">Homebuilder</option>
+
+<option value="top place<$g_exe>?plc=employment">Employment</option>
+
+<option value="top place<$g_exe>?plc=club&ID=CL00000000001b9b">Newcomers Club</option>
+
+<option value="top place<$g_exe>?plc=ne_game">Outlands (the Game)</option>
+
+<option value="top place<$g_exe>?plc=cafe">Le Caf&eacute;</option>
+
+<option value="top place<$g_exe>?plc=library">Library</option>
+
+<option value="top place<$g_exe>?plc=jail">Jail</option>
+
+<option value="top place<$g_exe>?plc=beach">Sunset Beach</option>
+
+<option value="top place<$g_exe>?plc=funpark">Fun Park</option>
+
+<option value="top place<$g_exe>?plc=waterpark">Water Park</option>
+
+<option value="top place<$g_exe>?plc=themepark">Theme Park</option>
+
+<option value="top place<$g_exe>?plc=cityhall">City Hall</option>
+
+<option value="top place<$g_exe>?plc=theatre">PerformingArtsCenter</option>                                 
+
+<option value="top place<$g_exe>?plc=pool">The Pool</option>
+
+<option value="top place<$g_exe>?plc=stadium">The Stadium</option>     
+
+<option value="top place<$g_exe>?plc=suburbs&T_SUB=suburbs">The Suburbs</option>
+
+<option value="top place<$g_exe>?plc=post">Post Office</option>
+
+<option value="place <$g_HTMLRoot>/info/portals.html">The Portals</option>
+
+
+
+<option value="">-----------------------</option>
+
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=m">Feedback</option>
+
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000012&MTY=m">City Council</option>
+
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000013&MTY=i">Security In-box</option>
+
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000007&MTY=m">Guides Board</option>
+
+<option value="poll /wallpaper/ctpaper.html">Free Wallpaper</option>
+
+<option value="info citizen<$g_exe>?ac=action">Citizens List</option>
+
+<option value="info <$g_HTMLRoot>/info/controlpanel/index.html">How Do I?</option>
+
+<option value="info <$g_HTMLRoot>/places/news/magazine/dailynews/index.html">Daily News</option>
+
+<option value="info <$g_HTMLRoot>/places/news/magazine/index.html">Weekly News</option>
+
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000010001&MTY=m&T_TYPE=announce">What's New?</option>
+
+<option value="info <$g_HTMLRoot>/info/help/index.html">FAQ/Help</option>
+
+<option value="info <$g_HTMLRoot>/info/VisitorCenter/VisitorCenter.html">Tourist Info</option>
+
+<!-- #ifndef variable="T_LDT" -->
+
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&plc=enter&LDT=O&LID=<$ID>">Calendar</option>
+
+<!-- #endif variable="T_LDT" -->
+
+<!-- #ifdef variable="T_LDT" -->
+
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&LDT=<$T_LDT>&LID=<$ID>">Calendar</option>
+
+<!-- #endif variable="T_LDT" -->
+
+<option value="poll http://www.minamission.com/mission/home.html">Press Room</option>
+
+<option value="">-----------------------</option>
+
+<option value="poll <$g_HTMLRoot>/places/post/post.html">Send Postcard</option>
+
+<option value="poll /friends/tellfriends.html">Win Prizes!</option>
+
+<option value="custom minisurvey/minisurvey.pl?NNM=<$NNM> 600 500">Instant Polls</option>
+
+<option value="top /index2.html">Old Town</option>
+
+</select>
+<!-- Begin Help Flags -->
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/german/index.html')" target="_self"><img src="/info/help/german/images/germanysm.gif" border="0"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/spanish/faqs.html')" target="_self"><img src="/info/help/spanish/images/spainsm.gif" border="0"></a>
+
+
+
+
+
+
+
+
+<!-- #ifndef variable="CLB" -->
+
+<!--             worldcon and realplayer 
+
+<P><A HREF="javascript:loadInfo('/events/worldcon/schedule.html')"  target="_self"><IMG SRC="/events/worldcon/wcsched.gif" border=0></A></P>
+
+            <P><A HREF="javascript:loadInfo('/events/worldcon/real_player.html')"  target="_self"><IMG SRC="/events/worldcon/rahelp.jpg" border=0></A></P>
+
+-->
+
+<!-- #endif variable="CLB" -->  
+
+
+
+
+
+
+
+
+
+<!-- #ifdef variable="ID" value="0000000000000010" -->
+
+<!-- #ifdef variable="isVisitor" -->
+
+<a href="<$g_HTMLRoot>/places/post/visitor_mail.html" target="place"><img src="<$g_HTMLRoot>/places/post/images/freemail.gif" alt="Free E-Mail" border="0"></a>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/post/post_visitor.html')" target="_self"><img src="<$g_HTMLRoot>/places/post/images/sendpostcard.gif" alt="Send a Postcard" border="0"></a>
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+
+<a href="http://freemail.cybertown.com" target="place"><img src="<$g_HTMLRoot>/places/post/images/freemail.gif" alt="Free E-Mail" border="0"></a>
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self"><img src="<$g_HTMLRoot>/places/post/images/sendpostcard.gif" alt="Send a Postcard" border="0"></a>
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- #endif variable="ID" -->
+
+
+
+
+
+
+
+<script language=javascript>
+
+var neighborid = '<$ID>';
+
+neighborid = neighborid.substring(0,8);
+
+if (neighborid == '01020206') {
+
+document.write('<p><a href="javascript:loadCustom(\'/SETI/cyber-seti2.html\',\'640\',\'450\')" target=_self><IMG src="<$gHTMLRoot>/images/clubs/SETI/jointeamseti.gif" alt="Join Team Seti" border=0></a><br>');
+
+}
+
+</script>
+
+<div align=center>
+
+
+
+<!-- #ifdef variable="ID" value="000000000000001c"  -->
+
+<!-- #ifdef variable="T_showmusic" -->
+
+<a href="javascript:loadCustom('<$g_HTMLRoot>/places/<$place>/dj.html',620,560)" target="_self"><IMG SRC="<$g_HTMLRoot>/places/nightclub/images/plamus_ani.gif" BORDER=0 ALT="DJ"></a><br>
+
+<!-- #endif variable="T_showmusic" -->
+
+
+
+<!-- #ifndef variable="T_showmusic" -->
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/<$place>/danceav.html')" target="_self">
+
+<IMG SRC="<$g_HTMLRoot>/places/nightclub/images/dancavicon02.gif" BORDER=0 ALT="dancing avatars"></a><br><br>
+
+
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/ent_complex/rahelp.html')" target=_self>
+
+<IMG SRC="<$g_HTMLRoot>/places/ent_complex/images/rahelp.gif" BORDER=0 ALT="RealPlayer Help"></a><br>
+
+
+
+<!-- #endif variable="T_showmusic" -->
+
+<br>
+
+
+
+<!-- #endif variable="ID" -->
+
+
+
+
+
+<!-- #ifndef variable="ID" value="0000000000000026"  -->
+<!-- #ifndef variable="ID" value="0000000000000027"  -->
+<!-- #ifndef variable="ID" value="CL00000000001b9b"  -->
+<!-- Begin Morph Aftermath -->
+<A HREF="javascript:loadInfo('/events/morph2/html/aftermath.html')"  target="_self"><IMG SRC="/events/morph2/html/aftmathicon.jpg" ALT="Morph Aftermath" border=0></A>
+<!-- End Morph Aftermath -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+
+
+
+
+<!-- #ifndef variable="ID" value="0000000000000023" -->
+
+<!-- #endif variable="ID" -->
+
+<!-- end of include newcomer_control.tmpl -->
+

@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_self">
+</HEAD>
+
+<!-- #define variable="T_NOHTML" value="1"-->
+
+
+<BODY BACKGROUND="" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7" >
+
+
+<center>
+<H2><font color=#80ff00>List of Citizens
+	<!--#ifdef variable="SORT" -->
+		by <$SORT>
+	<!--#endif variable="SORT" -->
+</font></H2>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+
+<table>
+    <INPUT type="hidden" NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+	<input type="hidden" name="SORT" value="<$SORT>">
+	<input type="hidden" name="SORTORDER" value="<$SORTORDER>">
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="hist" value="<$hist>">
+<tr>
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+
+</tr>
+</table>
+
+</center>
+<!--#for loopname="list" loopvars="ID_" -->
+<!-- #ifdef variable="RGK_" value="" -->
+"<$NNM_>","<$LAD_MONNAME_><$LAD_MDAY_><$LAD_YEAR_>","<$EMK_>","<$FNM_> <$LNM_>"<br>
+<!-- #endif variable="RGK_" -->
+<!-- #endif variable="ID" -->
+<!--#endfor loopname="list" -->
+<tr>
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+</tr>
+</form>
+</center>
+<tr>
+
+<BODY>
+</HTML>

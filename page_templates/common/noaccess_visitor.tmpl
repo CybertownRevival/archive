@@ -1,0 +1,20 @@
+<!-- common/noaccess_visitor.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<br><br><br><br><br><br><br><br>
+<IMG SRC="/images/feedback/novisitors.jpg">
+<p>
+
+<!-- #ifndef variable="isVisitor" -->
+<b><font color="red"> Sorry <$NNM>, you have been refused access to this area of Cybertown in error.
+</font></b>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="isVisitor" -->
+<b><font color="red"> Sorry <$NNM>, you are not permitted to access this area of Cybertown.</font></b>
+<!-- #endif variable="isVisitor" -->
+
+<p><a href="javascript:window.close();">Close Window</a>
+

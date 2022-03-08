@@ -1,0 +1,71 @@
+<!-- banners/tags/emergencybanner_main.tmpl -->
+<script language="JavaScript1.1">
+<!--
+var image="";
+var banners=0;
+function cycle() {
+  if (++banners > 5) banners=1;
+    loadbanners();
+    document.banner1.src = image;
+    window.setTimeout('cycle();',10000);
+  }
+function loadbanners() {
+   if (banners==1)
+      {
+      image="http://www.cybertown.com/comtech/flaunt.gif";
+      }
+   if (banners==2)
+      {
+      image="http://www.cybertown.com/comtech/tellfriends.jpg";
+      }
+   if (banners==3)
+      {
+      image="http://www.cybertown.com/comtech/mhbanner.gif";
+      }
+   if (banners==4)
+      {
+      image="http://www.cybertown.com/comtech/forumsbanner.jpg";
+      }
+   if (banners==5)
+      {
+      image="http://www.cybertown.com/comtech/cerb.jpg";
+      }
+}
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+var link = "http://www.renderosity.com/index.ez?AID=9"
+function urlswitch() {
+if (banners==1)
+{
+link = "javascript:void(open('http://www.renderosity.com/index.ez?AID=9','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==2)
+{
+link = "javascript:void(open('http://www.cybertown.com/friends/tellfriends.html','3','scrollbars=yes,width=620,height=450'))";
+}
+if (banners==3)
+{
+link = "javascript:void(open('http://www.moon-hosting.com','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==4)
+{
+link = "javascript:void(open('http://www.ctcolonies.com/ctforums/index.php','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==5)
+{
+link = "javascript:void(open('http://www.phazite.com/cerb/applic.htm','3','scrollbars=yes,width=800,height=600'))";
+}
+return link;
+}
+//-->
+</script>
+
+<body onLoad="window.setTimeout('cycle();',10000);(loadbanners());(urlswitch());">
+
+<td align=center>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/register" onclick="this.href=urlswitch()">
+<img width="468" height="60" border="0" src="http://www.cybertown.com/comtech/ctMinaBanner2.gif" name="banner1"></a>
+</td>
+<!-- end banners/tags/emergencybanner_main.tmpl -->

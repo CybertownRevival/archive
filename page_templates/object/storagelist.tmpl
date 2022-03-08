@@ -1,0 +1,238 @@
+<!-- object/storagelist -->
+<!-- Amended inital for loops for obbjects so they are surrounded in " instead of ' -->
+<!-- Coolkama 17/12/2002-->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language=javascript>
+
+function qsort( a, n, l, r )
+{
+  var i = l;
+  var j = r;
+  var x = Math.floor((l+r)/2);
+
+  while( i <= j )
+  {
+    while( n[a[i]] < n[a[ x ]] )
+      i++;
+    while( n[a[ x ]] < n[a[j]] )
+      j--;
+    if( i < j )
+    {
+      var y = a[i];
+      a[i] = a[j];
+      a[j] = y;
+      i++;
+      j--;
+    }
+    else if( i == j )
+    {
+      i++;
+      j--;
+    }
+  }
+  if( l < j ) 
+    qsort( a, n, l, j );
+  if( i < r ) 
+    qsort( a, n, i, r );
+}
+
+//test = new Array( 'o123', 'o567', 'o654', 'o321' )
+//var a = test;
+//qsort( 0, test.length-1 );
+//alert( test[0]+','+test[1]+','+test[2]+','+test[test.length-1])
+
+sids = new Array();
+snames = new Array();
+bids = new Array();
+bnames = new Array();
+var i = 0;
+<!-- #for loopname="objectlist" loopvars="OID_" -->
+sids[i++] = '<$OID_>';
+//<!-- #define variable="N" escape="<$NAM_>" -->
+snames['<$OID_>'] = unescape("<$N>");
+<!-- #endfor loopname="objectlist"  -->
+var i = 0;
+<!-- #for loopname="objectlist" loopvars="BID_" -->
+bids[i++] = '<$BID_>';
+//<!-- #define variable="N" escape="<$BNAM_>" -->
+bnames['<$BID_>'] = unescape("<$N>");
+<!-- #endfor loopname="objectlist"  -->
+qsort( sids, snames, 0, sids.length-1 );
+var a = bids;
+qsort( bids, bnames, 0, bids.length-1 );
+var nob = <$NOB>;
+var bnob = <$BNOB>;
+function checkbp()
+{
+  var num = 0;
+  for(i=0 ; i < 500 ; i++ )
+  {
+    var f = eval('document.sform.C_'+i);
+    if( f == null )
+      break;
+    if( f.checked )
+    {
+      var f1 = eval('document.sform.MOVEID_'+num);
+      f1.value = f.value;
+      num++;
+    }
+  }
+  if( num + bnob > 64 )
+  {
+    for( i=0 ; i < num ; i++ )
+    {
+      var f1 = eval('document.sform.MOVEID_'+i);
+      f1.value = "";
+    }
+    alert('Sorry, you can move only '+(64-bnob)+' objects to your backpack');
+    return false;
+  }
+  document.sform.NUM.value = num;
+  return true;
+}
+function checksa()
+{
+  var num = 0;
+  for(i=0 ; i < 64 ; i++ )
+  {
+    var f = eval('document.bform.C_'+i);
+    if( f == null )
+      break;
+    if( f.checked )
+    {
+      var f1 = eval('document.bform.MOVEID_'+num);
+      f1.value = f.value;
+      num++;
+    }
+  }
+  if( num + nob > 500 )
+  {
+    for( i=0 ; i < num ; i++ )
+    {
+      var f1 = eval('document.bform.MOVEID_'+i);
+      f1.value = "";
+    }
+    alert('Sorry, you can move only '+(500-nob)+' objects to your storage area');
+    return false;
+  }
+  document.bform.NUM.value = num;
+  return true;
+}
+</script>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #if variable="readaccess" == value="" -->
+<h3>Sorry, only <$MNNM> can view these objects.</h3>
+<!-- #else variable="readaccess" == value="" -->
+
+<!-- #if variable="HOID" == value="<$MEM_ID>" -->
+<!-- #if variable="BNOB" < value="64" -->
+<!-- #if variable="NOB" > value="0" -->
+<!-- #define variable="movebp" value="1" -->
+<!-- #endif variable="NOB" -->
+<!-- #endif variable="BNOB" -->
+<!-- #if variable="NOB" < value="500" -->
+<!-- #if variable="BNOB" > value="0" -->
+<!-- #define variable="movesa" value="1" -->
+<!-- #endif variable="BNOB" -->
+<!-- #endif variable="NOB" -->
+<!-- #endif variable="HOID" -->
+<h2>
+Objects in storage area "<$NAM>" of <$MNNM>
+</h2>
+<!-- #if variable="NOB" > value="100" -->
+(<font size=1><a href="#backpack">Show Backpack)</a></font><br>
+<!-- #endif variable="NOB" -->
+<!-- #if variable="NOB" > value="0" -->
+<$NOB> objects in this area.
+<br>
+<!-- #ifdef variable="movebp" -->
+<form name="sform" action="<$selfurl>" method="POST" onSubmit="return checkbp()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="NUM" value="0">
+<input type="hidden" name="TPL" value="object/storagemove2bp">
+<!-- #endif variable="movebp" -->
+
+
+<script language=javascript>
+document.writeln('<table border=0 width=100%><tr>');
+for( i = 0 ; i < sids.length ; i++ )
+{
+  document.writeln('<td><font size=2>');
+<!-- #ifdef variable="movebp" -->
+  document.writeln('<input type=hidden name="MOVEID_'+i+'" value="">');
+  document.writeln('<input type=checkbox name="C_'+i+'" value="'+sids[i]+'">');
+<!-- #endif variable="movebp" -->
+  document.writeln('<a href="javascript:loadInfo(\'./object<$g_exe>?ac=display&ID='+sids[i]+'&T_OWN=<$MNNM>\')" target=_self>'+snames[sids[i]]+'</a>');
+  document.writeln('</font></td>');
+  if( (i+1)%3 == 0 )
+    document.writeln('</tr><tr>');
+}
+document.writeln('</tr></table>');
+</script>
+
+<!-- #ifdef variable="movebp" -->
+<input type=submit name="move" value="Move selected objects to backpack">
+</form>
+<!-- #endif variable="movebp" -->
+
+<!-- #else variable="NOB" != value="" -->
+No objects in this area.<br>
+<!-- #if variable="HOID" == value="<$MEM_ID>" -->
+<a href="print60?TPL=object/storagedeletem&DELID=<$ID>">Delete storage area</a>
+<!-- #endif variable="HOID" == value="<$MEM_ID>" -->
+<!-- #endif variable="NOB" != value="" -->
+<br>
+
+
+<a name="backpack">
+<h2>
+Objects in backpack of <$MNNM>
+</h2>
+<!-- #if variable="BNOB" != value="" -->
+<$BNOB> objects in the backpack.
+<br>
+<!-- #ifdef variable="movesa" -->
+<form name="bform" action="<$selfurl>" method="POST" onSubmit="return checksa()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="NUM" value="0">
+<input type="hidden" name="TPL" value="object/storagemove2sa">
+<!-- #endif variable="movesa" -->
+<table border=0 width=100%>
+<tr>
+<script language=javascript>
+document.writeln('<table border=0 width=100%><tr>');
+for( i = 0 ; i < bids.length ; i++ )
+{
+  document.writeln('<td><font size=2>');
+<!-- #ifdef variable="movesa" -->
+  document.writeln('<input type=hidden name="MOVEID_'+i+'" value="">');
+  document.writeln('<input type=checkbox name="C_'+i+'" value="'+bids[i]+'">');
+<!-- #endif variable="movesa" -->
+  document.writeln('<a href="javascript:loadInfo(\'./object<$g_exe>?ac=display&ID='+bids[i]+'&T_OWN=<$MNNM>\')" target=_self>'+bnames[bids[i]]+'</a>');
+  document.writeln('</font></td>');
+  if( (i+1)%3 == 0 )
+    document.writeln('</tr><tr>');
+}
+document.writeln('</tr></table>');
+</script>
+
+<!-- #ifdef variable="movesa" -->
+<input type=submit name="move" value="Move selected object to storage area">
+</form>
+<!-- #endif variable="movesa" -->
+
+<!-- #else variable="BNOB" != value="" -->
+No objects in the backpack.
+<!-- #endif variable="BNOB" != value="" -->
+
+<!-- #endif variable="readaccess" == value="" -->
+
+</body>
+</html>
+

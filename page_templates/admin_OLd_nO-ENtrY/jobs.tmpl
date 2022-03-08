@@ -1,0 +1,117 @@
+<!-- admin/jobs.tmpl -->
+<!-- list jobs -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Jobs defined in Database</h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    Filter:&nbsp;&nbsp;
+    <select name="KTY">
+        <option value="ID"
+        <!--#ifdef variable="KTY" value="ID"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >ID</option>
+        <option value="NAM"
+        <!--#ifdef variable="KTY" value="NAM"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >Name</option>
+    </select>
+
+    <INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+    <tr>
+
+        <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+        <!--#ifdef variable="[PREV]" -->
+            <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <td>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </td>
+    </tr>
+    </table>
+</form>
+
+<table border=1>
+<tr>
+    <th><font color=#80ff00>ID</th>
+    <th><font color=#80ff00>Name</th>
+    <th width=80><font color=#80ff00>Type</th>
+</tr>
+<!--#for loopname="jobs" loopvars="ID_" -->
+    <tr>
+        <td>&nbsp;&nbsp;
+            <A HREF="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&ac=read&TPL=admin/job" target=_self><$ID_></A>
+            &nbsp;&nbsp;
+        </td>
+        <td>
+            <A HREF="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&ac=read&TPL=admin/job" target=_self><$NAM_></A>
+        </td>
+        <td>
+            <!--#ifdef variable="TYP_" value="1" -->
+                general job
+            <!--#endif variable="TYP_" -->
+            <!--#ifdef variable="TYP_" value="0" -->
+                associated with place
+            <!--#endif variable="TYP_" -->
+            <!--#ifndef variable="TYP_" value="0" -->
+            <!--#ifndef variable="TYP_" value="1" -->
+                associated with place
+            <!--#endif variable="TYP_" -->
+            <!--#endif variable="TYP_" -->
+        </td>
+<!--#endfor loopname="jobs" -->
+</table>
+<br>
+<a href="admin<$g_exe>?DTY=R&KTY=ID&TPL=admin/job&ac=showcreate&KLEN=2&TKT=<$TKT>" target=_self>Create new Job</a>
+
+</body>
+</html>

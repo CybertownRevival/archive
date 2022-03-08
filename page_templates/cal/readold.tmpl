@@ -1,0 +1,136 @@
+<html>
+<head>
+<title><$g_title></title>
+<SCRIPT language="JavaScript">
+function deleteMessage(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+	<!-- cal/read.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body3.tmpl" -->
+
+<!--#ifndef variable="listmsg" -->
+
+<center>
+<!-- #ifdef variable="calpostallowed" -->
+<a target="_parent" href="<$selfurl>?ac=write&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&plc=<$plc>&LDT=<$LDT>&LID=<$LID>&TKT=<$TKT>">
+<IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post an Event"></a>
+<!-- #endif variable="calpostallowed" -->
+
+<!-- #ifdef variable="calconfigallowed" -->
+<a target="_parent" href="<$selfurl>?ac=getconf&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>">
+<IMG SRC="<$g_Images>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the Calendar"></a>
+<!-- #endif variable="calconfigallowed" -->
+<!--<br><small><b>Note:</b> <i>This calendar allows a maximum number of 255 events!</i></small>-->
+
+<br>
+<font size=+2><b><$NAM></b></font>
+</center>
+
+<p><$TXT>
+<hr>
+<!-- #endif variable="listmsg" -->
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>, there are no events scheduled.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#ifndef variable="listmsg" -->
+<table border=0>
+<!--#ifdef variable="DATE_STR0" -->
+<!--#ifndef variable="KEY" value="0000000000000001" -->
+		<td><font color=#FFFF00><b>Date</b></font></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><font color=#FFFF00><b>Place</b></font></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><font color=#FFFF00><b>Scheduled by</b></font></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><font color=#FFFF00><b>Title</b></font></td>
+<!--#endif variable="KEY" -->
+<!--#ifdef variable="KEY" value="0000000000000001" -->
+		<td><font color=#FFFF00><b>Date</b></font></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><font color=#FFFF00><b>Place</b></font></td>
+		<td>&nbsp;&nbsp;</td>
+		<td><font color=#FFFF00><b>Events</b></font></td>
+<!--#endif variable="KEY" -->
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+<tr>
+<td nowrap>
+	<a target="detail" href="<$selfurl>?ac=getmsg&DATE=<$DATE_STR>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&plc=<$plc>&LDT=<$LDT>&LID=<$LID>"><$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>,<br> <$DATE_AP>:<$DATE_MIN> <$DATE_APM></a>
+</td>
+		<td>&nbsp;&nbsp;</td>
+<td>
+<!--#ifdef variable="PLACE_HREF" -->
+	<a target=top href="javascript:top.location.href='place<$g_exe>?plc=<$PLACE_HREF>'"><b><$PLACE_NAM></b></a>
+<!--#endif variable="PLACE_HREF" -->
+
+<!--#ifdef variable="PLACE_OWN" -->
+	<a target=top href="javascript:top.location.href='/home/<$PLACE_OWN>'"><b><$PLACE_NAM></b></a>
+<!--#endif variable="PLACE_OWN" -->
+
+<!--#ifndef variable="PLACE_HREF" -->
+<!--#ifndef variable="PLACE_OWN" -->
+	<b><$PLACE_NAM></b>
+<!--#endif variable="PLACE_OWN" -->
+<!--#endif variable="PLACE_HREF" -->
+</td>
+<!--#ifndef variable="KEY" value="0000000000000001" -->
+		<td>&nbsp;&nbsp;</td>
+<td>
+	<$NNM>
+</td>
+<!--#endif variable="KEY" -->
+		<td>&nbsp;&nbsp;</td>
+<td>
+	<$sub>
+</td>
+</tr>
+<!--#endfor loopname="msglist"  -->
+</table>
+<!--#endif variable="listmsg" -->
+
+
+<!--#ifdef variable="listmsg" -->
+<table width=100%>
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+<tr>
+<td>
+	<$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_YEAR>. <$DATE_AP>:<$DATE_MIN>:<$DATE_SEC> <$DATE_APM>.
+</td>
+<td align=right>
+<!-- #ifdef variable="calconfigallowed" -->
+	<a href='javascript:deleteMessage("<$selfurl>?ac=delete&DATE=<$DATE_STR>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>")'
+><IMG ALIGN=middle SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete the Event"></a>
+<!--#endif variable="calconfigallowed" -->
+
+<!-- #ifdef variable="calallowedit" -->
+	<a target='_parent' href='<$selfurl>?ac=update&DATE=<$DATE_STR>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&plc=<$plc>&LDT=<$LDT>&LID=<$LID>&TKT=<$TKT>'
+><IMG ALIGN=middle SRC="<$g_Images>/images/buttons/bedit0.gif" BORDER=0 ALT="Edit the Event"></a>
+<!--#endif variable="calallowedit" -->
+</td>
+</tr>
+</table>
+
+<font color=#FFFF00><b>Place: </b></font><$PLACE_NAM>, 
+<!--#ifndef variable="KEY" value="0000000000000001" -->
+<font color=#FFFF00><b>Scheduled by: </b></font><$NNM><br>
+<!--#endif variable="KEY" -->
+<font color=#FFFF00><b>Title: </b></font><$sub>
+<table>
+<tr><$pre><td width=100%>
+<$txt>
+</td><$endpre></tr>
+</table>
+<!--#endfor loopname="msglist"  -->
+<!--#endif variable="listmsg" -->
+
+</body>
+</html>
+

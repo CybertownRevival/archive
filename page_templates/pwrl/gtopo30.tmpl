@@ -1,0 +1,2319 @@
+#VRML V2.0 utf8
+#<pre>
+# gtopo30.html - the main file
+Background {
+ groundAngle 1.5708
+ skyAngle 1.5708
+ skyColor [0.15 0.17 0.98,0.6 0.5 0.9]
+}
+
+NavigationInfo {
+ headlight TRUE
+ type "WALK"
+ avatarSize [ 0.25 20 20 ]
+ speed 10
+}
+
+<!--#ifdef variable="FOG" -->
+Fog2{
+fogType "LINEAR"
+visibilityRange 800
+visibilityStart 750
+color 0.6 0.5 0.9
+}
+<!--#endif variable="FOG" -->
+
+DEF PS-posDisplay ProximitySensor { 
+ center      0 0 0 
+ size        500000 500000 500000
+ enabled     TRUE
+}
+
+Collision {
+collide FALSE
+children [
+
+ DEF B3DHUD_T HUD {
+ children [
+  Transform {
+  translation 0 0 -0.3
+  children [
+   Transform { 
+   children [
+
+    Transform {
+    translation -0.1 -0.1 0
+    children [
+     Transform {
+     translation 0 -0.03 0
+     children [
+      Shape {
+       appearance DEF TFONTAPP Appearance {
+        material Material {diffuseColor 1 0.5 1}
+        texture ImageTexture {
+         url "/images/font512.gif"
+         repeatS FALSE
+         repeatT FALSE
+        }
+       }
+       geometry DEF p-Message Text {
+        fontStyle FontStyle { family "TEXTURE" size 0.01 }
+       }
+      }
+     ]}
+     Transform {
+     translation 0 -0.02 0
+     children [
+      Shape {
+       appearance USE TFONTAPP
+       geometry DEF h-Message Text {
+        fontStyle FontStyle { family "TEXTURE" size 0.01 }
+       }
+      }
+     ]}
+     Transform {
+     translation 0 -0.01 0
+     children [
+      Shape {
+       appearance USE TFONTAPP
+       geometry DEF o-Message Text {
+        fontStyle FontStyle { family "TEXTURE" size 0.01 }
+       }
+      }
+     ]}
+    ]}
+   ]}
+  ]}
+ ]}
+]}
+
+DEF Directions Transform {
+children [
+
+Transform {
+translation 0 0 -0.3
+children [
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string [ "N" ]
+    fontStyle DEF DirectionsFS FontStyle {
+     family "TEXTURE" size 0.01 justify [ "MIDDLE" "MIDDLE" ]
+    }
+   }
+  }
+
+]}
+ 
+Transform {
+translation .24 0 -0.24
+rotation 0 1 0 -0.78
+children [
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string [ "NE" ]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation 0.30 0 0
+rotation 0 1 0 -1.57
+children [
+
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string ["E"]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation 0.24 0 0.24
+rotation 0 1 0 -2.38
+children [
+
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string [ "SE" ]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation 0 0 0.30
+rotation 0 1 0 3.14
+children [
+
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string ["S"]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation -0.24 0 0.24
+rotation 0 1 0 2.38
+children [
+
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string [ "SW" ]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation -0.30 0 0
+rotation 0 1 0 1.57
+children [
+
+
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string ["W"]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+
+Transform {
+translation -0.24 0 -0.24
+rotation 0 1 0 0.78
+children [
+  Shape {
+   appearance USE TFONTAPP
+   geometry Text {
+    string [ "NW" ]
+    fontStyle USE DirectionsFS
+   }
+  }
+
+]}
+]}
+
+DEF TheViewPoints Transform {
+translation 0 0 0
+children[
+
+DEF ViewPointEnter Viewpoint {
+ fieldOfView 1.2
+ orientation 0 1 0 -2.38
+ position 0.1 <$ENTERHEIGHT> 0.1
+ description "Enter"
+}
+
+DEF ViewPointEnter Viewpoint {
+ fieldOfView 2.5
+ orientation 0 1 0 -2.38
+ position 0.1 <$ENTERHEIGHT> 0.1
+ description "2.5"
+}
+
+]}
+
+Transform {
+translation  0 0 0
+scale       1 1 1
+rotation    0 1 0 0
+children [
+
+DirectionalLight { direction  1 -.5  1 }
+DirectionalLight { direction -1 -.5  1 }
+DirectionalLight { direction  1 -.5 -1 }
+DirectionalLight { direction -1 -.5 -1 }
+
+DEF TimeClock TimeSensor { cycleInterval 1 loop TRUE }
+
+PROTO rayHit 
+[
+  exposedField SFVec3f proxy_size 0 0 0  # size of Proximity-sensor to
+                                         # capture user-position
+  exposedField MFVec3f delta []          # value[0]: offset to the
+                                         # user-position for the starting
+                                         # point of the ray
+                                         # value[1]: offset to the
+                                         # user-position for the end
+                                         # point of the ray
+  exposedField SFBool  show_line FALSE   # if 'true ' In IndexedLineSet
+                                         # shows the ray
+  eventIn SFTime get_geometry_time       # trigger function with SFTime
+  eventIn SFBool get_geometry_bool       # trigger function with SFBool
+  eventOut SFBool  hit                   # 'true' if geometry is hit,
+                                         # 'false' if not
+  eventOut SFVec3f hitPoint              # SFVec3f of the hitPoint
+  eventOut SFNode  hitNode               # SFNode that contains the hitNode
+                                         # (see documentation in script-node)
+]
+{
+ DEF all Group {
+ children [
+  DEF  proxy ProximitySensor {size  IS proxy_size  }
+  Transform {
+  children [
+   Shape {
+    appearance  Appearance {material Material {emissiveColor 0 0 1}}
+    geometry IndexedLineSet  {
+     color Color {color [0 0 1,0 0 1]}
+     coord DEF line Coordinate {point [0 0 0,0 0 0]}
+     coordIndex [0,1]
+    }
+   }
+  ]}
+  DEF script Script {
+   eventIn  SFTime get_geometry_time IS  get_geometry_time
+   eventIn  SFBool get_geometry_bool IS get_geometry_bool
+ 
+   field SFNode proxy USE proxy
+   field SFNode line USE line
+
+   eventOut SFNode hitNode IS hitNode
+   eventOut SFVec3f hitPoint IS hitPoint
+   eventOut SFBool  hit 
+   url  "vrmlscript:
+
+   function get_geometry_time(v,t)
+   {
+     get_Rayhit(proxy.position);
+   }
+
+   function get_geometry_bool(v,t)
+   {
+     if (v) get_Rayhit(proxy.position);
+   }
+
+   function get_Rayhit(vec,t)
+   {
+    hitNode=Browser.computeRayHit(vec.add(delta[0]),vec.add(delta[1]));
+
+    // zur info, was die Funktion computeRayHit zurueckliefert:
+    //
+    // PROTO RayHitInfo [ 
+    //  eventOut MFNode hitPath 
+    //     the chain of grouping nodes, to the geometry node intersected 
+    //  eventOut SFVec3f hitNormal
+    //     normal at point of intersection
+    //  eventOut SFVec3f hitPoint
+    //     point of intersection in global, world coordinates
+    //  eventOut SFVec2f hitTexCoord
+    //     texture coordinate at point of intersection
+    //     (without any texture matrix applied) 
+    //  eventOut SFMatrix hitMatrix
+    //     matrix transforming shape local coordinates to world coordinates
+    //  eventOut SFVec3f hitNormalLocal
+    //  eventOut SFVec3f hitPointLocal
+    //     intersection point in the shape's local coordinate system
+    //  eventOut MFInt32 hitInfo
+    //     vertex index information
+    //]
+
+    if (hitNode) 
+    {
+      if (show_line) 
+      {
+        line.point[0]=vec.add(delta[0]);
+        line.point[1]=vec.add(delta[1]);
+      }
+      hit=true;
+      hitPoint=hitNode.hitPoint;
+      // print ('hitPoint: ' + hitPoint);
+    }
+    else {
+      hit=false;
+      // print ('no hit.');
+    }
+   }
+   "
+   exposedField MFVec3f delta IS delta
+   exposedField SFBool show_line IS show_line
+  }
+ ]}
+}
+
+DEF rayhit rayHit 
+{
+ proxy_size 10000 10000 10000
+ delta [0 -10000 0,0 10000 0]
+}
+
+
+DEF LayerGlobe Layer3D {
+translation 0 .7
+size .3 .3 
+
+viewpoint DEF ViewFront Viewpoint {
+}
+
+children [
+ DirectionalLight { direction  1 -.5 -1 }
+ DirectionalLight { direction -1 -.5 -1 }
+
+ # The cube
+ Transform{
+ translation 0 0 -100
+ children[
+  Shape{
+   appearance Appearance {
+    material Material {
+     ambientIntensity 0.4
+     diffuseColor 1 0 0
+     specularColor 1 0 0
+     shininess 0.16
+    }
+   }
+   geometry Box { size 2 2 2 }
+  }
+ ]}
+
+ # The Globe
+ DEF Globe Transform {
+ translation 0 0 -200
+ rotation 0 1 0 0
+ children [
+  DEF GlobeRotationX Transform {
+  rotation 1 0 0 0
+  children[
+   DEF GlobeRotationY Transform {
+   rotation 0 1 0 0
+   children[
+
+<!--#ifdef variable="T_TS" -->
+    DEF GlobeTouchSensor TouchSensor{}
+<!--#endif variable="T_TS" -->
+
+    Shape {
+      appearance Appearance {
+        material Material {
+          shininess 0.2875
+          transparency 0.5
+        }
+        texture ImageTexture {
+          url "/images/globe.jpg"
+        }
+      }
+      geometry DEF Kugel01-FACES IndexedFaceSet {
+        ccw TRUE
+        solid TRUE
+		creaseAngle 3.14
+        coord DEF Kugel01-COORD Coordinate { point [
+          0 61.04 0, 0 57.35 -20.88, -7.14 57.35 -19.62, -13.42 57.35 -15.99, 
+          -18.08 57.35 -10.44, -20.56 57.35 -3.625, -20.56 57.35 3.625, 
+          -18.08 57.35 10.44, -13.42 57.35 15.99, -7.14 57.35 19.62, 
+          0 57.35 20.88, 7.14 57.35 19.62, 13.42 57.35 15.99, 
+          18.08 57.35 10.44, 20.56 57.35 3.625, 20.56 57.35 -3.625, 
+          18.08 57.35 -10.44, 13.42 57.35 -15.99, 7.14 57.35 -19.62, 
+          0 46.76 -39.23, -13.42 46.76 -36.87, -25.22 46.76 -30.05, 
+          -33.98 46.76 -19.62, -38.64 46.76 -6.813, -38.64 46.76 6.813, 
+          -33.98 46.76 19.62, -25.22 46.76 30.05, -13.42 46.76 36.87, 
+          0 46.76 39.23, 13.42 46.76 36.87, 25.22 46.76 30.05, 
+          33.98 46.76 19.62, 38.64 46.76 6.813, 38.64 46.76 -6.813, 
+          33.98 46.76 -19.62, 25.22 46.76 -30.05, 13.42 46.76 -36.87, 
+          0 30.52 -52.86, -18.08 30.52 -49.67, -33.98 30.52 -40.49, 
+          -45.78 30.52 -26.43, -52.06 30.52 -9.179, -52.06 30.52 9.179, 
+          -45.78 30.52 26.43, -33.98 30.52 40.49, -18.08 30.52 49.67, 
+          1.166e-005 30.52 52.86, 18.08 30.52 49.67, 33.98 30.52 40.49, 
+          45.78 30.52 26.43, 52.06 30.52 9.179, 52.06 30.52 -9.179, 
+          45.78 30.52 -26.43, 33.98 30.52 -40.49, 18.08 30.52 -49.67, 
+          0 10.6 -60.11, -20.56 10.6 -56.48, -38.64 10.6 -46.05, 
+          -52.06 10.6 -30.05, -59.2 10.6 -10.44, -59.2 10.6 10.44, 
+          -52.06 10.6 30.05, -38.64 10.6 46.05, -20.56 10.6 56.48, 
+          1.326e-005 10.6 60.11, 20.56 10.6 56.48, 38.64 10.6 46.05, 
+          52.06 10.6 30.05, 59.2 10.6 10.44, 59.2 10.6 -10.44, 
+          52.06 10.6 -30.05, 38.64 10.6 -46.05, 20.56 10.6 -56.48, 
+          0 -10.6 -60.11, -20.56 -10.6 -56.48, -38.64 -10.6 -46.05, 
+          -52.06 -10.6 -30.05, -59.2 -10.6 -10.44, -59.2 -10.6 10.44, 
+          -52.06 -10.6 30.05, -38.64 -10.6 46.05, -20.56 -10.6 56.48, 
+          1.326e-005 -10.6 60.11, 20.56 -10.6 56.48, 38.64 -10.6 46.05, 
+          52.06 -10.6 30.05, 59.2 -10.6 10.44, 59.2 -10.6 -10.44, 
+          52.06 -10.6 -30.05, 38.64 -10.6 -46.05, 20.56 -10.6 -56.48, 
+          0 -30.52 -52.86, -18.08 -30.52 -49.67, -33.98 -30.52 -40.49, 
+          -45.78 -30.52 -26.43, -52.06 -30.52 -9.179, -52.06 -30.52 9.179, 
+          -45.78 -30.52 26.43, -33.98 -30.52 40.49, -18.08 -30.52 49.67, 
+          1.166e-005 -30.52 52.86, 18.08 -30.52 49.67, 33.98 -30.52 40.49, 
+          45.78 -30.52 26.43, 52.06 -30.52 9.179, 52.06 -30.52 -9.179, 
+          45.78 -30.52 -26.43, 33.98 -30.52 -40.49, 18.08 -30.52 -49.67, 
+          0 -46.76 -39.23, -13.42 -46.76 -36.87, -25.22 -46.76 -30.05, 
+          -33.98 -46.76 -19.62, -38.64 -46.76 -6.813, -38.64 -46.76 6.813, 
+          -33.98 -46.76 19.62, -25.22 -46.76 30.05, -13.42 -46.76 36.87, 
+          0 -46.76 39.23, 13.42 -46.76 36.87, 25.22 -46.76 30.05, 
+          33.98 -46.76 19.62, 38.64 -46.76 6.813, 38.64 -46.76 -6.813, 
+          33.98 -46.76 -19.62, 25.22 -46.76 -30.05, 13.42 -46.76 -36.87, 
+          0 -57.35 -20.88, -7.14 -57.35 -19.62, -13.42 -57.35 -15.99, 
+          -18.08 -57.35 -10.44, -20.56 -57.35 -3.625, -20.56 -57.35 3.625, 
+          -18.08 -57.35 10.44, -13.42 -57.35 15.99, -7.14 -57.35 19.62, 
+          0 -57.35 20.88, 7.14 -57.35 19.62, 13.42 -57.35 15.99, 
+          18.08 -57.35 10.44, 20.56 -57.35 3.625, 20.56 -57.35 -3.625, 
+          18.08 -57.35 -10.44, 13.42 -57.35 -15.99, 7.14 -57.35 -19.62, 
+          0 -61.04 0]
+        }
+        texCoord DEF Kugel01-TEXCOORD TextureCoordinate { point [
+          0.9722 1, 1 0.8889, 0.05556 0.8889, 0.1111 0.8889, 0.1667 0.8889, 
+          0.2222 0.8889, 0.2778 0.8889, 0.3333 0.8889, 0.3889 0.8889, 
+          0.4444 0.8889, 0.5 0.8889, 0.5556 0.8889, 0.6111 0.8889, 
+          0.6667 0.8889, 0.7222 0.8889, 0.7778 0.8889, 0.8333 0.8889, 
+          0.8889 0.8889, 0.9444 0.8889, 1 0.7778, 0.05556 0.7778, 
+          0.1111 0.7778, 0.1667 0.7778, 0.2222 0.7778, 0.2778 0.7778, 
+          0.3333 0.7778, 0.3889 0.7778, 0.4444 0.7778, 0.5 0.7778, 
+          0.5556 0.7778, 0.6111 0.7778, 0.6667 0.7778, 0.7222 0.7778, 
+          0.7778 0.7778, 0.8333 0.7778, 0.8889 0.7778, 0.9444 0.7778, 
+          1 0.6667, 0.05556 0.6667, 0.1111 0.6667, 0.1667 0.6667, 
+          0.2222 0.6667, 0.2778 0.6667, 0.3333 0.6667, 0.3889 0.6667, 
+          0.4444 0.6667, 0.5 0.6667, 0.5556 0.6667, 0.6111 0.6667, 
+          0.6667 0.6667, 0.7222 0.6667, 0.7778 0.6667, 0.8333 0.6667, 
+          0.8889 0.6667, 0.9444 0.6667, 1 0.5556, 0.05556 0.5556, 
+          0.1111 0.5556, 0.1667 0.5556, 0.2222 0.5556, 0.2778 0.5556, 
+          0.3333 0.5556, 0.3889 0.5556, 0.4444 0.5556, 0.5 0.5556, 
+          0.5556 0.5556, 0.6111 0.5556, 0.6667 0.5556, 0.7222 0.5556, 
+          0.7778 0.5556, 0.8333 0.5556, 0.8889 0.5556, 0.9444 0.5556, 
+          1 0.4444, 0.05556 0.4444, 0.1111 0.4444, 0.1667 0.4444, 
+          0.2222 0.4444, 0.2778 0.4444, 0.3333 0.4444, 0.3889 0.4444, 
+          0.4444 0.4444, 0.5 0.4444, 0.5556 0.4444, 0.6111 0.4444, 
+          0.6667 0.4444, 0.7222 0.4444, 0.7778 0.4444, 0.8333 0.4444, 
+          0.8889 0.4444, 0.9444 0.4444, 1 0.3333, 0.05556 0.3333, 
+          0.1111 0.3333, 0.1667 0.3333, 0.2222 0.3333, 0.2778 0.3333, 
+          0.3333 0.3333, 0.3889 0.3333, 0.4444 0.3333, 0.5 0.3333, 
+          0.5556 0.3333, 0.6111 0.3333, 0.6667 0.3333, 0.7222 0.3333, 
+          0.7778 0.3333, 0.8333 0.3333, 0.8889 0.3333, 0.9444 0.3333, 
+          1 0.2222, 0.05556 0.2222, 0.1111 0.2222, 0.1667 0.2222, 
+          0.2222 0.2222, 0.2778 0.2222, 0.3333 0.2222, 0.3889 0.2222, 
+          0.4444 0.2222, 0.5 0.2222, 0.5556 0.2222, 0.6111 0.2222, 
+          0.6667 0.2222, 0.7222 0.2222, 0.7778 0.2222, 0.8333 0.2222, 
+          0.8889 0.2222, 0.9444 0.2222, 1 0.1111, 0.05556 0.1111, 
+          0.1111 0.1111, 0.1667 0.1111, 0.2222 0.1111, 0.2778 0.1111, 
+          0.3333 0.1111, 0.3889 0.1111, 0.4444 0.1111, 0.5 0.1111, 
+          0.5556 0.1111, 0.6111 0.1111, 0.6667 0.1111, 0.7222 0.1111, 
+          0.7778 0.1111, 0.8333 0.1111, 0.8889 0.1111, 0.9444 0.1111, 
+          0.9722 0, 0.02778 1, 0 0.8889, 0.08333 1, 0.1389 1, 
+          0.1944 1, 0.25 1, 0.3056 1, 0.3611 1, 0.4167 1, 0.4722 1, 
+          0.5278 1, 0.5833 1, 0.6389 1, 0.6944 1, 0.75 1, 0.8056 1, 
+          0.8611 1, 0.9167 1, 0 0.8889, 0 0.7778, 0 0.8889, 0 0.7778, 
+          0 0.6667, 0 0.7778, 0 0.6667, 0 0.5556, 0 0.6667, 0 0.5556, 
+          0 0.4444, 0 0.5556, 0 0.4444, 0 0.3333, 0 0.4444, 0 0.3333, 
+          0 0.2222, 0 0.3333, 0 0.2222, 0 0.1111, 0 0.2222, 0.02778 0, 
+          0 0.1111, 0.08333 0, 0.1389 0, 0.1944 0, 0.25 0, 0.3056 0, 
+          0.3611 0, 0.4167 0, 0.4722 0, 0.5278 0, 0.5833 0, 0.6389 0, 
+          0.6944 0, 0.75 0, 0.8056 0, 0.8611 0, 0.9167 0]
+        }
+        coordIndex [
+          0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 5, -1, 0, 5, 6, -1, 
+          0, 6, 7, -1, 0, 7, 8, -1, 0, 8, 9, -1, 0, 9, 10, -1, 
+          0, 10, 11, -1, 0, 11, 12, -1, 0, 12, 13, -1, 0, 13, 14, -1, 
+          0, 14, 15, -1, 0, 15, 16, -1, 0, 16, 17, -1, 0, 17, 18, -1, 
+          0, 18, 1, -1, 1, 19, 20, -1, 1, 20, 2, -1, 2, 20, 21, -1, 
+          2, 21, 3, -1, 3, 21, 22, -1, 3, 22, 4, -1, 4, 22, 23, -1, 
+          4, 23, 5, -1, 5, 23, 24, -1, 5, 24, 6, -1, 6, 24, 25, -1, 
+          6, 25, 7, -1, 7, 25, 26, -1, 7, 26, 8, -1, 8, 26, 27, -1, 
+          8, 27, 9, -1, 9, 27, 28, -1, 9, 28, 10, -1, 10, 28, 29, -1, 
+          10, 29, 11, -1, 11, 29, 30, -1, 11, 30, 12, -1, 12, 30, 31, -1, 
+          12, 31, 13, -1, 13, 31, 32, -1, 13, 32, 14, -1, 14, 32, 33, -1, 
+          14, 33, 15, -1, 15, 33, 34, -1, 15, 34, 16, -1, 16, 34, 35, -1, 
+          16, 35, 17, -1, 17, 35, 36, -1, 17, 36, 18, -1, 18, 36, 19, -1, 
+          18, 19, 1, -1, 19, 37, 38, -1, 19, 38, 20, -1, 20, 38, 39, -1, 
+          20, 39, 21, -1, 21, 39, 40, -1, 21, 40, 22, -1, 22, 40, 41, -1, 
+          22, 41, 23, -1, 23, 41, 42, -1, 23, 42, 24, -1, 24, 42, 43, -1, 
+          24, 43, 25, -1, 25, 43, 44, -1, 25, 44, 26, -1, 26, 44, 45, -1, 
+          26, 45, 27, -1, 27, 45, 46, -1, 27, 46, 28, -1, 28, 46, 47, -1, 
+          28, 47, 29, -1, 29, 47, 48, -1, 29, 48, 30, -1, 30, 48, 49, -1, 
+          30, 49, 31, -1, 31, 49, 50, -1, 31, 50, 32, -1, 32, 50, 51, -1, 
+          32, 51, 33, -1, 33, 51, 52, -1, 33, 52, 34, -1, 34, 52, 53, -1, 
+          34, 53, 35, -1, 35, 53, 54, -1, 35, 54, 36, -1, 36, 54, 37, -1, 
+          36, 37, 19, -1, 37, 55, 56, -1, 37, 56, 38, -1, 38, 56, 57, -1, 
+          38, 57, 39, -1, 39, 57, 58, -1, 39, 58, 40, -1, 40, 58, 59, -1, 
+          40, 59, 41, -1, 41, 59, 60, -1, 41, 60, 42, -1, 42, 60, 61, -1, 
+          42, 61, 43, -1, 43, 61, 62, -1, 43, 62, 44, -1, 44, 62, 63, -1, 
+          44, 63, 45, -1, 45, 63, 64, -1, 45, 64, 46, -1, 46, 64, 65, -1, 
+          46, 65, 47, -1, 47, 65, 66, -1, 47, 66, 48, -1, 48, 66, 67, -1, 
+          48, 67, 49, -1, 49, 67, 68, -1, 49, 68, 50, -1, 50, 68, 69, -1, 
+          50, 69, 51, -1, 51, 69, 70, -1, 51, 70, 52, -1, 52, 70, 71, -1, 
+          52, 71, 53, -1, 53, 71, 72, -1, 53, 72, 54, -1, 54, 72, 55, -1, 
+          54, 55, 37, -1, 55, 73, 74, -1, 55, 74, 56, -1, 56, 74, 75, -1, 
+          56, 75, 57, -1, 57, 75, 76, -1, 57, 76, 58, -1, 58, 76, 77, -1, 
+          58, 77, 59, -1, 59, 77, 78, -1, 59, 78, 60, -1, 60, 78, 79, -1, 
+          60, 79, 61, -1, 61, 79, 80, -1, 61, 80, 62, -1, 62, 80, 81, -1, 
+          62, 81, 63, -1, 63, 81, 82, -1, 63, 82, 64, -1, 64, 82, 83, -1, 
+          64, 83, 65, -1, 65, 83, 84, -1, 65, 84, 66, -1, 66, 84, 85, -1, 
+          66, 85, 67, -1, 67, 85, 86, -1, 67, 86, 68, -1, 68, 86, 87, -1, 
+          68, 87, 69, -1, 69, 87, 88, -1, 69, 88, 70, -1, 70, 88, 89, -1, 
+          70, 89, 71, -1, 71, 89, 90, -1, 71, 90, 72, -1, 72, 90, 73, -1, 
+          72, 73, 55, -1, 73, 91, 92, -1, 73, 92, 74, -1, 74, 92, 93, -1, 
+          74, 93, 75, -1, 75, 93, 94, -1, 75, 94, 76, -1, 76, 94, 95, -1, 
+          76, 95, 77, -1, 77, 95, 96, -1, 77, 96, 78, -1, 78, 96, 97, -1, 
+          78, 97, 79, -1, 79, 97, 98, -1, 79, 98, 80, -1, 80, 98, 99, -1, 
+          80, 99, 81, -1, 81, 99, 100, -1, 81, 100, 82, -1, 82, 100, 101, -1, 
+          82, 101, 83, -1, 83, 101, 102, -1, 83, 102, 84, -1, 
+          84, 102, 103, -1, 84, 103, 85, -1, 85, 103, 104, -1, 
+          85, 104, 86, -1, 86, 104, 105, -1, 86, 105, 87, -1, 
+          87, 105, 106, -1, 87, 106, 88, -1, 88, 106, 107, -1, 
+          88, 107, 89, -1, 89, 107, 108, -1, 89, 108, 90, -1, 
+          90, 108, 91, -1, 90, 91, 73, -1, 91, 109, 110, -1, 
+          91, 110, 92, -1, 92, 110, 111, -1, 92, 111, 93, -1, 
+          93, 111, 112, -1, 93, 112, 94, -1, 94, 112, 113, -1, 
+          94, 113, 95, -1, 95, 113, 114, -1, 95, 114, 96, -1, 
+          96, 114, 115, -1, 96, 115, 97, -1, 97, 115, 116, -1, 
+          97, 116, 98, -1, 98, 116, 117, -1, 98, 117, 99, -1, 
+          99, 117, 118, -1, 99, 118, 100, -1, 100, 118, 119, -1, 
+          100, 119, 101, -1, 101, 119, 120, -1, 101, 120, 102, -1, 
+          102, 120, 121, -1, 102, 121, 103, -1, 103, 121, 122, -1, 
+          103, 122, 104, -1, 104, 122, 123, -1, 104, 123, 105, -1, 
+          105, 123, 124, -1, 105, 124, 106, -1, 106, 124, 125, -1, 
+          106, 125, 107, -1, 107, 125, 126, -1, 107, 126, 108, -1, 
+          108, 126, 109, -1, 108, 109, 91, -1, 109, 127, 128, -1, 
+          109, 128, 110, -1, 110, 128, 129, -1, 110, 129, 111, -1, 
+          111, 129, 130, -1, 111, 130, 112, -1, 112, 130, 131, -1, 
+          112, 131, 113, -1, 113, 131, 132, -1, 113, 132, 114, -1, 
+          114, 132, 133, -1, 114, 133, 115, -1, 115, 133, 134, -1, 
+          115, 134, 116, -1, 116, 134, 135, -1, 116, 135, 117, -1, 
+          117, 135, 136, -1, 117, 136, 118, -1, 118, 136, 137, -1, 
+          118, 137, 119, -1, 119, 137, 138, -1, 119, 138, 120, -1, 
+          120, 138, 139, -1, 120, 139, 121, -1, 121, 139, 140, -1, 
+          121, 140, 122, -1, 122, 140, 141, -1, 122, 141, 123, -1, 
+          123, 141, 142, -1, 123, 142, 124, -1, 124, 142, 143, -1, 
+          124, 143, 125, -1, 125, 143, 144, -1, 125, 144, 126, -1, 
+          126, 144, 127, -1, 126, 127, 109, -1, 145, 128, 127, -1, 
+          145, 129, 128, -1, 145, 130, 129, -1, 145, 131, 130, -1, 
+          145, 132, 131, -1, 145, 133, 132, -1, 145, 134, 133, -1, 
+          145, 135, 134, -1, 145, 136, 135, -1, 145, 137, 136, -1, 
+          145, 138, 137, -1, 145, 139, 138, -1, 145, 140, 139, -1, 
+          145, 141, 140, -1, 145, 142, 141, -1, 145, 143, 142, -1, 
+          145, 144, 143, -1, 145, 127, 144, -1]
+        texCoordIndex [
+          146, 147, 2, -1, 148, 2, 3, -1, 149, 3, 4, -1, 150, 4, 5, -1, 
+          151, 5, 6, -1, 152, 6, 7, -1, 153, 7, 8, -1, 154, 8, 9, -1, 
+          155, 9, 10, -1, 156, 10, 11, -1, 157, 11, 12, -1, 158, 12, 13, -1, 
+          159, 13, 14, -1, 160, 14, 15, -1, 161, 15, 16, -1, 
+          162, 16, 17, -1, 163, 17, 18, -1, 0, 18, 1, -1, 164, 165, 20, -1, 
+          166, 20, 2, -1, 2, 20, 21, -1, 2, 21, 3, -1, 3, 21, 22, -1, 
+          3, 22, 4, -1, 4, 22, 23, -1, 4, 23, 5, -1, 5, 23, 24, -1, 
+          5, 24, 6, -1, 6, 24, 25, -1, 6, 25, 7, -1, 7, 25, 26, -1, 
+          7, 26, 8, -1, 8, 26, 27, -1, 8, 27, 9, -1, 9, 27, 28, -1, 
+          9, 28, 10, -1, 10, 28, 29, -1, 10, 29, 11, -1, 11, 29, 30, -1, 
+          11, 30, 12, -1, 12, 30, 31, -1, 12, 31, 13, -1, 13, 31, 32, -1, 
+          13, 32, 14, -1, 14, 32, 33, -1, 14, 33, 15, -1, 15, 33, 34, -1, 
+          15, 34, 16, -1, 16, 34, 35, -1, 16, 35, 17, -1, 17, 35, 36, -1, 
+          17, 36, 18, -1, 18, 36, 19, -1, 18, 19, 1, -1, 167, 168, 38, -1, 
+          169, 38, 20, -1, 20, 38, 39, -1, 20, 39, 21, -1, 21, 39, 40, -1, 
+          21, 40, 22, -1, 22, 40, 41, -1, 22, 41, 23, -1, 23, 41, 42, -1, 
+          23, 42, 24, -1, 24, 42, 43, -1, 24, 43, 25, -1, 25, 43, 44, -1, 
+          25, 44, 26, -1, 26, 44, 45, -1, 26, 45, 27, -1, 27, 45, 46, -1, 
+          27, 46, 28, -1, 28, 46, 47, -1, 28, 47, 29, -1, 29, 47, 48, -1, 
+          29, 48, 30, -1, 30, 48, 49, -1, 30, 49, 31, -1, 31, 49, 50, -1, 
+          31, 50, 32, -1, 32, 50, 51, -1, 32, 51, 33, -1, 33, 51, 52, -1, 
+          33, 52, 34, -1, 34, 52, 53, -1, 34, 53, 35, -1, 35, 53, 54, -1, 
+          35, 54, 36, -1, 36, 54, 37, -1, 36, 37, 19, -1, 170, 171, 56, -1, 
+          172, 56, 38, -1, 38, 56, 57, -1, 38, 57, 39, -1, 39, 57, 58, -1, 
+          39, 58, 40, -1, 40, 58, 59, -1, 40, 59, 41, -1, 41, 59, 60, -1, 
+          41, 60, 42, -1, 42, 60, 61, -1, 42, 61, 43, -1, 43, 61, 62, -1, 
+          43, 62, 44, -1, 44, 62, 63, -1, 44, 63, 45, -1, 45, 63, 64, -1, 
+          45, 64, 46, -1, 46, 64, 65, -1, 46, 65, 47, -1, 47, 65, 66, -1, 
+          47, 66, 48, -1, 48, 66, 67, -1, 48, 67, 49, -1, 49, 67, 68, -1, 
+          49, 68, 50, -1, 50, 68, 69, -1, 50, 69, 51, -1, 51, 69, 70, -1, 
+          51, 70, 52, -1, 52, 70, 71, -1, 52, 71, 53, -1, 53, 71, 72, -1, 
+          53, 72, 54, -1, 54, 72, 55, -1, 54, 55, 37, -1, 173, 174, 74, -1, 
+          175, 74, 56, -1, 56, 74, 75, -1, 56, 75, 57, -1, 57, 75, 76, -1, 
+          57, 76, 58, -1, 58, 76, 77, -1, 58, 77, 59, -1, 59, 77, 78, -1, 
+          59, 78, 60, -1, 60, 78, 79, -1, 60, 79, 61, -1, 61, 79, 80, -1, 
+          61, 80, 62, -1, 62, 80, 81, -1, 62, 81, 63, -1, 63, 81, 82, -1, 
+          63, 82, 64, -1, 64, 82, 83, -1, 64, 83, 65, -1, 65, 83, 84, -1, 
+          65, 84, 66, -1, 66, 84, 85, -1, 66, 85, 67, -1, 67, 85, 86, -1, 
+          67, 86, 68, -1, 68, 86, 87, -1, 68, 87, 69, -1, 69, 87, 88, -1, 
+          69, 88, 70, -1, 70, 88, 89, -1, 70, 89, 71, -1, 71, 89, 90, -1, 
+          71, 90, 72, -1, 72, 90, 73, -1, 72, 73, 55, -1, 176, 177, 92, -1, 
+          178, 92, 74, -1, 74, 92, 93, -1, 74, 93, 75, -1, 75, 93, 94, -1, 
+          75, 94, 76, -1, 76, 94, 95, -1, 76, 95, 77, -1, 77, 95, 96, -1, 
+          77, 96, 78, -1, 78, 96, 97, -1, 78, 97, 79, -1, 79, 97, 98, -1, 
+          79, 98, 80, -1, 80, 98, 99, -1, 80, 99, 81, -1, 81, 99, 100, -1, 
+          81, 100, 82, -1, 82, 100, 101, -1, 82, 101, 83, -1, 
+          83, 101, 102, -1, 83, 102, 84, -1, 84, 102, 103, -1, 
+          84, 103, 85, -1, 85, 103, 104, -1, 85, 104, 86, -1, 
+          86, 104, 105, -1, 86, 105, 87, -1, 87, 105, 106, -1, 
+          87, 106, 88, -1, 88, 106, 107, -1, 88, 107, 89, -1, 
+          89, 107, 108, -1, 89, 108, 90, -1, 90, 108, 91, -1, 
+          90, 91, 73, -1, 179, 180, 110, -1, 181, 110, 92, -1, 
+          92, 110, 111, -1, 92, 111, 93, -1, 93, 111, 112, -1, 
+          93, 112, 94, -1, 94, 112, 113, -1, 94, 113, 95, -1, 
+          95, 113, 114, -1, 95, 114, 96, -1, 96, 114, 115, -1, 
+          96, 115, 97, -1, 97, 115, 116, -1, 97, 116, 98, -1, 
+          98, 116, 117, -1, 98, 117, 99, -1, 99, 117, 118, -1, 
+          99, 118, 100, -1, 100, 118, 119, -1, 100, 119, 101, -1, 
+          101, 119, 120, -1, 101, 120, 102, -1, 102, 120, 121, -1, 
+          102, 121, 103, -1, 103, 121, 122, -1, 103, 122, 104, -1, 
+          104, 122, 123, -1, 104, 123, 105, -1, 105, 123, 124, -1, 
+          105, 124, 106, -1, 106, 124, 125, -1, 106, 125, 107, -1, 
+          107, 125, 126, -1, 107, 126, 108, -1, 108, 126, 109, -1, 
+          108, 109, 91, -1, 182, 183, 128, -1, 184, 128, 110, -1, 
+          110, 128, 129, -1, 110, 129, 111, -1, 111, 129, 130, -1, 
+          111, 130, 112, -1, 112, 130, 131, -1, 112, 131, 113, -1, 
+          113, 131, 132, -1, 113, 132, 114, -1, 114, 132, 133, -1, 
+          114, 133, 115, -1, 115, 133, 134, -1, 115, 134, 116, -1, 
+          116, 134, 135, -1, 116, 135, 117, -1, 117, 135, 136, -1, 
+          117, 136, 118, -1, 118, 136, 137, -1, 118, 137, 119, -1, 
+          119, 137, 138, -1, 119, 138, 120, -1, 120, 138, 139, -1, 
+          120, 139, 121, -1, 121, 139, 140, -1, 121, 140, 122, -1, 
+          122, 140, 141, -1, 122, 141, 123, -1, 123, 141, 142, -1, 
+          123, 142, 124, -1, 124, 142, 143, -1, 124, 143, 125, -1, 
+          125, 143, 144, -1, 125, 144, 126, -1, 126, 144, 127, -1, 
+          126, 127, 109, -1, 185, 128, 186, -1, 187, 129, 128, -1, 
+          188, 130, 129, -1, 189, 131, 130, -1, 190, 132, 131, -1, 
+          191, 133, 132, -1, 192, 134, 133, -1, 193, 135, 134, -1, 
+          194, 136, 135, -1, 195, 137, 136, -1, 196, 138, 137, -1, 
+          197, 139, 138, -1, 198, 140, 139, -1, 199, 141, 140, -1, 
+          200, 142, 141, -1, 201, 143, 142, -1, 202, 144, 143, -1, 
+          145, 127, 144, -1]
+        }
+    }
+   ]}
+  ]}
+ ]}
+]}
+
+
+
+DEF TheGrid Transform {
+translation 0 0 0
+scale 1 0.05 1
+children[
+
+Transform{
+ translation 500000 500000 500000
+ children[
+  Shape { geometry Box { size 1 1 1 } }
+]}
+Transform{
+ translation -500000 -500000 -500000
+ children[
+  Shape { geometry Box { size 1 1 1 } }
+]}
+
+
+DEF TILE_0_0 Transform {
+children [
+ DEF SWITCH_0_0 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_0_0 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_1_0 Transform {
+children [
+ DEF SWITCH_1_0 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_1_0 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_2_0 Transform {
+children [
+ DEF SWITCH_2_0 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_2_0 Inline { url "" }
+ ]}
+]}
+
+
+DEF TILE_0_1 Transform {
+children [
+ DEF SWITCH_0_1 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_0_1 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_1_1 Transform {
+children [
+ DEF SWITCH_1_1 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_1_1 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_2_1 Transform {
+children [
+ DEF SWITCH_2_1 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_2_1 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_0_2 Transform {
+children [
+ DEF SWITCH_0_2 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_0_2 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_1_2 Transform {
+children [
+ DEF SWITCH_1_2 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_1_2 Inline { url "" }
+ ]}
+]}
+
+DEF TILE_2_2 Transform {
+children [
+ DEF SWITCH_2_2 Switch {
+ whichChoice -1
+ choice [
+  DEF INLINE_2_2 Inline { url "" }
+ ]}
+]}
+
+]}
+]}
+
+# position indicator
+DEF Display Script
+{
+ field SFString minfiller ""
+ field SFString secfiller ""
+ field SFString degfiller ""
+
+ field SFString lastlatstr   ""
+ field SFString lastlonstr   ""
+
+ field SFString nextlatstr   ""
+ field SFString nextlonstr   ""
+
+ field SFString topstr        ""
+ field SFString botstr        ""
+ field SFString midstr        ""
+ field SFString lefstr        ""
+ field SFString rigstr        ""
+
+ field SFString neswstr       ""
+
+ field SFInt32 lastx      0
+ field SFInt32 lastz      0
+
+ field SFInt32 x          0
+ field SFInt32 z          0
+
+ field SFInt32 lastheight 0
+ field SFInt32 lastlat    0
+ field SFInt32 lastlon    0
+ field SFInt32 msl        0
+ field SFInt32 lat        0
+ field SFInt32 lon        0
+ field SFInt32 sec        0
+ field SFInt32 min        0
+ field SFInt32 deg        0
+ field SFInt32 size       <$SIZ>
+
+ field SFInt32 xDimension <$XDIMENSION>
+ field SFInt32 zDimension <$ZDIMENSION>
+
+ field SFInt32 xSpacing   <$XSPACING>
+ field SFInt32 zSpacing   <$ZSPACING>
+
+ field SFInt32 xWidth     0
+ field SFInt32 zWidth     0
+
+ field SFInt32 vor        0
+ field SFInt32 nach       0
+
+ field SFInt32  sign       1
+ field SFString latsignstr      ""
+ field SFString lonsignstr      ""
+ field SFInt32  lastlatdeg      10000
+ field SFInt32  lastlondeg      10000
+ field SFString tmpstr          ""
+
+ field SFInt32 latdec     <$LATDEC>
+ field SFInt32 londec     <$LONDEC>
+
+ field SFVec3f lastpos    0 0 0
+ field SFVec3f nextpos    0 0 0
+
+ field SFFloat TexCoordx       0
+ field SFFloat TexCoordz       0
+
+ eventIn  SFInt32  set_lat
+ eventIn  SFInt32  set_lon
+
+ eventIn  SFVec3f  set_pos
+ eventIn  SFVec3f  set_or
+
+ eventIn  SFBool   mapIsLoaded
+
+ eventIn  SFTime   set_Clock
+
+ eventIn  SFVec2f  set_GlobeTexCoord
+ eventIn  SFTime   set_GlobeTouchTime
+
+ eventOut MFString p_string_changed
+ eventOut MFString o_string_changed
+ eventOut MFString h_string_changed
+ 
+ eventOut MFString url_0_0_changed
+ eventOut SFInt32  switch_0_0_changed
+ eventOut SFVec3f  position_0_0_changed
+ eventOut MFString url_1_0_changed
+ eventOut SFInt32  switch_1_0_changed
+ eventOut SFVec3f  position_1_0_changed
+ eventOut MFString url_2_0_changed
+ eventOut SFInt32  switch_2_0_changed
+ eventOut SFVec3f  position_2_0_changed
+
+ eventOut MFString url_0_1_changed
+ eventOut SFInt32  switch_0_1_changed
+ eventOut SFVec3f  position_0_1_changed
+ eventOut MFString url_1_1_changed
+ eventOut SFInt32  switch_1_1_changed
+ eventOut SFVec3f  position_1_1_changed
+ eventOut MFString url_2_1_changed
+ eventOut SFInt32  switch_2_1_changed
+ eventOut SFVec3f  position_2_1_changed
+
+ eventOut MFString url_0_2_changed
+ eventOut SFInt32  switch_0_2_changed
+ eventOut SFVec3f  position_0_2_changed
+ eventOut MFString url_1_2_changed
+ eventOut SFInt32  switch_1_2_changed
+ eventOut SFVec3f  position_1_2_changed
+ eventOut MFString url_2_2_changed
+ eventOut SFInt32  switch_2_2_changed
+ eventOut SFVec3f  position_2_2_changed
+
+ eventOut SFRotation GlobeRotationX_changed
+ eventOut SFRotation GlobeRotationY_changed
+
+ eventOut MFString MapTextureUrl_changed
+ eventOut SFVec3f  MapScale_changed
+
+ eventOut SFTime   rayhitStart_changed
+ eventOut SFVec3f  position_changed
+
+ url "vrmlscript:
+  function initialize( ) {
+   GlobeRotationX_changed[0] = 1;
+   GlobeRotationX_changed[1] = 0;
+   GlobeRotationX_changed[2] = 0;
+   GlobeRotationX_changed[3] = 1.57 * ( latdec / 324000 );
+
+   GlobeRotationY_changed[0] = 0;
+   GlobeRotationY_changed[1] = 1;
+   GlobeRotationY_changed[2] = 0;
+   GlobeRotationY_changed[3] = -3.14 * ( londec / 648000 );
+
+   h_string_changed[0] =  '<$LATDEG>.<$LATMIN>.<$LATSEC>N ';
+   h_string_changed[0] += '<$LONDEG>.<$LONMIN>.<$LONSEC>E ';
+   h_string_changed[0] += '<$ENTERHEIGHT> m';
+
+   if( londec < 0 )
+   {
+     lonsignstr = '-';
+   }
+   else
+   {
+     lonsignstr = '';
+   }
+
+   if( latdec < 0 )
+   {
+     latsignstr = '-';
+   }
+   else
+   {
+     latsignstr = '';
+   }
+
+   lastlat = -1;
+   lastlon = -1;
+   lastheight = -1;
+
+   xWidth = ( xDimension - 1 ) * xSpacing;
+   zWidth = ( zDimension - 1 ) * zSpacing;
+
+   url_0_0_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$NLAT>&LON=<$WLON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_0_0_changed = 0;
+
+   position_0_0_changed[ 0 ] = -xWidth;
+   position_0_0_changed[ 1 ] = 0;
+   position_0_0_changed[ 2 ] = -zWidth;
+
+   url_1_0_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$NLAT>&LON=<$LON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_1_0_changed = 0;
+
+   position_1_0_changed[ 0 ] = 0;
+   position_1_0_changed[ 1 ] = 0;
+   position_1_0_changed[ 2 ] = -zWidth;
+
+   url_2_0_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$NLAT>&LON=<$ELON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_2_0_changed = 0;
+
+   position_2_0_changed[ 0 ] = xWidth;
+   position_2_0_changed[ 1 ] = 0;
+   position_2_0_changed[ 2 ] = -zWidth;
+
+   url_0_1_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$LAT>&LON=<$WLON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_0_1_changed = 0;
+
+   position_0_1_changed[ 0 ] = -xWidth;
+   position_0_1_changed[ 1 ] = 0;
+   position_0_1_changed[ 2 ] = 0;
+
+   url_1_1_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$LAT>&LON=<$LON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_1_1_changed = 0;
+
+   position_1_1_changed[ 0 ] = 0;
+   position_1_1_changed[ 1 ] = 0;
+   position_1_1_changed[ 2 ] = 0;
+
+   url_2_1_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$LAT>&LON=<$ELON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_2_1_changed = 0;
+
+   position_2_1_changed[ 0 ] = xWidth;
+   position_2_1_changed[ 1 ] = 0;
+   position_2_1_changed[ 2 ] = 0;
+
+   url_0_2_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$SLAT>&LON=<$WLON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_0_2_changed = 0;
+
+   position_0_2_changed[ 0 ] = -xWidth;
+   position_0_2_changed[ 1 ] = 0;
+   position_0_2_changed[ 2 ] = zWidth;
+
+   url_1_2_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$SLAT>&LON=<$LON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_1_2_changed = 0;
+
+   position_1_2_changed[ 0 ] = 0;
+   position_1_2_changed[ 1 ] = 0;
+   position_1_2_changed[ 2 ] = zWidth;
+
+   url_2_2_changed[0] = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+                      + '&LAT=<$SLAT>&LON=<$ELON>&ZIP=<$ZIP>&T_V=<$T_V>';
+   switch_2_2_changed = 0;
+
+   position_2_2_changed[ 0 ] = xWidth;
+   position_2_2_changed[ 1 ] = 0;
+   position_2_2_changed[ 2 ] = zWidth;
+  }
+
+  function mapIsLoaded( f, ts ) {
+
+     if( f )
+     {
+        // print( 'map is loaded' );
+        MapScale_changed[ 0 ] = 20;
+        MapScale_changed[ 1 ] = 10;
+        MapScale_changed[ 2 ] = 10;
+     }
+  }
+
+  function set_Clock( f, ts ) {
+    // print ( 'ts: ' + ts );
+    // print ( 'lastpos: ' + lastpos );
+    rayhitStart_changed = ts;
+  }
+
+  function set_GlobeTexCoord( f, ts ) {
+
+      TexCoordx = f[ 0 ];
+      TexCoordz = f[ 1 ];
+     
+      // print( 'TexCoord ' + TexCoordx + ' ' + TexCoordz );
+
+  }
+
+  function set_GlobeTouchTime( f, ts ) {
+
+    nextpos[ 0 ] = 21600 * xSpacing * ( TexCoordx - 0.5 ) * 2 - londec;
+    nextpos[ 1 ] = lastpos[ 1 ];
+    nextpos[ 2 ] = -10800 * zSpacing * ( TexCoordz - 0.5 ) * 2 + latdec;
+
+    print ( 'lastpos: ' + lastpos );
+    print ( 'nextpos: ' + nextpos );
+    print ( 'latdec:  ' + latdec );
+    print ( 'londec:  ' + londec );
+
+    position_changed = nextpos;
+  }
+
+
+  function set_pos( f, ts ) {
+ 
+   lastpos = f;
+
+   // set the degrees
+   set_deg( f, ts );
+
+   return;
+
+   // x - POS
+   vor = size * f[0];
+   nach = 0;
+
+   if( vor < 0 )
+   {
+      vor = -vor;
+      nach = 1;
+   }
+   
+   if( vor >= 100000 )
+   {
+       p_string_changed[0] = '' + vor;
+   }
+   else if( vor > 10000 )
+   {
+       p_string_changed[0] = ' ' + vor;
+   }
+   else if( vor > 1000 )
+   {
+       p_string_changed[0] = '  ' + vor;
+   }
+   else if( vor > 100 )
+   {
+       p_string_changed[0] = '   ' + vor;
+   }
+   else if( vor > 10 )
+   {
+       p_string_changed[0] = '    ' + vor;
+   }
+   else
+   {
+       p_string_changed[0] = '     ' + vor;
+   }
+ 
+   if( nach < 1 )
+   {
+       p_string_changed[0] += 'm East ';
+   }
+   else
+   {
+       p_string_changed[0] += 'm West ';
+   }
+
+
+   // z - POS
+   vor = size * f[2];
+   nach = 0;
+
+   if( vor < 0 )
+   {
+      vor = -vor;
+      nach = 1;
+   }
+   
+   if( vor >= 100000 )
+   {
+       p_string_changed[0] += ' ' + vor;
+   }
+   else if( vor > 10000 )
+   {
+       p_string_changed[0] += '  ' + vor;
+   }
+   else if( vor > 1000 )
+   {
+       p_string_changed[0] += '   ' + vor;
+   }
+   else if( vor > 100 )
+   {
+       p_string_changed[0] += '    ' + vor;
+   }
+   else if( vor > 10 )
+   {
+       p_string_changed[0] += '     ' + vor;
+   }
+   else
+   {
+       p_string_changed[0] += '      ' + vor;
+   }
+ 
+   if( nach < 1 )
+   {
+       p_string_changed[0] += 'm South';
+   }
+   else
+   {
+       p_string_changed[0] += 'm North';
+   }
+  }
+
+  function set_lon( value, ts ) {
+   
+   sec = value;
+
+   if( sec < 0 )
+   {
+     sec *= -1;
+     neswstr = 'W';
+   }
+   else
+   {
+     neswstr = 'E';
+   }
+
+   deg = sec / 3600;
+   min = ( sec / 60 ) % 60;
+   sec = sec % 60;
+
+   if( sec < 10 )
+   {
+       secfiller = '0';
+   }
+   else
+   {
+       secfiller = '';
+   }
+
+   if( min < 10 )
+   {
+       minfiller = '0';
+   }
+   else
+   {
+       minfiller = '';
+   }
+
+   if( deg < 10 )
+   {
+       degfiller = '00';
+   }
+   else if( deg < 100 )
+   {
+       degfiller = '0';
+   }
+   else
+   {
+       degfiller = '';
+   }
+
+   nextlonstr = degfiller + deg + minfiller + min + secfiller + sec + neswstr;
+   //print( 'nextlonstr ' + nextlonstr );
+  }
+
+  function set_lat( value, ts ) {
+   
+     sec = value;
+
+     if( sec < 0 )
+     {
+         sec *= -1;
+         neswstr = 'S';
+     }
+     else
+     {
+         neswstr = 'N';
+     }
+
+     deg = sec / 3600;
+     min = ( sec / 60 ) % 60;
+     sec = sec % 60;
+
+     if( sec < 10 )
+     {
+         secfiller = '0';
+     }
+     else
+     {
+         secfiller = '';
+     }
+
+     if( min < 10 )
+     {
+         minfiller = '0';
+     }
+     else
+     {
+         minfiller = '';
+     }
+
+     if( deg < 10 )
+     {
+         degfiller = '0';
+     }
+     else
+     {
+         degfiller = '';
+     }
+
+     nextlatstr = degfiller + deg + minfiller + min + secfiller + sec + neswstr;
+     //print( 'nextlatstr ' + nextlatstr );
+  }
+
+  function set_left()
+  {
+      lefstr = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+               + '&LAT=' + nextlatstr
+               + '&LON=' + nextlonstr + '&ZIP=<$ZIP>&T_V=<$T_V>';
+
+      //print( 'set_left ' + lefstr );
+  }
+
+  function set_mid()
+  {
+      midstr = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+               + '&LAT=' + nextlatstr
+               + '&LON=' + nextlonstr + '&ZIP=<$ZIP>&T_V=<$T_V>';
+      //print( 'set_mid ' + midstr );
+  }
+
+  function set_right()
+  {
+      rigstr = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+               + '&LAT=' + nextlatstr
+               + '&LON=' + nextlonstr + '&ZIP=<$ZIP>&T_V=<$T_V>';
+      //print( 'set_right ' + rigstr );
+  }
+
+  function set_top()
+  {
+      topstr = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+               + '&LAT=' + nextlatstr
+               + '&LON=' + nextlonstr + '&ZIP=<$ZIP>&T_V=<$T_V>';
+      //print( 'set_top ' + topstr );
+  }
+
+  function set_bot()
+  {
+      botstr = '<$selfurl>?TPL=pwrl/tilegtop&MZ=<$ZDIMENSION>'
+               + '&LAT=' + nextlatstr
+               + '&LON=' + nextlonstr + '&ZIP=<$ZIP>&T_V=<$T_V>';
+      //print( 'set_bot ' + botstr );
+  }
+
+  function set_deg( f, ts ) {
+ 
+   // do the tile handling {
+   
+   if( f[2] < 0 )
+   {
+       z = f[2] - 1;
+   }
+   else
+   {
+       z = f[2];
+   }
+
+   if( f[0] < 0 )
+   {
+       x = f[0] - 1;
+   }
+   else
+   {
+       x = f[0];
+   }
+
+   if( z < 0 )
+   {
+       //print( 'z ' + z + ' zWidth ' + zWidth );
+       z -= zWidth;
+   }
+
+   if( x < 0 )
+   {
+       //print( 'x ' + x + ' xWidth ' + xWidth );
+       x -= xWidth;
+   }
+   
+   z = z / zWidth;
+   x = x / xWidth;
+
+   if( z < lastz )
+   {
+       // we have moved to the north of the current tile
+       lastz = z;
+       if( z < 0 )
+       {
+           z *= -1;
+           z %= 3;
+           z *= -1;
+       }
+       else
+       {
+           z %= 3;
+       }
+
+       x = lastx;
+       if( x < 0 )
+       {
+           x *= -1;
+           x %= 3;
+           x *= -1;
+       }
+       else
+       {
+           x %= 3;
+       }
+
+       //print( 'N lastz ' + lastz + ' lastx ' + lastx + ' x ' + x + ' z ' + z );
+
+       lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+       set_lat( lat, ts );
+
+       if(( z == -1 ) || ( z == 2 ))
+       {
+         lon = londec + ( lastx - 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+
+         position_0_2_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_2_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx + 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_2_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_2_changed[0] = midstr;
+           url_1_2_changed[0] = rigstr;
+           url_2_2_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_2_changed[0] = midstr;
+           url_0_2_changed[0] = rigstr;
+           url_1_2_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_2_changed[0] = midstr;
+           url_2_2_changed[0] = rigstr;
+           url_0_2_changed[0] = lefstr;
+         }
+       }
+       else if(( z == -2 ) || ( z == 1 ))
+       {
+         lon = londec + ( lastx - 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+         position_0_1_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_1_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx + 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_1_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_1_changed[0] = midstr;
+           url_1_1_changed[0] = rigstr;
+           url_2_1_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_1_changed[0] = midstr;
+           url_0_1_changed[0] = rigstr;
+           url_1_1_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_1_changed[0] = midstr;
+           url_2_1_changed[0] = rigstr;
+           url_0_1_changed[0] = lefstr;
+         }
+       }
+       else
+       {
+         lon = londec + ( lastx - 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+         position_0_0_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_0_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         lon = londec + ( lastx + 1 ) * ( zDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_0_changed[ 2 ] = zWidth * ( lastz - 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_0_changed[0] = midstr;
+           url_1_0_changed[0] = rigstr;
+           url_2_0_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_0_changed[0] = midstr;
+           url_0_0_changed[0] = rigstr;
+           url_1_0_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_0_changed[0] = midstr;
+           url_2_0_changed[0] = rigstr;
+           url_0_0_changed[0] = lefstr;
+         }
+       }
+   }
+   else if( z > lastz )
+   {
+       // we have moved to the south of the current tile
+       lastz = z;
+       if( z < 0 )
+       {
+           z *= -1;
+           z %= 3;
+           z *= -1;
+       }
+       else
+       {
+           z %= 3;
+       }
+
+       x = lastx;
+       if( x < 0 )
+       {
+           x *= -1;
+           x %= 3;
+           x *= -1;
+       }
+       else
+       {
+           x %= 3;
+       }
+
+       lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+       set_lat( lat, ts );
+
+       //print( 'S lastz ' + lastz + ' lastx ' + lastx + ' x ' + x + ' z ' + z );
+
+       if(( z == -1 ) || ( z == 2 ))
+       {
+         lon = londec + ( lastx - 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+         position_0_1_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_1_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx + 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_1_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_1_changed[0] = midstr;
+           url_1_1_changed[0] = rigstr;
+           url_2_1_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_1_changed[0] = midstr;
+           url_0_1_changed[0] = rigstr;
+           url_1_1_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_1_changed[0] = midstr;
+           url_2_1_changed[0] = rigstr;
+           url_0_1_changed[0] = lefstr;
+         }
+
+           //print( 'url_0_1 ' + url_0_1_changed[0] );
+           //print( 'url_1_1 ' + url_1_1_changed[0] );
+           //print( 'url_2_1 ' + url_2_1_changed[0] );
+       }
+       else if(( z == -2 ) || ( z == 1 ))
+       {
+         lon = londec + ( lastx - 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+         position_0_0_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_0_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx + 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_0_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_0_changed[0] = midstr;
+           url_1_0_changed[0] = rigstr;
+           url_2_0_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_0_changed[0] = midstr;
+           url_0_0_changed[0] = rigstr;
+           url_1_0_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_0_changed[0] = midstr;
+           url_2_0_changed[0] = rigstr;
+           url_0_0_changed[0] = lefstr;
+         }
+           //print( 'url_0_0 ' + url_0_0_changed[0] );
+           //print( 'url_1_0 ' + url_1_0_changed[0] );
+           //print( 'url_2_0 ' + url_2_0_changed[0] );
+       }
+       else
+       {
+         lon = londec + ( lastx - 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_left();
+         position_0_2_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_mid();
+         position_1_2_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         lon = londec + ( lastx + 1 ) * ( xDimension - 1 ) * size;
+         set_lon( lon, ts );
+
+         set_right();
+         position_2_2_changed[ 2 ] = zWidth * ( lastz + 1 );
+
+         if(( x == -1 ) || ( x == 2 ))
+         {
+           url_0_2_changed[0] = midstr;
+           url_1_2_changed[0] = rigstr;
+           url_2_2_changed[0] = lefstr;
+         }
+         else if(( x == -2 ) || ( x == 1 ))
+         {
+           url_2_2_changed[0] = midstr;
+           url_0_2_changed[0] = rigstr;
+           url_1_2_changed[0] = lefstr;
+         }
+         else
+         {
+           url_1_2_changed[0] = midstr;
+           url_2_2_changed[0] = rigstr;
+           url_0_2_changed[0] = lefstr;
+         }
+           //print( 'url_0_2 ' + url_0_2_changed[0] );
+           //print( 'url_1_2 ' + url_1_2_changed[0] );
+           //print( 'url_2_2 ' + url_2_2_changed[0] );
+       }
+   }
+   else if( x < lastx )
+   {
+       // we have moved to the west of the current tile
+       lastx = x;
+       if( x < 0 )
+       {
+           x *= -1;
+           x %= 3;
+           x *= -1;
+       }
+       else
+       {
+           x %= 3;
+       }
+
+       z = lastz;
+       if( z < 0 )
+       {
+           z *= -1;
+           z %= 3;
+           z *= -1;
+       }
+       else
+       {
+           z %= 3;
+       }
+
+       lon = londec + ( lastx - 1 ) * ( xDimension - 1 ) * size;
+       set_lon( lon, ts );
+
+       //print( 'W lastz ' + lastz + ' lastx ' + lastx + ' x ' + x + ' z ' + z );
+
+       if(( x == -1 ) || ( x == 2 ))
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_2_0_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_2_1_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_2_2_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_2_0_changed[0] = midstr;
+           url_2_2_changed[0] = topstr;
+           url_2_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_2_2_changed[0] = midstr;
+           url_2_1_changed[0] = topstr;
+           url_2_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_2_1_changed[0] = midstr;
+           url_2_0_changed[0] = topstr;
+           url_2_2_changed[0] = botstr;
+         }
+           //print( 'url_2_0 ' + url_2_0_changed[0] );
+           //print( 'url_2_1 ' + url_2_1_changed[0] );
+           //print( 'url_2_2 ' + url_2_2_changed[0] );
+       }
+       else if(( x == -2 ) || ( x == 1 ))
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_1_0_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_1_1_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_1_2_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_1_0_changed[0] = midstr;
+           url_1_2_changed[0] = topstr;
+           url_1_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_1_2_changed[0] = midstr;
+           url_1_1_changed[0] = topstr;
+           url_1_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_1_1_changed[0] = midstr;
+           url_1_0_changed[0] = topstr;
+           url_1_2_changed[0] = botstr;
+         }
+           //print( 'url_1_0 ' + url_1_0_changed[0] );
+           //print( 'url_1_1 ' + url_1_1_changed[0] );
+           //print( 'url_1_2 ' + url_1_2_changed[0] );
+       }
+       else
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_0_0_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_0_1_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_0_2_changed[ 0 ] = xWidth * ( lastx - 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_0_0_changed[0] = midstr;
+           url_0_2_changed[0] = topstr;
+           url_0_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_0_2_changed[0] = midstr;
+           url_0_1_changed[0] = topstr;
+           url_0_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_0_1_changed[0] = midstr;
+           url_0_0_changed[0] = topstr;
+           url_0_2_changed[0] = botstr;
+         }
+           //print( 'url_0_0 ' + url_0_0_changed[0] );
+           //print( 'url_0_1 ' + url_0_1_changed[0] );
+           //print( 'url_0_2 ' + url_0_2_changed[0] );
+       }
+   }
+   else if( x > lastx )
+   {
+       // we have moved to the east of the current tile
+       lastx = x;
+       if( x < 0 )
+       {
+           x *= -1;
+           x %= 3;
+           x *= -1;
+       }
+       else
+       {
+           x %= 3;
+       }
+
+       z = lastz;
+       if( z < 0 )
+       {
+           z *= -1;
+           z %= 3;
+           z *= -1;
+       }
+       else
+       {
+           z %= 3;
+       }
+
+       //print( 'E lastz ' + lastz + ' lastx ' + lastx + ' x ' + x + ' z ' + z );
+
+       lon = londec + ( lastx + 1 ) * ( xDimension - 1 ) * size;
+       set_lon( lon, ts );
+
+       if(( x == -1 ) || ( x == 2 ))
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_1_0_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_1_1_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_1_2_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_1_0_changed[0] = midstr;
+           url_1_2_changed[0] = topstr;
+           url_1_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_1_2_changed[0] = midstr;
+           url_1_1_changed[0] = topstr;
+           url_1_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_1_1_changed[0] = midstr;
+           url_1_0_changed[0] = topstr;
+           url_1_2_changed[0] = botstr;
+         }
+           //print( 'url_1_0 ' + url_1_0_changed[0] );
+           //print( 'url_1_1 ' + url_1_1_changed[0] );
+           //print( 'url_1_2 ' + url_1_2_changed[0] );
+       }
+       else if(( x == -2 ) || ( x == 1 ))
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_0_0_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_0_1_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_0_2_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_0_0_changed[0] = midstr;
+           url_0_2_changed[0] = topstr;
+           url_0_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_0_2_changed[0] = midstr;
+           url_0_1_changed[0] = topstr;
+           url_0_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_0_1_changed[0] = midstr;
+           url_0_0_changed[0] = topstr;
+           url_0_2_changed[0] = botstr;
+         }
+           //print( 'url_0_0 ' + url_0_0_changed[0] );
+           //print( 'url_0_1 ' + url_0_1_changed[0] );
+           //print( 'url_0_2 ' + url_0_2_changed[0] );
+       }
+       else
+       {
+         lat = latdec - ( lastz - 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_top();
+         position_2_0_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_mid();
+         position_2_1_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         lat = latdec - ( lastz + 1 ) * ( zDimension - 1 ) * size;
+         set_lat( lat, ts );
+
+         set_bot();
+         position_2_2_changed[ 0 ] = xWidth * ( lastx + 1 );
+
+         if(( z == -1 ) || ( z == 2 ))
+         {
+           url_2_0_changed[0] = midstr;
+           url_2_2_changed[0] = topstr;
+           url_2_1_changed[0] = botstr;
+         }
+         else if(( z == -2 ) || ( z == 1 ))
+         {
+           url_2_2_changed[0] = midstr;
+           url_2_1_changed[0] = topstr;
+           url_2_0_changed[0] = botstr;
+         }
+         else
+         {
+           url_2_1_changed[0] = midstr;
+           url_2_0_changed[0] = topstr;
+           url_2_2_changed[0] = botstr;
+         }
+           //print( 'url_2_0 ' + url_2_0_changed[0] );
+           //print( 'url_2_1 ' + url_2_1_changed[0] );
+           //print( 'url_2_2 ' + url_2_2_changed[0] );
+       }
+   }
+   // end tile handling }
+           
+   // LATITUDE handling {
+   lat = -1 * f[2];
+
+   lat /= zSpacing;
+   if( lastlat != lat )
+   {
+       sec = latdec + size * lat;
+       GlobeRotationX_changed[3] = 1.57 * ( sec / 324000 );
+
+       if( sec < 0 )
+       {
+           sec *= -1;
+           sign = -1;
+       }
+       else
+       {
+           sign = 1;
+       }
+
+       deg = sec / 3600;
+       min = ( sec / 60 ) % 60;
+       sec = sec % 60;
+
+       if( sec < 10 )
+       {
+           secfiller = '0';
+       }
+       else
+       {
+           secfiller = '';
+       }
+
+       if( min < 10 )
+       {
+           minfiller = '0';
+       }
+       else
+       {
+           minfiller = '';
+       }
+
+       if( deg < 10 )
+       {
+           degfiller = '0';
+       }
+       else
+       {
+           degfiller = '';
+       }
+
+       lastlatstr = degfiller + deg + '.'
+                  + minfiller + min + '.'
+                  + secfiller + sec;
+       if( sign > 0 )
+       {
+           lastlatstr += 'N';
+       }
+       else
+       {
+           lastlatstr += 'S';
+       }
+
+       if( deg != lastlatdeg )
+       {
+           lastlatdeg = deg;
+
+           if( sign > 0 )
+           {
+               latsignstr = '';
+           }
+           else
+           {
+               latsignstr = '-';
+           }
+
+           if( lastlondeg < 10000 )
+           {
+               MapTextureUrl_changed[0]
+                            = 'http://pubweb.parc.xerox.com/map/color=1/'
+                            + 'ht=90.00/lat=' + latsignstr
+                            + lastlatdeg + '.00/lon=' + lonsignstr
+                            + lastlondeg + '.00/mark=' + latsignstr
+                            + lastlatdeg + '.00,' + lonsignstr
+                            + lastlondeg + '.00/wd=180.00/format=.gif';
+
+               //print( 'mapurl ' + MapTextureUrl_changed[0] );
+           }
+       }
+   } // end latitude handling }
+
+   // LONGITUDE
+   lon = f[0];
+
+   lon /= xSpacing;
+   if( lastlon != lon )
+   {
+       sec = londec + size * lon;
+       GlobeRotationY_changed[3] = -3.14 * ( sec / 648000 );
+
+       if( sec < 0 )
+       {
+           sec *= -1;
+           sign = -1;
+       }
+       else
+       {
+           sign = 1;
+       }
+
+       deg = sec / 3600;
+       min = ( sec / 60 ) % 60;
+       sec = sec % 60;
+
+       if( sec < 10 )
+       {
+           secfiller = '0';
+       }
+       else
+       {
+           secfiller = '';
+       }
+
+       if( min < 10 )
+       {
+           minfiller = '0';
+       }
+       else
+       {
+           minfiller = '';
+       }
+
+       if( deg < 10 )
+       {
+           degfiller = '00';
+       }
+       else if( deg < 100 )
+       {
+           degfiller = '0';
+       }
+       else
+       {
+           degfiller = '';
+       }
+
+       lastlonstr = degfiller + deg + '.'
+                  + minfiller + min + '.'
+                  + secfiller + sec;
+
+       if( sign > 0 )
+       {
+           lastlonstr += 'E';
+       }
+       else
+       {
+           lastlonstr += 'W';
+       }
+
+       if( deg != lastlondeg )
+       {
+           lastlondeg = deg;
+
+           if( sign > 0 )
+           {
+               lonsignstr = '';
+           }
+           else
+           {
+               lonsignstr = '-';
+           }
+
+           MapTextureUrl_changed[0]
+                            = 'http://pubweb.parc.xerox.com/map/color=1/'
+                            + 'ht=90.00/lat=' + latsignstr
+                            + lastlatdeg + '.00/lon=' + lonsignstr
+                            + lastlondeg + '.00/mark=' + latsignstr
+                            + lastlatdeg + '.00,' + lonsignstr
+                            + lastlondeg + '.00/wd=180.00/format=.gif';
+
+           //print( 'mapurl ' + MapTextureUrl_changed[0] );
+       }
+   }
+
+   msl = 20 * ( f[ 1 ] - 20 ) + 0.5;
+   if( lastheight != msl || lastlat != lat || lastlon != lon )
+   {
+       lastlon = lon;
+       lastlat = lat;
+       lastheight = msl;
+
+       h_string_changed[0] = lastlatstr + ' ' 
+                           + lastlonstr + ' ';
+       if( msl < 1000 )
+       {
+           h_string_changed[0] += ' ';
+       }
+       h_string_changed[0] += msl + ' m';
+   }
+  }
+    
+  function set_or( f, ts ) {
+
+   return;
+
+   vor = f[0] * 1000;
+   nach = vor % 1000;
+   if (nach < 0) {
+    nach *= -1;
+   }
+   vor = vor / 1000;
+   o_string_changed[0] = '0: ' + vor + '.' + nach;
+   vor = f[1] * 1000;
+   nach = vor % 1000;
+   if (nach < 0) {
+    nach *= -1;
+   }
+   vor = vor / 1000;
+   o_string_changed[0] += ' ' + vor + '.' + nach;
+   vor = f[2] * 1000;
+   nach = vor % 1000;
+   if (nach < 0) {
+    nach *= -1;
+   }
+   vor = vor / 1000;
+   o_string_changed[0] += ' ' + vor + '.' + nach;
+
+   //vor = f[3] * 1000;
+   //nach = vor % 1000;
+   //if (nach < 0) {
+   // nach *= -1;
+   //}
+   //vor = vor / 1000;
+   //o_string_changed[0] += ' ' + vor + '.' + nach;
+ }"
+}
+
+<!--#ifdef variable="MAP" -->
+DEF LayerMap Layer3D {
+translation .5 .7
+size .5 .3
+
+viewpoint DEF ViewFront Viewpoint {
+}
+
+children [
+
+ DEF MapScale Transform {
+ scale 0.010 0.010 0.010
+ children [
+  DEF Map Shape {
+   appearance Appearance {
+
+    material Material {
+     emissiveColor 0.6 0.5 0.9
+     transparency 0.5
+    }
+
+    texture DEF MapTexture ImageTexture { url "" }
+    #texture ImageTexture { url "http://pubweb.parc.xerox.com/map/color=1/ht=90.00/lat=49.50/lon=10.43/mark=49.50,10.43/wd=180.00/format=.gif" }
+   }
+   geometry IndexedFaceSet {
+    coord Coordinate {
+     point [ 0.5 0.5 0, 0.5 -0.5 0, -0.5 -0.5 0, -0.5 0.5 0 ]
+    }
+    ccw FALSE
+    coordIndex [ 0,1,2,3,-1]
+    normalPerVertex FALSE
+   }
+  }
+ ]}
+]}
+<!--#endif variable="MAP" -->
+
+# routes for HUD
+ROUTE PS-posDisplay.position_changed      TO Display.set_pos
+ROUTE PS-posDisplay.position_changed      TO Directions.set_translation
+#ROUTE Display.p_string_changed            TO p-Message.set_string
+ROUTE Display.h_string_changed            TO h-Message.set_string
+ROUTE Display.o_string_changed            TO o-Message.set_string
+
+ROUTE Display.url_0_0_changed             TO INLINE_0_0.set_url
+ROUTE Display.switch_0_0_changed          TO SWITCH_0_0.set_whichChoice
+ROUTE Display.position_0_0_changed        TO TILE_0_0.set_translation
+
+ROUTE Display.url_0_1_changed             TO INLINE_0_1.set_url
+ROUTE Display.switch_0_1_changed          TO SWITCH_0_1.set_whichChoice
+ROUTE Display.position_0_1_changed        TO TILE_0_1.set_translation
+
+ROUTE Display.url_0_2_changed             TO INLINE_0_2.set_url
+ROUTE Display.switch_0_2_changed          TO SWITCH_0_2.set_whichChoice
+ROUTE Display.position_0_2_changed        TO TILE_0_2.set_translation
+
+ROUTE Display.url_1_0_changed             TO INLINE_1_0.set_url
+ROUTE Display.switch_1_0_changed          TO SWITCH_1_0.set_whichChoice
+ROUTE Display.position_1_0_changed        TO TILE_1_0.set_translation
+
+ROUTE Display.url_1_1_changed             TO INLINE_1_1.set_url
+ROUTE Display.switch_1_1_changed          TO SWITCH_1_1.set_whichChoice
+ROUTE Display.position_1_1_changed        TO TILE_1_1.set_translation
+
+ROUTE Display.url_1_2_changed             TO INLINE_1_2.set_url
+ROUTE Display.switch_1_2_changed          TO SWITCH_1_2.set_whichChoice
+ROUTE Display.position_1_2_changed        TO TILE_1_2.set_translation
+
+ROUTE Display.url_2_0_changed             TO INLINE_2_0.set_url
+ROUTE Display.switch_2_0_changed          TO SWITCH_2_0.set_whichChoice
+ROUTE Display.position_2_0_changed        TO TILE_2_0.set_translation
+
+ROUTE Display.url_2_1_changed             TO INLINE_2_1.set_url
+ROUTE Display.switch_2_1_changed          TO SWITCH_2_1.set_whichChoice
+ROUTE Display.position_2_1_changed        TO TILE_2_1.set_translation
+
+ROUTE Display.url_2_2_changed             TO INLINE_2_2.set_url
+ROUTE Display.switch_2_2_changed          TO SWITCH_2_2.set_whichChoice
+ROUTE Display.position_2_2_changed        TO TILE_2_2.set_translation
+
+ROUTE Display.GlobeRotationX_changed      TO GlobeRotationX.set_rotation
+ROUTE Display.GlobeRotationY_changed      TO GlobeRotationY.set_rotation
+
+<!--#ifdef variable="MAP" -->
+ROUTE Display.MapTextureUrl_changed       TO MapTexture.set_url
+ROUTE Display.MapScale_changed            TO MapScale.set_scale
+ROUTE MapTexture.isLoaded                 TO Display.mapIsLoaded
+<!--#endif variable="MAP" -->
+
+ROUTE Display.rayhitStart_changed         TO rayhit.get_geometry_time
+ROUTE Display.position_changed            TO ViewPointEnter.set_position
+
+ROUTE TimeClock.cycleTime                 TO Display.set_Clock
+
+<!--#ifdef variable="T_TS" -->
+
+ROUTE GlobeTouchSensor.hitTexCoord_changed TO Display.set_GlobeTexCoord
+ROUTE GlobeTouchSensor.touchTime           TO Display.set_GlobeTouchTime
+
+<!--#endif variable="T_TS" -->
+

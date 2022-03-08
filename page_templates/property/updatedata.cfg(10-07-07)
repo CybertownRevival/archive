@@ -1,0 +1,23 @@
+#
+# This file contains the entries to be read from database
+#
+*GET  M ID <$KEY>  ROL TYPE=ROLE ROL
+
+[DTY]  M
+[KTY]  ID
+
+ID	r ->w  MD  ID  TXT  ->w  MD  ID  BNL  ->w MD ID MYR  ->w  MD  ID  PML ->w MD ID INT
+NNM	r
+EML	rw
+EMK	rw
+FNM	rw
+LNM	rw
+HBG	rw
+HPG	rw
+MB_TOOL rw
+SIG	rw
+CHT	rw
+MON	r	8	NUM
+EXP	r	8	NUM
+IMD	r	14	DATE
+CTS rw

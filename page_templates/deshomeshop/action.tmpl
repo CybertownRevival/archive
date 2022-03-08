@@ -1,0 +1,81 @@
+<!-- place/action.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<script language="JavaScript">function moderate() {window.open('place<$g_exe>?ac=moderate&plc=<$place>&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');}</script>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates><$plc>/ac_head.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<font face="Arial" size=-2>                                 
+<form name="navbar">
+
+<!-- #ifdef variable="ID" value="0000000000000001" -->
+<center>
+<A HREF="javascript:loadCustom('<$g_cgiRoot>/message<$g_exe>?TPL=message/cityguide&ac=postmessage&TKT=<$TKT>&TIME=<$CT_STR>',600,200)">
+<IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/callguide.gif" ></A>
+</center>
+<!-- #endif variable="ID" -->
+
+<center>
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>" target="place">
+<b><i><font face="Arial" size=+0 color="#F86670"><$NAM></font></b></i></a><br>
+
+<!-- #include virtual="<$g_Templates><$plc>/ac_top.tmpl" -->
+
+<IMG SRC="<$g_Images>/places/deshomes/images/console.jpg" BORDER="0" USEMAP="#deshomesmap" ALT="Cybertown Control Panel">
+<!-- #include virtual="<$g_Templates>common/jumpgate.tmpl" -->
+
+<!-- Begin Help Flags -->
+<br>
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/german/index.html')" target="_self"><img src="/info/help/german/images/germanysm.gif" border="0" alt=" Deutsche Hilfe Seiten"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/about/details/const_russian.html')" target="_self"><img src="/info/help/russian/images/russianysm.gif" border="0" alt=" Russian Help"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/spanish/faqs.html')" target="_self"><img src="/info/help/spanish/images/spainsm.gif" border="0" alt="FAQs en Espanol"></a>
+
+<!-- #include virtual="<$g_Templates>common/event_buttons.tmpl" -->
+<!-- #include virtual="<$g_Templates><$plc>/ac_event.tmpl" -->
+
+<!-- hide info/messages/indox for shops in mall -- these are linked to main mall info/messages/inbox -->
+<!-- #ifndef variable="plc" value="shop" -->
+<!-- #ifndef variable="plc" value="deshomeshop" -->
+<a href="javascript:loadInfo('place<$g_exe>?plc=<$place>&ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+<!-- #endif variable="plc" -->
+<!-- #endif variable="deshomeshop" -->
+
+<!-- #include virtual="<$g_Templates><$plc>/ac_middle.tmpl" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<br>
+<a href="javascript:moderate()" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate Chat"></a><br>
+
+<!-- #ifndef variable="plc" value="shop" -->
+<!-- #ifndef variable="plc" value="deshomeshop" -->
+<a href="javascript:loadCustom('print?DTY=O&ID=<$ID>&TPL=fundbox/phase0',612,490)" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bfundbox.gif" BORDER=0 ALT="Fund Box"></a>
+<!-- #endif variable="plc" -->
+<!-- #endif variable="plc" -->
+
+<!-- #endif variable="owneraccess" -->
+
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&plc=<$place>&TPL=common/rights&ac=readrole" target="place">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates><$plc>/ac_bottom.tmpl" -->
+<!-- #include virtual="<$g_Templates>deshomes/controlend.tmpl" -->
+</center>
+</BODY>
+</HTML>

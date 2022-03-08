@@ -1,0 +1,26 @@
+<!-- neighbor/action.tmpl --> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html"> 
+<title><$g_title></title> 
+</head> 
+
+<center> 
+<!-- #define variable="COLID" substring="<$ID>,0,4" --> 
+
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>neighbor/action_hi-tek.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifdef variable="COLID" value="0105" --> 
+<!-- #include virtual="<$g_Templates>neighbor/action_inner-realms.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifndef variable="COLID" value="0110" --> 
+<!-- #ifndef variable="COLID" value="0105" --> 
+<!-- #include virtual="<$g_Templates>neighbor/action_standard.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+<!-- #endif variable="COLID" --> 
+
+</body> 
+</html>

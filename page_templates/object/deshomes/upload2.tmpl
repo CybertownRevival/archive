@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Cybertown - Designer Home Upload</title>
+
+<script>
+function checkLength(){
+  if (document.upload.OTXT.value.length > 500){
+    alert("Your text is too long, it has been truncated.")
+    document.upload.OTXT.value = document.upload.OTXT.value.substr(0,500)
+  }
+}
+
+</script>
+
+</head>
+
+<!-- object/deshomes/upload2.tmpl -->
+<!-- form to upload the world resources for a custom home -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Home Upload - Stage 2</h2>
+</div>
+
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Congratulations, data successfully uploaded!
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="uploaderror001" -->
+    You have to specify a name for your object!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror001" -->
+<!-- #ifdef variable="uploaderror002" -->
+    Sorry, we only accept objects with a price greater than 10 CCs!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror002" -->
+<!-- #ifdef variable="uploaderror003" -->
+    Sorry, we need at least one object to sell!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror003" -->
+<!-- #ifdef variable="uploaderror004" -->
+    One or both of the needed files are missing!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror004" -->
+<!-- #ifdef variable="uploaderror005" -->
+    The file "<$errfile>" has the wrong type!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror005" -->
+<!-- #ifdef variable="uploaderror006" -->
+    The file "<$errfile>" could not be saved!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror006" -->
+<!-- #ifdef variable="uploaderror007" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_img> KB!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror007" -->
+<!-- #ifdef variable="uploaderror008" -->
+    Sorry, you don't have enough money for uploading!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror008" -->
+<!-- #ifdef variable="uploaderror009" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_wrl> KB!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror009" -->
+</font></div>
+
+<!-- #ifdef variable="updateok" -->
+<!-- #ifdef variable="RES" value="YES" -->
+<div align=center>
+<font color="red">
+Sorry, resources have already been uploaded for this object.
+<p><input type=button name="back" value="Close" onClick="window.close()" width=100>
+<!-- #endif variable="RES" -->
+
+<!-- #ifndef variable="RES" value="YES" -->
+<p>
+You can now use this form to upload a ZIP file of resources for the WRL file just uploaded.
+This will be automatically unzipped into the same folder. File formats allowed in this file can be found below.
+<br>
+Please read this <a href=#explain target=_self>explanation</a> of the fields in the form before filling the form in.
+</p>
+
+<!-- #ifndef variable="UPL_STATUS" value="OFF" -->
+
+
+<!-- #ifndef variable="Ublock" value="1" -->
+<form name=upload enctype="multipart/form-data" method=post action="upload60">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="ac" value="upload">
+    <input type="hidden" name="TPL" value="object/deshomes/upload3">
+    
+    <INPUT TYPE="hidden" name="KEY" value="<$OID>">
+    <INPUT TYPE="hidden" name="UNZIP0" value="1">
+
+<div align=center>    
+  <table border=0>
+    <tr> 
+      <td>Home Name:&nbsp;&nbsp;</td>
+      <td><font color="#00ff00"><$ONAM></font></td>
+    </tr>
+    <tr> 
+      <td>VRML-File:&nbsp;&nbsp;</td>
+      <td colspan=5><font color="#00ff00"><a href="<$OWRL>" target="_blank"><$OWRL></font></td>
+    </tr>
+    <tr> 
+      <td>Thumbnail:&nbsp;&nbsp;</td>
+      <td colspan=5><font color="#00ff00"><a href="<$OIMG>" target="_blank"><$OIMG></font></td>
+    </tr>
+    <tr> 
+      <td>Resources File (ZIP):&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="FILE0" value="<$TXF_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+    <tr> 
+      <td>Home Description:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+          <TEXTAREA NAME="OTXT" ROWS=4 COLS=35 onBlur="checkLength()"></TEXTAREA>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>
+The customised 3D home that you are uploading to the virtual shop will remain your
+property. You are giving Cybertown the right, without time limit, of use
+and of distribution to other members of this community. Cybertown does
+not grant the right to demand removal of homes already distributed.
+<p>
+<div align=center>
+    <input type="submit" name="upload" value="Continue..." width=100>
+</div>
+
+</form>
+<!-- #endif variable="Ublock" -->
+
+<!-- #endif variable="UPL_STATUS" -->
+
+<!-- #ifdef variable="Ublock" -->
+<br><center><b><font color="red"> Sorry <$NNM>, you have been blocked from uploading homes.</font></b></center><br>
+<!-- #endif variable="Ublock" -->
+
+<!-- #ifdef variable="UPL_STATUS" value="OFF" -->
+
+<br><center><b><font color="red"> Sorry <$NNM>, uploading of homes has been disabled.</font></b></center><br>
+<!-- #endif variable="UPL_STATUS" -->
+
+<p>
+<a name=explain></a>Below is a brief explanation of the fields in Stage 2 of the Home Upload form.
+<br>
+<table border=1>
+<tr>
+<td>Name:</td>
+<td>The name of the home you're uploading. If this does not match the name you just 
+specified, please contact a checker for assistance.</td>
+</tr>
+<tr>
+<td>VRML File:</td>
+<td>The URL to the WRL file that the home will use.</td>
+</tr>
+<tr>
+<td>Thumbnail:</td>
+<td>The URL to the thumbnail of the home.</td>
+</tr>
+<tr>
+<td>Resources File:</td>
+<td>Name of the local ZIP file containing the resources for the home.</td>
+</tr>
+<tr>
+<td>Home Description:</td>
+<td>A short description of the home that will be displayed on the Buy page to viewers. You may not use HTML.</td>
+</tr>
+</table>
+<br>
+The resources file is optional.
+After you have filled in the field, click on <b>Continue...</b>. If you don't wish to use one,
+click on <b>Continue...</b> and leave the field blank to complete the process of uploading. 
+<p></p>
+<p>
+Notes:
+<ul>
+<li>Internet Explorer 3.x doesn't support file uploads.
+<li>The maximum resources ZIP file size is 100000 KB.
+<li>The files must be of the following file types: jpg, jpeg, gif, png, wav, mp3, wrl (for inlines).
+</ul>
+<!-- #endif variable="RES" -->
+<!-- #endif variable="updateok" -->
+
+</body></html>
+

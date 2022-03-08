@@ -1,0 +1,143 @@
+<html>
+<!-- event/citycash/citycash.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+<!-- #ifndef variable="buylotok" -->
+<h2 align="center"><font face="Arial"><$NAM></font></h2>
+
+<!-- #ifdef variable="errnolottery" -->
+<!-- #ifndef variable="lotterwinners" -->
+<center>
+  <font color="#FFFF99" size="+2">C O M I N G &nbsp;&nbsp;&nbsp; S O O N ! </font>
+</center>
+<!-- #endif variable="lotterwinners" -->
+<!-- #endif variable="errnolottery" -->
+
+<table border="0">
+<tr>
+  <td align="center">
+    <img src="<$g_Images>/images/events/citycash/citycash.jpg" alt="<$NAM>" height=180>
+  </td>
+  <td>
+      <blockquote><b> <font face="Arial">Welcome to the Cybertown <$NAM>. All you 
+        have to do to enter is buy a ticket below and you will be automatically 
+        entered with a chance to win the weekly pool of CityCash created by everyone's 
+        entries!<br>
+        </font> </b></blockquote>
+  </td>
+</tr>
+</table>
+
+<blockquote>
+<b>
+<center>
+    <font face="Arial">See the Rules and prize details and how to win even more 
+    <a href="<$g_HTMLRoot>/events/citycash/rules.html">here</a>.</font>
+  </center>
+  <font face="Arial"><br>
+  </font>
+  </b><center>
+    <b><font face="Arial">
+    <!-- #ifdef variable="errmaxcount" -->
+    We are in Lottery Week No. <$LWN><br>
+    <FONT color="#FFFF00">And there are <$JACKPOT> cc in the Jackpot!</font><br>
+    Plus, 50% or Doubling of the prize if the winner can name members they 
+    have referred to Cybertown!</font></b><b><font face="Arial"><br>
+      </font> </b></p>
+    <font face="Arial"><font color="red"> Sorry <$NNM>, but you can only enter 10 times a week!<br>
+    <br>
+    </font></font> <font face="Arial">
+    <!-- #endif variable="errmaxcount" -->
+    <!-- #ifdef variable="erradmin" -->
+    <font face="Arial"><font color="red"> Sorry <$NNM>, but you have not the rights for the operation!<br>
+    <br>
+    </font></font> <font face="Arial">
+    <!-- #endif variable="erradmin" -->
+    <!-- #ifdef variable="errnolottery" -->
+    <!-- #ifndef variable="lotterwinners" -->
+    </font>
+    </b><center>
+      <b><font color="#FFFF99" size="+2" face="Arial">C O M I N G &nbsp;&nbsp;&nbsp; 
+      S O O N ! </font><font face="Arial"><br>
+      <br>
+      </font>
+    </b></center>
+    <p><b><font face="Arial"> 
+      <!-- #endif variable="lotterwinners" -->
+      <!-- #endif variable="errnolottery" -->
+      <!-- #ifdef variable="lotterwinners" -->
+      <a href="<$selfurl>?NID=<$NID>&ac=showwinners" target=_self> <$NAM> Winners<br>
+      </a> <br>
+      <!-- #endif variable="lotterwinners" -->
+      <!-- #ifdef variable="notenoughmoney" -->
+      <font color="#FFFF99"> Sorry <$NNM>, but you have not enough money to buy 
+      a ticket! </font></font> <font face="Arial"><br>
+      <br>
+      <!-- #endif variable="notenoughmoney" -->
+      <!-- #ifdef variable="buyticket" -->
+      We are in Lottery Week No. <$LWN><br>
+      <FONT color="#FFFF00">And there are <$JACKPOT> cc in the Jackpot!</font><br>
+      Plus, 50% or Doubling of the prize if the winner can name members they 
+      have referred to Cybertown!</font></b><b><font face="Arial"><br>
+      </font> </b></p>
+    <form method=post action="<$selfurl>">
+      <b><font face="Arial">
+      <input type=hidden name="TKT" value="<$TKT>">
+      <input type=hidden name="ac" value="buyticket">
+      <input type=hidden name="NID" value="<$NID>">
+      <input type="submit" value="Buy a Ticket">
+      </font>
+    </b></form>
+    <b><font face="Arial">Good luck!<br>
+    <br>
+    <!-- #endif variable="buyticket" -->
+    <!-- #ifdef variable="isAdmin" -->
+    <a href="<$selfurl>?NID=<$NID>&ac=lotstat" target=_self> <$NAM> Administration 
+    </a> 
+    <!-- #endif variable="isAdmin" -->
+    </font>
+  </b></center> </blockquote>
+<font face="Arial">
+<!-- #endif variable="buylotok" -->
+<!-- #ifdef variable="buylotok" -->
+<BR>
+<BR>
+</font><font color="#00FF00">
+<center>
+  <h2><font face="Arial"><$NNM> - You have successfully bought a ticket!<br>
+    There are now <$JACKPOT> cc in the Jackpot!</font></h2>
+</center>
+<BLOCKQUOTE> <font face="Arial" size="-1"> <BR>
+  </font><FONT face="Arial, Helvetica, sans-serif" SIZE=-1>
+  <center>
+    <p><font size="+1" color="yellow" face="Arial"><i><a href="http://www.cybertown.com/cgi-bin/cybertown/event?NID=citycash4&ac=reglottery">Click 
+      Here to Go Back</a></i></font><font face="Arial"><BR>
+      </font> </p>
+    <HR COLOR="#336633" SIZE=1 WIDTH=150">
+  </center>
+  <BLOCKQUOTE> 
+    <FORM METHOD=POST ACTION="/cgi-bin/cybertown/vm/vm.pl">
+    </FORM>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+
+
+</FONT>
+</BLOCKQUOTE>
+
+
+</FONT>
+<!-- #endif variable="buylotok" -->
+
+
+</body>
+</html>

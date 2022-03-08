@@ -1,0 +1,42 @@
+<!-- msg/security -->
+<!--- send a msecurity essage to all members with security jobs --->
+
+<html>
+<head> 
+
+<title><$g_title></title> 
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+
+<script language="javascript">
+  // identify this action as popup action. see msgSend() in msg.js
+  var popup=1;
+</script>
+
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+</head>
+
+<form name="uform" method=post action="<$g_cgiRoot>/msg<$g_exe>">
+<body onLoad="javascript:msgSetFocus('TXT')" class=popup>
+
+<!-- #define variable="heading" value="Securty Alert" -->
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<p class=text>
+<br><$g_msSecurityWarning>
+</p>
+
+<p class=text>
+Please describe the nature of the offense and where the offender is currently located:
+</p>
+
+<p class=cont>
+<textarea wrap=physical cols=35 rows=4 name="TXT"><$g_msSecurityDefText></textarea>
+</p>
+  <!-- #define variable="buttons" value="send" -->
+  <!-- #define variable="buttoncheck" value="msgSend('','group','','security')" -->
+  <!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+</body>
+</form>
+</html>

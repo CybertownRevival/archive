@@ -1,0 +1,31 @@
+<html>
+<!-- clubdir/error.tmpl -->
+<!-- error page of the club directory -->
+<head>
+<title><$g_title> - Club</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Club Error</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="cluberror001" -->
+Sorry <$NNM>, that club doesn't exists!!!
+<!-- #endif variable="cluberror001" -->
+
+<!-- #ifdef variable="cluberror002" -->
+Sorry <$NNM>,<BR>
+You must have <$EXP_POINTS> experience points, in order to open a club.
+<!-- #endif variable="cluberror002" -->
+
+<!-- #ifdef variable="cluberror003" -->
+Sorry <$NNM>, you are not the owner of the club!!!
+<!-- #endif variable="cluberror003" -->
+
+</font>
+</body>
+</html>
+

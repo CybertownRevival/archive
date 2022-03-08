@@ -1,0 +1,80 @@
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<blockquote>
+<$TXT>
+</blockquote>
+<p>
+<!-- #if variable="MEM_ID" == variable="HOID" -->
+<table border=2 width=75%>
+<tr><td>
+<b><$MNNM> 's Object Storage Areas</b><br>
+<!-- #if variable="STOID_0" == value="" -->
+<a href="./print60<$g_exe>?CREID=00&TPL=object/storagecreate">Create</a>
+
+<!-- #else variable="STOID_0" == value="" -->
+<table border=0 width=100%><tr>
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&TPL=storage/storagelist&ID=<$STOID_>&PID=<$ID>"><$NAM_></a> (
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects)
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+<br><a href="./print60<$g_exe>?ID=<$ID>&TPL=storage/storageupdate">Edit</a>
+<!-- #endif variable="STOID_0" == value="" -->
+</td></tr></table>
+
+<!-- #else variable="MEM_ID" == value="<$HOID>" -->
+<!-- #if variable="STOID_0" != value="" -->
+<!-- #if variable="WI1" == value="" -->
+
+<table border=2 width=75%>
+<tr><td>
+<b><$MNNM> 's Object Storage Areas</b><br>
+<table border=0 width=100%><tr>
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&TPL=storage/storagelist&ID=<$STOID_>&PID=<$ID>"><$NAM_></a> (
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects ) 
+<br>
+
+
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+</td></tr></table>
+
+<!-- #endif variable="WI1" == value="" -->
+<!-- #endif variable="STOID_0" == value="" -->
+<!-- #endif variable="MEM_ID" == value="<$HOID>" -->
+<p>
+<!-- #if variable="citizenown" != value="" -->
+<!-- #if variable="STOID_0" != value="" -->
+<table border=0 align=center>
+<tr><td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&PID=<$ID>&TPL=storage/storagedelete">Delete object store</a><br>
+<a href="./edit<$g_exe>?DTY=O&KTY=ID&KEY=0000aa<$HOID>00&PID=<$ID>&TPL=storage/info">Update Information</a>
+</td></tr></table>
+<!-- #endif variable="STOID_0" != value="" -->
+<!-- #endif variable="citizenown" != value="" -->
+<!-- #if variable="WI1" == value="<$HOID>" -->
+<font size="3" color="red"> Sorry <$NNM> all storages at this location are currently hidden from viewing </font>
+<!-- #endif variable="WI1" -->
+</center>
+	

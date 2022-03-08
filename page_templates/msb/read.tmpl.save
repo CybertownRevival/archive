@@ -1,0 +1,107 @@
+<html>
+<head>
+<title><$g_title> - Message Board</title>
+<SCRIPT language="JavaScript">
+function deleteMessage(url)
+{
+    parent.location.href=url;
+}
+</SCRIPT>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body3.tmpl" -->
+
+<!--#ifndef variable="listmsg" -->
+
+<center>
+<!-- #ifdef variable="msbpostallowed" -->
+<a target="_parent" href="<$selfurl>?ac=write&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>">
+<IMG SRC="<$g_HTMLRoot>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Message"></a>
+<!-- #endif variable="msbpostallowed" -->
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<a target="_parent" href="<$selfurl>?ac=getconf&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>">
+<IMG SRC="<$g_HTMLRoot>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the board"></a>
+<!-- #endif variable="msbconfigallowed" -->
+<br>
+<font size=+2><b><$NAM></b></font>
+</center>
+
+<p><$TXT>
+<hr>
+<!-- #endif variable="listmsg" -->
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>,there are no message to show.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+
+<!--#ifndef variable="listmsg" -->
+<table>
+<tr>
+<!--#ifdef variable="REPLY" -->
+<td width=5%>
+</td>
+<!--#endif variable="REPLY" -->
+<td>
+<a target="detail" href="<$selfurl>?ac=getmsg&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>"
+><$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_AP>:<$DATE_MIN> <$DATE_APM></a>,
+</td>
+<td>
+From: <$NNM>,Subject:
+<!--#ifdef variable="REPLY" -->
+Re:
+<!--#endif variable="REPLY" -->
+<$sub>
+</td>
+</tr>
+</table>
+<!--#endif variable="listmsg" -->
+
+<!--#ifdef variable="listmsg" -->
+<table width=100%>
+<tr><td>
+
+Date: <$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_YEAR>. 
+<$DATE_AP>:<$DATE_MIN>:<$DATE_SEC> <$DATE_APM>.
+
+</td><td align=right>
+<!--#ifdef variable="REPLY" -->
+<a target="_parent" href="<$selfurl>?ac=reply&DATE=<$REPLY>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>"
+><IMG SRC="<$g_HTMLRoot>/images/buttons/breply.gif" BORDER=0 ALT="Reply"></a>
+<!--#endif variable="REPLY" -->
+<!--#ifndef variable="REPLY" -->
+<a target="_parent" href="<$selfurl>?ac=reply&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>"
+><IMG SRC="<$g_HTMLRoot>/images/buttons/breply.gif" BORDER=0 ALT="Reply"></a>
+<!--#endif variable="REPLY" -->
+</td></tr>
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<tr><td>
+</td><td align=right>
+<a href='javascript:deleteMessage("msb<$g_exe>?ac=delete&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>")'
+><IMG ALIGN=absbottom SRC="<$g_HTMLRoot>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete the Message"></a>
+</td></tr>
+<!--#endif variable="msbconfigallowed" -->
+</table>
+<br>
+From: <$NNM><br>
+Subject:
+<!--#ifdef variable="REPLY" -->
+Re:
+<!--#endif variable="REPLY" -->
+<$sub>
+<table>
+<tr><$pre><td width=100%>
+<$txt>
+</td><$endpre></tr>
+</table>
+<!--#endif variable="listmsg" -->
+
+<!--#endfor loopname="msglist"  -->
+
+</body>
+</html>
+
+

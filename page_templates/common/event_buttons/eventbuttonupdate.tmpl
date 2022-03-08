@@ -1,0 +1,213 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Cybertown - Event Buttons Administration</title>
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<font face="arial" size=3><b>Event Buttons Administration</b>
+
+<form name="blockfrm" action="/cgi-bin/cybertown/print60" method="POST">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+  
+<input type=hidden name="TPL" value="common/event_buttons/eventbuttonupdate2">
+
+<!-- #ifndef variable="owneraccess" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!--#endif variable="owneraccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<!-- #ifdef variable="T_PREFOK" value="0" -->
+<br><center><font color=red>Settings updated successfully.</font></Center>
+<!-- #endif variable="T_PREFOK" -->
+<!-- #ifdef variable="T_PREFOK" value="" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!-- #endif variable="T_PREFOK" -->
+<!-- #define variable="T_PREFOK" value="1" -->
+
+<p align=center>
+<center>Note: The default button is applied when buttons are disabled.
+<br>You MUST specify window dimensions if you select loadCustom. Width first!
+
+<p>
+<INPUT NAME="EB0" TYPE=RADIO VALUE="ON" 
+<!--#ifdef variable="EB0" value="ON" -->
+checked
+<!--#endif variable="EB0" -->
+> Enable Buttons&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB0" TYPE=RADIO VALUE="LE" 
+<!--#ifdef variable="EB0" value="LE" -->
+checked
+<!--#endif variable="EB0" -->
+> Live Event&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB0" TYPE=RADIO VALUE="TM" 
+<!--#ifdef variable="EB0" value="TM" -->
+checked
+<!--#endif variable="EB0" -->
+> Town Meeting&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB0" TYPE=RADIO VALUE="OFF" 
+<!--#ifdef variable="EB0" value="OFF" -->
+checked
+<!--#endif variable="EB0" -->
+> Disable Buttons
+
+<p><b>Common Buttons</b>
+<p>
+Live Event URL: <INPUT NAME="EB22" VALUE="<$EB22>" MAXLENGTH=128 size=80>
+<br>
+Town Meeting URL: <INPUT NAME="EB23" VALUE="<$EB23>" MAXLENGTH=128 size=80>
+
+<p><b>Default Event Button</b>
+
+<p>
+<INPUT NAME="EB1" TYPE=RADIO VALUE="loadInfo" 
+<!--#ifdef variable="EB1" value="loadInfo" -->
+checked
+<!--#endif variable="EB1" -->
+> loadInfo&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB1" TYPE=RADIO VALUE="Place" 
+<!--#ifdef variable="EB1" value="Place" -->
+checked
+<!--#endif variable="EB1" -->
+> Place
+
+<INPUT NAME="EB1" TYPE=RADIO VALUE="loadCustom" 
+<!--#ifdef variable="EB1" value="loadCustom" -->
+checked
+<!--#endif variable="EB1" -->
+> loadCustom (Specify Dimensions)
+
+<br>
+Target URL: <INPUT NAME="EB2" VALUE="<$EB2>" MAXLENGTH=128 size=80>
+
+<br>
+Link Target: <INPUT NAME="EB3" TYPE=RADIO VALUE="_self" 
+<!--#ifdef variable="EB3" value="_self" -->
+checked
+<!--#endif variable="EB3" -->
+> _self (loadInfo/loadCustom)&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB3" TYPE=RADIO VALUE="_top" 
+<!--#ifdef variable="EB3" value="_top" -->
+checked
+<!--#endif variable="EB3" -->
+> _top (Place)
+
+<br>
+Image URL: <INPUT NAME="EB4" VALUE="<$EB4>" MAXLENGTH=128 size=80>
+<br>
+Image Alt Text: <INPUT NAME="EB5" VALUE="<$EB5>" MAXLENGTH=128 size=20>
+<br>
+loadCustom Dimensions: <INPUT NAME="EB6" VALUE="<$EB6>" MAXLENGTH=128 size=10>
+<INPUT NAME="EB7" VALUE="<$EB7>" MAXLENGTH=128 size=10>
+
+<p><b>Event Button 1</b>
+
+<p>
+<INPUT NAME="EB8" TYPE=RADIO VALUE="loadInfo" 
+<!--#ifdef variable="EB8" value="loadInfo" -->
+checked
+<!--#endif variable="EB8" -->
+> loadInfo&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB8" TYPE=RADIO VALUE="Place" 
+<!--#ifdef variable="EB8" value="Place" -->
+checked
+<!--#endif variable="EB8" -->
+> Place
+
+<INPUT NAME="EB8" TYPE=RADIO VALUE="loadCustom" 
+<!--#ifdef variable="EB8" value="loadCustom" -->
+checked
+<!--#endif variable="EB8" -->
+> loadCustom (Specify Dimensions)
+
+<br>
+Target URL: <INPUT NAME="EB9" VALUE="<$EB9>" MAXLENGTH=128 size=80>
+
+<br>
+Link Target: <INPUT NAME="EB10" TYPE=RADIO VALUE="_self" 
+<!--#ifdef variable="EB10" value="_self" -->
+checked
+<!--#endif variable="EB10" -->
+> _self (loadInfo/loadCustom)&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB10" TYPE=RADIO VALUE="_top" 
+<!--#ifdef variable="EB10" value="_top" -->
+checked
+<!--#endif variable="EB10" -->
+> _top (Place)
+
+<br>
+Image URL: <INPUT NAME="EB11" VALUE="<$EB11>" MAXLENGTH=128 size=80>
+<br>
+Image Alt Text: <INPUT NAME="EB12" VALUE="<$EB12>" MAXLENGTH=128 size=20>
+<br>
+loadCustom Dimensions: <INPUT NAME="EB13" VALUE="<$EB13>" MAXLENGTH=128 size=10>
+<INPUT NAME="EB14" VALUE="<$EB14>" MAXLENGTH=128 size=10>
+
+<p><b>Event Button 2</b>
+
+<p>
+<INPUT NAME="EB15" TYPE=RADIO VALUE="loadInfo" 
+<!--#ifdef variable="EB15" value="loadInfo" -->
+checked
+<!--#endif variable="EB15" -->
+> loadInfo&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB15" TYPE=RADIO VALUE="Place" 
+<!--#ifdef variable="EB15" value="Place" -->
+checked
+<!--#endif variable="EB15" -->
+> Place
+
+<INPUT NAME="EB15" TYPE=RADIO VALUE="loadCustom" 
+<!--#ifdef variable="EB15" value="loadCustom" -->
+checked
+<!--#endif variable="EB15" -->
+> loadCustom (Specify Dimensions)
+
+<br>
+Target URL: <INPUT NAME="EB16" VALUE="<$EB16>" MAXLENGTH=128 size=80>
+
+<br>
+Link Target: <INPUT NAME="EB17" TYPE=RADIO VALUE="_self" 
+<!--#ifdef variable="EB17" value="_self" -->
+checked
+<!--#endif variable="EB17" -->
+> _self (loadInfo/loadCustom)&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="EB17" TYPE=RADIO VALUE="_top" 
+<!--#ifdef variable="EB17" value="_top" -->
+checked
+<!--#endif variable="EB17" -->
+> _top (Place)
+
+<br>
+Image URL: <INPUT NAME="EB18" VALUE="<$EB18>" MAXLENGTH=128 size=80>
+<br>
+Image Alt Text: <INPUT NAME="EB19" VALUE="<$EB19>" MAXLENGTH=128 size=20>
+<br>
+loadCustom Dimensions: <INPUT NAME="EB20" VALUE="<$EB20>" MAXLENGTH=128 size=10>
+<INPUT NAME="EB21" VALUE="<$EB21>" MAXLENGTH=128 size=10>
+
+<p>
+<input type=submit name="submit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+
+
+</form>
+</center>
+<!--#endif variable="owneraccess" -->
+
+</BODY>
+</HTML>

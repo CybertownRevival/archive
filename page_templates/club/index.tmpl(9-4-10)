@@ -1,0 +1,139 @@
+<!-- club/index.tmpl -->
+<!-- frameset for club -->
+<html>
+<head>
+<title><$g_title> - <$placename></title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+
+<!-- #ifndef variable="isVisitor" -->
+
+<!-- #ifdef variable="SEQ" value="" -->
+<!-- #include virtual="<$g_Templates>common/securitycheck.tmpl" -->
+<!-- #else variable="SEQ" -->
+
+<!-- #ifdef variable="AGE" value="" -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<title>Cybertown - Civilisation for the Virtual Age</title>
+<img src="http://www.cybertown.com/images/ban_ivn128-2.gif">
+<p><img src="http://www.cybertown.com/images/ctlogo.gif">
+<blockquote><blockquote><p></center>We are building a new system to help further protect our younger residents from exposure to 
+unsuitable images or objects and we need you to let us know (just once) if you are under 18 or over 18. 
+If the information you provide is incorrect, any material viewed is at your own risk and responsibility and you risk losing your membership.
+<p>By selecting 18+ you are confirming that:
+<p>&nbsp;1. You are over 18 years of age.
+<br>&nbsp;2. You understand that content in a PG-labeled home or Club in Cybertown may involve language, 
+content, material, images, objects and themes of a controversial nature that may not be considered suitable 
+for a person under 18.
+<p><center>Thank you.</blockquote></blockquote>
+<p><i>IVN/Cybertown Inc.</i>
+<form name="ageform" action="/cgi-bin/cybertown/print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="place/returnplace">
+<input type=hidden name="plc" value="<$place>">
+<input type=hidden name="NNM" value="<$NNM>">
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="UNDER18"> Under 18&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="18PLUS"> 18+
+
+<p><input type=submit name="submit" value="Proceed to Cybertown">
+</form>
+
+<!-- #endif variable="AGE" -->
+
+<!-- #ifndef variable="AGE" value="" -->
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&plc=club&DTY=CL&ID=<$ID>&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place<$g_exe>?ac=action&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+
+<!-- #ifdef variable="TEM" value="00000001" -->
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&plc=club&DTY=CL&ID=<$ID>&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place<$g_exe>?ac=action&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+<!-- #endif variable="TEM" -->
+
+<!-- #ifndef variable="TEM" value="00000001" -->
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place?ac=menu&plc=clubdir&ID=000000000000000e&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="club?ac=directory&T_level=top" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place?ac=action&plc=clubdir&ID=000000000000000e" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <frame name="HTML" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="refresh" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+</frameset>
+<!-- #endif variable="TEM" -->
+
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+
+<!-- #ifdef variable="TEM" value="00000002" -->
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&plc=club&DTY=CL&ID=<$ID>&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place<$g_exe>?ac=action&plc=club&DTY=CL&ID=<$ID>" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+<!-- #endif variable="TEM" -->
+
+<!-- #ifndef variable="TEM" value="00000002" -->
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place?ac=menu&plc=clubdir&ID=000000000000000e&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="club?ac=directory&T_level=top" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place?ac=action&plc=clubdir&ID=000000000000000e" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <frame name="HTML" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="refresh" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+</frameset>
+<!-- #endif variable="TEM" -->
+
+<!-- #endif variable="ID" -->
+
+<!-- #endif variable="AGE" -->
+
+<!-- #endif variable="SEQ" -->
+
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+<title><$g_title> - Message Board</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Message Board Access Error</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="msberror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this message board.
+<!-- #endif variable="msberror001" -->
+
+<!-- #ifdef variable="msberror002" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to configure this message board.
+<!-- #endif variable="msberror002" -->
+
+<!-- #ifdef variable="msberror003" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to access this message board.
+<!-- #endif variable="msberror003" -->
+
+<!-- #ifdef variable="msberror004" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to read the messages.
+<!-- #endif variable="msberror004" -->
+
+<!-- #ifdef variable="msberror005" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to delete messages from the board.
+<!-- #endif variable="msberror005" -->
+
+<!-- #ifdef variable="msberror006" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to destroy the board.
+<!-- #endif variable="msberror006" -->
+
+<!-- #ifdef variable="msberror007" -->
+Sorry <$NNM>,
+<P>
+This message board is being upgraded and will be back soon.
+<br>
+
+<!-- #endif variable="msberror007" -->
+
+<!-- #ifdef variable="msberror008" -->
+Sorry <$NNM>,
+<P>
+there are too many replys for the message.
+<!-- #endif variable="msberror008" -->
+
+<!-- #ifdef variable="msberror009" -->
+Sorry <$NNM>,
+<p>
+Invalid parameters passed to the calling program.
+</p>
+<!-- #include virtual="<$g_Templates>common/contact_err.tmpl" -->
+<!-- #endif variable="msberror009" -->
+
+</font>
+
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<html>
+<!-- iwos/ratelist.tmpl -->
+<!-- display the form to rate -->
+<head>
+<title><$g_title> - Ranking</title>
+
+<script language=javascript>
+
+  function closeVote(url)
+  {
+      parent.overview.location.href=url;
+      location.href="<$g_HTMLRoot>/blank.html";
+  }
+
+</script>
+</head>
+
+<BODY BACKGROUND="<$g_HTMLRoot>/images/iwos/homesearch.gif" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<center>
+<img SRC="<$g_HTMLRoot>/images/homebuilder/homebuilderhalloffamebanner.gif" border=0></div>
+  <!-- #ifdef variable="owneraccess" -->
+  <table width="100%">
+    <td align=right>
+      <a href='javascript:closeVote("vote<$g_exe>?ac=close&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")' target=_self>
+      <IMG ALIGN=absbottom SRC="<$g_HTMLRoot>/images/buttons/bclose.gif" BORDER=0 ALT="Close"></a>
+    </td>
+  </table>
+  <!--#endif variable="owneraccess" -->
+
+<table border="0" align="center">
+<tr> 
+  <td valign="top"><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Cool Homes</b></font></td>
+  <td valign="top"><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif">Points</font></td>
+  <td><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif">
+  &nbsp;&nbsp;Your choice&nbsp;&nbsp;</font>
+  </td>
+</tr>
+
+
+<!-- form name=apply method="post" action="<$selfurl>">
+
+  <input type="hidden" name="ac" value="ratelist">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TYP" value="<$TYP>">
+  <input type="hidden" name="PAR" value="<$PAR>">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="TPL" value="<$TPL>">
+  <input type="hidden" name="OBJDTY" value="<$OBJDTY>">
+  <input type="hidden" name="OBJKTY" value="<$OBJKTY>">
+  <select name="SORTORDER">
+    <option value="POINTS" <$PNT_CHK>>Points</option>
+    <option value="RATES" <$PNT_RAT>>Rates</option>
+  </select>
+  <a href="javascript:document.apply.submit()"><img src="<$g_HTMLRoot>/images/homebuilder/apply.gif" BORDER=0 ALT="Apply"></a></td>
+</form -->
+<!--#for loopname="OBJECTLIST" loopvars="OBJID" --> 
+<tr>
+  <td>
+    <a href="javascript:top.location.href='<$g_cgiRoot>/property?ID=<$HOM>'" target="top"><font color=FFCC00 size="2" face="Verdana, Arial, Helvetica, sans-serif"><b><$HOM_NAM></b></font></a>
+  </td>
+	<td align="center"><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><$POINTS></font></td>
+  <!-- #ifdef variable="MYCHO" -->
+    <td align="center"><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif"><$TOP<$MYCHO>></font></td>
+  <!-- #endif variable="MYCHO" -->
+  <!-- #ifndef variable="MYCHO" -->
+    <td align="center">&nbsp;</td>
+  <!-- #endif variable="MYCHO" -->
+</td>
+</tr>
+<!--#endfor loopname="OBJECTLIST" -->
+</table>
+</center>
+
+</body>
+</html>

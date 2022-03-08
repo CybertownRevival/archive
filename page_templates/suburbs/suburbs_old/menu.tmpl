@@ -1,0 +1,28 @@
+<!-- suburbs/menu.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<table border=0 width=100% cellpadding=0 cellspacing=0>
+<tr>
+
+<!-- #include virtual="<$g_Templates>common/menu.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/menuright.tmpl" -->
+
+</tr>
+</table>
+
+</BODY>
+</HTML>

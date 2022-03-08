@@ -1,0 +1,71 @@
+<HTML>
+
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html">
+
+<title>Cybertown - Civilization for the Virtual Age</title>
+
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- moderation -->
+<script language="JavaScript">
+function moderate() {
+window.open('place?ac=moderate&plc=jail&TKT=76b9bcd4604bc967','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+}
+</script>
+<!-- end moderation -->
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+
+<div align=center>
+<b><i><font face="Arial" size=+0 color="#00FF00">Jail Tour</font></i></b><br>
+
+<a href="/cgi-bin/cybertown/place?plc=jail_tour&ac=place&ID=000000000000001d&force=s" target="place">
+<IMG SRC="/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+
+<a href="/cgi-bin/cybertown/place?plc=jail_tour&ac=place&ID=000000000000001d&force=p" target="place">
+<IMG SRC="/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+
+<br>
+<br>
+
+<a href="javascript:loadInfo('/places/jail/yurhere.html')" target=_self>
+<IMG SRC="/places/jail/images/yurhere.gif" BORDER=0 ALT="Info"></a>
+
+<a href="javascript:loadInfo('/places/jail/phonecall.html')" target=_self>
+<IMG SRC="/places/jail/images/1call.gif" BORDER=0 ALT="Info"></a>
+
+<a href="javascript:loadInfo('/info/about/details/constitution.html')" target=_self>
+<IMG SRC="/places/jail/images/constitution.gif" BORDER=0 ALT="Info"></a>
+
+<a href="javascript:loadInfo('/places/jail/jailrr.html')" target=_self>
+<IMG SRC="/places/jail/images/rules.gif" BORDER=0 ALT="Info"></a>
+
+<a href="javascript:loadInfo('/founderguide.html')" target=_self>
+<IMG SRC="/places/jail/images/guidelines.gif" BORDER=0 ALT="Info"></a>
+<BR><BR><BR>
+<font face="Arial" size=-3 color="#00FF00">CONTROL PANEL <br> DISABLED IN JAIL </font>
+<HR>
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=jail&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</font></BODY></HTML>
+
+

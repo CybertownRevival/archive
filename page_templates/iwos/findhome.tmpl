@@ -1,0 +1,123 @@
+<HTML>
+<!-- iwos/findhome.tmpl -->
+<!-- find a place to settle done -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Find your home</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<h2>Find your Home</h2>
+
+  Sorry <$NNM>, but you have currently no home.<br>
+  Please, select a place where the house shoulde be placed!<br>
+<br>
+
+  <!-- #ifdef variable="COLNAM" -->
+    <!-- #ifndef variable="NBHNAM" -->
+      <!-- #ifndef variable="BLKNAM" -->
+        <a href="<$selfurl>?ac=findhome&ID=<$ID>&POS=COM&IC3=<$IC3>">Go Back to Colony Selection</a>
+      <!-- #endif variable="BLKNAM" -->
+    <!-- #endif variable="NBHNAM" -->
+  <!-- #endif variable="COLNAM" -->
+
+  <!-- #ifdef variable="NBHNAM" -->
+    <!-- #ifndef variable="BLKNAM" -->
+      <a href="<$selfurl>?ac=findhome&ID=<$ID>&POS=NBH&IC3=<$IC3>">Go Back to Neighborhood Selection</a>
+    <!-- #endif variable="BLKNAM" -->
+  <!-- #endif variable="NBHNAM" -->
+
+  <!-- #ifdef variable="BLKNAM" -->
+    <a href="<$selfurl>?ac=findhome&ID=<$ID>&POS=BLK&IC3=<$IC3>">Go Back to Block Selection</a>
+  <!-- #endif variable="BLKNAM" -->
+  
+<!-- #ifdef variable="COLNAM" -->
+  <ul align="left">
+	  <li>Colony <b>&quot;<$COLNAM>&quot;</b></li>
+<!-- #endif variable="COLNAM" -->
+  <!-- #ifdef variable="NBHNAM" -->
+    <ul align="left">
+      <li>Neighborhood <b>&quot;<$NBHNAM>&quot;</b></li>
+      <!-- #ifdef variable="BLKNAM" -->
+        <ul align="left">
+          <li>Block <b>&quot;<$BLKNAM>&quot;</b></li>
+      <!-- #endif variable="BLKNAM" -->
+  <!-- #endif variable="NBHNAM" -->
+  <ul align="left">
+      <!--#for loopname="placesList" loopvars="ID_" -->
+        <li><a href="<$selfurl>?ac=findhome&ID=<$ID_>&POS=<$NEXT_POS>&IC3=<$IC3>"><$NAM_></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;There are <$FREE_> free places.</li>
+      <!--#endfor loopname="placesList" -->
+    </table>
+  </ul>
+  <!-- #ifdef variable="NBHNAM" -->
+      <!-- #ifdef variable="BLKNAM" -->
+        </ul>
+      <!-- #endif variable="BLKNAM" -->
+    </ul>
+  <!-- #endif variable="NBHNAM" -->
+<!-- #ifdef variable="COLNAM" -->
+</ul>
+<!-- #endif variable="COLNAM" -->
+
+<center>
+  <!-- #ifdef variable="NEXT_POS" value="BUY" -->
+  <form method=post action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type=hidden name="ac" value="newhome">
+    <input type=hidden name="ID" value="<$PROP_ID>">
+    <input type=hidden name="T_MODE" value="">
+
+    <input type=hidden name="IC3" value="<$IC3>">
+
+    <a name="name"></a>
+    <p><b>Home Name</b>: <INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=20> (mandatory)</p>
+    <hr>
+
+    <table border=0 width=100%>
+      <tr>
+        <td valign=top colspan=3><h3>Choose a free 2D House</h3></td>
+      </tr>
+      <tr>
+        <!--#for loopname="2dicons" loopvars="index2i" -->
+          <td valign=top width=33%>
+            <input type="Radio" name="IC2" value="<$index2i>" <$chk2i>>
+              <img src="<$g_HTMLRoot>/home/<$path>block/<$prefix2i><$index2i>.gif" border=0 ALT="<$name2i>">
+                <!--#ifdef variable="name2i" -->
+                  <br><$name2i>
+                <!--#endif variable="name2i" -->
+                <!--#ifdef variable="text2i" -->
+                  <br><$text2i>
+                <!--#endif variable="text2i" -->
+          </td>
+          <!--#ifdef variable="col3_2i" -->
+            </tr><tr>
+          <!--#endif variable="col3_2i" -->
+        <!--#endfor loopname="2dicons" -->
+      </tr>
+    <!--#ifndef variable="index2i0" -->
+      No 2D Houses available!
+    <!-- #endif variable="index2i0" -->
+      </tr>
+    </table>
+
+    <input type=submit name="buyBtn" value="Buy">
+    <input type=button name="cancelBtn" value="Cancel" onClick="history.back()">
+
+  </form>
+  <!-- #endif variable="NEXT_POS" -->
+</center>
+
+</font>
+</BODY>
+</HTML>

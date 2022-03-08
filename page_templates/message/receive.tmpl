@@ -1,0 +1,83 @@
+<!-- msserver/receive.tmpl -->
+<HTML>
+<HEAD>
+<TITLE>Instant Message</TITLE>
+<SCRIPT LANGUAGE="javascript">
+memberWin = 0;
+function reply()
+{
+  memberWin = window.open("<$g_cgiRoot>/message<$g_exe>?TPL=message/member&ac=postmessage&TKT=<$TKT>&NNM=<$NNM>&T_TO=<$FROM>&TIME=<$CT_STR>", "member", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=200");
+}
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+</HEAD>
+<!-- #define variable="T_NOHTML" value="1"-->
+<BODY onLoad="self.focus()" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<P>
+<TABLE BORDER=0 WIDTH=100%><TR>
+<TD VALIGN=TOP><H2>Instant Message</H2></TD>
+<TD ALIGN=RIGHT><TABLE BORDER=0><TR>
+<!--#ifdef variable="FROM" -->
+<!--#if variable="TYPE" != value="onlineBuddies" -->
+<TD><A HREF="javascript:reply()"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/breply.gif" ></A></TD>
+<TR></TR>
+<!--#endif variable="TYPE" -->
+<!--#endif variable="FROM" -->
+<!--#if variable="CNT" >= value="1" -->
+<TD><A HREF="<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=delmessage&TYPE=nonotify&NNM=<$NNM>&IDX=<$IDX>&TKT=<$TKT>&TIME=<$CT_STR>"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/bdelete.gif" ></A></TD>
+<TR></TR>
+<!--#endif variable="CNT" -->
+<TD><A HREF="javascript:doClose()"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/bclose.gif" ></A></TD>
+</TR></TABLE>
+</TR></TABLE>
+
+<TABLE>
+<TR>
+<!-- #if variable="TYPE" == value="buddyEntered" -->
+<TD><$FROM> has entered the community.</TD>
+<!-- #endif variable="TYPE" -->
+<!-- #if variable="TYPE" == value="buddyLeft" -->
+<TD><$FROM> has left the community.</TD>
+<!-- #endif variable="TYPE" -->
+<!-- #if variable="TYPE" == value="onlineBuddies" -->
+<TD>Already online friends: <$TEXT>.</TD>
+<!-- #endif variable="TYPE" -->
+<!-- #ifndef variable="TYPE" -->
+<!-- #ifndef variable="TEXT" -->
+<TD>You don't have messages.</TD>
+<!-- #endif variable="TEXT" -->
+<!-- #endif variable="TYPE" -->
+
+<!-- #if variable="TYPE" == value="text" -->
+<!-- #ifdef variable="TEXT" -->
+<TD>From:</TD><TD><$FROM></TD>
+</TR>
+<TR>
+<TD>Text:</TD><TD><$TEXT></TD>
+<!-- #endif variable="TEXT" -->
+<!-- #endif variable="TYPE" -->
+</TR>
+</TABLE>
+
+<P>
+<!--#if variable="CNT" > value="1" -->
+More Messages:<BR>
+<!--#for loopname="i" loopvars="CNT_" -->
+<!--#define variable="TMP" value="<$CNT_>" -->
+<!--#if variable="TMP" != variable="IDX" -->
+<A HREF="<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=getmessage&TYPE=nonotify&NNM=<$NNM>&IDX=<$CNT_>&TIME=<$TIME>"><$CNT_></A>
+<!--#endif variable="TMP" -->
+<!--#if variable="TMP" == variable="IDX" -->
+<$CNT_>
+<!--#endif variable="TMP" -->
+<!--#endfor loopname="i"  -->
+<!--#endif variable="CNT" -->
+
+</BODY>
+</HTML>

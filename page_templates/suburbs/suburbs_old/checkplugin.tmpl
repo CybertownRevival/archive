@@ -1,0 +1,90 @@
+<!-- #ifdef variable="chatreadaccess" -->
+<div align=center><h3>Checking installation of <b>blaxxun Contact</b>...</h3>
+<hr><br>
+<small><a href="place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world" target=place>Ignore check</a></s
+mall>
+<br>
+<script language=JavaScript>
+navagt = "none";
+if (navigator.userAgent.length>1) {navagt = navigator.userAgent;}
+
+if (navigator.appName == 'Netscape')
+{
+  tap = navigator.appVersion;
+  if((tap.indexOf('WinNT') == -1) && (tap.indexOf('Win9') == -1) )
+  {
+ 	document.writeln("Sorry, our 3D browser requires the Windows platform.<BR><BR>Alternatively you might enter the <a href=place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&force=s target=place> 2D Chat</a>.");                  
+  }
+  if(parseFloat(tap) >=3)
+  {
+    for (i = 0; i < navigator.plugins.length; i++)
+    {
+      tap = navigator.plugins[i].name;
+      if (tap.indexOf('blaxxun CCpro') != -1) // Contact found
+      {
+        if (tap.indexOf('Version') != -1) // version >= 3.06
+        {
+          window.location.href = "place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world";
+        }
+        else
+        {
+          window.location.href = "place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world";
+        }
+        break;
+      }
+    }
+    // not found
+    if (tap.indexOf('blaxxun CCpro') == -1) // Contact not found
+    {
+document.writeln("You have to <A HREF=http://www.blaxxun.com/services/support/download/index.shtml target=_blank>download</A> the latest<A HREF=http://www.blaxxun.com/services/support/download/index.shtml target=_blank> blaxxun Contact</A>.<BR><BR>Having finished the download please close your browser and install the new software.<br>Now you are ready to go for the virtual 3D chat!<BR><BR>Alternatively you might enter the <a href=place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=s target=place>2D Chat</a>.");        
+    }
+  }
+  else
+  {
+ 	document.writeln("Sorry, our 3D browser requires Netscape 3.* or 4.* or	Internet Explorer 3.* or 4.*<BR><BR> Alternatively you might enter the <a href=place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&force=s target=place> 2D Chat</a>.");                  
+  }
+}
+else if( (navagt.indexOf('MSIE 3') > 0) || (navagt.indexOf('MSIE 4') > 0) || (navagt.indexOf('MSIE 5') > 0))
+{
+   // use vbscript
+}
+else 
+{
+ 	document.writeln("Sorry, our 3D browser requires Netscape 3.* or 4.* or	Internet Explorer 3.* or 4.*<BR><BR> Alternatively you might enter the <a href=place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&force=s target=place> 2D Chat</a>.");                  }
+</script>
+<noscript>
+Software can't be checked because your bowser doesn't support Javascript or Javascript is disabled. If blaxxun Contact is installed correctly, <a href="place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world" target=place>enter the 3D world</a>.
+</noscript>
+<script language=VBScript>
+<!--
+tap = "none"
+If (Len(navigator.appVersion)>1) then tap=navigator.appVersion 
+
+If tap="none" Or instr(tap,"Windows NT") > 0 Or instr(tap,"Windows 9") > 0 Then
+  If instr(tap,"MSIE 4") Or instr(tap,"MSIE 5") Then 
+	On Error Resume Next		
+    document.write "<OBJECT ID='ccprotest' CLASSID='clsid:4B6E3013-6E45-11D0-9309-0020AFE05CC8' width=10 height=10></OBJECT>"
+    version = "none"
+	version = document.ccprotest.getVersion
+	If Err.Number > 0 Then
+      document.write "You have to <A HREF=http://www.blaxxun.com/download/contact/ target=_blank>download</A> the latest<A HREF=http://www.blaxxun.com/download/contact/ target=_blank> blaxxun Contact</A>.<BR><BR>Having finished the download please close your browser and install the new software.<br>Now you are ready to go for the virtual 3D chat!<BR><BR>Alternatively you might enter the <a href=place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&force=s target=place> 2D Chat</a>."
+	Else
+      If instr(version,"3.") > 0 Then
+          location.href = "place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world"
+      Else 
+          location.href = "place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/world"
+      End If
+	End If
+  Else
+    location.href = "place?plc=<$place>&ac=print&T_SUB=<$T_SUB>&tpl=suburbs/check"
+  End If
+End If	
+'-->
+</script>
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+    <font color="#FF0000"><center><b>Sorry <$NNM>, this place is private at this moment, you are not allowed to watch the Chat here :(</b></font>
+<!-- #endif variable="chatreadaccess" -->
+
+</BODY></HTML>

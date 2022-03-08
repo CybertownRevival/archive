@@ -1,0 +1,110 @@
+<HTML>
+<!-- iwos/photo_edit.tmpl -->
+<!-- displays the edit page of the photo album -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Photo Album Edition</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+  function submitForm()
+  {
+    document.storePage.submit();
+  }
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<CENTER>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the page could not been updated!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The page was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+<form method=post action="<$selfurl>" name="storePage" enctype="multipart/form-data">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ac" value="<$ac>">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PAGE" value="<$PAGE>">
+
+<!-- #ifdef variable="uploadNoFile" -->
+  <font color="red">No File <$errfile>!<br></font>
+<!-- #endif variable="uploadNoFile" -->
+<!-- #ifdef variable="uploadWrongMime" -->
+  <font color="red">Wrong Mime <$errfile>!<br></font>
+<!-- #endif variable="uploadWrongMime" -->
+<!-- #ifdef variable="uploadFailCreate" -->
+  <font color="red">Create Failed <$errfile>!<br></font>
+<!-- #endif variable="uploadFailCreate" -->
+<!-- #ifdef variable="uploadOversized" -->
+  <font color="red">Oversized <$errfile>!<br></font>
+<!-- #endif variable="uploadOversized" -->
+
+<br>
+  <H2><$NAM>
+  <a href="<$g_HttpServer>/help/homebuilder/photoalbumhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+  <table width="100%" height="60%">
+  <tr>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE1" -->
+        <img src="<$IMAGE1>" border=0 alt="<$DESC1>"><br>
+      <!-- #endif variable="IMAGE1" -->
+      <input type=text name="DESC1" value="<$DESC1>" maxlength="64" size=24><br>
+      <input type="file" name="IMAGE1" value="<$IMAGE1>" maxlength="64" size=16>
+      <input type="checkbox" name="DELPIC1">delete Picture</input>
+    </td>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE2" -->
+        <img src="<$IMAGE2>" border=0 alt="<$DESC2>"><br>
+      <!-- #endif variable="IMAGE2" -->
+      <input type=text name="DESC2" value="<$DESC2>" maxlength="64" size=24><br>
+      <input type="file" name="IMAGE2" value="<$IMAGE2>" maxlength="64" size=16>
+      <input type="checkbox" name="DELPIC2">delete Picture</input>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE3" -->
+        <img src="<$IMAGE3>" border=0 alt="<$DESC3>"><br>
+      <!-- #endif variable="IMAGE3" -->
+      <input type=text name="DESC3" value="<$DESC3>" maxlength="64" size=24><br>
+      <input type="file" name="IMAGE3" value="<$IMAGE3>" maxlength="64" size=16>
+      <input type="checkbox" name="DELPIC3">delete Picture</input>
+    </td>
+    <td align="center">
+      <!-- #ifdef variable="IMAGE4" -->
+        <img src="<$IMAGE4>" border=0 alt="<$DESC4>"><br>
+      <!-- #endif variable="IMAGE4" -->
+      <input type=text name="DESC4" value="<$DESC4>" maxlength="64" size=24><br>
+      <input type="file" name="IMAGE4" value="<$IMAGE4>" maxlength="64" size=16>
+      <input type="checkbox" name="DELPIC4">delete Picture</input>
+    </td>
+  </tr>
+  </table>
+<br><br>
+  <a href="javascript:submitForm()"><img src="<$g_Images>/images/iwos/update.gif" border=0 alt="update"></a>
+  <a href="javascript:history.back()"><img src="<$g_Images>/images/iwos/cancel.gif" border=0 alt="cancel"></a>
+<br><br>
+  Page <$PAGE> out of <$PCN> pages<br>
+<br>
+</form>
+
+</center>
+
+</BODY>
+</HTML>

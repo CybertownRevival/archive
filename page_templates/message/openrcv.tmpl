@@ -1,0 +1,14 @@
+<HTML>
+<HEAD>
+<TITLE>Member Count</TITLE>
+<SCRIPT LANGUAGE="javascript">
+receiveWin = 0;
+function receiveMsg(url)
+{
+  receiveWin = window.open(url, "receive", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250");
+}
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#000000" onLoad="receiveMsg('<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=getmessage&TYPE=nonotify&TIME=<$CT_STR>')">
+</BODY>
+</HTML>

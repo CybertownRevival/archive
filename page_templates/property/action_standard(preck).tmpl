@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- property/action_standard.tmpl -->
+<base target="_top">
+<!-- property/action.tmpl -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+</HEAD>
+
+<!-- #define variable="CONTCONTROL"  value="0" -->
+<!-- #include virtual="<$g_Templates>common/pgr/contentcontrolallow.tmpl" -->
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="##D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_HTMLRoot>/home/<$commid>/<$BGI>" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<!-- #include virtual="<$g_Templates>property/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="property<$g_exe>?ac=place&ID=<$ID>" target=place >
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #ifdef variable="chataccess" -->
+<a href="property<$g_exe>?ac=place&ID=<$ID>&force=s" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<!-- #endif variable="chataccess" -->
+
+<!-- #ifdef variable="chatpro" -->
+<a href="property<$g_exe>?ac=place&ID=<$ID>&force=p" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chatpro" -->
+
+<!-- #ifndef variable="chatpro" -->
+<!-- #ifdef variable="IC3" value="999" -->
+<a href="property<$g_exe>?ac=place&ID=<$ID>&force=p" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="IC3" -->
+<!-- #endif variable="chatpro" -->
+
+
+
+  <!-- #ifdef variable="HTR1" value="YES"-->
+  
+  <!-- #ifdef variable="HTR3" value=""-->
+    <a href="print60<$g_exe>?KEY=<$ID>&OWN_ID=<$OWN>&BUY_NNM=<$NNM>&TPL=property/deshomes/trade0" target="place">
+    <img src="<$g_Images>/places/deshomes/buyhome.jpg" border=0 alt="Buy this Home"></a><br>
+  <!-- #endif variable="HTR3" -->
+  
+  <!-- #ifndef variable="HTR3" value=""-->
+  <!-- #ifdef variable="HTR3" value="<$NNM>"-->
+      <a href="print60<$g_exe>?KEY=<$ID>&OWN_ID=<$OWN>&BUY_NNM=<$NNM>&TPL=property/deshomes/trade0" target="place">
+      <img src="<$g_Images>/places/deshomes/buyhome.jpg" border=0 alt="Buy this Home"></a><br>
+  <!-- #endif variable="HTR3" -->
+  <!-- #endif variable="HTR3" -->
+  
+  <!-- #endif variable="HTR1" -->
+
+
+<!-- #ifndef variable="owneraccess" -->
+  <!-- #ifdef variable="WOS" value="1"-->
+    <a href="javascript:loadInfo('vote<$g_exe>?ac=rate&OBJDTY=M&OBJKTY=ID&OBJID=<$OWN>&ID=<$g_IWOSRanking>&TPL=iwos/ranking')" target="_self">
+    <img src="<$g_Images>/images/homebuilder/rankthishouse.gif" border=0 alt="Rate this House"></a><br>
+  <!-- #endif variable="WOS" -->
+<!-- #endif variable="owneraccess" -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<a href="javascript:loadInfo('property<$g_exe>?ac=info&ID=<$ID>')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=P&KTY=ID&KEY=<$ID>&MTY=i')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox - private messages!"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=P&KTY=ID&KEY=<$ID>&MTY=m')" target=_self >
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages - public messages!"></a><br>
+<a href="javascript:loadInfo('property<$g_exe>?ac=links&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/blinks.gif" BORDER=0 ALT="Links"></a><br>
+<a href="block<$g_exe>?ID=<$blockid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$blockname></b></a><br>
+<!-- #endif variable="readaccess" -->
+
+<br>
+<!-- #ifdef variable="owneraccess" -->
+
+<a href="property<$g_exe>?ac=update&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+
+<!-- #ifdef variable="ID" value="0103040403010112" -->
+<!-- #ifdef variable="NNM" value="canomian" -->
+<BR><BR>
+<a href="javascript:loadInfo('object<$g_exe>?ac=list&ZON=p00000000000009ff')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check"></a><br>
+<a href="javascript:loadInfo('object<$g_exe>?&ac=uppre')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bupload.gif" BORDER=0 ALT="Upload"></a><br>
+<BR><BR>
+<!-- #endif variable="NNM" -->
+<!-- #endif variable="ID" -->
+
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="isAdmin" -->
+<a target=place href="edit<$g_exe>?DTY=P&KTY=ID&KEY=<$ID>&PLC=property&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="isAdmin" -->
+
+<!-- #ifndef variable="OWN" value="00000169" -->
+<!-- #ifdef variable="deleteaccess" -->
+<a href="property<$g_exe>?ac=delete&ID=<$ID>" target="_top">
+<IMG SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete"></a><br>
+<!-- #endif variable="deleteaccess" -->
+<!-- #endif variable="OWN" value="00000169" -->
+
+<!-- #ifdef variable="CONTCONTROL" value="1" -->
+<a href="javascript:loadCustom('print60<$g_exe>?DTY=P&ID=<$ID>&TPL=common/pgr/pgrset',800,500)" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bcontentcontrol.gif" BORDER=0 ALT="Content Control"></a><br>
+<!-- #endif variable="CONTCONTROL" -->
+
+<!-- #ifdef variable="writeaccess" -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #ifdef variable="readaccess" -->
+<P align=left>
+<small>
+<b><font color=yellow>HOUSES</font></b><br>
+<!--#for loopname="jump" loopvars="id,name" -->
+&nbsp;<a href="property<$g_exe>?ID=<$id>"><b><$name></b></a><br>
+<!--#endfor loopname="jump" -->
+</small>
+<!-- #endif variable="readaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

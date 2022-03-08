@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- eoscon_a/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- moderation -->
+<script language="JavaScript">
+function moderate() {
+window.open('place?ac=moderate&plc=eoscon_b&TKT=695e478a075fb4aa','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=780,height=550');
+}
+</script>
+<!-- end moderation -->
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="place<$g_exe>?plc=eoscon_b&ac=place&ID=<$ID>">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+<br>
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?plc=eoscon_b&ac=place&ID=<$ID>&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=eoscon_b&ac=place&ID=<$ID>&force=p" >
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chataccess" -->
+
+<a href="javascript:loadInfo('/events/eos/eoscon3schedule_pop.html')" target=_self><IMG SRC="<$g_HTMLRoot>/events/eos/schedule.gif" BORDER=0 ALT="Schedule"></a><br>
+
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+
+
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<br><a href="javascript:moderate()" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=eoscon_b&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

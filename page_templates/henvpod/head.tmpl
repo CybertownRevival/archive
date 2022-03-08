@@ -1,0 +1,23 @@
+<SCRIPT LANGUAGE="JavaScript">
+function switchMovie(movieurl) {
+if (movieurl == 'StopMovie') {
+document.realclips.cliplist.options[0].text = "-- Video List --";
+
+document.embeds[0].DoStop();
+
+document.embeds[0].SetSource("<$g_HTMLRoot>/places/henvpod/henvpod.rpm");
+
+document.embeds[0].DoPlay();
+
+}
+
+else {document.realclips.cliplist.options[0].text = "-- Stop Movie --";
+
+document.embeds[0].DoStop();
+
+document.embeds[0].SetSource(movieurl);
+
+document.embeds[0].DoPlay();
+}
+}
+</SCRIPT>

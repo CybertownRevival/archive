@@ -1,0 +1,51 @@
+<HTML>
+
+<HEAD>
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>buddy/loadbuddy.tmpl" -->
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h3 align=center>My Home - My Information</h3>
+<p align=center>
+Here you can change your personal information, e.g. email address, first name, last name, short info for the citizen directory.
+And you could visit your private house.<br>
+</p>
+
+<div align=center>
+<table border=0>
+<tr>
+	<td width=200 align=center><a href="edit<$g_exe>?KEY=<$ID>&TPL=property/updatedata&ac=read"><img src="<$g_Images>/images/buttons/icon_myinfo.jpg" border=0><br><b>Personal Info</b></a></td>
+<!-- #ifndef variable="HOM" value="" -->
+	<td width=200 align=center><a href="javascript:top.location.href='property<$g_exe>?ac=myhouse'" target=top><img src="<$g_Images>/images/buttons/icon_myhouse.jpg" border=0><br><b>Visit My House</b></a></td>
+<!-- #endif variable="HOM" -->
+	<td width=200 align=center><a href="<$g_cgiRoot>/uploadavt<$g_exe>?ac=selectavt"><img src="<$g_Images>/images/buttons/icon_myinfo.jpg" border=0><br><b>My Avatar</b></a></td>
+	<td width=200 align=center><a href="<$g_HTMLRoot>/avatars/avlib.html"><img src="<$g_Images>/images/buttons/icon_myinfo.jpg" border=0><br><b>Avatar Library</b></a></td>
+<!-- #ifdef variable="isAdmin" -->
+<!-- #endif variable="isAdmin" -->
+</tr>
+</table>
+<br>
+To access and set up your Instant Message Center, click on the Online 
+Citizens link under City Time in the right frame.
+<br><br><br>
+
+<!-- Start Ad Banner -->
+<SCRIPT language="JavaScript1.1">
+var ord = Math.round(Math.random() * 1000000000000000000);
+document.writeln("<IFRAME SRC='http://ad.doubleclick.net/adi/US-cybertown.com/US-music/entertainment;sz=468x60;ord=" + ord + "a?' name='frame1' width='468' height='60' frameborder='no' border='0' MARGINWIDTH='0' MARGINHEIGHT='0' SCROLLING='no'>");
+document.writeln("<SCRIPT language='JavaScript1.1' SRC='http://ad.doubleclick.net/adj/US-cybertown.com/US-music/entertainment;abr=!ie;sz=468x60;ord=" + ord + "a?'></" + "" + "SCRIPT>" );
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ad.doubleclick.net/jump/US-cybertown.com/US-music/entertainment;abr=!ie;sz=468x60;ord=7275610223518370?"><IMG SRC="http://ad.doubleclick.net/ad/US-cybertown.com/US-music/entertainment;abr=!ie;sz=468x60;ord=7275610223518370?" border=0 height="60" width="468"></A>
+</NOSCRIPT>
+</IFRAME>
+<!-- End Ad Banner -->
+
+</div>
+
+</BODY>
+</HTML>
+

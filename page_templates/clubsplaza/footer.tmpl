@@ -1,0 +1,285 @@
+<HTML>
+<!-- clubsplaza/middle.tmpl -->
+<!-- contains the clubs search code -->
+<HEAD>
+</HEAD>
+
+<div align=center>
+
+<!-- clubs search code begin -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function SubmitForm1()
+{
+    if( document.filterForm2!=null )
+    {
+        document.filterForm1.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.filterForm1.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }
+}
+
+function SubmitForm2()
+{
+    document.filterForm2.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.filterForm2.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.filterForm2.MYC.value = "on";
+    else
+        document.filterForm2.MYC.value = "";
+}
+
+function SubmitPagerForm()
+{
+    document.pagerForm.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.pagerForm.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.pagerForm.MYC.value = "on";
+    else
+        document.pagerForm.MYC.value = "";
+
+    if( document.filterForm2!=null )
+    {
+        document.pagerForm.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.pagerForm.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }  
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<FORM NAME="filterForm2" METHOD=POST TARGET=_self ACTION="/cgi-bin/cybertown/club?" onSubmit="SubmitForm2()">
+<input type="hidden" name="TKT" value="<$TKT>">
+  
+    <INPUT TYPE="hidden" NAME="ac" VALUE="directory">
+    <INPUT TYPE="hidden" NAME="PLC" VALUE="<$PLC>">
+    <INPUT TYPE="hidden" NAME="KEY" VALUE="<$KEY>">
+    <INPUT TYPE="hidden" NAME="KTY" VALUE="<$KTY>">
+
+    <INPUT TYPE="hidden" NAME="MYC" VALUE="<$MYC>">
+    <INPUT TYPE="hidden" NAME="KFT_NAM" VALUE="<$KFT_NAM>">
+
+    <TABLE ALIGN=center>
+        <TR>
+            <TD valign=center>
+                Select a keyword from the list <b>or</b> input free words for search.<br>
+                Clubs are searched which matches one or more of the given words.<br>
+                You can also quote the words to search for a whole sentence
+            </TD>
+            <TD valign=center>
+                <SELECT NAME="KFT_LIST" width=200>
+
+                    <OPTION VALUE="EMPTY"></OPTION>
+
+                       <OPTION VALUE="Adventure"> Adventure </OPTION>
+
+                       <OPTION VALUE="Alternative Health"> Alternative Health </OPTION>
+
+                       <OPTION VALUE="Art"> Art </OPTION>
+
+                       <OPTION VALUE="Books"> Books </OPTION>
+
+                       <OPTION VALUE="Business and Finance"> Business and Finance </OPTION>
+
+                       <OPTION VALUE="Colony City"> Colony City </OPTION>
+
+                       <OPTION VALUE="Computer"> Computer </OPTION>
+
+                       <OPTION VALUE="Cyberpunk"> Cyberpunk </OPTION>
+
+                       <OPTION VALUE="Dance"> Dance </OPTION>
+
+                       <OPTION VALUE="Education"> Education </OPTION>
+
+                       <OPTION VALUE="Environment/Activism"> Environment/Activism </OPTION>
+
+                       <OPTION VALUE="Family"> Family </OPTION>
+
+                       <OPTION VALUE="Fantasy"> Fantasy </OPTION>
+
+                       <OPTION VALUE="Fashion and style"> Fashion and style </OPTION>
+
+                       <OPTION VALUE="Food &#38; Drink"> Food &#38; Drink </OPTION>
+
+                       <OPTION VALUE="Fun"> Fun </OPTION>
+
+                       <OPTION VALUE="Games"> Games </OPTION>
+
+                       <OPTION VALUE="Gardening"> Gardening </OPTION>
+
+                       <OPTION VALUE="General"> General </OPTION>
+
+                       <OPTION VALUE="Government &#38; Politics"> Government &#38; Politics </OPTION>
+
+                       <OPTION VALUE="History"> History </OPTION>
+
+                       <OPTION VALUE="Hobbies and Crafts"> Hobbies and Crafts </OPTION>
+
+                       <OPTION VALUE="Holiday"> Holiday </OPTION>
+
+                       <OPTION VALUE="Home Country"> Home Country </OPTION>
+
+                       <OPTION VALUE="Humor"> Humor </OPTION>
+
+                       <OPTION VALUE="Kids"> Kids </OPTION>
+
+                       <OPTION VALUE="Lifestyle"> Lifestyle </OPTION>
+
+                       <OPTION VALUE="Magazines"> Magazines </OPTION>
+
+                       <OPTION VALUE="Movies"> Movies </OPTION>
+
+                       <OPTION VALUE="Music"> Music </OPTION>
+
+                       <OPTION VALUE="New Age"> New Age </OPTION>
+
+                       <OPTION VALUE="News and Current Events"> News and Current Events </OPTION>
+
+                       <OPTION VALUE="Paranormal"> Paranormal </OPTION>
+
+                       <OPTION VALUE="Parenting"> Parenting </OPTION>
+
+                       <OPTION VALUE="Peoples &#38; ethnics"> Peoples &#38; ethnics </OPTION>
+
+                       <OPTION VALUE="Pets"> Pets </OPTION>
+
+                       <OPTION VALUE="Poetry"> Poetry </OPTION>
+
+                       <OPTION VALUE="Programming"> Programming </OPTION>
+
+                       <OPTION VALUE="Relationships"> Relationships </OPTION>
+
+                       <OPTION VALUE="Religion and Philosophy"> Religion and Philosophy </OPTION>
+
+                       <OPTION VALUE="Sci-fi"> Sci-fi </OPTION>
+
+                       <OPTION VALUE="Social"> Social </OPTION>
+
+                       <OPTION VALUE="Spirituality"> Spirituality </OPTION>
+
+                       <OPTION VALUE="Sports"> Sports </OPTION>
+
+                       <OPTION VALUE="Technology"> Technology </OPTION>
+
+                       <OPTION VALUE="Teens"> Teens </OPTION>
+
+                       <OPTION VALUE="The Unexplained"> The Unexplained </OPTION>
+
+                       <OPTION VALUE="TV"> TV </OPTION>
+
+                       <OPTION VALUE="Virtual-Reality"> Virtual-Reality </OPTION>
+
+                       <OPTION VALUE="VRML"> VRML </OPTION>
+
+                       <OPTION VALUE="Web &#38; Home Page Design"> Web &#38; Home Page Design </OPTION>
+
+                       <OPTION VALUE="Women's Issues"> Women's Issues </OPTION>
+
+                       <OPTION VALUE="Work &#38; Job"> Work &#38; Job </OPTION>
+
+                       <OPTION VALUE="Writing"> Writing </OPTION>
+
+                        <OPTION VALUE="Ages of Empires"> Ages of Empires </OPTION>
+
+                        <OPTION VALUE="Aliens &#38; UFOs"> Aliens &#38; UFOs </OPTION>
+
+                        <OPTION VALUE="All about"> All about </OPTION>
+
+                        <OPTION VALUE="Baseball"> Baseball </OPTION>
+
+                        <OPTION VALUE="Basketball"> Basketball </OPTION>
+
+                        <OPTION VALUE="Blonde"> Blonde </OPTION>
+
+                        <OPTION VALUE="C"> C </OPTION>
+
+                        <OPTION VALUE="Cars and transportation"> Cars and transportation </OPTION>
+
+                        <OPTION VALUE="Chat"> Chat </OPTION>
+
+                        <OPTION VALUE="Civilization"> Civilization </OPTION>
+
+                        <OPTION VALUE="Classics"> Classics </OPTION>
+
+                        <OPTION VALUE="Cooking, recipes"> Cooking, recipes </OPTION>
+
+                        <OPTION VALUE="Country"> Country </OPTION>
+
+                        <OPTION VALUE="Diving"> Diving </OPTION>
+
+                        <OPTION VALUE="Football"> Football </OPTION>
+
+                        <OPTION VALUE="Fun"> Fun </OPTION>
+
+                        <OPTION VALUE="Heavy Metal"> Heavy Metal </OPTION>
+
+                        <OPTION VALUE="Homes &#38; Home Improvement"> Homes &#38; Home Improvement </OPTION>
+
+                        <OPTION VALUE="Internet"> Internet </OPTION>
+
+                        <OPTION VALUE="Java"> Java </OPTION>
+
+                        <OPTION VALUE="Linux"> Linux </OPTION>
+
+                        <OPTION VALUE="MacOS"> MacOS </OPTION>
+
+                        <OPTION VALUE="Macs"> Macs </OPTION>
+
+                        <OPTION VALUE="Pascal"> Pascal </OPTION>
+
+                        <OPTION VALUE="PCs"> PCs </OPTION>
+
+                        <OPTION VALUE="Pop"> Pop </OPTION>
+
+                        <OPTION VALUE="Quake"> Quake </OPTION>
+
+                        <OPTION VALUE="Rock'n'Roll"> Rock'n'Roll </OPTION>
+
+                        <OPTION VALUE="Skate boarding"> Skate boarding </OPTION>
+
+                        <OPTION VALUE="Soccer"> Soccer </OPTION>
+
+                        <OPTION VALUE="Software"> Software </OPTION>
+
+                        <OPTION VALUE="Windows"> Windows </OPTION>
+
+                        <OPTION VALUE="Wrestling"> Wrestling </OPTION>
+
+                </SELECT><br>
+                <INPUT TYPE="text" NAME="KFT_TEXT" VALUE="<$KFT_TEXT>" SIZE=24>
+            </TD>
+            <TD valign=center>
+                <INPUT TYPE="submit" NAME="SORT_BTN" VALUE="Apply">
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>
+
+<!-- clubs search code end -->
+
+</div>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+

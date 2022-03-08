@@ -1,0 +1,151 @@
+<!-- object/newbuy -->
+<!-- #ifndef variable="T_BUY" -->
+	<html>
+	<head>
+	<title>blaxxun - Object</title>
+	<script language="javascript">
+	function doClose()
+	{
+  	if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    	alert("Please close the window by clicking on the X in the upper right corner.");
+	  else
+    	self.close();
+	}
+	</script>
+	</head>
+	
+	<!-- object/display.tmpl -->
+	
+	<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+	
+	<div align=center>
+	<h2>Object Properties</h2>
+	
+
+  	<h2>Congratulations, the object <$NAM> is now yours!</h2>
+
+
+	<table border=0>
+	
+	<tr>
+	<!-- #ifdef variable="IMG" -->
+  	<td><IMG SRC="<$IMG>"></td>
+	<!-- #endif variable="IMG" -->
+	<!-- #ifndef variable="IMG" -->
+	  <td></td>
+	<!-- #endif variable="IMG" -->
+	
+	<td rowspan=2>
+	<!-- #ifdef variable="ZONSELF" -->
+	<$NAM> is currently in your possession.<br>
+	<!-- #endif variable="ZONSELF" -->
+	<!-- #ifdef variable="ZONNNM" -->
+	<$NAM> is currently in <$ZONNNM>'s possession.<br>
+	<!-- #endif variable="ZONNNM" -->
+	<!-- #ifdef variable="ZONNAM" -->
+	<$NAM> is currently located in the
+	<!-- #if variable="T_OWN" != value="" -->
+	Storage Area "<$ZONNAM>" of <$T_OWN><br>
+	<!-- #else variable="T_OWN" -->
+	<$ZONNAM>.<br>
+	<!-- #endif variable="T_OWN" -->
+	<!-- #endif variable="ZONNAM" -->
+	
+	<!-- #ifdef variable="CNT" value="00000000"-->
+	There are none available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifdef variable="CNT" value="00000001"-->
+	There is 1 still available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifndef variable="intCNTprinted"-->
+	<!-- #ifdef variable="intCNT"-->
+	There are <$intCNT> still available.<br>
+	<!-- #endif variable="intCNT" -->
+	<!-- #endif variable="intCNTprinted" -->
+	
+	<!-- #ifdef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	One costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	<!-- #ifndef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	This object costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	
+	<br>
+  	You have <$M_MON> CCs at the moment.<br>
+	<br>
+
+	<!-- #ifdef variable="CRE" -->
+	The object was created by <$CRE_NNM>.<br>
+	<!-- #endif variable="CRE" -->
+	<$TXT>
+	<!-- #ifdef variable="WRL" -->
+	Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&CAT=<$CAT>&ID=<$ID>">here</a> for the 3D VRML representation.
+	<!-- #endif variable="WRL" -->
+	
+	</td>
+	</tr>
+	
+	<tr>
+	<td align=center><$NAM></td>
+	</tr>
+	
+	</table>
+
+	<!-- #ifdef variable="ALLATTR" -->
+  	<tr>
+	  <td>Object ID</td>
+  	<td><$ID></td>
+	  </tr>
+  	<tr>
+	  <td>Object Category</td>
+  	<td><$CAT></td>
+	  </tr>
+  	<tr>
+	  <td>Object Owner</td>
+  	<td><$OWN></td>
+	  </tr>
+	<!-- #endif variable="ALLATTR" -->
+
+	<p>
+	</table>
+	<table><tr>
+	
+	
+	<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+	</tr></table>
+	
+	</p>
+	</div>
+	<h3>Description</h3>
+	<!-- #ifdef variable="IWOS_TXT" -->
+  	<p><$IWOS_TXT></p>
+	<!-- #endif variable="IWOS_TXT" -->
+	
+	<script language=javascript>
+	focus();
+	</script>
+	</body>
+	</html>
+<!-- #endif variable="T_BUY" -->
+<!-- #ifdef variable="T_BUY" -->
+	<html>
+	<head>
+	<title>blaxxun - Object</title>
+	<script language="javascript">
+	window.location.replace("./object?ac=display&ID=<$ID>&tpl=object/newbuy&T_BUY2=yes");
+	</script>
+	</head>
+	
+	<!-- object/display.tmpl -->
+	
+	<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+	</body>
+	</html>
+
+<!-- #endif variable="T_BUY" -->

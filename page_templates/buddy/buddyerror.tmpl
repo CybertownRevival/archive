@@ -1,0 +1,34 @@
+<html>
+<head>
+<title><$g_title> - Buddies</title>
+<base target="_top"> 
+<!-- buddy/buddyerror.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<!-- #ifdef variable="buddyErrorClientCreate" -->
+Could not create a connection to Buddy Server.
+<!-- #endif variable="buddyErrorClientCreate" -->
+
+<!-- #ifdef variable="buddyErrorUdpRequest" -->
+Error when requesting the Buddy List the Buddy Server.
+<!-- #endif variable="buddyErrorUdpRequest" -->
+
+<!-- #ifdef variable="buddyErrorUdpResult" -->
+Buddy list result error.
+<!-- #endif variable="buddyErrorUdpResult" -->
+
+<!-- #ifdef variable="buddyErrorUdpServerResult" -->
+Buddy list result error from server: <$buddyErrorUdpServerResult>
+<!-- #endif variable="buddyErrorUdpServerResult" -->
+
+<!-- #ifdef variable="buddyErrorVisitor" -->
+Sorry, Visitors can't have Buddies!
+<!-- #endif variable="buddyErrorVisitor" -->
+
+
+</body>
+</html>
+

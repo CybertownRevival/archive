@@ -1,0 +1,974 @@
+<html>
+<head>
+<title>Cybertown Banner Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script>
+
+function validate(){
+ if(confirm("Are you sure you want to change this setting?")){
+  bool = true;
+ }
+ else{bool = false;}
+ return bool;
+}
+
+</script>
+</head>
+<body bgcolor="#000000" text="#00FF00" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<!-- #ifdef variable="isAdmin" -->
+<center>
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#FF0000">Cybertown Banner Control</font></b></font></p>
+
+<p>
+<font face="Arial, Helvetica, sans-serif"><a href="#places">Places</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#mall">Mall</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#eplex">ePlex</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#vpods">vDrome</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#clubs">Clubs</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#colonies">Colonies</a><font color="#000000">...</font>
+<font face="Arial, Helvetica, sans-serif"><a href="#misc">Misc</a><font color="#000000">...</font>
+
+</p>
+
+<FORM METHOD="POST" ACTION="/cgi-bin/cybertown/edit" NAME="">
+<input type="hidden" name="TPL" value="banners/banner_update">
+<input type="hidden" name="ac" value="print">
+
+<TABLE  border="1" cellspacing="0" cellpadding="3">
+<tr> 
+<td><font face="Arial, Helvetica, sans-serif">Place</TD>
+<td><font face="Arial, Helvetica, sans-serif">ID</TD>
+<td><font face="Arial, Helvetica, sans-serif">Menu Main</TD>
+<td><font face="Arial, Helvetica, sans-serif">Menu Small</TD>
+<td><font face="Arial, Helvetica, sans-serif">Menu Affiliate</TD>
+<td><font face="Arial, Helvetica, sans-serif">Place Banner</TD>
+<td><font face="Arial, Helvetica, sans-serif">Edit</TD>
+</tr>
+<tr> 
+<tr><td></TD><td></TD><td></TD><td></TD><td></TD></tr>
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="places">Places</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM001></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000001</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1001></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2001></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3001></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4001></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000001">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM002></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000002</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1002></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2002></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3002></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4002></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000002">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM003></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000003</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1003></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2003></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3003></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4003></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000003">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM005></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000005</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1005></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2005></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3005></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4005></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000005">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM006></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000006</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1006></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2006></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3006></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4006></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000006">EDIT</A></TD>
+</TR><TR>
+
+<!--
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM007></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000007</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1007></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2007></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3007></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4007></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000007">EDIT</A></TD>
+</TR><TR>
+-->
+
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM008>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000008</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1008></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2008></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3008></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4008></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000008">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM00a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000a</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000a">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM00b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000b</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000b">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM00c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000c</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000c">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM00d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000d</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000d">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM010></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000010</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1010></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2010></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3010></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4010></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000010">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM011></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000011</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1011></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2011></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3011></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4011></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000011">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM012></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000012</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1012></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2012></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3012></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4012></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000012">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM013></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000013</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1013></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2013></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3013></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4013></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000013">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM039></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000039</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1039></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2039></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3039></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4039></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000039">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM040></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000040</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1040></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2040></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3040></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4040></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000040">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM014></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000014</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1014></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2014></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3014></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4014></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000014">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM015></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000015</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1015></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2015></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3015></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4015></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000015">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM016></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000016</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1016></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2016></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3016></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4016></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000016">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001d</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001d">EDIT</A></TD>
+</TR>
+
+<!--
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001e</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001e">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001f</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001f">EDIT</A></TD>
+</TR><TR>
+-->
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM022></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000022</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1022></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2022></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3022></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4022></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000022">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM024></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000024</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1024></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2024></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3024></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4024></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000024">EDIT</A></TD>
+</TR>
+
+<!--
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM026></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000026</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1026></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2026></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3026></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4026></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000026">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM027></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000027</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1027></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2027></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3027></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4027></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000027">EDIT</A></TD>
+</TR>
+-->
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM028></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000028</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1028></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2028></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3028></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4028></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000028">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM029></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000029</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1029></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2029></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3029></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4029></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000029">EDIT</A></TD>
+</TR>
+
+
+<!--
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002a</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002a">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002b</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002b">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002c</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002c">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002d</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002d">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002e</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002e">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM02f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000002f</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD102f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD202f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD302f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD402f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000002f">EDIT</A></TD>
+</TR><TR>
+-->
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM031></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000031</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1031></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2031></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3031></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4031></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000031">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM032></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000032</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1032></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2032></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3032></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4032></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000032">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM033></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000033</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1033></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2033></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3033></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4033></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000033">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM034></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000034</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1034></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2034></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3034></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4034></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000034">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM041></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000041</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1041></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2041></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3041></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4041></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000041">EDIT</A></TD>
+</TR>
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="mall">Mall</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM009></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000009</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1009></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2009></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3009></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4009></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000009">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM901></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000901</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1901></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2901></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3901></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4901></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000901">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM902></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000902</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1902></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2902></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3902></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4902></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000902">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM903></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000903</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1903></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2903></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3903></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4903></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000903">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM904></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000904</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1904></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2904></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3904></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4904></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000904">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM905></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000905</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1905></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2905></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3905></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4905></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000905">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM906></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000906</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1906></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2906></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3906></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4906></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000906">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM907></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000907</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1907></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2907></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3907></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4907></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000907">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM908></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000908</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1908></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2908></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3908></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4908></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000908">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM909></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000909</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1909></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2909></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3909></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4909></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000909">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090a</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090a">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090b</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090b">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090c</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090c">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090d</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490d></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090d">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090e</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090e">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM90f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000090f</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD190f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD290f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD390f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD490f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000090f">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM910></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000910</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1910></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2910></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3910></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4910></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000910">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM911></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000911</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1911></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2911></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3911></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4911></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000911">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM912></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000912</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1912></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2912></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3912></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4912></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000912">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM913></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000913</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1913></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2913></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3913></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4913></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000913">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM914></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000914</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1914></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2914></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3914></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4914></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000914">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM915></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000915</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1915></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2915></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3915></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4915></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000915">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM916></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000916</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1916></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2916></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3916></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4916></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000916">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM917></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000917</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1917></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2917></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3917></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4917></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000917">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM918></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000918</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1918></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2918></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3918></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4918></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000918">EDIT</A></TD>
+</TR>
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="eplex">ePlex</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM017></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000017</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1017></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2017></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3017></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4017></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000017">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM038></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000038</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1038></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2038></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3038></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4038></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000038">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM018></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000018</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1018></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2018></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3018></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4018></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000018">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM019></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000019</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1019></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2019></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3019></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4019></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000019">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001a</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401a></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001a">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM037></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000037</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1037></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2037></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3037></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4037></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000037">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001b</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401b></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001b">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM01c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000001c</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD101c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD201c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD301c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD401c></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000001c">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM035></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000035</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1035></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2035></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3035></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4035></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000035">EDIT</A></TD>
+</TR>
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="vpods">vPods</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM023></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000023</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1023></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2023></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3023></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4023></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000023">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM025></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000025</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1025></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2025></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3025></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4025></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000025">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM030></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000030</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1030></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2030></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3030></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4030></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000030">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM036></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000036</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1036></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2036></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3036></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4036></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000036">EDIT</A></TD>
+</TR>
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="clubs">Clubs</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif">Clubs</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000e</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400e></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000e">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif">Clubs Plaza</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000042</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1042></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2042></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3042></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4042></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000042">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM020></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000020</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1020></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2020></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3020></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4020></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000020">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM021></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000021</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1021></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2021></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3021></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4021></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000021">EDIT</A></TD>
+</TR>
+
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="colonies">Colonies</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0101></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0101000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10101></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20101></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30101></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40101></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0101000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0102></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0102000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10102></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20102></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30102></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40102></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0102000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0103></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0103000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10103></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20103></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30103></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40103></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0103000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0104></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0104000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10104></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20104></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30104></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40104></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0104000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0105></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0105000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10105></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20105></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30105></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40105></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0105000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0106></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0106000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10106></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20106></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30106></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40106></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0106000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0107></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0107000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10107></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20107></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30107></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40107></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0107000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0108></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0108000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10108></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20108></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30108></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40108></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0108000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0109></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0109000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10109></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20109></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30109></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40109></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0109000000000000">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM0110></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0110000000000000</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD10110></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD20110></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD30110></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD40110></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0110000000000000">EDIT</A></TD>
+</TR>
+ 
+
+ 
+
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><B><a name="misc">Misc</a></B></TD>
+<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD></TR>
+<TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM004></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">0000000000000004</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD1004></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD2004></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD3004></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD4004></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=0000000000000004">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM00f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">000000000000000f</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD100f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD200f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD300f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD400f></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=000000000000000f">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM9ef></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">00000000000009ef</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD19ef></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD29ef></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD39ef></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD49ef></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=00000000000009ef">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM9f0></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">00000000000009f0</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD19f0></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD29f0></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD39f0></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD49f0></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=00000000000009f0">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM9f1></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">00000000000009f1</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD19f1></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD29f1></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD39f1></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD49f1></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=00000000000009f1">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM9fe></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">00000000000009fe</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD19fe></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD29fe></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD39fe></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD49fe></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=00000000000009fe">EDIT</A></TD>
+</TR><TR>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$NAM9ff></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif">00000000000009ff</TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD19ff></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD29ff></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD39ff></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><$AD49ff></TD>
+<TD><FONT face="Arial, Helvetica, sans-serif"><A href="/cgi-bin/cybertown/edit?TPL=banners/banner_change&T_ID=00000000000009ff">EDIT</A></TD>
+</TR>
+</TABLE>
+
+</FORM>
+<br><br>
+
+<font face="Arial, Helvetica, sans-serif"><b>Other Places that must be updated Manually</b><br><br>
+
+<table border=1 cellpadding=3 cellspacing=0 align=center>
+<tr><td><font face="Arial, Helvetica, sans-serif">Homepage                   </td><td><font face="Arial, Helvetica, sans-serif">Homepage tag            </td>
+<td><font face="Arial, Helvetica, sans-serif">
+/main_ns.html<br>
+/main_ie.html<br>
+/main_other.html<br>
+</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">How Do I                   </td><td><font face="Arial, Helvetica, sans-serif">Music & Entertain       </td>
+<td><font face="Arial, Helvetica, sans-serif">/info/controlpanel/index.html</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Cybertown Directory        </td><td><font face="Arial, Helvetica, sans-serif">Music & Entertain       </td>
+<td><font face="Arial, Helvetica, sans-serif">/info/directory.html</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">My Info                    </td><td><font face="Arial, Helvetica, sans-serif">Music & Entertain       </td>
+<td><font face="Arial, Helvetica, sans-serif">/cgi-bin/cybertown/templates/property/mydata.tmpl</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Help/Info                  </td><td><font face="Arial, Helvetica, sans-serif">Music & Entertain       </td>
+<td><font face="Arial, Helvetica, sans-serif">/info/helpinfo.html</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Activities                 </td><td><font face="Arial, Helvetica, sans-serif">Affiliate store banner  </td>
+<td><font face="Arial, Helvetica, sans-serif"></td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Post Cards                 </td><td><font face="Arial, Helvetica, sans-serif">Affiliate store banner  </td>
+<td><font face="Arial, Helvetica, sans-serif">/places/post/post.html</td></tr>
+<tr><font face="Arial, Helvetica, sans-serif"><td><font face="Arial, Helvetica, sans-serif">Feedback                   </td><td><font face="Arial, Helvetica, sans-serif">Affiliate store banner  </td>
+<td><font face="Arial, Helvetica, sans-serif">
+/cgi-bin/cybertown/templates/msb/feedback.tmpl<br>
+/cgi-bin/cybertown/templates/msb/read.tmpl<br>
+</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Map                        </td><td><font face="Arial, Helvetica, sans-serif">Affiliate store banner  </td>
+<td><font face="Arial, Helvetica, sans-serif">/cgi-bin/cybertown/templates/enter/mapcity.tmpl</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Cybertown message boards   </td><td><font face="Arial, Helvetica, sans-serif">Affiliate store banner  </td>
+<td><font face="Arial, Helvetica, sans-serif">/cgi-bin/cybertown/templates/msb/read.tmpl</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">Media menu ad banners      </td><td><font face="Arial, Helvetica, sans-serif">Music & Entertain.      </td>
+<td><font face="Arial, Helvetica, sans-serif">currently being modified to include banners</td></tr>
+<tr><td><font face="Arial, Helvetica, sans-serif">City Plaza                 </td><td><font face="Arial, Helvetica, sans-serif">Changing                </td>
+<td><font face="Arial, Helvetica, sans-serif">
+main banner /cgi-bin/cybertown/templates/enter/menu.tmpl<br>
+place banner /cgi-bin/cybertown/templates/enter/head.tmpl<br>
+</td></tr>
+
+
+</table>   
+
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#FF0000">Set Banners in Emergency Mode</font></b></font></p>
+<font face="Arial, Helvetica, sans-serif">
+
+Emergency mode replaces all externally served banners with internally served banners when there are problems with the external banners.  
+To place Cybertown banners in emergency mode, change the value of the text field below to "emergency" and click update.  
+Change the text field to "normal" to disable emergency mode. 
+
+<FORM METHOD="POST" ACTION="/cgi-bin/cybertown/edit" NAME="emergency_form" onSubmit="return validate(this)">
+<input type="hidden" name="ID" value="0000000000000001">
+<input type="hidden" name="TPL" value="banners/update_emergency">
+CURRENT STATUS:
+<input type="textfield"  name="T_EBANNER" value="<$EBN>" size="5"><br><br>
+<input type="submit" name="submit" value="UPDATE">
+</FORM>
+
+<!-- #endif variable="isAdmin" -->
+</center>
+</body>
+</html>
+
+

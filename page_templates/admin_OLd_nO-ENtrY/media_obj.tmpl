@@ -1,0 +1,111 @@
+<!-- admin/media_obj.tmpl -->
+<!-- administrate the multimedia objects of a district -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<br>
+<h2>Multimedia Object <font color=#80ff00>ID: <$ID></font></h2>
+<br>
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<!--#ifdef variable="VRMLPATH" -->
+    <b><i>
+        Please copy all necessary texture images for the new 3D home to the directory<br>
+        <$VRMLPATH>!<br>
+    </i></b>
+<!--#endif variable="VRMLPATH" -->
+
+<br>
+<form enctype="multipart/form-data" name="updateForm" method=post action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KFT" value="<$KFT>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="parent_tpl" value="<$parent_tpl>">
+
+    <input type=hidden name="ac" value="edit">
+    <input type=hidden name="KEY" value="<$KEY>">
+
+    <input type=hidden name="INDEX" value="<$ID_MASK>">
+
+    <table border=0>
+        <tr>
+            <td align=right>Index:&nbsp;&nbsp;</td>
+            <td><$ID_MASK></td>
+        </tr>
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td><input type="text" name="NAM" value="<$NAM>" size=24></td>
+        </tr>
+        <tr>
+            <td align=right>Text:&nbsp;&nbsp;</td>
+            <td><input type="text" name="TXT" value="<$TXT>" size=32 maxlength=255></td>
+        </tr>
+        <!--#ifdef variable="price" -->
+        <tr>
+            <td align=right>Cost:&nbsp;&nbsp;</td>
+            <td><input type="text" name="CST" value="<$CST>" size=8 maxlength=8></td>
+            <td align=right>Price:&nbsp;&nbsp;</td>
+            <td><input type="text" name="PRC" value="<$PRC>" size=8 maxlength=8></td>
+        </tr>
+        <!--#endif variable="price" -->
+        <!--#ifndef variable="vrml" -->
+       <tr><td colspan=4 align=center><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Image File:&nbsp;&nbsp;</td>
+            <td><input type="file" name="FILE" maxlength="255" size=24></td>
+        </tr>
+        <!--#endif variable="vrml" -->
+        <!--#ifdef variable="vrml" -->
+        <tr><td colspan=4 align=center><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Image File:&nbsp;&nbsp;</td>
+            <td>
+                <input type="file" name="IMGFILE" maxlength="255" size=24>
+                <input type="hidden" name="vrml" value="<$vrml>">
+            </td>
+        </tr>
+        <tr>
+            <td align=right>VRML File:&nbsp;&nbsp;</td>
+            <td colspan=3><input type="file" name="VRMLFILE" maxlength="255" size=24></td>
+        </tr>
+        <!--#endif variable="vrml" -->
+        <tr><td colspan=2 align=center>&nbsp;</td></tr>
+        <tr>
+            <td colspan=2 align=center>
+                <input type=submit name="edit" value="Update" width=100>
+                <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+                <input type=button name="back" value="Back" onClick="history.back()" width=100>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
+

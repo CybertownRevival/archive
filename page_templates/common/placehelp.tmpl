@@ -1,0 +1,32 @@
+<!-- common/placehelp.tmpl -->
+<!-- included in place.tmpl -->
+
+<!-- #ifdef variable="isVisitor" -->
+
+<!-- #if variable="scenename" == value="Newcomers Info" -->
+<small><font color="#FFFF00"><center>IF YOU WANT TO GO TO WHERE MOST PEOPLE ARE CHATTING,<br>CLICK ON
+JUMP GATE IN RIGHT FRAME AND CHOOSE "THE PLAZA"</center></font></small>
+<!-- #endif variable="scenename" -->
+
+<!-- #if variable="scenename" != value="Newcomers Info" -->
+    <small><font color="#FFFF00"><center>Visitors can only watch the chat - Type <b>'/options'</b> for special chat options</center></font></small>
+<!-- #endif variable="scenename" -->
+
+<!-- #endif variable="isVisitor" -->
+
+
+<!-- #ifndef variable="isVisitor" -->
+
+<!-- #if variable="scenename" == value="Newcomers Info" -->
+<small><font color="#FFFF00"><center>IF YOU WANT TO GO TO WHERE MOST PEOPLE ARE CHATTING,<br>CLICK ON
+JUMP GATE IN RIGHT FRAME AND CHOOSE "THE PLAZA"</center></font></small>
+<!-- #endif variable="scenename" -->
+
+<!-- #if variable="scenename" != value="Newcomers Info" -->
+    <small>Click 'MY HOUSE' to find your home, click '3D WORLD' to go into 3D</small>
+<!-- #endif variable="scenename" -->
+
+<!-- #endif variable="isVisitor" -->
+
+
+

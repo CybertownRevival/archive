@@ -1,0 +1,60 @@
+<html>
+<head>
+<title><$g_title> - Calendar</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Calendar Access Error</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="calerror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this calendar.
+<!-- #endif variable="calerror001" -->
+
+<!-- #ifdef variable="calerror002" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to configure this calendar.
+<!-- #endif variable="calerror002" -->
+
+<!-- #ifdef variable="calerror003" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to access the calendar.
+<!-- #endif variable="calerror003" -->
+
+<!-- #ifdef variable="calerror004" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to read the calendar.
+<!-- #endif variable="calerror004" -->
+
+<!-- #ifdef variable="calerror005" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to delete events from the calendar.
+<!-- #endif variable="calerror005" -->
+
+<!-- #ifdef variable="calerror006" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to destroy the calendar.
+<!-- #endif variable="calerror006" -->
+
+<!-- #ifdef variable="calerror007" -->
+Sorry <$NNM>,
+<P>
+The calendar you wanted to access does not exist anymore.
+Maybe its owner has deleted it.
+<!-- #endif variable="calerror007" -->
+
+</font>
+
+</body>
+</html>
+

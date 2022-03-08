@@ -1,0 +1,20 @@
+<a href="javascript:loadInfo('place<$g_exe>?plc=shopping&ac=info&ID=0000000000000009')" target="_self">  
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>  
+<!-- #ifdef variable="readaccess" -->  
+<a href="javascript:loadInfo('<$g_HTMLRoot>/help/objects.html')" target="_self">  
+<IMG SRC="<$g_Images>/images/buttons/bobjects.gif" BORDER=0 ALT="Shopping + Objects"></a><br>  
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000009&MTY=i')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>  
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000009&MTY=m')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>  
+<!-- #endif variable="readaccess" -->  
+  
+<!-- #if variable="ID" == value="00000000000009fe" -->
+<!-- #ifdef variable="owneraccess" -->
+<br> 
+<a href="object<$g_exe>?ac=list&ZON=p00000000000009ff&actions=1" target="_blankie">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+

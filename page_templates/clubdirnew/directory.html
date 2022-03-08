@@ -1,0 +1,298 @@
+<!-- clubdir/directory -->
+<!--- display the directory of the clubs --->
+<html>
+<head>
+<title><$g_title> - Club Directory</title>
+
+<!-- #ifdef variable="owneraccess" -->
+<script language="javascript">
+<!--
+
+function checkPic()
+{
+  var strCat = '<$CAT>';
+
+  while( strCat.length>0 && strCat.substring(strCat.length-4, strCat.length)=="0000" )
+  {
+    strCat = strCat.substring( 0, strCat.length-4 );
+  }
+
+  if( strCat.length==4 && strCat=="CT00" )
+    strCat = "CT*";
+  else if( strCat.length<16 )
+    strCat = strCat+'*';
+
+  document.location.href = '<$g_cgiRoot>/club<$g_exe>?ac=directory&CAT='
+                             + strCat + '&TPL=clubdir/piclist<$g_SessionID>';
+}
+
+function messageToAll( id )
+{
+  var now = new Date();
+  var url = "<$g_cgiRoot>/print?DTY=CL&ID=CT00000000000000&KFT=CT*&TPL=msboard/toall1<$g_SessionID>&t=" + now.getTime();
+  location.href=url;
+}
+
+
+//-->
+</script>
+<!-- #endif variable="owneraccess" -->
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font1>
+
+<!-- #define variable="headerimage" value="clubdirinfo.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<!--#ifdef variable="[PREV]" -->
+  <!--#define variable="scroll" value="1" -->
+<!--#endif variable="[PREV]" -->
+<!--#ifdef variable="[NEXT]" -->
+  <!--#define variable="scroll" value="1" -->
+<!--#endif variable="[NEXT]" -->
+
+<table width=100% border="0" cellpadding="0" cellspacing="0" valign="top" align="center" width="318">
+<tr <$g_bgcolor5> valign="top">
+  <td>
+    <a href="javascript:history.go(-1)"><img
+      src="<$g_HTMLRoot>/images/buttons/backbtn.gif" alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+    <a href="<$g_cgiRoot>/club<$g_exe>?ac=charts&TPL=clubdir/charts&KTY=CNT&DTY=CL<$g_SessionID>" target="_self"><img
+      src="<$g_HTMLRoot>/images/buttons/clubchartsbtn.gif" border="0" alt="Club Charts" vspace="0" hspace="0" align="left"></a>
+    <!-- #if variable="MYC" != value="1"-->
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=clubdir&MYC=1&KTY=<$KTY>&CAT=<$CAT><$g_SessionID>"><img
+        src="<$g_HTMLRoot>/images/buttons/myclubsbtn.gif" alt="My Clubs" border="0" align="left" vspace="0" hspace="0"></a>
+    <!-- #else variable="MYC" -->
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=clubdir&KTY=<$KTY>&CAT=<$CAT><$g_SessionID>"><img
+        src="<$g_HTMLRoot>/images/buttons/allclubsbtn.gif" alt="All Clubs" border="0" align="left" vspace="0" hspace="0"></a>
+    <!-- #endif variable="MYC" -->
+    <!-- #ifdef variable="writeaccess" -->
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=showForm&TPL=clubdir/create&experCheck=club_min_exper&CAT=<$CAT><$g_SessionID>" target="_self"><img
+        src="<$g_HTMLRoot>/images/buttons/createclubbtn.gif" border="0" alt="Create Club" vspace="0" hspace="0" align="left" ></a>
+    <!-- #endif variable="writeaccess" -->
+  </td>
+</tr>
+<!-- #if variable="CK2" != value="" -->
+  <tr>
+    <td>
+      <img src="<$g_HTMLRoot>/images/buttons/leerbtn.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+      <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$CK2><$g_SessionID>" target="_self"><img
+        src="<$g_HTMLRoot>/images/buttons/clubweekbtn.gif" border="0" alt="Club of the Week" vspace="0" hspace="0" align="left"></a>
+    </td>
+  </tr>
+<!-- #endif variable="CK2" -->
+<!-- #ifdef variable="owneraccess" -->
+  <tr <$g_bgcolor6>>
+    <td>
+      <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+      <a href="<$g_cgiRoot>/edit<$g_exe>?ac=read&KEY=<$CAT>&TPL=clubdir/catupdate&T_CATORD=<$CATORD><$g_SessionID>" target="info"><img
+        src="<$g_HTMLRoot>/images/buttons/updatebtn.gif" alt="Update Category" border="0" align="left" vspace="0" hspace="0"></a>
+      <a href="javascript:checkPic();" target="info"><img
+        src="<$g_HTMLRoot>/images/buttons/check.gif" border="0" alt="Check Pictures" vspace="0" hspace="0" align="left" ></a>
+    </td>
+  </tr>
+  <!-- #if variable="CAT" == value="CT00000000000000"-->
+    <tr <$g_bgcolor6>>
+      <td>
+        <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+        <a href="javascript:messageToAll('<$CAT>')" target=_self><img
+          src="<$g_HTMLRoot>/images/buttons/messagetoallbtn.gif" alt="Message to all" border="0" align="left" vspace="0" hspace="0"></a>
+      </td>
+    </tr>
+  <!-- #endif variable="CAT" -->
+<!-- #endif variable="owneraccess" -->
+<!-- #if variable="MYC" != value="1"-->
+  <tr valign="top">
+    <td>
+      <table border="0" align="center" width="98%">
+      <tr><td><font size="-2">&nbsp;</font></td></tr>
+      <tr>
+        <td align="left" <$g_bgcolor3>><$g_font1>&nbsp;
+          <!-- #if variable="CAT" == value="CT00000000000000"-->
+            <b><$CLCNT> Clubs in this Community</b>
+          <!-- #else variable="CAT" -->
+            <!-- #if variable="CAT" contains value="000000000000"-->
+              <b><$CLCNT> Clubs in this Category</b>
+            <!-- #endif variable="CAT" -->
+            <!-- #if variable="CAT" !contains value="000000000000"-->
+              <b><$CLCNT> Clubs in this Sub-Category</b>
+            <!-- #endif variable="CAT" -->
+          <!-- #endif variable="CAT" -->
+          </font>
+        </td>
+      </tr>
+      <tr><td><font size="-2">&nbsp;</font></td></tr>
+      <tr>
+        <td align="left"><$g_font1>
+          <!-- #if variable="CAT" != value="CT00000000000000"-->
+            <b><a href="club<$g_exe>?TPL=<$TPL>&MYC=<$MYC>&CAT=CT00000000000000&CATORD=<$CATORD><$g_SessionID>"><$TOP_NAM></a></b>
+          <!-- #else variable="CAT" -->
+            <b><$TOP_NAM></b>
+          <!-- #endif variable="CAT" -->
+          </font>
+        </td>
+      </tr>
+      <!--#for loopname="parentcatloop" loopvars="PCAT_ID_" -->
+        <tr>
+          <td align="left"><$g_font1>
+            <!-- #define variable="DEPTH" value="<$loopindex>"-->
+            <!-- #if variable="DEPTH" > value="0"-->
+              &nbsp;&nbsp;
+            <!-- #endif variable="DEPTH" -->
+            <!-- #if variable="PCAT_ID_" != variable="CAT"-->
+              &nbsp;&nbsp;&gt;&nbsp;<b><a href="club<$g_exe>?TPL=<$TPL>&MYC=<$MYC>&CAT=<$PCAT_ID_>&CATORD=<$CATORD><$g_SessionID>"><$PCAT_NAM_></a></b>
+            <!-- #else variable="PCAT_ID_" -->
+              &nbsp;&nbsp;&gt;&nbsp;<b><$PCAT_NAM_></b>
+            <!-- #endif variable="PCAT_ID_" -->
+            </font>
+          </td>
+        </tr>
+      <!--#endfor loopname="parentcatloop" -->
+      <!-- #if variable="DES" != value=""-->
+      <tr>
+        <td align="left"><$g_font1>
+          <$DES></font>
+        </td>
+      </tr>
+      <!-- #endif variable="DES" -->
+      <!-- #ifdef variable="CAT_ID_0" -->
+        <!--#for loopname="categoryloop" loopvars="CAT_ID_" -->
+          <!-- #if variable="DEPTH" == value="0"-->
+            <!-- #define variable="SPACE" value="&nbsp;&nbsp;" -->
+          <!-- #endif variable="DEPTH" -->
+          <!-- #if variable="DEPTH" > value="0"-->
+            <!-- #define variable="SPACE" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" -->
+          <!-- #endif variable="DEPTH" -->
+          <!-- #ifdef variable="CAT_NEW_" -->
+            <!-- #define variable="NEW_PIC" value="<img src='<$g_HTMLRoot>/images/buttons/clubcat_new_btn.gif' border='0' alt='New'>" -->
+          <!-- #else variable="CAT_NEW_" -->
+            <!-- #define variable="NEW_PIC" value=""-->
+          <!-- #endif variable="CAT_NEW_" -->
+          <tr>
+            <td nowrap><$g_font1>&nbsp;&nbsp;<$SPACE>
+              <b><a href="club<$g_exe>?TPL=<$TPL>&MYC=<$MYC>&CAT=<$CAT_ID_>&CATORD=<$CATORD><$g_SessionID>"><$CAT_NAM_> (<$CAT_CNT_>)<$CAT_LINK_></a></b>&nbsp;<$NEW_PIC></font></td>
+          </tr>
+        <!--#endfor loopname="categoryloop" -->
+      <!-- #endif variable="CAT_ID_0" -->
+    <!-- #endif variable="MYC" -->
+    <tr><td><font size="-2">&nbsp;</font></td></tr>
+    <!-- #ifdef variable="ID_0" -->
+      <tr>
+        <td>
+          <table border="0" align="center" cellpadding="0" cellspacing="0" width="98%">
+          <!-- #ifdef variable="scroll" -->
+            <form method="post" target="_self" name="filterForm" action="<$selfurl>">
+
+              <input type="hidden" name="TKT" value="<$TKT>">
+              <input type="hidden" name="SID" value="<$SID>">
+
+              <input type="hidden" name="ac" value="<$ac>">
+              <input type="hidden" name="PLC" value="<$PLC>">
+              <input type="hidden" name="TPL" value="<$TPL>">
+
+              <input type="hidden" name="KFT" value="<$KFT>">
+              <input type="hidden" name="CAT" value="<$CAT>">
+
+              <input type="hidden" name="MYC" value="<$MYC>">
+
+              <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+              <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+              <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+              <input type="hidden" name="LASTID" value="<$LASTID>">
+
+              <tr>
+                <td
+                <!-- #ifndef variable="isVisitor" -->
+                  colspan="4">
+                <!-- #else variable="isVisitor" -->
+                  colspan="3">
+                <!-- #endif variable="isVisitor" -->
+                  <table border=0 cellpadding=0 cellspacing=0  leftmargin=0 topmargin=0 marginheight=0 marginwidth=0>
+                  <tr <$g_bgcolor5>>
+                    <!--#ifdef variable="[PREV]" -->
+                      <td><input name="prev" type="image" src="<$g_HTMLRoot>/images/buttons/previousbtn.gif"border="0" alt="Previous"></td>
+                    <!--#endif variable="[PREV]" -->
+                    <td><input name="list" type="image" src="<$g_HTMLRoot>/images/buttons/topbtn.gif" border="0" alt="Top"></td>
+                    <!--#ifdef variable="[NEXT]" -->
+                      <td><input name="next" type="image" src="<$g_HTMLRoot>/images/buttons/nextbtn.gif" border="0" alt="Next"></td>
+                    <!--#endif variable="[NEXT]" -->
+                  </tr>
+                  </table>
+                </td>
+              </tr>
+            </form>
+          <!-- #endif variable="scroll" -->
+
+          <tr <$g_bgcolor5>>
+            <th align="left" <$g_bgcolor3>><$g_font1><b>Club</b></font></th>
+            <th align="left" <$g_bgcolor3>><$g_font1><b>Owner</b></font></th>
+            <th align="left" <$g_bgcolor3>><$g_font1><b>Members</b></font></th>
+            <!-- #ifndef variable="isVisitor" -->
+              <th align="center" <$g_bgcolor3>><$g_font1><b>Membership</b></font></th>
+            <!-- #endif variable="isVisitor" -->
+          </tr>
+          <!--#for loopname="CLUBLIST" loopvars="ID_" -->
+            <tr <$g_bgcolor5> valign="middle">
+              <td align="left" nowrap height="20"><$g_font1>
+                <!-- #ifndef variable="isVisitor" -->
+                  <!--#ifdef variable="memberaccess_" -->
+                      <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self">
+                      <b><$NAM_></b></a>
+                  <!--#else variable="memberaccess_" -->
+                    <!--#ifdef variable="waiting_" -->
+                      <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self">
+                     <b><$NAM_></b></a>
+                    <!--#else variable="waiting_" -->
+                      <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self">
+                      <b><$NAM_></b></a>
+                    <!--#endif variable="waiting_" -->
+                  <!--#endif variable="memberaccess_" -->
+                <!-- #endif variable="isVisitor" -->
+
+                <!-- #ifdef variable="isVisitor" -->
+                  <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self">
+                  <b><$NAM_></b></a>
+                <!-- #endif variable="isVisitor" -->
+                </font>
+              </td>
+              <td><$g_font1><a href="<$g_cgiRoot>/print<$g_exe>?DTY=M&ID=<$OWN_>&TPL=member/info<$g_SessionID>" target="_self"><$OWN_NNM_></a></font></td>
+              <td align="center"><$g_font1><$CNT_>
+                <!-- #if variable="g_ClubOnlineList" == value="yes"-->
+                  (<$TOC_> Online)
+                <!-- #endif variable="g_ClubOnlineList" -->
+                </font>
+              </td>
+              <!-- #ifndef variable="isVisitor" -->
+                <td align="center" valign="middle"><$g_font1>
+                  <!--#ifdef variable="memberaccess_" -->
+                    <img src="<$g_HTMLRoot>/images/buttons/clubmember_yes_btn.gif" border="0" alt="Yes">
+                  <!--#else variable="memberaccess_" -->
+                    <!--#ifdef variable="waiting_" -->
+                      <img src="<$g_HTMLRoot>/images/buttons/clubmember_wait_btn.gif" border="0" alt="Wait">
+                    <!--#else variable="waiting_" -->
+                      <!--#ifndef variable="locked_" -->
+                    <img src="<$g_HTMLRoot>/images/buttons/clubmember_no_btn.gif" border="0" alt="No">
+                      <!--#endif variable="locked_" -->
+                    <!--#endif variable="waiting_" -->
+                    <!--#ifdef variable="locked_" -->
+                      <img src="<$g_HTMLRoot>/images/buttons/clubmember_lock_btn.gif" border="0" alt="Locked">
+                    <!--#endif variable="locked_" -->
+                  <!--#endif variable="memberaccess_" --></font>
+                </td>
+              <!-- #endif variable="isVisitor" -->
+            </tr>
+          <!--#endfor loopname="CLUBLIST" -->
+          </table>
+        </td>
+      </tr>
+      <tr><td><font size="-2">&nbsp;</font></td></tr>
+    <!-- #endif variable="ID_0" -->
+    </table>
+  </td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

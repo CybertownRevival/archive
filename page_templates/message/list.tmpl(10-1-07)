@@ -1,0 +1,180 @@
+<!-- message/list.tmpl (msserver)-->
+<HTML>
+<HEAD>
+<TITLE>Citizens Online</TITLE>
+
+<!-- #ifdef variable="counteronly" -->
+</HEAD>
+<BODY onload="self.focus()" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<div align=center><font size=+0><b><$NUM> Citizens Online</b></font></div>
+<!-- #endif variable="counteronly" -->
+
+<!-- #ifndef variable="counteronly" -->
+<SCRIPT LANGUAGE="javascript">
+memberWin = 0;
+function member(url)
+{
+  memberWin = window.open(url, "member", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=200");
+}
+infoWin = 0;
+function loadInfo(par)
+{
+  infoWin = window.open(par, "info", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=620,height=450");
+}
+receiveWin = 0;
+function receive()
+{
+  receiveWin = window.open("<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=getmessage&NNM=<$NNM>&TIME=<$CT_STR>", "receive", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250");
+}
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+</HEAD>
+<BODY onload="self.focus()" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<H3><$NUM> Citizens Online</H3>
+<!-- #ifdef variable="FOUND" -->
+<CENTER>
+<FONT size=-1>
+<P>
+<!-- #if variable="FOUND" == value="0" -->
+There is no security online at this time. Please leave a message in the security in-box <A HREF="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000013&MTY=i" target="new">Security In-Box</A>
+<!-- #endif variable="FOUND" -->
+<!-- #if variable="FOUND" == value="1" -->
+1 City Security guy reached.
+<!-- #ifdef variable="FOUND" -->
+<!-- #if variable="FOUND" >= value="2" -->
+<$FOUND> City Security guys reached.
+<!-- #ifdef variable="FOUND" -->
+</FONT>
+</CENTER>
+<!-- #endif variable="FOUND" -->
+<FONT size=-1>
+<P>
+Select a name to send an instant message.<BR>
+Please use the Security Alert button only if you really have a security problem. You can leave a message for them at the Security In-box at the Jump Gate.
+<font color=00FF00>If you need help, you can call a City Guide using the button at the end of this list.</FONT>
+<P>
+<CENTER>
+<TABLE><TR>
+<TD>
+<TABLE>
+<!--#for loopname="i" loopvars="NNM_" -->
+<!-- #if variable="HID_" != value="1" -->
+<!-- #define variable="N" value="<$NNM_>" -->
+<!-- #if variable="BU_0" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_0" -->
+<!-- #if variable="BU_1" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_1" -->
+<!-- #if variable="BU_2" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_2" -->
+<!-- #if variable="BU_3" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_3" -->
+<!-- #if variable="BU_4" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_4" -->
+<!-- #if variable="BU_5" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_5" -->
+<!-- #if variable="BU_6" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_6" -->
+<!-- #if variable="BU_7" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_7" -->
+<!-- #if variable="BU_8" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_8" -->
+<!-- #if variable="BU_9" == variable="N" -->
+<!-- #define variable="B_<$loopindex>" value="1" -->
+<!-- #endif variable="BU_9" -->
+<TR><TD>
+<!-- #ifdef variable="B_" -->
+<B>
+<!-- #endif variable="B_" -->
+<!-- #ifdef variable="isMember" -->
+<!--#if variable="NNM_" != variable="MEM_NNM" -->
+<A HREF="javascript:member('<$g_cgiRoot>/message<$g_exe>?TPL=message/member&ac=postmessage&NNM=<$NNM>&T_TO=<$NNM_>&TKT=<$TKT>&TIME=<$CT_STR>')"><$NNM_></A>
+<!--#endif variable="NNM_" -->
+<!--#if variable="NNM_" == variable="MEM_NNM" -->
+<$NNM_>
+<!--#endif variable="NNM_" -->
+<!-- #endif variable="isMember" -->
+<!-- #ifndef variable="isMember" -->
+<$NNM_>
+<!-- #endif variable="isMember" -->
+<!-- #ifdef variable="B_" -->
+</B>
+<!-- #endif variable="B_" -->
+</TD></TR>
+<!-- #endif variable="HID_" -->
+<!--#endfor loopname="i"  -->
+<!-- #if variable="HIDDEN" == value="1" -->
+<TR>
+<TD><$HIDDEN> hidden Member</TD>
+</TR>
+<!-- #endif variable="HIDDEN" -->
+<!-- #if variable="HIDDEN" > value="1" -->
+<TR>
+<TD><$HIDDEN> hidden Members</TD>
+</TR>
+<!-- #endif variable="HIDDEN" -->
+<!-- #if variable="VISITORS" == value="1" -->
+<TR>
+<TD><$VISITORS> Visitor</TD>
+</TR>
+<!-- #endif variable="VISITORS" -->
+<!-- #if variable="VISITORS" > value="1" -->
+<TR>
+<TD><$VISITORS> Visitors</TD>
+</TR>
+<!-- #endif variable="VISITORS" -->
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+<P>
+<FORM METHOD=GET ACTION="<$g_cgiRoot>/message<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="TPL" value="message/list">
+<INPUT TYPE=HIDDEN NAME="ac" value="list">
+<INPUT TYPE=HIDDEN NAME="NNM" value="<$NNM>">
+<TABLE><TR>
+<!-- #ifdef variable="isMember" -->
+<A HREF="javascript:member('<$g_cgiRoot>/message<$g_exe>?TPL=message/member&ac=postmessage&NNM=<$NNM>&TARGET=<$NNM_>&TIME=<$CT_STR>')"><$NNM_></A>
+<TD COLSPAN=2><A HREF="javascript:member('<$g_cgiRoot>/message<$g_exe>?TPL=message/cityguide&ac=postmessage&TKT=<$TKT>&TIME=<$CT_STR>')">
+  <IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/callguide.gif" ></A></TD>
+</TR><TR>
+<A HREF="javascript:member('<$g_cgiRoot>/message<$g_exe>?TPL=message/member&ac=postmessage&NNM=<$NNM>&TARGET=<$NNM_>&TIME=<$CT_STR>')"><$NNM_></A>
+<TD COLSPAN=2><A HREF="javascript:member('<$g_cgiRoot>/message<$g_exe>?TPL=message/security&ac=postmessage&TKT=<$TKT>&TIME=<$CT_STR>')">
+  <IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/secalert.gif" ></A></TD>
+</TR><TR>
+<TD><A HREF="javascript:receive('<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=getmessage&TYPE=nonotify&TIME=<$CT_STR>')"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/mymess.gif" ></A></TD>
+<TD><A HREF="<$g_cgiRoot>/message<$g_exe>?TPL=message/list&ac=list&TIME=<$CT_STR>" ><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/refresh.gif" ></A></TD>
+</TR><TR>
+<TD><A HREF="javascript:loadInfo('<$g_cgiRoot>/message<$g_exe>?TPL=message/config&ac=readconfig&TIME=<$CT_STR>')"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/configure.gif" ></A></TD>
+<TD><A HREF="javascript:doClose()"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/close.gif"></A></TD>
+</TD>
+<!-- #endif variable="isMember" -->
+<!-- #ifndef variable="isMember" -->
+<TD><A HREF="<$g_cgiRoot>/message<$g_exe>?TPL=message/list&ac=list&TIME=<$CT_STR>" ><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/refresh.gif" ></A></TD>
+<TD><A HREF="javascript:doClose()"><IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/close.gif"></A></TD>
+</TD>
+<!-- #endif variable="isMember" -->
+</TR></TABLE>
+</FORM>
+<!-- #endif variable="counteronly" -->
+</CENTER>
+</BODY>
+</HTML>
+
+

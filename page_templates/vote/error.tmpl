@@ -1,0 +1,92 @@
+<!-- vote/error.tmpl -->
+<!-- displayed after a vote access error -->
+<HTML>
+<HEAD>
+<!-- #ifndef variable="elect" -->
+<title><$g_title> - Voting</title>
+<SCRIPT language="JavaScript">
+function showList(url)
+{
+    top.overview.location.href=url;
+}
+</SCRIPT>
+</HEAD>
+
+<!-- #ifndef variable="errnoaccess" -->
+<!-- #ifndef variable="CLB" -->
+<BODY onLoad="showList('<$selfurl>?ac=listhdr&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>')" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" ALINK="#FF0000" TEXT="#FF0000">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onLoad="showList('<$selfurl>?ac=listhdr&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>')" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<!-- #ifdef variable="errnoaccess" -->
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" ALINK="#FF0000" TEXT="#FF0000">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<!-- #endif variable="errnoaccess" -->
+
+<center>
+<!-- #ifdef variable="errnoaccess" -->
+<h3>Sorry <$NNM>,<P>You do not have permission to access this page.
+<!-- #endif variable="errnoaccess" -->
+<!-- #ifdef variable="errvotedeleted" -->
+<h3>Sorry <$NNM>,<br>this vote has just been deleted.<br>You can not enter your choice for this vote anymore.</h3>
+<!-- #endif variable="errvotedeleted" -->
+<!-- #ifdef variable="errvoteclosed" -->
+<h3>Sorry <$NNM>,<br>this vote has just been closed.<br>You can not enter your choice for this vote anymore.</h3>
+<!-- #endif variable="errvoteclosed" -->
+<!-- #ifdef variable="errvotenochoice" -->
+<h3>Sorry <$NNM>,<br>You did not enter your choice.<br>Please select the vote again and enter your choice</h3>
+<!-- #endif variable="errvotenochoice" -->
+<!-- #ifdef variable="errnovotes" -->
+<h3>Sorry <$NNM>,<P>You cannot vote, since you do not have any votes assigned.
+<!-- #endif variable="errnovotes" -->
+</center>
+
+<!-- #endif variable="elect" -->
+<!-- #ifdef variable="elect" -->
+<title><$g_title> - Polling</title>
+<SCRIPT language="JavaScript">
+function showList(url)
+{
+    location.href=url;
+}
+</SCRIPT>
+</HEAD>
+
+<!-- #ifndef variable="errnoaccess" -->
+<!-- #ifndef variable="CLB" -->
+<BODY onLoad="showList('<$selfurl>?ac=listhdr&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&closed=1&TKT=<$TKT>')" BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" ALINK="#FF0000" TEXT="#FF0000">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onLoad="showList('<$selfurl>?ac=listhdr&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&closed=1&TKT=<$TKT>')" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<!-- #ifdef variable="errnoaccess" -->
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" ALINK="#FF0000" TEXT="#FF0000">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<!-- #endif variable="errnoaccess" -->
+
+<center>
+<!-- #ifdef variable="errnoaccess" -->
+<h3>Sorry <$NNM>,<P>You do not have permission to access this page.
+<!-- #endif variable="errnoaccess" -->
+<!-- #ifdef variable="errvotenochoice" -->
+<h3>Sorry <$NNM>,<br>You did not enter your choice.<br>Please select the vote again and enter your choice</h3>
+<!-- #endif variable="errvotenochoice" -->
+<!-- #ifdef variable="errnovotes" -->
+<h3>Sorry <$NNM>,<P>You cannot vote, since you do not have any votes assigned.
+<!-- #endif variable="errnovotes" -->
+</center>
+
+<!-- #endif variable="elect" -->
+</BODY>
+</HTML>

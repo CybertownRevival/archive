@@ -1,0 +1,55 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- place/updateannounce.tmpl -->
+<title><$g_title></title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align=center>Announcements - Update</h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+
+<p>
+<b>1st</b>: <INPUT NAME="DT0" VALUE="<$DT0>" MAXLENGTH=16 SIZE=16>
+<br><textarea name="TX0" cols="50" rows="6"><$TX0></textarea>
+</p>
+
+<p>
+<b>2nd</b>: <INPUT NAME="DT1" VALUE="<$DT1>" MAXLENGTH=16 SIZE=16>
+<br><textarea name="TX1" cols="50" rows="6"><$TX1></textarea>
+</p>
+
+<p>
+<b>3rd</b>: <INPUT NAME="DT2" VALUE="<$DT2>" MAXLENGTH=16 SIZE=16>
+<br><textarea name="TX2" cols="50" rows="6"><$TX2></textarea>
+</p>
+
+<p>
+<b>4th</b>: <INPUT NAME="DT3" VALUE="<$DT3>" MAXLENGTH=16 SIZE=16>
+<br><textarea name="TX3" cols="50" rows="6"><$TX3></textarea>
+</p>
+
+<p>
+<b>5th</b>: <INPUT NAME="DT4" VALUE="<$DT4>" MAXLENGTH=16 SIZE=16>
+<br><textarea name="TX4" cols="50" rows="6"><$TX4></textarea>
+</p>
+
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="place/updateannounce">
+<input type=hidden name="ac" value="read">
+<a name=submitbutton></a>
+<br>
+<center>
+<input type=submit name="edit" value=Update>
+</center>
+</form>
+
+</BODY>
+</HTML>

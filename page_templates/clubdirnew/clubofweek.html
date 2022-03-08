@@ -1,0 +1,76 @@
+<!-- club/clubofweek -->
+<!--- define a club as club of the week for a category --->
+<html>
+<head>
+<title><$g_title> - <$placename></title>
+</head>
+
+<body marginwidth=0 marginheight=0 <$g_body1>
+<$g_font1>
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr <$g_bgcolor5>>
+  <td>
+    <a href="javascript:history.go(-1)"><img src="<$g_HTMLRoot>/images/buttons/backbtn.gif"
+      alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr <$g_bgcolor5>>
+  <td >
+    <table border=0 cellpadding=1 cellspacing=5 width=318 height=200>
+    <tr>
+      <td valign=top><$g_font1>
+        <b>Define Club of the Week for Category <br>
+        <font size=2>'<$CATNAM>'</b><br><br></font>
+
+        <!-- #if variable="CK2" != value=""-->
+          <a href="<$g_cgiRoot>/club<$g_exe>?ac=directory&TPL=clubdir/clubofweek&CK2=&CAT=<$CAT>&T_CAT=<$T_CAT><$g_SessionID>">No Club of the Week</a><br><br>
+        <!-- #endif variable="CK2" -->
+
+        <table align="center" border="0">
+        <tr>
+          <td>
+            <img src="<$g_HTMLRoot>/images/buttons/space.gif" border="0" width="18" height="1">
+          </td>
+          <td align="center"><$g_font1>
+            <table border="1" cellspacing="0" cellpadding="5" align="center">
+            <tr>
+              <th><$g_font1>Name</font></th>
+              <th width="80"><$g_font1>Category</font></th>
+              <th><$g_font1>Club of the Week</font></th>
+            </tr>
+            <!--#for loopname="clubloop" loopvars="ID_" -->
+              <tr>
+                <td><$g_font1>
+                  <!-- #if variable="ID_" != variable="CK2"-->
+                    <a href="<$g_cgiRoot>/club<$g_exe>?ac=directory&TPL=clubdir/clubofweek&CAT=<$CAT>&T_CAT=<$T_CAT>&CK2=<$ID_><$g_SessionID>"><$NAM_></a></font>
+                  <!-- #else variable="ID_" -->
+                    <$NAM_></font>
+                  <!-- #endif variable="ID_" -->
+                </td>
+                <td align="center" width="80"><$g_font1><$KK1_NAM_></font></td>
+                <td><$g_font1>&nbsp;
+                  <!-- #if variable="ID_" == variable="CK2"-->
+                    Current
+                  <!-- #endif variable="ID_" -->
+                </td>
+              </tr>
+            <!--#endfor loopname="clubloop" -->
+            </table>
+          </font></td>
+          <td><img src="<$g_HTMLRoot>/images/buttons/space.gif" border="0"></td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

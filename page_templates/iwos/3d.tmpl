@@ -1,0 +1,44 @@
+<html>
+<!-- iwos/3d.tmpl -->
+<!-- displaying the 3d iwos object -->
+<head>
+<title>blaxxun - IWOS 3D Homes</title>
+</head>
+
+<!-- object/3d.tmpl -->
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+
+<!-- #endif variable="CLB" -->
+
+<div align=center>
+<h2>IWOS 3D Homes</h2>
+
+<EMBED SRC="<$WRL>"
+       VRML-DASHBOARD="false"
+       TYPE="application/x-blaxxunCC3D"
+       HEIGHT=70% WIDTH=90%>
+</EMBED>
+
+
+<table border=0>
+
+<form>
+<tr>
+  <td><input type=button name="back" value=Back onClick="history.back()"></td>
+  <td><input type="button" value="Close" onClick="window.close()"></td>
+</form>
+
+
+</table>
+</div>
+
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+

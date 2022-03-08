@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- <$plc>/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- moderation -->
+<script language="JavaScript">
+function moderate() {
+window.open('place<$g_exe>?ac=moderate&plc=<$place>&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+ }
+</script>
+<!-- end moderation -->
+
+<script language="JavaScript">
+<!-- #ifdef variable="T_mode" -->
+var mode = "<$T_mode>";
+<!-- #endif variable="T_mode" -->
+<!-- #ifndef variable="T_mode" -->
+var mode = "2D";
+<!-- #endif variable="T_mode" -->
+
+<!-- #ifdef variable="T_aud" value="" -->
+var audit = "audit";
+<!-- #endif variable="T_aud" -->
+<!-- #ifndef variable="T_aud" value="" -->
+var audit = "<$T_aud>";
+<!-- #endif variable="T_aud" -->
+
+<!-- #ifndef variable="T_spawn" value="" -->
+<!-- #ifndef variable="T_spawn" value="Stage" -->
+thisZone = <$T_spawn>;
+<!-- #endif variable="T_spawn" -->
+<!-- #endif variable="T_spawn" -->
+<!-- #ifdef variable="T_spawn" value="" -->
+thisZone = -1;
+<!-- #endif variable="T_spawn" -->
+<!-- #ifdef variable="T_spawn" value="Stage" -->
+thisZone = -1;
+<!-- #endif variable="T_spawn" -->
+
+avatars = new Array(
+"orgyproteus.wrl",
+"orgycam.wrl",
+"orgyice.wrl",
+"orgyozone.wrl",
+"orgyelectra.wrl",
+"orgyprima.wrl",
+"orgyruby.wrl",
+"orgysilver.wrl",
+"gogoneutron.wrl",
+"gogocobalt.wrl",
+"gogonebula.wrl");
+
+
+function set_chatZone(chatZone){
+  bxx = "http://www.cybertown.com/cgi-bin/cybertown/place?plc=<$place>&ac=place&ID=<$ID>&force=p&T_aud=" + audit + "&&T_spawn=" + chatZone + "&T_pass=<$T_pass>";
+  parent.place.document.location.href = bxx;
+  u = "/cgi-bin/cybertown/place<$g_exe>?ac=action&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=" + audit + "&&T_spawn=" + chatZone + "&T_pass=<$T_pass>&T_mode=3D";
+  self.location.href = u;
+}
+function change_avatar(v){
+  avatar = avatars[v];
+  //bxx = "http://www.cybertown.com/cgi-bin/cybertown/place?place?plc=<$place>&DTY=<$DTY>&ID=<$ID>&ac=3D&T_aud=" + audit + "&&T_spawn=" + thisZone + "&T_setAvatar=http://www.cybertown.com/places/nightclub/avatars/" + avatar + "&T_refresh=false&T_pass=<$T_pass>&IE=x.bxx";
+  bxx = "http://www.cybertown.com/cgi-bin/cybertown/place?place?plc=<$place>&DTY=<$DTY>&ID=<$ID>&ac=3D&T_aud=" + audit + "&&T_spawn=" + thisZone + "&T_setAvatar=http://www.cybertown.com/events/orgy/dancers/" + avatar + "&T_refresh=false&T_pass=<$T_pass>&IE=x.bxx";
+    
+  //events/orgy/dancers
+  parent.place.World.document.CC3D.setNodeEventIn("change","set_scene", bxx);
+}
+function set_mode(v){
+ mode = v;
+}
+
+function goLobby(){
+ parent.place.document.location.href= "/cgi-bin/cybertown/place?plc=<$plc>&ac=place&ID=<$ID>&force=s&T_aud=audit&T_spawn=&T_pass=";
+}
+
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM>
+<!-- #ifndef variable="T_spawn" value="" -->
+ Room <$T_spawn></font></b></i><br>
+<!-- #endif variable="T_spawn" -->
+<!-- #ifdef variable="T_spawn" value="" -->
+ Lobby</font></b></i><br>
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&force=p&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_3d=true&T_pass=<$T_pass>" onClick="javascript:set_mode('3D');">
+<IMG SRC="<<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="T_spawn" -->
+
+
+<!-- #ifdef variable="chataccess" -->
+
+<!--
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&force=s&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_pass=<$T_pass>">
+<IMG SRC="<<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&force=p&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_3d=true&T_pass=<$T_pass>" onClick="javascript:set_mode('3D');">
+<IMG SRC="<<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+-->
+<!-- #endif variable="chataccess" -->
+
+<B><a href="javascript:loadInfo('/cgi-bin/cybertown/place?ac=list&tpl=<$plc>/display')" target="_self">
+ENTER EVENT</a></B><br><BR>
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+<br><BR>
+<B><a href="javascript:loadInfo('/places/amp/danceav.html')" target="_self">
+Dance Avatars</a></B><br><BR>
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

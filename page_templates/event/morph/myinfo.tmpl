@@ -1,0 +1,92 @@
+<!-- event/morph/getitem.tmpl -->
+<!-- get event item -->
+<html>
+<head>
+<title><$g_title> - <$EVENTNAM></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align="center"><font color="#00FF00">CYBERTOWN - '<$EVENTNAM>'</font></h2>
+
+<center>
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+
+<p>You have found <$EVENTMEMBERCNT> Morph(s)!</p>
+
+<table>
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<tr>
+	<td><INPUT type="hidden" NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16></td>
+
+	<input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+	<input type="hidden" name="SORT" value="<$SORT>">
+	<input type="hidden" name="SORTORDER" value="<$SORTORDER>">
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="hist" value="<$hist>">
+
+
+	<td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+	<!--#ifdef variable="[PREV]" -->
+		<td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifndef variable="[PREV]" -->
+		<td>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+		<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+
+</tr>
+</form>
+</table>
+
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+<tr>
+  <th nowrap><font color=#80ff00>Name</th>
+  <th nowrap><font color=#80ff00>Type</th>
+  <th nowrap><font color=#80ff00>Date</th>
+<!--  <th nowrap><font color=#80ff00>Location</th> -->
+</tr>
+
+<!--#for loopname="list" loopvars="ID_" -->
+<tr>
+
+<td nowrap align="center"><$ID_NAM_></td>
+
+<td nowrap align="center">
+<!-- #ifdef variable="ID_2TYP_" value="1"-->
+<b>Morph</b>
+<!-- #endif variable="ID_2TYP_" -->
+<!-- #ifdef variable="ID_2TYP_" value="2" -->
+<b>Weekly Prize</b>
+<!-- #endif variable="ID_2TYP_" -->
+<!-- #ifdef variable="ID_2TYP_" value="3" -->
+<b>Special Prize</b>
+<!-- #endif variable="ID_2TYP_" -->
+</td>
+
+<td nowrap align="center"><$CDA_MONNAME_> <$CDA_MDAY_>, <$CDA_YEAR_></td>
+
+<!-- <td nowrap align="center"><$LOCATION_></td> -->
+
+</tr>
+<!--#endfor loopname="list" -->
+
+</table>
+</center>
+
+</body>
+</html>
+

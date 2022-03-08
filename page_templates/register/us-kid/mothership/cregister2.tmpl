@@ -1,0 +1,57 @@
+<!-- register/cregister2.tmpl -->
+
+<!-- #ifndef variable="T_KID" value="US" -->
+<!-- #include virtual="<$g_Templates>register/cregister2.tmpl" -->
+<!-- #endif variable="T_KID" -->
+
+<!-- #ifdef variable="T_KID" value="US" -->
+
+<html>  
+<head>  
+<title><$g_title> - Member Registration</title>  
+</head>  
+  
+<body text="#F8F8F8" bgcolor="#000000" link="#66FFFF" vlink="#00C1EA" alink="#FFFFFF" background="<$g_HTMLRoot>/places/mothership/im
+migrate/back.jpg">
+  
+<div align=center>  
+<img src="<$g_Images>/images/login/immicode.jpg" border=0">  
+<br>  
+
+<font face="Arial, Helvetica, sans-serif">
+
+<form method=post action="/cgi-bin/cybertown/place">
+
+<img src="<$g_HTMLRoot>/places/mothership/immigrate/msimmigrate.gif" border="0"><br>  
+<font face="Arial,Helvetica">Activation</font>  
+<h2><font face="Arial,Helvetica" color=#80ff00><$NNM></font></h2>  
+
+<table>
+<tr>
+<td>
+<br>
+<font face="Arial, Helvetica, sans-serif">
+We have sent an immigration code to your parents. Please check with them<br>
+to get your full access membership code.<br>
+<br>
+In the meantime, you can explore the Sci-fi City of Mothership as a Visitor.
+<br><br>
+<br>
+</font>
+</td>
+</tr>
+</table>
+
+<input type="hidden" name="plc" value="mothership">
+<input type=hidden name="NNM" value="Visitor">
+<input type=hidden name="login" value="true">
+<font size=2>
+<input type="submit" name="Submit" value="ENTER NOW">
+</font>
+</form>
+
+</center>
+
+</body>
+</html>
+<!-- #endif variable="T_KID" -->

@@ -1,0 +1,58 @@
+<HTML>
+<!-- iwos/findhome.tmpl -->
+<!-- find a place to settle done -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Find your home</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+  function submitForm()
+  {
+    document.updateForm.submit();
+  }
+
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/counter-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/counter-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<center>
+
+<form method=post action="<$selfurl>" name="updateForm">
+
+  <h2><input type="text" name="NAM" value="<$NAM>" size=12 maxlength=16></h2>
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ac" value="update">
+
+  <input type="hidden" name="ID" value="<$ID>">
+
+  <textarea name="DES" rows="4" cols="40"><$DES></textarea><br>
+
+<br>
+  The last <$MAX_MEM> visitors:<br><br>
+  <$LM0_NNM><br>
+  <$LM1_NNM><br>
+  <$LM2_NNM><br>
+  <$LM3_NNM><br>
+  <$LM4_NNM><br>
+<br>
+
+  <a href="javascript:submitForm()"><img src="<$g_Images>/images/iwos/update.gif" border=0 alt="update"></a>
+  <a href="javascript:history.back()"><img src="<$g_Images>/images/iwos/cancel.gif" border=0 alt="cancel"></a>
+</form>
+
+</center>
+</font>
+</BODY>
+</HTML>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Cybertown Feedback</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#00AAAA" vlink="#00AAAA" alink="#00DD00" link="#00AAAA">
+
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<!-- #ifndef variable="FTR" value="freetrial"-->
+
+<center>
+  <p><img src="/images/feedback/illo1.jpg" width="389" height="124"> </p>
+  <A HREF="javascript:void(open('http://www.ctcolonies.com/ctforums','3','scrollbars=yes,width=800,height=600'))"><p><img src="/images/feedback/forums.jpg" border="0"> </p></a>
+  <p><img src="/images/feedback/illo3.gif" width="539" height="163" USEMAP = "#1" BORDER="0"> </p>
+<br>
+
+<!-- #ifdef variable="isAdmin" -->
+<br><br>
+<font face="arial"><b>Change Access Rights</b></font>
+<br>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9901000000000000&TPL=common/updownerrights" target="_self">Announcements</a></font><font color = "#000000">..</font>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9902000000000000&TPL=common/updownerrights" target="_self">General</a></font><font color = "#000000">..</font>
+<br>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9903000000000000&TPL=common/updownerrights" target="_self">3D/Objects   </a></font><font color = "#000000">..</font>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9904000000000000&TPL=common/updownerrights" target="_self">Tech Support </a></font><font color = "#000000">..</font>
+<br>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9905000000000000&TPL=common/updownerrights" target="_self">City Events  </a></font><font color = "#000000">..</font>
+<font face="arial" size="-1"><a href="/cgi-bin/cybertown/edit?DTY=I&KTY=ID&KEY=m9906000000000000&TPL=common/updownerrights" target="_self">Town Politics</a></font><font color = "#000000">..</font>
+<!-- #endif variable="isAdmin" -->
+
+<MAP NAME = "1">
+<AREA SHAPE = "RECT" COORDS = " 54,  4,  202,  20"     ALT = "announcements" HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9901000000000000" TARGET="_self">
+<AREA SHAPE = "RECT" COORDS = " 380,  4,  472,  22"    ALT = "General"       HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9902000000000000" TARGET="_self">
+<AREA SHAPE = "RECT" COORDS = " 4,  66,  119,  84"     ALT = "3D/Objects"    HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9903000000000000" TARGET="_self">
+<AREA SHAPE = "RECT" COORDS = " 410,  64,  534,  81"   ALT = "Tech Support"  HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9904000000000000" TARGET="_self">
+<AREA SHAPE = "RECT" COORDS = " 44,  129,  144,  146"  ALT = "City Events"     HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9905000000000000" TARGET="_self">
+<AREA SHAPE = "RECT" COORDS = " 327,  129,  449,  148" ALT = "Town Politics" HREF = "/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9906000000000000" TARGET="_self">
+</MAP>
+
+<!-- #endif variable="isVisitor" -->
+<!-- #endif variable="FTR" -->
+
+</center>
+</body>
+</html>

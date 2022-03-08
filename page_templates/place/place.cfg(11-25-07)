@@ -1,0 +1,11 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+*GET M NNM <$NNM> ID NIC_ID CTS CTS 
+*GET O ID <$ID> AD4 AD4
+*UPD MD ID <$NIC_ID> PLC <$ID>
+*UPD MD ID <$MEM_ID> RIP <$ENV_REMOTE_ADDR>
+
+*GET CL ID CL00000000000000 TCN TYPE=NUM TCN

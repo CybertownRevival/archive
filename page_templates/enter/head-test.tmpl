@@ -1,0 +1,15 @@
+<SCRIPT LANGUAGE="JavaScript">
+var banners = new Array(4);    
+banners[0] = '<center><a href="javascript:loadCustom(\'http://www.cybertown.com/citystore/store.html\',\'640\',\'480\')" target=_self><img src="/images/banners/storeb3.gif" alt="Buy CT Merchandise!" height=60 width=468 border=0></a></center>'; 
+banners[1] = '<center><a href="javascript:loadCustom(\'http://philliphansel.com/buildersguild/become.html\',\'640\',\'480\')" target=_self><img src="/images/banners/wbg_2.jpg" alt="Join the World Builders Guild" height=60 width=468 border=0></a></center>'; 
+banners[2] = '<center><a href="javascript:loadCustom(\'http://www.cybertown.com/places/news/magazine/dailynews/index.html\',\'640\',\'480\')" target=_self><img src="http://www.cybertown.com/DailyNews/daily_news.jpg" alt="Read the Daily News!" height=60 width=468 border=0></a></center>';
+banners[3] = '<center><a href="http://www1.cybertown.com/cgi-bin/cybertown/place?plc=vidnetvpod" target="_top"><img src="http://www.cybertown.com/red5/images2001/vidnetbanner.jpg" alt="Click 2 visit the Vidnet vPod" height=60 width=468 border=0></a></center>';
+function getrandom() { 
+var random = Math.floor((Math.random() * 4)); 
+return random;  
+}  
+function showbanner() {  
+var bannernumber = getrandom();  
+document.write(banners[bannernumber]);  
+}  
+</SCRIPT> 

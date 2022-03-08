@@ -1,0 +1,147 @@
+<!-- clubdir/check.tmpl -->
+<!-- check the images of the club -->
+<HTML>
+<HEAD>
+	<title><$g_title></title>
+	<base target="_top">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<SCRIPT  language="JavaScript">
+<!--
+function onSubmit()
+{   
+    if( document.updateForm.STC_CB.checked )
+        document.updateForm.STC.value = "1";
+    else
+        document.updateForm.STC.value = "0";
+
+    if( document.updateForm.STA_CB.checked )
+        document.updateForm.STA.value = "1";
+    else
+        document.updateForm.STA.value = "0";
+
+    if( document.updateForm.STM_CB.checked )
+        document.updateForm.STM.value = "1";
+    else
+        document.updateForm.STM.value = "0";
+
+    if( document.updateForm.ST1_CB.checked )
+        document.updateForm.ST1.value = "1";
+    else
+        document.updateForm.ST1.value = "0";
+
+    if( document.updateForm.ST2_CB.checked )
+        document.updateForm.ST2.value = "1";
+    else
+        document.updateForm.ST2.value = "0";
+
+    if( document.updateForm.ST3_CB.checked )
+        document.updateForm.ST3.value = "1";
+    else
+        document.updateForm.ST3.value = "0";
+
+    document.updateForm.back.value = <$back>-1;
+
+    document.updateForm.submit();
+}
+
+function gotoList()
+{
+    history.go( <$back> );
+}
+
+//-->
+</SCRIPT>
+
+
+<H2 ALIGN=center><FONT COLOR=#80ff00>Check <$NAM></font></H2>
+
+<FORM METHOD=post target=_self ACTION="<$selfurl>" NAME="updateForm" onSubmit="onSubmit()">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type=hidden name="ID" value="<$ID>">
+    <INPUT TYPE=hidden NAME="KEY" VALUE="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <INPUT TYPE="hidden" NAME="STC" VALUE="<$STC>">
+    <INPUT TYPE="hidden" NAME="STA" VALUE="<$STA>">
+    <INPUT TYPE="hidden" NAME="STM" VALUE="<$STM>">
+
+    <INPUT TYPE="hidden" NAME="ST1" VALUE="<$ST1>">
+    <INPUT TYPE="hidden" NAME="ST2" VALUE="<$ST2>">
+    <INPUT TYPE="hidden" NAME="ST3" VALUE="<$ST3>">
+
+    <INPUT TYPE="hidden" NAME="back" VALUE="<$back>">
+
+    <center>
+    Club Owner: <$OWN_NNM><BR><BR>
+
+    <table align="center" border="1" cellpadding=10>
+    <tr>
+        <td>Club Image</td>
+        <td>Meeting Room</td>
+        <td>Assembly Room</td>
+    </tr>
+    <tr>
+        <td>
+        <IMG SRC="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="STC_CB" VALUE="1"
+        <!-- #ifdef variable="STC" value="1" -->
+        checked
+        <!-- #endif variable="STC" -->
+        >Locked</INPUT>
+        </td>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$MRP>" BORDER=0 ALT="Meeting Room" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="STM_CB" VALUE="1"
+        <!-- #ifdef variable="STM" value="1" -->
+        checked
+        <!-- #endif variable="STM" -->
+        >Locked</INPUT>
+        </td>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$ARP>" BORDER=0 ALT="Assembly Room" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="STA_CB"  VALUE="1"
+        <!-- #ifdef variable="STA" value="1" -->
+        checked
+        <!-- #endif variable="STA" -->
+        >Locked</INPUT>
+        </td>
+    </tr>
+    <tr>
+        <td>Gallery Image 1</td>
+        <td>Gallery Image 2</td>
+        <td>Gallery Image 3</td>
+    </tr>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP1>" BORDER=0 ALT="Gallery Picture 1" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="ST1_CB"  VALUE="1"
+        <!-- #ifdef variable="ST1" value="1" -->
+        checked
+        <!-- #endif variable="ST1" -->
+        >Locked</INPUT>
+        </td>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP2>" BORDER=0 ALT="Gallery Picture 2" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="ST2_CB"  VALUE="1"
+        <!-- #ifdef variable="ST2" value="1" -->
+        checked
+        <!-- #endif variable="ST2" -->
+        >Locked</INPUT>
+        </td>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP3>" BORDER=0 ALT="Gallery Picture 3" height=100><BR>
+        <INPUT TYPE="checkbox" NAME="ST3_CB"  VALUE="1"
+        <!-- #ifdef variable="ST3" value="1" -->
+        checked
+        <!-- #endif variable="ST3" -->
+        >Locked</INPUT>
+        </td>
+    </tr>
+    </table>
+    <BR>
+    <INPUT TYPE=submit NAME="edit" VALUE="Change">
+    <INPUT TYPE=button NAME="backBtn" VALUE="Back to List" onClick='gotoList()'>
+</form>
+
+</center>
+<BODY>
+</HTML>

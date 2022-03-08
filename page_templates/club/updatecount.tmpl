@@ -1,0 +1,32 @@
+<HTML>
+<!-- club/reload.tmpl -->
+<!-- to call a cgi-program from a other cgi-program -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<FORM enctype="multipart/form-data" name="UpdateClub" method=post ACTION="club">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+
+
+    <input type=hidden name="ac" value="update">
+
+    <input type=hidden name="ID" value="CL00000000000000">
+
+
+	
+    <input type=hidden name="DTY" value="">
+
+    <input type=hidden name="KTY" value="">
+
+    <input type=hidden name="KEY" value="">
+    <input type=hidden name="NAM" value=".">
+
+    <input type=text name="TCN" value="<$TCN>">
+<input type=submit name="edit" value="Update" width=160 height=15>
+
+</BODY>
+</HTML>

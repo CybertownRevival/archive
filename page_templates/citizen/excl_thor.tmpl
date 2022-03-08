@@ -1,0 +1,558 @@
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #define variable="T_NOHTML" value="1"-->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>Set Exclusion Date for Member:</font>
+
+<!-- #ifdef variable="CITY_OWN" -->
+
+<br><$NNM></h2>
+
+<!-- #define variable="LOCKPERM"  value="0" -->
+<!-- #include virtual="<$g_Templates>citizen/allowlockrecord.tmpl" -->
+<!-- #ifdef variable="EXL" value="Locked" -->
+	<!-- #define variable="LOCKED"  value="1" -->
+<!-- #endif variable="EXL" -->
+
+<!--#ifndef variable="LOCKPERM" value="1" -->
+<!--#ifdef variable="EXL" value="Locked" -->
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+<p>
+<font color="red">
+Sorry <$CKNNM>, this record has been locked. 
+<br>For more information please contact the Security Commissioner.	
+</font>
+<!-- #endif variable="EXL" -->
+<!-- #endif variable="LOCKPERM" -->
+
+<!--#ifdef variable="LOCKPERM" value="1" -->
+<!--#ifdef variable="EXL" value="Locked" -->
+<font color="red">
+<B>This record is currently locked and cannot be viewed by unauthorised tool holders</b><p>
+</font>
+<!-- #endif variable="EXL" -->
+<!-- #endif variable="LOCKPERM" -->
+
+
+<!--#ifndef variable="LOCKPERM" value="1" -->
+<!--#ifndef variable="LOCKED" value="1" -->
+<!-- #endif variable="LOCKPERM" -->
+
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+	<$NNM> excluded successfully.
+<P>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+<P>
+  <!--#if variable="EXD_YEAR" != value="" -->
+<script language=javascript>
+    window.open( "<$g_cgiRoot>/message<$g_exe>?ac=notify&TPL=message/member&TAG=Excluded&TKT=<$TKT>&TO=<$NNM><$g_SessionID>&<$CT_STR>", "refresh" );
+</script>
+  <!--#endif variable="EXD_YEAR" -->
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="editerror001" -->
+	One of DTY, KTY, KEY keywords missing.
+<!-- #endif variable="editerror001" -->
+<!-- #ifdef variable="editerror002" -->
+	No template TPL given.
+<!-- #endif variable="editerror002" -->
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+<center>
+Please note: The Jail system now has been removed from the city and is no longer a functional part of ban procedures.<br></center>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<!-- #define variable="HMMM"  value="0" -->
+<!-- #include virtual="<$g_Templates>citizen/noexcl.tmpl" -->
+
+<!-- #ifdef variable="HMMM" value="1" -->
+	<b>Changing this persons details will get you banned.</b>
+	<input type=hidden name="KEY" value="<$CKID>">
+	<input type=hidden name="MEM_EXM" value="Hawk">
+<!-- #endif variable="HMMM" -->	
+<!-- #ifdef variable="HMMM" value="0" -->
+	<input type=hidden name="KEY" value="<$ID_HEX>">
+	<input type=hidden name="MEM_EXM" value="<$MEM_NNM>">
+	<!-- okay -->
+<!-- #endif variable="HMMM" -->
+<input type=hidden name="TPL" value="citizen/excl_upd">
+<input type=hidden name="backurl" value="<$pbackurl>">
+
+<table border=0>
+<tr>
+	<td><font color=#80ff00>Email address:</font></td>
+	<td colspan=3><$EML></td>
+</tr>
+<tr>
+	<td><font color=#80ff00>First name:</font></td>
+	<!--#ifdef variable="FNM" -->
+		<td colspan=3><$FNM></td>
+	<!--#endif variable="FNM" -->
+	<!--#ifndef variable="FNM" -->
+		<td colspan=3>&nbsp</td>
+	<!--#endif variable="FNM" -->
+</tr>
+
+
+
+
+
+
+<tr>
+	<td><font color=#80ff00>Last name:</font></td>
+	<!--#ifdef variable="LNM" -->
+		<td colspan=3><$LNM></td>
+	<!--#endif variable="LNM" -->
+	<!--#ifndef variable="LNM" -->
+		<td colspan=3>&nbsp</td>
+	<!--#endif variable="LNM" -->
+</tr>
+<tr>
+<td><font color=#80ff00>Wishes to Receive Mailings:</font></td>
+<td colspan=3>
+<!--#ifndef variable="PML" value="n" -->
+YES
+<!--#endif variable="PML" -->
+<!--#ifdef variable="PML" value="n" -->
+NO
+<!--#endif variable="PML" -->
+<!--#ifdef variable="PML" value="" -->
+Could not gather data - user has not selected either option.
+<!--#endif variable="PML" -->
+</td>
+</tr>
+<tr>
+	<td><font color=#80ff00>Home:</font></td>
+	<!--#ifdef variable="HOM_NAM" -->
+		<td colspan=3><$HOM_NAM></td>
+	<!--#endif variable="HOM_NAM" -->
+	<!--#ifndef variable="HOM_NAM" -->
+		<td colspan=3>&nbsp</td>
+	<!--#endif variable="HOM_NAM" -->
+</tr>
+<tr>
+	<td><font color=#80ff00>Experience:</font></td>
+	<td colspan=3><$EXP></td>
+</tr>
+<tr>
+	<td><font color=#80ff00>Immigration date:</font></td>
+	<!--#ifdef variable="IMD_YEAR" -->
+		<td colspan=3><$IMD_MDAY>.<$IMD_MON>.<$IMD_YEAR> <$IMD_HOUR>:<$IMD_MIN>:<$IMD_SEC></td>
+	<!--#endif variable="IMD_YEAR" -->
+	<!--#ifndef variable="IMD_YEAR" -->
+		<td colspan=3>&nbsp</td>
+	<!--#endif variable="IMD_YEAR" -->
+</tr>
+<tr>
+	<td><font color=#80ff00>Last access date:</font></td>
+	<!--#ifdef variable="LAD_YEAR" -->
+		<td colspan=3><$LAD_MDAY>.<$LAD_MON>.<$LAD_YEAR> <$LAD_HOUR>:<$LAD_MIN>:<$LAD_SEC></td>
+	<!--#endif variable="LAD_YEAR" -->
+	<!--#ifndef variable="LAD_YEAR" -->
+		<td colspan=3>&nbsp</td>
+	<!--#endif variable="LAD_YEAR" -->
+</tr>
+<tr>
+	<td><font color=#80ff00>Last used IP:</font></td>
+	<td colspan=3><$RIP>&nbsp;</td>
+</tr>
+<tr>
+<!-- #ifdef variable="HMMM" value="1" -->
+	<td><font color=#80ff00>Date of temporary exclusion (until):</font></td>
+		<td>
+			<input type=hidden name="EXD_YEAR" value="2020">
+			<input type=hidden name="EXD_MON" value="12">
+			<input type=hidden name="EXD_MDAY" value="31">
+			<SELECT NAME="CEXD_YEAR">
+			  <OPTION>
+			  <OPTION<$S2000_EXD_YEAR>> 2000
+			  <OPTION<$S2001_EXD_YEAR>> 2001
+			  <OPTION<$S2002_EXD_YEAR>> 2002
+			  <OPTION<$S2003_EXD_YEAR>> 2003
+			  <OPTION<$S2004_EXD_YEAR>> 2004
+			  <OPTION<$S2005_EXD_YEAR>> 2005
+			  <OPTION<$S2006_EXD_YEAR>> 2006
+			  <OPTION<$S2007_EXD_YEAR>> 2007
+			  <OPTION<$S2008_EXD_YEAR>> 2008
+			  <OPTION<$S2009_EXD_YEAR>> 2009
+			  <OPTION<$S2010_EXD_YEAR>> 2010
+
+              <OPTION<$S2010_EXD_YEAR>> 2011
+
+			  <OPTION<$S2011_EXD_YEAR>> 2012
+
+ 			  <OPTION<$S2012_EXD_YEAR>> 2013
+
+			  <OPTION<$S2013_EXD_YEAR>> 2014
+
+			  <OPTION<$S2014_EXD_YEAR>> 2015
+
+			  <OPTION<$S2015_EXD_YEAR>> 2016
+
+			  <OPTION<$S2016_EXD_YEAR>> 2017
+
+			  <OPTION<$S2017_EXD_YEAR>> 2018
+
+			  <OPTION<$S2018_EXD_YEAR>> 2019
+
+			  <OPTION<$S2019_EXD_YEAR>> 2020
+
+			  <OPTION<$S2020_EXD_YEAR>> 2021
+
+			  <OPTION<$S2021_EXD_YEAR>> 2022
+
+			  <OPTION<$S2022_EXD_YEAR>> 2023
+
+			  <OPTION<$S2023_EXD_YEAR>> 2024
+
+			  <OPTION<$S2024_EXD_YEAR>> 2025
+
+			  <OPTION<$S2025_EXD_YEAR>> 2026
+
+			  <OPTION<$S2026_EXD_YEAR>> 2027
+
+			  <OPTION<$S2027_EXD_YEAR>> 2027
+
+			  <OPTION<$S2028_EXD_YEAR>> 2028
+
+			  <OPTION<$S2029_EXD_YEAR>> 2029
+
+			  <OPTION<$S2030_EXD_YEAR>> 2030
+			</SELECT>
+		</td>
+		<td>
+			<SELECT NAME="CEXD_MON">
+			  <OPTION>
+			  <OPTION<$S01_EXD_MON> value="01"> Jan
+			  <OPTION<$S02_EXD_MON> value="02"> Feb
+			  <OPTION<$S03_EXD_MON> value="03"> Mar
+			  <OPTION<$S04_EXD_MON> value="04"> Apr
+			  <OPTION<$S05_EXD_MON> value="05"> May
+			  <OPTION<$S06_EXD_MON> value="06"> Jun
+			  <OPTION<$S07_EXD_MON> value="07"> Jul
+			  <OPTION<$S08_EXD_MON> value="08"> Aug
+			  <OPTION<$S09_EXD_MON> value="09"> Sep
+			  <OPTION<$S10_EXD_MON> value="10"> Oct
+			  <OPTION<$S11_EXD_MON> value="11"> Nov
+			  <OPTION<$S12_EXD_MON> value="12"> Dec
+			</SELECT>
+		</td>
+		<td>
+			<SELECT NAME="CEXD_MDAY">
+			  <OPTION>
+			  <OPTION<$S01_EXD_MDAY>> 01
+			  <OPTION<$S02_EXD_MDAY>> 02
+			  <OPTION<$S03_EXD_MDAY>> 03
+			  <OPTION<$S04_EXD_MDAY>> 04
+			  <OPTION<$S05_EXD_MDAY>> 05
+			  <OPTION<$S06_EXD_MDAY>> 06
+			  <OPTION<$S07_EXD_MDAY>> 07
+			  <OPTION<$S08_EXD_MDAY>> 08
+			  <OPTION<$S09_EXD_MDAY>> 09
+			  <OPTION<$S10_EXD_MDAY>> 10
+			  <OPTION<$S11_EXD_MDAY>> 11
+			  <OPTION<$S12_EXD_MDAY>> 12
+			  <OPTION<$S13_EXD_MDAY>> 13
+			  <OPTION<$S14_EXD_MDAY>> 14
+			  <OPTION<$S15_EXD_MDAY>> 15
+			  <OPTION<$S16_EXD_MDAY>> 16
+			  <OPTION<$S17_EXD_MDAY>> 17
+			  <OPTION<$S18_EXD_MDAY>> 18
+			  <OPTION<$S19_EXD_MDAY>> 19
+			  <OPTION<$S20_EXD_MDAY>> 20
+			  <OPTION<$S21_EXD_MDAY>> 21
+			  <OPTION<$S22_EXD_MDAY>> 22
+			  <OPTION<$S23_EXD_MDAY>> 23
+			  <OPTION<$S24_EXD_MDAY>> 24
+			  <OPTION<$S25_EXD_MDAY>> 25
+			  <OPTION<$S26_EXD_MDAY>> 26
+			  <OPTION<$S27_EXD_MDAY>> 27
+			  <OPTION<$S28_EXD_MDAY>> 28
+			  <OPTION<$S29_EXD_MDAY>> 29
+			  <OPTION<$S30_EXD_MDAY>> 30
+			  <OPTION<$S31_EXD_MDAY>> 31
+			</SELECT>
+		</td>
+<!-- #endif variable="HMMM" -->	
+<!-- #ifdef variable="HMMM" value="0" -->
+	<td><font color=#80ff00>Date of temporary exclusion (until):</font></td>
+		<td>
+			<SELECT NAME="EXD_YEAR">
+			  <OPTION>
+			  <OPTION<$S2000_EXD_YEAR>> 2000
+			  <OPTION<$S2001_EXD_YEAR>> 2001
+			  <OPTION<$S2002_EXD_YEAR>> 2002
+			  <OPTION<$S2003_EXD_YEAR>> 2003
+			  <OPTION<$S2004_EXD_YEAR>> 2004
+			  <OPTION<$S2005_EXD_YEAR>> 2005
+			  <OPTION<$S2006_EXD_YEAR>> 2006
+			  <OPTION<$S2007_EXD_YEAR>> 2007
+			  <OPTION<$S2008_EXD_YEAR>> 2008
+			  <OPTION<$S2009_EXD_YEAR>> 2009
+			  <OPTION<$S2010_EXD_YEAR>> 2010
+
+              <OPTION<$S2010_EXD_YEAR>> 2011
+
+			  <OPTION<$S2011_EXD_YEAR>> 2012
+
+ 			  <OPTION<$S2012_EXD_YEAR>> 2013
+
+			  <OPTION<$S2013_EXD_YEAR>> 2014
+
+			  <OPTION<$S2014_EXD_YEAR>> 2015
+
+			  <OPTION<$S2015_EXD_YEAR>> 2016
+
+			  <OPTION<$S2016_EXD_YEAR>> 2017
+
+			  <OPTION<$S2017_EXD_YEAR>> 2018
+
+			  <OPTION<$S2018_EXD_YEAR>> 2019
+
+			  <OPTION<$S2019_EXD_YEAR>> 2020
+
+			  <OPTION<$S2020_EXD_YEAR>> 2021
+
+			  <OPTION<$S2021_EXD_YEAR>> 2022
+
+			  <OPTION<$S2022_EXD_YEAR>> 2023
+
+			  <OPTION<$S2023_EXD_YEAR>> 2024
+
+			  <OPTION<$S2024_EXD_YEAR>> 2025
+
+			  <OPTION<$S2025_EXD_YEAR>> 2026
+
+			  <OPTION<$S2026_EXD_YEAR>> 2027
+
+			  <OPTION<$S2027_EXD_YEAR>> 2027
+
+			  <OPTION<$S2028_EXD_YEAR>> 2028
+
+			  <OPTION<$S2029_EXD_YEAR>> 2029
+
+			  <OPTION<$S2030_EXD_YEAR>> 2030
+			</SELECT>
+		</td>
+		<td>
+			<SELECT NAME="EXD_MON">
+			  <OPTION>
+			  <OPTION<$S01_EXD_MON> value="01"> Jan
+			  <OPTION<$S02_EXD_MON> value="02"> Feb
+			  <OPTION<$S03_EXD_MON> value="03"> Mar
+			  <OPTION<$S04_EXD_MON> value="04"> Apr
+			  <OPTION<$S05_EXD_MON> value="05"> May
+			  <OPTION<$S06_EXD_MON> value="06"> Jun
+			  <OPTION<$S07_EXD_MON> value="07"> Jul
+			  <OPTION<$S08_EXD_MON> value="08"> Aug
+			  <OPTION<$S09_EXD_MON> value="09"> Sep
+			  <OPTION<$S10_EXD_MON> value="10"> Oct
+			  <OPTION<$S11_EXD_MON> value="11"> Nov
+			  <OPTION<$S12_EXD_MON> value="12"> Dec
+			</SELECT>
+		</td>
+		<td>
+			<SELECT NAME="EXD_MDAY">
+			  <OPTION>
+			  <OPTION<$S01_EXD_MDAY>> 01
+			  <OPTION<$S02_EXD_MDAY>> 02
+			  <OPTION<$S03_EXD_MDAY>> 03
+			  <OPTION<$S04_EXD_MDAY>> 04
+			  <OPTION<$S05_EXD_MDAY>> 05
+			  <OPTION<$S06_EXD_MDAY>> 06
+			  <OPTION<$S07_EXD_MDAY>> 07
+			  <OPTION<$S08_EXD_MDAY>> 08
+			  <OPTION<$S09_EXD_MDAY>> 09
+			  <OPTION<$S10_EXD_MDAY>> 10
+			  <OPTION<$S11_EXD_MDAY>> 11
+			  <OPTION<$S12_EXD_MDAY>> 12
+			  <OPTION<$S13_EXD_MDAY>> 13
+			  <OPTION<$S14_EXD_MDAY>> 14
+			  <OPTION<$S15_EXD_MDAY>> 15
+			  <OPTION<$S16_EXD_MDAY>> 16
+			  <OPTION<$S17_EXD_MDAY>> 17
+			  <OPTION<$S18_EXD_MDAY>> 18
+			  <OPTION<$S19_EXD_MDAY>> 19
+			  <OPTION<$S20_EXD_MDAY>> 20
+			  <OPTION<$S21_EXD_MDAY>> 21
+			  <OPTION<$S22_EXD_MDAY>> 22
+			  <OPTION<$S23_EXD_MDAY>> 23
+			  <OPTION<$S24_EXD_MDAY>> 24
+			  <OPTION<$S25_EXD_MDAY>> 25
+			  <OPTION<$S26_EXD_MDAY>> 26
+			  <OPTION<$S27_EXD_MDAY>> 27
+			  <OPTION<$S28_EXD_MDAY>> 28
+			  <OPTION<$S29_EXD_MDAY>> 29
+			  <OPTION<$S30_EXD_MDAY>> 30
+			  <OPTION<$S31_EXD_MDAY>> 31
+			</SELECT>
+		</td>
+	<!-- okay -->
+<!-- #endif variable="HMMM" -->
+
+</tr>
+<tr>
+<!-- #ifdef variable="HMMM" value="1" -->
+	<td><font color=#80ff00>Reason:</font></td>
+	<td colspan=3><input name="LOL" value="<$EXT>" MAXLENGTH=128 SIZE=32></td>
+	<input type=hidden name="EXT" value="Attempted to ban/unban <$NNM>">
+<!-- #endif variable="HMMM" -->	
+<!-- #ifdef variable="HMMM" value="0" -->
+	<td><font color=#80ff00>Reason:</font></td>
+	<td colspan=3><input name="EXT" value="<$EXT>" MAXLENGTH=128 SIZE=32></td>
+	<!-- okay -->
+<!-- #endif variable="HMMM" -->
+</tr>
+<tr>
+	<td><font color=#80ff00>Exclusion History:</font></td>
+	<td colspan=3><TEXTAREA NAME="HEXT" ROWS=5 COLS=40><$HEXT></TEXTAREA></td>
+</tr>
+<tr>
+<!-- #define variable="LOCKPERM"  value="0" -->
+<!-- #include virtual="<$g_Templates>citizen/allowlockrecord.tmpl" -->
+
+
+<!-- #ifdef variable="LOCKPERM" value="1" -->
+	<td><font color=#80ff00>Record Status:</font></td>
+	<td colspan=3>
+	<INPUT NAME="EXL" TYPE=RADIO VALUE="Unlocked" 
+	<!--#ifdef variable="EXL" value="Unlocked" -->
+	checked
+	<!--#endif variable="EXL" -->
+	<!--#ifdef variable="EXL" value="" -->
+	checked
+	<!--#endif variable="EXL" -->
+	> Unlocked&nbsp;&nbsp;&nbsp;
+	
+	<INPUT NAME="EXL" TYPE=RADIO VALUE="Locked" 
+	<!--#ifdef variable="EXL" value="Locked" -->
+	checked
+	<!--#endif variable="EXL" -->
+	> Locked&nbsp;&nbsp;&nbsp;
+	</td>
+<!-- #endif variable="LOCKPERM" -->	
+<!-- #ifdef variable="LOCKPERM" value="0" -->
+	<td><font color=#80ff00>Record Status:</font></td>
+	<td colspan=3>
+	<!--#ifdef variable="EXL" value="" -->
+	Unlocked
+	<!--#endif variable="EXL" -->
+	<$EXL></td>
+<!-- #endif variable="LOCKPERM" -->
+</tr>
+
+<!-- #ifdef variable="LOCKPERM" value="1" -->
+<tr>
+	<td><font color=#80ff00>User Age:</font></td>
+	<td colspan=3>
+	<INPUT NAME="AGE" TYPE=RADIO VALUE="UNDER18" 
+	<!--#ifdef variable="AGE" value="UNDER18" -->
+	checked
+	<!--#endif variable="AGE" -->
+	> Under 18&nbsp;&nbsp;&nbsp;
+	
+	<INPUT NAME="AGE" TYPE=RADIO VALUE="18PLUS" 
+	<!--#ifdef variable="AGE" value="18PLUS" -->
+	checked
+	<!--#endif variable="AGE" -->
+	> 18+&nbsp;&nbsp;&nbsp;
+	</td>
+</tr>
+<!-- #endif variable="LOCKPERM" -->	
+
+<!--#ifdef variable="EXM" -->
+<tr>
+	<td><font color=#80ff00>Excluded by:</font></td>
+	<td colspan=3><$EXM>&nbsp;</td>
+</tr>
+<!--#endif variable="EXM" -->
+
+        <tr>
+            <td><font color=#80ff00>Send user to :</font></td>
+            <td><SELECT NAME="MPL">
+                          <OPTION value="">Ban from Site
+                </select>
+                </td>
+        </tr>
+
+        </table>
+
+<!-- #define variable="HTTT"  value="0" -->
+
+<!-- #include virtual="<$g_Templates>xtras/allowxtras.tmpl" -->
+
+<!-- begin insertion of xtra options for security commish/com.techs -->
+
+<!-- #ifdef variable="HTTT" value="1" -->
+
+<br>
+
+<font color="red">The following options are only visible to com.techs/security commish.</font><p>
+
+<table>
+
+<tr>
+
+<td><font color=#80ff00>Security Question:</font></td>
+
+<td colspan=3><$SEQ></td>
+
+</tr>
+
+<tr>
+
+<td><font color=#80ff00>Security Answer:</font></td>
+
+<td colspan=3><$SEA></td>
+
+</tr>
+
+<tr>
+
+<td><font color=#80ff00>Referencing Member:</font></td>
+
+<td><$REF></td>
+
+</tr>
+
+</table>
+
+
+
+<!-- #endif variable="HTTT" -->
+
+
+
+<br><br>
+
+
+<p>
+<input type=submit name="edit" value=Exclude>
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</p>
+</form>
+<!-- #endif variable="CITY_OWN" -->
+
+<!-- #ifndef variable="CITY_OWN" -->
+<font color="red">
+<center>
+Sorry, you do not have the access rights needed for this page.
+</center>
+</font>
+<!-- #endif variable="CITY_OWN" -->
+
+<!--#ifndef variable="LOCKPERM" value="1" -->
+<!-- #endif variable="LOCKED" -->
+<!-- #endif variable="LOCKPERM" -->
+
+</body>
+</html>

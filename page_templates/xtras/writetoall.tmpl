@@ -1,0 +1,126 @@
+<!-- /inb/writetoall.tmpl -->
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+<!--- MB editing tools script --->
+<script language="Javascript1.2"><!-- // load htmlarea
+_editor_url = "http://www.cybertown.com/htmlarea/";                     // URL to htmlarea files
+var win_ie_ver = parseFloat(navigator.appVersion.split("MSIE")[1]);
+if (navigator.userAgent.indexOf('Mac')        >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Windows CE') >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Opera')      >= 0) { win_ie_ver = 0; }
+if (win_ie_ver >= 5.5) {
+ document.write('<scr' + 'ipt src="' +_editor_url+ 'editor.js"');
+ document.write(' language="Javascript1.2"></scr' + 'ipt>');  
+} else { document.write('<scr'+'ipt>function editor_generate() { return false; }</scr'+'ipt>'); }
+// --></script> 
+<!--- End MB tools --->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+
+<!-- #ifdef variable="DTY" value="B" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,12" -->
+<h2>Inbox to all in Block</h2>
+<!-- #endif variable="DTY" -->
+
+<!-- #ifdef variable="DTY" value="N" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,8" -->
+<h2>Inbox to all in Neighbourhood</h2>
+<!-- #endif variable="DTY" --> 
+
+<!-- #ifdef variable="DTY" value="C" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,4" -->
+<h2>Inbox to all in Colony</h2>
+<!-- #endif variable="DTY" --> 
+
+<!-- #ifdef variable="DTY" value="O" -->
+<!-- #define variable="COLID" substring="<$KEY>,0,14" -->
+<h2>Inbox to all City Places</h2>
+<!-- #endif variable="DTY" --> 
+
+
+<form name="poster" method=post action="print60">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="DATE" value="<$CT_STR>">
+<input type=hidden name="ID2" value="<$COLID>">
+
+<!-- #ifdef variable="DTY" value="B" -->
+<input type=hidden name="TPL" value="inb/toall3">
+<input type=hidden name="program" value="block">
+<!-- #endif variable="DTY" --> 
+<!-- #ifdef variable="DTY" value="N" -->
+<input type=hidden name="TPL" value="inb/toall2">
+<input type=hidden name="program" value="neighbor">
+<!-- #endif variable="DTY" --> 
+<!-- #ifdef variable="DTY" value="C" -->
+<input type=hidden name="TPL" value="inb/toall1">
+<input type=hidden name="program" value="community">
+<!-- #endif variable="DTY" --> 
+<!-- #ifdef variable="DTY" value="O" -->
+<input type=hidden name="TPL" value="xtras/toall1">
+<input type=hidden name="program" value="place">
+<!-- #endif variable="DTY" --> 
+<input type=hidden name="ac"  value="<$ac>">
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+
+<table border=0>
+<tr>
+<td>Subject:</td>
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=32 SIZE=60></td>
+</tr>
+<tr>
+<td>Text:</td>
+<td>
+<!-- #ifndef variable="MB_TOOL" value="NO" -->
+<script language="JavaScript1.2" defer>
+editor_generate('txt');
+</script>
+<!-- #endif variable="MB_TOOL" -->
+<TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+
+</p>
+</form>
+
+<!-- #ifndef variable="MB_TOOL" value="NO" -->
+<form name="spell">
+<script>
+<!--
+function sendtext()
+	{
+	var text;
+	var semi = new RegExp("\;","g");
+	document.send.checkme.value = (document.poster.txt.value.replace(semi,"\;"));
+	document.send.form.value = "poster";
+	document.send.field.value = "txt";
+	window.open('','SpellChecker','width=480,height=360,top=150,left=150,scrollbars=1,location=true');
+	document.send.submit();
+	}
+-->
+</script>
+	<input type="button" name="SpellCheck" value="SpellCheck" onclick="sendtext()" /></p>
+</form>
+<form name="send" action="http://www.cybertown.com/cgi-bin/aspell/nspell.pl" method="POST" target="SpellChecker">
+<input type="hidden" name="checkme" />
+<input type="hidden" name="form" />
+<input type="hidden" name="field" />
+<input type="hidden" name="spell" value="check" />
+</form>
+<!-- #endif variable="MB_TOOL" -->
+
+</font>
+
+</body>
+</html>
+

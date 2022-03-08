@@ -1,0 +1,141 @@
+<html>
+<head>
+<title><$g_title> - Post Office</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language=javascript>
+function back(){history.back();}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text=#000000 LINK="#00AF00" VLINK="#00AF00" ALINK="#00FF00">
+
+<div align=center>
+
+<img src="<$g_HTMLRoot>/places/post/images/post.gif" width="372" height="112">
+<br>
+<a href="javascript:back()">
+<img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+<br>
+
+<font color="red">
+<!-- #ifdef variable="emailerror001" -->
+E-Mail address and message are required for sending a postcard!
+<!-- #endif variable="emailerror001" -->
+
+<!-- #ifdef variable="emailerror002" -->
+The postcard could not be send!
+<!-- #endif variable="emailerror002" -->
+</font>
+
+<!-- #ifdef variable="emailok" -->
+<br>
+<img src="<$g_HTMLRoot>/places/post/images/card<$T_NO>.jpg" border="0">
+
+<table border="1">
+<tr> 
+<td width="38%" valign="top"><img src="<$g_HTMLRoot>/places/post/images/stamp.gif" width="234" height="81"></td>
+<td width="62%" valign="top">
+<p>From: <$NNM><br>
+<p>To: <$to></p>
+<pre>
+<$BODY>
+</pre>
+</td>
+</tr>
+</table>
+<!-- #endif variable="emailok" -->
+
+<!-- #ifndef variable="emailok" -->
+<!-- #ifndef variable="isVisitor" -->
+<table border="0">
+<tr> 
+<td> 
+<p>Simply fill out the form below to send a postcard to your friends. 
+Your friends will automatically receive an email telling them that a 
+postcard is waiting for them at the Cybertown Post Office. </p>
+
+<p align="center"><font color="#0066FF" size="2">The Cybertown Postmaster</font></p>
+<p align="center"><font size="4" color="#000000">You chose this card:</font></p>
+</td>
+</tr>
+</table>
+
+<img src="<$g_HTMLRoot>/places/post/images/card<$T_NO>.jpg" border="0">
+
+<form method=post action="place<$g_exe>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+<td width=150><b>Name (from):</b></td>
+<td width=400><$NNM></td>
+</tr>
+
+<tr>
+<td><b>E-Mail (from):</b></td>
+<td><$EML></td>
+</tr>
+
+<tr>
+<td><b>Name (to):</b></td>
+<td><input name="VAL0" value="" maxlength=64 size=32></td>
+</tr>
+
+<tr>
+<td><b>E-Mail (to):</b></td>
+<td><input name="to" value="" maxlength=64 size=32></td>
+</tr>
+
+<tr>
+<td><b>Message:</b></td>
+<td><textarea name="VAL1" rows=10 cols=32 wrap=off></textarea></td>
+</tr>
+</table>
+
+<!-- Here's the postcard text (var. BODY) ! -->
+<input type=hidden name="BODY" 
+value="
+Hello [$VAL0],
+<$NNM> (<$EML>) has sent this 
+postcard to you from Cybertown :-)
+
+Go retrieve your postcard from the 
+Virtual Community of the Future!
+ http://www.cybertown.com/postoffice/card<$T_NO>.html
+-------------------------------------------
+
+[$VAL1]
+
+-------------------------------------------
+Visit Cybertown, it's FREE
+ http://www.cybertown.com
+">
+
+<!-- Hidden params -->
+<input type=hidden name="ac" value="email">
+<input type=hidden name="tpl" value="post/card">
+<input type=hidden name="subject" value="Postcard from Cybertown">
+<input type=hidden name="type" value="postcard">
+<input type=hidden name="domain" value="cybertown.com">
+<input type=hidden name="T_NO" value="<$T_NO>">
+
+<input type=submit name="submit" value="Send Postcard">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</div>
+</form>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="isVisitor" -->
+<p>
+Sorry, Visitor, but only immigrated members of Cybertown can send postcards
+to their friends.<br>
+But if you <a href="register<$g_exe>">join now</a> (it's FREE), you can send as many postcards as you want :-)!
+</p>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #endif variable="emailok" -->
+
+</div>
+</body>
+</html>

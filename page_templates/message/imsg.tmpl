@@ -1,0 +1,13 @@
+<!-- message/imsg.tmpl --> 
+
+<!-- #define variable="COLID" substring="<$ID>,0,4" --> 
+
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>message/imsg_hi-tek.tmpl" --> 
+<!-- #endif variable="COLID" -->  
+
+<!-- #ifndef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>message/imsg_standard.tmpl" --> 
+<!-- standard 1 -->
+<!-- #endif variable="COLID" --> 
+

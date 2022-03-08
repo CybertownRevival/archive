@@ -1,0 +1,193 @@
+<!-- #ifndef variable="ID" value="0111000000000000" -->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Colony</title>
+
+<!-- #ifndef variable="isVisitor" -->
+
+<!-- #ifdef variable="SEQ" value="" -->
+<!-- #include virtual="<$g_Templates>common/securitycheck.tmpl" -->
+<!-- #else variable="SEQ" -->
+
+<!-- #ifdef variable="AGE" value="" -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<title>Cybertown - Civilisation for the Virtual Age</title>
+<img src="http://www.cybertown.com/images/ban_ivn128-2.gif">
+<p><img src="http://www.cybertown.com/images/ctlogo.gif">
+<blockquote><blockquote><p></center>We are building a new system to help further protect our younger residents from exposure to 
+unsuitable images or objects and we need you to let us know (just once) if you are under 18 or over 18. 
+If the information you provide is incorrect, any material viewed is at your own risk and responsibility and you risk losing your membership.
+<p>By selecting 18+ you are confirming that:
+<p>&nbsp;1. You are over 18 years of age.
+<br>&nbsp;2. You understand that content in a PG-labeled home or Club in Cybertown may involve language, 
+content, material, images, objects and themes of a controversial nature that may not be considered suitable 
+for a person under 18.
+<p><center>Thank you.</blockquote></blockquote>
+<p><i>IVN/Cybertown Inc.</i>
+<form name="ageform" action="/cgi-bin/cybertown/print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="place/returnplace">
+<input type=hidden name="plc" value="<$place>">
+<input type=hidden name="NNM" value="<$NNM>">
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="UNDER18"> Under 18&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="18PLUS"> 18+
+
+<p><input type=submit name="submit" value="Proceed to Cybertown">
+</form>
+
+<!-- #endif variable="AGE" -->
+
+<!-- #ifndef variable="AGE" value="" -->
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&ID=<$ID>&type=C&CID=<$ID>&ctype=C&plc=community&DTY=C&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+<!-- #if variable="CHT" == value="" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #if variable="CHT" == value="n" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="s" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="p" -->
+ <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&DTY=C&ID=<$ID>" scrolling="auto" noresize border=0>
+<!-- #endif variable="CHT" -->
+ 
+ <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="community<$g_exe>?ac=action&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+<!-- #endif variable="AGE" -->
+
+<!-- #endif variable="SEQ" -->
+
+</html>
+
+<!-- #endif variable="ID" -->
+
+
+
+<!-- #ifdef variable="ID" value="0111000000000000" -->
+
+<!-- #ifdef variable="NNM" value="Simioni" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="NNM" value="Hawk" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="NNM" value="Stasis" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="NNM" value="Darkvelvet" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="NNM" value="DarkVelvet" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="NNM" value="dazzle_d" -->
+	<!-- #define variable="HMMM"  value="1" -->
+<!-- #endif variable="NNM" -->
+
+<!-- #ifdef variable="HMMM" value="1" -->
+<head>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&ID=<$ID>&type=C&CID=<$ID>&ctype=C&plc=community&DTY=C&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+<!-- #if variable="CHT" == value="" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #if variable="CHT" == value="n" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="s" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="p" -->
+ <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&DTY=C&ID=<$ID>" scrolling="auto" noresize border=0>
+<!-- #endif variable="CHT" -->
+ 
+ <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="community<$g_exe>?ac=action&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+
+<!-- #else variable="HMMM" -->
+<html>
+<head>
+<style>
+a:link			{font:8pt/11pt verdana; color:red}
+a:visited		{font:8pt/11pt verdana; color:#4e4e4e}
+</style>
+<meta HTTP-EQUIV="Content-Type" Content="text-html; charset=Windows-1252">
+<title>End of the internet!</title>
+</head>
+<EMBED hidden="true" SRC="/comtech/files/Hal.wav" autostart="true" loop="false">
+<body bgcolor="white">
+<object id=saOC CLASSID='clsid:B45FF030-4447-11D2-85DE-00C04FA35C89' HEIGHT=0 width=0></object>
+<table width="400" cellpadding="3" cellspacing="5">
+  <tr>
+    <td id="tableProps" valign="top" align="left"><img id="pagerrorImg" SRC="/comtech/files/pagerror.gif"
+    width="25" height="33"></td>
+    <td id="tableProps2" align="left" valign="middle" width="360"><h1 id="textSection1"
+    style="COLOR: black; FONT: 13pt/15pt verdana"><span id="errorText">CONGRATULATIONS !!!!</span></h1>
+    </td>
+  </tr>
+  <tr>
+    <td id="tablePropsWidth" width="400" colspan="2"><font
+    style="COLOR: black; FONT: 8pt/11pt verdana">You have finally reached the end of the internet!!!</font></td>
+  </tr>
+  <tr>
+    <td id="tablePropsWidth" width="400" colspan="2"><font id="LID1"
+    style="COLOR: black; FONT: 8pt/11pt verdana"><hr color="#C0C0C0" noshade>
+    <p id="LID2">Please try the following:</p><ul>
+      <li id="instructionsText1">Sit back and relax, you deserved it!<br>
+      </li>
+      
+      <li id="instructionsText2">Go out and have a couple of drinks, you certainly achieved something to be proud of!<br>
+      </li>
+      <li id="instructionsText3">Yes, you really did reach the end of the internet. If you don't believe me, check your connection settings. To check your connection settings, click the <b>Tools</b> menu, and then click
+        <b>Internet Options</b>. On the <b>Connections</b> tab, click <b>Settings</b>.
+        The settings should match those provided by your local area network (LAN) administrator or Internet service provider (ISP). </li>
+     <li ID="list4">Check on your family and friends if you still have them. In case you don't, please note that Microsoft can <b>not</b> be prosecuted for you searching and surfing the internet too often and spending too much time online <$NNM>!!!
+      </li>
+    
+      
+      
+    </ul>
+    <p><br>
+    </p>
+    <h2 id="IEText" style="font:8pt/11pt verdana; color:black">You have reached the end of the internet.<BR> Internet Explorer 
+	
+    </h2>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+<!-- #endif variable="HMMM" -->
+
+<!-- #endif variable="ID" -->

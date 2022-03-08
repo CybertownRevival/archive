@@ -1,0 +1,55 @@
+<!-- common/inforoles.tmpl -->
+<!-- included in info.tmpl to display role info -->
+<table border=0>
+
+<!-- #ifdef variable="noOWR" -->
+<tr><td><b>Owner:</b></td></tr>
+<!-- #endif variable="noOWR" -->
+<!-- #ifdef variable="OWR" -->
+<tr><td><b><$OWR>:</b></td></tr>
+<!-- #endif variable="OWR" -->
+
+<!-- #ifdef variable="noOWN" -->
+<tr><td><font color="#FFFF00">no owner defined</font></td></tr>
+<!-- #endif variable="noOWN" -->
+<!-- #ifdef variable="OWN" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$OWN>'"; target="top"><$OWN></a></font></td></tr>
+<!-- #endif variable="OWN" -->
+
+<!-- #ifdef variable="noASR" -->
+<tr><td><b>Assistant:</b></td></tr>
+<!-- #endif variable="noASR" -->
+<!-- #ifdef variable="ASR" -->
+<td><b><$ASR>:</b></td>
+<!-- #endif variable="ASR" -->
+
+<!-- #ifdef variable="noAssist" -->
+<tr><td><font color="#FFFF00">no assistant defined</font></td></tr>
+<!-- #endif variable="noAssist" -->
+
+<!-- #ifdef variable="ASR1" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR1>'" target="top"><$ASR1></a></font></td></tr>
+<!-- #endif variable="ASR1" -->
+<!-- #ifdef variable="ASR2" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR2>'" target="top"><$ASR2></a></font></td></tr>
+<!-- #endif variable="ASR2" -->
+<!-- #ifdef variable="ASR3" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR3>'" target="top"><$ASR3></a></font></td></tr>
+<!-- #endif variable="ASR3" -->
+<!-- #ifdef variable="ASR4" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR4>'" target="top"><$ASR4></a></font></td></tr>
+<!-- #endif variable="ASR4" -->
+<!-- #ifdef variable="ASR5" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR5>'" target="top"><$ASR5></a></font></td></tr>
+<!-- #endif variable="ASR5" -->
+<!-- #ifdef variable="ASR6" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR6>'" target="top"><$ASR6></a></font></td></tr>
+<!-- #endif variable="ASR6" -->
+<!-- #ifdef variable="ASR7" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR7>'" target="top"><$ASR7></a></font></td></tr>
+<!-- #endif variable="ASR7" -->
+<!-- #ifdef variable="ASR8" -->
+<tr><td><font color="#FFFF00"><a href="javascript:top.location.href='/home/<$ASR8>'" target="top"><$ASR8></a></font></td></tr>
+<!-- #endif variable="ASR8" -->
+</table>
+<!-- end of include inforoles.tmpl -->

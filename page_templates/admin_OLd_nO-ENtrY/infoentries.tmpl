@@ -1,0 +1,132 @@
+<!-- admin/infoentries.tmpl -->
+<!-- list information entries, like messages -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifdef variable="cal" -->
+<h2><font color=#80ff00>Calendar Entries defined in Database</font></h2>
+<!-- #endif variable="cal" -->
+<!-- #ifdef variable="msb" -->
+<h2><font color=#80ff00>Message Board Entries defined in Database</font></h2>
+<!-- #endif variable="msb" -->
+<!-- #ifdef variable="inb" -->
+<h2><font color=#80ff00>Inbox Entries defined in Database</font></h2>
+<!-- #endif variable="inb" -->
+<!-- #ifdef variable="lnk" -->
+<h2><font color=#80ff00>Link List Entries defined in Database</font></h2>
+<!-- #endif variable="lnk" -->
+<!-- #ifdef variable="cht" -->
+<h2><font color=#80ff00>Chat Entries defined in Database</font></h2>
+<!-- #endif variable="cht" -->
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <input type="hidden" name="info" value="<$info>">
+    <input type="hidden" name="<$info>" value="1">
+    <input type="hidden" name="parent" value="<$parent>">
+
+    Filter for <$KTY>:&nbsp;&nbsp;
+    <INPUT type="text" name="KFT" value="<$KFT>" size=32>
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <input type="hidden" name="info" value="<$info>">
+    <input type="hidden" name="<$info>" value="1">
+    <input type="hidden" name="parent" value="<$parent>">
+
+    <table>
+        <tr>
+            <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+            <!--#ifdef variable="[PREV]" -->
+                <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifndef variable="[PREV]" -->
+                <td>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+            </td>
+        </tr>
+    </table>
+</form>
+
+<table border=1>
+<tr>
+    <th><font color=#80ff00>ID</th>
+    <th><font color=#80ff00>Subject</th>
+    <th><font color=#80ff00>From</th>
+    <th><font color=#80ff00>Owner</th>
+</tr>
+<!--#for loopname="object" loopvars="ID_" -->
+<tr>
+    <td><A HREF="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&TPL=admin/infoentry&ac=read&info=<$info>&<$info>=1" target=_self><$ID_></A></td>
+
+    <!--#ifdef variable="NAM_" -->
+      <td><$NAM_>&nbsp;</td>
+    <!--#endif variable="NAM_" -->
+    <!--#ifndef variable="NAM_" -->
+      <td>&nbsp;</td>
+    <!--#endif variable="NAM_" -->
+
+    <!--#ifdef variable="NNM_" -->
+      <td><$NNM_>&nbsp;</td>
+    <!--#endif variable="NNM_" -->
+    <!--#ifndef variable="NNM_" -->
+      <td>&nbsp;</td>
+    <!--#endif variable="NNM_" -->
+
+    <!--#ifdef variable="OWN_NNM_" -->
+      <td><$OWN_NNM_>&nbsp;</td>
+    <!--#endif variable="OWN_NNM_" -->
+    <!--#ifndef variable="OWN_NNM_" -->
+      <td>&nbsp;</td>
+    <!--#endif variable="OWN_NNM_" -->
+</tr>
+<!--#endfor loopname="object" -->
+</table>
+<br>
+<a HREF="/cgi-bin/cybertown/admin?DTY=I&KTY=ID&KEY=<$parent>&TPL=admin/info&ac=read&info=<$info>&<$info>=1" target=_self>Parent Info Object</a><br>
+
+<br>
+</body>
+</html>
+

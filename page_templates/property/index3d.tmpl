@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+<!-- #ifndef variable="isVisitor" -->
+
+<!-- #ifdef variable="SEQ" value="" -->
+<!-- #include virtual="<$g_Templates>common/securitycheck.tmpl" -->
+<!-- #else variable="SEQ" -->
+
+<!-- #ifdef variable="AGE" value="" -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<title>Cybertown - Civilisation for the Virtual Age</title>
+<img src="http://www.cybertown.com/images/ban_ivn128-2.gif">
+<p><img src="http://www.cybertown.com/images/ctlogo.gif">
+<blockquote><blockquote><p></center>We are building a new system to help further protect our younger residents from exposure to 
+unsuitable images or objects and we need you to let us know (just once) if you are under 18 or over 18. 
+If the information you provide is incorrect, any material viewed is at your own risk and responsibility and you risk losing your membership.
+<p>By selecting 18+ you are confirming that:
+<p>&nbsp;1. You are over 18 years of age.
+<br>&nbsp;2. You understand that content in a PG-labeled home or Club in Cybertown may involve language, 
+content, material, images, objects and themes of a controversial nature that may not be considered suitable 
+for a person under 18.
+<p><center>Thank you.</blockquote></blockquote>
+<p><i>IVN/Cybertown Inc.</i>
+<form name="ageform" action="/cgi-bin/cybertown/print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="place/returnplace">
+<input type=hidden name="plc" value="<$place>">
+<input type=hidden name="NNM" value="<$NNM>">
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="UNDER18"> Under 18&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="AGE" TYPE=RADIO VALUE="18PLUS"> 18+
+
+<p><input type=submit name="submit" value="Proceed to Cybertown">
+</form>
+
+<!-- #endif variable="AGE" -->
+
+<!-- #ifndef variable="AGE" value="" -->
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&ID=<$ID>&type=P&CID=<$commid>&ctype=C&plc=property&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="property<$g_exe>?ac=place&ID=<$ID>&force=p" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="property<$g_exe>?ac=action&ID=<$ID>&T_LDT=P" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+<!-- #endif variable="AGE" -->
+
+<!-- #endif variable="SEQ" -->
+
+</html>

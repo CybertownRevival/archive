@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</head>
+
+<frameset rows="60%,40%,*" border=0 marginheight=0 marginwidth=0>
+	<frame name="World" src="<$g_HTMLRoot>/common/ccpro3d.htm" scrolling="no" noresize border=0 marginheight=5 marginwidth=20>
+  <!-- #ifdef variable="owneraccess" -->
+    <frame name="CCpro" src="property<$g_exe>?ID=<$ID>&ac=3D&T_OWNER=1&IE=x.bxx" scrolling="no" border=0 marginheight=0 marginwidth=3>
+  <!-- #endif variable="owneraccess" -->
+  <!-- #ifndef variable="owneraccess" -->
+    <frame name="CCpro" src="property<$g_exe>?ID=<$ID>&ac=3D&IE=x.bxx" scrolling="no" border=0 marginheight=0 marginwidth=3>
+  <!-- #endif variable="owneraccess" -->
+ <frameset rows="50%,50%,*" borderwidth=0 border=0 marginheight=0 marginwidth=0>
+	<frame name="HTML" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+	<frame name="audio" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+	<frame name="updaction" src="property<$g_exe>?ID=<$ID>&ac=updaction" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ </frameset>
+</frameset>
+</html>
+

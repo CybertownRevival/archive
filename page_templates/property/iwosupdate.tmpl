@@ -1,0 +1,613 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<script language="javascript">
+
+destName = "floor";
+roomNumber = 0;
+
+viewpoints = new Array(
+  "KameraRaum1",
+  "KameraRaum2",
+  "KameraRaum3",
+  "KameraRaum4" );
+
+
+function sendEvent( field, value )
+{
+  parent.World.document.CC3D.setNodeEventIn( 'House', field, value );
+}
+
+function setColor( colValue )
+{
+  if( destName=='floor' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="TF" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="CF" + roomNumber )
+      {
+        document.updateForm.elements[i].value = colValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 1 );
+    sendEvent( destName+(roomNumber+1)+'Color', colValue );
+  }
+  else if( destName=='wall' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="TW" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="CW" + roomNumber )
+      {
+        document.updateForm.elements[i].value = colValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 1 );
+    sendEvent( destName+(roomNumber+1)+'Color', colValue );
+  }
+  else if( destName=='window' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="TD" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="CD" + roomNumber )
+      {
+        document.updateForm.elements[i].value = colValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 1 );
+    sendEvent( destName+(roomNumber+1)+'Color', colValue );
+  }
+}
+
+function submitForm()
+{
+  document.updateForm.submit();
+}
+
+function setTexture( textValue )
+{
+  if( destName=='floor' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="CF" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="TF" + roomNumber )
+      {
+        document.updateForm.elements[i].value = textValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 0 );
+    sendEvent( destName+(roomNumber+1)+'Texture', '<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/images/texture' +
+      textValue + '.jpg' );
+  }
+  else if( destName=='wall' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="CW" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="TW" + roomNumber )
+      {
+        document.updateForm.elements[i].value = textValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 0 );
+    sendEvent( destName+(roomNumber+1)+'Texture', '<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/images/texture' +
+      textValue + '.jpg' );
+  }
+  else if( destName=='window' )
+  {
+    for( i=0; i<document.updateForm.elements.length; i++ )
+    {
+      if( document.updateForm.elements[i].name=="CD" + roomNumber )
+      {
+        document.updateForm.elements[i].value = '';
+      }
+      if( document.updateForm.elements[i].name=="TD" + roomNumber )
+      {
+        document.updateForm.elements[i].value = textValue;
+      }
+    }
+    sendEvent( destName+(roomNumber+1)+'Choice', 0 );
+    sendEvent( destName+(roomNumber+1)+'Texture', '<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/images/texture' +
+      textValue + '.jpg' );
+  }
+}
+
+function onLoad()
+{
+<!-- #ifndef variable="updateok" -->
+  <!-- #if variable="room" != value="" -->
+    roomNumber = <$room>;
+  <!-- #endif variable="room" -->
+    parent.World.document.CC3D.setNodeEventIn( viewpoints[roomNumber], "set_bind", "TRUE" );
+<!-- #endif variable="updateok" -->
+
+<!-- #ifdef variable="updateok" -->
+  document.location.href='<$g_cgiRoot>/property<$g_exe>?ID=<$ID>&ac=3D&IE=x.bxx';
+<!-- #endif variable="updateok" -->
+}
+
+function onCLickRadio( destinationStr )
+{
+  destName = destinationStr;
+}
+
+function roomChange()
+{
+  roomNumber = document.updateForm.roomSelect.selectedIndex;
+  parent.World.document.CC3D.setNodeEventIn( viewpoints[roomNumber], "set_bind", "TRUE" );
+}
+
+function uploadTexture()
+{
+  document.location.href = '<$g_cgiRoot>/edit<$g_exe>?ID=<$ID>&TPL=property/uploadtext&room='+roomNumber;
+}
+
+</script>
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7" onLoad="onLoad()">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>" onLoad="onLoad()">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- #if variable="CF0" == value="" -->
+  <!-- #define variable="CF0" value="<$CFL>" -->
+<!-- #endif variable="CF0" -->
+<!-- #if variable="CF1" == value="" -->
+  <!-- #define variable="CF1" value="<$CFL>" -->
+<!-- #endif variable="CF1" -->
+<!-- #if variable="CF2" == value="" -->
+  <!-- #define variable="CF2" value="<$CFL>" -->
+<!-- #endif variable="CF2" -->
+<!-- #if variable="CF3" == value="" -->
+  <!-- #define variable="CF3" value="<$CFL>" -->
+<!-- #endif variable="CF3" -->
+
+<!-- #if variable="CW0" == value="" -->
+  <!-- #define variable="CW0" value="<$CWA>" -->
+<!-- #endif variable="CW0" -->
+<!-- #if variable="CW1" == value="" -->
+  <!-- #define variable="CW1" value="<$CWA>" -->
+<!-- #endif variable="CW1" -->
+<!-- #if variable="CW2" == value="" -->
+  <!-- #define variable="CW2" value="<$CWA>" -->
+<!-- #endif variable="CW2" -->
+<!-- #if variable="CW3" == value="" -->
+  <!-- #define variable="CW3" value="<$CWA>" -->
+<!-- #endif variable="CW3" -->
+
+<!-- #if variable="CD0" == value="" -->
+  <!-- #define variable="CD0" value="<$CWI>" -->
+<!-- #endif variable="CD0" -->
+<!-- #if variable="CD1" == value="" -->
+  <!-- #define variable="CD1" value="<$CWI>" -->
+<!-- #endif variable="CD1" -->
+<!-- #if variable="CD2" == value="" -->
+  <!-- #define variable="CD2" value="<$CWI>" -->
+<!-- #endif variable="CD2" -->
+<!-- #if variable="CD3" == value="" -->
+  <!-- #define variable="CD3" value="<$CWI>" -->
+<!-- #endif variable="CD3" -->
+
+<!-- #if variable="TF0" == value="" -->
+  <!-- #define variable="TF0" value="<$TFL>" -->
+<!-- #endif variable="TF0" -->
+<!-- #if variable="TF1" == value="" -->
+  <!-- #define variable="TF1" value="<$TFL>" -->
+<!-- #endif variable="TF1" -->
+<!-- #if variable="TF2" == value="" -->
+  <!-- #define variable="TF2" value="<$TFL>" -->
+<!-- #endif variable="TF2" -->
+<!-- #if variable="TF3" == value="" -->
+  <!-- #define variable="TF3" value="<$TFL>" -->
+<!-- #endif variable="TF3" -->
+
+<!-- #if variable="TW0" == value="" -->
+  <!-- #define variable="TW0" value="<$TWA>" -->
+<!-- #endif variable="TW0" -->
+<!-- #if variable="TW1" == value="" -->
+  <!-- #define variable="TW1" value="<$TWA>" -->
+<!-- #endif variable="TW1" -->
+<!-- #if variable="TW2" == value="" -->
+  <!-- #define variable="TW2" value="<$TWA>" -->
+<!-- #endif variable="TW2" -->
+<!-- #if variable="TW3" == value="" -->
+  <!-- #define variable="TW3" value="<$TWA>" -->
+<!-- #endif variable="TW3" -->
+
+<!-- #if variable="TD0" == value="" -->
+  <!-- #define variable="TD0" value="<$TWI>" -->
+<!-- #endif variable="TD0" -->
+<!-- #if variable="TD1" == value="" -->
+  <!-- #define variable="TD1" value="<$TWI>" -->
+<!-- #endif variable="TD1" -->
+<!-- #if variable="TD2" == value="" -->
+  <!-- #define variable="TD2" value="<$TWI>" -->
+<!-- #endif variable="TD2" -->
+<!-- #if variable="TD3" == value="" -->
+  <!-- #define variable="TD3" value="<$TWI>" -->
+<!-- #endif variable="TD3" -->
+
+<form method="post" name="updateForm" action="<$selfurl>">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="KEY" value="<$KEY>">
+  <input type="hidden" name="TPL" value="<$TPL>">
+  <input type="hidden" name="ac" value="edit">
+
+  <input type="hidden" name="CFL" value="">
+  <input type="hidden" name="CWA" value="">
+  <input type="hidden" name="CWI" value="">
+
+  <input type="hidden" name="TFL" value="">
+  <input type="hidden" name="TWA" value="">
+  <input type="hidden" name="TWI" value="">
+
+  <input type="hidden" name="CF0" value="<$CF0>">
+  <input type="hidden" name="CF1" value="<$CF1>">
+  <input type="hidden" name="CF2" value="<$CF2>">
+  <input type="hidden" name="CF3" value="<$CF3>">
+
+  <input type="hidden" name="CW0" value="<$CW0>">
+  <input type="hidden" name="CW1" value="<$CW1>">
+  <input type="hidden" name="CW2" value="<$CW2>">
+  <input type="hidden" name="CW3" value="<$CW3>">
+
+  <input type="hidden" name="CD0" value="<$CD0>">
+  <input type="hidden" name="CD1" value="<$CD1>">
+  <input type="hidden" name="CD2" value="<$CD2>">
+  <input type="hidden" name="CD3" value="<$CD3>">
+
+  <input type="hidden" name="TF0" value="<$TF0>">
+  <input type="hidden" name="TF1" value="<$TF1>">
+  <input type="hidden" name="TF2" value="<$TF2>">
+  <input type="hidden" name="TF3" value="<$TF3>">
+
+  <input type="hidden" name="TW0" value="<$TW0>">
+  <input type="hidden" name="TW1" value="<$TW1>">
+  <input type="hidden" name="TW2" value="<$TW2>">
+  <input type="hidden" name="TW3" value="<$TW3>">
+
+  <input type="hidden" name="TD0" value="<$TD0>">
+  <input type="hidden" name="TD1" value="<$TD1>">
+  <input type="hidden" name="TD2" value="<$TD2>">
+  <input type="hidden" name="TD3" value="<$TD3>">
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><!-- row 1 --> 
+      <td align="left" valign="top">
+        <img src="<$g_Images>/images/homebuilder/iwos.gif" width="144" height="25" border="0" alt="iwos">
+      </td>
+      <td>&nbsp;</td>
+      <td> 
+        <select name="roomSelect" size="1" onchange="roomChange()">
+          <option 
+          <!-- #if variable="room" == value="0"-->
+            selected
+          <!-- #endif variable="room" -->
+          >room 1</option>
+          <option
+          <!-- #if variable="room" == value="1"-->
+            selected
+          <!-- #endif variable="room" -->
+          >room 2</option>
+          <option
+          <!-- #if variable="room" == value="2"-->
+            selected
+          <!-- #endif variable="room" -->
+          >room 3</option>
+          <option
+          <!-- #if variable="room" == value="3"-->
+            selected
+          <!-- #endif variable="room" -->
+          >room 4</option>
+        </select>
+      </td>
+      <td align="right" valign="top"> 
+        <img name="personalhomebuilder" src="<$g_Images>/images/homebuilder/personalhomebuilder.gif" width="187" height="28" border="0" alt="personal home builder">
+        <a href="javascript:loadInfo('/help/homebuilder/homebuilderhelp.html')" target="_self">
+        <img name="Help" src="<$g_Images>/images/homebuilder/hbhelp.gif" border="0" alt="help"></a>
+      </td>
+    </tr>
+    <tr><!-- row 2 --> 
+      <td rowspan="4" align="left" valign="top">
+        <img name="colorselection" src="<$g_Images>/images/homebuilder/colorselection.gif" width="129" height="113" border="0" alt="colorselection" usemap="#colorlist">
+      </td>
+      <td rowspan="4" align="left" valign="top">
+        <img name="bigarrow" src="<$g_Images>/images/homebuilder/bigarrow.gif" border="0">
+      </td>
+      <td><input type="radio" name="destination" value="floor" checked onCLick="onCLickRadio( 'floor' )">floors &amp; ceilings</input></td>
+      <td><img src="<$g_Images>/images/homebuilder/floors.gif" border="0" alt="floorselection" usemap="#floorselection"></td>
+    </tr>
+    <tr><!-- row 3 --> 
+      <td><input type="radio" name="destination" value="wall" onCLick="onCLickRadio( 'wall' )">walls</input></td>
+      <td><img src="<$g_Images>/images/homebuilder/walls.gif" border="0" alt="wallselection" usemap="#wallselection"></td>
+    </tr>
+    <tr><!-- row 4 --> 
+      <td><input type="radio" name="destination" value="window" onCLick="onCLickRadio( 'window' )">doors &amp; windows</input></td>
+      <td><img src="<$g_Images>/images/homebuilder/windows.gif" border="0" alt="windowselection" usemap="#windowselection"></td>
+    </tr>
+    <tr><!-- row 5 --> 
+      <td align="left" valign="top">
+        <a href="javascript:submitForm();">
+        <img src="<$g_Images>/images/homebuilder/update.gif" border="0" alt="update"></a>
+      </td>
+      <td align="left" valign="top"><a href="javascript:uploadTexture()" target="_self">
+        <img src="<$g_Images>/images/homebuilder/upload.gif" border="0" alt="upload textures"></a></td>
+    </tr>
+  </table>
+</form>
+
+<map name="colorlist">
+  <area shape="rect" coords="57,105,128,112" href="javascript:setColor( '0 0 0')" alt="RGB 0 0 0">
+  <area shape="rect" coords="50,105,55,112" href="javascript:setColor( '0 0 0.2')" alt="RGB 0 0 51">
+  <area shape="rect" coords="42,105,48,112" href="javascript:setColor( '0 0 0.4')" alt="RGB 0 0 102">
+  <area shape="rect" coords="34,105,40,112" href="javascript:setColor( '0 0 0.6')" alt="RGB 0 0 153">
+  <area shape="rect" coords="26,105,32,112" href="javascript:setColor( '0 0 0.8')" alt="RGB 0 0 204">
+  <area shape="rect" coords="19,105,24,112" href="javascript:setColor( '0 0 1')" alt="RGB 0 0 255">
+  <area shape="rect" coords="9,103,17,112" href="javascript:setColor( '0 0.2 0')" alt="RGB 0 51 0">
+  <area shape="rect" coords="1,105,7,112" href="javascript:setColor( '0 0.2 0.2')" alt="RGB 0 51 51">
+  <area shape="rect" coords="120,96,128,104" href="javascript:setColor( '0 0.2 0.4')" alt="RGB 0 51 102">
+  <area shape="rect" coords="112,96,119,105" href="javascript:setColor( '0 0.2 0.6')" alt="RGB 0 51 153">
+  <area shape="rect" coords="105,97,111,105" href="javascript:setColor( '0 0.2 0.8')" alt="RGB 0 51 204">
+  <area shape="rect" coords="97,97,103,104" href="javascript:setColor( '0 0.2 1')" alt="RGB 0 51 255">
+  <area shape="rect" coords="89,97,95,104" href="javascript:setColor( '0 0.4 0')" alt="RGB 0 102 0">
+  <area shape="rect" coords="80,96,86,103" href="javascript:setColor( '0 0.4 0.2')" alt="RGB 0 102 51">
+  <area shape="rect" coords="73,97,79,103" href="javascript:setColor( '0 0.4 0.4')" alt="RGB 0 102 102">
+  <area shape="rect" coords="66,96,72,104" href="javascript:setColor( '0 0.4 0.6')" alt="RGB 0 102 153">
+  <area shape="rect" coords="57,96,64,104" href="javascript:setColor( '0 0.4 0.8')" alt="RGB 0 102 204">
+  <area shape="rect" coords="48,96,56,103" href="javascript:setColor( '0 0.4 1')" alt="RGB 0 102 255">
+  <area shape="rect" coords="41,96,47,103" href="javascript:setColor( '0 0.6 0')" alt="RGB 0 153 0">
+  <area shape="rect" coords="32,95,39,103" href="javascript:setColor( '0 0.6 0.2')" alt="RGB 0 153 51">
+  <area shape="rect" coords="25,97,31,103" href="javascript:setColor( '0 0.6 0.4')" alt="RGB 0 153 102">
+  <area shape="rect" coords="17,97,24,104" href="javascript:setColor( '0 0.6 0.6')" alt="RGB 0 153 153">
+  <area shape="rect" coords="10,96,15,104" href="javascript:setColor( '0 0.6 0.8')" alt="RGB 0 153 204">
+  <area shape="rect" coords="0,95,7,104" href="javascript:setColor( '0 0.6 1')" alt="RGB 0 153 255">
+  <area shape="rect" coords="119,88,128,95" href="javascript:setColor( '0 0.8 0')" alt="RGB 0 204 0">
+  <area shape="rect" coords="113,88,119,95" href="javascript:setColor( '0 0.8 0.2')" alt="RGB 0 204 51">
+  <area shape="rect" coords="106,89,111,95" href="javascript:setColor( '0 0.8 0.4')" alt="RGB 0 204 102">
+  <area shape="rect" coords="97,88,104,95" href="javascript:setColor( '0 0.8 0.6')" alt="RGB 0 204 153">
+  <area shape="rect" coords="89,88,95,96" href="javascript:setColor( '0 0.8 0.8')" alt="RGB 0 204 204">
+  <area shape="rect" coords="80,89,88,95" href="javascript:setColor( '0 0.8 1')" alt="RGB 0 204 255">
+  <area shape="rect" coords="73,88,80,95" href="javascript:setColor( '0 1 0')" alt="RGB 0 255 0">
+  <area shape="rect" coords="64,88,71,95" href="javascript:setColor( '0 1 0.2')" alt="RGB 0 255 51">
+  <area shape="rect" coords="57,89,63,95" href="javascript:setColor( '0 1 0.4')" alt="RGB 51 255 102">
+  <area shape="rect" coords="48,88,55,95" href="javascript:setColor( '0 1 0.6')" alt="RGB 0 255 153">
+  <area shape="rect" coords="41,88,48,95" href="javascript:setColor( '0 1 0.8')" alt="RGB 0 255 204">
+  <area shape="rect" coords="32,89,40,95" href="javascript:setColor( '0 1 1')" alt="RGB 0 255 255">
+  <area shape="rect" coords="26,89,32,95" href="javascript:setColor( '0.2 0 0')" alt="RGB 51 0 0">
+  <area shape="rect" coords="17,89,25,96" href="javascript:setColor( '0.2 0 0.2')" alt="RGB 51 0 51">
+  <area shape="rect" coords="8,88,16,95" href="javascript:setColor( '0.2 0 0.4')" alt="RGB 51 0 102">
+  <area shape="rect" coords="0,89,7,95" href="javascript:setColor( '0.2 0 0.6')" alt="RGB 51 0 153">
+  <area shape="rect" coords="120,82,128,88" href="javascript:setColor( '0.2 0 0.8')" alt="RGB 51 0 204">
+  <area shape="rect" coords="114,81,119,87" href="javascript:setColor( '0.2 0 1')" alt="RGB 51 0 255">
+  <area shape="rect" coords="105,79,112,88" href="javascript:setColor( '0.2 0.2 0.2')" alt="RGB 51 51 0">
+  <area shape="rect" coords="97,81,104,88" href="javascript:setColor( '0.2 0.2 0.2')" alt="RGB 51 51 51">
+  <area shape="rect" coords="88,80,95,88" href="javascript:setColor( '0.2 0.2 0.4')" alt="RGB 51 51 102">
+  <area shape="rect" coords="81,80,87,88" href="javascript:setColor( '0.2 0.2 0.6')" alt="RGB 51 51 153">
+  <area shape="rect" coords="73,80,80,88" href="javascript:setColor( '0.2 0.2 0.8')" alt="RGB 51 51 204">
+  <area shape="rect" coords="65,80,71,87" href="javascript:setColor( '0.2 0.2 1')" alt="RGB 51 51 255">
+  <area shape="rect" coords="56,80,63,87" href="javascript:setColor( '0.2 0.4 0')" alt="RGB 51 102 0">
+  <area shape="rect" coords="49,80,55,88" href="javascript:setColor( '0.2 0.4 0.2')" alt="RGB 51 102 51">
+  <area shape="rect" coords="41,79,48,88" href="javascript:setColor( '0.2 0.4 0.4')" alt="RGB 51 102 102">
+  <area shape="rect" coords="33,81,40,87" href="javascript:setColor( '0.2 0.4 0.6')" alt="RGB 51 102 153">
+  <area shape="rect" coords="25,81,31,87" href="javascript:setColor( '0.2 0.4 0.8')" alt="RGB 51 102 204">
+  <area shape="rect" coords="18,81,23,88" href="javascript:setColor( '0.2 0.4 1')" alt="RGB 51 102 255">
+  <area shape="rect" coords="9,80,15,87" href="javascript:setColor( '0.2 0.6 0')" alt="RGB 51 153 0">
+  <area shape="rect" coords="1,80,7,87" href="javascript:setColor( '0.2 0.6 0.2')" alt="RGB 51 153 51">
+  <area shape="rect" coords="120,71,128,80" href="javascript:setColor( '0.2 0.6 0.4')" alt="RGB 51 153 102">
+  <area shape="rect" coords="112,72,119,79" href="javascript:setColor( '0.2 0.6 0.6')" alt="RGB 51 153 153">
+  <area shape="rect" coords="104,73,111,79" href="javascript:setColor( '0.2 0.6 0.8')" alt="RGB 51 153 204">
+  <area shape="rect" coords="98,73,103,80" href="javascript:setColor( '0.2 0.6 1')" alt="RGB 51 153 355">
+  <area shape="rect" coords="88,72,95,79" href="javascript:setColor( '0.2 0.8 0')" alt="RGB 51 204 0">
+  <area shape="rect" coords="81,72,87,78" href="javascript:setColor( '0.2 0.8 0.2')" alt="RGB 51 204 51">
+  <area shape="rect" coords="73,72,79,79" href="javascript:setColor( '0.2 1 0.4')" alt="RGB 51 255 102">
+  <area shape="rect" coords="65,72,72,79" href="javascript:setColor( '0.2 1 0.6')" alt="RGB 51 255 153">
+  <area shape="rect" coords="57,73,63,79" href="javascript:setColor( '0.2 0.8 0.8')" alt="RGB 51 204 204">
+  <area shape="rect" coords="49,73,55,79" href="javascript:setColor( '0.2 0.8 1')" alt="RGB 51 204 255">
+  <area shape="rect" coords="41,73,47,79" href="javascript:setColor( '0.2 1 0')" alt="RGB 51 255 0">
+  <area shape="rect" coords="33,72,39,79" href="javascript:setColor( '0.2 1 0.2')" alt="RGB 51 255 51">
+  <area shape="rect" coords="25,73,31,79" href="javascript:setColor( '0.2 1 0.6')" alt="RGB 51 255 102">
+  <area shape="rect" coords="17,72,23,79" href="javascript:setColor( '0.2 1 0.6')" alt="RGB 51 255 153">
+  <area shape="rect" coords="9,72,16,79" href="javascript:setColor( '0.2 1 0.8')" alt="RGB 51 255 204">
+  <area shape="rect" coords="1,72,7,79" href="javascript:setColor( '0.2 1 1')" alt="RGB 51 255 255">
+  <area shape="rect" coords="121,64,128,71" href="javascript:setColor( '0.4 0 0')" alt="RGB 102 0 0">
+  <area shape="rect" coords="113,64,119,72" href="javascript:setColor( '0.4 0 0.2')" alt="RGB 102 0 51">
+  <area shape="rect" coords="104,64,111,72" href="javascript:setColor( '0.4 0 0.4')" alt="RGB 102 0 102">
+  <area shape="rect" coords="96,64,103,72" href="javascript:setColor( '0.4 0 0.6')" alt="RGB 102 0 153">
+  <area shape="rect" coords="89,64,94,71" href="javascript:setColor( '0.4 0 0.8')" alt="RGB 102 0 204">
+  <area shape="rect" coords="80,64,87,71" href="javascript:setColor( '0.4 0 1')" alt="RGB 102 0 255">
+  <area shape="rect" coords="73,64,79,71" href="javascript:setColor( '0.4 0.2 0')" alt="RGB 102 51 0">
+  <area shape="rect" coords="65,63,71,71" href="javascript:setColor( '0.4 0.2 0.2')" alt="RGB 102 51 51">
+  <area shape="rect" coords="57,64,64,71" href="javascript:setColor( '0.4 0.2 0.4')" alt="RGB 102 51 102">
+  <area shape="rect" coords="49,63,55,71" href="javascript:setColor( '0.4 0.2 0.6')" alt="RGB 102 51 153">
+  <area shape="rect" coords="42,63,47,71" href="javascript:setColor( '0.4 0.2 0.8')" alt="RGB 102 51 204">
+  <area shape="rect" coords="33,64,40,71" href="javascript:setColor( '0.4 0.2 1')" alt="RGB 102 51 255">
+  <area shape="rect" coords="25,64,31,71" href="javascript:setColor( '0.4 0.4 0')" alt="RGB 102 102 0">
+  <area shape="rect" coords="17,64,24,71" href="javascript:setColor( '0.4 0.4 0.2')" alt="RGB 102 102 51">
+  <area shape="rect" coords="9,64,15,71" href="javascript:setColor( '0.4 0.4 0.4')" alt="RGB 102 102 102">
+  <area shape="rect" coords="0,65,7,72" href="javascript:setColor( '0.4 0.4 0.6')" alt="RGB 102 102 153">
+  <area shape="rect" coords="120,56,127,63" href="javascript:setColor( '0.4 0.4 0.8')" alt="RGB 102 102 204">
+  <area shape="rect" coords="113,57,119,63" href="javascript:setColor( '0.4 0.4 1')" alt="RGB 102 102 255">
+  <area shape="rect" coords="105,57,111,63" href="javascript:setColor( '0.4 0.6 0.2')" alt="RGB 102 153 51">
+  <area shape="rect" coords="97,57,104,63" href="javascript:setColor( '0.4 0.6 0.2')" alt="RGB 102 153 51">
+  <area shape="rect" coords="89,57,95,62" href="javascript:setColor( '0.4 0.6 0.4')" alt="RGB 102 153 102">
+  <area shape="rect" coords="81,57,87,63" href="javascript:setColor( '0.4 0.6 0.6')" alt="RGB 102 153 153">
+  <area shape="rect" coords="73,57,79,63" href="javascript:setColor( '0.4 0.6 0.8')" alt="RGB 102 153 204">
+  <area shape="rect" coords="65,57,71,63" href="javascript:setColor( '0.4 0.6 1')" alt="RGB 102 153 255">
+  <area shape="rect" coords="57,57,63,63" href="javascript:setColor( '0.4 0.8 0')" alt="RGB 102 204 0">
+  <area shape="rect" coords="48,57,55,63" href="javascript:setColor( '0.4 0.8 0.2')" alt="RGB 102 204 51">
+  <area shape="rect" coords="41,57,47,63" href="javascript:setColor( '0.4 0.8 0.4')" alt="RGB 102 204 102">
+  <area shape="rect" coords="33,57,39,63" href="javascript:setColor( '0.4 0,8 0.6')" alt="RGB 102 204 153">
+  <area shape="rect" coords="25,57,31,62" href="javascript:setColor( '0.4 0.8 0.8')" alt="RGB 102 204 204">
+  <area shape="rect" coords="16,56,23,63" href="javascript:setColor( '0.4 0.8 1')" alt="RGB 102 204 255">
+  <area shape="rect" coords="9,57,15,63" href="javascript:setColor( '0.4 1 0')" alt="RGB 102 255 0">
+  <area shape="rect" coords="1,57,7,62" href="javascript:setColor( '0.4 1 0.2')" alt="RGB 102 255 51">
+  <area shape="rect" coords="120,49,127,56" href="javascript:setColor( '0.4 1 0.4')" alt="RGB 102 255 102">
+  <area shape="rect" coords="113,48,119,55" href="javascript:setColor( '0.4 1 0.6')" alt="RGB 102 255 153">
+  <area shape="rect" coords="105,49,111,55" href="javascript:setColor( '0.4 1 0.8')" alt="RGB 102 255 204">
+  <area shape="rect" coords="96,49,103,55" href="javascript:setColor( '0.4 1 1')" alt="RGB 102 255 255">
+  <area shape="rect" coords="88,48,96,55" href="javascript:setColor( '0.6 0 0')" alt="RGB 153 0 0">
+  <area shape="rect" coords="81,48,87,55" href="javascript:setColor( '0.6 0 0.2')" alt="RGB 153 0 51">
+  <area shape="rect" coords="73,49,79,54" href="javascript:setColor( '0.6 0 0.4')" alt="RGB 153 0 102">
+  <area shape="rect" coords="65,49,70,54" href="javascript:setColor( '0.6 0 0.6')" alt="RGB 153 0 153">
+  <area shape="rect" coords="57,47,63,55" href="javascript:setColor( '0.6 0 0.8')" alt="RGB 153 0 204">
+  <area shape="rect" coords="49,48,55,55" href="javascript:setColor( '0.6 0 1')" alt="RGB 153 0 255">
+  <area shape="rect" coords="41,48,47,55" href="javascript:setColor( '0.6 0.2 0')" alt="RGB 153 51 0">
+  <area shape="rect" coords="33,48,39,55" href="javascript:setColor( '0.6 0.2 0.2')" alt="RGB 153 51 51">
+  <area shape="rect" coords="25,48,31,55" href="javascript:setColor( '0.6 0.2 0.4')" alt="RGB 153 51 102">
+  <area shape="rect" coords="17,48,22,55" href="javascript:setColor( '0.6 0.2 0.6')" alt="RGB 153 51 153">
+  <area shape="rect" coords="10,49,16,56" href="javascript:setColor( '0.6 0.2 0.8')" alt="RGB 153 51 204">
+  <area shape="rect" coords="1,49,7,56" href="javascript:setColor( '0.6 0.2 1')" alt="RGB 153 51 255">
+  <area shape="rect" coords="121,40,127,47" href="javascript:setColor( '0.6 0.4 0')" alt="RGB 153 102 0">
+  <area shape="rect" coords="114,41,119,47" href="javascript:setColor( '0.6 0.4 0.2')" alt="RGB 153 102 51">
+  <area shape="rect" coords="107,41,111,48" href="javascript:setColor( '0.6 0.4 0.4')" alt="RGB 153 102 102">
+  <area shape="rect" coords="97,41,103,47" href="javascript:setColor( '0.6 0.2 0.6')" alt="RGB 153 102 153">
+  <area shape="rect" coords="88,41,94,47" href="javascript:setColor( '0.6 0.4 0.8')" alt="RGB 152 102 204">
+  <area shape="rect" coords="82,41,87,47" href="javascript:setColor( '0.6 0.4 1')" alt="RGB 153 102 255">
+  <area shape="rect" coords="73,40,79,47" href="javascript:setColor( '0.6 0.6 0')" alt="RGB 153 153 0">
+  <area shape="rect" coords="66,40,72,47" href="javascript:setColor( '0.6 0.6 0.2')" alt="RGB 153 153 51">
+  <area shape="rect" coords="57,41,63,47" href="javascript:setColor( '0.6 0.6 0.4')" alt="RGB 153 153 102">
+  <area shape="rect" coords="49,41,55,47" href="javascript:setColor( '0.6 0.6 0.6')" alt="RGB 153 153 153">
+  <area shape="rect" coords="41,41,47,47" href="javascript:setColor( '0.6 0.6 0.8')" alt="RGB 153 153 204">
+  <area shape="rect" coords="33,41,39,47" href="javascript:setColor( '0.6 0.6 1')" alt="RGB 153 153 255">
+  <area shape="rect" coords="25,41,31,47" href="javascript:setColor( '0.6 0.8 0')" alt="RGB 153 204 0">
+  <area shape="rect" coords="17,39,23,47" href="javascript:setColor( '0.6 0.8 0.2')" alt="RGB 153 204 51">
+  <area shape="rect" coords="9,40,15,47" href="javascript:setColor( '0.6 0.8 0.4')" alt="RGB 153 204 102">
+  <area shape="rect" coords="1,41,7,47" href="javascript:setColor( '1 1 1')" alt="RGB 255 255 255">
+  <area shape="rect" coords="121,33,127,39" href="javascript:setColor( '0.6 0.8 0.8')" alt="RGB 153 204 204">
+  <area shape="rect" coords="113,33,119,39" href="javascript:setColor( '0.6 0.8 1')" alt="RGB 153 204 255">
+  <area shape="rect" coords="104,32,111,39" href="javascript:setColor( '0.6 1 0')" alt="RGB 153 255 0">
+  <area shape="rect" coords="97,33,103,39" href="javascript:setColor( '0.6 1 0.2')" alt="RGB 153 255 51">
+  <area shape="rect" coords="89,33,95,38" href="javascript:setColor( '0.6 1 0.4')" alt="RGB 153 255 102">
+  <area shape="rect" coords="81,33,87,38" href="javascript:setColor( '0.6 1 0.6')" alt="RGB 153 255 153">
+  <area shape="rect" coords="73,33,79,39" href="javascript:setColor( '0.6 1 0.8')" alt="RGB 152 255 204">
+  <area shape="rect" coords="65,33,71,38" href="javascript:setColor( '0.6 1 1')" alt="RGB 153 255 255">
+  <area shape="rect" coords="56,33,63,39" href="javascript:setColor( '0.6 1 1')" alt="RGB 153 255 255">
+  <area shape="rect" coords="56,33,63,38" href="javascript:setColor( '0.8 0 0')" alt="RGB 204 0 0">
+  <area shape="rect" coords="49,33,54,38" href="javascript:setColor( '0.8 0 0.2')" alt="RGB 204 0 51">
+  <area shape="rect" coords="41,32,48,39" href="javascript:setColor( '0.8 0 0.2')" alt="RGB 204 0 102">
+  <area shape="rect" coords="33,32,39,39" href="javascript:setColor( '0.8 0 0.6')" alt="RGB 204 0 153">
+  <area shape="rect" coords="26,32,31,39" href="javascript:setColor( '0.8 0 0.8')" alt="RGB 204 0 204">
+  <area shape="rect" coords="17,33,23,38" href="javascript:setColor( '0.8 0 1')" alt="RGB 204 0 255">
+  <area shape="rect" coords="9,32,15,39" href="javascript:setColor( '0.8 0.2 0')" alt="RGB 204 51 0">
+  <area shape="rect" coords="1,32,7,39" href="javascript:setColor( '0.8 0.2 0.2')" alt="RGB 204 51 51">
+  <area shape="rect" coords="121,23,127,31" href="javascript:setColor( '0.8 0.2 0.6')" alt="RGB 204 51 102">
+  <area shape="rect" coords="114,25,119,31" href="javascript:setColor( '0.8 0.2 0.6')" alt="RGB 204 51 153">
+  <area shape="rect" coords="106,24,111,31" href="javascript:setColor( '0.8 0.2 0.8')" alt="RGB 204 51 204">
+  <area shape="rect" coords="97,24,104,31" href="javascript:setColor( '0.8 0.2 1')" alt="RGB 204 51 255">
+  <area shape="rect" coords="90,25,95,31" href="javascript:setColor( '0.8 0.4 0')" alt="RGB 204 102 0">
+  <area shape="rect" coords="82,24,88,32" href="javascript:setColor( '0.8 0.4 0.2')" alt="RGB 204 102 51">
+  <area shape="rect" coords="73,25,79,31" href="javascript:setColor( '0.8 0.4 0.4')" alt="RGB 204 102 102">
+  <area shape="rect" coords="65,25,71,31" href="javascript:setColor( '0.8 0.4 0.6')" alt="RGB 204 102 153">
+  <area shape="rect" coords="58,25,64,31" href="javascript:setColor( '0.8 0.4 0.8')" alt="RGB 204 102 204">
+  <area shape="rect" coords="50,25,55,31" href="javascript:setColor( '0.8 0.4 1')" alt="RGB 204 102 255">
+  <area shape="rect" coords="41,25,47,31" href="javascript:setColor( '0.8 0.6 0')" alt="RGB 204 153 0">
+  <area shape="rect" coords="33,24,39,31" href="javascript:setColor( '0.8 0.6 0.2')" alt="RGB 204 153 51">
+  <area shape="rect" coords="24,24,31,31" href="javascript:setColor( '0.8 0.6 0.4')" alt="RGB 204 153 102">
+  <area shape="rect" coords="17,24,23,31" href="javascript:setColor( '0.8 0.6 0.6')" alt="RGB 204 153 153">
+  <area shape="rect" coords="9,24,15,31" href="javascript:setColor( '0.8 0.6 0.8')" alt="RGB 204 153 204">
+  <area shape="rect" coords="1,25,7,31" href="javascript:setColor( '0.8 0.6 1')" alt="RGB 204 153 255">
+  <area shape="rect" coords="121,16,127,23" href="javascript:setColor( '0.8 0.8 0')" alt="RGB 204 204 0">
+  <area shape="rect" coords="113,16,119,23" href="javascript:setColor( '0.8 0.8 0.2')" alt="RGB 204 204 51">
+  <area shape="rect" coords="105,17,111,23" href="javascript:setColor( '0.8 0.8 0.4')" alt="RGB 204 204 102">
+  <area shape="rect" coords="97,16,103,23" href="javascript:setColor( '0.8 0.8 0.6')" alt="RGB 204 204 153">
+  <area shape="rect" coords="88,17,95,23" href="javascript:setColor( '0.8 0.8 0.8')" alt="RGB 204 204 204">
+  <area shape="rect" coords="81,16,88,22" href="javascript:setColor( '0.8 0.8 1')" alt="RGB 204 204 255">
+  <area shape="rect" coords="73,17,79,23" href="javascript:setColor( '0.8 1 0')" alt="RGB 204 255 0">
+  <area shape="rect" coords="65,17,71,23" href="javascript:setColor( '0.8 1 0.2')" alt="RGB 204 255 51">
+  <area shape="rect" coords="57,16,63,23" href="javascript:setColor( '0.8 1 0.4')" alt="RGB 204 255 102">
+  <area shape="rect" coords="49,17,56,23" href="javascript:setColor( '0.8 1 0.6')" alt="RGB 204 255 153">
+  <area shape="rect" coords="41,17,47,23" href="javascript:setColor( '0.8 1 0.8')" alt="RGB 204 255 204">
+  <area shape="rect" coords="32,16,39,23" href="javascript:setColor( '0.8 1 1')" alt="RGB 204 255 255">
+  <area shape="rect" coords="25,16,31,23" href="javascript:setColor( '1 0 0')" alt="RGB 255 0 0">
+  <area shape="rect" coords="17,16,23,23" href="javascript:setColor( '1 0 0.2')" alt="RBG 255 0 51">
+  <area shape="rect" coords="8,16,15,22" href="javascript:setColor( '1 0 0.4')" alt="RGB 255 0 102">
+  <area shape="rect" coords="0,15,7,23" href="javascript:setColor( '1 0 0.6')" alt="RGB 255 0 153">
+  <area shape="rect" coords="121,8,128,15" href="javascript:setColor( '1 0 0.8')" alt="RGB 255 0 204">
+  <area shape="rect" coords="113,8,119,15" href="javascript:setColor( '1 0 1')" alt="RGB 255 0 255">
+  <area shape="rect" coords="104,8,111,15" href="javascript:setColor( '1 0.2 0')" alt="RGB 255 51 0">
+  <area shape="rect" coords="97,7,103,15" href="javascript:setColor( '1 0.2 0.2')" alt="RGB 255 51 51">
+  <area shape="rect" coords="89,7,95,15" href="javascript:setColor( '1 0.2 0.4')" alt="RGB 255 51 102">
+  <area shape="rect" coords="81,8,88,15" href="javascript:setColor( '1 0.2 0.6')" alt="RGB 255 51 153">
+  <area shape="rect" coords="73,7,79,15" href="javascript:setColor( '1 0.2 0.8')" alt="RGB 255 51 204">
+  <area shape="rect" coords="65,7,72,15" href="javascript:setColor( '1 0.2 1')" alt="RGB 255 51 255">
+  <area shape="rect" coords="57,7,63,15" href="javascript:setColor( '1 0.4 0')" alt="RGB 255 102 0">
+  <area shape="rect" coords="49,7,56,15" href="javascript:setColor( '1 0.4 0.2')" alt="RGB 255 102 51">
+  <area shape="rect" coords="41,7,47,15" href="javascript:setColor( '1 0.4 0.4')" alt="RGB 255 102 102">
+  <area shape="rect" coords="33,7,40,16" href="javascript:setColor( '1 0.4 0.6')" alt="RGB 255 102 153">
+  <area shape="rect" coords="24,8,31,15" href="javascript:setColor( '1 0.4 0.8')" alt="RGB 255 102 204">
+  <area shape="rect" coords="16,8,23,15" href="javascript:setColor( '1 0.4 1')" alt="RGB 255 102 255">
+  <area shape="rect" coords="9,8,15,15" href="javascript:setColor( '1 0.6 0')" alt="RGB 255 153 0">
+  <area shape="rect" coords="1,8,6,15" href="javascript:setColor( '1 0.6 0.2')" alt="RGB 255 153 51">
+  <area shape="rect" coords="120,0,127,7" href="javascript:setColor( '1 0.6 0.4')" alt="RGB 255 152 102">
+  <area shape="rect" coords="113,0,119,7" href="javascript:setColor( '1 0.6 0.6')" alt="RGB 255 153 153">
+  <area shape="rect" coords="104,0,111,7" href="javascript:setColor( '1 0.6 0.8')" alt="RGB 255 153 204">
+  <area shape="rect" coords="97,0,103,7" href="javascript:setColor( '1 0.6 1')" alt="RGB 255 153 255">
+  <area shape="rect" coords="88,0,95,7" href="javascript:setColor( '1 0.8 0')" alt="RGB 255 204 0">
+  <area shape="rect" coords="81,1,87,7" href="javascript:setColor( '1 0.8 0.2')" alt="RGB 255 204 51">
+  <area shape="rect" coords="73,0,79,7" href="javascript:setColor( '1 0.8 0.4')" alt="RGB 255 204 102">
+  <area shape="rect" coords="64,0,71,7" href="javascript:setColor( '1 0.8 0.6')" alt="RGB 255 204 153">
+  <area shape="rect" coords="56,0,64,7" href="javascript:setColor( '1 0.8 0.8')" alt="RGB 255 204 204">
+  <area shape="rect" coords="48,0,55,7" href="javascript:setColor( '1 0.8 1')" alt="RGB 255 204 255">
+  <area shape="rect" coords="40,0,47,7" href="javascript:setColor( '1 1 0')" alt="RGB 255 255 0">
+  <area shape="rect" coords="32,0,39,7" href="javascript:setColor( '1 1 0.2')" alt="RGB 255 255 51">
+  <area shape="rect" coords="17,1,24,7" href="javascript:setColor( '1 1 0.6')" alt="RGB 255 255 153">
+  <area shape="rect" coords="24,0,31,7" href="javascript:setColor( '1 1 0.4')" alt="RGB 255 255 102">
+  <area shape="rect" coords="9,0,15,7" href="javascript:setColor( '1 1 0.8')" alt="RGB 255 255 204">
+  <area shape="rect" coords="0,0,7,7" href="javascript:setColor( '1 1 1')" alt="RGB 255 255 255">
+</map>
+<map name="floorselection">
+  <area shape="rect" coords="155,0,181,26" href="javascript:setTexture( '006')" alt="floor6">
+  <area shape="rect" coords="128,0,153,26" href="javascript:setTexture( '005')" alt="floor5">
+  <area shape="rect" coords="100,0,126,26" href="javascript:setTexture( '004')" alt="floor4">
+  <area shape="rect" coords="75,0,99,26" href="javascript:setTexture( '003')" alt="floor3">
+  <area shape="rect" coords="48,1,73,26" href="javascript:setTexture( '002')" alt="floor2">
+  <area shape="rect" coords="22,2,46,24" href="javascript:setTexture( '001')" alt="floor1">
+</map>
+<map name="wallselection">
+  <area shape="rect" coords="156,0,179,26" href="javascript:setTexture( '012')" alt="wall6">
+  <area shape="rect" coords="128,0,155,26" href="javascript:setTexture( '011')" alt="wall5">
+  <area shape="rect" coords="103,0,127,26" href="javascript:setTexture( '010')" alt="wall4">
+  <area shape="rect" coords="75,0,101,26" href="javascript:setTexture( '009')" alt="wall3">
+  <area shape="rect" coords="48,0,73,26" href="javascript:setTexture( '008')" alt="wall2">
+  <area shape="rect" coords="20,0,47,26" href="javascript:setTexture( '007')" alt="wall1">
+</map>
+<map name="windowselection">
+  <area shape="rect" coords="156,0,182,28" href="javascript:setTexture( '018')" alt="window6">
+  <area shape="rect" coords="130,0,155,28" href="javascript:setTexture( '017')" alt="window5">
+  <area shape="rect" coords="102,0,128,28" href="javascript:setTexture( '016')" alt="window4">
+  <area shape="rect" coords="75,0,101,28" href="javascript:setTexture( '015')" alt="window3">
+  <area shape="rect" coords="48,0,73,28" href="javascript:setTexture( '014')" alt="window2">
+  <area shape="rect" coords="23,0,46,28" href="javascript:setTexture( '013')" alt="window1">
+</map>
+
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+#
+# This file contains the entries to be read from database
+#
+*GET C ID <$commid>  CLMAP CLMAP
+*GET N ID <$ID> TXT2 TXT2 COL COL
+
+*ACR I ID h<$ID> chataccess chataccess chatwriteaccess chatreadaccess
+
+*GET N ID <$ID> TXT TXT CHAT CHAT NAM scenename
+*GET O ID <$commid> AD4 AD4
+*GET M ID <$MEM_ID> EXP TYPE=NUM stdexp CHT CHT CTS CTS
+*GET MD ID <$MEM_ID> MYR TYPE=MYROLE ROL
+*GET R ID <$ROL> NAM rolename
+
+
+ID      r   
+NNM	r
+NAM	rw

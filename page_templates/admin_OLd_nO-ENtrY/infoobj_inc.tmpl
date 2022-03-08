@@ -1,0 +1,47 @@
+<!-- admin/infoobj_inc.tmpl -->
+<!-- e.g. used for most templates -->
+
+    <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+    <tr>
+        <td align=right>Create also:&nbsp;&nbsp;</td>
+        <td>
+            <input type="checkbox"
+            <!-- #ifdef variable="MSB" value="on" -->
+                checked 
+            <!--#endif variable="MSB" -->
+            name="MSB">Message Board</input>
+        </td>
+        <td>
+            <input type="checkbox"
+            <!-- #ifdef variable="INB" value="on" -->
+                checked 
+            <!--#endif variable="INB" -->
+            name="INB">Inbox</input>
+        </td>
+        <td>
+            <input type="checkbox"
+            <!-- #ifdef variable="LIN" value="on" -->
+                checked 
+            <!--#endif variable="LIN" -->
+            name="LIN">Links</input>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <input type="checkbox" 
+            <!-- #ifdef variable="CHA" value="on" -->
+                checked 
+            <!--#endif variable="CHA" -->
+            name="CHA">Chat</input>
+        </td>
+        <td colspan=2>
+            <input type="checkbox" 
+            <!-- #ifdef variable="CAL" value="on" -->
+                checked 
+            <!--#endif variable="CAL" -->
+            name="CAL">Calendar</input>
+        </td>
+    </tr>
+
+<!-- end of include infoobj_inc.tmpl -->

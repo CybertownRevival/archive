@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Cybertown - Designer Home Reject</title>
+</head>
+
+<!-- object/reject.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<h2>Home Reject</h2>
+</center>
+
+<div align=center>
+
+<table border=0>
+
+<tr>
+<!-- #ifndef variable="NAM" value="" -->
+<td><b><$NAM></td>
+<!-- #endif variable="NAM" -->
+<!-- #ifdef variable="NAM" value="" -->
+<!-- #ifdef variable="CAT_3NAM" -->
+<td><b><$CAT_3NAM></td>
+<!-- #endif variable="CAT_3NAM" -->
+<!-- #endif variable="NAM" -->
+
+<td>
+<!-- #ifndef variable="IMG" value="" -->
+<IMG SRC="<$IMG>" HEIGHT=64>
+<!-- #endif variable="IMG" -->
+<!-- #ifdef variable="IMG" value="" -->
+<!-- #ifdef variable="CAT_2IMG" -->
+<IMG SRC="<$CAT_2IMG>" HEIGHT=64>
+<!-- #endif variable="CAT_2IMG" -->
+<!-- #endif variable="IMG" -->
+</td>
+
+<tr>
+<td>Count:</td>
+<td><$CNT></td>
+</tr>
+
+<tr>
+<td>Price:</td>
+<td><$TPR></td>
+</tr>
+
+<tr>
+<td>Uploaded by:</td>
+<td><$CRE_NNM></td>
+</tr>
+
+<tr><td colspan=2>&nbsp;</td></tr>   
+
+<form action="print60?<$g_exe>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ID" value="<$ID>">
+    <input type="hidden" name="ZON" value="<$ZON>">
+    <input type="hidden" name="actions" value="1">
+    <input type="hidden" name="MTYPE" value="i">
+    <input type="hidden" name="SUB" value="Home <$CAT_3NAM> rejected">
+    <input type="hidden" name="CRE_NNM" value="<$CRE_NNM>">
+    <input type="hidden" name="TPL" value="object/deshomes/reject2">
+    <input type="hidden" name="DTY" value="P">
+    
+<tr>
+<td ALIGN=CENTER COLSPAN=2>
+<font size=-1>
+Please enter an explanation about why you reject the home.<br>
+The explanation will be posted to <$CRE_NNM>'s inbox.<br>
+</font>
+    <textarea name="MSG" ROWS=6 COLS=40></textarea>
+</td>
+</tr>
+<tr><td colspan=2>&nbsp;</td></tr>   
+<tr><td colspan=2 align=middle>
+<table>
+<tr>
+    <td><input type=submit name="Submit" value="Submit"></td>
+    <td><input type="button" value="Back" onClick="history.go(-1);"></td>
+    <td><input type="button" value="Close" onClick="window.close()"></td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>
+
+
+

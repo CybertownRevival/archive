@@ -1,0 +1,115 @@
+<!-- /inb/write.tmpl -->
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+
+<h2><$NAM></h2>
+<$TXT>
+
+<!-- #ifndef variable="msbmsg001" -->
+<form name="poster" method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="DATE" value="<$DATE>">
+<input type=hidden name="RTONNM" value="<$RTONNM>">
+<input type=hidden name="RTOKEY" value="<$RTOKEY>">
+<input type=hidden name="update" value="<$update>">
+<input type=hidden name="ac"  value="<$ac>">
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+
+<table border=0>
+<tr>
+<td>Subject:</td>
+<!-- #ifdef variable="RTONNM" -->
+<td>Re: <$sub> <input type=hidden name="sub" value="<$sub>"></td>
+<!-- #endif variable="RTONNM" -->
+<!-- #ifndef variable="RTONNM" -->
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=32 SIZE=60></td>
+<!-- #endif variable="RTONNM" -->
+</tr>
+<tr>
+<td>Text:</td>
+<td><TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+
+</p>
+</form>
+
+<form name="spell">
+<script>
+<!--
+function sendtext()
+	{
+	var text;
+	var semi = new RegExp("\;","g");
+	document.send.checkme.value = (document.poster.txt.value.replace(semi,"\;"));
+	document.send.form.value = "poster";
+	document.send.field.value = "txt";
+	window.open('','SpellChecker','width=480,height=360,top=150,left=150,scrollbars=1,location=true');
+	document.send.submit();
+	}
+-->
+</script>
+	<input type="button" name="SpellCheck" value="SpellCheck" onclick="sendtext()" /></p>
+</form>
+<form name="send" action="http://www.cybertown.com/cgi-bin/aspell/spell.pl" method="POST" target="SpellChecker">
+<input type="hidden" name="checkme" />
+<input type="hidden" name="form" />
+<input type="hidden" name="field" />
+<input type="hidden" name="spell" value="check" />
+</form>
+
+
+<!-- #ifdef variable="msgallowdelete" -->
+<a href="<$selfurl>?ac=delete&DATE=<$DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>"
+>Delete the Message</a>
+<!-- #endif variable="msgallowdelete" -->
+
+<!-- #ifdef variable="msballowhtm" -->
+<P>
+Post of HTML tags is required on this inbox.<br>
+Please put at least "&lt;P&gt;" tags if you want to start new
+paragraphs in your post.
+<!-- #endif variable="msballowhtm" -->
+
+<!-- #ifndef variable="msballowhtm" -->
+<P>
+Post of HTML tags is not allowed on this inbox.<br>
+Please do not post any HTML tags like "&lt;P&gt;", etc.
+<!-- #endif variable="msballowhtm" -->
+<!-- #endif variable="msbmsg001" -->
+
+<!-- #ifdef variable="msbmsg001" -->
+The message has been sent.
+<!-- #endif variable="msbmsg001" -->
+
+<font color="red">
+<!-- #ifdef variable="msberror001" -->
+Sorry <$NNM>, you do not have permission to post a message.
+<!-- #endif variable="msberror001" -->
+
+<!-- #ifdef variable="msberror002" -->
+Sorry <$NNM>, the length of the input you gave is too big.
+<!-- #endif variable="msberror002" -->
+
+<!-- #ifdef variable="msberror003" -->
+Sorry <$NNM>, the update of the message in the database failed.
+<!-- #endif variable="msberror003" -->
+
+</font>
+
+</body>
+</html>
+

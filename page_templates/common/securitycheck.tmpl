@@ -1,0 +1,59 @@
+<!-- common/securitycheck.tmpl -->
+<HEAD>
+<script language="javascript" 
+  type="text/javascript">
+
+<!-- hide script from older browsers
+function validateForm(securitycheck)
+{
+
+if(""==document.forms.securitycheck.SEQ.value)
+{
+alert("Please enter your chosen Secret Question.");
+return false;
+}
+
+if(""==document.forms.securitycheck.SEA.value)
+{
+alert("Please enter the answer to your Secret Question.");
+return false;
+}
+
+}
+ stop hiding script -->
+</script>
+
+
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<title>Cybertown - Civilisation for the Virtual Age</title>
+<img src="http://www.cybertown.com/images/ban_ivn128-2.gif">
+<p><img src="http://www.cybertown.com/images/ctlogo.gif">
+<blockquote><blockquote><p></center>As a further enhancement to the security of your Cybertown account, we are introducing a  
+secret question and answer specific to your nickname and we need you to let us know (just once) what question you would like us to use. 
+Each time you contact support regarding your account you may be asked this question so we can quickly establish your identity.
+<p>Please note that security questions should be:
+<p>&nbsp;1. Something that only you would know.
+<br>&nbsp;2. Something that you won't forget.
+<p><center>Thank you.</blockquote></blockquote>
+<p><i>IVN/Cybertown Inc.</i>
+<form name="securitycheck" action="/cgi-bin/cybertown/print60" method="POST" ONSUBMIT=" return validateForm(securitycheck);">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="common/securitycheck2">
+<input type=hidden name="plc" value="<$place>">
+<input type=hidden name="NNM" value="<$NNM>">
+
+        <table border=0>
+        <tr>
+	    <td align=right>Security Question:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="SEQ" VALUE="<$SEQ>" MAXLENGTH=64 SIZE=50 required></td>
+        </tr>
+        <tr>
+            <td align=right>Security Answer:&nbsp;&nbsp;</td>
+	    <td colspan=3><INPUT NAME="SEA" VALUE="<$SEA>" MAXLENGTH=64 SIZE=32 required></td>
+        </tr>
+        </table>
+
+<p><input type=submit name="submit" value="Proceed to Cybertown">
+</form>

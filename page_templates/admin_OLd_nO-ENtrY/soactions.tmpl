@@ -1,0 +1,109 @@
+<!-- admin/soactions.tmpl -->
+<!-- list shared objects actions -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KTY.selectedIndex==0 )
+        if( document.FilterForm.KFT.value.substring( 0,1 )!="o" )
+            document.FilterForm.KFT.value = "o" + document.FilterForm.KFT.value;
+
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>List of Shared Objects</font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    Filter:&nbsp;&nbsp;
+    <select name="KTY">
+        <option value="ID"
+        <!--#ifdef variable="KTY" value="ID"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >ID</option>
+        <option value="NAM"
+        <!--#ifdef variable="KTY" value="NAM"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >Name</option>
+    </select>
+
+    <INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+
+    <table>
+    <tr>
+        <td>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+        </td>
+        <!--#ifdef variable="[PREV]" -->
+            <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <td>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </td>
+    </tr>
+    </table>
+</form>
+
+<table border=1>
+    <tr>
+        <th><font color=#80ff00>ID</th>
+        <th><font color=#80ff00>Name</th>
+    </tr>
+    <!--#for loopname="object" loopvars="ID_" -->
+        <tr>
+            <td><A HREF="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&TPL=admin/soaction&ac=read&obj=shobj" target=_self><$ID_></A></td>
+            <td>&nbsp;
+            <!--#ifdef variable="NAM_" -->
+                <$NAM_>
+            <!--#endif variable="NAM_" -->
+            </td>
+        </tr>
+    <!--#endfor loopname="object" -->
+</table>
+<br>
+<a href="admin<$g_exe>?DTY=<$DTY>&KTY=ID&TPL=admin/soaction&ac=showcreate&KLEN=8&POST=a&obj=shobj&TKT=<$TKT>" target=_self>Create new Action</a>
+
+</body>
+</html>
+

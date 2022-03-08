@@ -1,0 +1,21 @@
+       <APPLET code="buBuddy.class" 
+               codebase="<$g_HTMLRoot>/java" 
+               name="buBuddy" 
+               id="buBuddy" 
+               width="0" height="0">
+       <PARAM name="cabbase" value="buBuddy.cab">
+       <PARAM name="sceneurl" value="<$g_BuddyScene>">
+       <PARAM name="communityserverhost" value="<$g_CServer>">
+       <PARAM name="communityserverport" value="<$g_CSPort>">
+       <PARAM name="backgroundcolor" value="000000">
+       <PARAM name="foregroundcolor" value="D0DBF7">
+       <PARAM name="ignoretexthistory" value="true">
+       <PARAM name="buddyfunction" value="true">
+<!-- #ifdef variable="buVar1" -->
+       <PARAM name="nickname" value="_">
+<!-- #endif variable="buVar1" -->
+<!-- #ifndef variable="buVar1" -->
+       <PARAM name="nickname" value="<$NNM>">
+<!-- #endif variable="buVar1" -->
+       </applet>
+

@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- #define variable="T_NOHTML" value="1"-->
+
+<title><$g_title></title>
+<BASE target="_self">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.updateForm.EML.value = document.updateForm.EMK.value.toLowerCase();
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<!-- /property/updatedata.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<p align=center>
+
+<!-- #if variable="KEY" == variable="MEM_ID" -->
+<!-- #define variable="CITY_OWN" value="1" -->
+<!-- #endif variable="KEY" -->
+<!--#ifdef variable="isAdmin" -->
+<!-- #define variable="CITY_OWN" value="1" -->
+<!--#endif variable="isAdmin" -->
+
+<!-- #ifndef variable="CITY_OWN" -->
+
+<br>
+<font color=#FF0000>Insufficient access rights.</font>
+<br>
+<br>
+<!-- #endif variable="CITY_OWN" -->
+
+<!-- #ifdef variable="CITY_OWN" -->
+<b>Update your Personal Information</b>
+</p>
+
+<!-- #ifdef variable="updateok" -->
+<div align=center>
+<font color=#FFFF00>Personal information updated successfully.</font>
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</div>
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="editerror003" -->
+<div align=center>
+<font color=#FF0000>Insufficient access rights.</font>
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</div>
+<!-- #endif variable="editerror003" -->
+<!-- #ifdef variable="editerror005" -->
+<div align=center>
+<font color=#FF0000>Cannot update personal data, please try again with other values (e.g. email address might already exist).</font>
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</div>
+<!-- #endif variable="editerror005" -->
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<table border=0>
+<tr>
+	<td width=130><b>Resident</b></td>
+	<td><$NNM></td>
+</tr>
+<tr>
+	<td><b>First Name</b></td>
+	<td><INPUT NAME="FNM" VALUE="<$FNM>" MAXLENGTH=20 SIZE=20></td>
+</tr>
+<tr>
+	<td><b>Last Name</b></td>
+	<td><INPUT NAME="LNM" VALUE="<$LNM>" MAXLENGTH=32 SIZE=20></td>
+</tr>
+<!-- #if variable="NNM" == variable="MEM_NNM" -->
+<tr>
+    <td><b>Email address</b></td>
+    <td><INPUT NAME="EMK" VALUE="<$EMK>" MAXLENGTH=128 SIZE=32></td>
+</tr>
+<input type=hidden name="EML" value="<$EML>">
+<!-- #endif variable="NNM" -->
+<!--#ifdef variable="isAdmin" -->
+<tr>
+    <td><b>Email address</b></td>
+    <td><INPUT NAME="EMK" VALUE="<$EMK>" MAXLENGTH=128 SIZE=32></td>
+</tr>
+<tr>
+    <td><b>Email address<br>lower case key</b></td>
+    <td><$EML></td>
+</tr>
+<input type=hidden name="EML" value="<$EML>">
+<!--#endif variable="isAdmin" -->
+<tr>
+  <td><b>Job Title</b></td>
+  <td><SELECT name="ID_3MYR">
+    <option value=""> </option>
+<!--#for loopname="ROLES" loopvars="ROLID" -->
+<!--#define variable="IDR" value="<$ROLID>" -->
+    <option value="<$ROLID>"
+<!--#if variable="ID_3MYR" == variable="IDR" -->
+      SELECTED
+<!--#endif variable="ID_3MYR" -->
+      >&nbsp;<$ROLNAM>&nbsp;</option>
+<!--#endfor loopname="ROLES" -->
+  </SELECT></td>
+</tr>
+<tr>
+	<td><b>Immigration</b></td>
+	<td><$IMD_DAYNAME>, <$IMD_MONNAME> <$IMD_MDAy> <$IMD_YEAR></td>
+</tr>
+<tr>
+	<td><b>Information</b><br><small>(up to 200 chars)</small></td>
+	<td><INPUT NAME="ID_TXT" VALUE="<$ID_TXT>" MAXLENGTH=200 SIZE=45>
+</tr>
+<tr>
+	<td><b>Interests</b><br><small>(up to 64 chars, displayed in people list in chat)</small></td>
+	<td><INPUT NAME="ID_5INT" VALUE="<$ID_5INT>" MAXLENGTH=64 SIZE=45>
+</tr>
+<tr>
+	<td><b>Experience</b></td>
+	<td><$EXP></td>
+</tr>
+<tr>
+	<td><b>Money</b></td>
+	<td><$MON></td>
+</tr>
+<tr>
+	<td><b>Home Page</b></td>
+	<td><INPUT NAME="HPG" VALUE="<$HPG>" MAXLENGTH=128 size=38></td>
+</tr>
+<tr>
+
+<td valign=top><b>Chat default</b></td>
+<td>
+<input type="Radio" name="CHT" value="" 
+<!--#ifndef variable="CHT" value="s" -->
+<!--#ifndef variable="CHT" value="p" -->
+checked
+<!--#endif variable="CHT" -->
+> None<br>
+
+<input type="Radio" name="CHT" value="s"
+<!--#ifdef variable="CHT" value="s" -->
+checked
+<!--#endif variable="CHT" -->
+> blaxxun Contact (Java)<br>
+
+<input type="Radio" name="CHT" value="p" 
+<!--#ifdef variable="CHT" value="p" -->
+checked
+<!--#endif variable="CHT" -->
+> blaxxun Contact (3D plugin)
+</td>
+</tr>
+
+<tr>
+<td valign=top><b>Newsletter</b></td>
+<td>
+<INPUT NAME="ID_2BNL" TYPE=RADIO VALUE="" 
+<!--#ifndef variable="ID_2BNL" value="n" -->
+checked
+<!--#endif variable="ID_2BNL" -->
+> YES, I want to receive <$g_CityDefName> newsletters<br>
+
+<INPUT NAME="ID_2BNL" TYPE=RADIO VALUE="n" 
+<!--#ifdef variable="ID_2BNL" value="n" -->
+checked
+<!--#endif variable="ID_2BNL" -->
+> NO, I don't want to receive <$g_CityDefName> newsletters
+</td>
+
+</tr>
+
+<tr>
+<td valign=top><br><b>Email</b></td>
+<td><br>Do you wish to receive occasional mailings based on your interest in
+Cybertown?<br><br>
+<INPUT NAME="ID_4PML" TYPE=RADIO VALUE="" 
+<!--#ifndef variable="ID_4PML" value="n" -->
+checked
+<!--#endif variable="ID_4PML" -->
+> YES&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="ID_4PML" TYPE=RADIO VALUE="n" 
+<!--#ifdef variable="ID_4PML" value="n" -->
+checked
+<!--#endif variable="ID_4PML" -->
+> NO
+</td>
+
+</table>
+<br>
+
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="property/updatedata">
+<input type=hidden name="ac" value="read">
+<!--<input type=hidden name="ac" value="update">-->
+<input type=hidden name="program" value="property">
+<input type=hidden name="BODYTY" value="<$BODYTY>">
+<input type=hidden name="BODYID" value="<$BODYID>">
+<input type=hidden name="OID" value="<$OID>">
+
+<a name=submitbutton></a>
+<center>
+<input type=submit name="edit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</center>
+
+</form>
+<!-- #endif variable="CITY_OWN" -->
+<br><center>
+<!-- These tags should be placed in all categories in the 468x60 size space (Placement: 1) -->
+<IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME>
+<!-- End of adMonitor v3.0 rich content tags -->
+</center>
+</BODY>
+</HTML>

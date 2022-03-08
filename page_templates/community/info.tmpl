@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- community/info.tmpl -->
+<title><$g_title> - Colony</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H3 align=center>Welcome to the <$CNM> '<$NAM>'</H3>
+
+<p>
+<!-- #ifdef variable="TXT" -->
+<$TXT>
+<!-- #endif variable="TXT" -->
+<!-- #ifndef variable="TXT" -->
+Welcome to the <$CNM> '<$NAM>' ...
+<!-- #endif variable="TXT" -->
+</p>
+
+<!-- #include virtual="<$g_Templates>common/inforoles.tmpl" -->
+<br>
+<b>Neighborhoods:</b>
+<table>
+<tr>
+<td>
+<form name="roles" method=post action="edit<$g_exe>?KEY=&KFT=31<$ID>&KFM=RRCCCR*&TPL=community/rolem&ac=list">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ROLNAM" value="31">
+<input type=hidden name="NNAM" value="<$NAM>">
+<input type=hidden name="NID" value="<$ID>">
+<input type=submit name="list" value="List">
+Neighborhood Leaders 
+</form>
+<td>
+<form name="deps" method=post action="edit<$g_exe>?KEY=&KFT=51<$ID>&KFM=RRCCCR*&TPL=community/rolem&ac=list">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ROLNAM" value="51">
+<input type=hidden name="NNAM" value="<$NAM>">
+<input type=hidden name="NID" value="<$ID>">
+<input type=submit name="list" value="List">
+Neighborhood Deputies 
+</form>
+</table>
+
+</BODY>
+</HTML>

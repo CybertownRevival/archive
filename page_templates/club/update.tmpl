@@ -1,0 +1,780 @@
+<html>
+<!-- club/update.tmpl -->
+<!-- change the information and enter new colors and images for the clubhouse -->
+
+<head>
+<title><$g_title> - Update Your Club</title>
+<meta name="author" content="Christopher Raymond">
+<meta name="classification" content="">
+<meta name="description" content="">
+<meta http-equiv="keywords" content=" ">
+
+<script  language="JavaScript">
+<!--
+function gotoLocation( val )
+{
+    window.open( val, 'LinkTest' );
+}
+
+//-->
+</SCRIPT>
+<script language="JavaScript">
+<!--
+winClose = false;
+winFocus = false;
+
+if (navigator.appName == "Netscape")
+{
+ winClose = true;
+ winFocus = true;
+}
+else
+{
+ var i = navigator.appVersion.indexOf("MSIE");
+ if (i >= 0)
+ {
+  var ver = parseInt(navigator.appVersion.substring(i+5,i+6));
+  if ( ver > 4)
+   winClose = true;
+  if ( ver > 3 )
+   winFocus = true;
+ }
+}
+
+myInfoWin = null;
+
+function loadInfo(par)
+{
+ loadCustom( par, 620, 450 );
+}
+
+
+
+function closeInfoWin()
+{
+ if (winClose && myInfoWin && !myInfoWin.closed)
+ {
+  myInfoWin.close();
+ }
+}
+
+function loadCustom(par,h,v){
+ closeInfoWin();
+ var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=' + h + ',height=' + v;
+
+ win = window.open(par, "info",paramstring);
+ if (winFocus)
+ {
+    win.focus();
+ }
+ myInfoWin = win;
+}
+
+
+function check(form){
+	CLname=form.NAM.value
+	icstring = ':;"_-.~`!@#$%^&*()+=|\{}[]<>/,?‘’¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ';
+	oikedoke = "1"
+	for (var i=0; i < CLname.length; i++) {
+		temp = "" + CLname.substring(i, i+1);
+		if (icstring.indexOf(temp) > -1) {
+		oikedoke = "0"	
+		}
+		}
+
+	if (oikedoke == "0")
+	{
+		alert("Your club name contains illegal characters. Please choose another");
+		form.NAM.focus();
+		return false ;
+	}
+	
+	return true;
+	
+}
+//-->
+</script>
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align=center><$NAM></h2>
+
+<!--#ifdef variable="updateok" -->
+<font color=red>Club information successfully updated.</font>
+<!--#endif variable="updateok" -->
+
+<!--#ifdef variable="clubinfofailed" -->
+<font color=red>Fail to update club information.</font>
+<!--#endif variable="clubinfofailed" -->
+
+<!-- #ifdef variable="clubmimeerror" -->
+<font color="red" size=+1>
+The image "<$errfile>" are not a .gif or .jpg file!<br>
+</font>
+<!-- #endif variable="clubmimeerror" -->
+
+<!-- #ifdef variable="cluberrsize" -->
+<font color="red" size=+1>
+The image "<$errfile>" is too large, maximum size is <$errsize> Bytes!<br>
+</font>
+<!-- #endif variable="cluberrsize" -->
+
+<!-- #ifdef variable="clubsaveerror" -->
+<font color="red" size=+1>
+The image "<$errfile>" could not be saved!<br>
+</font>
+<!-- #endif variable="clubsaveerror" -->
+
+<!-- #ifdef variable="descoversized" -->
+<font color="red" size=+1>
+The club description is too long, maximum length is <$errsize> characters!<br>
+</font>
+<!-- #endif variable="descoversized" -->
+
+<!-- #ifdef variable="rulesoversized" -->
+<font color="red" size=+1>
+The club rules are too long, maximum length is <$errsize> characters!<br>
+</font>
+<!-- #endif variable="rulesoversized" -->
+
+<!-- #ifdef variable="notitle" -->
+<font color="red" size=+1>
+You have to specify a title for your club!<br>
+</font>
+<!-- #endif variable="notitle" -->
+<FORM enctype="multipart/form-data" name="UpdateClub" method=post ACTION="club<$g_exe>" onSubmit="return check(this);">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type=hidden name="ac" value="update">
+    <input type=hidden name="clubid" value="<$ID>">
+
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+
+    <input type=hidden name="ST1" value="<$ST1>">
+    <input type=hidden name="ST2" value="<$ST2>">
+    <input type=hidden name="ST3" value="<$ST3>">
+    <input type=hidden name="STM" value="<$STM>">
+    <input type=hidden name="STA" value="<$STA>">
+
+    <input type=hidden name="GID" value="<$GID>">
+
+    <table width=80%>
+        <tr width=50%>
+            <td>
+                <ul>
+                    <li><a href="#clubInfo">Club Information</a></li>
+                    <li><a href="#clubDesc">Club Description</a></li>
+                    <li><a href="#clubRules">Club Rules</a></li>
+                    <li><a href="#clubLinks">Club Links</a></li>
+                </ul>
+            </td>
+            <td width=50%>
+                <ul>
+                    <li><a href="#clubImage">Club Image</a></li>
+                    <li><a href="#clubColors">Club Colors</a></li>
+                    <li><a href="#clubhouseImg">Clubhouse Images</a></li>
+                    <li><a href="#clubhouseCol">Clubhouse Colors</a></li>
+                    <li><a href="javascript:loadCustom('print60<$g_exe>?ac=print&tpl=club/clubwrlupd&ID=<$ID>',500,350)" target=_self >Clubhouse World</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <b>NEW: To update your club's 3D world, use the Clubhouse World link above.</b><br>
+    The <a href="#updateBtnAnchor">Update</a> button has to be clicked only after
+    all changes are made.<br>
+    <B>Please Note</B>: Extra club images and Clubhouse Color settings below do NOT apply when you
+    select any Clubhouse World other than the first default selection.<br>
+    The changes will be active directly afterwards.
+<hr>
+    <h3><a name="clubInfo">Club Information</h3>
+
+    <table border=0>
+        <tr>
+            <td><font size=1>&nbsp;</td>
+            <td width=20><font size=1>&nbsp;</td>
+            <td width=20><font size=1>&nbsp;</td>
+            <td width=20><font size=1>&nbsp;</td>
+        </tr>
+        <tr>
+            <td align=right>Club Title:</td>
+            <td colspan=3><input type="text" name="NAM" value="<$NAM>" maxlength=16 size=16></td>
+        </tr>
+        <tr><td colspan=4><font size=1>&nbsp;</td></tr>
+        <tr>
+            <td align=right>Club Keywords:</td>
+            <td colspan=3>
+                <select name="CK1">
+                    <!--#for loopname="keyword1List" loopvars="CK1_LIST_" -->
+                        <option value="<$CK1_LIST_>"
+                        <!--#ifdef variable="CK1_SEL_" -->
+                            selected
+                        <!--#endif variable="CK1_SEL_"-->
+                        > <$CK1_LIST_> </option>
+                    <!--#endfor loopname="keyword1List" -->
+                </select>
+                <select name="CK2">
+                    <!--#for loopname="keyword2List" loopvars="CK2_LIST_" -->
+                        <option value="<$CK2_LIST_>"
+                        <!--#ifdef variable="CK2_SEL_" -->
+                            selected
+                        <!--#endif variable="CK2_SEL_"-->
+                        > <$CK2_LIST_> </option>
+                    <!--#endfor loopname="keyword2List" -->
+                </select>
+                <input type="text" name="CK3" value="<$CK3>" maxlength=32 size=16>
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=1>&nbsp;</td></tr>
+        <tr>
+            <td align=right>Club Kind:</td>
+            <td>
+                <select name="CKI">
+                    <option value="O"
+                    <!--#ifdef variable="CKI" value="O"-->
+                        selected
+                    <!--#endif variable="CKI"-->
+                    > Open for everyone </option>
+                    <option value="I"
+                    <!--#ifdef variable="CKI" value="I"-->
+                        selected
+                    <!--#endif variable="CKI"-->
+                    > By Invitation </option>
+                </select>
+            </td>
+            <td align=right>Colony:</td>
+            <td>
+ <select name="PID">
+ 
+                         <option value="0101000000000000"> Games </option>
+ 
+                         <option value="0102000000000000"> Sci-fi </option>
+ 
+                         <option value="0103000000000000"> Virtual Worlds </option>
+ 
+                         <option value="0104000000000000"> Entertainment </option>
+ 
+                         <option value="0105000000000000"> Inner Realms </option>
+ 
+                         <option value="0106000000000000"> Teens </option>
+ 
+                         <option value="0107000000000000"> 9th Dimension </option>
+ 
+                         <option value="0108000000000000"> Cyberhood </option>
+ 
+                         <option value="0109000000000000"> Adventure Colony </option>
+ 
+                         <option value="0110000000000000"> Hi-Tek </option>
+ 
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubDesc">Club Description</h3>
+
+    Please use HTML tags like '&lt;br&gt;' etc. to format the text.<br>
+    The text should not be longer than 1400 characters.<br>
+    <textarea name="DES" rows=7 cols=60><$ID_DES></textarea><br>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubRules">Club Rules</h3>
+
+    Please use HTML tags like '&lt;br&gt;' etc. to format the text.<br>
+    The text should not be longer than 1000 characters.<br>
+    <textarea name="RUL" rows=7 cols=60><$ID_2RUL></textarea><br>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubLinks">Club Links</h3>
+
+    <table border=0>
+        <tr>
+            <td><b>Description</b></td>
+            <td><b>URL</b></td>
+        </tr>
+        <tr>
+            <td><INPUT TYPE="text" NAME="LD1" VALUE="<$LD1>" MAXLENGTH=64 size=24></td>
+            <td><INPUT TYPE="text" NAME="LL1" VALUE="<$LL1>" MAXLENGTH=128 size=24></td>
+            <td><INPUT TYPE=button onclick="gotoLocation( UpdateClub.LL1.value )" VALUE="Test Link"></td>
+        </tr>
+        <tr>
+            <td><INPUT TYPE="text" NAME="LD2" VALUE="<$LD2>" MAXLENGTH=64 size=24></td>
+            <td><INPUT TYPE="text" NAME="LL2" VALUE="<$LL2>" MAXLENGTH=128 size=24></td>
+            <td><INPUT TYPE=button onclick="gotoLocation( UpdateClub.LL2.value )" VALUE="Test Link"></td>
+        </tr>
+        <tr>
+            <td><INPUT TYPE="text" NAME="LD3" VALUE="<$LD3>" MAXLENGTH=64 size=24></td>
+            <td><INPUT TYPE="text" NAME="LL3" VALUE="<$LL3>" MAXLENGTH=128 size=24></td>
+            <td><INPUT TYPE=button ONCLICK="gotoLocation( UpdateClub.LL3.value )" VALUE="Test Link"></td>
+        </tr>
+        <tr>
+            <td><INPUT TYPE="text" NAME="LD4" VALUE="<$LD4>" MAXLENGTH=64 size=24></td>
+            <td><INPUT TYPE="text" NAME="LL4" VALUE="<$LL4>" MAXLENGTH=128 size=24></td>
+            <td><INPUT TYPE=button ONCLICK="gotoLocation( UpdateClub.LL4.value )" VALUE="Test Link"></td>
+        </tr>
+        <tr>
+            <td><INPUT TYPE="text" NAME="LD5" VALUE="<$LD5>" MAXLENGTH=64 size=24></td>
+            <td><INPUT TYPE="text" NAME="LL5" VALUE="<$LL5>" MAXLENGTH=128 size=24></td>
+            <td><INPUT TYPE=button ONCLICK="gotoLocation( UpdateClub.LL5.value )" VALUE="Test Link"></td>
+        </tr>
+    </table>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubImage">Club Image</h3>
+
+    Click the browse button to upload an image from your hard disc.<br>
+    The maximum image size is 15 KBytes and the image format must be "jpg" or "gif".<br>
+
+    All images will be approved by the Clubs Chief before they are made permanent.<br><br>
+
+<font color="#FFFF00">
+By clicking on the Update button I hereby affirm that the image I am uploading is either an original creation by me and does not infringe upon the copyright or trademark of any other person or group or it is a public domain item available to be freely used. I also affirm that it is not an alteration of another's original creation without their express permission. 
+<br><br>
+In case of any dispute with another, I hereby agree to defend, indemnify, and hold harmless Cybertown, its officers, directors, employees and agents, from and against any claims, actions or demands, including without limitation reasonable legal and accounting fees, resulting or allegedly resulting from my uploading of this image. 
+<br><br>
+I also understand that should I be discovered to have uploaded an image that is the copyright of another that I may also be subject to other penalties per the UBP.
+<br><br>
+
+
+    <table>
+    <tr>
+        <td>
+
+        <script language="javascript">var path = "<$g_DBImages><$CLP>";
+        if (path.indexOf('dbimages/dbimages') > -1){
+        document.writeln('<IMG SRC="<$g_HTMLRoot><$CLP>" BORDER=0 ALT="Club Image" height="100">');}
+        else{document.writeln('<IMG SRC="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height="100">');}</script>
+        
+        </td>
+        <td>
+            &nbsp;&nbsp;This image will be shown on every page of your club.<br><br>
+            &nbsp;&nbsp;Current file: <$CLF><br>
+            &nbsp;&nbsp;<input type="file" name="CLF" value="<$CLF>" maxlength="64" size=32>
+        </td>
+    </tr>
+    </table>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubColors">Club Colors</h3>
+    <table border=0>
+    <tr>
+        <th>Background Color</th>
+        <th>Link Color</th>
+        <th>Text Color</th>
+    </tr>
+    <tr>
+        <td bgcolor="#000000"><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#000000" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#000000"><font color="#ffffff">Default</td>
+        <td bgcolor="#00FF00"><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL" value="#00FF00" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#00FF00"><font color="#000000">Default</td>
+        <td bgcolor="#D0DBF7"><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT" value="#D0DBF7" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#D0DBF7"><font color="#000000">Default</td>
+    </tr>
+    <tr bgcolor="#ffffff">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#ffffff" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#ffffff"><font color="#000000">White</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL" value="#ffffff" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#ffffff"><font color="#000000">White</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT" value="#ffffff" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#ffffff"><font color="#000000">White</td>
+    </tr>
+    <tr bgcolor="#000000">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB"  value="#000000" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#000000"><font color="#ffffff">Black</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#000000" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#000000"><font color="#ffffff">Black</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#000000" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#000000"><font color="#ffffff">Black</td>
+    </tr>
+    <tr bgcolor="#808080">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB"  value="#808080" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#808080"><font color="#000000">Charcoal Gray</td>
+        <td><input type="radio" name="CLL"
+        <!--#ifdef variable="CLL"  value="#808080" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#808080"><font color="#000000">Charcoal Gray</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#808080" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#808080"><font color="#000000">Charcoal Gray</td>
+    </tr>
+    <tr bgcolor="#0080ff">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#0080ff" -->
+            checked
+        <!--#endif variable="CLB"--> 
+        value="#0080ff"><font color="#000000">Sky Blue</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#0080ff" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#0080ff"><font color="#000000">Sky Blue</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#0080ff" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#0080ff"><font color="#000000">Sky Blue</td>
+    </tr>
+    <tr bgcolor="#ffff00">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#ffff00" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#ffff00"><font color="#000000">Lemon Yellow</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#ffff00" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#ffff00"><font color="#000000">Lemon Yellow</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#ffff00" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#ffff00"><font color="#000000">Lemon Yellow</td>
+    </tr>
+    <tr bgcolor="#ff0000">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#ff0000" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#ff0000"><font color="#000000">Crimson</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#ff0000" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#ff0000"><font color="#000000">Crimson</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#ff0000" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#ff0000"><font color="#000000">Crimson</td>
+    </tr>
+    <tr bgcolor="#000080">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#000080" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#000080"><font color="#ffffff">Royal Blue</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#000080" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#000080"><font color="#ffffff">Royal Blue</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#000080" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#000080"><font color="#ffffff">Royal Blue</td>
+    </tr>
+    <tr bgcolor="#00ff00">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#00ff00" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#00ff00"><font color="#000000">Vermont Green</td>
+        <td><input type="radio" name="CLL"
+        <!--#ifdef variable="CLL"  value="#00ff00" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#00ff00"><font color="#000000">Vermont Green</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#00ff00" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#00ff00"><font color="#000000">Vermont Green</td>
+    </tr>
+    <tr bgcolor="#00ffff">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#00ffff" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#00ffff"><font color="#000000">Sapphire</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#00ffff" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#00ffff"><font color="#000000">Sapphire</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#00ffff" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#00ffff"><font color="#000000">Sapphire</td>
+    </tr>
+    <tr bgcolor="#800080">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#800080" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#800080"><font color="#ffffff">Deep Purple</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#800080" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#800080"><font color="#ffffff">Deep Purple</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#800080" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#800080"><font color="#ffffff">Deep Purple</td>
+    </tr>
+    <tr bgcolor="#ff8080">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#ff8080" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#ff8080"><font color="#000000">Pink Rose</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#ff8080" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#ff8080"><font color="#000000">Pink Rose</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#ff8080" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#ff8080"><font color="#000000">Pink Rose</td>
+    </tr>
+    <tr bgcolor="#800000">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#800000" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#800000"><font color="#ffffff">Brown Derby</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#800000" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#800000"><font color="#ffffff">Brown Derby</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#800000" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#800000"><font color="#ffffff">Brown Derby</td>
+    </tr>
+    <tr bgcolor="#ff8000">
+        <td><input type="radio" name="CLB" 
+        <!--#ifdef variable="CLB" value="#ff8000" -->
+            checked
+        <!--#endif variable="CLB"-->
+        value="#ff8000"><font color="#000000">Florida Orange</td>
+        <td><input type="radio" name="CLL" 
+        <!--#ifdef variable="CLL"  value="#ff8000" -->
+            checked
+        <!--#endif variable="CLL"-->
+        value="#ff8000"><font color="#000000">Florida Orange</td>
+        <td><input type="radio" name="CLT" 
+        <!--#ifdef variable="CLT"  value="#ff8000" -->
+            checked
+        <!--#endif variable="CLT"-->
+        value="#ff8000"><font color="#000000">Florida Orange</td>
+    </tr>
+    </table>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubhouseImg">Clubhouse Images</h3>
+
+    Choose images for clubhouse rooms.<br><br>
+
+<font color="#FFFF00">
+By clicking on the Update button I hereby affirm that the image I am uploading is either an original creation by me and does not infringe upon the copyright or trademark of any other person or group or it is a public domain item available to be freely used. I also affirm that it is not an alteration of another's original creation without their express permission. 
+<br><br>
+In case of any dispute with another, I hereby agree to defend, indemnify, and hold harmless Cybertown, its officers, directors, employees and agents, from and against any claims, actions or demands, including without limitation reasonable legal and accounting fees, resulting or allegedly resulting from my uploading of this image. 
+<br><br>
+I also understand that should I be discovered to have uploaded an image that is the copyright of another that I may also be subject to other penalties per the UBP.
+<br><br>
+
+    <table>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP1>" BORDER=0 ALT="Club Image" height="80"></td>
+        <td>
+            <b>Gallery Picture 1</b><br>
+            &nbsp;&nbsp;Current file: <$GF1><br>
+            <input type="file" name="GF1" value="<$GF1>" maxlength="64" size=24>
+        </td>
+    </tr>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP2>" BORDER=0 ALT="Club Image" height="80"></td>
+        <td>
+            <b>Gallery Picture 2</b><br>
+            &nbsp;&nbsp;Current file: <$GF2><br>
+            <input type="file" name="GF2" value="<$GF3>" maxlength="64" size=24>
+        </td>
+    </tr>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$GP3>" BORDER=0 ALT="Club Image" height="80"></td>
+        <td>
+            <b>Gallery Picture 3</b><br>
+            &nbsp;&nbsp;Current file: <$GF3><br>
+            <input type="file" name="GF3" value="<$GF3>" maxlength="64" size=24>
+        </td>
+    </tr>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$ARP>" BORDER=0 ALT="Club Image" height="80"></td>
+        <td>
+            <b>Assembly Room</b><br>
+            &nbsp;&nbsp;Current file: <$ARF><br>
+            <input type="file" name="ARF" value="<$ARF>" maxlength="64" size=24>
+        </td>
+    </tr>
+    <tr>
+        <td><IMG SRC="<$g_HTMLRoot><$g_DBImages><$MRP>" BORDER=0 ALT="Club Image" height="80"></td>
+        <td>
+            <b>Meeting Room</b><br>
+            &nbsp;&nbsp;Current file: <$MRF><br>
+            <input type="file" name="MRF" value="<$MRF>" maxlength="64" size=24>
+        </td>
+    </tr>
+    </table>
+    <br>
+    Go to the <a href="#updateBtnAnchor">Update</a> button<br>
+<hr>
+    <h3><a name="clubhouseCol">Clubhouse Colors</h3>
+
+    <p>Choose the colors of your clubhouse (if no textures are displayed).</p>
+    <table border=0>
+    <tr>
+        <th>Wall Color</th>
+        <th>Ceiling Color</th>
+        <th>Floor Color</th>
+    </tr>
+    <tr>
+    <tr>
+        <td bgcolor="#003300"><input type="radio" name="WAC" 
+            <!--#ifdef variable="WAC" value="0.000 0.200 0.000" -->
+                checked
+            <!--#endif variable="WAC"-->
+            value="0.000 0.200 0.000"><font color="#ffffff">Forest Green</td>
+        <td bgcolor="#e5e5d8"><input type="radio" name="CEC" 
+            <!--#ifdef variable="CEC"  value="0.900 0.900 0.850" -->
+                checked
+            <!--#endif variable="CEC"-->
+            value="0.900 0.900 0.850">Eggshell</td>
+        <td bgcolor="#998c72"><input type="radio" name="FLC" 
+            <!--#ifdef variable="FLC"  value="0.600 0.550 0.450" -->
+                checked
+            <!--#endif variable="FLC"-->
+            value="0.600 0.550 0.450">Beige</td>
+    </tr>
+    <tr>
+        <td  bgcolor="#333333"><input type="radio" name="WAC" 
+            <!--#ifdef variable="WAC" value="0.200 0.200 0.200" -->
+                checked
+            <!--#endif variable="WAC"-->
+            value="0.200 0.200 0.200"><font color="#ffffff">Charcol</td>
+        <td bgcolor="#ffffff"><input type="radio" name="CEC" 
+            <!--#ifdef variable="CEC"  value="1.000 1.000 1.000" -->
+                checked
+            <!--#endif variable="CEC"-->
+            value="1.000 1.000 1.000">Warm White</td>
+        <td bgcolor="#ffffe5"><input type="radio" name="FLC" 
+            <!--#ifdef variable="FLC"  value="1.000 1.000 0.900" -->
+                checked
+            <!--#endif variable="FLC"-->
+            value="1.000 1.000 0.900">White</td>
+    </tr>
+    <tr>
+        <td bgcolor="#4c1900"><input type="radio" name="WAC" 
+            <!--#ifdef variable="WAC" value="0.300 0.100 0.000" -->
+                checked
+            <!--#endif variable="WAC"-->
+            value="0.300 0.100 0.000"><font color="#ffffff">Deep Red</td>
+        <td bgcolor="#007fb2"><input type="radio" name="CEC" 
+            <!--#ifdef variable="CEC"  value="0.000 0.500 0.700" -->
+                checked
+            <!--#endif variable="CEC"-->
+            value="0.000 0.500 0.700">Sky Blue</td>
+        <td bgcolor="#006659"><input type="radio" name="FLC" 
+            <!--#ifdef variable="FLC"  value="0.000 0.400 0.350" -->
+                checked
+            <!--#endif variable="FLC"-->
+            value="0.000 0.400 0.350">Aqua</td>
+    </tr>
+    <tr>
+        <td bgcolor="#59595f"><input type="radio" name="WAC" 
+            <!--#ifdef variable="WAC" value="0.350 0.350 0.375" -->
+                checked
+            <!--#endif variable="WAC"-->
+            value="0.350 0.350 0.375"><font color="#ffffff">Beige</td>
+        <td bgcolor="#ccbfb2"><input type="radio" name="CEC" 
+            <!--#ifdef variable="CEC" value="0.800 0.750 0.700" -->
+                checked
+            <!--#endif variable="CEC"-->
+            value="0.800 0.750 0.700">Capuccino</td>
+        <td bgcolor="#4c1926"><input type="radio" name="FLC" 
+            <!--#ifdef variable="FLC"  value="0.300 0.100 0.150" -->
+                checked
+            <!--#endif variable="FLC"-->
+            value="0.300 0.100 0.150"><font color="#ffffff">Burgundy</td>
+    </tr>
+    <tr>
+        <td bgcolor="#19334c"><input type="radio" name="WAC" 
+            <!--#ifdef variable="WAC" value="0.100 0.200 0.300" -->
+                checked
+            <!--#endif variable="WAC"-->
+            value="0.100 0.200 0.300"><font color="#ffffff">Blue</td>
+        <td bgcolor="#666664"><input type="radio" name="CEC" 
+            <!--#ifdef variable="CEC"  value="0.400 0.400 0.395" -->
+                checked
+            <!--#endif variable="CEC"-->
+            value="0.400 0.400 0.395">Cool Grey</td>
+        <td bgcolor="#959599"><input type="radio" name="FLC" 
+            <!--#ifdef variable="FLC"  value="0.585 0.585 0.600" -->
+                checked
+            <!--#endif variable="FLC"-->
+            value="0.585 0.585 0.600">Grey</td>
+    </tr>
+    </table>
+
+    <center>
+        <a name="updateBtnAnchor">
+        <input type=submit name="edit" value="Update" width=160 height=15>
+        <input type=button name="cancel" value="Cancel"  width=160 height=15 
+        onClick="javascrip:document.location.href='place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>'">
+    </center>
+</form>
+
+</body>
+</html>

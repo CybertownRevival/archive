@@ -1,0 +1,92 @@
+<!-- citizen/lip -->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language=javascript>
+function check()
+{
+  document.sform.LNM.value = document.sform.CNM.value.toLowerCase();
+  return true;
+}
+</script>
+</HEAD>
+<!-- #define variable="T_NOHTML" value="1"-->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #if variable="owneraccess" == value="" -->
+<h3>Sorry, only security can view this page.</h3>
+<!-- #else variable="owneraccess" == value="" -->
+<font color=#80ff00>
+<center>
+<h2>
+List Members by IP
+</h2>
+<form name="sform" action="<$selfurl>" method="POST" onSubmit="return check()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="TPL" value="<$TPL>">
+<input type="hidden" name="LNM" value="<$LNM>">
+IP Address: <input type="text" size=16 maxlength=16 name="LIP" value="<$LIP>"><br>
+Use IP of Member:<input type="text" size=16 maxlength=16 name="CNM" value="<$CNM>">
+<br><br>
+<input type=submit value="List">
+<input type=button value="Back" onClick="history.back()">
+</form>
+
+<!-- #if variable="NNM_0" != value="" -->
+Members using IP Address <$LIP>: <br>
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+<tr>
+  <th width=100 nowrap align=left><font color=#80ff00>Nickname:</th>
+  <th nowrap><font color=#80ff00>Exclusion Info</th>
+  <th nowrap><font color=#80ff00>Name</th>
+  <th nowrap><font color=#80ff00>Paid Member?</th>  
+</tr>
+
+<!--#for loopname="nlist" loopvars="NNM_" -->
+
+
+
+<tr><td valign=top>
+<font size=+1>
+		<!--#ifdef variable="HOM_" -->
+		<a href="javascript:top.location.href='/home/<$NNM_>'" target="top"><b><$NNM_></b></a>:
+		<!--#endif variable="HOM_" -->
+		<!--#ifndef variable="HOM_" -->
+		<$NNM_>:
+		<!--#endif variable="HOM_" -->
+</font>
+
+</td>
+      <td><a href="http://www.cybertown.com/cgi-bin/cybertown/edit?KEY=<$ID_>&TPL=citizen/excl"><IMG SRC="<$g_Images>/images/buttons/binfo0.gif" BORDER=0 ALT="Info"></a></td>
+		<!--#ifdef variable="FNM_" -->
+		  <td nowrap><$FNM_> <$LNM_></td>
+		<!--#endif variable="FNM_" -->
+		<!--#ifndef variable="FNM_" -->
+		  <td>&nbsp</td>
+		<!--#endif variable="FNM_" -->
+  <td nowrap><script language=javascript>
+      var subsid = '<$RGK_>';
+      var freetrial = '<$FTR_>';
+      subsid = subsid.substring(0,4);
+		if (subsid == '') {
+	      document.write('YES');
+      }
+      else{
+         document.write('NO');
+      }
+      if (freetrial != '') {
+         document.write(':Freetrial');
+      }
+      </script></td>	
+</tr>      
+<!--#endfor loopname="nlist" -->
+</table>
+
+<!-- #endif variable="NNM_0" -->
+</font>
+</center>
+<!-- #endif variable="owneraccess" == value="" -->
+
+</body>
+</html>
+

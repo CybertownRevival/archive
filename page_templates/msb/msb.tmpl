@@ -1,0 +1,107 @@
+<!-- 1. Message Board/Announcements: -->
+
+<!-- #ifdef variable="KEY" value="9901000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9902000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9903000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9904000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9905000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9906000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="KEY" value="9999000000000000" -->
+<!-- #ifdef variable="isVisitor" -->
+<!-- #include virtual="<$g_Templates>common/noaccess_visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="FTR" value="freetrial"-->
+<!-- #include virtual="<$g_Templates>common/noaccess_member.tmpl" -->
+<!-- #endif variable="FTR" -->
+<!-- #ifndef variable="isVisitor" -->
+<!-- #endif variable="KEY" -->
+
+<!-- #ifdef variable="msbreadallowed" -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- 1.1. Message Board: -->
+<!-- #ifndef variable="T_TYPE" value="announce"-->
+<frameset rows="65%,*" border=1>
+	<frame name="overview" src="msb<$g_exe>?ac=listhdr&DTY=<$DTY>&KTY=ID&KEY=<$KEY>&MTY=m" scrolling="auto">
+	<frame name="detail" src="<$g_HTMLRoot>/blank.html" scrolling="auto">
+</frameset>
+<!-- #endif variable="T_TYPE" -->
+
+<!-- 1.2. Announcements: -->
+<!-- #ifdef variable="T_TYPE"-->
+<frameset rows="100%,0" border=1>
+	<frame name="overview" src="msb<$g_exe>?ac=announce&DTY=<$DTY>&KTY=ID&KEY=<$KEY>&MTY=m&T_TYPE=&T_TYPE=<$T_TYPE>" scrolling="auto">
+	<frame name="detail" src="<$g_HTMLRoot>/blank.html" scrolling="no">
+</frameset>
+<!-- #endif variable="T_TYPE" -->
+
+</html>
+<!-- #endif variable="msbreadallowed" -->
+
+<!-- 2. Inbox: -->
+<!-- #ifndef variable="msbreadallowed" -->
+<!-- #ifdef variable="msbpostallowed" -->
+<!-- #include virtual="<$g_Templates>msb/write.tmpl" -->
+<!-- #endif variable="msbpostallowed" -->
+<!-- #endif variable="msbreadallowed" -->
+
+<!-- #endif variable="isVisitor" -->
+<!-- #endif variable="ACD" -->
+

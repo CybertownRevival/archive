@@ -1,0 +1,162 @@
+<!-- place/contact3d.tmpl -->
+<!--- vrml world with contact3d, does also check for plugin --->
+<HTML>
+<HEAD>
+<SCRIPT  language="JavaScript">  
+<!--
+var height = 300;
+var width = 200;
+var menu = "no";
+var scrollbars = "auto";
+var status = "yes";
+ 
+myVRMLWin = new infowin();
+function infowin()
+{
+ win = self;
+}
+
+function o(par)
+{
+if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 && myVRMLWin.win && !myVRMLWin.win.closed)
+{
+  myVRMLWin.win.focus();
+  myVRMLWin.win.document.location.href = par;
+}
+else
+{
+ myVRMLWin.win = window.open(par, "info", "toolbar=no,location=no,directories=no,status="+status+",menu="+menu+",scrollbars="+scrollbars+",resizable=yes,width="+width+",height="+height);
+}
+}
+
+function closeInfoWin()
+{
+if (myVRMLWin.win && !myVRMLWin.win.closed)
+{
+ if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0)
+ {
+  myVRMLWin.win.close();
+ }
+ else 
+ {
+  myVRMLWin.win.close();
+ }
+}
+}
+   
+function sendEvent(node, field, value){document.CC3D.setNodeEventIn(node, field, value);} 
+
+function OnEvent(par1,par2,t) {
+ if(par1 == 'load'){o(par2);}
+ if(par1 == 'height'){height = par2;}
+ if(par1 == 'width'){width = par2;}
+ if(par1 == 'menu'){menu = par2;}
+ if(par1 == 'scrollbars'){scrollbars = par2;}
+ if(par1 == 'status'){status = par2;}
+}
+//-->   
+</SCRIPT>
+
+<SCRIPT LANGUAGE="VBScript">
+<!--
+  function chkBrowser()
+    dim src
+    dim vb
+    nam = ""
+    on error resume next
+    vers = CC3D.getVersion
+    if (not err = 0) then
+      err.clear
+    else
+      nam = "Contact"
+    end if
+    chkBrowser = nam
+  end function
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript>
+function noContact()
+{
+ chat = parent.CCpro.document;
+	chat.open("text/html");
+	chat.writeln('<HTML><BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7" >');
+	chat.writeln("<div align=center><br><br>");
+	chat.writeln("You have to <A HREF=http://www.blaxxun.com/services/support/download/index.shtml target=_blank>download</A> the latest<A HREF=http://www.blaxxun.com/services/support/download/index.shtml target=_blank> blaxxun Contact</A>.<BR><BR>Having finished the download please close your browser and install the new software.<br>Now you are ready to go for the virtual 3D chat!<BR><BR>Alternatively you might enter the <a href=property<$g_exe>?ac=place&ID=<$ID>&force=s target=place>2D Chat</a>.");        
+	chat.close();
+}
+function wrongBrowser()
+{
+ chat = parent.Chat.document;
+	chat.open("text/html");
+	chat.writeln('<HTML><BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7" >');
+	chat.writeln("<div align=center><br><br>");
+	chat.writeln("Sorry, our 3D browser requires Netscape 3.* or higher or	Internet Explorer 3.* or higher<BR><BR> Alternatively you can enter the <a href=property<$g_exe>?ac=place&ID=<$ID>&force=s target=place> 2D Chat</a>.");        
+	chat.close();
+}
+function checkContact()
+{
+ if (navigator.appName != 'Microsoft Internet Explorer')
+ {
+  tap = navigator.appVersion;
+  if((tap.indexOf('WinNT') == -1) && (tap.indexOf('Win9') == -1) )
+  {
+ 	 wrongBrowser();                  
+   return;
+  }
+  if(parseFloat(tap) < 3)
+  {
+ 	 wrongBrowser();                  
+   return;
+  }
+  var nplugin = navigator.plugins.length;
+  if (nplugin > 0)
+  {
+   for (i = 0; i < nplugin; i++)
+   { 
+    if (navigator.plugins[i].filename.indexOf('bx3dpro') != -1)
+    {
+     document.writeln("<EMBED NAME='CC3D' SRC='<$g_HTMLRoot>/common/blank.bx3' TYPE='application/x-cc3d' WIDTH=100% HEIGHT=100%>");
+     return;
+    }
+   }
+  }
+  // not found
+  noContact();
+	}
+	else if (navigator.appName == 'Microsoft Internet Explorer')
+	{
+		document.write('<OBJECT CLASSID="CLSID:4B6E3013-6E45-11D0-9309-0020AFE05CC8" ID=CC3D WIDTH=100% HEIGHT=100%></OBJECT>');
+		name = chkBrowser ();
+		if (name.length == 0)
+		{
+		 noContact();
+		}
+	}
+	else 
+	{
+ 	wrongBrowser();                  
+	}
+}
+</SCRIPT>
+<script language=VBScript> 
+<!-- 
+sub CC3D_OnEvent(par1, par2, time) 
+OnEvent par1, par2, time 
+end sub
+-->
+</script>
+</HEAD>
+<body BGCOLOR="#000000" >
+<center>
+<script language=JavaScript>
+checkContact();
+</script>
+<noscript>
+<OBJECT CLASSID="CLSID:4B6E3013-6E45-11D0-9309-0020AFE05CC8" ID=CC3D WIDTH=100% HEIGHT=100%> 
+<EMBED NAME="CC3D" SRC="<$g_HTMLRoot>/common/blank.bx3" TYPE="application/x-cc3d" WIDTH=100% HEIGHT=100%>
+</OBJECT>
+Software can't be checked because your bowser doesn't support Javascript or Javascript is disabled.
+</noscript>
+</BODY>
+</HTML>

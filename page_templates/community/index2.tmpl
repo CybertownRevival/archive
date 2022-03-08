@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Colony</title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&ID=<$ID>&type=C&CID=<$ID>&ctype=C&plc=community&DTY=C&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+<!-- #ifdef variable="CHT" value="" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="s" -->
+ <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="CHT" -->
+<!-- #ifdef variable="CHT" value="p" -->
+ <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&DTY=C&ID=<$ID>" scrolling="auto" noresize border=0>
+<!-- #endif variable="CHT" -->
+ 
+ <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="community<$g_exe>?ac=action&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>

@@ -1,0 +1,210 @@
+<!-- vote/vote.tmpl -->
+<!-- display the form to vote -->
+<!--#ifndef variable="elect" -->
+<html>
+<head>
+<title><$g_title> - Voting</title>
+<SCRIPT language=javascript>
+function closeVote(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+<base target="_top"> 
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<table width=100%>
+<tr>
+<td><b>Topic: <i><$TOP></i></b></td>
+
+<!-- #ifdef variable="owneraccess" -->
+<td align=right>
+<a href='javascript:closeVote("vote<$g_exe>?ac=close&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")' target=_self>
+<IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bclose.gif" BORDER=0 ALT="Close"></a>
+</td>
+<!--#endif variable="owneraccess" -->
+</tr>
+</table>
+
+<!-- #include virtual="<$g_Templates>common/postbutton.tmpl" -->
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="submitvote">
+<input type=hidden name="ID" value="<$ID>">
+<input type=hidden name="PLC" value="<$PLC>">
+<input type=hidden name="TYP" value="<$TYP>">
+<input type=hidden name="oldchoice" value="<$oldchoiceval>">
+<input type=hidden name="PAR" value="<$PAR>">
+
+<!-- #ifdef variable="VWW" -->
+<!-- #ifndef variable="MVW" -->
+<table>
+<tr>
+<td>You have given your votes to <$NNM>.</td>
+</tr>
+</table>
+<!-- #endif variable="MVW" -->
+<table>
+
+<!-- #ifdef variable="MVW" -->
+<tr>
+<td>You have </td>
+<td align=right><$MVW></td>
+<td> vote(s).</td>
+</tr>
+<!-- #endif variable="MVW" -->
+
+<!-- #ifdef variable="OVW" -->
+<tr>
+<td>You have </td>
+<td align=right><$OVW></td>
+<td> votes assigned from others.</td>
+</tr>
+<!-- #endif variable="OVW" -->
+</table>
+<HR>
+<!-- #endif variable="VWW" -->
+
+<!-- #ifndef variable="haschoice" -->
+<table>
+<tr>
+<td><b>Current choices:</b></td>
+<td>&nbsp;&nbsp;</td>
+<td><b><i>Current Votes</i></b></td>
+</tr>
+<!--#for loopname="loopchoice" loopvars="CHO,TOP" -->
+<tr>
+<td><$TOP></td>
+<td>&nbsp;&nbsp;</td>
+<td align=right><i><$CNT></i></td>
+</tr>
+<!--#endfor loopname="loopchoice" -->
+<tr>
+<td><b>Enter your choice:</b>
+<INPUT NAME="choicetopic" VALUE="<$TOP>" MAXLENGTH=256 SIZE=32>
+</td>
+</tr>
+</table>
+<!-- #endif variable="haschoice" -->
+
+<!-- #ifdef variable="haschoice" -->
+<table>
+<tr>
+<td><b>Select your choice:</b></td>
+<td>&nbsp;&nbsp;</td>
+<td><b><i>Current Votes</i></b></td>
+</tr>
+<!--#for loopname="loopchoice" loopvars="CHO,TOP,checked" -->
+<tr>
+<td>
+<INPUT type="Radio" NAME="choice" VALUE="<$CHO>" MAXLENGTH=256 SIZE=32 <$checked>><$TOP>
+<input type=hidden name="choicetopic" value="<$TOP>">
+</td>
+<td>&nbsp;&nbsp;</td>
+<td align=right><i><$CNT></i></td>
+</tr>
+<!--#endfor loopname="loopchoice" -->
+</table>
+<!-- #endif variable="haschoice" -->
+
+<p></p>
+<a name=submitbutton></a>
+
+<tr><td>
+<input type=submit name="submitvote" value="Post">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</td></tr>
+</table>
+
+</form>
+</body>
+</html>
+<!--#endif variable="elect" -->
+
+
+<!--#ifdef variable="elect" -->
+<html>
+<head>
+<title><$g_title> - Polling</title>
+<base target="_self"> 
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="submitvote">
+<input type=hidden name="ID" value="<$ID>">
+<input type=hidden name="PLC" value="<$PLC>">
+<input type=hidden name="TYP" value="<$TYP>">
+<input type=hidden name="oldchoice" value="<$oldchoiceval>">
+<input type=hidden name="PAR" value="<$PAR>">
+
+<center>
+<table>
+<tr><td>
+<table border=1 cellpadding=5>
+<tr> <td align=center><b><$TOP></b></td>
+</tr>
+<tr><td><b><$TXT></b>
+
+<br>
+<br>
+<SELECT NAME="choice">
+<!--#for loopname="loopchoice" loopvars="CHO,TOP,checked" -->
+<!-- #ifdef variable="checked" -->
+  <OPTION value="<$CHO>" SELECTED><$TOP> 
+<!-- #endif variable="checked" -->
+<!-- #ifndef variable="checked" -->
+  <OPTION value="<$CHO>"><$TOP>
+<!-- #endif variable="checked" -->
+<!--#endfor loopname="loopchoice" -->
+</SELECT>
+
+<br>
+<br>
+
+<input type=submit name="submitvote" value="Submit Vote">
+<br>
+<br>
+<center>
+<a href="vote<$g_exe>?ac=result&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>">
+Current Results</a>
+<br>
+<br>
+<a href="vote<$g_exe>?ac=listhdr&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&closed=1&TKT=<$TKT>">
+Previous Polls</a>
+</center>
+</td></tr>
+</table>
+</td>
+<!-- #ifdef variable="owneraccess" -->
+</tr><tr><td valign=top>
+<a href="vote<$g_exe>?ac=close&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>">
+Close Vote</a>
+</td>
+<!--#endif variable="owneraccess" -->
+</tr>
+</table>
+
+</form>
+</center>
+</body>
+</html>
+<!--#endif variable="elect" -->

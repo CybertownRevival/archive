@@ -1,0 +1,18 @@
+<SCRIPT LANGUAGE="JavaScript">  
+var banners = new Array(3);  
+  
+
+banners[0] = '<center><a href="http://www.vidnet.com" target="_blank"><img src="/places/movies/images/banners/backstreet.gif" alt="Welcome to the VDrome" height=60 width=468 border=0></center>';
+banners[1] = '<center><a href="http://www.vidnet.com" target="_blank"><img src="/places/movies/images/banners/britneysmaller.gif" alt="Welcome to the VDrome" height=60 width=468 border=0></center>';
+banners[2] = '<center><a href="http://www.vidnet.com" target="_blank"><img src="/places/movies/images/banners/nsync.gif" alt="Welcome to the VDrome" height=60 width=468 border=0></center>';
+
+function getrandom() {  
+var random = Math.floor((Math.random() * 3));  
+return random;  
+}  
+function showbanner() {  
+var bannernumber = getrandom();  
+document.write(banners[bannernumber]);  
+}  
+</SCRIPT>  
+  

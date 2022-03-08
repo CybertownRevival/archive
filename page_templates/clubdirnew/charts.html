@@ -1,0 +1,159 @@
+<!-- clubdir/charts -->
+<!--- display the charts of the clubs --->
+<html>
+<head>
+<title><$g_title> - Club Charts</title>
+</head>
+
+<script language="javascript">
+<!--
+
+function onApply()
+{
+  document.filterForm.FIRSTNO.value = "";
+  document.filterForm.LASTNO.value = "";
+  document.filterForm.submit();
+}
+
+//-->
+</script>
+
+<body <$g_body1>
+<$g_font1>
+
+<!-- #define variable="headerimage" value="clubdirinfo.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr <$g_bgcolor5>>
+  <td>
+    <a href="javascript:history.go(-1)"><img
+       src="<$g_HTMLRoot>/images/buttons/backbtn.gif" alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr>
+  <td>
+  <table border=0 align=center cellpadding=5 cellspacing=0 width=318 height=200>
+  <tr>
+    <td align=center><$g_font1>
+    <form name="filterForm" method="post" target="_self" action="<$selfurl>">
+
+      <input type="hidden" name="FIRSTNO" value="<$FIRSTNO>">
+      <input type="hidden" name="LASTNO" value="<$LASTNO>">
+      <input type="hidden" name="KFT" value="<$KFT>">
+      <input type="hidden" name="ac" value="<$ac>">
+      <input type="hidden" name="DTY" value="<$DTY>">
+      <input type="hidden" name="TPL" value="<$TPL>">
+
+      <input type="hidden" name="SID" value="<$SID>">
+
+      Charts Category:
+      <select name="KTY" onChange="onApply();">
+        <option value="CNT" <$KTY_CNT_SEL>>Member Count</option>
+        <option value="GRW" <$KTY_GRW_SEL>>New Member</option>
+      </select>
+      <!--#ifdef variable="KTY" value="GRW"-->
+      <br>&nbsp;
+        Number of new members since <$UDD_MONNAME> <$UDD_MDAy>, <$UDD_YEAR>
+      <!--#endif variable="KTY" -->
+    </form>
+    <!--#ifdef variable="[PREV]" -->
+      <!--#define variable="scroll" value="1" -->
+    <!--#endif variable="[PREV]" -->
+    <!--#ifdef variable="[NEXT]" -->
+      <!--#define variable="scroll" value="1" -->
+    <!--#endif variable="[NEXT]" -->
+
+    <!-- #ifdef variable="scroll" -->
+      <br>
+      <!--#ifdef variable="[PREV]" -->
+        <a href="<$g_cgiRoot>/club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$FIRSTNO>&prev=1<$g_SessionID>" target="_self">&lt;&lt;</a>
+      <!--#endif variable="[PREV]" -->
+      <!--#for loopname="RANGESLIST" loopvars="RANGE_" -->
+        <!--#ifdef variable="RANGE_CUR_" -->
+          <$RANGE_>
+        <!--#else variable="RANGE_CUR_" -->
+          <a href="<$g_cgiRoot>/club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$RANGE_FIRST_><$g_SessionID>" target="_self"><$RANGE_></a>
+        <!--#endif variable="RANGE_CUR_" -->
+        <!--#ifdef variable="RANGE_NL_" -->
+          <br>
+        <!--#endif variable="RANGE_NL_" -->
+      <!--#endfor loopname="RANGESLIST" -->
+      <!--#ifdef variable="[NEXT]" -->
+        <a href="<$g_cgiRoot>/club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$FIRSTNO>&next=1<$g_SessionID>" target=_self>&gt;&gt;</a>
+      <!--#endif variable="[NEXT]" -->
+      <br>
+    <!-- #endif variable="scroll" -->
+    </font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <table align="center" cellspacing="0" border=0 width="100%">
+    <tr>
+      <th <$g_bgcolor3> align="left"><$g_font1>No.</font></th>
+      <th <$g_bgcolor3> align="left"><$g_font1>Club Name</font></th>
+      <th <$g_bgcolor3> align="left"><$g_font1>Owner</font></th>
+      <th <$g_bgcolor3> align="left"><$g_font1>Activity</font></th>
+      <th <$g_bgcolor3> align="left"><$g_font1>Members</font></th>
+      <th <$g_bgcolor3> align="left"><$g_font1>New Members</font></th>
+    </tr>
+    <!--#for loopname="CLUBLIST" loopvars="ID_" -->
+      <tr>
+        <td align="left"><$g_font1><$BOLD_><$NUM_>.</td>
+        <td><$g_font1><$BOLD_>
+        <!-- #ifdef variable="isVisitor" -->
+          <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self"><$BOLD_><$NAM_></td>
+        <!-- #else variable="isVisitor" -->
+          <!--#ifdef variable="memberaccess_" -->
+           <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>"><$NAM_></a>
+          <!--#else variable="memberaccess_" -->
+            <!--#ifdef variable="waiting_" -->
+              <$NAM_>
+            <!--#else variable="waiting_" -->
+              <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_><$g_SessionID>" target="_self"><$NAM_></a>
+            <!--#endif variable="waiting_" -->
+          <!--#endif variable="memberaccess_" -->
+        <!-- #endif variable="isVisitor" -->
+        </td>
+        <td align="center"><$g_font1><$BOLD_><$OWN_NNM_></font></td>
+        <td align="right"><$g_font1><$BOLD_><$ACT_> %</font></td>
+        <td align="center"><$g_font1><$BOLD_><$CNT_></font></td>
+        <td align="center"><$g_font1><$BOLD_><$GRW_></font></td>
+      </tr>
+    <!--#endfor loopname="CLUBLIST" -->
+    </table>
+
+    <!--#ifdef variable="myClubs" -->
+      <br>
+      <table align="center" cellspacing=0 border=0 width="100%">
+      <tr colspan=6>
+        <td align="center" <$g_bgcolor3>><$g_font1><font size="2"><b>Your Clubs</b></font></td>
+      </tr>
+      </table>
+      <table width=100% align="center" cellspacing=0 border=0>
+      <!--#for loopname="OWNCLUBS" loopvars="ID_OWN_" -->
+       <tr >
+         <td width="7%"><$g_font1><$NUM_OWN_>.</font></td>
+         <td width="25%" align="left"><$g_font1>
+         <a href="<$g_cgiRoot>/print<$g_exe>?TPL=club/showinfo&ID=<$ID_OWN_><$g_SessionID>"target="_self"><$NAM_OWN_></a></font></td>
+         <td width="13%" align="right"><$g_font1><$OWN_NNM_OWN_></font></td>
+         <td width="15%" align="right"><$g_font1><$ACT_OWN_> %</font></td>
+         <td width="17%" align="center"><$g_font1><$CNT_OWN_></font></td>
+         <td width="20%" align="center"><$g_font1><$GRW_OWN_></font></td>
+       </tr>
+      <!--#endfor loopname="OWNCLUBS" -->
+      </table>
+    <!--#endif variable="myClubs" -->
+
+    </td>
+  </tr>
+  </table>
+  </td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

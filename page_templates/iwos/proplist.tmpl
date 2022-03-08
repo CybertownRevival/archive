@@ -1,0 +1,96 @@
+<HTML>
+<!-- iwos/proplist.tmpl -->
+<!-- list of the intel weboutfitter houses -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Homebuilder Houses</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+function selctionChanged()
+{ 
+  document.filterForm.submit();
+}
+
+//-->
+</script>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="#000000">
+<div align=center><img SRC="<$g_Images>/images/homebuilder/besthomerankingbanner.gif" border=0></div>
+<br><br>
+<table width="400" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><font color=FFFFFF size="2" face="Verdana, Arial, Helvetica, sans-serif">Welcome to the create a Homebuilder House Contest.<br> 
+We are looking for the best Homebuilder house in all of Cybertown.
+Below is a list of all Homebuilder houses in Cybertown.
+You can visit these houses and have a look at their design. 
+In each Homebuilder house, there's a button that tells you that
+you can give the house a rating.<br>
+      <br>
+      You can express your opinion about the house by choosing one of the 
+following ratings:<br>
+      <br>
+        &nbsp;&nbsp;&nbsp;* Needs improvement (0 Points) <br>
+        &nbsp;&nbsp;&nbsp;* OK (1 Point) <br>
+        &nbsp;&nbsp;&nbsp;* Cool (2 Points) <br>
+        &nbsp;&nbsp;&nbsp;* Very Cool (3 Points) <br>
+      <br>
+     The winner is the owner of the house that gets the best ratings.
+The prize is an ELSA Erazor stereo 3D graphics card and a pair of stereo 3D glasses.</font></td>
+  </tr>
+</table>
+<table align="center">
+<form method="post" target="_self" action="<$selfurl>" name="filterForm">
+
+  <input type="hidden" name="TKT"     value="<$TKT>">
+
+  <input type="hidden" name="ac"      value="proplist">
+	<input type="hidden" name="KFT"     value="<$KFT>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID"  value="<$LASTID>">
+
+  <FONT color= FFFFFF size=2 face='Verdana, Arial, Helvetica, sans-serif'>Select a Property from</font>
+  <select name="KFT" onChange="selctionChanged()">
+    <option value="">All Colonies</option>
+  	<!--#for loopname="COLLIST" loopvars="COL_ID_" --> 
+      <option value="<$COL_ID_>" <$COL_SEL_>><$COL_NAM_></option>
+	  <!--#endfor loopname="COLLIST" -->
+  </select>
+
+<TR>
+	<TD>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+    <!--#ifdef variable="[PREV]" -->
+      <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+    <!--#endif variable="[PREV]" -->
+    <!--#ifdef variable="[NEXT]" -->
+      <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+    <!--#endif variable="[NEXT]" -->
+	</TD>
+</TR>
+</FORM>
+</TABLE>
+
+<TABLE align="center" cellspacing="0" cellpadding="1" border="0">
+	<TR>
+	<FONT color= FFFFFF size=2 face='Verdana, Arial, Helvetica, sans-serif'><align="center"><b>
+		Select a house and rank it:<br><br>
+	</b></font>
+	</TR>
+	
+	<!--#for loopname="PROPLIST" loopvars="ID_" --> 
+		<TR>
+			<TD>
+			<a href="javascript:top.location.href='<$g_cgiRoot>/property?ID=<$ID_>'" target="top"><FONT color= FFCC00 size=2 face='Verdana, Arial, Helvetica, sans-serif'><align="center"><$NAM_></font></a>
+			</TD>
+
+		</TR>
+	
+	<!--#endfor loopname="PROPLIST" -->
+</TABLE>
+
+</BODY>
+</HTML>

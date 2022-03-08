@@ -1,0 +1,51 @@
+<!--place/place.tmpl-->
+<!-- display the place frame with chat for places -->
+<HTML>
+<HEAD>
+	<title><$g_title></title>
+	<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #ifdef variable="chatno" -->
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<div align=center>
+
+<p>
+<h3>Welcome to <$placename>!</h3>
+<a href="http://www.blaxxun.com" target="external"><IMG SRC="<$g_HTMLRoot>/ad/ad468.gif" ALIGN="center" BORDER="0"></a>
+<br>
+<small><b>If you need help - click HELP in the top menu!</b></small>
+</p>
+</div>
+</BODY>
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<div align=center>
+<br>
+<small><b>If you need help - click HELP in the top menu!
+</b></small>
+</div>
+<!-- #include virtual="<$g_Templates>amp/javachat.tmpl" -->
+</BODY>
+<!-- #endif variable="chatstd" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>amp/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+</HTML>

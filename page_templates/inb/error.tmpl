@@ -1,0 +1,78 @@
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Inbox</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="msberror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this inbox.
+<!-- #endif variable="msberror001" -->
+
+<!-- #ifdef variable="msberror002" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to configure this inbox.
+<!-- #endif variable="msberror002" -->
+
+<!-- #ifdef variable="msberror003" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to access this inbox.
+<!-- #endif variable="msberror003" -->
+
+<!-- #ifdef variable="msberror004" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to read the messages.
+<!-- #endif variable="msberror004" -->
+
+<!-- #ifdef variable="msberror005" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to delete messages from the inbox.
+<!-- #endif variable="msberror005" -->
+
+<!-- #ifdef variable="msberror006" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to destroy the inbox.
+<!-- #endif variable="msberror006" -->
+
+<!-- #ifdef variable="msberror007" -->
+Sorry <$NNM>,
+<P>
+The inbox you wanted to access does not exist anymore.
+Maybe its owner has deleted it.
+<!-- #endif variable="msberror007" -->
+
+<!-- #ifdef variable="msberror010" -->
+Sorry <$NNM>,
+<P>
+<$RTO> has no private home and therefore no inbox yet.
+<!-- #endif variable="msberror010" -->
+
+<!-- #ifdef variable="msberror011" -->
+Sorry <$NNM>,
+<P>
+reply is not possible, because the reply to nickname is not given.
+<!-- #endif variable="msberror011" -->
+
+<!-- #ifdef variable="msberror012" -->
+Sorry <$NNM>,
+<P>
+The inbox of <$RTO> does not exist.
+<!-- #endif variable="msberror012" -->
+
+</font>
+
+</body>
+</html>
+

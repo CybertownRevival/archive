@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- themepark/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="place<$g_exe>?plc=convention&ac=place&ID=000000000000001f">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?plc=convention&ac=place&ID=000000000000001f&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=convention&ac=place&ID=000000000000001f&force=p">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chataccess" -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+
+<!-- #ifdef variable="readaccess" -->
+
+<!-- #endif variable="readaccess" -->
+
+<br>
+<!-- #ifdef variable="writeaccess" -->
+
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

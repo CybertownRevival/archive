@@ -1,0 +1,132 @@
+	<html>
+	<head>
+	<title>blaxxun - Object</title>
+	<script language="javascript">
+	function doClose()
+	{
+  	if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    	alert("Please close the window by clicking on the X in the upper right corner.");
+	  else
+    	self.close();
+	}
+	var broughtone = 0	
+	function doBuy()
+	{
+	}
+	function Buyoneonly()
+	{
+
+	}
+	</script>
+	</head>
+	
+	<!-- object/display.tmpl -->
+	
+	<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+	
+	<div align=center>
+	<h2>House Properties</h2>
+	"<$U_HOM>BP3IP<$IC3>" "<$PRC>" "<$TMPM>"
+	<!-- #ifdef variable="updateok" -->
+  	<h2>Congratulations, the house <$NAM> is now yours!</h2>
+  	<!-- #endif variable="updateok" -->
+  	<!-- #ifndef variable="updateok" -->
+	<!-- #ifdef variable="CNT" value="00000000"-->
+		<h2>Sorry there are no more left.</h2>
+  	<!-- #endif variable="CNT" -->	
+	<!-- #ifndef variable="CNT" value="00000000"-->
+		<h2>Sorry you have insufficent funds.</h2>
+  	<!-- #endif variable="CNT" -->	
+  	<!-- #endif variable="updateok" -->
+
+	<table border=0>
+	
+	<tr>
+	<!-- #ifdef variable="IMG" -->
+  	<td><IMG SRC="<$IMG>"></td>
+	<!-- #endif variable="IMG" -->
+	<!-- #ifndef variable="IMG" -->
+	  <td></td>
+	<!-- #endif variable="IMG" -->
+	
+	<td rowspan=2>
+	<!-- #ifdef variable="CNT" value="00000000"-->
+	There are no more available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifdef variable="CNT" value="00000001"-->
+	There is 1 still available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifndef variable="intCNTprinted"-->
+	<!-- #ifdef variable="intCNT"-->
+	There are <$intCNT> still available.<br>
+	<!-- #endif variable="intCNT" -->
+	<!-- #endif variable="intCNTprinted" -->
+	
+	<!-- #ifdef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	One costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	<!-- #ifndef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	This house costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	
+	<br>
+  	You have <$M_MON> CCs at the moment.<br>
+	<br>
+
+	<!-- #ifdef variable="CRE" -->
+	This house was created by <$CRE_NNM>.<br>
+	<!-- #endif variable="CRE" -->
+	<$TXT>
+	<!-- #ifdef variable="WRL" -->
+	Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&CAT=<$CAT>&ID=<$ID>">here</a> for the 3D VRML representation.
+	<!-- #endif variable="WRL" -->
+	
+	</td>
+	</tr>
+	
+	<tr>
+	<td align=center><$NAM></td>
+	</tr>
+	
+	</table>
+
+	<!-- #ifdef variable="ALLATTR" -->
+  	<tr>
+	  <td>Object ID</td>
+  	<td><$ID></td>
+	  </tr>
+  	<tr>
+	  <td>Object Category</td>
+  	<td><$CAT></td>
+	  </tr>
+  	<tr>
+	  <td>Object Owner</td>
+  	<td><$OWN></td>
+	  </tr>
+	<!-- #endif variable="ALLATTR" -->
+
+	<p>
+	</table>
+	<table><tr>
+	
+	
+	<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+	</tr></table>
+	
+	</p>
+	</div>
+	<!-- #ifdef variable="IWOS_TXT" -->
+  	<p><$IWOS_TXT></p>
+	<!-- #endif variable="IWOS_TXT" -->
+	
+	<script language=javascript>
+	focus();
+	</script>
+	</body>
+	</html>

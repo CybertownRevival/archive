@@ -1,0 +1,23 @@
+<!-- object/deshomes/reject2 -->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+</body>
+<form name="bform" action="/cgi-bin/cybertown/msb" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>"> 
+<input type="hidden" name="ac" value="write">
+<input type="hidden" name="DTY" value="P">
+<input type="hidden" name="KTY" value="ID">
+<input type="hidden" name="KEY" value="<$CRE_HOM>">
+<input type="hidden" name="MTY" value="i">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="sub" value="<$SUB>">
+<input type="hidden" name="txt" value="<$MSG>">
+<input type="hidden" name="TPL" value="object/deshomes/reject3">
+</form>
+<script language=javascript>
+document.bform.submit();
+</script>
+
+</html>

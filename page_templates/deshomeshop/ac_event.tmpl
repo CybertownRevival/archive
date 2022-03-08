@@ -1,0 +1,23 @@
+<a href="javascript:loadInfo('place<$g_exe>?plc=deshomes&ac=info&ID=0000000000000044')" target="_self">  
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>  
+<!-- #ifdef variable="readaccess" -->   
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000044&MTY=i')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>  
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000044&MTY=m')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>  
+<!-- #endif variable="readaccess" -->  
+  
+<!-- #if variable="ID" == value="00000000000044fe" -->
+<!-- #ifdef variable="owneraccess" -->
+<br> 
+UPLOAD STATUS: <font color="#00FF00"><$HUPL_STATUS></font><br>
+<a href="javascript:loadCustom('print60<$g_exe>?TPL=deshomes/admin/deshomesadmin',850,550)" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/bedit.gif" BORDER=0 ALT="Edit Settings"></a><br>  
+<a href="object<$g_exe>?ac=list&ZON=p00000000000044ef&actions=1&TPL=object/deshomes/list" target="_blankie">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check"></a><br>
+<a href="javascript:loadCustom('print?DTY=O&ID=0000000000000044&TPL=fundbox/phase0',612,490)" target=_self>
+<IMG SRC="http://ivnwww.cybertown.com/images/buttons/bfundbox.gif" BORDER=0 ALT="Fund Box"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+

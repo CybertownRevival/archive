@@ -1,0 +1,17 @@
+<!-- #define variable="COLID" substring="<$ID>,0,4" -->
+<!-- #define variable="COLNEIGHID" substring="<$ID>,0,8" -->
+
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>neighbor/wizard/hitek_present.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifndef variable="COLID" value="0110" --> 
+
+<!-- #ifdef variable="COLNEIGHID" value="01020503" --> 
+<!-- #include virtual="<$g_Templates>neighbor/wizard/hitek_present.tmpl" --> 
+<!-- #endif variable="COLNEIGHID" -->
+
+<!-- #ifndef variable="COLNEIGHID" value="01020503" --> 
+<!-- #include virtual="<$g_Templates>neighbor/wizard/standard_present.tmpl" --> 
+<!-- #endif variable="COLNEIGHID" -->
+<!-- #endif variable="COLID" -->

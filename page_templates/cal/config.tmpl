@@ -1,0 +1,74 @@
+<html>
+<head>
+<title><$g_title> - Calendar</title>
+</head>
+
+<!-- cal/config.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Calendar - Configuration</h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="ac"  value="setconf">
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+
+<table border=0>
+<tr>
+<td>The name of the calendar:</td>
+</tr>
+<tr>
+<td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=60></td>
+</tr>
+<tr>
+<td>The background image of the calendar:</td>
+</tr>
+<tr>
+<td><INPUT NAME="URL" VALUE="<$URL>" MAXLENGTH=128 SIZE=60></td>
+</tr>
+<tr>
+<td>The introduction text of the calendar</td>
+</tr>
+</table>
+<TEXTAREA NAME="TXT" ROWS=15 COLS=60><$TXT></TEXTAREA>
+<P>
+The introduction text you specified above can contain HTML tags,
+like &lt;FONT> etc,
+<br>
+please make sure you do not create any
+syntax errors.
+<br>
+It is <U>YOUR calendar <$NNM></U>.
+<P>
+<P>
+Should posting of HTML tags be allowed in events on the calendar?
+<SELECT  name = "HTM">
+<OPTION <$htmnoselected> value = "no">no&nbsp;
+<OPTION <$htmyesselected> value = "yes">yes&nbsp;
+</SELECT>
+<p>
+
+</p>
+</form>
+
+<!-- #ifdef variable="calmsg001" -->
+The values have been set.
+<!-- #endif variable="calmsg001" -->
+
+<font color="red">
+
+<!-- #ifdef variable="calseterror001" -->
+Sorry <$NNM>, the lengths of the values you wanted to set are too big.
+<!-- #endif variable="calseterror001" -->
+</font>
+
+</body>
+</html>
+

@@ -1,0 +1,270 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script>
+
+
+
+function set_bannerc1(){
+ for(i=0; i < document.banner_form.choicec1.length; i++){
+  if(document.banner_form.choicec1[i].checked){ banner = document.banner_form.choicec1[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc1.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0101000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc2(){
+ for(i=0; i < document.banner_form.choicec2.length; i++){
+  if(document.banner_form.choicec2[i].checked){ banner = document.banner_form.choicec2[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc2.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0102000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc3(){
+ for(i=0; i < document.banner_form.choicec3.length; i++){
+  if(document.banner_form.choicec3[i].checked){ banner = document.banner_form.choicec3[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc3.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0103000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc4(){
+ for(i=0; i < document.banner_form.choicec4.length; i++){
+  if(document.banner_form.choicec4[i].checked){ banner = document.banner_form.choicec4[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc4.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0104000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc5(){
+ for(i=0; i < document.banner_form.choicec5.length; i++){
+  if(document.banner_form.choicec5[i].checked){ banner = document.banner_form.choicec5[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc5.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0105000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc6(){
+ for(i=0; i < document.banner_form.choicec6.length; i++){
+  if(document.banner_form.choicec6[i].checked){ banner = document.banner_form.choicec6[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc6.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0106000000000000";
+ document.banner_form.submit();
+}
+
+
+
+function set_bannerc7(){
+ for(i=0; i < document.banner_form.choicec7.length; i++){
+  if(document.banner_form.choicec7[i].checked){ banner = document.banner_form.choicec7[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc7.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0107000000000000";
+ document.banner_form.submit();
+}
+
+function set_bannerc8(){
+ for(i=0; i < document.banner_form.choicec8.length; i++){
+  if(document.banner_form.choicec8[i].checked){ banner = document.banner_form.choicec8[i].value; }
+ }
+ if(banner == "Custom"){document.banner_form.BANNER.value = document.banner_form.customc8.value;}
+ else{document.banner_form.BANNER.value = banner;}
+ document.banner_form.ID.value = "0108000000000000";
+ document.banner_form.submit();
+}
+
+
+</script>
+</head>
+
+
+<body bgcolor="#000000" text="#00FF00" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<div align="center">
+  <p><font face="Arial, Helvetica, sans-serif"><b><font color="#FF0000">Banner 
+    Administration</font></b></font></p>
+
+
+
+  <p align="left"><br>
+    <b>TABLE OF CONTENTS:</b></p>
+  <p align="left"><a href="/cgi-bin/cybertown/edit?tpl=banners/banner_control">MAIN 
+    PLACES</a><br>
+    COLONIES <br>
+    <a href="/cgi-bin/cybertown/edit?tpl=banners/banner_control">PUBLIC 
+    PLACES A-M</a><br>
+    <a href="/cgi-bin/cybertown/edit?tpl=banners/banner_control2">PUBLIC 
+    PLACES N-Z</a><br>
+    <br>
+  </p>
+  <FORM METHOD="POST" ACTION="/cgi-bin/cybertown/edit" NAME="banner_form">
+    <p>
+      <input type="hidden" name="ID" value="">
+      <input type="hidden" name="BANNER" value="">
+      <input type="hidden" name="tpl" value="banners/banner_update3">
+    </p>
+    <p>COLONIES<br>
+    </p>
+    <table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tr> 
+        <td width="22%"><a name="colonies"></a>COLONIES</td>
+        <td width="78%">BANNER TYPE</td>
+      </tr>
+    </table>
+    <table width="80%" border="0" cellspacing="0" cellpadding="0">
+      <tr> 
+        <td colspan="2" rowspan="2"> 
+          <div align="left"></div>
+          <div align="left"></div>
+          <hr>
+        </td>
+      </tr>
+      <tr> </tr>
+      <tr> 
+        <td width="18%" height="20">&nbsp;</td>
+        <td width="67%" height="20">&nbsp;</td>
+        <td width="15%" height="20">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="18%">Entertainment</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec4" value="L90">
+          L90 
+          <input type="radio"     name="choicec4" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec4" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc4" value="<$T_BANNERc4>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc4" value="UPDATE" onClick="set_bannerc4();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Cyberhood</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec8" value="L90">
+          L90 
+          <input type="radio"     name="choicec8" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec8" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc8" value="<$T_BANNERc8>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc8" value="UPDATE" onClick="set_bannerc8();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Games</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec1" value="L90">
+          L90 
+          <input type="radio"     name="choicec1" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec1" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc1" value="<$T_BANNERc1>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc1" value="UPDATE" onClick="set_bannerc1();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Inner Realms</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec5" value="L90">
+          L90 
+          <input type="radio"     name="choicec5" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec5" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc5" value="<$T_BANNERc5>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc5" value="UPDATE" onClick="set_bannerc5();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Mothership</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec7" value="L90">
+          L90 
+          <input type="radio"     name="choicec7" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec7" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc7" value="<$T_BANNERc7>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc7" value="UPDATE" onClick="set_bannerc7();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Sci-Fi</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec2" value="L90">
+          L90 
+          <input type="radio"     name="choicec2" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec2" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc2" value="<$T_BANNERc2>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc2" value="UPDATE" onClick="set_bannerc2();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Teens</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec6" value="L90">
+          L90 
+          <input type="radio"     name="choicec6" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec6" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc6" value="<$T_BANNERc6>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc6" value="UPDATE" onClick="set_bannerc6();">
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">Virtual Worlds</td>
+        <td width="67%"> 
+          <input type="radio"     name="choicec3" value="L90">
+          L90 
+          <input type="radio"     name="choicec3" value="Internal">
+          Internal 
+          <input type="radio"     name="choicec3" value="Custom" CHECKED>
+          Custom Value 
+          <input type="textfield" name="customc3" value="<$T_BANNERc3>">
+        </td>
+        <td width="15%"> 
+          <input type="button" name="sc3" value="UPDATE" onClick="set_bannerc3();">
+        </td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </form>
+
+</div>
+</body></html>
+

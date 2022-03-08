@@ -1,0 +1,82 @@
+<!-- msg/messages.tmpl -->
+<!--- display messaging status --->
+<!--- plat6 messaging imported Simioni May 2003 --->
+
+<html>
+<head> 
+<title> <$g_title> </title> 
+
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+<!-- #define variable="T_LB" value="inbox" -->
+</head>
+
+<body class=info onload="">
+
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<p class=head2>
+</p>
+
+<!-- #define variable="escapetxt" escape="<$TXT>" -->
+
+<center>
+<IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>
+
+<p><font face="Arial" size=3 color="#00ff00">
+<B><$MEM_NNM>'s Messaging Center</B>
+
+<p>
+
+<a href="javascript:msgGoto('inbox')" target="">
+<img src="/images/buttons60/btnopt_inbox.gif" alt="My Message Inbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('outbox')" target="">
+<img src="/images/buttons60/btnopt_outbox.gif" alt="My Message Outbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('alert')" target="">
+<img src="/images/buttons60/btnopt_alerts.gif" alt="My Alerts" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send')" target="">
+<img src="/images/buttons60/btnopt_sendmessage.gif" alt="Send New Message" border="0" vspace=1 hspace=1></a>
+
+<br>
+
+<a href="javascript:msgGoto('send','Broadcast Group','','Broadcast')" target="">
+<img src="/images/buttons60/btnopt_broadcast.gif" alt="Send Broadcast Message" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send','Security Group','','Security')" target="">
+<img src="/images/buttons60/btnopt_securityalert.gif" alt="Send Security Alert" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('buddylist')" target="">
+<img src="/images/buttons60/btnopt_buddylist.gif" alt="My Buddylist" border="0" vspace=1 hspace=1></a>
+
+<p>
+<table border=0>
+
+<tr>
+<td class=tdbg><p class=tdfont>Maximum message storage</p></td>
+<td align=right class=tdbg><p class=tdfont><$g_msMaxMessagesPerUser></p></td>
+</tr>
+
+<tr>
+<td class=tdbg><p class=tdfont>Message storage currently in use</p></td>
+<td align=right class=tdbg><p class=tdfont><$MAXITER></p></td>
+</tr>
+
+<tr>
+<td class=thbg><p class=thfont><b>Free messages left</b></p></td>
+<td align=right class=thbg><p class=thfont><b><script language="JavaScript"> document.write(msgStatusCount('<$g_msMaxMessagesPerUser>','<$MAXITER>')); </script></b></p></td>
+</tr>
+
+</table>
+
+<p class=error>
+<br><script language="JavaScript"> document.write(msgStatusText('<$g_msMaxMessagesPerUser>','<$MAXITER>')); </script>
+</p>
+
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+</body>
+</html>

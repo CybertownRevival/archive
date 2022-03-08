@@ -1,0 +1,83 @@
+<!-- admin/clubmems.tmpl -->
+<!-- list club members -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>Club Members defined in Database</font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+        <tr>
+            <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+            <!--#ifdef variable="[PREV]" -->
+                <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifndef variable="[PREV]" -->
+                <td>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<table border=1>
+    <tr>
+        <th><font color=#80ff00>ID</th>
+        <th><font color=#80ff00>Name</th>
+        <th><font color=#80ff00>Last Vist</th>
+        <th><font color=#80ff00>Status</th>
+    </tr>
+    <!--#for loopname="object" loopvars="ID_" -->
+        <tr>
+            <td><$ID_></td>
+            <td>&nbsp;
+                <!--#ifdef variable="ID_NNM_" -->
+                    <$ID_NNM_>
+                <!--#endif variable="ID_NNM_" -->
+            </td>
+            <td>&nbsp;
+                <!--#ifdef variable="LVD_YEAR_" -->
+                    <$LVD_MDAY_>.<$LVD_MON_>.<$LVD_YEAR_>&nbsp;<$LVD_HOUR_>:<$LVD_MIN_>:<$LVD_SEC_>
+                <!--#endif variable="LVD_YEAR_" -->
+            </td>
+            <td align=center>&nbsp;
+                <!--#ifdef variable="STT_" value="1" -->
+                    <A HREF="club<$g_exe>?ac=leave&clubid=<$ID_2ID_0>&memid=<$ID_>&TKT=<$TKT>">Exclude</A>
+                <!--#endif variable="STT_" -->
+                <!--#ifdef variable="STT_" value="0" -->
+                    <A HREF="club<$g_exe>?ac=leave&clubid=<$ID_2ID_0>&memid=<$ID_>&TKT=<$TKT>">Exclude</A>&nbsp;&nbsp;
+                    <A HREF="club<$g_exe>?ac=invite&clubid=<$ID_2ID_0>&memid=<$ID_>&TKT=<$TKT>">Invite</A>
+                <!--#endif variable="STT_" -->
+            </td>
+        </tr>
+    <!--#endfor loopname="object" -->
+</table>
+
+</body>
+</html>
+

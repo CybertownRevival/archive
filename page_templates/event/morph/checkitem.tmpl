@@ -1,0 +1,118 @@
+<!-- event/morph/checkitem.tmpl -->
+<!-- check event item -->
+<html>
+<head>
+  <title><$g_title> - <$EVENTNAM></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Cache-Policy" content="no-cache no-share">
+  <meta http-equiv="Pragma" content="no-cache">
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#33FF33" vlink="#33FF33">
+<!-- include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align="center"><font color="#00FF00">CYBERTOWN - '<$EVENTNAM>'</font></h2>
+
+<p align=center><font color=red>
+<!--#ifdef variable="errexist"-->
+Sorry - the '<$EVENTITEMNAM>' does not exist. 
+<!--#endif variable="errexist" -->
+</font></p>
+
+<!-- #ifdef variable="isVisitor" -->
+<!-- ********************************
+     Visitor
+     ******************************** -->
+<!-- #include virtual="<$g_Templates>event/morph/visitor.tmpl" -->
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="isMember" -->
+<!-- ********************************
+     Cybertown Member
+     ******************************** -->
+
+<!-- #ifndef variable="EVENTMEMBERID" value="" -->
+<!-- ********************************
+     Morph Hunter: already registered!
+     ******************************** -->
+
+<!-- ********************************
+     CHECK:
+      1. EVENTITEMID: event item is defined and 
+      2. STT: NOT locked and 
+      3. EVENTMEMBERITEMID: NOT YET found by the member and 
+      4. CNT: counter > 0 (still available) and
+      5. errtypecounter: not yet found too many items of one type
+     ******************************** -->
+<!-- #ifndef variable="EVENTITEMID" value="" -->
+
+<!-- #ifdef variable="STT" value="" -->
+
+<!-- #ifdef variable="EVENTMEMBERITEMID" value="" -->
+
+<!-- #ifndef variable="CNT" value="0" -->
+<!-- #include virtual="<$g_Templates>event/morph/countok.tmpl" -->
+<!-- #endif variable="CNT" -->
+
+<!-- #ifndef variable="errcounter" -->
+<!-- #endif variable="errcounter" -->
+
+<!-- #ifdef variable="CNT" value="0" -->
+<h3 align="center">SORRY, <$NNM> ...</font></h3>
+
+<!-- #include virtual="<$g_Templates>event/morph/count.tmpl" -->
+<!-- #endif variable="CNT" -->
+
+<!-- #endif variable="EVENTMEMBERITEMID" -->
+
+<!-- #ifndef variable="EVENTMEMBERITEMID" value="" -->
+<!-- ********************************
+     Event item already FOUND by the member!
+     ******************************** -->
+<h3 align="center">SORRY, <$NNM> ...</font></h3>
+
+<!-- #include virtual="<$g_Templates>event/morph/foundbefore.tmpl" -->
+<!-- #endif variable="EVENTMEMBERITEMID" -->
+
+<!-- #endif variable="STT" -->
+
+<!-- #ifdef variable="STT" value="l" -->
+<!-- ********************************
+     Event item is defined, BUT locked!
+     ******************************** -->
+<!-- #include virtual="<$g_Templates>event/morph/locked.tmpl" -->
+<h3 align="center">SORRY, <$NNM> ...</font></h3>
+<p align="center">
+<font color=#ffff00>... it's not available right now, either you are too early or too late!</font>
+</p>
+<!-- #endif variable="STT" -->
+
+<!-- #include virtual="<$g_Templates>event/morph/headquarter.tmpl" -->
+<!-- #endif variable="EVENTITEMID" -->
+<!-- ******************************** -->
+
+<!-- #ifdef variable="EVENTITEMID" value="" -->
+<h3 align="center">SORRY, <$NNM> ...</font></h3>
+
+<p align="center"><font color=#ffff00>... you have found something, but it's <b>not interesting</b> for you.<br>
+But don't give up, be patient and continue to look around!</font>
+</p>
+
+<!-- #include virtual="<$g_Templates>event/morph/headquarter.tmpl" -->
+<!-- #endif variable="EVENTITEMID" -->
+
+<!-- #endif variable="EVENTMEMBERID" -->
+<!-- ******************************** -->
+
+<!-- #ifdef variable="EVENTMEMBERID" value="" -->
+<!-- ********************************
+     Morph Hunt Alert: NOT yet registered!
+     ******************************** -->
+<!-- #include virtual="<$g_Templates>event/morph/alert_page.tmpl" -->
+<!-- #endif variable="EVENTMEMBERID" -->
+
+<!-- #endif variable="isMember" -->
+
+</body>
+</html>
+

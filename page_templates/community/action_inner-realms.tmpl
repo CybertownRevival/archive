@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- community/action_inner-realms.tmpl ### -->
+<base target="_top">
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language="JavaScript">
+
+function moderate() {
+window.open('place<$g_exe>?ac=moderate&ID=<$ID>&DTY=C&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+}
+
+</script>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="##D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()"  BGCOLOR="#000000" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<!-- #include virtual="<$g_Templates>property/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+
+
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/chatselect.gif" BORDER=0 USEMAP="#chatselect" ALT="2D and 3D Chat">
+
+<br>
+<!-- #endif variable="chataccess" -->
+
+<!-- #include virtual="<$g_Templates>inrlms_col/control.tmpl" -->
+
+<p><a href="javascript:loadInfo('community<$g_exe>?ac=info&ID=<$ID>')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<!-- #ifdef variable="readaccess" -->
+
+<!--#if variable="LNK" != value="" --> 
+<!-- #ifdef variable="LNK" -->
+<a href="<$LNK>" target=place>
+<!-- #ifdef variable="LNN" -->
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bportal.gif" BORDER=0 ALT="<$LNN>"></a><br>
+<!-- #endif variable="LNN" -->
+<!-- #ifndef variable="LNN" -->
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bportal.gif" BORDER=0 ALT="Portal"></a><br>
+<!-- #endif variable="LNN" -->
+<!-- #endif variable="LNK" -->
+<!-- #endif variable="LNK" -->
+
+<a href="javascript:loadInfo('<$g_HTMLRoot>/home/<$ID>/find.html')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bfindhome.gif" BORDER=0 ALT="Find your free home!"></a><br>
+<!-- begin hiding
+<a href="javascript:loadInfo('<$g_HTMLRoot>/home/<$ID>/stats.html')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bstats.gif" BORDER=0 ALT="Statistics"></a><br>
+-->
+
+<a href="javascript:loadInfo('http://www.facebook.com/pages/Cybertown/333813117128')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/blinks.gif" BORDER=0 ALT="Statistics"></a><br>
+
+
+
+<a href="javascript:loadCustom('print?DTY=C&ID=<$ID>&TPL=fundbox/phase7',612,490)" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bdonate.gif" BORDER=0 ALT="Donate CityCash"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=C&KTY=ID&KEY=<$ID>&MTY=i')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=C&KTY=ID&KEY=<$ID>&MTY=m')" target=_self >
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+
+<br>
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="javascript:moderate()" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate Chat"></a>
+
+<a href="msb<$g_exe>?ac=writegroup&DTY=C&KTY=ID&KEY=<$ID>&MTY=m&program=community" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+
+<a href="print60<$g_exe>?DTY=C&KEY=<$ID>&TPL=inb/writetoall" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bgroupinbo.jpg" BORDER=0 ALT="Group Inbox"></a><br>
+
+
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=community/updateinfo&backurl=edit" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+
+<a href="javascript:loadCustom('print?DTY=C&ID=<$ID>&TPL=fundbox/phase0',612,490)" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bfundbox.gif" BORDER=0 ALT="Fund Box"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=C&KTY=ID&KEY=<$ID>&PLC=community&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>inrlms_col/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

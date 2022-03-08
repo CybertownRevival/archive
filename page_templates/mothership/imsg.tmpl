@@ -1,0 +1,116 @@
+<script language=javascript>
+pluginUpdate = 1;
+timerid = setTimeout( 'init()', 1000 );
+cityTime = new Date();
+
+if (eval(top.frames.length) != 2)
+{
+var JSframe = top.frames;
+}
+else
+{
+var JSframe = eval(top.mothership);
+}
+
+
+
+<!-- #ifdef variable="CT_HOUR" -->
+cityTime.setHours(<$CT_HOUR>);
+cityTime.setMinutes (<$CT_MIn>);
+cityTime.setSeconds (<$CT_SEc>);
+<!-- #endif variable="CT_HOUR" -->
+<!-- #ifndef variable="CT_HOUR" -->
+cityTime.setHours(cityTime.getHours+cityTime.getTimezoneOffset()<$g_TimeZone>);
+<!-- #endif variable="CT_HOUR" -->
+cityTimeOffset = cityTime.getTime() - (new Date()).getTime();
+function init()
+{
+    // we need to call the server otherwise the cookie is not set if an http proxy is used
+    if ( JSframe.refresh )
+    {
+
+        timerid = setTimeout( 'refreshTimer()', 1000 );
+    }
+    else
+    {
+        timerid = setTimeout( 'init()', 1000 );
+    }
+
+}
+function printDate(timeString,count,time)
+{
+
+    if ( count > 1 )
+        text = "Citizens Online";
+    else if ( count == 1 )
+        text = "Citizen Online";
+    else if ( count == -1 )
+        text = "Citizens Online";
+<!-- #if variable="NNM" != value="Visitor" -->
+    text = "<A HREF='javascript:parent.list(\"<$g_cgiRoot>/message<$g_exe>?TPL=message/list&ac=list&TIME="+time+"\")'>" + text + "</A>"
+<!-- #endif variable="NNM" -->
+    if ( JSframe.date )
+    {
+    
+    
+        JSframe.date.document.open("text/html");
+
+        JSframe.date.document.writeln("<HTML><HEAD>");
+
+        JSframe.date.document.writeln("</HEAD>");
+        JSframe.date.document.writeln("<BODY BGCOLOR=#000000 LINK=#E6E6E6 VLINK=#E6E6E6 ALINK=#FFFFFF TEXT=#E6E6E6>");
+
+        
+        JSframe.date.document.writeln("<TABLE WIDTH=156 CELLSPACING=0 CELLPADDING=0 BORDER=0>");
+        JSframe.date.document.writeln("<TR><TD BGCOLOR=#000000><A HREF=\"javascript:confirmLink('http://www.mothership.com')\" target=\"action\"><IMG SRC=\"http://www.cybertown.com/places/mothership/images/action/mothershipcornerlogo.gif\" WIDTH=\"156\" HEIGHT=\"75\" BORDER=\"0\"></A></TD></TR>");
+        JSframe.date.document.writeln("<TR><TD ALIGN=\"CENTER\" BGCOLOR=\"#003040\">");
+        JSframe.date.document.writeln("<A HREF=\"http://www.cybertown.com\" target=\"_top\"><IMG SRC=\"http://www.cybertown.com/places/mothership/images/action/cybertownlogo.gif\" WIDTH=\"156\" HEIGHT=\"20\" BORDER=\"0\"></A><BR>");
+        JSframe.date.document.writeln("<IMG SRC=\"http://www.cybertown.com/places/mothership/images/action/X.gif\" HEIGHT=\"7\" BORDER=\"0\"><BR>");
+        JSframe.date.document.writeln("<FONT SIZE=\"1\" FACE=\"arial,sans-serif\">");
+        JSframe.date.document.writeln("City Time " + timeString + text);
+        JSframe.date.document.writeln("<BR><IMG SRC=\"http://www.cybertown.com/places/mothership/images/action/X.gif\" HEIGHT=\"7\" BORDER=\"0\"><BR>");
+        JSframe.date.document.writeln("</FONT></TD></TR>");
+        JSframe.date.document.writeln("</TABLE>");
+        JSframe.date.document.writeln("</body></html>");
+        JSframe.date.document.close();
+    }
+}
+function refreshTimer()
+{
+    if ( place.World==null && place.document.applets.length==0 ) // no plugin active
+    {
+        if ( JSframe.refresh )
+        {
+            JSframe.refresh.location.href = "<$g_cgiRoot>/message<$g_exe>?TPL=message/refresh&ac=check";
+        }
+    }
+    else 
+    {
+        now = new Date();
+        cityTime.setTime(now.getTime()+cityTimeOffset);
+        ampm = " AM";
+        if (cityTime.getHours() >= 12) { ampm = " PM"; }
+        hour = cityTime.getHours();
+        if (hour > 12) { hour -= 12; }
+        timeString = hour + ":";
+        if (cityTime.getMinutes() < 10) { timeString += "0"; }
+        timeString += cityTime.getMinutes() + ampm + "<BR>";
+        printDate( timeString, -1, cityTime.getTime() );
+    }
+    timerid = setTimeout( 'refreshTimer()', <$g_MsRefresh>*1000 );
+}
+function update(timeString,count,time)
+{
+    printDate(timeString,count,time);
+}
+listWin = 0;
+function list(url)
+{
+  listWin = window.open(url, "list", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=200,height=450");
+}
+receiveWin = 0;
+function messageReceived()
+{
+  receiveWin = window.open("<$g_cgiRoot>/message<$g_exe>?TPL=message/receive&ac=getmessage&<$CT_STR>", "receive", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250");
+}
+</script>

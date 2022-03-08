@@ -1,0 +1,42 @@
+<!-- msboard/toall3.html -->
+<!-- list all Announcements threads of the club directory and reply to each -->
+<html>
+<head>
+<title>Club sending messages</title>
+
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font1>
+
+<!-- #define variable="headerimage" value="headmessageboard.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+  <td>&nbsp;
+    <!-- #ifdef variable="owneraccess" -->
+      <!-- #if variable="TXT" != value="" -->
+        <!--#for loopname="list" loopvars="ID_" -->
+          <!-- #if variable="PID" != variable="ID" -->
+            <!-- #include script="msb<$g_exe>?ac=create&ID=<$ID_>&TPL=msb/blank&SUB=<$SUB>&TXT=<$TXT>&TKT=<$TKT><$g_SessionID>" -->
+          <!-- #endif variable="PID" -->
+        <!--#endfor loopname="list" -->
+      <$g_font1>Messages sent.
+      <!-- #endif variable="TXT" -->
+    <!-- #else variable="owneraccess" -->
+      <$g_errorfont>
+      Sorry, you are not the owner of this <$type>.
+    <!-- #endif variable="owneraccess" -->
+  </td>
+</tr>
+<tr>
+  <td <$g_bgcolor5> >&nbsp;</td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>
+

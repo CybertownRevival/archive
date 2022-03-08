@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>upload</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+destName = "floor";
+
+viewpoints = new Array(
+  "KameraRaum1",
+  "KameraRaum2",
+  "KameraRaum3",
+  "KameraRaum4" );
+
+
+function sendEvent( field, value )
+{
+  parent.World.document.CC3D.setNodeEventIn( 'House', field, value );
+}
+
+function submitForm()
+{
+  setTexture( 'floor' );
+  setTexture( 'wall' );
+  setTexture( 'window' )
+  document.updateForm.submit();
+}
+
+function setTexture( destination )
+{
+  if( destination=='floor' )
+    textValue = document.updateForm.FLOOR.value;
+  else if( destination=='wall' )
+    textValue = document.updateForm.WALL.value;
+  else if( destination=='window' )
+    textValue = document.updateForm.WINDOW.value;
+
+  sendEvent( destination+(<$room>+1)+'Choice', 0 );
+  sendEvent( destination+(<$room>+1)+'Texture', textValue );
+
+}
+
+function onLoad()
+{
+  <!-- #ifndef variable="updateok" -->
+    <!-- #ifdef variable="room" -->
+       parent.World.document.CC3D.setNodeEventIn( viewpoints[<$room>], "set_bind", "TRUE" );
+    <!-- #endif variable="room" -->
+  <!-- #endif variable="updateok" -->
+
+  <!-- #ifdef variable="updateok" -->
+    document.location.href='<$g_cgiRoot>/property<$g_exe>?ID=<$ID>&ac=3D&IE=x.bxx';
+  <!-- #endif variable="updateok" -->
+}
+
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF" onLoad="onLoad()">
+<!-- #endif variable="CLB" --> <!-- #ifdef variable="CLB" --> <!-- #endif variable="CLB" --> 
+<FONT face="Arial, Helvetica, sans-serif" size=-1> <!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" --> 
+<center>
+
+<form method="post" name="updateForm" action="<$g_cgiRoot>/iwos<$g_exe>" enctype="multipart/form-data">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="TPL" value="<$TPL>">
+
+  <input type="hidden" name="ac" value="uploadtext">
+
+  <input type="hidden" name="room" value="<$room>">
+ 
+<br>
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+      <td align="left" valign="top">
+        <img src="<$g_Images>/images/homebuilder/iwos.gif" width="144" height="25" border="0" alt="iwos">
+      </td>
+      <td colspan="2"> 
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" width="40%">
+                <!-- #if variable="room" == value="0"-->
+                  <b>Room No 1</b>
+                <!-- #endif variable="room" -->
+                <!-- #if variable="room" == value="1"-->
+                  <b>Room No 2</b>
+                <!-- #endif variable="room" -->
+                <!-- #if variable="room" == value="2"-->
+                  <b>Room No 3</b>
+                <!-- #endif variable="room" -->
+                <!-- #if variable="room" == value="3"-->
+                  <b>Room No 4</b>
+                <!-- #endif variable="room" -->
+            </td>
+            <td align="right">
+              <img name="personalhomebuilder" src="<$g_Images>/images/homebuilder/personalhomebuilder.gif" border="0" alt="personal home builder">
+              <a href="javascript:loadInfo('/help/homebuilder/homebuilderhelp.html')" target="_self"><img name="Help" src="<$g_Images>/images/homebuilder/hbhelp.gif" border="0" alt="help"></a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="center">floors &amp; ceilings texture</td>
+      <td>
+        <input type="file" name="FLOOR" value="" maxlength="64" size=16>
+      </td>
+      <td>
+        <a href="javascript:setTexture( 'floor' )">
+        <img src="<$g_Images>/images/homebuilder/preview.gif" border=0 alt="preview"></a>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="center">walls texture</td>
+      <td>
+        <input type="file" name="WALL" value="" maxlength="64" size=16>
+      </td>
+      <td> 
+        <a href="javascript:setTexture( 'wall' )">
+        <img src="<$g_Images>/images/homebuilder/preview.gif" border=0 alt="preview"></a> 
+      </td>
+    </tr>
+    <tr>
+      <td align="left" valign="center">doors &amp; windows texture</td>
+      <td>
+        <input type="file" name="WINDOW" value="" maxlength="64" size=16>
+      </td>
+      <td> 
+        <a href="javascript:setTexture( 'window' )">
+        <img src="<$g_Images>/images/homebuilder/preview.gif" border=0 alt="preview"></a> 
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center" valign="bottom">
+        <a href="javascript:submitForm()"><img src="<$g_Images>/images/homebuilder/uploadmytextures.gif" border=0 alt="update all"></a>
+        <a href="<$g_cgiRoot>/edit<$g_exe>?KEY=<$ID>&TPL=property/iwosupdate&room=<$room>" target="_self"><img src="<$g_Images>/images/homebuilder/back.gif" width="84" height="23" alt="back" border="0"></a>
+      </td>
+    </tr>
+  </table>
+
+</form>
+</center>
+
+
+</font></body></html>
+

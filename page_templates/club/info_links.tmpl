@@ -1,0 +1,98 @@
+<html>
+<!-- club/showinfo.tmpl -->
+<!-- displays the information about the club -->
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Club</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<h2><$NAM></h2>
+
+<table>
+    <tr>
+        <td>
+            <!-- #ifdef variable="STC" value="0"-->
+                <script language="javascript">var path = "<$g_DBImages><$CLP>";
+			if (path.indexOf('dbimages/dbimages') > -1){
+			document.writeln('<img src="<$g_HTMLRoot><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+			}
+			else{
+			document.writeln('<img src="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+			}
+	</script>      
+            <!-- #endif variable="STC" -->
+            <!-- #ifdef variable="STC" value="1"-->
+                <img src="<$g_HTMLRoot>/places/club/images/locked.gif" border=0 alt="Club Image" height=100>
+            <!-- #endif variable="STC" -->
+        </td>
+        <td width=400>
+            <h3>Club Links</h3>
+            <ul>
+            <!--#if variable="LL1" != value="" -->
+                <li><a href="<$LL1>" target="external"><$LD1></a></li>
+            <!--#endif variable="LL1" -->
+            <!--#if variable="LL2" != value="" -->
+                <li><a href="<$LL2>" target="external"><$LD2></a></li>
+            <!--#endif variable="LL2" -->
+            <!--#if variable="LL3" != value="" -->
+                <li><a href="<$LL3>" target="external"><$LD3></a></li>
+            <!--#endif variable="LL3" -->
+            <!--#if variable="LL4" != value="" -->
+                <li><a href="<$LL4>" target="external"><$LD4></a></li>
+            <!--#endif variable="LL4" -->
+            <!--#if variable="LL5" != value="" -->
+                <li><a href="<$LL5>" target="external"><$LD5></a></li>
+            <!--#endif variable="LL5" -->
+            </ul>
+        </td>
+    </tr>
+</table>
+<hr>
+<h3>Club Information</h3>
+<table align=center cellspacing=5 border=0>
+    <tr>
+        <td valign=top>Club Keywords:</td>
+        <td>&nbsp;<b><$CK1>,<br>&nbsp;<$CK2>,<br>&nbsp;<$CK3></b></td>
+    </tr>
+    <tr>
+        <td>Number of Members:</td>
+        <td>&nbsp;<b><$CNT></b></td>
+    </tr>
+    <tr>
+        <td>Creation Date:</td>
+        <td>&nbsp;<b><$CDA_MDAy> <$CDA_MONNAME> <$CDA_YEAR></b></td>
+    </tr>
+    <tr>
+        <td>Colony:</td>
+        <td>&nbsp;<b><$PID_NAM></b></td>
+    </tr>
+    <tr>
+        <td>Activity:</td>
+        <td>&nbsp;<b><$ACT> %</b></td>
+    </tr>
+    <tr>
+        <td>Club Owner:</td>
+        <td>&nbsp;<b><$OWN_NNM></b></td>
+    </tr>
+    <tr>
+        <td valign=top>Club Deputies:</td>
+        <td>
+            <b>&nbsp;<$AS1_NNM>&nbsp;<$AS2_NNM>&nbsp;<$AS3_NNM>&nbsp;<$AS4_NNM><br>
+               &nbsp;<$AS5_NNM>&nbsp;<$AS6_NNM>&nbsp;<$AS7_NNM>&nbsp;<$AS8_NNM>
+            </b>
+        </td>
+    </tr>
+</table>
+
+<!-- #ifdef variable="join" -->
+<br>
+    <a href="club<$g_exe>?ac=join&clubid=<$ID>">
+    <img src="<$g_Images>/images/menu/join.gif" border=0 alt="Join Club"></a>
+<!-- #endif variable="join" -->
+</center>
+
+</body>
+</html>

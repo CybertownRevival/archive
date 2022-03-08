@@ -1,0 +1,106 @@
+### club/enter3D.tmpl
+### parameters for blaxxun Contact plugin for club 
+<!-- #ifdef variable="chatreadaccess" -->
+server 	                <$cserver>
+port 	                <$csport>
+scene                   <$g_SceneServer><$g_cgiRoot>/place?DTY=CL&ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx
+3dscene 	        <$g_HttpServer><$g_cgiRoot>/edit?ac=read&TPL=club/vrml&DTY=CL&KTY=ID&KEY=<$ID>&mime=.wrl
+avatarworld         	<$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm
+sname                   Club '<$scenename>'
+
+<!-- #ifdef variable="chatwriteaccess" -->
+
+<!-- #if variable="scenename" == value="Newcomers Info" -->
+message 		<$NNM>, welcome to the Club '<$scenename>'.
+<!-- #endif variable="scenename" -->
+<!-- #if variable="scenename" != value="Newcomers Info" -->
+message                 <$NNM>, welcome to the Club '<$scenename>'. Please note that visitors can only watch the chat!
+<!-- #endif variable="scenename" -->
+
+<!-- #endif variable="chatwriteaccess" -->
+
+<!-- #ifndef variable="chatwriteaccess" -->
+message 		<$NNM>, welcome to the Club '<$scenename>'. Sorry, you can only watch the chat!
+protectpublicinput	1
+<!-- #endif variable="chatwriteaccess" -->
+
+### Authentication
+authenticationid	<$MID>
+authenticationpw	<$COOKIE>
+nickname	    	<$NNM>
+protectnickname		1
+
+<!-- #ifdef variable="isMember" -->
+<!-- #if variable="AVU" != "" -->
+vrmlmyavatar		<$AVU>
+<!-- #endif variable="AVU" -->
+<!-- #if variable="INT" != "" -->
+interests		<$INT>
+<!-- #endif variable="INT" -->
+<!-- #endif variable="isMember" -->
+
+<!-- #ifdef variable="isVisitor" -->
+vrmlmyavatar		http://www.blaxxun.com/bxx/vrml/avatars/default.wrl
+settingslistflag		101110
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+settingslistflag		111111
+<!-- #endif variable="isVisitor" -->
+
+### Roles
+prenickname		<$NAM>
+postnickname 		<$EXP>
+
+### Joinmessage
+<!-- #if variable="scenename" == value="Newcomers Info" -->
+joinmessage		0
+<!-- #endif variable="scenename" -->
+<!-- #if variable="scenename" != value="Newcomers Info" -->
+joinmessage		1
+<!-- #endif variable="scenename" -->
+
+
+### Voice
+voicesupport		1
+clientvoiceenable	1
+botvoiceenable		1
+
+
+### Diverse
+noblaxxunhelp		1
+useversionserver	0
+listtabflag             110010111
+<!-- #ifndef variable="T_refresh" value="false" -->  
+frameset        <$g_HttpServer><$g_cgiRoot>/place<$g_exe>?plc=club&DTY=CL&ID=<$ID>&ac=index3d
+<!-- #endif variable="T_refresh" -->
+htmlframe		HTML
+framesizes		60
+uselastscene            0
+[ListTabs]tabPrivateObjName	My Backpack
+[ListTabs]tabPublicObjName	Objects 
+
+
+### Colors
+logcolor	        0
+panelbackrgb          	0,80,0
+paneltextrgb          	0,223,0
+
+### Chat colors
+inputtextchatrgb       	255,255,0
+systemtextchatrgb      	0,255,220
+historytextchatrgb  	250,250,250
+bottextchatrgb         	0,195,255
+owntextchatrgb         	255,255,0
+othertextchatrgb       	255,160,0
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+### replace frameset to show correct error message
+server 		<$cserver>
+port 		<$csport>
+scene 	        <$g_HttpServer><$g_cgiRoot>/<$scene>
+3dscene 	<$g_HttpServer><$g_HTMLRoot>/<$3Dscene>
+sname           <$scenename>
+frameset        <$g_HttpServer><$g_cgiRoot>/place<$g_exe>?plc=club&DTY=CL&ID=<$ID>&ac=index3d
+<!-- #endif variable="chatreadaccess" -->

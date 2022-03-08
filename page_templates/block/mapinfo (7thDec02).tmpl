@@ -1,0 +1,113 @@
+<!-- block/mapinfo.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+<script language=javascript>
+  function toggle( mode )
+  {
+    //alert("mode=<" +mode +">");
+    if ( mode != null )
+    {
+      if ( mode == "1" )
+      {
+          document.toggleFT.T_TMOD.value = mode;
+          document.toggleFT.KFT.value = document.toggleFT.ID.value.substring(0,12) + "????";
+          document.toggleFT.COMID.value = document.toggleFT.ID.value.substring(0,4) + "000000000000";
+          document.toggleFT.submit();
+      }
+      else
+      {
+          document.toggleFG.T_TMOD.value = "";
+          document.toggleFG.submit();
+      }
+    }
+  }
+</script>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+
+<script language=javascript>
+var neighborid = '<$ID>';
+neighborid = neighborid.substring(0,8);
+if (neighborid == '01020206') {
+document.write('<a href="javascript:loadInfo(\'http://www.seti.org\')" target=_self><IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a><br>');
+}
+</script>
+<script language=javascript>
+var neighborid = '<$ID>';
+neighborid = neighborid.substring(0,8);
+if (neighborid == '01020503') {
+document.write('<a href="javascript:loadInfo(\'http://www.techiwarehouse.com\')" target=_self><IMG SRC="<$g_Images>/home/0102000000000000/techiwarehousebanner.gif" alt="Visit our Sponsor" border=0></a><br>');
+}
+</script>
+<!-- #if variable="T_TMOD" == value="1" -->
+  <FORM NAME="toggleFG" METHOD=POST ACTION="block<$g_exe>" TARGET="place">
+    <INPUT TYPE=hidden NAME="ac"     VALUE="place">
+    <INPUT TYPE=hidden NAME="ID"     VALUE="<$ID>">
+    <INPUT TYPE=hidden NAME="T_TMOD" VALUE="<$T_TMOD>">
+    <a href="#" onMouseOver="window.status='House Map'; return true;" onMouseOut="window.status=''; return true;"
+      onClick="toggle('')"><img src="<$g_Images>/images/buttons/hmap.gif" border="0"></a>
+  </FORM>
+<!-- #endif variable="T_TMOD" -->
+<!-- #if variable="T_TMOD" != value="1" -->
+  <FORM NAME="toggleFT" METHOD=POST ACTION="edit<$g_exe>" TARGET="place">
+    <INPUT TYPE=hidden NAME="ac"     VALUE="list">
+    <INPUT TYPE=hidden NAME="ID"     VALUE="<$ID>">
+    <INPUT TYPE=hidden NAME="COMID"  VALUE="<$COMID>">
+    <INPUT TYPE=hidden NAME="KFT"    VALUE="">
+    <INPUT TYPE=hidden NAME="TPL"    VALUE="block/place">
+    <INPUT TYPE=hidden NAME="T_TMOD" VALUE="<$T_TMOD>">
+    <a href="#" onMouseOver="window.status='House Names'; return true;" onMouseOut="window.status=''; return true;"
+      onClick="toggle('1')"><img src="<$g_Images>/images/buttons/hnames.gif" border="0"></a>
+  </FORM>
+<!-- #endif variable="T_TMOD" -->
+
+
+
+<h2>You've landed at <$NAM></h2>
+<blockquote><blockquote>Above is a detailed map of the <$NAM> block. 
+Lots marked as "Free" are available for your new home. 
+<!-- #ifndef variable="isVisitor" -->
+Choose your spot and then we'll look at homes.
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+Choose your spot and click on it and then we'll look at homes. <br><br>(If you've reached this page after already clicking
+ on a free spot and choosing your house, just press reload and click on "My House" in the Control Panel to visit your new
+home).
+</blockquote></blockquote>
+<!-- #endif variable="isVisitor" -->
+
+
+
+<!-- #ifdef variable="isVisitor" -->
+Choose a House to enter a member's home<br>
+Become a member ('<b>JOIN NOW</b>') to get your own home
+<!-- #endif variable="isVisitor" -->
+</div>
+
+<!-- #ifdef variable="T_MODE" value="tour" -->
+<hr>
+<center>
+<a href="<$g_HTMLRoot>/info/controlpanel/index.html" target="_top"><img src="<$g_HTMLRoot>/info/controlpanel/buttons/howdo
+i.gif" width="116" height="16" alt="How Do I index" border="0"></a>
+<a href="javascript:history.go(-1)" target="_top"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</center>
+<!-- #endif variable="T_MODE" -->
+
+<center>
+<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD4>.tmpl" -->
+</tr></table>
+</center>
+
+</BODY>
+</HTML>
+

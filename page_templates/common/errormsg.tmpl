@@ -1,0 +1,83 @@
+<!-- common/errormsg.html -->
+<!-- error page for problems with the message server -->
+<HTML>
+<HEAD>
+<title><$g_title> - <$NAM></title>
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font>
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr bgcolor=8BA093>
+  <td>
+    <a href="javascript:history.go(-1)"><img src="<$g_HTMLRoot>/images/buttons/backbtn.gif" 
+      alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr bgcolor=8BA093>
+  <td align="center">
+    <table border=0 cellpadding=1 cellspacing=5 width=280 height=200>
+    <tr>
+      <td valign=top><$g_fontBlack>
+
+      <h3 align=center>Message Server Error</h3>
+
+      <!-- #ifdef variable="msgerror001" -->
+      Sorry <$NNM>,
+      <P>
+      the following error occurred during the access to the message server:<br>
+      <b><$msgmessage></b>
+      <ul>
+      <li>Message server: <$msgserver>:<$msgport>
+      <li>Error code: <$msgrc>
+      </ul>
+
+      <p>Please inform the server administrator <a href="mailto:webmaster@<$g_PopServer>">webmaster@<$g_PopServer></a>
+      and tell him <b>in detail</b> what you have done before.<br>
+      Thanx :-)
+      </p>
+      <!-- #endif variable="msgerror001" -->
+
+      <!-- #ifdef variable="msgerror002" -->
+      Sorry <$NNM>,
+      <P>
+      the message server was not available for a short time, <b>please repeat your last action</b>.
+      </font>
+
+      <ul>
+      <li>Message server: <$msgserver>:<$msgport>
+      <li>Error code: <$msgrc>
+      </ul>
+
+      <p>If you still get this error message <b>after some minutes</b>, 
+      please inform the server administrator
+      <a href="mailto:webmaster@<$g_PopServer>">webmaster@<$g_PopServer></a>
+      and tell him <b>in detail</b> what you have done before.<br>
+      Thanx :-)
+      </p>
+      <!-- #endif variable="msgerror002" -->
+
+      <!-- #ifdef variable="msgerror003" -->
+      Sorry <$NNM>,
+      <P>
+      the message server cannot fullfill your list request because
+      the search pattern you entered is not specific enough.
+      <P>
+      Please use a more specific pattern to match.
+      <br>
+      Thanx :-)
+      <!-- #endif variable="msgerror003" -->
+      
+      </font></td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

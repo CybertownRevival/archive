@@ -1,0 +1,122 @@
+<!--cityhall/place.tmpl-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+<script language="javascript">
+<!-- #ifdef variable="T_aud" value="" -->
+var audit = "audit";
+<!-- #endif variable="T_aud" -->
+<!-- #ifndef variable="T_aud" value="" -->
+var audit = "<$T_aud>";
+<!-- #endif variable="T_aud" -->
+
+function set_action(){
+ u = "place<$g_exe>?ac=action&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=" + audit + "&T_spawn=<$T_spawn>&T_pass=<$T_pass>&T_mode=2D";
+ parent.action.document.location.href = u;
+}
+</script>
+</head>
+
+<!-- #ifdef variable="T_spawn" value="" -->
+
+
+<!-- #ifndef variable="T_3d" value="true" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<BR>
+<!-- <img src="/places/cityhall/images/elder_templar.jpg" border="0"> -->
+
+<B><font face="arial" size= +2>Welcome to City Hall</font></B>
+<BR>
+</div>
+
+
+<table COLS=1 WIDTH="80%" ALIGN="CENTER" CELLPADDING="3" CELLSPACING="0" BORDER="0">
+<TR><TD>
+<CENTER>
+<font face="arial" size= -1>
+For this event we are debuting a new Cybertown feature called the Auditorium.  
+The Auditorium breaks the chat space into a number of smaller chat rooms, or auditoriums.  The main participants of an event are in a special chat room called the stage.  
+All of the chat rooms have a view of the stage where the event occurs.
+This allows Citizens to break into smaller groups to view the event.  You can chat with your friends while you watch the event without disturbing others.
+<BR><BR>
+Currently you are in the lobby of the City Hall.  To enter one of the chat rooms in the main room of City Hall and attend the Award Ceremony, click the 
+<a href="javascript:loadInfo('/cgi-bin/cybertown/place?ac=list&tpl=cityhall/display')" target=action>ENTER EVENT</a>
+link right below the 2D and 3D chat buttons.  Please note that only 20 people can fit in each room, and that speakers on the stage cannot hear you.    
+</CENTER>
+</TR></TD>
+</table>
+<font face="arial">
+<BR>
+<div align=center>
+
+<!-- #include virtual="<$g_Templates>cityhall/javachat.tmpl" -->
+</div>
+<SCRIPT LANGUAGE="JavaScript">  set_action(); </SCRIPT> 
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</font>
+</body>
+<!-- #endif variable="T_3d" -->
+
+<!-- #ifdef variable="T_3d" value="true" -->
+<!-- #include virtual="<$g_Templates>cityhall/world.tmpl" -->
+<!-- #endif variable="T_3d" -->
+
+
+<!-- #endif variable="T_spawn" -->
+<!-- #ifndef variable="T_spawn" value="" -->
+
+<!-- #ifdef variable="chatno" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0 USEMAP="#map"><br>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+<a href="http://www.terratools.de/" target="external">
+<IMG SRC="<$g_HTMLRoot>/ad/terratools468.gif" ALIGN="center" BORDER="0"></a>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<MAP Name="map">
+ <AREA Shape="rect" coords = "280,170,500,190"  HREF="place<$g_exe>?plc=employment" target=_top ALT="Employment Office">
+</MAP>
+</body>
+<!-- #endif variable="chatno" -->
+
+
+
+
+<!-- #ifdef variable="chatstd" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0 USEMAP="#map"><br>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+<!-- #include virtual="<$g_Templates>cityhall/javachat.tmpl" -->
+</div>
+<SCRIPT LANGUAGE="JavaScript">  set_action(); </SCRIPT> 
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<MAP Name="map">
+	<AREA Shape="rect" coords = "280,170,500,190"  HREF="place<$g_exe>?plc=employment" target=_top ALT="Employment Office">
+</MAP>
+</body>
+<!-- #endif variable="chatstd" -->
+
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>cityhall/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+<!-- #endif variable="T_spawn" value="" -->
+
+
+
+</html>
+
+
+
+
+
+
+
+
+

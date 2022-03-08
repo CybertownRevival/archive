@@ -1,0 +1,56 @@
+### blaxxun CCpro - place definition file
+### ------------------------------------------
+server                          <$cserver>
+port                            <$csport>
+scene                           <$g_HttpServer><$g_cgiRoot>/place?plc=stadium&ac=3D&IE=x.bxx
+3dscene                                 <$g_HttpServer><$g_HTMLRoot>/places/stadium/vrml/field1.wrl
+vrmlmyavatar                            <$g_HttpServer><$g_HTMLRoot>/places/stadium/vrml/team1av.wrl
+avatarworld             <$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm
+sname                   <$scenename>
+message  Welcome Red Team player.  Please read the instructions to learn about the different parts of the Stadium, and how to play V-Soccer
+<!-- #ifndef variable="chatwriteaccess" -->
+protectpublicinput      1
+<!-- #endif variable="chatwriteaccess" -->
+
+### Authentication
+authenticationid		<$MID>
+authenticationpw		<$COOKIE>
+nickname	    		<$NNM>
+protectnickname		1
+
+<!-- #ifdef variable="ccgi_isVisitor" -->
+### problem 'vrmlmyavatar': if member enters as visitor, avatar not reset to original avatar - ### vmlmyavatar          http://www.blaxxun.com/bxx/vrml/avatars/default.wrl
+settingslistflag                101110
+<!-- #endif variable="ccgi_isVisitor" -->
+
+<!-- #ifndef variable="ccgi_isVisitor" -->
+settingslistflag                111111
+<!-- #endif variable="ccgi_isVisitor" -->
+
+### Roles
+prenickname                     <$NAM>
+postnickname            <$EXP>
+
+### Voice
+voicesupport                    0
+
+### Diverse
+listtabflag                             110011100
+##listtabflag                           <$list_flag>
+###frameset                             <$g_HttpServer><$g_cgiRoot>/<$frameset>
+htmlframe                               HTML
+framesizes                              60
+uselastscene    0
+
+### Colors
+logcolor        0
+panelbackrgb            0,80,0
+paneltextrgb            0,223,0
+
+### Chat colors
+inputtextchatrgb        255,255,0
+systemtextchatrgb       0,255,220
+historytextchatrgb      250,250,250
+bottextchatrgb          0,195,255
+owntextchatrgb          255,255,0
+othertextchatrgb        255,160,0

@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Neighborhood</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H3 align=center>Welcome to the <$ENM> '<$NAM>'.</H3>
+
+<p>
+Welcome to the <$ENM> '<$NAM>' ...
+</p>
+
+<!-- #include virtual="<$g_Templates>common/inforoles.tmpl" -->
+<br>
+<b>Blocks:</b>
+<table>
+<tr>
+<td>
+<form name="roles" method=post action="edit<$g_exe>?KEY=&KFM=RRCCCRNNNR*&KFT=32<$ID>&TPL=neighbor/rolem&ac=list">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ROLNAM" value="32">
+<input type=hidden name="NNAM" value="<$NAM>">
+<input type=hidden name="NID" value="<$ID>">
+<input type=submit name="list" value="List">
+Block Leaders 
+</form>
+<td>
+<form name="deps" method=post action="edit<$g_exe>?KEY=&KFM=RRCCCRNNNR*&KFT=52<$ID>&TPL=neighbor/rolem&ac=list">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ROLNAM" value="52">
+<input type=hidden name="NNAM" value="<$NAM>">
+<input type=hidden name="NID" value="<$ID>">
+<input type=submit name="list" value="List">
+Block Deputies 
+</form>
+</table>
+
+</BODY>
+</HTML>

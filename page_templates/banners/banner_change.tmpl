@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Cybertown Banner Change</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#000000" text="#00FF00" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<center>
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#FF0000">Banner Update</font></b></font></p>
+<font face="Arial, Helvetica, sans-serif">
+<!-- #ifdef variable="isAdmin" -->
+<b>Upadate place:<br> <$NAM> <$T_ID></b>
+<FORM METHOD="POST" ACTION="/cgi-bin/cybertown/edit" NAME="">
+<input type="hidden" name="TPL" value="banners/banner_update">
+<input type="hidden" name="ac" value="print">
+<input type="hidden" name="T_ID" value="<$T_ID>">
+<TABLE  border="1" cellspacing="3" cellpadding="3">
+<tr> 
+<td><font face="Arial, Helvetica, sans-serif">Banner</td>
+<td><font face="Arial, Helvetica, sans-serif">Value</td>
+</tr><tr> 
+<tr><td></td><td></td></tr>
+<td><font face="Arial, Helvetica, sans-serif">Menu Main Banner</td>
+<td><font face="Arial, Helvetica, sans-serif"><input type="textfield" value="<$T_AD1>" name="T_AD1" size="10"></td>
+</tr>
+<tr> 
+<td><font face="Arial, Helvetica, sans-serif">Menu Small Banner</td>
+<td><font face="Arial, Helvetica, sans-serif"><input type="textfield" value="<$T_AD2>" name="T_AD2" size="10"></td>
+</tr>
+<tr> 
+<td><font face="Arial, Helvetica, sans-serif">Menu Affiliate Banner</td>
+<td><font face="Arial, Helvetica, sans-serif"><input type="textfield" value="<$T_AD3>" name="T_AD3" size="10"></td>
+</tr>
+<tr> 
+<td><font face="Arial, Helvetica, sans-serif">Place Banner</td>
+<td><font face="Arial, Helvetica, sans-serif"><input type="textfield" value="<$T_AD4>" name="T_AD4" size="10"></td>
+</tr>
+</TABLE>
+<br>
+<input type="submit" value="UPDATE">
+</FORM>
+<br><br>
+<font face="Arial, Helvetica, sans-serif"><b>Possible Catagorie Values</b><br><br>
+<table border=1 cellpadding=3 cellspacing=3 align=center>
+<tr><td><font face="Arial, Helvetica, sans-serif">Value to enter in fields above  </td><td><font face="Arial, Helvetica, sans-serif">Description           </td>
+<tr><td></td><td></td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_clothing  </td><td><font face="Arial, Helvetica, sans-serif">Adpepper  Clothing and Accessories            </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_tech      </td><td><font face="Arial, Helvetica, sans-serif">Adpepper Computers and Technology             </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_games     </td><td><font face="Arial, Helvetica, sans-serif">Adpepper Games and Winning                    </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_music     </td><td><font face="Arial, Helvetica, sans-serif">Adpepper Music and entertainment              </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_services  </td><td><font face="Arial, Helvetica, sans-serif">Adpepper Services                             </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_misc      </td><td><font face="Arial, Helvetica, sans-serif">Adpepper tag reserved for sponsors and events </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">ap_main_homepage  </td><td><font face="Arial, Helvetica, sans-serif">Adpepper Home page banner                     </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">l90_main          </td><td><font face="Arial, Helvetica, sans-serif">L90 banners                                   </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">l90_small         </td><td><font face="Arial, Helvetica, sans-serif">L90 banners                                   </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">news              </td><td><font face="Arial, Helvetica, sans-serif">Daily News Icon                               </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">none              </td><td><font face="Arial, Helvetica, sans-serif">Empty banner template large size              </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">bxx_banner_1.tmpl </td><td><font face="Arial, Helvetica, sans-serif">Banner advertising blaxxun                    </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">com_vircon_event </td><td><font face="Arial, Helvetica, sans-serif">Vir-Con Star Trek Event non-animated </td>
+<tr><td><font face="Arial, Helvetica, sans-serif">com_vircon_event_ani </td><td><font face="Arial, Helvetica, sans-serif">Vir-Con Star Trek Event animated banner</td>
+<tr><td><font face="Arial, Helvetica, sans-serif">hi-tek_opening </td><td><font face="Arial, Helvetica, sans-serif">Hi-Tek Colony Opening</td>
+</table>
+<!-- #endif variable="isAdmin" -->
+</center>
+</body>
+</html>

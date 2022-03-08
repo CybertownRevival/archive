@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<title><$g_title></title>
+</HEAD>
+<BODY BGCOLOR="#1A8E2E" TEXT="#000100" LINK="#00004B"
+      VLINK="#00004B" ALINK="#0000CB">
+<font face="Times new Roman">
+
+<div align=center>
+
+<H4 ALIGN="CENTER"><FONT face="Times new Roman">
+
+
+<form
+ ENCTYPE="multipart/form-data"
+ ACTION="<$selfurl>"
+ METHOD="POST">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+<table border="3" width="80%"
+       bordercolordark="#000000" bordercolorlight="#FF9933">
+
+<tr align=center>
+<th align=center colspan=3>
+<font face="Times new Roman"> Image Upload</th>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Parameters</td>
+<td align="left"><font face="Times new Roman">Values</td>
+<td align=center rowspan=6>
+<font face="Times new Roman">
+
+<!-- #ifdef variable="bidprint001" -->
+You do not have permission to look at the image.
+<!-- #endif variable="bidprint001" -->
+
+<!-- #ifdef variable="bidprint002" -->
+There is no image defined yet.
+<!-- #endif variable="bidprint002" -->
+
+<!-- #ifdef variable="bidnotenoughdata" -->
+Please enter all three parameters.
+
+<!-- #endif variable="bidnotenoughdata" -->
+
+<!-- #ifdef variable="bidimageexists" -->
+
+<img src="<$selfurl>?&ac=print&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>"
+     border=0 width=128 height=128></td>
+<!-- #endif variable="bidimageexists" -->
+
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Datatype</td>
+<td align="left"><font face="Times new Roman">
+<input type=text name="DTY" value="<$DTY>" size=1 maxlength=1></td>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Keytype</td>
+<td align="left"><font face="Times new Roman">
+<input type=text name="KTY" value="<$KTY>" size=2 maxlength=2></td>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Object ID</td>
+<td align="left"><font face="Times new Roman">
+<input type=text name="KEY" value="<$KEY>" size=16 maxlength=21></td>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Image ID</td>
+<td align="left"><font face="Times new Roman">
+<input type=text name="MTY" value="<$MTY>" size=1 maxlength=1></td>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Name</td>
+<td align="left"><font face="Times new Roman">
+<input type=text name="name" value="<$name>" size=32 maxlength=32></td>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">Status</td>
+<td align="left"><font face="Times new Roman">
+	<input type="Radio" name="status" value="" checked>None<br>
+	<input type="Radio" name="status" value="l">Locked<br>
+</tr>
+
+<tr align="center">
+<td align="left"><font face="Times new Roman">New Image</td>
+<td align="left"><font face="Times new Roman">
+<input type="file" name="I" value="<$I_FILENAME>" size="40"></td>
+</tr>
+
+</table>
+
+<blockquote>
+
+<div align="center">
+
+<input type="submit" name="Store" value="Store"> 
+
+<!-- #ifdef variable="bidimageexists" -->
+
+<input type="submit" name="Delete" value="Delete"> 
+
+<!-- #endif variable="bidimageexists" -->
+
+</blockquote>
+
+</form>
+
+<!-- #ifdef variable="bidstore001" -->
+You do not have permission to store the image.
+<!-- #endif variable="bidstore001" -->
+
+<!-- #ifdef variable="bidstore002" -->
+Database error while storing image
+<!-- #endif variable="bidstore002" -->
+
+<!-- #ifdef variable="biddelete001" -->
+You do not have permission to store the image.
+<!-- #endif variable="biddelete001" -->
+
+
+</div>
+
+</BODY>
+</HTML>

@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Cybertown - Designer Home Check</title>
+</head>
+
+<!-- object/deshomes/check.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<h2>Home Check</h2>
+</center>
+<p> In this form, you can check newly uploaded homes for appropriateness of content. 
+  Please also check the position, orientation and size of the object; a platform 
+  and coordinate system have been added to help you. <font color="red">IMPORTANT!</font> 
+  <font color="#00ff00">ALL HOMES ACCEPTED MUST CONTAIN THE CYBERTOWN PROTOS! These can be found
+  <a href="/places/deshomes/proto.html" target="_blank">Here</a>.</font><br>
+  If you accept an object, it will be added to your backpack. Later you have to 
+  drop it off in the appropriate store. </p>
+<table width="97%">
+  <tr> 
+    <td colspan="4">
+    <center>
+      <!-- #ifndef variable="WRL" value="" -->
+      <div align="center"><embed src="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/deshomes/axis&WRL=<$WRL>&mime=.wrl"
+       vrml-dashboard="false"
+       type="application/x-blaxxunCC3D"
+       height=325 width=800>
+        </embed> 
+        <!-- #endif variable="WRL" -->
+        <!-- #ifdef variable="WRL" value="" -->
+        <!-- #ifdef variable="CAT_WRL" -->
+        <embed src="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/deshomes/axis&WRL=<$CAT_WRL>&mime=.wrl"
+       vrml-dashboard="false"
+       type="application/x-blaxxunCC3D"
+       height=325 width=800>
+        </embed> 
+        <!-- #endif variable="CAT_WRL" -->
+        <!-- #endif variable="WRL" -->
+      </div>
+    </center></td>
+  </tr>
+  <tr>
+    <td width="17%">&nbsp;</td>
+    <td width="17%"> 
+      <div align="right">House Name:</div>
+    </td>
+    <td width="23%"><font color="#00FF00"><$CAT_3NAM></font></td>
+    <td rowspan="4"> 
+      <!-- #ifndef variable="IMG" value="" -->
+      <img src="<$IMG>" height=64> 
+      <!-- #endif variable="IMG" -->
+      <!-- #ifdef variable="IMG" value="" -->
+      <!-- #ifdef variable="CAT_2IMG" -->
+      <a href="http://www.cybertown.com<$CAT_2IMG>" target="_blank"><img src="<$CAT_2IMG>" height=64 border="0"></a> 
+      <!-- #endif variable="CAT_2IMG" -->
+      <!-- #endif variable="IMG" -->
+    </td>
+  </tr>
+  <tr>
+    <td width="17%">&nbsp;</td>
+    <td width="17%"> 
+      <div align="right">Quantity:</div>
+    </td>
+    <td width="23%"><font color="#00FF00"><$CNT></font></td>
+  </tr>
+  <tr>
+    <td width="17%">&nbsp;</td>
+    <td width="17%"> 
+      <div align="right">Price:</div>
+    </td>
+    <td width="23%"><font color="#00FF00"><$TPR></font></td>
+  </tr>
+  <tr>
+    <td width="17%">&nbsp;</td>
+    <td width="17%"> 
+      <div align="right">Uploaded By:</div>
+    </td>
+    <td width="23%"><font color="#00FF00"><$CRE_NNM> </font></td>
+  </tr>
+</table>
+
+<div align="center">Home Description: <br>
+ <font color="#00FF00"><$TXT></font> </div>
+<p align="center">
+
+<form action="object?<$g_exe>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ID" value="<$ID>">
+    <input type="hidden" name="ZON" value="<$ZON>">
+    <input type="hidden" name="ac" value="accept">
+    <input type="hidden" name="nextac" value="list">
+    <input type="hidden" name="TPL" value="object/deshomes/list">
+    <input type="hidden" name="actions" value="1">
+    <input type="hidden" name="MTYPE" value="i">
+    <input type="hidden" name="CLS" value="A">
+<input type=submit name="Take" value="Accept Home">
+</form>
+
+<form action="edit?<$g_exe>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="KEY" value="<$ID>">
+    <input type="hidden" name="TPL" value="object/deshomes/reject">
+    <input type=submit name="Take" value="Reject">
+    <input type="button" value="Back" onClick="history.go(-1);">
+    <input type="button" value="Close" onClick="window.close()">
+
+</form>
+
+</body>
+</html>
+
+
+

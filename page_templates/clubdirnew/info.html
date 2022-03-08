@@ -1,0 +1,148 @@
+<!-- clubdir/info -->
+<!--- display club find form --->
+<HTML>
+<HEAD>
+<title><$g_title> - <$placename></title>
+
+<script language=javascript>
+
+function changeTemplate( template )
+{
+  document.filterForm.TPL.value = template;
+}
+
+</script>
+</head>
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font1>
+
+<!-- #define variable="headerimage" value="clubdirinfo.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr <$g_bgcolor5>>
+  <td>
+	   <a href="javascript:history.go(-1)"><img
+    src="<$g_HTMLRoot>/images/buttons/backbtn.gif" alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+    <a href="<$g_cgiRoot>/club<$g_exe>?ac=showForm&TPL=clubdir/create&experCheck=club_min_exper&CAT=<$CAT><$g_SessionID>" target="_self"><img
+      src="<$g_HTMLRoot>/images/buttons/createclubbtn.gif" border="0" alt="Create Club" vspace="0" hspace="0" align="left" ></a>
+    <a href="<$g_cgiRoot>/club<$g_exe>?ac=charts&TPL=clubdir/charts&KTY=CNT&DTY=CL<$g_SessionID>" target="_self"><img
+      src="<$g_HTMLRoot>/images/buttons/clubchartsbtn.gif" border="0" alt="Club Charts" vspace="0" hspace="0" align="left"></a>
+  </td>
+</tr>
+
+<!-- #ifdef variable="owneraccess" -->
+<tr <$g_bgcolor6>>
+  <td>
+      <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=directory&TPL=clubdir/piclist<$g_SessionID>" target="info"><img
+        src="<$g_HTMLRoot>/images/buttons/check.gif" border="0" alt="Check Pictures" vspace="0" hspace="0" align="left" ></a>
+  </td>
+</tr>
+<!-- #endif variable="owneraccess" -->
+<tr <$g_bgcolor5>>
+  <td>
+    <form name="filterForm" method="post" action="<$g_cgiRoot>/club<$g_exe>">
+
+      <input type="hidden" name="TKT" value="<$TKT>">
+      <input type="hidden" name="SID" value="<$SID>">
+
+      <input type="hidden" name="ac" value="directory">
+      <input type="hidden" name="TPL" value="clubdir/directory">
+      <input type="hidden" name="KEY" VALUE="<$KEY>">
+
+      <input type="hidden" name="KFT_LIST" value="<$KFT_LIST>">
+      <input type="hidden" name="KFT_TEXT" value="<$KFT_TEXT>">
+      <table border="0" cellpadding="0" cellspacing="0" width="318" height="200">
+      <tr>
+        <td <$g_bgcolor2> colspan="4">
+          <img src="<$g_HTMLRoot>/images/buttons/searchclubs.gif" border="0" height="22" align=left vspace="0" hspace="0">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><$g_font1>
+          <input type="checkbox" name="MYC"
+            <!--#ifdef variable="MYC" value="on" -->
+              checked
+            <!--#endif variable="MYC" -->
+         >Show My Clubs Only</font></input>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><$g_font1>Ordered by:</font></td>
+        <td><$g_font1>
+          <select name="KTY" width="136">
+            <option value="CNT"
+              <!--#ifdef variable="KTY" value="CNT" -->
+                SELECTED
+              <!--#endif variable="KTY" -->
+            > Members </option>
+            <option value="NAK"
+              <!--#ifdef variable="KTY" value="NAK" -->
+                  SELECTED
+                <!--#endif variable="KTY" -->
+              >Club Name</option>
+            <option value="KK1"
+              <!--#ifdef variable="KTY" value="KK1" -->
+                SELECTED
+              <!--#endif variable="KTY" -->
+            > Keyword </option>
+            <option value="CDA"
+              <!--#ifdef variable="KTY" value="CDA" -->
+                SELECTED
+              <!--#endif variable="KTY" -->
+            > Creation Date </option>
+          </select></font>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><$g_font1>Club Name:</font></td>
+        <td><$g_font1><input type="text" name="KFT_NAM" value="<$KFT_NAM>" maxlength="32" SIZE="16"></font></td>
+      </tr>
+      <tr>
+        <td width="80" align="right"><$g_font1>
+          Club Keywords:</font>
+        </td>
+        <td valign="center"><$g_font1>
+          <select name="KFT_LIST" width="135"><$g_font1>
+              <option value="EMPTY"></option>
+              <!--#for loopname="keyword1List" loopvars="CK1_LIST_" -->
+                <option value="<$CK1_LIST_>"
+                  <!--#ifdef variable="CK1_SEL_" -->
+                    selected
+                  <!--#endif variable="CK1_SEL_"-->
+                > <$CK1_LIST_> </option>
+              <!--#endfor loopname="keyword1List" -->
+              <!--#for loopname="keyword2List" loopvars="CK2_LIST_" -->
+                <option value="<$CK2_LIST_>"
+                  <!--#ifdef variable="CK2_SEL_" -->
+                    selected
+                  <!--#endif variable="CK2_SEL_"-->
+                > <$CK2_LIST_> </option>
+              <!--#endfor loopname="keyword2List" -->
+          </select><br>
+          <input type="text" name="KFT_TEXT" value="<$KFT_TEXT>" size="16"></font>
+        </td>
+      </tr>
+	  <tr>
+	  <td colspan=2>
+	  <table align=center border="0" cellspacing="0" cellpadding="1">
+    <tr>
+      <td>
+      <a href="javascript:document.filterForm.submit();"><img
+        src="<$g_HTMLRoot>/images/buttons/findbutton.gif" border=0 alt="Find Clubs" vspace=0 hspace=0 align=left></a>
+      </td>
+    </tr>
+    </table>
+	</td>
+	</tr>
+      </table>
+    </form>
+  </td>
+</tr>
+</table>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

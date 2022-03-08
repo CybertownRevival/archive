@@ -1,0 +1,71 @@
+<html>
+<head>
+<title><$g_title> - Announcements</title>
+<SCRIPT language="JavaScript">
+function updateMessage(url)
+{
+    parent.location.href=url;
+}
+</SCRIPT>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2><$NAM></h2>
+<P><$TXT></P>
+
+<!-- #ifdef variable="msbpostallowed" -->
+<a target="_parent" href="<$selfurl>?ac=write&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&T_TYPE=&T_TYPE=<$T_TYPE>"
+><IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Message"></a>
+<!-- #endif variable="msbpostallowed" -->
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<a target="_parent" href="<$selfurl>?ac=getconf&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&T_TYPE=&T_TYPE=<$T_TYPE>">
+<IMG SRC="<$g_Images>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure"></a>
+<!-- #endif variable="msbconfigallowed" -->
+<!-- #if variable="NNM" == value="Simioni" -->
+<a target="_parent" href="<$selfurl>?ac=getconf&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&T_TYPE=&T_TYPE=<$T_TYPE>">
+<IMG SRC="<$g_Images>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure"></a>
+<!-- #endif variable="NNM" -->
+
+</div>
+
+<!--#ifndef variable="DATE_STR0" -->
+<hr align=center>
+Sorry <$NNM>,there are no message to show.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+<hr align=center>
+<table width=100%>
+
+<tr><td>
+<!-- #ifdef variable="msbpostallowed" -->
+<a href="<$selfurl>?ac=update&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&T_TYPE=&T_TYPE=<$T_TYPE>">
+<font size=+2><b><$sub></b></font></a>
+<!-- #endif variable="msbpostallowed" -->
+<!-- #ifndef variable="msbpostallowed" -->
+<font size=+2><b><$sub></b></font>
+<!-- #endif variable="msbpostallowed" -->
+
+<!-- #ifdef variable="msbconfigallowed" -->
+&nbsp;&nbsp;&nbsp;<a href="<$selfurl>?ac=delete&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&T_TYPE=&T_TYPE=<$T_TYPE>"><IMG SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete"></a>
+<!--#endif variable="msbconfigallowed" -->
+
+<br>
+<small>
+<$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_AP>:<$DATE_MIN> <$DATE_APM>
+</small>
+</td></tr>
+
+<tr><td>
+<$txt>
+</td></tr>
+
+</table>
+
+<!--#endfor loopname="msglist"  -->
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<div align=center>
+<h3>Reset Information for
+<!-- #ifdef variable="NAM_org" -->
+	<i><font face="Arial" color="#00F080"><$NAM_org></font></i></h3>
+<!-- #endif variable="NAM_org" -->
+<!-- #ifndef variable="NAM_org" -->
+	<i><font face="Arial" color="#00F080"><$NAM></font></i></h3>
+<!-- #endif variable="NAM_org" -->
+</div>
+
+<div align=center>
+<font color="red">
+	<!-- #ifdef variable="editerror003" -->
+		Insufficient access rights.
+	<!-- #endif variable="editerror003" -->
+	<br>
+</font>
+</div>
+
+<div align=center>
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br><br>
+
+<table border=0>
+<tr align=center>
+<td width=70>
+		<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+			<input type=hidden name="DTY" value="P">
+			<input type=hidden name="TXT" value="">
+			<input type=hidden name="TPL" value="property/resetmsb">
+			<input type=submit name="edit" value=Reset>
+			<input type=hidden name="hist" value="<$hist>">
+			<!-- #ifdef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY_org>">
+				<input type=hidden name="KEY" value="<$KEY_org>">
+				<input type=hidden name="NAM_org" value="<$NAM_org>">
+			<!-- #endif variable="KEY_org" -->
+			<!-- #ifndef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY>">
+				<input type=hidden name="KEY" value="<$KEY>">
+				<input type=hidden name="NAM_org" value="<$NAM>">
+			<!-- #endif variable="KEY_org" -->
+		</form>
+</td>
+<td>
+<h4 align=left>the <i>text</i> of your <font color=#ffff00><b>information</b></font></h4>
+</td>
+</tr>
+
+<tr height=10><td>&nbsp;</td></tr>
+
+<tr align=center>
+<td width=70>
+		<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+			<input type=hidden name="DTY" value="I">
+			<input type=hidden name="NAM" value="<$g_MsgBoardName>">
+			<input type=hidden name="TPL" value="property/resetmsb">
+			<input type=submit name="edit" value=Reset>
+			<input type=hidden name="hist" value="<$hist>">
+			<!-- #ifdef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY_org>">
+				<input type=hidden name="KEY" value="m<$KEY_org>">
+				<input type=hidden name="NAM_org" value="<$NAM_org>">
+			<!-- #endif variable="KEY_org" -->
+			<!-- #ifndef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY>">
+				<input type=hidden name="KEY" value="m<$KEY>">
+				<input type=hidden name="NAM_org" value="<$NAM>">
+			<!-- #endif variable="KEY_org" -->
+		</form>
+</td>
+<td>
+<h4 align=left>the <i>name</i> of your <font color=#ffff00><b>message board</b></font></h4>
+</td>
+</tr>
+
+<tr align=center>
+<td width=70>
+		<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+			<input type=hidden name="DTY" value="I">
+			<input type=hidden name="TXT" value="">
+			<input type=hidden name="TPL" value="property/resetmsb">
+			<input type=submit name="edit" value=Reset>
+			<input type=hidden name="hist" value="<$hist>">
+			<!--td>Reset Message Board:</td-->
+			<!--td><input type="checkbox" align="middle" name="TXT"></td-->
+
+			<!-- #ifdef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY_org>">
+				<input type=hidden name="KEY" value="m<$KEY_org>">
+				<input type=hidden name="NAM_org" value="<$NAM_org>">
+			<!-- #endif variable="KEY_org" -->
+			<!-- #ifndef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY>">
+				<input type=hidden name="KEY" value="m<$KEY>">
+				<input type=hidden name="NAM_org" value="<$NAM>">
+			<!-- #endif variable="KEY_org" -->
+		</form>
+</td>
+<td>
+<h4 align=left>the <i>introduction text</i> of your <font color=#ffff00><b>message board</b></font></h4>
+</td>
+</tr>
+
+<tr height=10><td>&nbsp;</td></tr>
+
+<tr align=center>
+<td width=70>
+		<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+			<input type=hidden name="DTY" value="I">
+			<input type=hidden name="NAM" value="<$g_InboxName>">
+			<input type=hidden name="TPL" value="property/resetmsb">
+			<input type=submit name="edit" value=Reset>
+			<input type=hidden name="hist" value="<$hist>">
+			<!-- #ifdef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY_org>">
+				<input type=hidden name="KEY" value="i<$KEY_org>">
+				<input type=hidden name="NAM_org" value="<$NAM_org>">
+			<!-- #endif variable="KEY_org" -->
+			<!-- #ifndef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY>">
+				<input type=hidden name="KEY" value="i<$KEY>">
+				<input type=hidden name="NAM_org" value="<$NAM>">
+			<!-- #endif variable="KEY_org" -->
+		</form>
+</td>
+<td>
+<h4 align=left>the <i>title</i> of your <font color=#ffff00><b>inbox</b></font></h4>
+</td>
+</tr>
+
+<tr align=center>
+<td width=70>
+		<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+			<input type=hidden name="DTY" value="I">
+			<input type=hidden name="TXT" value="">
+			<input type=hidden name="TPL" value="property/resetmsb">
+			<input type=submit name="edit" value=Reset>
+			<input type=hidden name="hist" value="<$hist>">
+			<!--td>Reset Inbox:</td-->
+			<!--td><input type="checkbox" align="middle" name="TXT"></td-->
+
+			<!-- #ifdef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY_org>">
+				<input type=hidden name="KEY" value="i<$KEY_org>">
+				<input type=hidden name="NAM_org" value="<$NAM_org>">
+			<!-- #endif variable="KEY_org" -->
+			<!-- #ifndef variable="KEY_org" -->
+				<input type=hidden name="KEY_org" value="<$KEY>">
+				<input type=hidden name="KEY" value="i<$KEY>">
+				<input type=hidden name="NAM_org" value="<$NAM>">
+			<!-- #endif variable="KEY_org" -->
+		</form></td>
+<td>
+<h4 align=left>the <i>introduction text</i> of your <font color=#ffff00><b>inbox</b></font></h4>
+</td>
+</tr>
+
+</table>
+
+</div>
+</body>
+</html>
+

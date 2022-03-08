@@ -1,0 +1,60 @@
+<!-- msg/messages.html -->
+<!--- display messaging status --->
+
+<html>
+<head> 
+<title> <$g_title> </title> 
+
+<!-- #include file="<$g_Templates>/common/browser.html" -->
+<!-- #include file="<$g_Templates>/msg/msg.js" -->
+
+<!-- #define variable="T_LB" value="inbox" -->
+<!-- #define variable="box_title" value="<$MEM_NNM><$VIS_NNM>'s Message Status" -->
+
+</head>
+
+<body class=info onload="">
+
+<!-- #include file="<$g_Templates>/msg/buttons.html" -->
+<!-- #ifndef variable="hideTemplate" --> 
+
+<!-- #define variable="heading" value="Messages" -->
+<!-- #define variable="up_url" value="javascript:loadPlaceInfo()" -->
+<!-- #define variable="up_tar" value="action" -->
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<p class=head2>
+<$box_title>
+</p>
+
+<!-- #define variable="escapetxt" escape="<$TXT>" -->
+
+<$g_table>
+
+<tr>
+<td class=tdbg><p class=tdfont>Maximum message storage</p></td>
+<td align=right class=tdbg><p class=tdfont><$g_msMaxMessagesPerUser></p></td>
+</tr>
+
+<tr>
+<td class=tdbg><p class=tdfont>Message storage currently in use</p></td>
+<td align=right class=tdbg><p class=tdfont><$MAXITER></p></td>
+</tr>
+
+<tr>
+<td class=thbg><p class=thfont><b>Free messages left</b></p></td>
+<td align=right class=thbg><p class=thfont><b><script language="JavaScript"> document.write(msgStatusCount('<$g_msMaxMessagesPerUser>','<$MAXITER>')); </script></b></p></td>
+</tr>
+
+</table>
+
+<p class=error>
+<br><script language="JavaScript"> document.write(msgStatusText('<$g_msMaxMessagesPerUser>','<$MAXITER>')); </script>
+</p>
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+<!-- #endif variable="hideTemplate" --> 
+
+</body>
+</html>

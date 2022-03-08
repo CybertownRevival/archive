@@ -1,0 +1,34 @@
+<!-- #ifndef variable="ID" value="00000000000009fe" -->
+<!-- #ifndef variable="ID" value="00000000000009ff" -->
+<!-- #ifndef variable="ID" value="00000000000009ef" -->
+	<!-- #include virtual="<$g_Templates>place/placenormal.tmpl" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="00000000000009fe" -->
+<!-- #ifdef variable="T_PASS" value="thegalaxybearsstriveforbeans" -->
+	<!-- #include virtual="<$g_Templates>place/placenormal.tmpl" -->
+<!-- #endif variable="T_PASS" -->
+<!-- #ifndef variable="T_PASS" value="thegalaxybearsstriveforbeans" -->
+Access denied.
+<!-- #endif variable="T_PASS" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="00000000000009ff" -->
+<!-- #ifdef variable="T_PASS" value="thegalaxybearsstriveforbeans" -->
+	<!-- #include virtual="<$g_Templates>place/placenormal.tmpl" -->
+<!-- #endif variable="T_PASS" -->
+<!-- #ifndef variable="T_PASS" value="thegalaxybearsstriveforbeans" -->
+Access denied.
+<!-- #endif variable="T_PASS" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="00000000000009ef" -->
+<!-- #ifdef variable="T_PASS" value="meetingtime" -->
+	<!-- #include virtual="<$g_Templates>founoffice/placenormal.tmpl" -->
+<!-- #endif variable="T_PASS" -->
+<!-- #ifndef variable="T_PASS" value="meetingtime" -->
+<!-- #include virtual="<$g_Templates>founoffice/enter.tmpl" -->
+<!-- #endif variable="T_PASS" -->
+<!-- #endif variable="ID" -->

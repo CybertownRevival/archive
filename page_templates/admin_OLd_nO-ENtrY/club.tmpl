@@ -1,0 +1,420 @@
+<!-- admin/club.tmpl -->
+<!-- edit club data -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{   
+    document.updateForm.KK1.value 
+        = document.updateForm.CK1.options[document.updateForm.CK1.selectedIndex].value.toLowerCase();
+
+    document.updateForm.KK2.value 
+        = document.updateForm.CK2.options[document.updateForm.CK2.selectedIndex].value.toLowerCase();
+
+    document.updateForm.KK3.value = document.updateForm.CK3.value.toLowerCase();
+
+    if( document.updateForm.STC_CB.checked )
+        document.updateForm.STC.value = "1";
+    else
+        document.updateForm.STC.value = "0";
+
+    if( document.updateForm.STA_CB.checked )
+        document.updateForm.STA.value = "1";
+    else
+        document.updateForm.STA.value = "0";
+
+    if( document.updateForm.STM_CB.checked )
+        document.updateForm.STM.value = "1";
+    else
+        document.updateForm.STM.value = "0";
+
+    if( document.updateForm.ST1_CB.checked )
+        document.updateForm.ST1.value = "1";
+    else
+        document.updateForm.ST1.value = "0";
+
+    if( document.updateForm.ST2_CB.checked )
+        document.updateForm.ST2.value = "1";
+    else
+        document.updateForm.ST2.value = "0";
+
+    if( document.updateForm.ST3_CB.checked )
+        document.updateForm.ST3.value = "1";
+    else
+        document.updateForm.ST3.value = "0";
+}
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Club Attributes for <$CLM_CITY> <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="CL">
+    <input type=hidden name="KTY" value="ID">
+    <input type=hidden name="KEY" value="<$ID>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <INPUT TYPE="hidden" NAME="STC" VALUE="<$STC>">
+    <INPUT TYPE="hidden" NAME="STA" VALUE="<$STA>">
+    <INPUT TYPE="hidden" NAME="STM" VALUE="<$STM>">
+
+    <INPUT TYPE="hidden" NAME="ST1" VALUE="<$ST1>">
+    <INPUT TYPE="hidden" NAME="ST2" VALUE="<$ST2>">
+    <INPUT TYPE="hidden" NAME="ST3" VALUE="<$ST3>">
+
+    <INPUT TYPE="hidden" NAME="KK1" VALUE="<$KK1>">
+    <INPUT TYPE="hidden" NAME="KK2" VALUE="<$KK2>">
+    <INPUT TYPE="hidden" NAME="KK3" VALUE="<$KK3>">
+    
+    <table border=0>
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td colspan=5><font color=#80ff00><$NAM> (<$NAK>)</font></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Owner:&nbsp;&nbsp;</td>
+            <td>
+                <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">&nbsp;<$OWN_NNM>&nbsp;</A><br>
+            </td>
+            <td align=right>Creation Date:</td>
+            <td colspan=3>
+              <font color=#80ff00>
+                <$CDA_MDAY>.<$CDA_MON>.<$CDA_YEAR>&nbsp;<$CDA_HOUR>:<$CDA_MIN>:<$CDA_SEC>
+              </font>
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Owner Job:&nbsp;&nbsp;</td>
+            <td><font color=#80ff00><$OWR_NAM></font></td>
+            <td align=right>Assistant Job:&nbsp;&nbsp;</td>
+            <td colspan=3><font color=#80ff00><$ASR_NAM></font></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>    
+            <td align=right>Keywords:&nbsp;&nbsp;</td>
+            <td colspan=2>
+                <SELECT NAME="CK1">
+                    <!--#for loopname="keyword1List" loopvars="CK1_LIST_" -->
+                        <OPTION VALUE="<$CK1_LIST_>"
+                        <!--#ifdef variable="CK1_SEL_" -->
+                            SELECTED
+                        <!--#endif variable="CK1_SEL_"-->
+                        > <$CK1_LIST_> </OPTION>
+                    <!--#endfor loopname="keyword1List" -->
+                </SELECT>&nbsp;&nbsp;
+            </td>
+            <td colspan=2>
+                <SELECT NAME="CK2">
+                    <!--#for loopname="keyword2List" loopvars="CK2_LIST_" -->
+                        <OPTION VALUE="<$CK2_LIST_>"
+                        <!--#ifdef variable="CK2_SEL_" -->
+                            SELECTED
+                        <!--#endif variable="CK2_SEL_"-->
+                        > <$CK2_LIST_> </OPTION>
+                    <!--#endfor loopname="keyword2List" -->
+                </SELECT>&nbsp;&nbsp;
+            </td>
+            <td><INPUT NAME="CK3" VALUE="<$CK3>" MAXLENGTH=32 SIZE=20></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Place:&nbsp;&nbsp;</td>
+            <td  colspan=2>
+                <SELECT NAME="PID">
+                    <!--#for loopname="list" loopvars="COL_ID_" -->
+                        <OPTION VALUE="<$COL_ID_>"
+                        <!--#ifdef variable="COL_SEL_" -->
+                            SELECTED
+                        <!--#endif variable="COL_SEL_"-->
+                        > <$COL_NAM_> </OPTION>
+                    <!--#endfor loopname="list" -->
+                </SELECT>
+            </td>
+            <td align=right>Invitation Type:&nbsp;&nbsp;</td>
+            <TD colspan=2>
+                <select name="CKI">
+                    <option value="O"
+                    <!--#ifdef variable="CKI" value="O"-->
+                        SELECTED
+                    <!--#endif variable="CKI"-->
+                    > Open for everyone </option>
+                    <option value="I"
+                    <!--#ifdef variable="CKI" value="I"-->
+                        SELECTED
+                    <!--#endif variable="CKI"-->
+                    > By Invitation </option>
+                </select>
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Members:&nbsp;&nbsp;</td>
+            <td><font color=#80ff00><$CNT></font></td>
+            <td align=right>Activity:&nbsp;&nbsp;</td>
+            <td><font color=#80ff00><$ACT></font></td>
+            </td>
+            <td align=right>Money:&nbsp;&nbsp;</td>
+            <td>
+                <input name="MON" value="<$MON>" maxlength=8 size=8>                
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td valign=top>Description:&nbsp;&nbsp;</td>
+            <td colspan=5>
+                <TEXTAREA NAME="DES" ROWS="2" COLS="60"><$ID_2DES></TEXTAREA>
+            </td>
+        </tr>
+        <tr>
+            <td valign=top>Club Rules:&nbsp;&nbsp;</td>
+            <td colspan=5>
+                <TEXTAREA NAME="RUL" ROWS="4" COLS="60"><$ID_RUL></TEXTAREA>
+            </td>
+        </tr>
+        <tr><td colspan=6 align=center><font size=+2>Club House Appearance</font></td></tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td>Colors:&nbsp;&nbsp;</td>
+            <td colspan=5>&nbsp;</td>
+        </tr>
+        <tr>
+            <td align=right>Wall:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="WAC" width=100>
+                    <OPTION
+                    <!--#ifdef variable="WAC" value="0.000 0.200 0.000" -->
+                    SELECTED
+                    <!--#endif variable="WAC" -->
+                    VALUE="0.000 0.200 0.000">Forest Green</option>
+                    <OPTION
+                    <!--#ifdef variable="WAC" value="0.200 0.200 0.200" -->
+                    SELECTED
+                    <!--#endif variable="WAC" -->
+                    VALUE="0.200 0.200 0.200">Charcol</option>
+                    <OPTION
+                    <!--#ifdef variable="WAC" value="0.300 0.100 0.000" -->
+                    SELECTED
+                    <!--#endif variable="WAC" -->
+                    VALUE="0.300 0.100 0.000">Deep Red</option>
+                    <OPTION
+                    <!--#ifdef variable="WAC" value="0.350 0.350 0.375" -->
+                    SELECTED
+                    <!--#endif variable="WAC" -->
+                    VALUE="0.350 0.350 0.375">Beige</option>
+                    <OPTION
+                    <!--#ifdef variable="WAC" value="0.100 0.200 0.300" -->
+                    SELECTED
+                    <!--#endif variable="WAC" -->
+                    VALUE="0.100 0.200 0.300">Blue</option>
+                </select>
+            </td> 
+            <td align=right>Floor:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="FLC" width=100>
+                    <OPTION
+                    <!--#ifdef variable="FLC" value="0.600 0.550 0.450" -->
+                    SELECTED
+                    <!--#endif variable="FLC" -->
+                    VALUE="0.600 0.550 0.450">Beige</option>
+                    <OPTION
+                    <!--#ifdef variable="FLC" value="1.000 1.000 0.900" -->
+                    SELECTED
+                    <!--#endif variable="FLC" -->
+                    VALUE="1.000 1.000 0.900">White</option>
+                    <OPTION
+                    <!--#ifdef variable="FLC" value="0.000 0.400 0.350" -->
+                    SELECTED
+                    <!--#endif variable="FLC" -->
+                    VALUE="0.000 0.400 0.350">Aqua</option>
+                    <OPTION
+                    <!--#ifdef variable="FLC" value="0.300 0.100 0.150" -->
+                    SELECTED
+                    <!--#endif variable="FLC" -->
+                    VALUE="0.300 0.100 0.150">Burgundy</option>
+                    <OPTION
+                    <!--#ifdef variable="FLC" value="0.585 0.585 0.600" -->
+                    SELECTED
+                    <!--#endif variable="FLC" -->
+                    VALUE="0.585 0.585 0.600">Grey</option>
+                </select>
+            </td> 
+            <td align=rigth>Ceiling:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="CEC" width=100>
+                    <OPTION
+                    <!--#ifdef variable="CEC" value="0.900 0.900 0.850" -->
+                    SELECTED
+                    <!--#endif variable="CEC" -->
+                    VALUE="0.900 0.900 0.850">Eggshell</option>
+                    <OPTION
+                    <!--#ifdef variable="CEC" value="1.000 1.000 1.000" -->
+                    SELECTED
+                    <!--#endif variable="CEC" -->
+                    VALUE="1.000 1.000 1.000">Warm White</option>
+                    <OPTION 
+                    <!--#ifdef variable="CEC" value="0.000 0.500 0.700" -->
+                    SELECTED
+                    <!--#endif variable="CEC" -->
+                    VALUE="0.000 0.500 0.700">Sky Blue</option>
+                    <OPTION 
+                    <!--#ifdef variable="CEC" value="0.800 0.750 0.700" -->
+                    SELECTED
+                    <!--#endif variable="CEC" -->
+                    VALUE="0.800 0.750 0.700">Capuccino</option>
+                    <OPTION 
+                    <!--#ifdef variable="CEC" value="0.400 0.400 0.395" -->
+                    SELECTED
+                    <!--#endif variable="CEC" -->
+                    VALUE="0.400 0.400 0.395">Cool Grey</option>
+                </SELECT>
+            </td>
+        </tr>
+    </table>
+<br>
+    <table border=1>
+        <tr>
+            <td width=100 align=center>Club Image</td>
+            <td width=100 align=center>Meeting Room</td>
+            <td width=100 align=center>Assembly Room</td>
+            <td width=100 align=center>Gallery Image 1</td>
+            <td width=100 align=center>Gallery Image 2</td>
+            <td width=100 align=center>Gallery Image 3</td>
+        </tr>
+        <tr>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$CLP>" border=0 alt="Club Image" height="70">
+            </td>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$MRP>" border=0 alt="Club Image" height="70">
+            </td>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$ARP>" border=0 alt="Club Image" height="70">
+            </td>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$GP1>" border=0 alt="Club Image" height="70">
+            </td>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$GP2>" border=0 alt="Club Image" height="70">
+            </td>
+            <td align=center>
+                <img src="<$g_HTMLRoot><$g_DBImages><$GP3>" border=0 alt="Club Image" height="70">
+            </td>
+        </tr>
+        <tr>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="STC_CB"  VALUE="1"
+                <!-- #ifdef variable="STC" value="1" -->
+                    checked
+                <!-- #endif variable="STC" -->
+                >Locked</INPUT>
+            </td>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="STM_CB"  VALUE="1"
+                <!-- #ifdef variable="STM" value="1" -->
+                    checked
+                <!-- #endif variable="STM" -->
+                >Locked</INPUT>
+            </td>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="STA_CB"  VALUE="1"
+                <!-- #ifdef variable="STA" value="1" -->
+                    checked
+                <!-- #endif variable="STA" -->
+                >Locked</INPUT>
+            </td>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="ST1_CB"  VALUE="1"
+                <!-- #ifdef variable="ST1" value="1" -->
+                    checked
+                <!-- #endif variable="ST1" -->
+                >Locked</INPUT>
+            </td>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="ST2_CB"  VALUE="1"
+                <!-- #ifdef variable="ST2" value="1" -->
+                    checked
+                <!-- #endif variable="ST2" -->
+                >Locked</INPUT>
+            </td>
+            <td align=center>
+                <INPUT TYPE="checkbox" NAME="ST3_CB"  VALUE="1"
+                <!-- #ifdef variable="ST3" value="1" -->
+                    checked
+                <!-- #endif variable="ST3" -->
+                >Locked</INPUT>
+            </td>
+        </tr>
+    </table>
+<br>
+    <table>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan=2 align=center>Descrition</td>
+            <td colspan=2 align=center>URL</td>
+        </tr>
+        <tr>
+            <td align=right>Link 0:</td>
+            <td colspan=2><input name="LD0" value="<$LD0>" SIZE=32></td>
+            <td colspan=2><input name="LL0" value="<$LL0>" SIZE=32></td>
+        </tr>        
+        <tr>
+            <td align=right>Link 1:</td>
+            <td colspan=2><input name="LD1" value="<$LD1>" SIZE=32></td>
+            <td colspan=2><input name="LL1" value="<$LL1>" SIZE=32></td>
+        </tr>        
+        <tr>
+            <td align=right>Link 2:</td>
+            <td colspan=2><input name="LD2" value="<$LD2>" SIZE=32></td>
+            <td colspan=2><input name="LL2" value="<$LL2>" SIZE=32></td>
+        </tr>        
+        <tr>
+            <td align=right>Link 3:</td>
+            <td colspan=2><input name="LD3" value="<$LD3>" SIZE=32></td>
+            <td colspan=2><input name="LL3" value="<$LL3>" SIZE=32></td>
+        </tr>        
+        <tr>
+            <td align=right>Link 4:</td>
+            <td colspan=2><input name="LD4" value="<$LD4>" SIZE=32></td>
+            <td colspan=2><input name="LL4" value="<$LL4>" SIZE=32></td>
+        </tr>        
+    </table>
+<br>
+    <A HREF="edit<$g_exe>?DTY=CL&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">Access Rights...</A><br>
+<br>
+    <input type=submit name="edit" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

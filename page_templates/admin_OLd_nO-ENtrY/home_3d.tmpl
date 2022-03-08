@@ -1,0 +1,159 @@
+<!-- admin/home_3d.tmpl -->
+<!-- edit the 3D home images -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2><$BNM_CITY> Icons <font color=#80ff00><$CNM_CITY> ID: <$parent></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<!-- #ifdef variable="createok" -->
+    <b><i>Please copy all necessary texture images for the new 3D home to<br>
+    the directory <$VRMLPATH>!</i></b><br>
+<!-- #endif variable="createok" -->
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <input type="hidden" name="parent" value="<$parent>">
+
+    <table>
+        <tr>
+            <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+            <!--#ifdef variable="[PREV]" -->
+                <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifndef variable="[PREV]" -->
+                <td>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<form enctype="multipart/form-data" name="updateForm" method=post action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KFT" value="<$KFT>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="ac" value="edit">
+    <input type=hidden name="KEY" value="<$KEY>">
+
+    <input type="hidden" name="parent" value="<$parent>">
+
+    <table border=0>
+        <!--#for loopname="mainloop" loopvars="ID_" -->
+        <tr>
+            <td>
+                <a href="admin<$g_exe>?DTY=U&KTY=ID&KEY=<$ID_>&TPL=admin/media_obj&ac=read&price=1&vrml=1&parent_tpl=<$TPL>" target=_self>
+                    <img src="<$g_HTMLRoot>/home/<$parent>/block/Picon3D<$ID_MASK_>.gif" border=0 alt="Map Index: <$ID_MASK_>"></a>
+            </td>
+            <td>
+            <table>
+                <tr>
+                    <td align=right>Index:&nbsp;&nbsp;</td>
+                    <td colspan=3><$ID_MASK_></td>
+                </tr>
+                <tr>
+                    <td align=right>Name:&nbsp;&nbsp;</td>
+                    <td colspan=3><$NAM_></td>
+                </tr>
+                <tr>
+                    <td align=right>Cost:&nbsp;&nbsp;</td>
+                    <td width=100><$CST_></td>
+                    <td align=right>Price:&nbsp;&nbsp;</td>
+                    <td width=100><$PRC_></td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr><td colspan=2><hr></td></tr>
+        <!--#endfor loopname="mainloop" -->
+    </table>
+</form>
+
+<form enctype="multipart/form-data" name="createForm" method=post action="<$selfurl>">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KFT" value="<$KFT>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="ac" value="create">
+    <input type=hidden name="parent" value="<$parent>">
+
+    <table border=0>
+        <tr>
+            <td colspan=4 align=center>
+                <b>
+                   Note if you specifie a number of objects,
+                   the same Image File will be used for all!<br><br>
+                   You can change the icon by copying a new one to:<br>
+                   <$g_Htdocs><$g_HTMLRoot>/home/<$parent>/block/Picon3D<i>&lt;Icon Index&gt;</i>.gif<br><br>
+                   The VRML file is located in the directory <$g_Htdocs><$g_HTMLRoot>/home/<$parent>/property/vrml/&lt;Icon Index&gt/home.wrl<br><br>
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td colspan=3><input type="text" name="NAM" value="3D Icon, Place" size=24></td>
+        </tr>
+        <tr>
+            <td align=right>No. of Objects:&nbsp;&nbsp;</td>
+            <td colspan=3><input type="text" name="NOB" value="1" size=4 maxlength=4></td>
+        </tr>
+        <tr>
+            <td align=right>Cost:&nbsp;&nbsp;</td>
+            <td><input type="text" name="CST" value="40" size=8 maxlength=8></td>
+            <td align=right>Price:&nbsp;&nbsp;</td>
+            <td><input type="text" name="PRC" value="200" size=8 maxlength=8></td>
+        </tr>
+        <tr><td colspan=4 align=center>&nbsp;</td></tr>
+        <tr>
+            <td align=right>Image File:&nbsp;&nbsp;</td>
+            <td colspan=3><input type="file" name="IMGFILE" maxlength="255" size=24></td>
+        </tr>
+        <tr>
+            <td align=right>VRML File:&nbsp;&nbsp;</td>
+            <td colspan=3><input type="file" name="VRMLFILE" maxlength="255" size=24></td>
+        </tr>
+    </table>
+<br>
+    <input type=submit name="insert" value="Create" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>

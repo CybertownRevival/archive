@@ -1,0 +1,60 @@
+<HTML>
+<!-- iwos/guest_edit.tmpl -->
+<!-- displays the pages of the book -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Guest Book Edition</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+  function submitForm()
+  {
+    document.storePage.submit();
+  }
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<CENTER>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the page could not been updated!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The page was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+<form method=post action="<$selfurl>" name="storePage">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ac" value="newpage">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PAGE" value="<$PAGE>">
+
+<br>
+  <H2><$NAM>
+<a href="<$g_HttpServer>/help/homebuilder/guestbookhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+
+  <textarea name="CONTENT" rows="18" cols="40"><$CONTENT></textarea>
+<br><br>
+  <a href="javascript:submitForm()"><img src="<$g_Images>/images/iwos/update.gif" border=0 alt="update"></a>
+  <a href="javascript:history.back()"><img src="<$g_Images>/images/iwos/cancel.gif" border=0 alt="cancel"></a>
+<br><br>
+  Page <$PAGE> out of <$PCN> pages<br>
+<br>
+</form>
+
+</BODY>
+</HTML>

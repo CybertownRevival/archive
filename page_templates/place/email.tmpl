@@ -1,0 +1,81 @@
+<html>
+<head>
+<title><$g_title> - Suburb Submission</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#66FF00">
+
+<h2>Submit your World!</h2>
+
+<div align=center>
+
+<font color="red">
+<!-- #ifdef variable="emailerror001" -->
+Subject, from and to are are required for sending an email!
+<!-- #endif variable="emailerror001" -->
+
+<!-- #ifdef variable="emailerror002" -->
+Email could not be send!
+<!-- #endif variable="emailerror002" -->
+</font>
+
+<font color="yellow">
+<!-- #ifdef variable="emailok" -->
+Your email has been sent!
+<!-- #endif variable="emailok" -->
+</font>
+
+</div>
+
+<!-- #ifndef variable="emailok" -->
+<form method=post action="place">
+
+<table border=0>
+<tr>
+<td width=150><b>Name:</b></td>
+<td width=400><$NNM></td>
+</tr>
+
+<tr>
+<td><b>URL (world):</b></td>
+<td><input name="VAL0" value="http://" maxlength=128 size=48></td>
+</tr>
+
+<tr>
+<td><b>Title (world):</b></td>
+<td><input name="VAL1" value="My Suburb" maxlength=32 size=16></td>
+</tr>
+
+<tr>
+<td><b>Comments:</b></td>
+<td><textarea name="VAL2" rows=5 cols=32 wrap=off></textarea></td>
+</tr>
+</table>
+
+<input type=hidden name="BODY" 
+value="Dear City Architect!
+The following suburb world has been submitted:
+ - Nickname=<$NNM>
+ - URL=[$VAL0]
+ - Title=[$VAL1]
+ - Comments=[$VAL2]
+
+That's it!
+Your City Team">
+
+<div align=center>If your world is approved you will be contacted with further instructions.<br>
+<input type=hidden name="ac" value="email">
+<input type=hidden name="tpl" value="suburbs/submit">
+<input type=hidden name="subject" value="City: Suburb Submission">
+<input type=hidden name="from" value="<$NNM>@city.com">
+<input type=hidden name="to" value="architect@city.com">
+
+<input type=submit name="submit" value="Submit">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</div>
+</form>
+<!-- #endif variable="emailok" -->
+
+</body>
+</html>
+

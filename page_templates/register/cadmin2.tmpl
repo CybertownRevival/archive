@@ -1,0 +1,55 @@
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00"
+      ALINK="#FFFFFF" TEXT="#FFFF00">
+
+<center>
+<font size=+2>Registration - New Member</font>
+<img src="<$g_Images>/images/login/immicode.jpg" border=0 alt="Register">
+
+<br><br>
+<!-- #ifdef variable="updateok" -->
+Member language successfully updated.
+<br>
+<br>
+<a href="javascript:history.go(-3)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a>
+<!-- #endif variable="updateok" -->
+
+<!-- #ifndef variable="updateok" -->
+Member succesfully registered.
+<br><br>
+Set the language of the member.
+
+<form method=post action="edit" target="_self">
+<input type=hidden name="KEY" value="<$NNM>">
+<input type=hidden name="TPL" value="register/cadmin2">
+<input type=hidden name="ac" value="edit">
+<table border=0>
+<tr>
+	<td width=130><b>Member</b></td>
+	<td><$NNM></td>
+</tr>
+<tr>
+	<td width=130><b>Language</b></td>
+<td><SELECT NAME="LNG">
+  <OPTION selected value="EN">English
+  <OPTION value="FI">Finish
+  <OPTION value="DE">German
+  <OPTION value="GR">Greek
+</SELECT></td>
+</tr>
+</table>
+<br>
+
+<input type=submit name="yes" value=Update>
+<input type=button name="no" value=Cancel onClick="history.go(-2)">
+</center>
+
+</form>
+<!-- #endif variable="updateok" -->
+</body>
+</html>
+

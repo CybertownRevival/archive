@@ -1,0 +1,13 @@
+<HTML>
+<BODY BGCOLOR="#000000" onLoad="parent.update('<$Ap>:<$MIN> <$APM><BR>',<$NUM>,<$TIME>);">
+<script language=javascript>
+<!-- #if variable="TYPE" == value="notify" -->
+location.href="/cgi-bin/cybertown/message?TPL=message/notify&TIM=<$CT_STR>";
+<!-- #else variable="TYPE" -->
+<!-- #ifdef variable="MSG" -->
+  parent.messageReceived();
+<!-- #endif variable="MSG" -->
+<!-- #endif variable="TYPE" -->
+</script>
+</BODY>
+</HTML>

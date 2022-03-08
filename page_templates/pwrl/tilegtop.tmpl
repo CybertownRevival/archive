@@ -1,0 +1,214 @@
+#VRML V2.0 utf8
+#<pre>
+# tilegtop.html - a single tile
+Transform{
+children[
+
+Collision{
+collide FALSE
+children[
+
+<!--#for loopname="objectloop" loopvars="OBJECT_INDEX" -->
+
+<!--#ifdef variable="OBJECT_TYPE" value="P" -->
+Transform {
+translation <$OBJECT_X> <$OBJECT_HEIGHT> <$OBJECT_Z>
+<!--#ifdef variable="SIZexp_1" -->
+scale 1 <$SIZ> 1
+<!--#endif variable="SIZexp_1" -->
+children [
+ Billboard {
+ children[
+  Transform {
+  translation 0 -30 0
+  scale 1 80 1
+  children [
+   Shape {
+    appearance Appearance {
+     material Material { diffuseColor 0.76 0.55 0.1 }
+     texture ImageTexture { url "/images/colorg.gif" }
+    }
+    geometry Box { size 1 1 1 }
+   }
+  ]}
+   
+  Anchor{
+  url "http://www.google.com/search?q=<$OBJECT_STRING>"
+  parameter "target=newwindow"
+  description "Search"
+  children[
+   Shape {
+    appearance Appearance {
+     material Material {diffuseColor 1 0.5 1}
+     texture ImageTexture {
+      url "/images/font512sg.gif"
+      repeatS FALSE
+      repeatT FALSE
+     }
+    }
+    geometry Text {
+     string [ <$OBJECT_NAME> ]
+     fontStyle FontStyle { family "TEXTURE" size 10 }
+    }
+   }
+  ]}
+ ]}
+]}
+<!--#endif variable="OBJECT_TYPE" -->
+
+<!--#ifdef variable="OBJECT_TYPE" value="L" -->
+Transform {
+translation <$OBJECT_X> <$OBJECT_HEIGHT> <$OBJECT_Z>
+<!--#ifdef variable="SIZexp_1" -->
+scale 1 <$SIZ> 1
+<!--#endif variable="SIZexp_1" -->
+children [
+ Billboard {
+ children[
+  Transform {
+  translation 0 -30 0
+  scale 1 80 1
+  children [
+   Shape {
+    appearance Appearance {
+     material Material { diffuseColor 0.76 0.55 0.1 }
+     texture ImageTexture { url "/images/colorb.gif" }
+    }
+    geometry Box { size 1 1 1 }
+   }
+  ]}
+   
+  Anchor{
+  url "http://www.google.com/search?q=<$OBJECT_STRING>"
+  parameter "target=search"
+  description "Search"
+  children[
+   Shape {
+    appearance Appearance {
+     material Material {diffuseColor 1 0.5 1}
+     texture ImageTexture {
+      url "/images/font512wb.gif"
+      repeatS FALSE
+      repeatT FALSE
+     }
+    }
+    geometry Text {
+     string [ <$OBJECT_NAME> ]
+     fontStyle FontStyle { family "TEXTURE" size 10 }
+    }
+   }
+  ]}
+ ]}
+]}
+<!--#endif variable="OBJECT_TYPE" -->
+
+<!--#ifdef variable="OBJECT_TYPE" value="M" -->
+Transform {
+translation <$OBJECT_X> <$OBJECT_HEIGHT> <$OBJECT_Z>
+<!--#ifdef variable="SIZexp_1" -->
+scale 1 <$SIZ> 1
+<!--#endif variable="SIZexp_1" -->
+children [
+ Billboard {
+ children[
+  Transform {
+  translation 0 -30 0
+  scale 1 80 1
+  children [
+   Shape {
+    appearance Appearance {
+     material Material { diffuseColor 0.76 0.55 0.1 }
+     texture ImageTexture { url "/images/colorw.gif" }
+    }
+    geometry Box { size 1 1 1 }
+   }
+  ]}
+   
+  Shape {
+   appearance Appearance {
+    material Material {diffuseColor 1 0.5 1}
+    texture ImageTexture {
+     url "/images/font512sw.gif"
+     repeatS FALSE
+     repeatT FALSE
+    }
+   }
+   geometry Text {
+    string [ <$OBJECT_NAME> ]
+    fontStyle FontStyle { family "TEXTURE" size 10 }
+   }
+  }
+ ]}
+]}
+<!--#endif variable="OBJECT_TYPE" -->
+
+<!--#ifdef variable="OBJECT_TYPE" value="AP" -->
+Transform {
+translation <$OBJECT_X> <$OBJECT_HEIGHT> <$OBJECT_Z>
+<!--#ifdef variable="SIZexp_1" -->
+scale 1 <$SIZ> 1
+<!--#endif variable="SIZexp_1" -->
+children [
+ Billboard {
+ children[
+  Transform {
+  translation 0 -30 0
+  scale 1 80 1
+  children [
+   Shape {
+    appearance Appearance {
+     material Material { diffuseColor 1 1 1 }
+     texture ImageTexture { url "/images/colorw.gif" }
+    }
+    geometry Box { size 1 1 1 }
+   }
+  ]}
+   
+  Shape {
+   appearance Appearance {
+    material Material {diffuseColor 1 0.5 1}
+    texture ImageTexture {
+     url "/images/font512rw.gif"
+     repeatS FALSE
+     repeatT FALSE
+    }
+   }
+   geometry Text {
+    string [ <$OBJECT_NAME> ]
+    fontStyle FontStyle { family "TEXTURE" size 10 }
+   }
+  }
+ ]}
+]}
+<!--#endif variable="OBJECT_TYPE" -->
+
+<!--#endfor loopname="objectloop" -->
+
+]}
+
+Shape {
+ appearance Appearance {
+  material Material { }
+ }
+ geometry ElevationGrid {
+  xDimension  <$XDIMENSION>
+  zDimension  <$ZDIMENSION>
+  xSpacing    <$XSPACING>
+  zSpacing    <$ZSPACING>
+  creaseAngle 3.14
+  height [
+
+<$HEIGHTS>
+
+  ]
+  colorPerVertex TRUE
+  color Color {
+   color [
+
+<$COLORS>
+
+   ]
+  }
+ }
+}
+]}

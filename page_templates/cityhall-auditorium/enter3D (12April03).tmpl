@@ -1,0 +1,142 @@
+<!-- /place/enter3d.tmpl -->
+<!-- #ifdef variable="chatreadaccess" -->  
+### blaxxun CCpro - place definition file  
+### ------------------------------------------  
+server                          <$cserver>  
+port                            <$csport>  
+
+<!-- #ifndef variable="T_spawn" value="" -->
+<!-- #ifdef variable="T_aud" value="stage" -->
+<!-- #ifdef variable="T_pass" value="FutureHost" -->
+scene                           <$g_SceneServer><$g_cgiRoot>/place?hide=true&ID=<$ID>&plc=<$plc>&ac=3D&stage=cityhall&T_spawn=<$T_spawn>&IE=x.bxx
+3dscene                         <$g_HttpServer><$g_HTMLRoot>/<$3Dscene>
+<!-- #endif variable="T_pass" -->
+<!-- #endif variable="T_aud" -->
+<!-- #ifdef variable="T_aud" value="audit" -->
+scene                           <$g_SceneServer><$g_cgiRoot>/place?hide=true&ID=<$ID>&plc=<$plc>&ac=3D&audit=cityhall&T_spawn=<$T_spawn>&IE=x.bxx
+3dscene                         <$g_HttpServer><$g_HTMLRoot>/<$3Dscene>
+<!-- #endif variable="T_aud" -->
+<!-- #endif variable="T_spawn" -->
+
+<!-- #ifdef variable="T_spawn" value="" -->
+scene                           <$g_SceneServer><$g_cgiRoot>/place?ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx
+3dscene                         <$g_HttpServer><$g_HTMLRoot>/places/cityhall/vrml/lobby.wrl
+<!-- #endif variable="T_spawn" -->
+
+avatarworld             <$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm  
+sname                   <$scenename>  
+
+<!-- #ifdef variable="chatwriteaccess" -->  
+<!-- #ifndef variable="T_spawn" value="" -->  
+<!-- #define variable="room" value="Room <$T_spawn>"
+<!-- #endif variable="T_spawn" -->  
+<!-- #ifdef variable="T_spawn" value="" -->  
+<!-- #define variable="room" value="Lobby"
+<!-- #endif variable="T_spawn" -->  
+message                 <$NNM>, welcome to <$scenename> <$room>.    
+<!-- #endif variable="chatwriteaccess" -->
+  
+<!-- #ifndef variable="chatwriteaccess" -->  
+message                 <$NNM>, welcome to <$scenename>. Sorry, you can only watch the chat!  
+protectpublicinput      1  
+<!-- #endif variable="chatwriteaccess" -->  
+  
+### Authentication  
+authenticationid                <$MID>  
+authenticationpw                <$COOKIE>  
+nickname                        <$NNM>  
+protectnickname         1  
+  
+<!-- #ifdef variable="isMember" -->
+
+<!-- #ifndef variable="T_setAvatar" -->
+<!-- #if variable="AVU" != "" -->
+vrmlmyavatar		<$AVU>
+saveavatar		1
+<!-- #endif variable="AVU" --> 
+<!-- #endif variable="T_setAvatar" --> 
+
+<!-- #ifdef variable="T_setAvatar" -->
+vrmlmyavatar		<$T_setAvatar>
+<!-- #endif variable="T_setAvatar" --> 
+
+
+<!-- #if variable="INT" != "" -->
+interests               <$INT>
+<!-- #endif variable="INT" -->
+<!-- #endif variable="isMember" -->
+
+<!-- #ifdef variable="isVisitor" -->
+vrmlmyavatar            http://www.blaxxun.com/bxx/vrml/avatars/default.wrl
+settingslistflag                101110
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+settingslistflag                111111
+<!-- #endif variable="isVisitor" -->
+  
+### Roles  
+prenickname             <$NAM>  
+postnickname            <$EXP>  
+
+
+### JoinMessage
+joinmessage             0
+ 
+
+<!-- #ifndef variable="ID" value="000000000000001b" -->
+### Voice  
+voicesupport            1  
+clientvoiceenable       1  
+botvoiceenable          1  
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="000000000000001b" -->
+### Voice  
+voicesupport            0  
+clientvoiceenable       0  
+botvoiceenable          0  
+<!-- #endif variable="ID" -->
+avatarhorizoncount      20
+  
+### Diverse  
+noblaxxunhelp           1  
+useversionserver        0  
+listtabflag                             100000100  
+##listtabflag                           <$list_flag>
+<!-- #ifndef variable="T_refresh" value="false" -->  
+frameset                             <$g_HttpServer><$g_cgiRoot>/<$frameset>  
+<!-- #endif variable="T_refresh" -->
+htmlframe                               HTML  
+framesizes                              60  
+uselastscene    0  
+[ListTabs]tabPrivateObjName     My Backpack  
+[ListTabs]tabPublicObjName      Objects   
+  
+### Colors  
+logcolor        0  
+panelbackrgb            0,80,0  
+paneltextrgb            0,223,0  
+  
+### Chat colors  
+inputtextchatrgb        255,255,0  
+systemtextchatrgb       0,255,220  
+historytextchatrgb      250,250,250  
+bottextchatrgb          0,195,255  
+owntextchatrgb          255,255,0  
+othertextchatrgb        255,160,0  
+<!-- #endif variable="chatreadaccess" -->  
+  
+<!-- #ifndef variable="chatreadaccess" -->  
+### replace frameset to show correct error message  
+server                          <$cserver>  
+port                            <$csport>  
+scene                           <$g_HttpServer><$g_cgiRoot>/<$scene>  
+3dscene                                 <$g_HttpServer><$g_HTMLRoot>/<$3Dscene>  
+sname                   <$scenename>  
+<!-- #ifndef variable="T_refresh" value="false" -->  
+frameset <$g_HttpServer><$g_cgiRoot>/place<$g_exe>?plc=<$place>&ac=index3d  
+<!-- #endif variable="T_refresh" -->
+<!-- #endif variable="chatreadaccess" -->  
+  

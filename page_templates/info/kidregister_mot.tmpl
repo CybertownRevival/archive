@@ -1,0 +1,137 @@
+<!-- info/kidregister_mot.tmpl -->
+<!-- registration form -->
+
+<html>
+<head>
+<title><$g_title> - Member Immigration</title>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<script language=javascript>
+
+
+function checkemail( fld )
+{
+ var setFocus = false;
+ var i = 0, okmail = 0;
+ if (fld.value == '')
+ {
+  alert("Please insert an email address.");
+  setFocus = true;
+  return false;
+ }
+ for( i=0 ; i < fld.value.length ; i++ )
+ {
+   var c = fld.value.charAt(i);
+   if( !( (c  >= 'A' && c <= 'Z') || (c  >= 'a' && c <= 'z') || (c  >= '0' && c <= '9') || c == '_' || c == '-' || c == '@'
+               || c == '.' || c == '\'' ))
+   {
+    okmail = 0;
+    break;
+   }
+   if ( c == '.' && okmail > 0 )
+    okmail++;
+   if ( c == '@' )
+   {
+    if (okmail > 0)
+    {
+     okmail = 0;
+     break;
+    }
+    okmail++;
+   }
+ }
+ if (c == '.')
+  okmail--;
+ if ( okmail < 2 )
+ {
+  alert("The email address is not valid. Please correct it.");
+  setFocus = true;
+ }
+ if (setFocus)
+ {
+  fld.focus();
+  return false;
+ }
+ return true;
+}
+
+
+function testSend() {
+
+     // document.im_form.T_KID.value = "US";
+
+     //   document.im2_form.ac.value = 'howinfo';
+
+      //  document.im_form.TPL.value = 'kidregister';
+     //   opener.document.im_form.EML.value = document.im2_form.EML.value;
+     //   opener.document.im_form.EMV.value = document.im2_form.EML.value;
+        opener.document.im_form.REML.value = document.im2_form.EML.value;
+        opener.document.im_form.REGTEXT.value = "r_regcode_text2";
+        opener.document.im_form.T_AGE.selection = 1;
+//	alert(opener.document.im_form.ac.value);
+//        opener.document.im_form.action = '/cgi-bin/cybertown/register?backurl=/index.html&T_KID=US'; 
+ 
+	opener.document.im_form.submit();
+
+  self.close();
+}
+
+</script>
+</head>
+
+<body text="#F8F8F8" bgcolor="#000000" link="#66FFFF" vlink="#00C1EA" alink="#FFFFFF" background="<$g_HTMLRoot>/places/mothership/immigrate/back.jpg">
+<font color="#00FF00" face="Arial, Helvetica, sans-serif">
+
+<form name="im2_form" onSubmit=testSend()> <!-- method=post action="/cgi-bin/colonycity/register" name="im2_form" target="opener" -->
+
+<p>
+<br>
+<center>
+<img src="<$g_HTMLRoot>/places/mothership/immigrate/msimmigrate.gif" border="0"><br> 
+<br><br>
+<table>
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+We're delighted that you have decided to register with Mothership<br>
+and become a member of the Sci-fi Community of the future.<br>
+Because you are 12 or younger, you need your parent's permission<br>
+to become an active member of our community.
+</font>
+</td>
+</tr>
+<tr>
+<td align=center>
+<br>
+<font color="#00FF00" face="Arial, Helvetica, sans-serif">
+Please enter your parent's email address here:<br>
+<INPUT NAME="EML" VALUE="" MAXLENGTH=64 SIZE=32 onBlur="checkemail( this )"><br>
+</font>
+<br>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial, Helvetica, sans-serif">
+We will send your immigration code to your parents and that will<br>
+unlock all the features of Mothership membership to you. Ask your<br>
+parent to give you that code when they get the email<br>
+in just a few minutes or the next time they read their email.<br>
+</font>
+<br>
+</td>
+</tr>
+</table>
+
+<input type=hidden name="T_KID" value="<$T_KID>">
+<input type=hidden name="NNM" value="<$NNM>">
+<input type=hidden name="ac" value="register">
+
+<input type="button" name="Submit" value="submit" onClick=testSend()>
+</form>
+
+</center>
+
+</body>
+</html>

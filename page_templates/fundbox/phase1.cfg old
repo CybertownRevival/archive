@@ -1,0 +1,10 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+#*GET M NNM <$NNM> ID M_ID MON TYPE=NUM MON NNK MEM_NNK
+
+*GET O ID <$ID> ID PLACE_ID NAM PLACE_NAM MON TYPE=NUM MON
+
+*GET MD ID <$M_ID> TEM TEM

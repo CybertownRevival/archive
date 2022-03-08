@@ -1,0 +1,69 @@
+<HTML>
+<!-- clubdir/action.tmpl -->
+<!-- right side action frame -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>blaxxun interactive - Technology for Community</title>
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="club<$g_exe>?ac=directory&T_level=top" target=place>
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<a href="javascript:loadInfo('place<$g_exe>?plc=clubdir&ac=info&ID=<$ID>')">
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/club/rules.html')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/borules.gif" BORDER=0 ALT="Rules"></a><br>
+<!-- #ifndef variable="isVisitor" -->
+<a href="club<$g_exe>?ac=showForm&TPL=clubdir/create&experCheck=club_min_exper" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bcreate.gif" BORDER=0 ALT="Create Club"></a><br>
+<!-- #endif variable="isVisitor" -->
+<br>
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="writeaccess" -->
+<br>
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=CL&KTY=ID&KEY=CL0000000000000e&MTY=m&program=club" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=clubdir/plist')">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check Images"></a><br>
+<a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=clubdir/dellist')">
+<IMG SRC="<$g_Images>/images/buttons/bclose.gif" BORDER=0 ALT="Close Club"></a><br>
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&plc=clubdir&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+

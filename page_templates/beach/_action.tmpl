@@ -1,0 +1,73 @@
+<!-- beach/action.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+<BASE TARGET="place">
+
+<script language="JavaScript">
+function moderate() {
+window.open('place<$g_exe>?ac=moderate&plc=<$place>&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+}
+</script>
+
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=p">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chataccess" -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<a href="javascript:loadInfo('place<$g_exe>?plc=<$place>&ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+
+<br>
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="javascript:moderate()" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate Chat"></a>
+<a href="place<$g_exe>?plc=<$place>&ac=update" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&plc=<$place>&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

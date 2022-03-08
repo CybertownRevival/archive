@@ -1,0 +1,21 @@
+<!-- event/morph/count.tmpl -->
+<!-- event item counter = 0 -->
+
+<div align=center>
+<p>
+<!-- #ifdef variable="TYP" value="1"-->
+You have found a <b>Morph</b>, it's the <$EVENTITEMNAM>.
+<br><$TXT>
+<p><font color=#ffff00><b>It's too late, this Morph has already been found by too many citizens ...</b></font>
+<!-- #endif variable="TYP" -->
+<!-- #ifdef variable="TYP" value="2" -->
+You have found a <b>Weekly Price</b> - a <$EVENTITEMNAM>.
+<br><$TXT>
+<p><font color=#ffff00><b>It's too late, all weekly prices are already found this week ...</b></font>
+<!-- #endif variable="TYP" -->
+<!-- #ifdef variable="TYP" value="3" -->
+You have found a price: a <$EVENTITEMNAM>!
+<br><$TXT>
+<p><font color=#ffff00><b>Only 1 citizen can win this price, and it has already been found ...</b></font>
+<!-- #endif variable="TYP" -->
+</div>

@@ -1,0 +1,28 @@
+<!-- license/license.tmpl -->
+<!-- displayed after issue of avatar studio license -->
+<HTML>
+<HEAD>
+<title>blaxxun3D License</title>
+</HEAD>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<center>
+<h1>blaxxun3D License</h1>
+<!-- #ifdef variable="error001" -->
+<P>Sorry, your license request is invalid.
+<!-- #endif variable="error001" -->
+<!-- #ifndef variable="error001" -->
+</center>
+<P>Thank you for buying blaxxun3D.
+<P>&nbsp;</P>
+<P>Order number: <$ORD>
+<P>Your license keys are:<br>
+<!--#for loopname="key" loopvars="KEY" -->
+<$DOM>: <$KEY><br>
+<!--#endfor loopname="key" -->
+<P>
+Enjoy blaxxun3D!
+<!-- #endif variable="error" -->
+<BODY>
+</HTML>

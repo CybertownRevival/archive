@@ -1,0 +1,166 @@
+<html>
+<head>
+<title><$g_title></title>
+	<!-- cal/write.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Calendar - Event Post</h2>
+
+<!-- #ifndef variable="calmsg001" -->
+
+<!-- #ifndef variable="update" -->
+<B>
+Select a date and specify an event
+</B>
+<!-- #endif variable="update" -->
+<P>
+<center>
+<FORM ACTION="<$selfurl>" METHOD="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="DATE" value="<$DATE>">
+<input type=hidden name="update" value="<$update>">
+<input type=hidden name="ac"  value="write">
+
+<!-- #ifndef variable="update" -->
+
+<B>Place:         </B>
+<SELECT name = "PLACE_ID">
+
+<!-- #ifdef variable="CLUB_VALUE" -->
+	<OPTION selected value=<$CLUB_VALUE>><$CLUB_NAME>&nbsp;
+<!-- #endif variable="CLUB_VALUE" -->
+	<OPTION <$PLACE_SEL_O_0000000000000001> value="O_0000000000000001_enter">City Plaza&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000002> value="O_0000000000000002_cityhall">City Hall&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000003> value="O_0000000000000003_news">News Center&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000005> value="O_0000000000000005_library">Library&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000006> value="O_0000000000000006_cafe">City Cafe&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000008> value="O_0000000000000008_theatre">Theatre&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000009> value="O_0000000000000009_shopping">Shopping Mall&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000000a> value="O_000000000000000a_funpark">Fun Park &nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000000b> value="O_000000000000000b_pool">Pool&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000000c> value="O_000000000000000c_employment">City Employment Office&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000000d> value="O_000000000000000d_stadium">Stadium&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000016> value="O_0000000000000016_fleamarket">Flea Market&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000018> value="O_0000000000000018_casino">Casino&nbsp;
+	<OPTION <$PLACE_SEL_O_0000000000000019> value="O_0000000000000019_arcade">Arcade&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000001a> value="O_000000000000001a_gallery">Gallery&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000001b> value="O_000000000000001b_movies">vDrome&nbsp;
+	<OPTION <$PLACE_SEL_O_000000000000001c> value="O_000000000000001c_nightclub">Black Sun Club&nbsp;
+</SELECT>
+<BR>
+
+<B>Month:         </B>
+<SELECT name = "DATE_MON">
+<!--#for loopname="month" loopvars="monthval,monthname,monthselected" -->
+<OPTION <$monthselected> value = "<$monthval>"><$monthname>&nbsp;
+<!--#endfor loopname="month"  -->
+</SELECT>
+
+<B>Day:           </B>
+<SELECT name = "DATE_MDAY">
+<!--#for loopname="day" loopvars="dayval,dayname,dayselected" -->
+<OPTION <$dayselected> value = "<$dayval>"><$dayname>&nbsp;
+<!--#endfor loopname="day"  -->
+</SELECT>
+<B>Hour:          </B>
+<SELECT name = "DATE_HOUR">
+<OPTION value = "00">12 am&nbsp;
+<OPTION value = "01"> 1 am&nbsp;
+<OPTION value = "02"> 2 am&nbsp;
+<OPTION value = "03"> 3 am&nbsp;
+<OPTION value = "04"> 4 am&nbsp;
+<OPTION value = "05"> 5 am&nbsp;
+<OPTION value = "06"> 6 am&nbsp;
+<OPTION value = "07"> 7 am&nbsp;
+<OPTION value = "08"> 8 am&nbsp;
+<OPTION value = "09"> 9 am&nbsp;
+<OPTION value = "10">10 am&nbsp;
+<OPTION value = "11">11 am&nbsp;
+<OPTION selected value = "12">12 pm&nbsp;
+<OPTION value = "13"> 1 pm&nbsp;
+<OPTION value = "14"> 2 pm&nbsp;
+<OPTION value = "15"> 3 pm&nbsp;
+<OPTION value = "16"> 4 pm&nbsp;
+<OPTION value = "17"> 5 pm&nbsp;
+<OPTION value = "18"> 6 pm&nbsp;
+<OPTION value = "19"> 7 pm&nbsp;
+<OPTION value = "20"> 8 pm&nbsp;
+<OPTION value = "21"> 9 pm&nbsp;
+<OPTION value = "22">10 pm&nbsp;
+<OPTION value = "23">11 pm&nbsp;
+</SELECT>
+<B>Minute:        </B>
+<SELECT name = "DATE_MIN">
+<!--#for loopname="minute" loopvars="min,minuteval,minutename,minuteselected" -->
+<OPTION <$minuteselected> value = "<$minuteval>"><$minutename>&nbsp;
+<!--#endfor loopname="minute"  -->
+</SELECT>
+<input type=hidden name="DATE_SEC" value="00">
+
+<!-- #endif variable="update" -->
+
+<table border=0>
+<tr>
+<td>Event title:</td>
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=32 SIZE=32></td>
+</tr>
+<tr>
+<td>Event text:</td>
+<td><TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+</p>
+</form>
+
+<!-- #ifdef variable="msgallowdelete" -->
+<a href="<$selfurl>?ac=delete&DATE=<$DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>">Delete the Event</a>
+<!-- #endif variable="msgallowdelete" -->
+
+<!-- #ifdef variable="calallowhtm" -->
+<P>
+Post of HTML tags is required on this event calendar.<br>
+Please put at least "&lt;P>" tags if you want to start new
+paragraphs in your post.
+<!-- #endif variable="calallowhtm" -->
+
+<!-- #ifndef variable="calallowhtm" -->
+<P>
+Post of HTML tags is not allowed on this calendar.<br>
+Please do not post any HTML tags like "&lt;P>", etc.
+<!-- #endif variable="calallowhtm" -->
+<!-- #endif variable="calmsg001" -->
+</div>
+
+<!-- #ifdef variable="calmsg001" -->
+The event has been posted.
+<!-- #endif variable="calmsg001" -->
+
+<font color="red">
+<!-- #ifdef variable="calerror001" -->
+Sorry <$NNM>, you do not have permission to post an event.
+<!-- #endif variable="calerror001" -->
+
+<!-- #ifdef variable="calerror002" -->
+Sorry <$NNM>, the length of the input you gave is too big.
+<!-- #endif variable="calerror002" -->
+
+<!-- #ifdef variable="calerror003" -->
+Sorry <$NNM>, the date you specified is illegal.
+<!-- #endif variable="calerror003" -->
+
+</font>
+
+</body>
+</html>
+

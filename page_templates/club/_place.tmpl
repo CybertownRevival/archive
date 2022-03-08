@@ -1,0 +1,72 @@
+<!--club/place.tmpl-->
+<HTML>
+<!-- display the place frame with chat for places -->
+<HEAD>
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+</HEAD>
+<!-- #ifdef variable="chatno" -->
+<!-- #define variable="no3d" value="1" -->
+<!-- #endif variable="chatno" -->
+<!-- #ifdef variable="chatstd" -->
+<!-- #define variable="no3d" value="1" -->
+<!-- #endif variable="chatstd" -->
+
+<!-- #ifdef variable="no3d" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<table border=0>
+    <tr>
+        <td>
+            <!-- #ifdef variable="STC" value="0"-->
+                <IMG SRC="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image">
+            <!-- #endif variable="STC" -->
+            <!-- #ifdef variable="STC" value="1"-->
+                <IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+            <!-- #endif variable="STC" -->
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            <h3>Welcome to <$placename>!</h3>
+            <$DES>
+        </td>
+    </tr>
+</table>
+<br>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+
+<!-- #ifdef variable="chatno" -->
+<a href="http://www.blaxxun.com" target="external"><IMG SRC="<$g_HTMLRoot>/ad/ad468.gif" ALIGN="center" BORDER="0"></a>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</div>
+</BODY>
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<!-- #include virtual="<$g_Templates>club/javachat.tmpl" -->
+<!-- #ifdef variable="ID" value="CL000000000007d0" -->
+<br><a href="javascript:loadInfo('http://www.seti.org')" target=_self>
+<IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a>
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="CL00000000001b9b" -->
+<br>
+<SCRIPT LANGUAGE="JavaScript">  
+showbanner();  
+</SCRIPT>
+
+<!-- #endif variable="ID" -->
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</div>
+</BODY>
+<!-- #endif variable="chatstd" -->
+<!-- #endif variable="no3d" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>place/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+</HTML>

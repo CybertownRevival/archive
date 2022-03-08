@@ -1,0 +1,183 @@
+#VRML V2.0 utf8  
+  
+# club/vrml.tmpl  
+# 3d clubhouse  
+  
+EXTERNPROTO SharedObject [  
+exposedField SFVec3f translation  
+exposedField SFRotation rotation  
+exposedField MFNode children  
+exposedField SFString name  
+exposedField SFString id  
+eventIn SFBool startMove  
+eventOut SFTime touchTime  
+eventOut SFBool isOver  
+eventOut SFVec3f newPosition  
+eventOut SFRotation newRotation  
+] "http://www.blaxxun.com/bxx/vrml/protos/shared.wrl#SharedObject"  
+  
+EXTERNPROTO Club[  
+exposedField SFColor roofColor  
+exposedField SFColor wallColor  
+exposedField SFColor floorColor  
+  
+exposedField MFString meetingPicture  
+exposedField MFString assemblyPicture  
+exposedField MFString galleryPicture1  
+exposedField MFString galleryPicture2  
+exposedField MFString galleryPicture3  
+
+exposedField MFString meetingUrl
+exposedField MFString assemblyUrl 
+exposedField MFString galleryUrl1
+exposedField MFString galleryUrl2 
+exposedField MFString galleryUrl3
+
+exposedField MFString meetingParam
+exposedField MFString assemblyParam 
+exposedField MFString galleryParam1
+exposedField MFString galleryParam2 
+exposedField MFString galleryParam3
+  
+exposedField MFString floorImage  
+exposedField MFString stoneImage  
+exposedField MFString roofImage  
+exposedField MFString stuccImage  
+exposedField MFString officeImage  
+exposedField MFString doorImage  
+exposedField MFString sunwinImage  
+exposedField MFString fernImage  
+]"<$g_HTMLRoot>/places/club/vrml/club_proto.wrl#Club"  
+
+DEF L4 DirectionalLight{direction -1 -.5 -1}  
+DEF L3 DirectionalLight{direction 1 -.5 -1}  
+DEF L2 DirectionalLight{direction 0 .5 1}  
+DEF L1 DirectionalLight{direction .5 0 -.5 color 1 .75 .25 intensity .65}  
+  
+Group{  
+children[  
+  
+  
+DEF thisClub Club{  
+roofColor <$CEC>  
+wallColor <$WAC>  
+floorColor <$FLC>  
+<!--#ifdef variable="ST1" value="1"-->  
+galleryPicture1 ["<$g_HTMLRoot>/places/club/images/locked.gif"]  
+<!--#endif variable="ST1" -->  
+<!--#ifdef variable="ST1" value="0"-->  
+galleryPicture1 ["<$g_HTMLRoot><$g_DBImages><$GP1>"]  
+<!--#endif variable="ST1" -->  
+  
+<!--#ifdef variable="ST2" value="1"-->  
+galleryPicture2 ["<$g_HTMLRoot>/places/club/images/locked.gif"]  
+<!--#endif variable="ST2" -->  
+<!--#ifdef variable="ST2" value="0"-->  
+galleryPicture2 ["<$g_HTMLRoot><$g_DBImages><$GP2>"]  
+<!--#endif variable="ST2" -->  
+  
+<!--#ifdef variable="ST3" value="1"-->  
+galleryPicture3 ["<$g_HTMLRoot>/places/club/images/locked.gif"]  
+<!--#endif variable="ST3" -->  
+<!--#ifdef variable="ST3" value="0"-->  
+galleryPicture3 ["<$g_HTMLRoot><$g_DBImages><$GP3>"]  
+<!--#endif variable="ST3" -->  
+  
+<!--#ifdef variable="STM" value="1"-->  
+meetingPicture ["<$g_HTMLRoot>/places/club/images/locked.gif"]  
+<!--#endif variable="STM" -->  
+<!--#ifdef variable="STM" value="0"-->  
+meetingPicture   ["<$g_HTMLRoot><$g_DBImages><$MRP>"]  
+<!--#endif variable="STM" -->  
+  
+<!--#ifdef variable="STA" value="1"-->  
+assemblyPicture ["<$g_HTMLRoot>/places/club/images/locked.gif"]  
+<!--#endif variable="STA" -->  
+<!--#ifdef variable="STA" value="0"-->  
+assemblyPicture  ["<$g_HTMLRoot><$g_DBImages><$ARP>"]  
+<!--#endif variable="STA" -->  
+
+
+<!-- #ifdef variable="UR1" -->
+assemblyUrl "<$UR1>"
+<!-- #endif variable="UR1" -->
+
+<!-- #ifdef variable="UR2" -->
+meetingUrl "<$UR2>"
+<!-- #endif variable="UR2" -->
+
+<!-- #ifdef variable="UR3" -->
+galleryUrl1 "<$UR3>"
+<!-- #endif variable="UR3" -->
+
+<!-- #ifdef variable="UR4" -->
+galleryUrl2 "<$UR4>"
+<!-- #endif variable="UR4" -->
+
+<!-- #ifdef variable="UR5" -->
+galleryUrl3 "<$UR5>"
+<!-- #endif variable="UR5" -->
+
+<!-- #ifdef variable="PA1" -->
+assemblyParam "<$PA1>"
+<!-- #endif variable="PA1" -->
+
+<!-- #ifdef variable="PA2" -->
+meetingParam "<$PA2>"
+<!-- #endif variable="PA2" -->
+
+<!-- #ifdef variable="PA3" -->
+galleryParam1 "<$PA3>"
+<!-- #endif variable="PA3" -->
+
+<!-- #ifdef variable="PA4" -->
+galleryParam2 "<$PA4>"
+<!-- #endif variable="PA4" -->
+
+<!-- #ifdef variable="PA5" -->
+galleryParam3 "<$PA5>"
+<!-- #endif variable="PA5" -->
+  
+floorImage  ["<$g_HTMLRoot>/places/club/vrml/images/floor.gif"]  
+stoneImage  ["<$g_HTMLRoot>/places/club/vrml/images/stone.jpg"]  
+roofImage   ["<$g_HTMLRoot>/places/club/vrml/images/roof.jpg"]  
+stuccImage  ["<$g_HTMLRoot>/places/club/vrml/images/stucc.gif"]  
+officeImage ["<$g_HTMLRoot>/places/club/vrml/images/office.jpg"]  
+doorImage   ["<$g_HTMLRoot>/places/club/vrml/images/door.jpg"]  
+sunwinImage ["<$g_HTMLRoot>/places/club/vrml/images/sunwin2.jpg"]  
+fernImage   ["<$g_HTMLRoot>/places/club/vrml/images/fern.jpg"]  
+}  
+  
+NavigationInfo{  
+type "WALK"  
+avatarSize      [0.25, 1.75, .5]  
+headlight FALSE  
+}  
+Viewpoint {  
+position 17 -1.3 28  
+orientation 0 1 0 .7  
+description "Gallery"  
+}  
+Viewpoint {  
+position 39 1.7 -3  
+orientation 0 1 0 -1.571  
+description "Meeting Room"  
+}  
+Viewpoint {  
+position 4 4.7 -18  
+orientation 0 1 0 .2  
+description "Assembly Hall"  
+}  
+Viewpoint {  
+position 3 6.25 -45  
+orientation 0 1 0 3.142  
+description "Assembly Hall Stage"  
+}  
+  
+Background{  
+skyColor[0 0 .5,0 .5 .75,1 .9 .8]  
+skyAngle [1.409,1.571]  
+groundColor[0 0 0.5,0 .5 .75,1 .6 .4,1 .9 .8]  
+groundAngle [1.2,1.5,1.571]  
+}  
+]}  

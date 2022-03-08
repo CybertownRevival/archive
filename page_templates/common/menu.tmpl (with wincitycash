@@ -1,0 +1,956 @@
+<!-- common/menu.tmpl -->
+<!-- included in menu.tmpl to show common parts, LEFT aligned!!! -->
+<!-- NOTE: the whole line (from td to /td) MUST be a single line, otherwise it causes a larger height -->
+
+
+
+
+
+
+<!-- show the join now or win a t-shirt icons at the left side -->
+
+<!-- #ifdef variable="isVisitor" -->
+<td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td><td align=left width=70><a href="register<$g_exe>"><img src="<$g_Images>/images/menu/join.gif" height=40 width=60 border=0></a></td><td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+
+<td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td><td align=left width=70><a href="javascript:void(0)" onClick="javascript:win=window.open('http://www.cybertown.com/friends/tellfriends.html','tellfriends','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=632,height=580');" target="_self"><IMG SRC="<$g_HTMLRoot>/ad/wintsmall.gif" BORDER=0></a></td><td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td>
+
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- end of left side icons -->
+
+
+
+<!-- begin large center banner ads -->
+
+
+<!-- colony ads -->
+<!-- #ifdef variable="DTY" value="C" -->
+<!-- #ifdef variable="ID" value="0101000000000000" -->
+<!-- These tags should be placed in the games category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2523|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2523|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2523|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2523|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0102000000000000" -->
+<!-- These tags should be placed in the sci-fi category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2522|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2522|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2522|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2522|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0103000000000000" -->
+<!-- These tags should be placed in the places-real&virtual category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2526|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2526|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2526|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2526|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0104000000000000" -->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0105000000000000" -->
+<!-- These tags should be placed in the new-age category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2525|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2525|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2525|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2525|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0106000000000000" -->
+<!-- These tags should be placed in the new-age category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2525|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2525|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2525|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2525|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+<!-- #endif variable="DTY" -->
+
+<!-- end of colony ads -->
+
+
+
+<!-- homes ads -->
+
+<!-- #ifdef variable="DTY" value="P" -->
+
+<!-- #ifdef variable="T_CID" value="0101000000000000"-->
+<!-- These tags should be placed in the games category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2523|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2523|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2523|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2523|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0102000000000000"-->
+<!-- These tags should be placed in the sci-fi category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2522|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2522|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2522|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2522|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+<!-- #ifdef variable="T_CID" value="0103000000000000"-->
+<!-- These tags should be placed in the places-real&virtual category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2526|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2526|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2526|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2526|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0104000000000000"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0105000000000000"-->
+<!-- These tags should be placed in the new-age category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2525|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2525|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2525|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2525|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+
+<!-- #endif variable="DTY" -->
+
+<!-- end  homes ads -->
+
+
+
+
+
+
+
+
+<!-- neighborhoods -->
+
+<!-- #ifdef variable="DTY" value="N" -->
+
+<!-- #ifdef variable="T_CID" value="0101000000000000"-->
+<!-- These tags should be placed in the games category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2523|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2523|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2523|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2523|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0102000000000000"-->
+<!-- These tags should be placed in the sci-fi category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2522|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2522|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2522|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2522|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+<!-- #ifdef variable="T_CID" value="0103000000000000"-->
+<!-- These tags should be placed in the places-real&virtual category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2526|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2526|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2526|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2526|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0104000000000000"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0105000000000000"-->
+<!-- These tags should be placed in the new-age category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2525|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2525|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2525|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2525|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+<!-- #endif variable="DTY" -->
+
+<!-- end of neighborhoods -->
+
+
+
+
+
+<!-- blocks -->
+
+<!-- #ifdef variable="DTY" value="B" -->
+
+<!-- #ifdef variable="T_CID" value="0101000000000000"-->
+<!-- These tags should be placed in the games category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2523|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2523|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2523|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2523|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0102000000000000"-->
+<!-- These tags should be placed in the sci-fi category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2522|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2522|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2522|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2522|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+<!-- #ifdef variable="T_CID" value="0103000000000000"-->
+<!-- These tags should be placed in the places-real&virtual category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2526|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2526|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2526|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2526|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0104000000000000"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+
+
+
+
+
+<!-- #ifdef variable="T_CID" value="0105000000000000"-->
+<!-- These tags should be placed in the new-age category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2525|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2525|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2525|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2525|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="T_CID" -->
+<!-- #endif variable="DTY" -->
+
+<!-- end of blocks -->
+
+
+
+<!-- clubs -->
+
+<!-- #ifdef variable="DTY" value="CL" -->
+<!-- #ifndef variable="ID" value="CL000000000007d0" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="DTY" -->
+
+<!-- end of clubs -->
+
+
+
+<!-- #ifndef variable="DTY" -->
+
+<!-- mall -->
+<!-- #ifdef variable="ID" value="0000000000000009" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000901" -->
+<!-- These tags should be placed in the teens category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000902" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000903" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000904" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000905" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000906" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000907" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000908" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="0000000000000909" -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2528|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2528|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2528|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2528|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- #endif variable="ID" -->
+
+
+<!-- end of mall -->
+
+
+
+
+<!-- employment office -->
+<!-- #ifdef variable="ID" value="000000000000000c" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of employment office -->
+
+
+
+<!-- cafe -->
+<!-- #ifdef variable="ID" value="0000000000000006" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of cafe -->
+
+
+
+<!-- FunPark -->
+<!-- #ifdef variable="ID" value="000000000000000a" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of Fun Park -->
+
+
+
+<!-- Water Park -->
+<!-- #ifdef variable="ID" value="0000000000000014" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of Water Park -->
+
+
+<!-- ThemePark -->
+<!-- #ifdef variable="ID" value="0000000000000015" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of Theme Park -->
+
+
+<!-- City Hall -->
+<!-- #ifdef variable="ID" value="0000000000000002" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of City Hall -->
+
+
+
+
+<!-- pool -->
+<!-- #ifdef variable="ID" value="000000000000000b" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of pool -->
+
+
+
+
+<!-- clubdir -->
+<!-- #ifdef variable="ID" value="000000000000000e" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of clubdir -->
+
+
+
+
+<!-- stadium -->
+<!-- #ifdef variable="ID" value="000000000000000d" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of stadium -->
+
+<!-- suburbs -->
+<!-- #ifdef variable="ID" value="000000000000000f" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of suburbs -->
+
+<!-- homebuilder-->
+<!-- #ifdef variable="ID" value="00000000000009f1" -->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- homebuilder -->
+
+
+<!-- theater -->
+<!-- #ifdef variable="ID" value="0000000000000008"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of theater -->
+
+
+<!-- arcade -->
+<!-- #ifdef variable="ID" value="0000000000000019"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of arcade -->
+
+<!-- casino -->
+<!-- #ifdef variable="ID" value="0000000000000018"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of casino -->
+
+<!-- nightclub -->
+<!-- #ifdef variable="ID" value="000000000000001c"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of nightclub -->
+
+<!-- gallery -->
+<!-- #ifdef variable="ID" value="000000000000001a"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of gallery-->
+
+<!-- library -->
+<!-- #ifdef variable="ID" value="0000000000000005"-->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of library-->
+
+<!-- vdrome -->
+<!-- #ifdef variable="ID" value="000000000000001b"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of vdrome -->
+
+<!-- eplex-->
+<!-- #ifdef variable="ID" value="0000000000000017"-->
+<!-- These tags should be placed in the entertainment category in the 468x60 size space (Placement: 2) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|iframe|C2524|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|jscript|C2524|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|2|image2|C2524|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|2|image2|C2524|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end of eplex-->
+
+
+<!-- sunset beach -->
+<!-- #ifdef variable="ID" value="0000000000000031" -->
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2527|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2527|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2527|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2527|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- end ofsunset beach -->
+
+
+<!-- #endif variable="DTY" -->
+
+<!-- flea market -->
+<!-- #ifndef variable="DTY" -->
+<!-- #ifdef variable="ID" value="0000000000000016" -->
+<!-- These tags should be placed in the 3d category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2531|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2531|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2531|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2531|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="DTY" -->
+<!-- end of flea market -->
+
+<!-- Outlands ads -->
+<!-- #ifndef variable="DTY" -->
+<!-- #ifdef variable="ID" value="0000000000000029" -->
+<!-- These tags should be placed in the games category in the 468x60 size space (Placement: 1) -->
+<td align=center><IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2523|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2523|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2523|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2523|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME></td>
+<!-- End of adMonitor v3.0 rich content tags -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="DTY" -->
+<!-- end of Outlands -->
+
+
+<!-- end of include menu.tmpl -->
+

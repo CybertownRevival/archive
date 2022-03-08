@@ -1,0 +1,162 @@
+<!-- #ifdef variable="chatreadaccess" -->  
+### blaxxun Contact - place definition file
+### ------------------------------------------
+server 		        	<$cserver>
+port 		        	<$csport>
+scene                           <$g_SceneServer><$g_cgiRoot>/property?ID=<$PLCID>&ac=3D&IE=x.bxx
+
+
+<!-- #if variable="WOS" != value="1" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/home.wrl
+<!-- #endif variable="WOS" -->
+
+
+
+<!-- #ifndef variable="WOS" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/home.wrl
+<!-- #endif variable="WOS" -->
+
+
+
+<!-- #if variable="commid" == value="0108000000000000" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/home/0108000000000000/property/vrml/<$WR3>/home.wrl
+<!-- #endif variable="commid" -->
+
+
+
+<!-- #if variable="commid" == value="0110000000000000" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/home/0110000000000000/property/vrml/<$WR3>/home.wrl
+<!-- #endif variable="commid" -->
+
+
+
+<!-- #if variable="WOS" == value="1" -->
+3dscene             <$g_HttpServer><$g_cgiRoot>/iwos<$g_exe>?ac=disphome&TPL=property/vrml/<$WR3>/vrml&ID=<$placeid>&mime=.wrl
+<!-- #endif variable="WOS" -->
+
+<!-- #if variable="WR3" contains value="deshom/dbobjects" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/<$WR3>
+<!-- #endif variable="WR3" -->
+
+<!-- #if variable="WR3" contains value="home/titlehomes" -->
+3dscene             <$g_HttpServer><$g_HTMLRoot>/<$WR3>
+<!-- #endif variable="WR3" -->
+
+
+
+
+
+avatarworld         	<$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm
+sname               	<$scenename>
+<!-- #ifdef variable="chatwriteaccess" -->
+message 		<$NNM>, welcome to <$scenename>. Please note that visitors can only watch the chat! 
+<!-- #endif variable="chatwriteaccess" -->
+<!-- #ifndef variable="chatwriteaccess" -->
+message 		<$NNM>, welcome to <$scenename>. Sorry, you can only watch the chat!
+protectpublicinput	1
+<!-- #endif variable="chatwriteaccess" -->
+
+### Authentication
+authenticationid		<$MID>
+authenticationpw		<$COOKIE>
+nickname	    		<$NNM>
+protectnickname		1
+
+<!-- #ifdef variable="isMember" -->
+
+<!-- #ifndef variable="T_setAvatar" -->
+<!-- #ifdef variable="AVU" != "" -->
+vrmlmyavatar		<$AVU>
+saveavatar		1
+<!-- #endif variable="AVU" --> 
+<!-- #endif variable="T_setAvatar" --> 
+
+<!-- #ifdef variable="T_setAvatar" -->
+vrmlmyavatar		<$T_setAvatar>
+<!-- #endif variable="T_setAvatar" --> 
+
+<!-- #if variable="INT" != "" -->
+interests		<$INT>
+<!-- #endif variable="INT" -->
+<!-- #endif variable="isMember" -->
+
+<!-- #ifdef variable="isVisitor" -->
+vrmlmyavatar		http://www.blaxxun.com/bxx/vrml/avatars/default.wrl
+settingslistflag		101110
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+settingslistflag		111111
+<!-- #endif variable="isVisitor" -->
+
+### Roles
+prenickname			<$NAM>
+postnickname 		<$EXP>
+
+### Joinmessage
+joinmessage		1
+
+
+### Voice
+voicesupport		1
+clientvoiceenable	1
+botvoiceenable		1
+
+
+### Diverse
+noblaxxunhelp		1
+useversionserver	0
+listtabflag                             110010111
+##listtabflag				<$list_flag>
+<!-- #ifndef variable="T_refresh" value="false" -->
+frameset				<$g_HttpServer><$g_cgiRoot>/<$frameset>
+<!--#endif variable="T_refresh" -->
+htmlframe				HTML
+framesizes				60
+uselastscene	0
+
+<!-- #if variable="commid" == value="0110000000000000" -->
+### Colors
+logcolor	0
+panelbackrgb          	0,0,0
+paneltextrgb          	0,223,0
+
+### Chat colors
+inputtextchatrgb       	255,255,0
+systemtextchatrgb      	0,255,220
+historytextchatrgb  	250,250,250
+bottextchatrgb         	0,80,0
+owntextchatrgb         	255,255,0
+othertextchatrgb       	255,160,0
+<!-- #else variable="commid" -->  
+### Colors
+logcolor	0
+panelbackrgb          	0,80,0
+paneltextrgb          	0,223,0
+
+### Chat colors
+inputtextchatrgb       	255,255,0
+systemtextchatrgb      	0,255,220
+historytextchatrgb  	250,250,250
+bottextchatrgb         	0,195,255
+owntextchatrgb         	255,255,0
+othertextchatrgb       	255,160,0
+
+<!-- #endif variable="commid" -->
+
+### Ui changes
+[ListTabs]tabPrivateObjName	My Backpack
+[ListTabs]tabPublicObjName	Objects 
+
+<!-- #else variable="chatreadaccess" -->  
+
+### replace frameset to show correct error message  
+server                          <$cserver>  
+port                            <$csport>  
+scene                           <$g_SceneServer><$g_cgiRoot>/property?ID=<$PLCID>&ac=3D&IE=x.bxx
+3dscene             <$g_HttpServer><$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/home.wrl
+sname                   <$scenename>  
+frameset <$g_HttpServer><$g_cgiRoot>/property<$g_exe>?ID=<$PLCID>&ac=index
+
+<!-- #endif variable="chatreadaccess" -->
+  

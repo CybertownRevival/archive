@@ -1,0 +1,26 @@
+<!-- banner/emergency.tmpl -->
+<!-- called from banners/banner2.tmpl for menu banners -->
+
+<td><SCRIPT LANGUAGE="JavaScript">  
+var banners = new Array(3);  
+  
+banners[0] = '<center><a href="javascript:loadCustom(\'https://www.secureorderprocess.com/blaxxun/\',\'640\',\'480\')" target=_self><img src=http://www.cybertown.com/places/enter/images/avafinal1.gif alt="Blaxxun Avatar Studio" height=60 width=468 border=0></a></center>';  
+banners[1] = '<center><a href="/cgi-bin/cybertown/place?plc=club&ID=CL00000000001b9b" target="_top"><img src="http://www.cybertown.com/places/enter/images/newinfo.jpg" alt="Newcomers Info" height=60 width=468 border=0></a></center>';
+banners[2] = '<center><a href="/cgi-bin/cybertown/place?pl=employment" target="_top"><img src="/banners/images/sni1.gif" border="0"></a></center>';
+
+function getrandom() {  
+var random = Math.floor((Math.random() * 3));  
+return random;  
+}  
+function showbanner() {  
+var bannernumber = getrandom();  
+document.write(banners[bannernumber]);  
+}  
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript">  
+showbanner();  
+</SCRIPT>
+   </td>
+	
+

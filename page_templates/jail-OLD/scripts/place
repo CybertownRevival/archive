@@ -1,0 +1,1200 @@
+#!/usr/bin/perl -w
+
+
+#################################################################
+# this script pipes the membername into a javachat/x.bxx
+# it is needed for the jail (prisoner) chats
+# for security reasons it logs who enters the script
+# -commands
+# -IP's
+# it should look on the first view like a normal place script ;))                                                   
+# stefan 00.8.10
+##################################################################
+
+
+# Contains shared functions for all registration pages.
+require "utils.pl";
+
+        &get_date;
+        &parse_form;
+
+# where the script logs are stored:
+my $logfilepath = "/services/http/80/cgi-bin/cybertown/logs/";
+my $logfilename = "prisoner_enter.log";
+
+# the db-connection:
+my $cmd  = "/services/http/80/cgi-bin/cybertown/templates/jail/scripts/sec/raudp_000815 -r www2.cybertown.com:2035";
+my $redirect_url="http://www.cybertown.com";
+
+my $server = "www3.cybertown.com";
+my $servername = "http://www.cybertown.com";
+my $servername1 = "http://www1.cybertown.com";
+my $servername3 = "http://www3.cybertown.com";
+my $scene_ID = "0000000000000040";
+my $scene_wrl = "/places/jail/vrml/jailpris.wrl";
+my $avatarlib = "/avatars/inmate/prisoner.wrl";
+my $place = "jail";
+
+# we only use two variables all others are only logged
+my $NNM = $FORM{'NNM'};
+my $PWD = $FORM{'PWD'};
+my $ID = $FORM{'ID'};
+my $force = $FORM{'force'};
+my $tpl =$FORM{'tpl'};
+
+# we want fingerprints:
+#Turn the IP address into a readable domain name.
+my $frompage = $ENV{'HTTP_REFERER'};
+my $realip = $ENV{'REMOTE_ADDR'};
+my $ip = $ENV{'REMOTE_HOST'};
+my $n = `nslookup $ip | grep Name`; chop($n);
+my $host=substr($n, rindex($n, " ")+1);    
+my $period1=rindex($host,'.');
+my $period2=rindex($host,'.',$period1-1);
+
+my $remote_user =$ENV{'REMOTE_USER'};
+my $remote_ident =$ENV{'REMOTE_IDENT'};
+
+# get the cookie info
+my $cookie = $ENV{'HTTP_COOKIE'};
+$cookie =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+$cookie =~ tr/+/ /;
+$cookie =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+$cookie =~ s/<!--(.|\n)*-->//g;
+my @cinfo = split(/=/,$cookie);
+my $cvalue= $cinfo[1];
+$NNM= $cvalue;
+
+
+&db_check_member;
+
+if($force eq "p")
+{
+	&enter3d_html_output;
+}
+else
+{
+	if($tpl eq "enter3d")
+	{
+        	&bxx_html_output;
+	}
+	else
+	{
+        	&javachat_html_output;
+	}
+}
+
+
+	
+        &write_text_file;
+
+exit;
+
+
+####################
+sub write_text_file {
+####################
+        $textfile = $logfilepath . $logfilename;
+
+      $month = $mon + 1; #$mon starts at 0 for some reason
+
+      if ( ! open (HITME, ">> $textfile") )
+      {
+        print "<font color=000000>";
+          print "Opening file $textfile failed\n";
+        print "</font>\n";
+      }
+
+        chmod 0666, $textfile;
+        flock (HITME,2);
+
+        print HITME "NNM=$NNM|PWD=$PWD|";
+        print HITME "  Submitted: $hour:$min:$sec, $month/$mday/$year,";
+        print HITME " host $realip ($host) , $ip";
+        print HITME " $remote_user, $remote_ident|";
+        print HITME " ### $ENV{'QUERY_STRING'} ###";
+        print HITME " ### from=" . $frompage . " ###";
+        print HITME " browser=$ENV{'HTTP_USER_AGENT'}";
+        print HITME "\n";
+
+        flock(HITME,8);
+        close HITME;
+}
+
+
+####################
+sub db_check_member {
+####################
+print"Content: text/html\n\n";
+print"test";
+local (*in) = @_ if @_;
+
+        $in="hacker";
+
+    $nickname = $NNM;
+    if( length( "$nickname" ) < 1  )
+    {
+        print "usage: external.pl check <nickname>\n";
+        exit(0);
+return ($in);
+    }
+
+    $cmd .= " DB G M NNM \"$nickname\" PWD ID CHT EXD";
+    $cmd .= ' -BSIROOT . |';
+    if( !open( ofile, $cmd ))
+    {
+        print "Cannot run \"$cmd\", $!\n";
+        exit( 0 );
+return ($in);
+    }
+
+    $result = <ofile>;
+    $pass = <ofile>; 
+    $id = <ofile>;
+    $cht = <ofile>; 
+
+    while( <ofile> ) { next; } # read rest of the output to avoid problems with a broken pipe
+
+    close( ofile );
+
+    chop( $result );
+    chop( $pass );
+    chop( $id );
+    chop( $cht );
+    chop( $exd );
+
+    if( $result eq '0' && $exd ne "") #&& $passu eq $PWD)
+    {
+        print "member $nickname exists with first name '$id' and chat '$cht'\n";
+        $in= "$nickname";
+       $in{'cht'}= "$cht";
+    }
+    else
+    {
+    print "$nickname not exists";
+    exit(0);
+    }
+print"test $in";
+
+return ($in);
+}
+
+####################
+sub enter3d_html_output {
+####################
+print <<EOT;
+Content-type: text/html
+
+<frameset rows="60%,40%,*" border=0 marginheight=0 marginwidth=0>
+
+        <frame name="World" src="$servername$scene_wrl" scrolling="no" noresize b
+order=0 marginheight=5 marginwidth=20>
+
+        <frame name="CCpro" src="$servername/cgi-bin/$place/place?plc=$place&tpl=enter3d&ID=$scene_ID&IE=x.bxx" scrolling="no" border=0 marginheight=0 marginwidth=3>
+
+        <frame name="audio" src="/common/blank.htm" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 fr
+ameborder=0 framespacing=0>
+
+</frameset>
+
+EOT
+}
+
+ 
+####################
+sub bxx_html_output {
+####################
+
+print <<EOT;
+Content-type: application/x-ccpro
+
+
+<!-- /place/enter3d.tmpl -->
+
+### blaxxun CCpro - place definition file  
+
+### ------------------------------------------  
+
+server                          $server  
+
+port                            2000  
+
+
+
+scene                           $servername1/cgi-bin/cybertown/place?ID=$scene_ID&plc=$place&ac=3D&IE=x.bxx
+
+
+
+
+
+3dscene                         $servername$scene_wrl
+
+
+
+avatarworld             	$servername/avatars/pro_vrml.htm  
+
+sname                   Jail  
+
+message                 $cvalue, welcome to Jail. Enjoy your stay!   
+
+  
+
+### Authentication  
+
+authenticationid                $ID  
+
+authenticationpw                  
+
+nickname                        $cvalue
+
+protectnickname         1  
+
+  
+
+
+protectavatarurl        1
+vrmlmyavatar            $servername$avatarlib
+
+
+
+
+
+
+
+
+interests               
+
+
+
+
+
+settingslistflag                111111
+
+  
+
+### Roles  
+
+prenickname             Inmate  
+
+postnickname            0  
+
+
+### JoinMessage
+
+joinmessage             0
+
+ 
+
+
+
+### Voice  
+
+voicesupport            1  
+
+clientvoiceenable       1  
+
+botvoiceenable          1  
+
+
+
+
+
+
+
+
+
+  
+
+### Diverse  
+
+noblaxxunhelp           1  
+
+useversionserver        0  
+
+listtabflag                             100000000  
+
+##listtabflag                           110011111
+
+frameset                             $servername/cgi-bin/cybertown/place?plc=$place&ac=index3d  
+
+htmlframe                               HTML  
+
+framesizes                              60  
+
+uselastscene    0  
+
+[ListTabs]tabPrivateObjName     My Backpack  
+
+[ListTabs]tabPublicObjName      Objects   
+
+  
+
+### Colors  
+
+logcolor        0  
+
+panelbackrgb            0,80,0  
+
+paneltextrgb            0,223,0  
+
+  
+
+### Chat colors  
+
+inputtextchatrgb        255,255,0  
+
+systemtextchatrgb       0,255,220  
+
+historytextchatrgb      250,250,250  
+
+bottextchatrgb          0,195,255  
+
+owntextchatrgb          255,255,0  
+
+othertextchatrgb        255,160,0  
+
+  
+
+EOT
+}
+
+
+####################
+sub javachat_html_output {
+####################
+
+print <<EOT;
+Content-type: text/html
+
+<!--place/place.tmpl-->
+
+<!-- display the place frame with chat for places -->
+
+<HTML>
+
+<HEAD>
+
+	<title>Cybertown - Civilization for the Virtual Age</title>
+
+	<base target="_top">
+
+<!-- common/loadinfo.tmpl -->
+
+<!-- included in action.tmpl to load an info window and close it automatically when switching the place -->
+
+<script language=javascript>
+
+winClose = false;
+
+winFocus = false;
+
+if (navigator.appName == "Netscape")
+
+{
+
+ winClose = true;
+
+ winFocus = true;
+
+}
+
+else
+
+{
+
+ var i = navigator.appVersion.indexOf("MSIE");
+
+ if (i >= 0)
+
+ {
+
+  var ver = parseInt(navigator.appVersion.substring(i+5,i+6));
+
+  if ( ver > 4)
+
+   winClose = true;
+
+  if ( ver > 3 )
+
+   winFocus = true;
+
+ }
+
+}
+
+
+
+myInfoWin = null;
+
+
+
+function loadInfo(par)
+
+{
+
+ loadCustom( par, 620, 450 );
+
+}
+
+
+
+function closeInfoWin()
+
+{
+
+ if (winClose && myInfoWin && !myInfoWin.closed)
+
+ {
+
+  myInfoWin.close();
+
+ }
+
+}
+
+function loadCustom(par,h,v)
+
+{
+
+ closeInfoWin();
+
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=' + h + ',height=' + v;
+
+
+
+ win = window.open(par, "info",paramstring);
+
+ if (winFocus)
+
+ {
+
+    win.focus();
+
+ }
+
+ myInfoWin = win;
+
+}
+
+
+
+function loadMap(par)
+
+{
+
+ closeInfoWin();
+
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=no,copyhistroy=no,width=520,height=478';
+
+
+
+ win = window.open(par, "info",paramstring);
+
+ if (winFocus)
+
+ {
+
+    win.focus();
+
+ }
+
+ myInfoWin = win;
+
+}
+
+
+
+<!--begin added this reset -->
+
+function jumpreset( par1, par2 )
+
+{
+
+	jump( par2 );
+
+	par1[0].selected = true;
+
+}
+
+<!--end added this reset -->
+
+
+
+
+
+function jump( par )
+
+{
+
+ closeInfoWin();
+
+
+
+var parArray = new Array(4);
+
+parArray = par.split(" ");
+
+var type = parArray[0];
+
+var url = parArray[1];
+
+var h = parArray[2];
+
+var v = parArray[3];
+
+
+
+ if (url != '') 
+
+ {
+
+  if ( type == "top")
+
+  {
+
+   top.location.href = url;
+
+  }
+
+
+
+  else if ( type == "info")
+
+  {
+
+   loadInfo(url);
+
+  }
+
+
+
+  else if ( type == "custom")
+
+  {
+
+   loadCustom(url,h,v);
+
+  }
+
+
+
+  else if ( type == "place")
+
+  {
+
+   top.place.location.href = url;
+
+  }
+
+
+
+  else if ( type == "poll")
+
+  {
+
+   loadCustom( url, 600, 500 );
+
+  }
+
+ }
+
+}
+
+
+
+
+
+function loadPlace( DTY, ID, place )
+
+{
+
+	url = "place?DTY=" + DTY + "&ID=" + ID + "&plc=" + place;
+
+	window.open( url + "&ac=action", "action" );
+
+ url += "&ac=place&force=s";
+
+ location.href = url;
+
+}
+
+
+
+function showMorphBanner()
+
+{
+
+}
+
+
+
+</script>
+
+<!-- end of include common/loadinfo.tmpl -->
+
+</HEAD>
+
+
+
+
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+
+
+<div align=center>
+
+<img src="/places/$place/images/$place.jpg" border=0><br>
+
+<small><b>If you need help - click HELP in the top menu!
+
+</b></small>
+
+</div>
+
+<!-- common/javachat.tmpl -->
+
+<!-- included in the place.tmpl of places and properties -->
+
+<!-- see a description of the parameters in the Java chat documentation -->
+
+
+
+<div align=center>
+
+    <small><font color="#FFFF00"><center>Visitors can only watch the chat - Type <b>'/options'</b> for special chat options</center></font></small>
+
+<applet codebase="$servername3/java/contact"
+
+        archive="classes2.zip"
+
+        code="BXApplet.class"
+
+        id="chat"
+
+        name="blaxxun Contact"
+
+        alt="blaxxun Contact (Java)"
+
+        width=580 height=170>
+
+    <param name = "cabbase"         value="blaxxunContactJava.cab">
+
+
+
+<small><p><font color="#FFFF00">The 2D Chat requires Java (you must enable Java in your browser).</font><br><font color="#00FF00">&nbsp;&nbsp;Netscape 4.x: menu 'edit-preferences-advanced-enable java'<br>&nbsp;&nbsp;IE 4.x: menu 'view-internet options-advanced-enable java'</p><p><font color="#FFFF00">If you do not want to enable Java please settle down in a colony and update your personal data (chat option = no chat).</p></small>
+
+
+
+    <param name = startroom         value = "Jail\@$servername1/cgi-bin/cybertown/place?ID=$scene_ID&plc=$place&ac=3D&IE=x.bxx">
+
+    <param name = openroomreplace   value = "ac=3D'ac=index2d'_top">
+
+
+
+    <param name = useTCP            value = false>
+
+    <param name = port              value = 2000>
+
+    <param name = usePassword       value = false>
+
+    <param name = nickname          value = "$cvalue">
+
+    <param name = role              value = "Inmate">
+
+    <param name = experience        value = "">
+
+    <param name = ui                value = 3>
+
+    <param name = frame             value = false>
+
+    <param name = breakLines        value = true>
+
+
+
+    <param name = lockInput         value = false>
+
+
+
+
+
+    <param name = logTime           value = 10>
+
+    <param name = borderSize        value = 4>
+
+
+
+<!-- common/javachatparams.tmpl -->
+
+<!-- included in all javachat.tmpl's to define colors etc. and to activate image posting -->
+
+    <param name = scList2NewRoom        value = true>
+
+    <param name = roomListEntries       value = 300>
+
+    <param name = nameListEntries       value = 300>
+
+    <param name = objListEntries        value = 100>
+
+    <param name = publicListEntries     value = 1200>
+
+    <param name = privateListEntries    value = 300>
+
+
+
+    <param name = appbgcolor        value = 00009200>
+
+    <param name = myavfgcolor       value = 00FFFF00>
+
+    <param name = myavfontstyle     value = PLAIN>
+
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+
+    <param name = sysmessfontstyle  value = BOLD>
+
+    <param name = historyfgcolor    value = 00FFFFFF>
+
+    <param name = historyfontstyle  value = ITALIC>
+
+    <param name = whisperfgcolor    value = 0000C3FF>
+
+    <param name = whisperfontstyle  value = PLAIN>
+
+    <param name = chatbgcolor       value = 00004d00>
+
+    <param name = chatfgcolor       value = 0000df00>
+
+    <param name = ctlbgcolor        value = 00004d00>
+
+    <param name = ctlfgcolor        value = 0000df00>
+
+    <param name = cntl.rbg          value = 00004d00>
+
+    <param name = cntl.rfg          value = 00ffff00>
+
+
+
+    <param name = redImageUrl       value = "images/redball.gif">
+
+    <param name = scdefImageUrl     value = "images/sc_def.gif">
+
+    <param name = scmeImageUrl      value = "images/sc_me.gif">
+
+    <param name = objImageUrl       value = "images/obj_def.gif">
+
+    <param name = ignoreImageUrl    value = "images/av_mute.gif">
+
+    <param name = meImageUrl        value = "images/av_me.gif">
+
+    <param name = CCproImageUrl     value = "images/av_def.gif">
+
+    <param name = CCstd1ImageUrl    value = "images/av_invis.gif">
+
+    <param name = CCstd2ImageUrl    value = "images/av_invis.gif">
+
+    <param name = CCstd3ImageUrl    value = "images/av_invis.gif">
+
+    <param name = CSbotsImageUrl    value = "images/av_bot.gif">
+
+    <param name = CSliteImageUrl    value = "images/av_invis.gif">
+
+
+
+    <param name = chatColor1        value = "00ff5000">
+
+    <param name = chatColor1Name    value = "/orange">
+
+    <param name = chatColor2        value = "00ff0000">
+
+    <param name = chatColor2Name    value = "/red">
+
+    <param name = chatColor3        value = "0000c3ff">
+
+    <param name = chatColor3Name    value = "/blue">
+
+    <param name = chatColor4        value = "00000000">
+
+    <param name = chatColor4Name    value = "/black">
+
+    <param name = chatColor5        value = "00ffff00">
+
+    <param name = chatColor5Name    value = "/yellow">
+
+    <param name = chatColor6        value = "00ffffff">
+
+    <param name = chatColor6Name    value = "/white">
+
+    <param name = chatColor7        value = "0000ff00">
+
+    <param name = chatColor7Name    value = "/green">
+
+    <param name = chatColor8        value = "00c00080">
+
+    <param name = chatColor8Name    value = "/purple">
+
+
+
+    <param name = displayLinks      value = true>
+
+    <param name = linkTerm          value = ", ;:?!<*>">
+
+    <param name = linkfgcolor       value = 00FF5000>
+
+    <param name = maxFontsize       value = 22>
+
+    <param name = setFontsize       value = "/+">
+
+    <param name = viewOptions       value = "/options">
+
+    <param name = viewOptionsUrl    value = "/java/contact/chatimg/options.html">
+
+
+
+    <param name = chatImage1        value = "chatimg/smile.gif">
+
+    <param name = chatImage1Name    value = "smile">
+
+    <param name = chatImage2        value = "chatimg/abomb.gif">
+
+    <param name = chatImage2Name    value = "/abomb">
+
+    <param name = chatImage3        value = "chatimg/bomb.gif">
+
+    <param name = chatImage3Name    value = "/bomb">
+
+    <param name = chatImage4        value = "chatimg/boy.gif">
+
+    <param name = chatImage4Name    value = "/boy">
+
+    <param name = chatImage5        value = "chatimg/call.gif">
+
+    <param name = chatImage5Name    value = "/call">
+
+    <param name = chatImage6        value = "chatimg/cat.gif">
+
+    <param name = chatImage6Name    value = "/cat">
+
+    <param name = chatImage7        value = "chatimg/chicken.gif">
+
+    <param name = chatImage7Name    value = "/chicken">
+
+    <param name = chatImage8        value = "chatimg/city.gif">
+
+    <param name = chatImage8Name    value = "/city">
+
+    <param name = chatImage9        value = "chatimg/cut.gif">
+
+    <param name = chatImage9Name    value = "/cut">
+
+    <param name = chatImage10       value = "chatimg/disk1.gif">
+
+    <param name = chatImage10Name   value = "/disk1">
+
+    <param name = chatImage11       value = "chatimg/drink.gif">
+
+    <param name = chatImage11Name   value = "/drink">
+
+    <param name = chatImage12       value = "chatimg/drive.gif">
+
+    <param name = chatImage12Name   value = "/drive">
+
+    <param name = chatImage13       value = "chatimg/eat.gif">
+
+    <param name = chatImage13Name   value = "/eat">
+
+    <param name = chatImage14       value = "chatimg/email.gif">
+
+    <param name = chatImage14Name   value = "/email">
+
+    <param name = chatImage15       value = "chatimg/female.gif">
+
+    <param name = chatImage15Name   value = "/female">
+
+    <param name = chatImage16       value = "chatimg/fish.gif">
+
+    <param name = chatImage16Name   value = "/fish">
+
+    <param name = chatImage17       value = "chatimg/fly.gif">
+
+    <param name = chatImage17Name   value = "/fly">
+
+    <param name = chatImage18       value = "chatimg/frown.gif">
+
+    <param name = chatImage18Name   value = "/frown">
+
+    <param name = chatImage19       value = "chatimg/girl.gif">
+
+    <param name = chatImage19Name   value = "/girl">
+
+    <param name = chatImage20       value = "chatimg/goto.gif">
+
+    <param name = chatImage20Name   value = "/goto">
+
+    <param name = chatImage21       value = "chatimg/handicap.gif">
+
+    <param name = chatImage21Name   value = "/handicap">
+
+    <param name = chatImage22       value = "chatimg/kill.gif">
+
+    <param name = chatImage22Name   value = "/kill">
+
+    <param name = chatImage23       value = "chatimg/male.gif">
+
+    <param name = chatImage23Name   value = "/male">
+
+    <param name = chatImage24       value = "chatimg/no.gif">
+
+    <param name = chatImage24Name   value = "/no">
+
+    <param name = chatImage25       value = "chatimg/nuke.gif">
+
+    <param name = chatImage25Name   value = "/nuke">
+
+    <param name = chatImage26       value = "chatimg/peace.gif">
+
+    <param name = chatImage26Name   value = "/peace">
+
+    <param name = chatImage27       value = "chatimg/pig.gif">
+
+    <param name = chatImage27Name   value = "/pig">
+
+    <param name = chatImage28       value = "chatimg/snows.gif">
+
+    <param name = chatImage28Name   value = "/snows">
+
+    <param name = chatImage29       value = "chatimg/world.gif">
+
+    <param name = chatImage29Name   value = "/world">
+
+
+
+    <param name = chatImage30       value = "chatimg/angry.gif">
+
+    <param name = chatImage30Name   value = "/angry">
+
+    <param name = chatImage31       value = "chatimg/computer.gif">
+
+    <param name = chatImage31Name   value = "/computer">
+
+    <param name = chatImage32       value = "chatimg/disk.gif">
+
+    <param name = chatImage32Name   value = "/disk">
+
+    <param name = chatImage33       value = "chatimg/down.gif">
+
+    <param name = chatImage33Name   value = "/down">
+
+    <param name = chatImage34       value = "chatimg/eyes.gif">
+
+    <param name = chatImage34Name   value = "/eyes">
+
+    <param name = chatImage35       value = "chatimg/ftp.gif">
+
+    <param name = chatImage35Name   value = "/ftp">
+
+    <param name = chatImage36       value = "chatimg/idea.gif">
+
+    <param name = chatImage36Name   value = "/idea">
+
+    <param name = chatImage37       value = "chatimg/look.gif">
+
+    <param name = chatImage37Name   value = "/look">
+
+    <param name = chatImage38       value = "chatimg/mail.gif">
+
+    <param name = chatImage38Name   value = "/mail">
+
+    <param name = chatImage39       value = "chatimg/microsoft.gif">
+
+    <param name = chatImage39Name   value = "/microsoft">
+
+    <param name = chatImage40       value = "chatimg/movie1.gif">
+
+    <param name = chatImage40Name   value = "/movie1">
+
+    <param name = chatImage41       value = "chatimg/music.gif">
+
+    <param name = chatImage41Name   value = "/music">
+
+    <param name = chatImage42       value = "chatimg/news.gif">
+
+    <param name = chatImage42Name   value = "/news">
+
+    <param name = chatImage43       value = "chatimg/sad.gif">
+
+    <param name = chatImage43Name   value = "/sad">
+
+    <param name = chatImage44       value = "chatimg/sound.gif">
+
+    <param name = chatImage44Name   value = "/sound">
+
+    <param name = chatImage45       value = "chatimg/text.gif">
+
+    <param name = chatImage45Name   value = "/text">
+
+    <param name = chatImage46       value = "chatimg/tv.gif">
+
+    <param name = chatImage46Name   value = "/tv">
+
+    <param name = chatImage47       value = "chatimg/vr.gif">
+
+    <param name = chatImage47Name   value = "/vr">
+
+    <param name = chatImage48       value = "chatimg/work.gif">
+
+    <param name = chatImage48Name   value = "/work">
+
+    <param name = chatImage49       value = "chatimg/yuk.gif">
+
+    <param name = chatImage49Name   value = "/yuk">
+
+
+
+    <param name = chatImage50       value = "chatimg/attach.gif">
+
+    <param name = chatImage50Name   value = "/attach">
+
+    <param name = chatImage51       value = "chatimg/audio.gif">
+
+    <param name = chatImage51Name   value = "/audio">
+
+    <param name = chatImage52       value = "chatimg/banana.gif">
+
+    <param name = chatImage52Name   value = "/banana">
+
+    <param name = chatImage53       value = "chatimg/binoccular.gif">
+
+    <param name = chatImage53Name   value = "/binoccular">
+
+    <param name = chatImage54       value = "chatimg/book.gif">
+
+    <param name = chatImage54Name   value = "/book">
+
+    <param name = chatImage55       value = "chatimg/caution.gif">
+
+    <param name = chatImage55Name   value = "/caution">
+
+    <param name = chatImage56       value = "chatimg/clock.gif">
+
+    <param name = chatImage56Name   value = "/clock">
+
+    <param name = chatImage57       value = "chatimg/coffee.gif">
+
+    <param name = chatImage57Name   value = "/coffee">
+
+    <param name = chatImage58       value = "chatimg/earth.gif">
+
+    <param name = chatImage58Name   value = "/earth">
+
+    <param name = chatImage59       value = "chatimg/file.gif">
+
+    <param name = chatImage59Name   value = "/file">
+
+    <param name = chatImage60       value = "chatimg/form.gif">
+
+    <param name = chatImage60Name   value = "/form">
+
+    <param name = chatImage61       value = "chatimg/heart.gif">
+
+    <param name = chatImage61Name   value = "/heart">
+
+    <param name = chatImage62       value = "chatimg/up.gif">
+
+    <param name = chatImage62Name   value = "/up">
+
+    <param name = chatImage63       value = "chatimg/key.gif">
+
+    <param name = chatImage63Name   value = "/key">
+
+    <param name = chatImage64       value = "chatimg/left.gif">
+
+    <param name = chatImage64Name   value = "/left">
+
+    <param name = chatImage65       value = "chatimg/lock.gif">
+
+    <param name = chatImage65Name   value = "/lock">
+
+    <param name = chatImage66       value = "chatimg/money.gif">
+
+    <param name = chatImage66Name   value = "/money">
+
+    <param name = chatImage67       value = "chatimg/monitor.gif">
+
+    <param name = chatImage67Name   value = "/monitor">
+
+    <param name = chatImage68       value = "chatimg/netscape.gif">
+
+    <param name = chatImage68Name   value = "/netscape">
+
+    <param name = chatImage69       value = "chatimg/ok.gif">
+
+    <param name = chatImage69Name   value = "/ok">
+
+    <param name = chatImage70       value = "chatimg/paint.gif">
+
+    <param name = chatImage70Name   value = "/paint">
+
+    <param name = chatImage71       value = "chatimg/phone.gif">
+
+    <param name = chatImage71Name   value = "/phone">
+
+    <param name = chatImage72       value = "chatimg/print.gif">
+
+    <param name = chatImage72Name   value = "/print">
+
+    <param name = chatImage73       value = "chatimg/question.gif">
+
+    <param name = chatImage73Name   value = "/question">
+
+    <param name = chatImage74       value = "chatimg/search.gif">
+
+    <param name = chatImage74Name   value = "/search">
+
+    <param name = chatImage75       value = "chatimg/snow.gif">
+
+    <param name = chatImage75Name   value = "/snow">
+
+    <param name = chatImage76       value = "chatimg/stop.gif">
+
+    <param name = chatImage76Name   value = "/stop">
+
+    <param name = chatImage77       value = "chatimg/sun.gif">
+
+    <param name = chatImage77Name   value = "/sun">
+
+    <param name = chatImage78       value = "chatimg/time.gif">
+
+    <param name = chatImage78Name   value = "/time">
+
+    <param name = chatImage79       value = "chatimg/toilet.gif">
+
+    <param name = chatImage79Name   value = "/toilet">
+
+    <param name = chatImage80       value = "chatimg/tools.gif">
+
+    <param name = chatImage80Name   value = "/tools">
+
+    <param name = chatImage81       value = "chatimg/trash.gif">
+
+    <param name = chatImage81Name   value = "/trash">
+
+<!-- END OF common/javachatparams.tmpl -->
+
+
+
+</applet>
+
+</div>
+
+
+
+</BODY>
+
+
+
+
+
+</HTML>
+
+EOT
+}

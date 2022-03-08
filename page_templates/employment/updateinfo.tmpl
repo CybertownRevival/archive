@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>blaxxun ColonyCity</title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Update your Information</b>
+</p>
+<font color=#ff0000>
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+
+<form method=post action="<$selfurl>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+<h3>Information<br>
+<textarea name="TXT" cols="50" rows="12"><$TXT></textarea>
+</h3>
+<h3>Statistics<br>
+<textarea name="TX2" cols="50" rows="12"><$TX2></textarea>
+</h3>
+
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="employment/updateinfo">
+<input type=hidden name="ac" value="read">
+<a name=submitbutton></a>
+<br>
+<center>
+<input type=submit name="edit" value=Update>
+</center>
+</form>
+
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- enter/menu.tmpl -->
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" 
+ALINK="#FFFFFF" TEXT="##D0DBF7" border=0 marginheight=0 marginwidth=0>
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" 
+ALINK="<$CLL>" TEXT="<$CLT>" border=0 marginheight=0 marginwidth=0>
+<!-- #endif variable="CLB" -->
+
+<table border=0 width=100% cellpadding=0 cellspacing=0>
+<tr>
+
+<!-- show the join now or win a t-shirt icons at the left side -->
+
+<!-- #ifdef variable="isVisitor" -->
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=left width=70><a href="register<$g_exe>"><img src="<$g_Images>/images/menu/join.gif" height=40 width=60 border=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=left width=70><a href="javascript:void(0)" onClick="javascript:win=window.open('http://www.cybertown.com/friends/tellfriends.html','tellfriends','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=632,height=580');" target="_self"><IMG SRC="<$g_HTMLRoot>/ad/wintsmall.gif" BORDER=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- end of left side icons -->
+
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1)-->
+<td align=center>
+<a href="javascript:loadInfo('/featuresurvey/index.html')" target="_self"><img src='/featuresurvey/surveyfeat.jpg' width="468" height="60" border="0" alt="Take our new survey!"></a>
+
+<!-- <td align=center>
+<a href="javascript:void(0)" onClick="javascript:win=window.open('http://www.worldwinner.com/cgi/welcome/21b4m?cname=Cybertown%20Games&curl=www.cybertown.com','tellfriends','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=640,height=580');" target="_self"><IMG SRC="<$g_HTMLRoot>/banners/gameban.gif" alt="Play Games to support CT!" height=60 width=468 border=0></a>
+</td>--!>
+<!--End of adMonitor v3.0 rich content tags -->
+
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+
+<td width=160><APPLET CODE='TickerTape.class' codebase='<$g_HTMLRoot>/java' WIDTH=160 HEIGHT=30>
+<!-- #ifdef variable="NNO" -->
+<PARAM NAME=count VALUE="<$NNO>">
+<!--#for loopname="news" loopvars="NT" -->
+<PARAM NAME="text<$index>" VALUE=" + <$NT> +">
+<PARAM NAME="url<$index>"  VALUE="<$NU>">
+<PARAM NAME="target<$index>"  VALUE="<$NG>">
+<!--#endfor loopname="news" -->
+<!-- #endif variable="NNO" -->
+
+<!-- #ifndef variable="NNO" -->
+<PARAM NAME=count VALUE=2><PARAM NAME=text0 VALUE=" + Latest News from Cybertown +"><PARAM NAME=url0  VALUE="news<$g_exe>"><PARAM NAME=text1 VALUE=" + Want a job? - Check the News Magazine +"><PARAM NAME=url1  VALUE="news<$g_exe>">
+<!-- #endif variable="NNO" -->
+<PARAM NAME=delay VALUE=40><PARAM NAME=step VALUE=2><PARAM NAME=font VALUE=Arial><PARAM NAME=fstyle VALUE=0><PARAM NAME=size  VALUE=20>
+<!-- possible values are: 
+black,blue,cyan,darkgrey,gray,green,lightgray,magenta,orange,pink,red,white,yellow -->
+<PARAM NAME=fgcolor VALUE=green><PARAM NAME=bgcolor VALUE=black></APPLET></td>
+<td align=right width=83>
+<table align=right border=0 cellspacing=0 cellpadding=0><tr>
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=right width=63><a href="javascript:loadInfo('<$g_HTMLRoot>/places/news/magazine/dailynews/index.html')" target=_self><IMG SRC="<$g_Images>/images/menu/news.gif" BORDER=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+</tr></table></td>
+
+</tr>
+</table>
+
+</BODY>
+</HTML>
+

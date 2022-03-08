@@ -1,0 +1,31 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>morph2/ban_rot.tmpl" -->
+</head>
+<!-- #ifdef variable="chatno" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0><br>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+</div>
+<SCRIPT LANGUAGE="JavaScript"> showMorphBanner(); </SCRIPT>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</body>
+<!-- #endif variable="chatno" -->
+<!-- #ifdef variable="chatstd" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0><br>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/javachat.tmpl" -->
+</div>
+<SCRIPT LANGUAGE="JavaScript"> showMorphBanner(); </SCRIPT>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</body>
+<!-- #endif variable="chatstd" -->
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>place/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+</html>

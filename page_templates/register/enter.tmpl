@@ -1,0 +1,37 @@
+<HTML>
+<head>
+	<!--META HTTP-EQUIV="refresh" CONTENT="1; URL="place<$g_exe>?ac=login&NNM=<$NNM>&PWD=<$PWD>"-->
+	<title><$g_title> - Member Registration</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<script>
+<!-- #ifndef variable="T_IWOS" -->
+<!-- #ifndef variable="T_MCO" value="mothership" -->
+	top.location.href="place<$g_exe>"
+<!-- #endif variable="T_MCO" -->
+<!-- #endif variable="T_IWOS" -->
+
+<!-- #ifdef variable="T_MCO"  value="mothership" -->
+	top.location.href="community?ID=0107000000000000"
+<!-- #endif variable="T_MCO" -->
+
+<!-- #ifdef variable="T_IWOS" -->
+	top.location.href="place<$g_exe>?plc=iwosmall"
+<!-- #endif variable="T_IWOS" -->
+</script>
+
+<!--div align=center>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3><$g_title></h3>
+<h4> Loading ...</h4>
+</div-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<!-- event/morph/info.tmpl -->
+<!-- common information -->
+<html>
+<head>
+<title><$g_title> - <$EVENTNAM></title>
+</head>
+
+<!--<body bgcolor="#000000" text="#CCCCCC" link="#33FF33" vlink="#33FF33"> -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align="center"><font color="#00FF00">CYBERTOWN - '<$EVENTNAM>'</font></h2>
+
+
+<!-- #ifndef variable="EVENTMEMBERID" value="" -->
+<!-- ********************************
+     Morph Hunter: already registered!
+     ******************************** -->
+
+<!-- #include virtual="<$g_Templates>event/morph/headquarter.tmpl" -->
+
+<!-- #endif variable="EVENTMEMBERID" -->
+<!-- ******************************** -->
+
+<!-- #ifdef variable="EVENTMEMBERID" value="" -->
+<!-- ********************************
+     Morph Hunt Alert: NOT yet registered!
+     ******************************** -->
+
+<!-- #include virtual="<$g_Templates>event/morph/alert.tmpl" -->
+
+<!-- #endif variable="EVENTMEMBERID" -->
+
+<!-- #endif variable="isMember" -->
+
+</body>
+</html>
+

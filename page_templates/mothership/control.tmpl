@@ -1,0 +1,75 @@
+<!-- Custom Control Panel --> 
+
+<TR><TD ALIGN="CENTER" BGCOLOR="#003040">
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menudirectory.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuhow.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- #ifndef variable="isVisitor" -->
+<A HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumyinfo.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+ <A HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+ <A HREF="javascript:void(0)" onClick="javascript:win=window.open('<$g_HTMLRoot>/info/controlpanel/index.html','info','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=500')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+ <A href="javascript:void(0)" onClick="javascript:win=window.open('<$g_HTMLRoot>/info/controlpanel/index.html','info','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=500')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumyhouse.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/helpinfo.html')" ALT="Help/Info" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuhelp.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadCustom('/cgi-bin/calweb/calweb.cgi',720,450)" ALT="Activities" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuactivities.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self" alt="Send a Postcard">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menupostcards.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=msb/feedback')" target="_self" alt="Feedback Board">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menufeedback.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- <A HREF="" ALT="coming soon: City Tour" target=_self> -->
+
+<A HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumap.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="15" BORDER="0"><BR>
+
+
+
+<TABLE CELLSPACING="0" CELLPADDING="0" BORDER="0"><TR><TD>  <!-- This table is here to reduce padding around form -->
+
+
+<!-- JUMPGATE -->
+<form name="navbar">
+<!-- #include virtual="<$g_Templates>common/jumpgate.tmpl" -->
+</form>
+
+
+<!-- End JUMPGATE -->
+</TD></TR></TABLE>  <!-- End form table -->
+</TD></TR>
+<TR><TD BGCOLOR="#000000"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="10" BORDER="0"></TD></TR>
+<TR><TD BGCOLOR="#003040">
+<A HREF="javascript:confirmLink('http://www.mothership.com/store')" target="_self"><IMG SRC="/places/mothership/images/action/lowmenustore.gif" WIDTH="156" HEIGHT="45" BORDER="0"></A><BR>
+<A HREF="javascript:confirmLink('http://www.mothership.com/games')" target="_self"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/lowmenugaming.gif" WIDTH="156" HEIGHT="40" BORDER="0"></A><BR>
+<A HREF="javascript:confirmLink('http://www.mothership.com')" target="_self"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/lowmenumagazine.gif" WIDTH="156" HEIGHT="40" BORDER="0"></A><BR>
+</TD></TR>
+<TR><TD BGCOLOR="#000000"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="10" BORDER="0"></TD></TR>
+<TR><TD BGCOLOR="#003040">
+
+<!-- End Custom Control Panel -->
+

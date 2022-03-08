@@ -1,0 +1,132 @@
+<!-- fleamarket/fleachatmembers -->
+<!--- list all chat members in a place --->
+<HTML>
+<HEAD>
+<!-- #define variable="T_NOHTML" value="1" -->
+<title><$g_title> - FleaMarket</title>
+<base target="_self">
+<script language=JavaScript>
+function eject(nameofnic){
+	ejectwin = window.open('http://www.cybertown.com/cgi-bin/cybertown/message<$g_exe>?ac=notify&TPL=message/member&TAG=FleaEjected&TKT=<$TKT>&TO='+nameofnic+'&<$CT_STR>','refresh');
+}
+
+function loadPlace( )
+{
+ var id = '', place = '', dty='O';
+ var i, j;
+ var plc = "http://www.cybertown.com/cgi-bin/cybertown/place?ID=0000000000000016&#38;plc=fleamarket&#38;ac=3D&#38;IE=x.bxx";
+ i = plc.indexOf("ID%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  id = plc.substring( i+5, j );
+ } 
+ i = plc.indexOf("DTY%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  dty = plc.substring( i+6, j );
+ } 
+ i = plc.indexOf("plc%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  place = plc.substring( i+6, j );
+ }
+ if ( place.length || id.length )
+ {
+  url = "javascript:loadPlace('" + dty + "','" + id + "','" + place + "')";
+  window.open( url, "place" );
+  self.close();
+ }
+}
+
+</script>
+</HEAD>
+
+<body bgcolor="#000000" text="#33FF33" link="#FFFF33" vlink="#FFFF33" alink="#FFFF33">
+<p align="center"><img src="http://www.cybertown.com/places/fleamarket/images/fleamarket.jpg" width="474" height="193"></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" color="#FF0000"><b>FLEAMARKET TOOLS AREA</b></font></p>
+<p align="center"><b><font color="#FFFF00"><i>THIS PAGE IS FOR CYBERTOWN FLEAMARKET
+  STAFF ONLY</i></font></b></p>
+
+<!-- #ifdef variable="owneraccess" -->
+
+<p><font face="Arial, Helvetica, sans-serif"><div align=center>
+<!-- #ifdef variable="error001" -->
+<$errorfont>Not enough access rights.<br>
+<!-- #endif variable="error001" -->
+<!-- #ifdef variable="error002" -->
+Failed to run command <$error>.<br>
+<!-- #endif variable="error002" -->
+<!-- #if variable="TOT" == value="0" -->
+<$errorfont>No members active in this chat place.<br><br>
+<!-- #endif variable="TOT" -->
+<!-- #ifdef variable="error004" -->
+<$errorfont>Timeout when connecting to server <$g_CServer>.<br>
+<!-- #endif variable="error004" -->
+
+<P>
+<!-- #if variable="TOT" == value="1" -->
+<$TOT> chat member in this place.
+<!-- #endif variable="TOT" -->
+<!-- #if variable="TOT" > value="1" -->
+<$TOT> chat members in this place.
+<!-- #endif variable="TOT" -->
+<br><br>
+
+<!-- #ifdef variable="NNM_0" -->
+  <table border=1 cellspacing=0>
+    <tr> 
+      <th><$font>&nbsp;Nickname&nbsp;</th>
+      <th><$font>&nbsp;Chat Type&nbsp;</th>
+      <th><$font>&nbsp;Time in Chat&nbsp;</th>
+      <th nowrap>Eject</th>
+   
+    </tr>
+    <tr> 
+      <td> 
+        <!--#for loopname="place" loopvars="NNM_" -->
+    <tr> 
+      <td align=center><$font> &nbsp;<$NNM_>&nbsp; 
+      </td>
+      <td align=center><$font> &nbsp;<$TYP_>&nbsp; </td>
+      <td align=center><$font> &nbsp;<$TIM_>&nbsp; </td>
+      <td align=center><$font>
+      <!--#if variable="TYP_" == value="Agent" -->
+		Agent
+		<!--#endif variable="TYP_" -->
+      <!--#if variable="TYP_" != value="Agent" -->
+      <A HREF="javascript:eject('<$NNM_>')">Eject Member</A></td>
+      
+    <!--#endif variable="TYP_" -->
+	  </td>      
+    </tr>
+    <!--#endfor loopname="place" -->
+  </table>
+<!-- #endif variable="NNM_0" -->
+<br>
+
+<form method=post target=_self name="listform" action="<$selfurl>">
+<input type="hidden" name="ac" value="list">
+<input type="hidden" name="TPL" value="memberdir/fleachatmembers">
+<input type="hidden" name="PLC" value="http://www.cybertown.com/cgi-bin/cybertown/place?ID=0000000000000016&#38;plc=fleamarket&#38;ac=3D&#38;IE=x.bxx">
+<input type="hidden" name="HIP" value="">
+<input type="hidden" name="SIP" value="">
+<input type="hidden" name="T_NAM" value="<$T_NAM>">
+</form>
+</div>
+<!-- #endif variable="owneraccess" -->
+
+
+<!-- #ifdef variable="rightsaccess" -->
+<center><font color=red face=tahoma size=3>You have rights access here </font></center>
+<!-- #endif variable="rightsaccess" -->
+</BODY>
+</HTML>

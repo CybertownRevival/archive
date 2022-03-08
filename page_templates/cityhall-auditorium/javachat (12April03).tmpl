@@ -1,0 +1,74 @@
+<!-- common/javachat.tmpl -->
+<!-- included in the place.tmpl of places and properties -->
+<!-- see a description of the parameters in the Java chat documentation -->
+
+<!-- #ifdef variable="chatreadaccess" -->
+<div align=center>
+<!-- #ifdef variable="chatwriteaccess" -->
+<!-- #ifndef variable="ID" value="000000000000001b" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="chatwriteaccess" -->
+<!-- #ifndef variable="chatwriteaccess" -->
+    <small><font color="#FFFF00"><center>If you'd like to chat, click the Join Now icon in the top frame</center></font></small>
+<!-- #endif variable="chatwriteaccess" -->
+<applet codebase="<$g_JAVARoot>/java/contact"
+        archive="classes2.zip"
+        code="BXApplet.class"
+        id="chat"
+        name="blaxxun Contact"
+        alt="blaxxun Contact (Java)"
+        width=580 height=<$height>>
+    <param name = "cabbase"         value="blaxxunContactJava.cab">
+	<param name = "paramsUrl1"         value="http://cyber.cybertown.com/java/contact2/uistrings_en">    
+
+<small><p><font color="#FFFF00">The 2D Chat requires Java (you must enable Java in your browser).</font><br><font color="#00FF00">&nbsp;&nbsp;Netscape 4.x: menu 'edit-preferences-advanced-enable java'<br>&nbsp;&nbsp;IE 4.x: menu 'view-internet options-advanced-enable java'</p><p><font color="#FFFF00">If you do not want to enable Java please settle down in a colony and update your personal data (chat option = no chat).</p></small>
+
+<!-- #ifndef variable="T_spawn" value="" -->
+<!-- #ifdef variable="T_aud" value="stage"-->
+<!-- #ifdef variable="T_pass" value="FutureHost"-->
+    <param name = startroom         value = "<$scenename>@<$g_SceneServer><$g_cgiRoot>/place?hide=true&ID=<$ID>&plc=<$plc>&ac=3D&stage=cityhall&T_spawn=<$T_spawn>&IE=x.bxx">
+<!-- #endif variable="T_pass" -->
+<!-- #endif variable="T_aud" -->
+<!-- #ifdef variable="T_aud" value="audit"-->
+    <param name = startroom         value = "<$scenename>@<$g_SceneServer><$g_cgiRoot>/place?hide=true&ID=<$ID>&plc=<$plc>&ac=3D&audit=cityhall&T_spawn=<$T_spawn>&IE=x.bxx">
+<!-- #endif variable="T_aud" -->
+<!-- #endif variable="T_spawn" -->
+
+<!-- #ifdef variable="T_spawn" value="" -->
+    <param name = startroom         value = "<$scenename>@<$g_SceneServer><$g_cgiRoot>/place?ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx">
+<!-- #endif variable="T_spawn" -->
+
+    <param name = openroomreplace   value = "ac=3D'ac=index2d'_top">
+
+    <param name = useTCP            value = false>
+    <param name = port              value = <$port>>
+    <param name = usePassword       value = true>
+    <param name = nickname          value = "<$NNM>">
+    <param name = role              value = "<$rolename>">
+    <param name = experience        value = "<$stdexp>">
+    <param name = userid            value = "<$MID>">
+    <param name = password          value = "<$COOKIE>">
+    <param name = ui                value = 31>
+    <param name = frame             value = false>
+    <param name = breakLines        value = true>
+
+<!-- #ifdef variable="chatwriteaccess" -->
+    <param name = lockInput         value = false>
+<!-- #endif variable="chatwriteaccess" -->
+
+<!-- #ifndef variable="chatwriteaccess" -->
+    <param name = lockInput         value = true>
+<!-- #endif variable="chatwriteaccess" -->
+
+    <param name = logTime           value = 10>
+    <param name = borderSize        value = 4>
+
+<!-- #include virtual="<$g_Templates>cityhall/javachatparams.tmpl" -->
+
+</applet>
+</div>
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+    <font color="#FF0000"><center><b>Sorry <$NNM>, this place is private at this moment, visitors are not allowed to watch the Chat here:(</b></font>
+<!-- #endif variable="chatreadaccess" -->

@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- citizen/action.tmpl -->
+<title><$g_title> - Citizen Directory</title>
+<BASE TARGET="_self">
+	<script language="JavaScript">
+<!--
+    function addWildcardNick() {
+        document.findnick.KFT.value = document.findnick.PREFIX.value+"*"
+        document.findnick.submit();
+    }
+    function addWildcardLast() {
+        document.findlast.KFT.value = document.findlast.PREFIX.value+"*"
+        document.findlast.submit();
+    }
+    function findname(){
+      document.nameform.T_NIC.value = document.nameform.T_NIC.value.toLowerCase();
+      document.nameform.submit();
+    }
+ //-->
+	</script>
+
+</HEAD>
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7" oncontextmenu="return false">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<H2 align=center><font color=#80ff00> Welcome to the Citizen Directory</font></H2>
+<center>
+
+<!-- #ifdef variable="readaccess" -->
+<table cellpadding=0 cellspacing=0 align=center border=0 width=450>
+<tr>
+<td width=60% valign=top>
+<form name="findnick" method=post action="edit<$g_exe>" onSubmit="addWildcardNick()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="KTY" value="NNK">
+<input type=hidden name="KEY" value="">
+<input type=hidden name="TPL" value="citizen/list">
+<input type=hidden name="ac" value="list">
+<input type=hidden name="SORT" value="Nickname">
+<input type=hidden name="KFT" value="">
+Find a Citizen by his nickname ...
+</td>
+<td width=40% valign=middle>
+<input name="PREFIX" value="" MAXLENGTH=16 SIZE=8>
+<input type=submit name="list" value="Find">
+</form>
+</td></tr>
+
+<tr>
+<td valign=top>
+<form name="findlast" method=post action="edit<$g_exe>" onSubmit="addWildcardLast()">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="KTY" value="LNM">
+<input type=hidden name="KEY" value="">
+<input type=hidden name="TPL" value="citizen/list">
+<input type=hidden name="ac" value="list">
+<input type=hidden name="SORT" value="Last Name">
+<input type=hidden name="KFT" value="">
+Find by last name (case-sensitive!) ...
+</td>
+<td valign=middle>
+<input name="PREFIX" value="" MAXLENGTH=16 SIZE=8>
+<input type=submit name="list" value="Find">
+</form>
+</td></tr>
+</table>
+
+<table align=center border=0 width=450>
+<tr align=center>
+<td width=50% valign=top align=center>
+Citizen list, sorted by ...
+<br>
+<a href="edit<$g_exe>?TPL=citizen/listalnum&SORT=Nickname">
+	<IMG SRC="<$g_Images>/images/buttons/bnickn.gif" BORDER=0 ALT="Nickname"></a><br>
+
+<a href="edit<$g_exe>?KTY=EXP&KEY=ffffffff&TPL=citizen/list&ac=list&SORT=Experience&SORTORDER=-">
+	<IMG SRC="<$g_Images>/images/buttons/bexper.gif" BORDER=0 ALT="Experience"></a><br>
+
+<!-- #ifdef variable="rightsaccess" -->
+<br>
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=enter&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a>
+<!-- #endif variable="rightsaccess" -->
+
+</td>
+<td width=50% valign=top>
+
+<form name="roles" method=post action="edit<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+List Citizens by jobs ...<br>
+<SELECT NAME="KFT">
+<!--#for loopname="roles" loopvars="role" -->
+  <OPTION value="<$roleid>"><$role>
+<!--#endfor loopname="roles" -->
+</SELECT>
+<input type=hidden name="KEY" value="">
+<input type=hidden name="KFM" value="aa*">
+<input type=hidden name="TPL" value="citizen/rolem">
+<input type=hidden name="ac" value="list">
+<input type=hidden name="ROLNAM" value="KFT">
+<input type=submit name="list" value="List">
+</form>
+</td>
+</tr>
+</table>
+
+<$MemberCount> immigrated Citizens.
+<!-- #endif variable="readaccess" -->
+
+<!-- #ifdef variable="writeaccess" -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<br><a href="place<$g_exe>?ac=list&TPL=memberdir/chatplaces">LIST CHAT MEMBERS</a><br>
+<form action="http://www.cybertown.com/cgi-bin/cybertown/edit" method="POST" name="nameform">
+<b><a href="javascript:findname();">FIND CHAT MEMBERS</a></b>
+<input type="hidden" name="tpl" value="place/donotlinkoryouwillbebannedgetplace">
+<input type="textfield" name="T_NIC" value="" size="15">
+</form>
+<!-- #endif variable="owneraccess" -->
+</center>
+
+<div align=center>
+	<img src="<$g_HTMLRoot>/places/citizen/images/citizen.jpg" border=0>
+</div>
+
+
+</BODY>
+</HTML>

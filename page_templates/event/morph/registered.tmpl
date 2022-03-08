@@ -1,0 +1,116 @@
+<!-- event/morph/registered.tmpl -->
+<html>
+<head>
+  <title><$g_title_morph></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Cache-Policy" content="no-cache no-share">
+  <meta http-equiv="Pragma" content="no-cache">
+
+<script language="javascript">
+function checkInput()
+{
+  var gender;
+
+  if (window.document.regform.FNM.value == "" )
+  {
+    confirm("Your first name is mandatory!")
+  }
+  else if (window.document.regform.LNM.value == "")
+  {
+    confirm("Your last name is mandatory!")
+  }
+  else if (window.document.regform.AGEMM.value == "")
+  {
+    confirm("The month of your date of birth is mandatory!")
+  }
+  else if (window.document.regform.AGEDD.value == "")
+  {
+    confirm("The day of your date of birth is mandatory!")
+  }
+  else if (window.document.regform.AGEYY.value == "")
+  {
+    confirm("The year of your date of birth is mandatory!")
+  }
+  else if (window.document.regform.EHW.options[window.document.regform.EHW.selectedIndex].value == ""
+    && window.document.regform.EHWO.value == "")
+  {
+    confirm("'How did you hear about this contest?' is mandatory!")
+  }
+  else if (window.document.regform.EMN.options[window.document.regform.EMN.selectedIndex].value == ""
+    && window.document.regform.EMNO.value == "")
+  {
+    confirm("'I like to spend money on' is mandatory!")
+  }
+  else if (window.document.regform.ETI.options[window.document.regform.ETI.selectedIndex].value == ""
+    && window.document.regform.ETIO.value == "")
+  {
+    confirm("'I would rather spend my free time' is mandatory!")
+  }
+  else if (window.document.regform.EFE.options[window.document.regform.EFE.selectedIndex].value == ""
+    && window.document.regform.EFEO.value == "")
+  {
+    confirm("'I would like to see Cybertown produce more online activities and events' is mandatory!")
+  }
+  else if (window.document.regform.EFI.options[window.document.regform.EFI.selectedIndex].value == ""
+    && window.document.regform.EFIO.value == "")
+  {
+    confirm("'My favorite area of interest' is mandatory!")
+  }
+  else if ( !(window.document.regform.GND[0].checked) && !(window.document.regform.GND[1].checked) )
+  {
+    confirm("Your gender is mandatory!")
+  }
+  else
+  {
+    if (window.document.regform.GND[0].checked) 
+    {
+      gender = window.document.regform.GND[0].value;
+    }
+    else if (window.document.regform.GND[1].checked) 
+    {
+      gender = window.document.regform.GND[1].value;
+    }
+
+    document.regform.submit();
+  }
+}
+</script>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!--body bgcolor="#000000" text="#CCCCCC" link="#33FF33" vlink="#66FF33" alink="#66FF33"-->
+
+<div align="center">
+  <p>&nbsp;</p>
+  <p><img src="<$g_HTMLRoot>/events/morph/registered.jpg" width="249" height="270"></p>
+  <p><font color="#FFFFFF">Before you can become a deputized member of the Cytonian 
+    Guard (CGs) you must take an oath of loyalty. </font></p>
+  <p><font color="#FFFFFF"><b><font color="#66FF33">CYBERTOWN LOYALTY OATH</font></b></font></p>
+  <p><font color="#FFFF99">For Morph Hunt Registration </font></p>
+  <table width="57%" border="0">
+    <tr>
+      <td width="26%"><img src="<$g_HTMLRoot>/events/morph/i-mina.jpg" width="170" height="217"></td>
+      <td width="74%"><font color="#FFFFFF"> "Repeat after me. I, state your name, 
+        swear to be true to Cybertown and to uphold the principles of virtualism 
+        and the teachings of Gol. I will faithfully fulfill all requests by CG 
+        commanders and will without question yield to the wisdom of those who 
+        have proceeded me in the wisdom of Gol and virtualism. I further declare 
+        that I will abide by all rules of the Morph Hunt.&quot;</font></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+<!--#ifndef variable="errexist"-->
+  <p><font color="#FFFFFF">"Please fill out the form below to become officially 
+    deputized.&quot;</font></p>
+<!--#endif variable="errexist" -->
+  <p>
+  <!--font color="#33CCFF">FORM GOES HERE</font-->
+  <!-- #include virtual="<$g_Templates>event/morph/regform.tmpl" -->
+  </p>
+  <p>&nbsp;</p>
+  <p><font color="#999999" size="1">Copyright (c) 1999 - blaxxun interactive. 
+    All rights reserved</font></p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

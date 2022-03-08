@@ -1,0 +1,16 @@
+bannerscript.tmpl
+
+By changing the links and images in the banner script tmpl the following places will be effected
+below the chat window.
+
+2D homes
+beach
+cityhall
+employment
+Entertainment Colony
+ent_complex
+fleamarket
+Newcomers club
+nightclub
+shopping
+VDrome

@@ -1,0 +1,249 @@
+<!-- clubdir/check -->
+<!--- list of clubs for closing --->
+<html>
+<head>
+<title><$g_title></title>
+<script language="javascript">
+<!--
+
+  function submitForm()
+  {
+    if( document.updateForm.STC_CB.checked )
+        document.updateForm.STC.value = "1";
+    else
+        document.updateForm.STC.value = "0";
+
+    if( document.updateForm.ST1_CB.checked )
+        document.updateForm.ST1.value = "1";
+    else
+        document.updateForm.ST1.value = "0";
+
+    if( document.updateForm.ST2_CB.checked )
+        document.updateForm.ST2.value = "1";
+    else
+        document.updateForm.ST2.value = "0";
+
+    if( document.updateForm.ST3_CB.checked )
+        document.updateForm.ST3.value = "1";
+    else
+        document.updateForm.ST3.value = "0";
+
+    if( document.updateForm.ST4_CB.checked )
+        document.updateForm.ST4.value = "1";
+    else
+        document.updateForm.ST4.value = "0";
+
+    if( document.updateForm.ST5_CB.checked )
+        document.updateForm.ST5.value = "1";
+    else
+        document.updateForm.ST5.value = "0";
+
+    if( document.updateForm.ST6_CB.checked )
+        document.updateForm.ST6.value = "1";
+    else
+        document.updateForm.ST6.value = "0";
+
+    if( document.updateForm.ST7_CB.checked )
+        document.updateForm.ST7.value = "1";
+    else
+        document.updateForm.ST7.value = "0";
+
+    if( document.updateForm.ST8_CB.checked )
+        document.updateForm.ST8.value = "1";
+    else
+        document.updateForm.ST8.value = "0";
+
+    document.updateForm.submit();
+  }
+
+  function enterClub()
+  {
+    window.open( "<$g_cgiRoot>/print<$g_exe>?TPL=place&T_CHT=n&DTY=CL&PLC=club&ID=<$ID><$g_SessionID>", "place" );
+    window.open( "<$g_cgiRoot>/print<$g_exe>?TPL=info&DTY=CL&PLC=club&ID=<$ID><$g_SessionID>", "info" );
+  }
+
+//-->
+</script>
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font1>
+
+
+<!-- #define variable="headerimage" value="clubdirinfo.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr>
+  <td <$g_bgcolor5>><a href="javascript:history.go(-1)"><img
+    src="<$g_HTMLRoot>/images/buttons/backbtn.gif" alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  <a href="javascript:enterClub()"><img
+    src="<$g_HTMLRoot>/images/buttons/enterclub.gif" border=0 align="left" vspace="0" hspace="0" alt="Enter Club"></a>
+  </td>
+</tr>
+<tr <$g_bgcolor5>>
+  <td>
+    <table border=0 cellpadding=1 cellspacing=5 width=318 height=280>
+    <tr>
+      <td valign="top" align="center">
+        <$g_font1>Check Images of &quot;<$NAM>&quot;</font><br>
+        <!-- #include file="<$g_Templates>common/updateok.html" -->
+        <!-- #ifndef variable="updateok" -->
+          <form method="post" target="_self" action="<$selfurl>" name="updateForm" onSubmit="onSubmit()">
+
+            <input type="hidden" name="TKT" value="<$TKT>">
+            <input type="hidden" name="SID" value="<$SID>">
+
+            <input type="hidden" name="ac" value="edit">
+            <input type=hidden name="ID" value="<$ID>">
+            <input type=hidden NAME="KEY" VALUE="<$KEY>">
+            <input type=hidden name="TPL" value="<$TPL>">
+
+            <input type="hidden" NAME="STC" VALUE="<$STC>">
+
+            <input type="hidden" NAME="ST1" VALUE="<$ST1>">
+            <input type="hidden" NAME="ST2" VALUE="<$ST2>">
+            <input type="hidden" NAME="ST3" VALUE="<$ST3>">
+            <input type="hidden" NAME="ST4" VALUE="<$ST4>">
+            <input type="hidden" NAME="ST5" VALUE="<$ST5>">
+            <input type="hidden" NAME="ST6" VALUE="<$ST6>">
+            <input type="hidden" NAME="ST7" VALUE="<$ST7>">
+            <input type="hidden" NAME="ST8" VALUE="<$ST8>">
+
+            <table cellspacing="0" cellpadding="1" border="0">
+            <tr>
+              <td align="center"><$g_font1>Club Image</font></td>
+              <td align="center"><$g_font1>&nbsp;</font></td>
+              <td align="center"><$g_font1>&nbsp;</font></td>
+            </tr>
+            <tr>
+              <td  align="center" valign=bottom><$g_font1>
+                <!-- #if variable="CLP" != value="" -->
+                  <img src="<$g_HTMLRoot><$CLP>" border="0" alt="Club Image" width="60"><br>
+                <!-- #else variable="CLP" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="CLP" -->
+                <input type="checkbox" name="STC_CB" value="1"
+                  <!-- #ifdef variable="STC" value="1" -->
+                    checked
+                  <!-- #endif variable="STC" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI1" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI1>" border="0" alt="Image 1" width="60"><br>
+                <!-- #else variable="PI1" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI1" -->
+                <input type="checkbox" name="ST1_CB" value="1"
+                  <!-- #ifdef variable="ST1" value="1" -->
+                    checked
+                  <!-- #endif variable="ST1" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI2" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI2>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI2" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI2" -->
+                <input type="checkbox" name="ST2_CB" value="1"
+                  <!-- #ifdef variable="ST2" value="1" -->
+                    checked
+                  <!-- #endif variable="ST2" -->
+                >Locked</input></font>
+              </td>
+            </tr>
+            <tr><td colspan="3">&nbsp;</td></tr>
+            <tr>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI3" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI3>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI3" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI3" -->
+                <input type="checkbox" name="ST3_CB" value="1"
+                  <!-- #ifdef variable="ST3" value="1" -->
+                    checked
+                  <!-- #endif variable="ST3" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI4" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI4>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI4" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI4" -->
+                <input type="checkbox" name="ST4_CB" value="1"
+                  <!-- #ifdef variable="ST4" value="1" -->
+                    checked
+                  <!-- #endif variable="ST4" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI5" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI5>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI5" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI5" -->
+                <input type="checkbox" name="ST5_CB" value="1"
+                  <!-- #ifdef variable="ST5" value="1" -->
+                    checked
+                  <!-- #endif variable="ST5" -->
+                >Locked</input></font>
+              </td>
+            </tr>
+            <tr><td colspan="3">&nbsp;</td></tr>
+            <tr>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI6" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI6>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI6" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI6" -->
+                <input type="checkbox" name="ST6_CB" value="1"
+                  <!-- #ifdef variable="ST6" value="1" -->
+                    checked
+                  <!-- #endif variable="ST6" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI7" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI7>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI7" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI7" -->
+                <input type="checkbox" name="ST7_CB" value="1"
+                  <!-- #ifdef variable="ST7" value="1" -->
+                    checked
+                  <!-- #endif variable="ST7" -->
+                >Locked</input></font>
+              </td>
+              <td align="center" valign=bottom><$g_font1>
+                <!-- #if variable="PI8" != value="" -->
+                  <img src="<$g_HTMLRoot><$PI8>" border="0" alt="Gallery Image" width="60"><br>
+                <!-- #else variable="PI8" -->
+                  <img src="<$g_HTMLRoot>/places/club/images/bild8.jpg" border="0" alt="Default Image" width="60"><br>
+                <!-- #endif variable="PI8" -->
+                <input type="checkbox" name="ST8_CB" value="1"
+                  <!-- #ifdef variable="ST8" value="1" -->
+                    checked
+                  <!-- #endif variable="ST8" -->
+                >Locked</input></font>
+              </td>
+            </tr>
+            </table>
+          </form>
+        <!-- #endif variable="updateok" -->
+      </td>
+    </tr>
+    </table>
+ </td>
+</tr>
+</table>
+<!-- #define variable="buttons" value="update" -->
+<!-- #define variable="buttoncheck" value="submitForm()" -->
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

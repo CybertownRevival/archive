@@ -1,0 +1,137 @@
+<!-- uploadavt/upload -->
+<!--- upload template for avatars --->
+<html>
+<head>
+<title><$g_title> - Upload Avatar</title>
+
+<!--- scripts to set the description automatically --->
+<script language=javascript>
+desc = new Array()
+i = 0;
+isfirst = 1;
+<!--#for loopname="AV_LOOP" loopvars="AV" --> 
+desc[i++] = "<$AV>";
+<!--#endfor loopname="AV_LOOP" -->
+
+function setDescription()
+{
+for ( i = 0 ; i < desc.length ; i++ )
+{
+ if ( desc[i].length == 0 )
+ {
+  if ( isfirst )
+  {
+   document.uploadForm.POS.selectedIndex = i;
+   isfirst = 0;
+   locname = "<$plc>";
+   j = locname.lastIndexOf( "#" );
+   if ( j > 0 )
+   {
+    locname = locname.substring( j+1, locname.length );
+    j = locname.indexOf( "." );
+    if ( j > 0 )
+     locname = locname.substring( 0, j );
+    document.uploadForm.AVD.value = locname;
+    desc[i] = locname;
+   }
+   else
+    desc[i] = "your_avatar_"+(i+1);
+  }
+  else
+   desc[i] = "your_avatar_"+(i+1);
+ }
+}
+}
+
+function onsel()
+{
+document.uploadForm.AVD.value = desc[document.uploadForm.POS.selectedIndex];
+}
+</script>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<br><br>
+
+<h2 align=center>Upload Avatar</h2>
+
+<!-- #include virtual="<$g_Templates>uploadavt/error.tmpl" -->
+
+<form method=post name="uploadForm" action="<$selfurl>" enctype="multipart/form-data">
+
+  <input type=hidden name=TKT value="<$TKT>">
+
+  <input type=hidden name=ac value="<$ac>">
+  <input type=hidden name=plc value="<$plc>">
+  <input type=hidden name=FILES value="<$FILES>">
+
+  <!-- #ifdef variable="NOOTHERS" -->
+    <input type=hidden name=AVS value=1>
+  <!-- #endif variable="NOOTHERS" -->
+
+  <table border=0 align=center cellspacing=10>
+  <tr>
+  <td colspan=2>
+  You can upload up to 3 different avatars. 
+  <br>Please select a storage number and describe the avatar. 
+  <br>Previously uploaded avatars will be overwritten.
+  </td>
+  </tr>
+
+  <tr>
+    <td>Store as</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>
+      <select name=POS onchange=onsel()>
+        <!--#for loopname="POS_LOOP" loopvars="AVNO_" --> 
+          <option value="<$AVNO_>">Avatar <$AVNOV_></option>
+        <!--#endfor loopname="POS_LOOP" -->
+      </select>
+    </td>
+    <td><input type=text name=AVD value="" maxlength=64 size=32></td>
+  </tr>
+  <tr><td colspan=2>&nbsp;</td></tr>
+  <!-- #ifdef variable="FILES" value="1"-->
+    <tr>
+      <td>Avatar VRML File:</td>
+      <td><input type=file name=WRL maxlength=64 size=32></td>
+    </tr>
+    <tr>
+      <td>Avatar Texture File:</td>
+      <td><input type=file name=TXF maxlength=64 size=32></td>
+    </tr>
+    <!-- #ifndef variable="NOOTHERS" -->
+      <tr><td colspan=2>&nbsp;</td></tr>
+      <tr>
+        <td colspan=2 align=center>
+          <input type=checkbox name=AVS checked> is created with blaxxun Avatar Studio</input>
+        </td>
+      </tr>
+    <!-- #endif variable="NOOTHERS" -->
+  <!-- #endif variable="FILES" -->
+  <!-- #ifdef variable="CHECKLIC" -->
+      <tr>
+        <td>Please enter your license key:</td>
+        <td><input type=text name=LICKEY maxlength=64 size=32></td>
+      </tr>
+  <!-- #endif variable="CHECKLIC" -->
+  </table>
+<br>
+<a name=submitbutton></a>
+
+  <center>
+    <input type=submit name=edit value="Upload">
+    <input type=button name=no value=Cancel onClick="history.back()">
+  </center>
+
+</form>
+
+<script language=javascript>
+onsel();
+setDescription();
+</script>
+</BODY>
+</HTML>

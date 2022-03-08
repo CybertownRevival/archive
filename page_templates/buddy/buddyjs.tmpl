@@ -1,0 +1,323 @@
+<script language="JavaScript">
+var buBuddyList          = new Array();
+var buBuddyCnt           = 0;
+var buBuddyCntIdx        = 0;
+
+var buMsgSize            = 12;
+var buMsgArray           = new Array( buMsgSize + 1 ); 
+var buMsgIdx             = 0;
+
+var buNickname           = new String("<$NNM>");
+var buSndContent         = new String();
+var buTable              = new String();
+
+var buTimerStarted       = false;
+var buMaxBuddyNamePerRow = 6;
+var buMemberFilter       = false;
+var buVisible            = true;
+
+var buCurBuddy           = "";
+var buInitialRefresh     = 0;
+
+var buGenBGcolor         = "#002020";
+var buGenLINKcolor       = "#00FF00";
+var buGenVLINKcolor      = "#00FF00";
+var buGenALINKcolor      = "#FFFFFF";
+var buGenCurLINKcolor    = "#FF0000";
+var buGenTEXTcolor       = "#D0DBF7";
+
+function buLoad()
+{
+    // IE 3 not supported
+    if ( navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 )
+    {
+        this.buF_Control.location.href="buddy<$g_exe>?ac=showControl"; 
+        this.buF_Messages.location.href="javascript:top.buMessageDisplay()"; 
+        this.buF_MsgSender.location.href="javascript:top.buMessageSend('')";
+    }
+
+}
+
+function buStartTimer()
+{
+  // this function is used to syncronize timer starts
+  // i.e. to avoid to start the timer more than once.
+    if ( !buTimerStarted )
+    {
+        buTimerStarted = true;
+        buOnTimer();
+    }
+}
+
+function buOnTimer()
+{
+    if ( buTimerStarted )
+    {
+        buMemberListCheck();
+        buMessageCheck();
+        setTimeout( "top.buOnTimer()", 2000);
+    }
+}
+
+function buStopTimer()
+{
+    buTimerStarted = false;
+}
+
+function buVisibilitySet( value )
+{
+    buVisible = value;
+    buMemberListRefresh();
+    if ( value )
+        this.buF_Control.location.href="buddy<$g_exe>?ac=showControl";
+    else
+        this.buF_Control.location.href="buddy<$g_exe>?ac=showControl&buVar=1";
+}
+
+function buMemberFilterSet( value )
+{
+    buMemberFilter = value;
+    buMemberListRefresh();
+}
+
+function buChangeContent( theframe, content )
+{
+    eval(theframe).document.open();
+    eval(theframe).document.write( content );
+    eval(theframe).document.close();
+}
+
+function buFocus()
+{
+  top.focus();
+  if ( top.buCurBuddy != "" )
+  {
+     top.buF_MsgSender.document.form.buMsg.focus();
+  }
+}
+
+function buMemberListRefresh() 
+{
+    str =  ' <html><title>blaxxun Instant Message Center</title>' +
+           '   <body BGCOLOR="' + buGenBGcolor + '" ' + 
+           '    LINK="'  + buGenLINKcolor  + '" ' + 
+           '    VLINK="' + buGenVLINKcolor + '" ' + 
+           '    ALINK="' + buGenALINKcolor + '" ' + 
+           '    TEXT="'  + buGenTEXTcolor  + '" ' + 
+           '>\n' +
+           '<font size=-1>';
+           '<br>\n';
+    if ( buMemberFilter )
+    {
+        str += '<a href="javascript:top.buMemberFilterSet(false)"><IMG SRC="<$g_Images>/images/buttons/bbuall.gif" BORDER=0 ALT="Show Online Citizens actively using this Message Center"></a><br>';
+    }
+    else
+    {
+        if ( buVisible )
+        {
+            str += '<a href="javascript:top.buVisibilitySet(false)"><IMG SRC="<$g_Images>/images/buttons/bbuhide.gif" BORDER=0 ALT="Hide Yourself"></a><br>';
+            str += '<a href="javascript:top.buMemberFilterSet(true)"><IMG SRC="<$g_Images>/images/buttons/bbufilter.gif" BORDER=0 ALT="Show Online Friends"></a><br>';
+        }
+        else
+            str += '<a href="javascript:top.buVisibilitySet(true)"><IMG SRC="<$g_Images>/images/buttons/bbushow.gif" BORDER=0 ALT="Show Yourself"></a><br>';
+    }
+    str += '<br><hr>' +
+           top.buF_Control.document.buBuddy.membersCount() +
+           ' Online Citizens actively using this Message Center</font><hr>' +
+           '\n' +
+           '</font><br>\n';
+    if ( buMemberFilter )
+    {
+        str += '<font color=yellow><b>Online Friends</b></font>' +
+               top.buF_Control.document.buBuddy.buddiesGet();
+    }
+    else
+    {
+        str += '<font color=yellow><b>Online Citizens</b></font>' +
+               top.buF_Control.document.buBuddy.membersGet();
+    }
+    str += '\n' +
+           ' </body></html>';
+    buChangeContent( "top.buF_BuddyList", str );
+}
+
+function buMemberListCheck() 
+{
+    if ( top.buF_Control.document.buBuddy != null )
+    {
+        if ( top.buF_Control.document.buBuddy.membersChanged() ) 
+        {
+            buMemberListRefresh();
+        }
+        if ( buCurBuddy != "" )
+        {
+            if ( !top.buF_Control.document.buBuddy.memberIsOnline(buCurBuddy) ) 
+            {
+                buMessageSend( "" )
+            }
+        }
+    }
+}
+
+function buMessageCheck()
+{
+    var tmpIdx = 0;
+    
+    var msg 
+    var name  ;
+    var message ;
+    
+    if ( ! buInitialRefresh )
+    {
+        buInitialRefresh = 1;
+        buMessageAdd( "", "<i>You must keep this window open to receive messages.</i>" );
+        buMessageAdd( "", "<i>Minimize this window, it will pop up automatically if you receive a message.</i>" );
+        buMessageAdd( "", "<i>To customize your instant message center click on the \'MY INFO\' button in the top menu.</i>" );
+        buMessageAdd( "", "&nbsp;" );
+        tmpIdx = 3;
+    }
+    else
+    {
+        msg = new String(top.buF_Control.document.buBuddy.getMessage());
+        while ( msg != "" )
+        {
+            arrayOfStrings = msg.split('\n');
+            if ( arrayOfStrings.length > 1 ) 
+            {
+                name    = new String(arrayOfStrings[0]);
+                message = new String(arrayOfStrings[1]);
+                buMessageAdd( name, message );
+            }
+            msg = new String (top.buF_Control.document.buBuddy.getMessage());
+            tmpIdx++
+        }
+    }
+    
+    if ( tmpIdx > 0 ) 
+    {
+        buMessageDisplay();
+        buFocus();
+    }
+}
+
+
+function buMessageAdd( nickname, msg )
+{
+  var msgIdx = 0;
+
+  if ( nickname == "" )
+      buMsgArray [ buMsgIdx ] = new String( msg );
+  else
+  {
+      if ( nickname == "<$NNM>" )
+          buMsgArray [ buMsgIdx ] = new String( nickname + ": " + msg );
+      else
+          buMsgArray [ buMsgIdx ] = new String( "<a href='javascript:top.buMessageSend(\""+nickname+"\")'>"+nickname+":</a> " + msg );
+  }
+
+  if ( buMsgIdx >= buMsgSize )
+  {
+      for ( msgIdx = 0; msgIdx < buMsgIdx; msgIdx++ )
+      {
+         buMsgArray [ msgIdx ] = buMsgArray [ msgIdx+1 ] ;
+      }
+
+      if ( buMsgIdx > 0 ) 
+      {
+        buMsgArray [ buMsgIdx ] = "";
+      }
+
+  }
+  else
+  {
+     buMsgIdx++;
+  }
+}
+
+function buSendMessage( msg )
+{
+  if ( msg != "" )
+  {
+     buMessageAdd( buNickname, msg );
+     buMessageDisplay();
+     top.buF_Control.document.buBuddy.SendInstantMessage( msg, buCurBuddy );
+  }
+  top.buF_MsgSender.document.form.buMsg.value = "";
+  top.buF_MsgSender.document.form.buMsg.focus();
+}
+
+function buMessageDisplay()
+{
+    var msgIdx = 0;
+  
+    buSndContent='<html><BODY onLoad="scroll(0,100000)" BGCOLOR="#000000" LINK="#FFFF00" ' + 
+                 ' VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">\n';
+
+    //buSndContent+= ' <table align=center border=0 width=100%>\n' ;
+
+    buSndContent += '<table width=100%>\n' ;
+                   
+    // NOTE:
+    // we have to do it in separate document.write() calls,
+    // in order for MS IE to work. Seems there is a limitation in IE,
+    // or i did something wrong?
+
+    top.buF_Messages.document.open();
+    top.buF_Messages.document.write (buSndContent);
+
+    for ( msgIdx=0; msgIdx < buMsgSize; msgIdx++ )
+    {
+        if ( buMsgArray [ msgIdx ] == "" || buMsgIdx <= msgIdx  )
+        {
+        }
+        else
+        {
+           buSndContent = '<tr><td name= NAME="buMsg_' + msgIdx + '">' +   buMsgArray[ msgIdx ] ; 
+           buSndContent += '</td></tr>\n' ;
+           top.buF_Messages.document.write (buSndContent);
+        }
+        
+    }
+
+    buSndContent = '</table>\n' ;
+    buSndContent+= '</font></body></html>';
+
+    top.buF_Messages.document.write (buSndContent);
+    top.buF_Messages.document.close();
+}
+
+function buMessageSend( buddy )
+{
+
+    buCurBuddy = buddy;
+
+    buSndContent='<html><BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00" >\n';
+  
+
+    if ( buddy != "" )
+    {
+       n = 35 - buddy.length;
+       buSndContent += '<form name="form" method=post action="javascript:top.buSendMessage(document.form.buMsg.value)">\n' +
+                       '<hr>\n' + 
+                       ' <table align=center border=0 width=100%>\n' + 
+                       '    <tr>\n' + 
+                       '      <td valign=center><INPUT NAME="buMsg" VALUE="" MAXLENGTH=128 size='+n+'></td>\n' + 
+                       '      <td valign=center><input type=submit name="buSend" value="To ' + buddy + '">\n' + 
+                       '    </tr>\n' + 
+                       ' </table>\n' ;
+
+    }
+    else
+    {
+       buSndContent += '<hr><font size=-1>Select a name in the right frame\n' +
+                       'to send an instant message to that person.</font>';
+    }
+    buSndContent += '</body></html>\n';
+
+    top.buF_MsgSender.document.open();
+    top.buF_MsgSender.document.write( buSndContent );
+    top.buF_MsgSender.document.close();
+}
+
+</script>
+

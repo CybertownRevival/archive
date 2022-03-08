@@ -1,0 +1,60 @@
+<html>
+<!-- event/citycash/admin.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+<h2 align="center"><font face="Arial"><$NAM> Winners!!!</font></h2>
+<center>
+  <font face="Arial">
+  <!-- #ifdef variable="notactivated" -->
+  <font color="red">Sorry <$NNM>, but the next week could not be activated!<br>
+  <br>
+  </font></font> <font face="Arial">
+  <!-- #endif variable="notactivated" -->
+  <!-- #ifdef variable="winnernotinsert" -->
+  <font color="red">Sorry <$NNM>, could not insert winner <$WIN> in database!<br>
+  <br>
+  </font></font> <font face="Arial">
+  <!-- #endif variable="winnernotinsert" -->
+  <!-- #ifdef variable="moneynotgiven" -->
+  <font color="red">Sorry <$NNM>, could not give winner <$WIN> the money!<br>
+  <br>
+  </font></font> <font face="Arial">
+  <!-- #endif variable="moneynotgiven" -->
+  </font>
+</center>
+<font face="Arial">
+<!--#for loopname="bigpriceloop" loopvars="bigwinner_" -->
+<!-- #ifdef variable="week_" -->
+</font>
+<h3><font face="Arial">Grand Prize</font></h3>
+<font face="Arial">
+<!-- #endif variable="week_" -->
+&nbsp;&nbsp;&nbsp;Citizen<b> "<$bigwinner_>" </b> won the <b>1,000,000cc</b> grand 
+prize!<br>
+<!--#endfor loopname="bigpriceloop" -->
+<!--#for loopname="weekloop" loopvars="winner_" -->
+<!-- #ifdef variable="week_" -->
+</font>
+<h3><font face="Arial"><$week_></font></h3>
+<font face="Arial">
+<!-- #endif variable="week_" -->
+&nbsp;&nbsp;&nbsp;<b><$winner_></b> won the <b><$prize_></b> over <$money_> cc!<br>
+<!--#endfor loopname="weekloop" -->
+<br>
+</font>
+<center>
+  <font size="+2" face="Arial"><b>Congratulations to all!!</b></font><font face="Arial"><br>
+  <br>
+  </font>
+  <form>
+    <font face="Arial">
+    <input type="button" name="goback" value="Go back" OnClick="history.back()">
+    </font>
+  </form>
+</center>
+
+</body>
+</html>

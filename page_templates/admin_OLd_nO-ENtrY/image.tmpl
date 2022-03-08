@@ -1,0 +1,109 @@
+<!-- admin/image.tmpl -->
+<!-- update attributes for media for multimedia objects -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<div align=center>
+<h2><$COM> Image <font color=#80ff00>ID: <$ID></font></h2>
+
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Data updated successfully.
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="editerror001" -->
+    One of DTY, KTY, KEY keywords missing.
+<!-- #endif variable="editerror001" -->
+<!-- #ifdef variable="editerror002" -->
+    No template TPL given.
+<!-- #endif variable="editerror002" -->
+<!-- #ifdef variable="editerror003" -->
+    Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+<!-- #ifdef variable="editerror005" -->
+    Cannot update data.
+<!-- #endif variable="editerror005" -->
+</font>
+
+<form method=post action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <table>
+        <tr>
+            <td align=right>Name:&nbsp;</td>
+            <td colspan=5><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=24></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Description:&nbsp;</td>
+            <td colspan=5><INPUT NAME="TXT" VALUE="<$TXT>" MAXLENGTH=255 SIZE=40></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Price:&nbsp;</td>
+            <td colspan=2><INPUT NAME="PRC" VALUE="<$PRC>" MAXLENGTH=8 SIZE=8></td>
+            <td align=right>Cost:&nbsp;</td>
+            <td colspan=2><INPUT NAME="CST" VALUE="<$CST>" MAXLENGTH=8 SIZE=8></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>2D Icon Index Free:</td>
+            <td><INPUT NAME="2IF" VALUE="<$2IF>" MAXLENGTH=3 SIZE=3></td>
+            <td align=right>No Access:</td>
+            <td><INPUT NAME="2IN" VALUE="<$2IN>" MAXLENGTH=3 SIZE=3></td>
+            <td align=right>World Index:</td>
+            <td><INPUT NAME="WR3" VALUE="<$WR3>" MAXLENGTH=3 SIZE=3></td>
+        </tr>
+    </table>
+<br>
+    <table border=1>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Place:</td>
+            <!--th>Landscape:</td-->
+            <th>Communal:</td>
+        </tr>
+        <tr>
+            <td>2D Icons</td>
+            <td><INPUT NAME="2IP" VALUE="<$2IP>" MAXLENGTH=96 SIZE=32></td>
+            <!--td><INPUT NAME="2IL" VALUE="<$2IL>" MAXLENGTH=96 SIZE=16></td-->
+            <td><INPUT NAME="2IC" VALUE="<$2IC>" MAXLENGTH=96 SIZE=32></td>
+        </tr>
+        <tr>
+            <td>2D Images</td>
+            <td><INPUT NAME="2DP" VALUE="<$2DP>" MAXLENGTH=96 SIZE=32></td>
+            <!--td><INPUT NAME="2DL" VALUE="<$2DL>" MAXLENGTH=96 SIZE=16></td-->
+            <td><INPUT NAME="2DC" VALUE="<$2DC>" MAXLENGTH=96 SIZE=32></td>
+        </tr>
+        <tr>
+            <td>3D Icons</td>
+            <td><INPUT NAME="3IP" VALUE="<$3IP>" MAXLENGTH=96 SIZE=32></td>
+            <!--td><INPUT NAME="3IL" VALUE="<$3IL>" MAXLENGTH=96 SIZE=16></td-->
+            <td><INPUT NAME="3IC" VALUE="<$3IC>" MAXLENGTH=96 SIZE=32></td>
+        </tr>
+    </table>
+<br>
+    <td colspan=><a HREF="/cgi-bin/cybertown/edit?DTY=U&KTY=ID&KEY=&TPL=admin/images&ac=list&KFT=<$ID>?*">Images</a><br>
+<br>
+    <input type=submit name="edit" value=Update width=100>
+    <input type=submit name="delete" value=Delete width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

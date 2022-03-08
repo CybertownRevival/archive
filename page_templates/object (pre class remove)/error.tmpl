@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>blaxxun - Object Error</title>
+</head>
+
+<!-- object/error.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Object Error</h2>
+
+<!-- #ifdef variable="soerror0001" -->
+Sorry!
+<P>
+The shared object program was called without a valid object id.
+The ID given was "<$ID>".
+<!-- #endif variable="soerror0001" -->
+
+<!-- #ifdef variable="soerror0002" -->
+Sorry!
+<P>
+You are not allowed to edit the object with ID "<$ID>".
+<!-- #endif variable="soerror0002" -->
+
+<!-- #ifdef variable="soerror0003" -->
+Sorry!
+<P>
+Sorry you can only drop objects that belong to you.
+<!-- #endif variable="soerror0003" -->
+
+<!-- #ifdef variable="soerror0004" -->
+Sorry!
+<P>
+Sorry you do not have permission to drop objects into the place.
+<!-- #endif variable="soerror0004" -->
+
+<!-- #ifdef variable="soerror0005" -->
+Sorry!
+<P>
+You have to enter the place the object is in before you can buy the
+object.
+<!-- #endif variable="soerror0005" -->
+
+<!-- #ifdef variable="soerror0006" -->
+Sorry!
+<P>
+Sorry, you do not have enough funds to buy the object.
+<!-- #endif variable="soerror0006" -->
+
+<!-- #ifdef variable="soerror0007" -->
+Sorry!
+<P>
+The object is not for sale anymore.
+<!-- #endif variable="soerror0007" -->
+
+<!-- #ifdef variable="soerror0008" -->
+Sorry!
+<P>
+You cannot buy the object because you already have to many objects in
+your possession. Delete or Drop some of your objects and try again.
+<!-- #endif variable="soerror0008" -->
+
+<!-- #ifdef variable="soerror0009" -->
+Sorry!
+<P>You cannot take the object because you already have to many objects in
+your possession. Delete or Drop some of your objects and try again.
+<!-- #endif variable="soerror0009" -->
+
+<!-- #ifdef variable="soerror0010" -->
+Sorry!
+<P>You cannot drop the object because there are too many objects in this
+place already.
+<!-- #endif variable="soerror0010" -->
+
+<!-- #ifdef variable="soerror0011" -->
+Sorry!
+<P>
+You do not have permission to take objects from this place.
+<!-- #endif variable="soerror0011" -->
+
+<!-- #ifdef variable="soerror0012" -->
+Sorry!
+<P>
+You cannot take the object, it belongs to somebody else.
+<!-- #endif variable="soerror0012" -->
+
+<!-- #ifdef variable="soerror0013" -->
+Sorry <$NNM>,
+<P>
+you cannot increase the quantity for this object.
+<!-- #endif variable="soerror0013" -->
+
+<!-- #ifdef variable="soerror0014" -->
+Sorry <$NNM>,
+<P>
+you don't have enough money.
+<!-- #endif variable="soerror0014" -->
+
+<!-- #ifdef variable="soerror0015" -->
+Sorry <$NNM>,
+<P>
+you can't decrease the qunatity.
+<P>
+<form><input type=button  value="Back" onClick="back()"></form>
+<!-- #endif variable="soerror0015" -->
+
+<!-- #ifdef variable="soerror0022" -->
+Sorry <$NNM>,
+<P>
+this price is too high.
+<!-- #endif variable="soerror0022" -->
+
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+

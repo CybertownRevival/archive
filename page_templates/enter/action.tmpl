@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- enter/action.tmpl -->
+<base target="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+
+<A HREF="javascript:loadCustom('<$g_cgiRoot>/message<$g_exe>?TPL=message/cityguide&ac=postmessage&TKT=<$TKT>&TIME=<$CT_STR>',600,200)">
+<IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/callguide.gif" ></A>
+
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?plc=enter&ac=place&ID=<$ID>&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat World"></a>
+<a href="place<$g_exe>?plc=enter&ac=place&ID=<$ID>&force=p">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat World"></a><br>
+<!-- #endif variable="chataccess" -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+
+
+
+
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="place<$g_exe>?ac=update" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="isAdmin"  -->
+<a href="print60<$g_exe>?TPL=common/event_buttons/eventbuttonupdate" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bedit.gif" BORDER=0 ALT="Update Event Buttons"></a><br>
+<!-- #endif variable="isAdmin" -->
+
+
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=enter&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>
+
+
+

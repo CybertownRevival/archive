@@ -1,0 +1,138 @@
+<!-- clubdir/catupdate -->
+<!--- update the club category information --->
+<html>
+<head>
+<!-- #if variable="ENV_HTTP_USER_AGENT" contains value="Mac" -->
+<!-- #include file="<$g_Templates>/common/getframe.html" -->
+<!-- #endif variable="ENV_HTTP_USER_AGENT" -->
+<title><$g_title> - Create Club Category</title>
+
+<script language="javascript">
+<!--
+
+function check()
+{
+  val = document.updateForm.NAM.value;
+
+  if ( !val.length )
+    alert('Please specify a name');
+  else
+    document.updateForm.submit();
+}
+
+function clubOfWeek()
+{
+  var strCat = '<$ID>';
+
+  while( strCat.length>0 && strCat.substring(strCat.length-4, strCat.length)=="0000" )
+  {
+    strCat = strCat.substring( 0, strCat.length-4 );
+  }
+
+  if( strCat.length==4 && strCat=="CT00" )
+    strCat = "CT*";
+  else if( strCat.length<16 )
+    strCat = strCat+'*';
+
+  document.location.href = '<$g_cgiRoot>/club<$g_exe>?ac=directory&TPL=clubdir/clubofweek&CAT='
+    + strCat + '&T_CAT=<$ID>&CATORD=<$T_CATORD><$g_SessionID>';
+}
+
+//-->
+</script>
+
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+<$g_font>
+
+<br><br>
+
+<!-- #ifdef variable="cluberror009" -->
+  Sorry <$NNM>, you have to specify a name for the new category!<br>
+<!-- #endif variable="cluberror009" -->
+<!-- #ifdef variable="cluberror013" -->
+  Sorry <$NNM>, insufficantt rights!<br>
+<!-- #endif variable="cluberror013" -->
+<!-- #ifdef variable="cluberror014" -->
+  Sorry <$NNM>, you have to specify an owner for the new category!<br>
+<!-- #endif variable="cluberror014" -->
+<!-- #ifdef variable="cluberror015" -->
+  Sorry <$NNM>, ... 15!<br>
+<!-- #endif variable="cluberror015" -->
+<!-- #ifdef variable="cluberror016" -->
+  Sorry <$NNM>, ... 16!<br>
+<!-- #endif variable="cluberror016" -->
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 valign=top align="center">
+<tr <$g_bgcolor5>>
+  <td>
+    <a href="<$g_cgiRoot>/club<$g_exe>?CAT=<$ID>&CATORD=<$T_CATORD><$g_SessionID>"><img src="<$g_HTMLRoot>/images/buttons/backbtn.gif"
+      alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr <$g_bgcolor6>>
+  <td>
+    <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+    <a href="<$g_cgiRoot>/edit<$g_exe>?DTY=CL&KTY=ID&KEY=<$ID>&TPL=place/rights-cat<$g_SessionID>" target="info"><img
+      src="<$g_HTMLRoot>/images/buttons/accessrightsbtn.gif" alt="Access Rights" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr <$g_bgcolor6>>
+  <td>
+    <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+    <a href="javascript:clubOfWeek()" target="info"><img
+      src="<$g_HTMLRoot>/images/buttons/clubweekadmbtn.gif" alt="Access Rights" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<!-- #if variable="ID" contains value="0000"-->
+  <tr <$g_bgcolor6>>
+    <td>
+      <img src="<$g_HTMLRoot>/images/buttons/admin.gif" alt="" border="0" align="left" vspace="0" hspace="0">
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=showForm&TPL=clubdir/catcreate&PCAT=<$ID>&CATORD=<$T_CATORD><$g_SessionID>" target="_self"><img
+        src="<$g_HTMLRoot>/images/buttons/createadmbtn.gif" alt="Create Category" border="0" align="left" vspace="0" hspace="0"></a>
+      <a href="<$g_cgiRoot>/club<$g_exe>?ac=catdir&TPL=clubdir/catdelete&CAT=<$ID>&CATORD=<$T_CATORD>&T_PCAT_ID=<$ID><$g_SessionID>" target="info"><img
+        src="<$g_HTMLRoot>/images/buttons/delete.gif" alt="Delete Category" border="0" align="left" vspace="0" hspace="0"></a>
+    </td>
+  </tr>
+<!-- #endif variable="ID" -->
+<tr <$g_bgcolor5>>
+  <td >
+    <form name="updateForm" method="post" action="<$g_cgiRoot>/edit<$g_exe>" target="_self">
+
+      <input type="hidden" name="TKT" value="<$TKT>">
+      <input type="hidden" name="SID" value="<$SID>">
+
+      <input type=hidden name="KEY" value="<$KEY>">
+      <input type=hidden name="TPL" value="<$TPL>">
+
+      <input type=hidden name="ac" value="edit">
+
+<!-- #include file="<$g_Templates>common/updateok.html" -->
+
+      <table align=center>
+      <tr>
+        <td><$g_font1>Name:<br>
+          <input type="text" name="NAM" value="<$NAM>" size=32 maxlength=32></font>
+        </td>
+      </tr>
+      <tr>
+        <td><$g_font1>
+          Information:<br>
+          <textarea name="DES" cols="32" rows="12"><$DES></textarea></font>
+        </td>
+      </tr>
+      </table>
+    </form>
+    <br>
+  </td>
+</tr>
+</table>
+<!-- #define variable="buttons" value="update" -->
+<!-- #define variable="buttoncheck" value="check()" -->
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

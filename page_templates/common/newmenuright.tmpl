@@ -1,0 +1,50 @@
+<!-- common/menuright.tmpl -->
+<!-- included in menu.tmpl to show common parts, RIGHT aligned!!! -->
+
+<!-- enclose it all in a little table to keep it grouped right -->
+<td align=right>
+<table align=right border=0 cellspacing=0 cellpadding=0>
+<tr>
+
+<!-- show the affiliate icon -->
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD3>.tmpl" -->
+<!-- end of affiliate icon -->
+
+<!-- right side ads for various places -->
+<!-- #ifdef variable="EBN" value="emergency" -->
+<!-- start emergency mode banners -->
+<!-- #include virtual="<$g_Templates>banners/tags/emergencybanner_right.tmpl" -->
+<!-- end emergency mode banners -->
+<!-- #endif variable="EBN" -->
+
+
+
+<!-- don't modify menuright.tmpl past here -->
+</tr>
+</table>
+</td>
+
+<SCRIPT  language="JavaScript">  
+<!--
+
+var reload = 0;
+var lastID = "";
+
+function send_place(id,loadURL){
+
+ if("<$ID>" != id && reload < 1){
+  parent.place.location.href = loadURL;
+  reload++;
+ }
+
+ if(reload > 0){
+  parent.place.World.document.CC3D.setNodeEventIn('place_script','set_place','<$ID>');
+ } 
+   
+}
+//-->   
+</SCRIPT>
+<!-- end of include menuright.tmpl -->
+
+
+

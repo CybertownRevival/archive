@@ -1,0 +1,70 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+# Get seller and buyer information and ids
+*GET P ID <$KEY> OWN OWN_ID ID OWN_HOM TPR TPR
+*GET M ID <$OWN_ID> RCHECK=1 NNM OWN_NNM H3D OWN_H3D
+*GET M NNM <$BUY_NNM> RCHECK=1 ID BUY_ID NNM BUY_NNM HOM BUY_HOM 
+
+# get the buyer member's home details
+*GET P ID <$BUY_HOM> RCHECK=1 IC3 MASK=??? BUY_IC3
+
+# Now for the money changing hands
+
+# get the member's home details and modify to a partial U db ID
+*GET P ID <$BUY_HOM> RCHECK=1 ID MASK=?????00000000000 U_HOM
+
+# find out how much previous home cost member 
+# (notice check so nothing is done unless it is not a Designer home)
+*GET U ID I<$U_HOM>B3IP<$BUY_IC3> IF <$BUY_IC3>!=des RCHECK=1 PRC TYPE=NUM PRC
+
+# Refund price of previous home (doesn't include designer homes)
+# (notice check so nothing is done unless it is not a Designer home)
+*ADD M ID <$BUY_ID> IF <$BUY_IC3>!=des RCHECK=1 MON +<$PRC>
+
+# This is the part that will based on price of home for sale,
+# deduct the price of home for sale from buyer and increment the sellers mon
+# re-get member details (money might have changed because of above)
+
+*GET M ID <$BUY_ID> RCHECK=1 MON TYPE=NUM BUY_MON ID BUY_ID H3D BUY_H3D HOM BUY_HOM
+# create tempory varible in member record and have it hold the MON value
+*UPD M ID <$BUY_ID> RCHECK=1 TMPM TYPE=NUM <$BUY_MON>
+# take away price of home from tempory variable
+*ADD M ID <$BUY_ID> RCHECK=1 TMPM -<$TPR> 
+*GET M ID <$BUY_ID> RCHECK=1 TMPM TYPE=NUM TMPM
+
+# dont Refund price of previous home if they still dont have enough funds
+# (notice check so nothing is done unless it is not a Designer home)
+*ADD M ID <$BUY_ID> IF <$TMPM><0 IF <$BUY_IC3>!=des RCHECK=1 MON -<$PRC>
+
+# take money from member for home
+*ADD M ID <$BUY_ID> IF <$TMPM>>=0 RESULT=updateok RCHECK=1 MON -<$TPR> 
+
+# give seller their money
+*ADD M ID <$OWN_ID> IF <$TMPM>>=0 RCHECK=1 MON +<$TPR>
+
+# Now to do the transferring
+
+# Get 3d world of sellers des home and transfer settings
+*GET P ID <$OWN_HOM> RCHECK=1 IC3 OWN_IC3 WR3 OWN_WR3 HTR1 HTR1 HTR2 HTR2 HTR3 HTR3 HTR4 HTR4
+
+# Get information on buyers current home for money actions below
+*GET P ID <$BUY_HOM> RCHECK=1 IC3 BUY_IC3 WR3 BUY_WR3
+
+# Set 3d world of seller to buyer
+*UPD P ID <$BUY_HOM> IF <$TMPM>>=0 RCHECK=1 IC3 <$OWN_IC3> WR3 <$OWN_WR3>
+*UPD M ID <$BUY_ID> IF <$TMPM>>=0 RCHECK=1 H3D <$OWN_H3D>
+
+# Move all objects from seller to buyers home changing owner of object
+*LIST SO ZON FILTER=p<$OWN_HOM> NUM=64 POSTFIX=_<$ITER> ID OID NAM NAM CAT CAT 
+    *UPD SO ID <$OID_<$ITER>> IF <$TMPM>>=0 RCHECK=1 ZON p<$BUY_HOM> OWN <$BUY_ID>
+*ENDLIST
+
+# Set 3d world of seller to none
+*UPD P ID <$OWN_HOM> IF <$TMPM>>=0 RCHECK=1 IC3 None WR3 None
+*UPD M ID <$OWN_ID> IF <$TMPM>>=0 RCHECK=1 H3D 
+
+# Reset transfer settings of seller to blanks
+*UPD P ID <$OWN_HOM> RCHECK=1 HTR1  HTR2  HTR3  HTR4 

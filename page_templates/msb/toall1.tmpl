@@ -1,0 +1,98 @@
+<!-- msboard/toall1.html -->
+<html>
+<head>
+<title><$g_title></title>
+
+<script language="JavaScript">
+<!--
+
+function onSubmit()
+{
+  var orgText = document.updateForm.TXT.value;
+  var protText = '';
+  var startIndex = 0;
+  var stopIndex = 0;
+
+  while( (stopIndex=orgText.indexOf( '\n', startIndex ))>=0 )
+  {
+    protText = protText + orgText.substring( startIndex, stopIndex )  + '%0A';
+    startIndex = stopIndex+1;
+  }
+  protText = protText + orgText.substring( startIndex, orgText.length );
+
+  orgText = protText;
+  protText = '';
+  startIndex = 0;
+  stopIndex = 0;
+
+  while( (stopIndex=orgText.indexOf( '\r', startIndex ))>=0 )
+  {
+    protText = protText + orgText.substring( startIndex, stopIndex );
+    startIndex = stopIndex+1;
+  }
+  protText = protText + orgText.substring( startIndex, orgText.length );
+
+  orgText = protText;
+  protText = '';
+  startIndex = 0;
+  stopIndex = 0;
+
+  while( (stopIndex=orgText.indexOf( ' ', startIndex ))>=0 )
+  {
+    protText = protText + orgText.substring( startIndex, stopIndex )  + '%20';
+    startIndex = stopIndex+1;
+  }
+  protText = protText + orgText.substring( startIndex, orgText.length );
+
+  document.updateForm.TXT.value = protText;
+
+  document.updateForm.submit();
+}
+
+//-->
+</script>
+
+</head>
+
+<body marginwidth="0" marginheight="0" <$g_body1>
+
+<table width=100% border=0 cellpadding=0 cellspacing=0 align=center>
+<tr>
+  <td>
+    <form name="updateForm" method=post action="print<$g_exe>">
+    <input type=hidden name="TKT" value="<$TKT>">
+
+    <input type=hidden name="SUB" value="Announcements">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="ID" value="<$ID>">
+    <input type=hidden name="KFT" value="<$KFT>">
+    <input type=hidden name="TPL" value="msb/toall3">
+    <br>
+    <table width=308 align="center" <$g_bgcolor2> >
+    <tr>
+      <td><$g_font>
+        <p>Subject:<br>
+        Announcements
+        <p>
+        <$g_messageToAllTxt>:<br>
+        <textarea name="TXT" rows="9" cols="22" wrap="physical"></textarea>
+        <br>
+        <br>
+      </td>
+    </tr>
+    </table>
+    
+  </td>
+</tr>
+<tr>
+  <td <$g_bgcolor5> >&nbsp;</td>
+  <input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+</form>
+</tr>
+
+</table>
+
+</body>
+</html>
+

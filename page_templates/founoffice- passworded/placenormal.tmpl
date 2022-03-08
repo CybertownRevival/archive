@@ -1,0 +1,126 @@
+	<!-- place/place.tmpl-->
+	<!-- display the place frame with chat for places -->
+	<HTML>
+	<HEAD>
+		<title><$g_title></title>
+		<base target="_top">
+	<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+	<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+	<!-- #include virtual="<$g_Templates><$place>/head.tmpl" -->
+	</HEAD>
+	
+	<!-- Set a variable for chat type -->
+	<!-- This method needed to override chat setting in 2D only places -->
+	<!-- #ifdef variable="chatno" -->
+	<!-- #define variable="chattype" value="2D" -->
+	<!-- #endif variable="chatno" -->
+	<!-- #ifdef variable="chatstd" -->
+		<!-- #define variable="chattype" value="2D" -->
+	<!-- #endif variable="chatstd" -->
+	
+	<!-- 2D only places -->
+	<!-- #ifdef variable="ID" value="0000000000000003" -->
+		<!-- #define variable="chattype" value="2D" -->
+	<!-- #endif variable="ID" -->
+	<!-- #ifdef variable="ID" value="0000000000000024" -->
+		<!-- #define variable="chattype" value="2D" -->
+	<!-- #endif variable="ID" -->
+	<!-- #ifdef variable="ID" value="00000000000009ef" -->
+		<!-- #define variable="chattype" value="2D" -->
+	<!-- #endif variable="ID" -->
+	
+	<!-- Handles 2D place chat or nochat -->
+	<!-- #ifdef variable="chattype" value="2D" -->
+		<!-- #ifndef variable="CLB" -->
+			<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+		<!-- #endif variable="CLB" -->
+		<!-- #ifdef variable="CLB" -->
+			<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+		<!-- #endif variable="CLB" -->
+		<center>
+	
+		<!-- #ifdef variable="isAdmin" -->
+			<!-- exceptions to standard format -->
+			<!-- plaza/enter 0000000000000001 has special image -->
+			<!-- movies      000000000000001b is movie -->
+			<!-- yesmate     0000000000000023 is movie -->
+			<!-- henvpod     0000000000000025 is movie -->
+			<!-- vidnetvpod  0000000000000030 is movie -->
+			<!-- incantavpod 0000000000000036 is movie -->
+			<!-- news        0000000000000003 is 2d only -->
+			<!-- readingroom 0000000000000024 is 2d only -->
+		<!-- #endif variable="isAdmin" -->
+	
+		<!-- #ifdef variable="ID" value="0000000000000001" -->
+			<img src="<$g_HTMLRoot>/places/<$place>/images/plaza.jpg" border=0><br>
+		<!-- #endif variable="ID" -->
+
+		<!-- #ifndef variable="ID" value="0000000000000001" -->
+			<!-- #ifndef variable="ID" value="000000000000001b" -->
+				<!-- #ifndef variable="ID" value="0000000000000023" -->
+					<!-- #ifndef variable="ID" value="0000000000000025" -->
+						<!-- #ifndef variable="ID" value="0000000000000030" -->
+							<!-- #ifndef variable="ID" value="0000000000000036" -->
+								<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border="0"
+							<!-- #endif variable="ID" -->
+						<!-- #endif variable="ID" -->
+					<!-- #endif variable="ID" -->
+				<!-- #endif variable="ID" -->
+			<!-- #endif variable="ID" -->
+		<!-- #endif variable="ID" -->
+	
+		<!--#ifdef variable="ID" value="000000000000000c" -->
+  			USEMAP="#imgmap"
+		<!--#endif variable="ID" -->
+		<!--#ifdef variable="ID" value="000000000000000a" -->
+  			USEMAP="#imgmap"
+		<!--#endif variable="ID" -->
+	
+		<!-- #ifndef variable="ID" value="0000000000000001" -->
+			<!-- #ifndef variable="ID" value="000000000000001b" -->
+				<!-- #ifndef variable="ID" value="0000000000000023" -->
+					<!-- #ifndef variable="ID" value="0000000000000025" -->
+						<!-- #ifndef variable="ID" value="0000000000000030" -->
+							<!-- #ifndef variable="ID" value="0000000000000036" -->
+								><br>
+							<!-- #endif variable="ID" -->
+						<!-- #endif variable="ID" -->
+					<!-- #endif variable="ID" -->
+				<!-- #endif variable="ID" -->
+			<!-- #endif variable="ID" -->
+		<!-- #endif variable="ID" -->
+	
+		<!-- #include virtual="<$g_Templates><$place>/middle.tmpl" -->
+	
+		<!-- #ifndef variable="chatno" -->
+			<!-- #include virtual="<$g_Templates>common/javachat.tmpl" -->
+		<!-- #endif variable="chatno" -->
+	
+		<!-- #ifdef variable="ID" value="0000000000000001" -->
+			<SCRIPT LANGUAGE="JavaScript">  showbanner();  </SCRIPT> 
+		<!-- #endif variable="ID" -->
+	
+		<!-- #ifndef variable="ID" value="0000000000000001" -->
+			<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+			<!-- #include virtual="<$g_Templates>banners/tags/<$AD4>.tmpl" -->
+			</tr></table>
+		<!-- #endif variable="ID" -->
+	
+	
+		<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+		<!-- #include virtual="<$g_Templates><$place>/map.tmpl" -->
+		</center>
+		</BODY>
+	<!-- #endif variable="chattype" -->
+
+
+	<!-- Handles 3D chat -->
+	<!-- Note ifndef chattype for 2D only places -->
+	<!-- #ifndef variable="chattype" -->
+		<!-- #ifdef variable="chatpro" -->
+			<!-- #include virtual="<$g_Templates>place/world.tmpl" -->
+		<!-- #endif variable="chatpro" -->
+	<!-- #endif variable="chattype" -->
+	
+	</HTML>
+

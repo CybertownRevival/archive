@@ -1,0 +1,107 @@
+<!-- property/place_hi-tek.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<!-- #ifndef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>property/present.tmpl" -->
+<!-- #define variable="isProperty" value="1" -->
+
+<!-- #if variable="MEM_ID" == variable="HOID" -->
+<table border=0 width=100%>
+<tr><td>
+<b>Object Storage Areas</b><br>
+<!-- #if variable="STOID_0" == value="" -->
+<a href="./print60<$g_exe>?CREID=00&TPL=object/storagecreate">Create</a>
+
+<!-- #else variable="STOID_0" == value="" -->
+<table border=0 width=100%><tr>
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&TPL=object/storagelist&ID=<$STOID_>"><$NAM_></a> (
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects)
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+<br><a href="./print60<$g_exe>?TPL=object/storageupdate">Edit</a>
+<!-- #endif variable="STOID_0" == value="" -->
+</td></tr></table>
+
+<!-- #else variable="MEM_ID" == value="<$HOID>" -->
+<!-- #if variable="STOID_0" != value="" -->
+<!-- #if variable="WI1" == value="" -->
+
+<table border=0 width=100%>
+<tr><td>
+<b>Object Storage Areas</b><br>
+<table border=0 width=100%><tr>
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&TPL=object/storagelist&ID=<$STOID_>"><$NAM_></a> (
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects)
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+</td></tr></table>
+
+<!-- #endif variable="WI1" == value="" -->
+<!-- #endif variable="STOID_0" == value="" -->
+<!-- #endif variable="MEM_ID" == value="<$HOID>" -->
+
+<!-- #if variable="citizenown" != value="" -->
+<!-- #if variable="STOID_0" != value="" -->
+<table border=0 align=left>
+<tr><td>
+<a href="./print60<$g_exe>?HOID=<$HOID>&TPL=object/storagedelete">Delete object store</a>
+</td></tr></table>
+<!-- #endif variable="STOID_0" != value="" -->
+<!-- #endif variable="citizenown" != value="" -->
+
+<center>
+<!-- #ifndef variable="chatno" -->
+<!-- #if variable="ID" == value="0103050601060604" -->
+<!-- #include virtual="<$g_Templates>common/javatest.tmpl" -->
+<!-- #else variable="ID" -->
+<!-- #include virtual="<$g_Templates>hi-tek/property/javachat.tmpl" -->
+<!-- #endif variable="ID" != "0103050601060604" -->
+<!-- #endif variable="chatno" -->
+
+<script language=javascript>
+var neighborid = '<$ID>';
+neighborid = neighborid.substring(0,8);
+if (neighborid == '01020206') {document.write('<a href="javascript:loadInfo(\'http://www.seti.org\')" target=_self><IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a><br>');}
+</script>
+
+<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD4>.tmpl" -->
+</tr></table>
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</center>
+</body>
+<!-- #endif variable="chatpro" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>property/place3d.tmpl" -->
+<!-- #endif variable="chatpro" -->
+</html>

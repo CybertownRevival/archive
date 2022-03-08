@@ -1,0 +1,96 @@
+<!-- sponsor clubs -->
+
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+
+
+function writeDatestring (cda) {
+
+			var cr_year = cda.substring(0,4);
+
+			var cr_day = cda.substring(6,8);
+
+			var cr_mon = cda.substring(4,6);
+
+			if (cr_mon == '01') {cr_mon = 'Jan';}
+
+			if (cr_mon == '02') {cr_mon = 'Feb';}
+
+			if (cr_mon == '03') {cr_mon = 'Mar';}
+
+			if (cr_mon == '04') {cr_mon = 'Apr';}
+
+			if (cr_mon == '05') {cr_mon = 'May';}
+
+			if (cr_mon == '06') {cr_mon = 'Jun';}
+
+			if (cr_mon == '07') {cr_mon = 'Jul';}
+
+			if (cr_mon == '08') {cr_mon = 'Aug';}
+
+			if (cr_mon == '09') {cr_mon = 'Sep';}
+
+			if (cr_mon == '10') {cr_mon = 'Oct';}
+
+			if (cr_mon == '11') {cr_mon = 'Nov';}
+
+			if (cr_mon == '12') {cr_mon = 'Dec';}
+
+			document.write(cr_mon + ' ' + cr_day + ',' + cr_year);
+
+
+}
+//-->
+</SCRIPT>
+
+
+        <TR>
+            <TD align=center>S</TD>
+            <TD align=center nowrap>
+            <!-- #ifdef variable="isVisitor" -->
+                <B><$VC_NAM></B>
+            <!-- #endif variable="isVisitor" -->
+            <!-- #ifndef variable="isVisitor" -->
+                <!--#ifdef variable="VC_MEM" value="1" -->
+                    <A HREF="club<$g_exe>?ac=enter&clubid=CL0000000000bc5f" target="_top"><B><$VC_NAM></B></A>
+                <!--#endif variable="VC_MEM" -->
+                <!--#ifndef variable="VC_MEM" value="1" -->
+                    <A HREF="edit<$g_exe>?ac=read&TPL=club/showinfo&KEY=CL0000000000bc5f&join=1">
+                    <B><$VC_NAM></B></A>
+                <!--#endif variable="VC_MEM" -->
+            <!-- #endif variable="isVisitor" -->
+            <BR>
+            <$VC_OWN_NNM>
+            </TD>
+            <TD> <$VC_CK1>, <$VC_CK2>, <$VC_CK3> </TD>
+            <TD align=center> 
+                    <img src="<$g_HTMLRoot><$g_DBImages><$VC_CLP>" border=0 ALT="Club Image" height=70>
+             </TD>
+            <TD align=center>
+                <A HREF="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/showinfo&KEY=CL0000000000bc5f')">
+                <IMG SRC="<$g_Images>/images/buttons/binfo0.gif" BORDER=0 ALT="Club Info"></A>
+                <BR>
+                <a href="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/showrules&KEY=CL0000000000bc5f')">
+                <IMG SRC="<$g_Images>/images/buttons/bcrules.gif" BORDER=0 ALT="Club Rules"></a>
+            </TD>
+            <!-- #ifndef variable="isVisitor" -->
+                <TD align=center>
+                <!--#ifdef variable="VC_MEM" value="1" -->
+                    Member
+                <!--#endif variable="VC_MEM" -->
+                <!--#ifndef variable="VC_MEM" value="1"  -->
+                       Not Member
+                <!--#endif variable="VC_MEM" -->
+
+                </TD>
+            <!-- #endif variable="isVisitor" -->
+            <TD align=center><BR><$VC_CNT></TD>
+            <TD align=center><script>writeDatestring('<$VC_CDA>')</script></TD>
+        </TR>
+
+
+<!-- end sponsor clubs -->

@@ -1,0 +1,134 @@
+#VRML V2.0 utf8
+
+# Produced by 3D Studio MAX VRML97 exporter, Version 3, Revision 1,31
+# MAX File: jukebox-skaliert.max, Date: Mon Oct 11 15:11:28 1999
+
+PROTO SharedObjectEvent [ 
+  eventIn  SFString set_name    
+  eventOut SFString name_changed    
+  eventIn  SFString set_action 
+  eventOut SFString action_changed
+  eventIn  MFString set_attributes 
+  eventOut MFString attributes_changed
+  eventIn  MFString attributesFromServer 
+  eventOut MFString attributesToServer
+  eventIn  SFTime   set_touchTime 
+  eventOut SFTime   touchTime 
+  eventIn  SFBool   set_isOver 
+  eventOut SFBool   isOver 
+  eventOut MFString requestAttributes 
+  eventIn  SFFloat  floatFromServer 
+  eventOut SFFloat  floatToServer 
+  eventIn  SFFloat  set_float 
+  eventOut SFFloat  float_changed 
+  eventIn  SFTime   timeFromServer 
+  eventOut SFTime   timeToServer 
+  eventIn  SFTime   set_time 
+  eventOut SFTime   time_changed 
+  eventOut SFTime   giessNow 
+  eventIn  SFVec3f  vec3fFromServer 
+  eventOut SFVec3f  vec3fToServer 
+  eventIn  SFVec3f  set_vec3f 
+  eventOut SFVec3f  vec3f_changed 
+  eventIn  SFTime   set_att 
+]
+{
+  Script {
+    eventIn  SFString  set_action           IS set_action
+    eventIn  MFString  set_attributes       IS set_attributes
+    eventOut MFString  attributesToServer   IS attributesToServer
+    eventIn  MFString  attributesFromServer IS attributesFromServer
+    eventIn  SFString  set_name             IS set_name
+    eventOut SFString  name_changed         IS name_changed
+    eventOut SFString  action_changed       IS action_changed
+    eventOut MFString  attributes_changed   IS attributes_changed
+    eventIn  SFTime    set_touchTime        IS set_touchTime
+    eventIn  SFTime    set_att              IS set_att
+    eventOut SFTime    touchTime            IS touchTime
+    eventIn  SFBool    set_isOver           IS set_isOver
+    eventOut SFBool    isOver               IS isOver
+    eventIn  SFFloat   floatFromServer      IS floatFromServer
+    eventOut SFFloat   floatToServer        IS floatToServer
+    eventIn  SFFloat   set_float            IS set_float
+    eventOut SFFloat   float_changed        IS float_changed
+    eventIn  SFTime    timeFromServer       IS timeFromServer
+    eventOut SFTime    timeToServer         IS timeToServer
+    eventIn  SFTime    set_time             IS set_time
+    eventOut SFTime    time_changed         IS time_changed
+    eventOut SFTime    giessNow             IS giessNow
+    eventIn  SFVec3f   vec3fFromServer      IS vec3fFromServer 
+    eventOut SFVec3f   vec3fToServer        IS vec3fToServer   
+    eventIn  SFVec3f   set_vec3f            IS set_vec3f       
+    eventOut SFVec3f   vec3f_changed        IS vec3f_changed   
+    url "vrmlscript:
+      function set_isOver (value, time) { isOver = value; }
+      function set_touchTime (value, time) { touchTime = value;  }
+      function set_att (value, time) { attributesToServer = new MFString('GET', 'CAT' ); }
+      function set_name (value, time) { name_changed = value; }
+      function set_action (value, time) 
+      { 
+        action_changed = value; 
+        giessNow = time; 
+      }
+      function set_attributes (value, time) { attributesToServer = value; }
+      function attributesFromServer (value, time) 
+      { attributes_changed = value; }
+      function floatFromServer (value, time) { float_changed = value; }
+      function set_float (value, time) { floatToServer = value; }
+      function timeFromServer (value, time) { time_changed = value; }
+      function set_time (value, time) { timeToServer = value; }
+      function vec3fFromServer (value, time) { vec3f_changed = value; }
+      function set_vec3f (value, time) { vec3fToServer = value; }
+    "
+  }
+}
+DEF SE SharedObjectEvent{}
+
+EXTERNPROTO MusicboxProto [
+  exposedField MFString psychedelicTexture
+  exposedField MFString musicTexture
+  exposedField MFString frontTexture
+  exposedField MFString dianaTexture
+  exposedField MFString platteTexture
+  exposedField MFString rockTexture
+  exposedField MFString soulTexture
+  exposedField MFString jazzTexture
+  exposedField MFString punkTexture
+] "<$g_HttpServer><$g_HTMLRoot><$texturePath>/musicbox_proto.wrl#MusicboxProto" 
+
+Group {
+  children [
+    DEF MusicBox MusicboxProto {
+      psychedelicTexture [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/psychedelic.gif" ]
+      musicTexture       [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/music.gif" ]
+      frontTexture       [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/front.gif" ]
+      dianaTexture       [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/diana.gif" ]
+      platteTexture      [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/platte.gif" ]
+      rockTexture        [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/rock.gif" ]
+      soulTexture        [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/soul.gif" ]
+      jazzTexture        [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/jazz.gif" ]
+      punkTexture        [ "<$g_HttpServer><$g_HTMLRoot><$texturePath>/maps/punk.gif" ]
+    },
+    DEF TouchSensor01-SENSOR TouchSensor { enabled TRUE }
+    DEF TouchScript01 Script 
+    {
+      eventIn SFTime getTouch
+      eventOut MFString attributes_changed
+
+      field MFString newurl [ "" ]
+      field MFString param [ "" ]
+
+      url "javascript:
+        function getTouch( value )
+        {
+          param[0] = 'target=place';
+          newurl[0] = '<$g_HttpServer><$g_cgiRoot>/iwos?ID=<$ID>&CAT=musicbox';
+          Browser.loadURL( newurl, param );
+        }"
+    }
+  ]
+}
+
+ROUTE TouchSensor01-SENSOR.touchTime TO TouchScript01.getTouch
+ROUTE TouchSensor01-SENSOR.touchTime TO SE.set_touchTime
+ROUTE TouchSensor01-SENSOR.isOver TO SE.set_isOver

@@ -1,0 +1,91 @@
+<!-- msg/createmessage.html -->
+<!--- create new instant messages --->
+
+<html>
+<head> 
+<!-- #include file="<$g_Templates>/common/browser.html" -->
+<!-- #include file="<$g_Templates>/msg/msg.js" -->
+<title> <$g_title> </title> 
+
+<script language="javascript">
+<!-- #ifdef variable="T_popup" -->
+  var popup=1;
+<!-- #endif variable="T_popup" -->
+onlineMembersID  = new Array();
+onlineMembersNNM = new Array();
+<!--#for loopname="loopopen" loopvars="ID_" -->
+onlineMembersID[<$loopindex>]= "<$ID_>";
+onlineMembersNNM[<$loopindex>]= "<$NNM_>";
+<!--#endfor loopname="loopopen" -->
+</script>
+
+</head>
+
+<form name="uform" method=post action="<$g_cgiRoot>/msg<$g_exe>">
+<input type=hidden name="REC_NNM" value="<$REC_NNM>">
+
+<!-- #ifndef variable="T_popup" -->
+<body onload="javascript:msgSetFocus('TXT')" class=info>
+<!-- #else variable="T_popup" -->
+<body onload="javascript:msgSetFocus('TXT')" class=popup>
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #endif variable="T_popup" -->
+
+<!-- #ifndef variable="T_TB" -->
+  <!-- #define variable="heading" value="Messages" -->
+  <!-- #ifndef variable="T_popup" -->
+    <!-- #include file="<$g_Templates>/msg/buttons.html" -->
+  <!-- #endif variable="T_popup" -->
+  <!-- #else variable="T_TB"-->
+  <!-- #define variable="heading" value="<$T_TB>" -->
+<!-- #endif variable="T_TB"-->
+
+<!-- #ifndef variable="hideTemplate" --> 
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<p class=head2>
+Send Message
+</p>
+
+<$g_table>
+
+<tr>
+<td class=thbg><p class=thfont>From</p></td>
+<td class=thbg><p class=thfont>To</p></td>
+</tr>
+<tr>
+<td><p class=cont><$MEM_NNM><$VIS_NNM></p></td>
+<!-- #ifndef variable="REC_NNM" -->
+<td>
+<span class=cont>
+<select name="REC_SEL">
+<!--#for loopname="loopopen" loopvars="ID_" -->
+<option value="<$ID_>"> <$NNM_>
+<!--#endfor loopname="loopopen" -->
+</select>
+</span>
+</td>
+<!-- #else variable="REC_NNM" -->
+<td><p class=cont><$REC_NNM></p></td>
+<!-- #endif variable="REC_NNM" -->
+</tr>
+
+<tr>
+<td class=thbg colspan=2><p class=thfont>Your Message Text</p></td>
+</tr>
+
+<tr>
+<td colspan=2>
+<!-- span class=cont -->
+<textarea wrap=physical cols=35 rows=4 name="TXT"><$TXT></textarea>
+<!-- /span -->
+</td>
+</tr>
+</table>
+  <!-- #define variable="buttoncheck" value="msgSend('<$T_LB>','<$REC_NNM>','<$REC_ID>','<$REC_GRP>')" -->
+  <!-- #define variable="buttons" value="send" -->
+  <!-- #include file="<$g_Templates>/common/infobottom.html" -->
+  <!-- #endif variable="hideTemplate" --> 
+</body>
+</form>
+</html>

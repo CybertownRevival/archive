@@ -1,0 +1,50 @@
+<html>
+<!-- event/lottery1/lottery.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+<h2 align="center"><font face="Arial"><$NAM></font></h2>
+<table border="0">
+  <tr> 
+    <td align="center"> <font face="Arial"><img src="<$g_Images>/images/events/citycash/citycash.jpg" alt="<$NAM>" height=180> 
+      </font></td>
+    <td> 
+      <blockquote><font face="Arial"><b> Welcome to the <$NAM>.All you have to 
+        do to enter is buy a ticket (50 CityCash) and you will be automatically 
+        entered with a chance to win the weekly pool of CityCash created by everyone's 
+        entries! <br>
+        <br>
+        We are in Lottery Week No. <$LWN><br>
+        <FONT color="#FFFF00">And there are <$JACKPOT> cc in the Jackpot!</font> 
+        </b></font></blockquote>
+    </td>
+  </tr>
+</table>
+<blockquote><font face="Arial"><b> You have to be a member of Cybertown to enter. 
+  You can become a member <a href="javascript:top.location.href='register<$g_exe>'" target="top">here</a>. 
+  Those who enter 6 out of the 8 weeks that the <$NAM> runs get a chance to be 
+  chosen as the winner of a grand prize. There will also be weekly prizes. See 
+  the Rules <a href="<$g_HTMLRoot>/events/citycash/rules.html">here</a>. </b></font></blockquote>
+<font face="Arial">
+<!-- #ifdef variable="lotterwinners" -->
+</font>
+<center>
+  <font face="Arial"><a href="<$selfurl>?NID=<$NID>&ac=showwinners" target=_self> 
+  <$NAM> Winners<br>
+  </a> </font>
+</center>
+<font face="Arial"><br>
+<!-- #endif variable="lotterwinners" -->
+</font>
+<hr>
+<div align="center"> 
+  <h3><font color="red" face="Arial"> <a href="javascript:top.location.href='register<$g_exe>'" target="top">Join 
+    Cybertown</a> NOW<br>
+    and register for the Cybertown <$NAM>! </font></h3>
+  <font face="Arial"><a href="javascript:top.location.href='register<$g_exe>'" target="top"> 
+  <img src="<$g_Images>/images/menu/join.gif" border=0> </a> </font></div>
+
+</body>
+</html>

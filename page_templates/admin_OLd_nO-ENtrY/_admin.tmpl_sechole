@@ -1,0 +1,79 @@
+<!-- admin/admin.tmpl -->
+<!-- index of all community datatypes -->
+<html>
+<head>
+<title><$g_title></title>
+<base target=place>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<h3>Administration</h3>
+
+<a HREF="admin<$g_exe>?login=true">Login as</a><br>
+<br>
+<a HREF="admin<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000000&TPL=admin/community&ac=read&obj=community">Community Object</a><br>
+<br>
+<a HREF="admin<$g_exe>?DTY=O&KTY=ID&KEY=&TPL=admin/places&ac=list">Communal Places</a><br>
+<br>
+<!--#ifndef variable="hobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&hobjs=1&shobjs=<$shobjs>&iobjs=<$iobjs>&events=<$events>" target=navigation><font color="#99CC00">Home Objects</font></a><br>
+<!--#endif variable="hobjs" -->
+<!--#ifdef variable="hobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&shobjs=<$shobjs>&iobjs=<$iobjs>&events=<$events>" target=navigation><font color="#99CC00">Home Objects</font></a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=C&KTY=ID&KEY=&TPL=admin/districts&ac=list"><$CNM_CITY>&nbsp;</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=N&KTY=ID&KEY=&TPL=admin/nhoods&ac=list"><$ENM_CITY>&nbsp;</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=B&KTY=ID&KEY=&TPL=admin/blocks&ac=list"><$BNM_CITY>&nbsp;</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=P&KTY=ID&KEY=&TPL=admin/homes&ac=list"><$PNM_CITY>&nbsp;</a><br>
+<!--#endif variable="hobjs" -->
+<br>
+<a HREF="admin<$g_exe>?DTY=M&KTY=NNK&KEY=&TPL=admin/members&ac=list">Members</a><br>
+<br>
+<a HREF="admin<$g_exe>?DTY=U&KTY=ID&KEY=&TPL=admin/pimages&ac=list&KFT=i????????????????P">Personal Images</a><br>
+<br>
+<a HREF="admin<$g_exe>?DTY=R&KTY=ID&KEY=&TPL=admin/jobs&ac=list">Jobs</a><br>
+<br>
+<!--#ifndef variable="events" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&shobjs=<$shobjs>&hobjs=<$hobjs>&iobjs=<$iobjs>&events=1" target=navigation><font color="#99CC00">Events</font></a><br>
+<!--#endif variable="events" -->
+<!--#ifdef variable="events" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&shobjs=<$shobjs>&hobjs=<$hobjs>&iobjs=<$iobjs>" target=navigation><font color="#99CC00">Events</font></a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=E&KTY=ID&KEY=&KFT=e*&TPL=admin/events&ac=list">Events</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=E&KTY=ID&KEY=&KFT=ie*&TPL=admin/eventitems&ac=list">Items</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=EM&KTY=ID&KEY=&KFT=e*&TPL=admin/eventmems&ac=list">Members</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=EM&KTY=ID&KEY=&KFT=ie*&TPL=admin/eventmemitems&ac=list">Member Items</a><br>
+<!--#endif variable="events" -->
+<br>
+<a HREF="admin<$g_exe>?DTY=CL&KTY=ID&KEY=CL00000000000000&TPL=admin/clubs&ac=list">Clubs</a><br>
+<br>
+<a HREF="admin<$g_exe>?DTY=G&KTY=ID&KEY=&TPL=admin/groups&ac=list">Groups</a><br>
+<br>
+<!--#ifndef variable="shobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&shobjs=1&hobjs=<$hobjs>&iobjs=<$iobjs>&events=<$events>" target=navigation><font color="#99CC00">Shared Objects</font></a><br>
+<!--#endif variable="shobjs" -->
+<!--#ifdef variable="shobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&hobjs=<$hobjs>&iobjs=<$iobjs>&events=<$events>" target=navigation><font color="#99CC00">Shared Objects</font></a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=SO&KTY=ID&KFT=c*&TPL=admin/sharedcats&ac=list">Categories</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=SO&KTY=ID&KFT=o*&TPL=admin/sharedobjs&ac=list">Objects</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=SO&KTY=ID&KFT=a*&TPL=admin/soactions&ac=list">Actions</a><br>
+<!--#endif variable="shobjs" -->
+<br>
+<!--#ifndef variable="iobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&iobjs=1&hobjs=<$hobjs>&shobjs=<$shobjs>&events=<$events>" target=navigation><font color="#99CC00">Information Objects</font></a><br>
+<!--#endif variable="iobjs" -->
+<!--#ifdef variable="iobjs" -->
+    <a HREF="admin<$g_exe>?TPL=admin/admin&ac=show&hobjs=<$hobjs>&shobjs=<$shobjs>&events=<$events>" target=navigation><font color="#99CC00">Information Objects</font></a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=&TPL=admin/infos&ac=list&KFT=m????????????????&info=msb&msb=1">Message Boards</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=&TPL=admin/infos&ac=list&KFT=i????????????????&info=inb&inb=1">Inboxes</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=&TPL=admin/infos&ac=list&KFT=c????????????????&info=cal&cal=1">Calendars</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=&TPL=admin/infos&ac=list&KFT=l????????????????&info=lnk&lnk=1">Link Libraries</a><br>
+    &nbsp;&nbsp;&nbsp;<a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=&TPL=admin/infos&ac=list&KFT=h????????????????&info=cht&cht=1">Chats</a><br>
+<!--#endif variable="iobjs" -->
+<br>
+<a HREF="admin<$g_exe>?DTY=V&KTY=ID&KEY=&TPL=admin/votes&ac=list&KFT=????????">Voting</a><br>
+<br>
+<a HREF="admin<$g_exe>?ac=getfile&TPL=admin/updfile">Files</a><br>
+<br>
+<a HREF="admin<$g_exe>?ac=show&TPL=admin/updatt">Any Attribute</a><br>
+</body>
+</html>

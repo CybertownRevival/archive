@@ -1,0 +1,125 @@
+<html>
+<head>
+<title><$g_title> - Message Board</title>
+<!--- MB editing tools script --->
+<script language="Javascript1.2"><!-- // load htmlarea
+_editor_url = "http://www.cybertown.com/htmlarea/";                     // URL to htmlarea files
+var win_ie_ver = parseFloat(navigator.appVersion.split("MSIE")[1]);
+if (navigator.userAgent.indexOf('Mac')        >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Windows CE') >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Opera')      >= 0) { win_ie_ver = 0; }
+if (win_ie_ver >= 5.5) {
+ document.write('<scr' + 'ipt src="' +_editor_url+ 'editor.js"');
+ document.write(' language="Javascript1.2"></scr' + 'ipt>');  
+} else { document.write('<scr'+'ipt>function editor_generate() { return false; }</scr'+'ipt>'); }
+// --></script> 
+<!--- End MB tools --->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Post Group Message</h2>
+
+<p>
+<!-- #ifdef variable="msbmsg004" -->
+This message will be posted to the message board of all <b>Members</b> in this <b><$BNM></b>.
+<!-- #endif variable="msbmsg004" -->
+<!-- #ifdef variable="msbmsg005" -->
+This message will be posted to the message board of all <b><$BNM>s</b> in this <b><$ENM></b>.
+<!-- #endif variable="msbmsg005" -->
+<!-- #ifdef variable="msbmsg006" -->
+This message will be posted to the message board of all <b><$ENM>s</b> in this <b><$CNM></b>.
+<!-- #endif variable="msbmsg006" -->
+<!-- #ifdef variable="msbmsg007" -->
+This message will be posted to the message board of all <b>Clubs</b>.
+<!-- #endif variable="msbmsg007" -->
+</p>
+
+<!-- #ifndef variable="msbmsg001" -->
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="DATE" value="<$DATE>">
+<input type=hidden name="TPL" value="msb/backurl">
+<input type=hidden name="program" value="<$program>">
+<input type=hidden name="ac"  value="<$ac>">
+<table border=0>
+<tr>
+<td>Subject:</td>
+<!-- #ifdef variable="REPLY" -->
+<td>Re: <$sub> <input type=hidden name="sub" value="<$sub>"></td>
+<!-- #endif variable="REPLY" -->
+<!-- #ifndef variable="REPLY" -->
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=32 SIZE=60></td>
+<!-- #endif variable="REPLY" -->
+</tr>
+<tr>
+<td>Text:</td>
+<td>
+<!-- #ifndef variable="MB_TOOL" value="NO" -->
+<script language="JavaScript1.2" defer>
+editor_generate('txt');
+</script>
+<!-- #endif variable="MB_TOOL" -->
+<TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+</p>
+
+<!-- #ifndef variable="MB_TOOL" value="NO" -->
+<form name="spell">
+<script>
+<!--
+function sendtext()
+	{
+	var text;
+	var semi = new RegExp("\;","g");
+	document.send.checkme.value = (document.poster.txt.value.replace(semi,"\;"));
+	document.send.form.value = "poster";
+	document.send.field.value = "txt";
+	window.open('','SpellChecker','width=480,height=360,top=150,left=150,scrollbars=1,location=true');
+	document.send.submit();
+	}
+-->
+</script>
+	<input type="button" name="SpellCheck" value="SpellCheck" onclick="sendtext()" /></p>
+</form>
+<form name="send" action="http://www.cybertown.com/cgi-bin/aspell/nspell.pl" method="POST" target="SpellChecker">
+<input type="hidden" name="checkme" />
+<input type="hidden" name="form" />
+<input type="hidden" name="field" />
+<input type="hidden" name="spell" value="check" />
+</form>
+<!-- #endif variable="MB_TOOL" -->
+
+<!-- #endif variable="msbmsg001" -->
+
+<!-- #ifdef variable="msbmsg001" -->
+The message has been sent.
+<!-- #endif variable="msbmsg001" -->
+
+<font color="red">
+<!-- #ifdef variable="msberror001" -->
+Sorry <$NNM>, you do not have permission to post a message.
+<!-- #endif variable="msberror001" -->
+
+<!-- #ifdef variable="msberror002" -->
+Sorry <$NNM>, the length of the input you gave is too big.
+<!-- #endif variable="msberror002" -->
+
+<!-- #ifdef variable="msberror003" -->
+Sorry <$NNM>, the update of the message in the database failed.
+<!-- #endif variable="msberror003" -->
+
+</font>
+
+</body>
+</html>
+

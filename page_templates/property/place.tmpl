@@ -1,0 +1,25 @@
+<!-- property/place.tmpl --> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html"> 
+<title><$g_title></title> 
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function blockError(){return true;}
+window.onerror = blockError;
+//  End -->
+</script>
+</head> 
+
+<center> 
+<!-- #include virtual="<$g_Templates>property/homeblock.tmpl" -->
+<!-- #ifdef variable="commid" value="0110000000000000" --> 
+<!-- #include virtual="<$g_Templates>property/place_hi-tek.tmpl" --> 
+<!-- #endif variable="commid" --> 
+
+<!-- #ifndef variable="commid" value="0110000000000000" --> 
+<!-- #include virtual="<$g_Templates>property/place_standard.tmpl" --> 
+<!-- #endif variable="commid" --> 
+
+</body> 
+</html>

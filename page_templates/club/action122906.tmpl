@@ -1,0 +1,319 @@
+<!-- club/action.tmpl -->
+<!-- action frame for club -->
+<HTML>
+<HEAD>
+<title><$g_title></title>
+<base target="place">
+
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- #define variable="CONTCONTROL"  value="0" -->
+<!-- #include virtual="<$g_Templates>common/pgr/contentcontrolallow.tmpl" -->
+
+<!-- moderation -->
+<script language="JavaScript">
+function moderate(clubID) {
+window.open('place?ac=moderate&plc=club&ID='+clubID+'&DTY=CL&rcheck=1&TKT=695e478a075fb4aa','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=780,height=550');
+}
+</script>
+<!-- end moderation -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<script language="JavaScript">
+	CLname="<$placename>";
+	icstring = '"_-.~`;:!@#$%^&*()+=|\{}[]<>/,?‘’¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ';
+	oikedoke = "1"
+	for (var i=0; i < CLname.length; i++) {
+		temp = "" + CLname.substring(i, i+1);
+		if (icstring.indexOf(temp) > -1) {
+		oikedoke = "0"	
+		}
+		}
+
+	if (oikedoke == "0")
+	{
+		<!-- #ifdef variable="owneraccess" -->
+		alert("Your club name contains illegal characters. You will not be able to access your club until the name is changed. By clicking ok you will be taken to a screen where you can change it");
+		parent.place.location="club<$g_exe>?ac=showForm&TPL=club/update&clubid=<$ID>";
+		loadInfo('http://www.cybertown.com/clubs/rules.htm');
+		<!-- #endif variable="owneraccess" -->
+		<!-- #ifndef variable="owneraccess" -->
+		alert("This club name contains illegal symbols. It may not function correctly until the owner changes it.");
+		<!-- #endif variable="owneraccess" -->
+		}
+
+</script>
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+
+<!-- #ifdef variable="ID" value="CL00000000001b9b" -->
+<center>
+<A HREF="javascript:loadCustom('<$g_cgiRoot>/message<$g_exe>?TPL=message/cityguide&ac=postmessage&TKT=<$TKT>&TIME=<$CT_STR>',600,200)">
+<IMG BORDER=0 SRC="http://www.cybertown.com/images/buttons/callguide.gif" ></A>
+</center>
+<!-- #endif variable="ID" -->
+
+<div align=center>
+<a href="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?ac=place&plc=club&DTY=CL&ID=<$ID>&force=p">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chataccess" -->
+
+
+<!-- #ifdef variable="ID" value="CL00000000001b9b" -->
+<!-- #include virtual="<$g_Templates>club/newcomers_control.tmpl" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifndef variable="ID" value="CL00000000001b9b" -->
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="CL000000000007d0" -->
+<a href="javascript:loadInfo('/SETI/cyber-seti.html')" target=_self><img src="<$gHTMLRoot>/images/clubs/SETI/jointeamseti.gif" alt="Join Team Seti" border=0></a><br><br>
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="CL0000000000091f" -->
+<a href="javascript:loadCustom('/Spazz3D/cyber-spazz3d.html','640','420')" target=_self><img src="/Spazz3D/images/freetrial.gif" alt="Download Spazz3D" border=0></a><br><br>
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+<a href="<$g_HTMLRoot>/cgi-bin/cybertown/place?plc=ne_0" target="_top">
+<IMG SRC="<$g_HTMLRoot>/events/morph2/html/neo.gif" BORDER=0 ALT="Neoworld"></a><br>
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+<a href="<$g_HTMLRoot>/cgi-bin/cybertown/place?plc=ne_0" target="_top">
+<IMG SRC="<$g_HTMLRoot>/events/morph2/html/neo.gif" BORDER=0 ALT="Neoworld"></a><br>
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+
+    <a href="javascript:loadInfo('/events/morph2/html/manifesto_loyalist.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/manifesto.gif" BORDER=0 ALT="Manifesto"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/mission_loyalist.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/mission.gif" BORDER=0 ALT="Mission"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/battle/battle.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/battle.gif" BORDER=0 ALT="Battle Info"></a><br>
+    <a href="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=morph2/post')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/recruiting.gif" BORDER=0 ALT="Recuiting"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/rules.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/rules.gif" BORDER=0 ALT="Morph 2 Rules"></a><br>
+    <BR>
+
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+
+    <a href="javascript:loadInfo('/events/morph2/html/manifesto_morph.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/manifesto.gif" BORDER=0 ALT="Manifesto"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/mission_morph.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/mission.gif" BORDER=0 ALT="Mission"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/battle/battle.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/battle.gif" BORDER=0 ALT="Battle Info"></a><br>
+    <a href="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=morph2/post')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/recruiting.gif" BORDER=0 ALT="Recuiting"></a><br>
+    <a href="javascript:loadInfo('/events/morph2/html/rules.html')" target=_self>
+    <IMG SRC="<$g_HTMLRoot>/events/morph2/html/rules.gif" BORDER=0 ALT="Morph 2 Rules"></a><br>
+    <BR>
+
+<!-- #endif variable="ID" -->
+
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+
+<a href="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/info_links&KEY=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfolinks.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/showrules&KEY=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bcrules.gif" BORDER=0 ALT="Club Rules"></a><br>
+
+<!-- #ifdef variable="owneraccess" -->
+    <a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&owneraccess=1&clubId=<$ID>')" target=_self>
+    <IMG SRC="<$g_Images>/images/buttons/bmembers.gif" BORDER=0 ALT="Members"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifndef variable="owneraccess" -->
+<!-- #ifdef variable="isadmin" -->
+    <a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&clubId=<$ID>')" target=_self>
+    <IMG SRC="<$g_Images>/images/buttons/bmembers.gif" BORDER=0 ALT="Members"></a><br>
+<!-- #endif variable="isadmin" -->
+
+<!-- #ifndef variable="isadmin" -->
+<!-- #ifdef variable="writeaccess" -->
+    <a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&clubId=<$ID>')" target=_self>
+    <IMG SRC="<$g_Images>/images/buttons/bmembers.gif" BORDER=0 ALT="Members"></a><br>
+<!-- #endif variable="writeaccess" -->
+<!-- #endif variable="isadmin" -->
+<!-- #endif variable="owneraccess" -->
+<br>
+
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="readaccess" -->
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox - private messages!"></a><br>
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+<a href="javascript:loadInfo('cal<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&MTY=c&plc=<$place>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bcalend.gif" BORDER=0 ALT="Events"></a><br>
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+<!-- #endif variable="readaccess" -->
+
+<!-- #ifdef variable="writeaccess" -->
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+<a href="javascript:loadInfo('/cgi-bin/games/morph2/vote/morph/vote.pl')" target="_self">
+<IMG SRC="<$g_HTMLRoot>/events/morph2/html/tvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+<a href="javascript:loadInfo('/cgi-bin/games/morph2/vote/loyalist/vote.pl')" target="_self">
+<IMG SRC="<$g_HTMLRoot>/events/morph2/html/tvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="ID" -->
+
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+<a href="javascript:loadInfo('/events/morph2/html/map/map2.html')" target="_self">
+<IMG SRC="<$g_HTMLRoot>/events/morph2/html/map.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="ID" -->
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+<!-- #ifndef variable="owneraccess" -->
+<!-- #ifdef variable="writeaccess" -->
+<a href="club<$g_exe>?ac=leave&clubid=<$ID>&TKT=<$TKT>" target="_top">
+<IMG SRC="<$g_Images>/images/buttons/bcresign.gif" BORDER=0 ALT="Resign from Club"></a><br>
+<!-- #endif variable="writeaccess" -->
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for seti club -->
+<!-- #ifdef variable="ID" value="CL000000000007d0" -->
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for orgy club -->
+<!-- #ifdef variable="ID" value="CL00000000002c4d" -->
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for spazz club -->
+<!-- #ifdef variable="ID" value="CL0000000000091f" -->
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for hen club -->
+<!-- #ifdef variable="ID" value="CL00000000000c94" -->
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="CL00000000002c1f" -->
+<!-- moderation for jail guards club -->
+<!-- #ifdef variable="owneraccess" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for next planet over club -->
+<!-- #ifdef variable="ID" value="CL0000000000091e" -->
+<!-- #ifdef variable="NNM" value="NPOModerator" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="NNM" -->
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="ID" -->
+
+<!-- moderation for newcomers club -->
+<!-- #ifdef variable="ID" value="CL00000000001b9b" -->
+<!-- #ifdef variable="isAdmin" -->
+
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+
+
+<!-- #ifdef variable="owneraccess" -->
+<!-- #ifndef variable="isAdmin" -->
+<br><a href="javascript:moderate('<$ID>')" target=_self>
+<IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+
+
+
+
+
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="club<$g_exe>?ac=showForm&TPL=club/update&clubid=<$ID>" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<a href="edit<$g_exe>?DTY=CL&KTY=ID&KEY=<$ID>&plc=clubdir&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="CONTCONTROL" value="1" -->
+<a href="javascript:loadCustom('print60<$g_exe>?DTY=CL&ID=<$ID>&TPL=common/pgr/pgrset',800,500)" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bcontentcontrol.gif" BORDER=0 ALT="Content Control"></a><br>
+<!-- #endif variable="CONTCONTROL" -->
+
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+<!-- #ifdef variable="owneraccess" -->
+    <a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&owneraccess=1&clubId=<$ID>')" target=_self>
+    <IMG SRC="<$g_Images>/images/buttons/bmembers.gif" BORDER=0 ALT="Members"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifdef variable="owneraccess" -->
+    <a href="javascript:loadInfo('edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&owneraccess=1&clubId=<$ID>')" target=_self>
+    <IMG SRC="<$g_Images>/images/buttons/bmembers.gif" BORDER=0 ALT="Members"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

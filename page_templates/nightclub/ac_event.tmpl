@@ -1,0 +1,12 @@
+<!-- #ifdef variable="T_showmusic" -->
+<a href="javascript:loadCustom('/cgi-bin/cybertown/admin2/nightclub/select.pl?ac=2D',300,600)" target="_self"><IMG SRC="<$g_HTMLRoot>/places/nightclub/images/plamus_ani.gif" BORDER=0 ALT="DJ"></a><br>
+<!-- #endif variable="T_showmusic" -->
+
+<!-- #ifndef variable="T_showmusic" -->
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/<$place>/danceav.html')" target="_self">
+<IMG SRC="<$g_HTMLRoot>/places/nightclub/images/dancavicon02.gif" BORDER=0 ALT="dancing avatars"></a><br><br>
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/ent_complex/rahelp.html')" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/ent_complex/images/rahelp.gif" BORDER=0 ALT="RealPlayer Help"></a><br>
+<!-- #endif variable="T_showmusic" -->
+
+

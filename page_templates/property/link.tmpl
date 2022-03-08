@@ -1,0 +1,23 @@
+<html>
+<head>
+<title><$g_title> - Personal Links</title>
+<!-- property/link.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2><$NNM>'s Collection of Links</h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<!--#for loopname="urls" loopvars="LL" -->
+<div align=center>
+<tr><td><a href="<$LL>" target="external"><$LD></a></td></tr><BR>
+</div>
+<!--#endfor loopname="urls" -->
+
+</body>
+</html>
+

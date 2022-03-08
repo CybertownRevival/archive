@@ -1,0 +1,33 @@
+<!-- common/menu.tmpl -->
+<!-- included in menu.tmpl to show common parts, LEFT aligned!!! -->
+<!-- NOTE: the whole line (from td to /td) MUST be a single line, otherwise it causes a larger height -->
+
+<!-- show the join now or win a t-shirt icons at the left side -->
+<!-- #ifdef variable="isVisitor" -->
+<td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td><td align=left width=70><a href="register<$g_exe>"><img src="<$g_Images>/images/menu/join.gif" border=0></a></td><td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifndef variable="isVisitor" -->
+<td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td><td align=left width=70><a href="javascript:void(0)" onClick="javascript:win=window.open('http://www.integratedvirtualnetworks.com/index1.php?is_ct=1','IVN','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=732,height=580');" target="_self"><IMG SRC="<$g_HTMLRoot>/images/ban_ivn128-2_small.gif" BORDER=0></a></td><td width=10><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=10></td>
+<!-- #endif variable="isVisitor" -->
+<!-- end of left side icons -->
+
+<!-- begin large center banner ads -->
+<!-- #ifdef variable="EBN" value="emergency" -->
+<!-- start emergency mode banners -->
+<td align=center>
+<!-- #include virtual="<$g_Templates>banners/tags/emergencybanner_main.tmpl" -->
+</td>
+<!-- end emergency mode banners -->
+<!-- #endif variable="EBN" -->
+<!--<$EBN>-->
+<!-- #ifndef variable="EBN" value="emergency" -->
+<!-- <td align=center> -->
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD1>.tmpl" -->
+<!-- </td> -->
+<!-- #endif variable="E_BANNER" -->
+<!-- end of include menu.tmpl -->
+
+
+
+
+

@@ -1,0 +1,64 @@
+<script language=javascript>
+
+myBuddyWin  = new newBuddyWin();
+myParentWin = 0;
+
+function newBuddyWin()
+{
+    win = self;
+}
+
+function loadBuddyWin(par, parentwin)
+{
+    bName = navigator.appName;    
+    bVer  = parseInt(navigator.appVersion); 
+
+    b1 = ( navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0 ) ;
+    b3 = ( bName=="Netscape" && bVer >=3 );
+
+    if ( myBuddyWin )
+    {
+       b2 = ( myBuddyWin.win && !myBuddyWin.win.closed );
+    }
+    else
+    {
+       b2 = false;
+    }
+
+    if ( ( b1 && b2 ) ||
+         ( (b1 && b3) && b2 ) )
+    {
+        myBuddyWin.win.focus();
+        // myBuddyWin.win.document.location.href = par;
+        myParentWin.win = parentwin;
+    }
+    else
+    {
+         myBuddyWin.win = window.open(par, 
+                                      "buBuddyWindow", 
+                                      "toolbar=no,location=no,directories=no,status=no," + 
+                                      "menubar=no,scrollbars=yes,resizable=yes," + 
+                                      "width=600,height=450");
+        // myBuddyWin.win = window.open(par,
+        //                              "buBuddyWindow", 
+        //                              "toolbar=yes,location=yes,directories=yes," + 
+        //                              "status=yes,menubar=yes,scrollbars=yes," + 
+        //                              "resizable=yes,width=520,height=300");
+    }
+}
+
+function closeBuddyWin()
+{
+    if (myBuddyWin.win && !myBuddyWin.win.closed)
+    {
+       if (navigator.userAgent && navigator.userAgent.indexOf('MSIE 3') < 0)
+       {
+           myBuddyWin.win.close();
+       }
+       else 
+       {
+           myBuddyWin.win.close();
+       }
+    }
+}
+</script>

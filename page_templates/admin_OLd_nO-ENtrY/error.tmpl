@@ -1,0 +1,34 @@
+<html>
+<!-- admin/error.tmpl -->
+<!-- error page of the admin interface -->
+<head>
+<title><$g_title> - Club</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+
+<font color="red" size=+2>
+<br>
+<br>
+<!-- #ifdef variable="adminerror001" -->
+    Insufficient access rights.
+<!-- #endif variable="adminerror001" -->
+<!-- #ifdef variable="adminerror002" -->
+    No template TPL given.
+<!-- #endif variable="adminerror002" -->
+<!-- #ifdef variable="adminerror003" -->
+    One of DTY, KTY, KEY keywords missing.
+<!-- #endif variable="adminerror003" -->
+<!-- #ifdef variable="adminerror004" -->
+    Given ID already in use!
+<!-- #endif variable="adminerror004" -->
+<!-- #ifdef variable="adminerror005" -->
+    Can not create data object!
+<!-- #endif variable="adminerror005" -->
+</font>
+
+</body>
+</html>
+

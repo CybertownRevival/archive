@@ -1,0 +1,68 @@
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<br>
+<img src="<$g_Images>/images/login/password.jpg" border=0 alt="Change Password!">
+<br>
+<h2>Immigration - Change Password</h2>
+
+<form method=post action="register<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+	<td width=50%>Your nickname:</td>
+	<td width=50%><INPUT NAME="NNM" VALUE="<$NNM>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+<tr>
+	<td>Your old password:</td>
+	<td><INPUT type=password NAME="PWD" VALUE="<$PWD>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+<tr>
+	<td>Choose a new password:</td>
+	<td><INPUT type=password NAME="nPWD" VALUE="<$nPWD>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+<tr>
+	<td>Retype your new password:</td>
+	<td><INPUT type=password NAME="nPWD2" VALUE="<$nPWD2>"  MAXLENGTH=16 SIZE=16></td>
+</tr>
+</table>
+
+<p>
+	<input type=hidden name="ac" value="chpass">
+	<input type=submit name="submit" value="Change It">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</p>
+</form>
+
+<font color="red">
+<!-- #ifdef variable="passworderror001" -->
+	All four values are required.
+<!-- #endif variable="passworderror001" -->
+
+<!-- #ifdef variable="passworderror002" -->
+	Sorry, the new password and the retyped new password are different.
+<!-- #endif variable="passworderror002" -->
+
+<!-- #ifdef variable="passworderror003" -->
+	Bad nickname or password.
+<!-- #endif variable="passworderror003" -->
+</font>
+
+<!--p align=center><small>
+<a HREF="<$selfurl>?ac=forgot&backurl=<$pbackurl>&TKT=<$TKT>">
+Forgot your Password?</a> -
+<a HREF="<$selfurl>?ac=chpass&backurl=<$pbackurl>&TKT=<$TKT>">
+Change your Password</a> -
+<a HREF="<$selfurl>?ac=activate&backurl=<$pbackurl>&TKT=<$TKT>">
+Enter Immigration Code</a>
+</small></p-->
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!-- msg/error.tmpl -->
+<!--- print error messages --->
+
+<html>
+<head> 
+
+<title><$g_title></title></head>
+
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+<!-- #ifndef variable="T_popup" -->
+<body class=info>
+<!-- #else variable="T_popup" -->
+<body class=popup>
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #endif variable="T_popup" -->
+<!-- #define variable="heading" value="Message Error" -->
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+<p class=error>
+<!--#include virtual="<$g_Templates>msg/err.tmpl" -->
+</p>
+<!-- #define variable="buttons" value="cancel" -->
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+</body>
+</html>

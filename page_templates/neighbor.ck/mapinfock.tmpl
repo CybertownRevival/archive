@@ -1,0 +1,36 @@
+<div align=center>
+
+<!-- #if variable="TXT" != value="" -->
+<$TXT>
+<!-- #else variable="TXT" -->
+<small>Click a block on the Neighborhood map above to go to the homes</small><br>
+<!-- #endif variable="TXT" -->
+
+<!-- #if variable="CHAT" != value="" -->
+<!-- #define variable="height" value="170" -->
+<!-- #define variable="MID" value="<$MEM_ID>" -->
+<!-- #define variable="port" value="<$g_CSPort>" -->
+<!-- #define variable="plc" value="neighbor" -->
+
+<!-- #define variable="COLID" substring="<$ID>,0,4" --> 
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>hi-tek/javachat.tmpl" -->
+<!-- #endif variable="COLID" --> 
+<!-- #ifndef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>common/javachat.tmpl" -->
+<!-- #endif variable="COLID" --> 
+<!-- #endif variable="CHAT" -->
+
+
+<!-- #ifdef variable="ID" value="0102020600000000" -->
+<a href="javascript:loadInfo('http://www.seti.org')" target=_self><IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a>
+<!-- #endif variable="ID" -->
+
+<!-- #ifndef variable="ID" value="0102020600000000" -->
+<table border=0 width=100% cellpadding=0 cellspacing=0><tr>
+<!-- #include virtual="<$g_Templates>banners/tags/<$AD4>.tmpl" -->
+</tr></table>
+<!-- #endif variable="ID" -->
+
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->

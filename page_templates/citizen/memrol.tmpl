@@ -1,0 +1,85 @@
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>List of Jobs and Places of <$MNAM></font></h2>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+
+<p>
+<small><i>Information at Colonies/Neighborhoods offers lists of Neighborhood/Block Leaders, too!</i></small>
+</p>
+
+<table>
+<tr>
+	<input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+
+	<input type="hidden" name="UID" value="<$UID>">
+	<input type="hidden" name="KFT" value="<$KFT>">
+	<input type="hidden" name="MNAM" value="<$MNAM>">
+	<input type="hidden" name="hist" value="<$hist>">
+
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+</tr>
+</table>
+
+<table border=1>
+<tr>
+	<th><font color=#80ff00>Job</th>
+	<th><font color=#80ff00>Place</th>
+</tr>
+
+<!--#for loopname="role" loopvars="ID_" -->
+<tr>
+ 	<td>&nbsp;&nbsp;<$ID_2NAM_></td>
+ 	<td>&nbsp;&nbsp;<$ID_NAM_></td>
+</tr>
+<!--#endfor loopname="role" -->
+</table>
+
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+
+</form>
+
+<!--#ifdef variable="CITY_OWN" -->
+<p align=center>
+<font color=#80ff00>
+<b>Update 
+<a target=_self href="edit<$g_exe>?KEY=<$UID>&TPL=citizen/editrole">City Jobs</a> (without location!)
+</b>
+</font>
+</p>
+<!--#endif variable="CITY_OWN" -->
+
+
+</body>
+</html>

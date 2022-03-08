@@ -1,0 +1,19 @@
+<!-- #ifdef variable="calreadallowed" -->
+<html>
+<head>
+<title><$g_title> - Calendar</title>
+	<!-- cal/cal.tmpl -->
+</head>
+<frameset rows="65%,*" border=1>
+	<frame name="overview" src="<$selfurl>?ac=listhdr&DTY=<$DTY>&KTY=ID&KEY=<$KEY>&MTY=c&LDT=<$LDT>&LID=<$LID>&plc=<$plc>" scrolling="auto">
+	<frame name="detail" src="<$g_HTMLRoot>/blank.html" scrolling="auto">
+</frameset>
+</html>
+<!-- #endif variable="calreadallowed" -->
+<!-- #ifndef variable="calreadallowed" -->
+<!-- #ifdef variable="calpostallowed" -->
+<!-- #include virtual="<$g_Templates>cal/write.tmpl" -->
+<!-- #endif variable="calbpostallowed" -->
+<!-- #endif variable="calreadallowed" -->
+
+

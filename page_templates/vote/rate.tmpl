@@ -1,0 +1,72 @@
+<html>
+<!-- vote/rate.tmpl -->
+<!-- display the form to rate -->
+<head>
+<title><$g_title> - Ranking</title>
+
+<script language=javascript>
+
+  function closeVote(url)
+  {
+      parent.overview.location.href=url;
+      location.href="<$g_HTMLRoot>/blank.html";
+  }
+
+</script>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<table width="100%" align="center">
+<tr>  
+  <td><b>Topic: <i><$TOP></i></b></td>
+  <!-- #ifdef variable="owneraccess" -->
+    <td align=right>
+      <a href='javascript:closeVote("vote<$g_exe>?ac=close&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")' target=_self>
+      <IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bclose.gif" BORDER=0 ALT="Close"></a>
+    </td>
+  <!--#endif variable="owneraccess" -->
+  </tr>
+</table>
+
+<!-- #include virtual="<$g_Templates>common/postbutton.tmpl" -->
+
+<form method=post action="<$selfurl>">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="ac" value="submitrate">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="oldchoice" value="<$oldchoiceval>">
+
+  <input type="hidden" name="OBJID" value="<$OBJID>">
+  <input type="hidden" name="OBJNAM" value="<$OBJNAM>">
+
+  Punkten =&gt; <$TOTAL>
+
+  <table>
+    <tr>
+      <td><b>Select your choice:</b></td>
+      <td>&nbsp;&nbsp;</td>
+      <td><b><i>Current Votes</i></b></td>
+    </tr>
+    <!--#for loopname="loopchoice" loopvars="CHO,TOP,checked" -->
+    <tr>
+      <td>
+        <input type="radio" name="choice" value="<$CHO>" <$checked>><$TOP></input>
+      </td>
+      <td>&nbsp;&nbsp;</td>
+      <td align=right><i><$CNT></i></td>
+    </tr>
+    <!--#endfor loopname="loopchoice" -->
+  </table>
+
+  <a name=submitbutton></a>
+  <center>
+    <input type=submit name="submitvote" value="Post">
+    <input type=button name="back" value="Cancel" onClick="history.back()">
+  </center>
+</form>
+
+</body>
+</html>

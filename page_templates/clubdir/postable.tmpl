@@ -1,0 +1,73 @@
+<HTML>
+<!-- clubdir/postable.tmpl -->
+<!-- position table of  -->
+<HEAD>
+	<TITLE><$g_title></TITLE>
+	<BASE TARGET="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<CENTER><H2><FONT COLOR=#80ff00>Clubs Position Table</FONT></H2></CENTER>
+
+<FORM METHOD=post TARGET=_self ACTION="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input TYPE="hidden" NAME="FIRSTKEY" value="<$FIRSTKEY>">
+    <input TYPE="hidden" NAME="LASTKEY" value="<$LASTKEY>">
+    <input TYPE="hidden" NAME="FIRSTID" value="<$FIRSTID>">
+    <input TYPE="hidden" NAME="LASTID" value="<$LASTID>">
+
+    <input TYPE="hidden" NAME="FIRSTNO" value="<$FIRSTNO>">
+    <input TYPE="hidden" NAME="LASTNO" value="<$LASTNO>">
+
+    <input TYPE="hidden" NAME="SORTORDER" value="<$SORTORDER>">
+
+    <INPUT TYPE="hidden" NAME="KFT" VALUE="<$KFT>">
+
+    <input TYPE="hidden" NAME="ac" value="<$ac>">
+    <input TYPE="hidden" NAME="DTY" value="<$DTY>">
+    <input TYPE="hidden" NAME="KTY" value="<$KTY>">
+    <input TYPE="hidden" NAME="TPL" value="<$TPL>">
+
+    <TABLE ALIGN=center>
+    <TR>
+        <TD><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" ALIGN="middle" BORDER=0></INPUT></TD>
+
+        <!--#ifdef variable="[PREV]" -->
+            <TD><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" ALIGN="middle" BORDER=0></INPUT><BR>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <TD>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" ALIGN="middle" BORDER=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </TD>
+
+    </TR>
+    </TABLE>
+</FORM>
+
+<TABLE align="center">
+<TR>
+    <TH width=25><font color=#80ff00>No.</TH>
+    <TH width=150><font color=#80ff00>Club Name</TH>
+    <TH width=100><font color=#80ff00>Owner</TH>
+    <TH width=100><font color=#80ff00>Activity</TH>
+    <TH width=80><font color=#80ff00>Members</TH>
+</TR>
+
+<!--#for loopname="CLUBLIST" loopvars="ID_" --> 
+<TR>
+    <TD align=center><$NUM_>.</TD>
+    <TD><$NAM_></TD>
+    <TD><$OWN_NNM_></TD>
+    <TD align=center nowrap><$ACT_> %</TD>
+    <TD align=center><$CNT_></TD>
+</TR>
+<!--#endfor loopname="CLUBLIST" -->
+</TABLE>    
+
+</BODY>
+</HTML>

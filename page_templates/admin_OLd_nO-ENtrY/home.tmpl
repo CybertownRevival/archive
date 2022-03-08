@@ -1,0 +1,161 @@
+<!-- admin/home.tmpl -->
+<!-- update attributes of home -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.updateForm.WR3.value 
+     = document.updateForm.IC3.options[document.updateForm.IC3.selectedIndex].value;
+}
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Attributes for <$PNM_CITY> <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <table border=0>
+        <tr>
+            <td align=right><$PNM_CITY> Name:&nbsp;&nbsp;</td>
+            <td colspan=5><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Owner:&nbsp;&nbsp;</td>
+            <td><A HREF="admin<$g_exe>?DTY=M&KTY=ID&KEY=<$OWN>&TPL=admin/member&ac=read" target=_self>&nbsp;<$OWN_NNM>&nbsp;</A></td>
+            <td colspan=4>
+                <!--#ifdef variable="ID_5TYP" -->
+                    <a HREF="admin<$g_exe>?DTY=U&KTY=ID&KEY=i<$ID>P&TPL=admin/pimage&ac=read">Personal Images</a>
+                <!--#endif variable="ID_5TYP" -->
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right valign=top>Description:&nbsp;&nbsp;</td>
+            <td colspan=5><TEXTAREA NAME="TXT" ROWS="3" COLS="60"><$TXT></TEXTAREA>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>2D Place Usage:&nbsp;&nbsp;</td>
+            <td>
+                <select name="PU2">
+                    <option value="N"
+                    <!--#ifdef variable="PU2" value="N"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Not usable</option>
+                    <option value="F"
+                    <!--#ifdef variable="PU2" value="F"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Free</option>
+                    <option value="P"
+                    <!--#ifdef variable="PU2" value="P"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Place</option>
+                    <!--option value="L">Landscape</option-->
+                    <!--option value="C">Communal</option-->
+                </select>
+            </td>
+            <td align=right>2D Home Icon:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <select name="IC2">
+                    <!--#for loopname="2DiconLoop" loopvars="HIC_INDEX_" -->
+                        <option value="<$HIC_INDEX_>" <$HIC_SEL_>><$HIC_INDEX_></option>
+                    <!--#endfor loopname="2DiconLoop" -->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td align=right>3D Home:&nbsp;&nbsp;</td>
+            <td>
+                <select name="IC3">
+                    <!--#for loopname="imageLoop" loopvars="H3D_INDEX_" -->
+                        <option value="<$H3D_INDEX_>" <$H3D_SEL_>><$H3D_INDEX_></option>
+                    <!--#endfor loopname="imageLoop" -->
+                </select>
+            </td>
+            <input type="hidden" name="WR3" value="<$WR3>">
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan=2 align=center>Descrition</td>
+            <td colspan=2 align=center>URL</td>
+        </tr>
+        <tr>
+            <td align=right>Link 1:</td>
+            <td colspan=2><input name="LD0" value="<$LD0>" SIZE=32></td>
+            <td colspan=2><input name="LL0" value="<$LL0>" SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Link 2:</td>
+            <td colspan=2><input name="LD1" value="<$LD1>" SIZE=32></td>
+            <td colspan=2><input name="LL1" value="<$LL1>" SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Link 3:</td>
+            <td colspan=2><input name="LD2" value="<$LD2>" SIZE=32></td>
+            <td colspan=2><input name="LL2" value="<$LL2>" SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Link 4:</td>
+            <td colspan=2><input name="LD3" value="<$LD3>" SIZE=32></td>
+            <td colspan=2><input name="LL3" value="<$LL3>" SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Link 5:</td>
+            <td colspan=2><input name="LD4" value="<$LD4>" SIZE=32></td>
+            <td colspan=2><input name="LL4" value="<$LL4>" SIZE=32></td>
+        </tr>
+    </table>
+
+    <input type=hidden name="PRC" value="<$PRC>">
+    <input type=hidden name="CST" value="<$CST>">
+    <input type=hidden name="MON" value="<$MON>">
+<br>
+    <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">Access Rights...</A><br>
+<br>
+    <input type=submit name="edit" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

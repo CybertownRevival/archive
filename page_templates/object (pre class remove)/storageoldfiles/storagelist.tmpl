@@ -1,0 +1,103 @@
+<!-- object/storagelist -->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #if variable="readaccess" == value="" -->
+<h3>Sorry, only <$MNNM> can view these objects.</h3>
+<!-- #else variable="readaccess" == value="" -->
+
+<!-- #if variable="HOID" == variable="MEM_ID" -->
+<!-- #if variable="BNOB" < value="64" -->
+<!-- #if variable="NOB" > value="0" -->
+<!-- #define variable="movebp" value="1" -->
+<!-- #endif variable="NOB" -->
+<!-- #endif variable="BNOB" -->
+<!-- #if variable="NOB" < value="500" -->
+<!-- #if variable="BNOB" > value="0" -->
+<!-- #define variable="movesa" value="1" -->
+<!-- #endif variable="BNOB" -->
+<!-- #endif variable="NOB" -->
+<!-- #endif variable="HOID" -->
+<h3>
+Objects in storage area "<$NAM>" of member <$MNNM>
+</h3>
+<!-- #if variable="NOB" > value="100" -->
+(<font size=1><a href="#backpack">Show Backpack)</a></font><br>
+<!-- #endif variable="NOB" -->
+<!-- #if variable="NOB" > value="0" -->
+<$NOB> objects in this area.
+<br>
+<!-- #ifdef variable="movebp" -->
+<form name="sform" action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="TPL" value="object/storagemove2bp">
+<!-- #endif variable="movebp" -->
+<table border=0 width=100%>
+<tr>
+<!-- #for loopname="objectlist" loopvars="OID_" -->
+<td>
+<!-- #ifdef variable="movebp" -->
+<input type=radio name="MOVEID" value="<$OID_>">
+<!-- #endif variable="movebp" -->
+<a href="javascript:loadInfo('./object?ac=display&ID=<$OID_>&T_OWN=<$MNNM>')" target=_self><$NAM_></a>
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+<!-- #ifdef variable="movebp" -->
+<input type=submit name="move" value="Move selected object to backpack">
+</form>
+<!-- #endif variable="movebp" -->
+
+<!-- #else variable="NOB" != value="" -->
+No objects in this area.
+<!-- #endif variable="NOB" != value="" -->
+<br>
+
+
+<a name="backpack">
+<h3>
+Objects in backpack of member <$MNNM>
+</h3>
+<!-- #if variable="BNOB" != value="" -->
+<$BNOB> objects in the backpack.
+<br>
+<!-- #ifdef variable="movesa" -->
+<form name="bform" action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="TPL" value="object/storagemove2sa">
+<!-- #endif variable="movesa" -->
+<table border=0 width=100%>
+<tr>
+<!-- #for loopname="objectlist" loopvars="BID_" -->
+<td>
+<!-- #ifdef variable="movesa" -->
+<input type=radio name="MOVEID" value="<$BID_>">
+<!-- #endif variable="movesa" -->
+<a href="javascript:loadInfo('./object?ac=display&ID=<$BID_>&T_OWN=<$MNNM>')" target=_self><$BNAM_></a>
+</td>
+<!-- #ifdef variable="ITER_3_" -->
+</tr><tr>
+<!-- #endif variable="ITER_3_" -->
+<!-- #endfor loopname="objectlist"  -->
+</tr></table>
+<!-- #ifdef variable="movesa" -->
+<input type=submit name="move" value="Move selected object to storage area">
+</form>
+<!-- #endif variable="movesa" -->
+
+<!-- #else variable="BNOB" != value="" -->
+No objects in the backpack.
+<!-- #endif variable="BNOB" != value="" -->
+
+<!-- #endif variable="readaccess" == value="" -->
+
+</body>
+</html>

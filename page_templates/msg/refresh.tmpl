@@ -1,0 +1,43 @@
+<!-- msg/refresh -->
+<!--- has to be loaded periodically (if there is no active chat) 
+      to check for new messages --->
+
+<html>
+<body>
+
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<script language=javascript>
+
+
+<!--#for loopname="loopopen" loopvars="ID_" -->
+
+  <!-- #if variable="SUB_" == value="Exclude" -->
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/excluded&exclude=1&NNM=<$MEM_NNM><$VIS_NNM><$g_SessionID>";
+  <!-- #else variable="SUB_" -->
+
+  <!-- #if variable="PDT_" == value="CC" -->
+    ccConsultantWin = getFrame("place");
+    if ( typeof ccConsultantWin.refreshCallCenter != "undefined" )
+      ccConsultantWin.refreshCallCenter('<$PKE_>');
+  <!-- #endif variable="PDT_" -->
+
+  <!-- #ifndef variable="isVisitor" --> 
+    <!-- #if variable="AIM" != value="n" -->
+      msgWindowNotification('<$ID_>','<$PDT_>','<$SUB_>');
+    <!-- #else variable="AIM" != value="n" -->
+      msgBlinkNotification('<$ID_>','<$PDT_>','<$SUB_>');
+    <!-- #endif variable="AIM" != value="n" -->
+  <!-- #else variable="isVisitor" -->
+      msgWindowNotification('<$ID_>','<$PDT_>','<$SUB_>');
+  <!-- #endif variable="isVisitor" -->
+
+  <!-- #endif variable="SUB_" -->
+
+<!--#endfor loopname="loopopen" -->
+
+</script>
+
+</body>
+</html>

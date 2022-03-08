@@ -1,0 +1,87 @@
+<!--<$plc>/place.tmpl-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+<script language="javascript">
+<!-- #ifdef variable="T_aud" value="" -->
+var audit = "audit";
+<!-- #endif variable="T_aud" -->
+<!-- #ifndef variable="T_aud" value="" -->
+var audit = "<$T_aud>";
+<!-- #endif variable="T_aud" -->
+
+function set_action(){
+ u = "place<$g_exe>?ac=action&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=" + audit + "&T_spawn=<$T_spawn>&T_pass=<$T_pass>&T_mode=2D";
+ parent.action.document.location.href = u;
+}
+</script>
+</head>
+
+<!-- #ifdef variable="T_spawn" value="" -->
+
+
+<!-- #ifndef variable="T_3d" value="true" -->
+<body  bgcolor="#000000" text="#ffffff" link="#00ffff" vlink="#00ffff" alink="#00ffff">
+<!-- background="/places/amp/images/bg.jpg" -->
+<center>
+<font size="+1" color="#00ffff" face="arial, helvetica"><b>WELCOME TO THE CYBERTOWN AMPHITHEATER</b></font><br><img src="/places/amp/images/amphitheater.jpg">
+<hr width="60%" align=center>
+
+<font face="arial, helvetica" size="+1">PROUD TO PRESENT <BR><img src="/places/amp/images/orgylogo.gif"><BR> LIVE AVATAR CONCERT</font>
+
+
+<table  width="70%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+<td><img src="/places/amp/images/vapor.jpg"></td>
+		<td align="middle">
+			<font face="arial, helvetica">Featuring music from their new album <b>"Vapor Transmission"</b>! The album goes on sale tomorrow, but you can hear it all tonight on board one of our exclusive, floating <b>SKYBOXES</b>!! All Skyboxes have the best view of the event, high above Downtown Cybertown, on the roof of the e-Plex.<br><br>
+To start partying, click <a href="javascript:loadInfo('/cgi-bin/cybertown/place?ac=list&tpl=<$plc>/display')" target="action">HERE</a>. Find a SKYBOX that has less
+then 20 people then click the <b>ENTER</b> link for that skybox. <b><u>THE ONLY WAY TO ENTER THE EVENT IS TO PICK A ROOM</u></b>. Or if you gotta hook up your buds, click 
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&force=p&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_3d=true&T_pass=<$T_pass>" target="_self">
+HERE</a> to go on the Lobby.</font>
+		</td>
+<td><img src="/places/amp/images/stage.jpg"></td>
+	</tr>
+</table>
+<p></p>
+<table  width="70%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<td align="center"><font face="arial, helvetica">This event requires that you have the latest version of <b><a href="javascript:loadInfo('http://www.blaxxun.com/c/s?cat=7&sub=5&url=/products/contact/index_download.html')">blaxxun Contact</a></b>, as well as <b><a href="javascript:loadInfo('http://www.real.com')">Real Player G2</a></b>
+    installed in your system. If you need help, either talk to the friendly cybertown guide inside 
+    <a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&force=p&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_3d=true&T_pass=<$T_pass>" target="_self">The Lobby</a>
+    or go <a href="javascript:loadInfo('/places/amp/html/help.html')" target="action">here</a>.</font> 
+</td>
+	</tr>
+</table>
+</center>
+</body>
+<!-- #endif variable="T_3d" -->
+
+<!-- #ifdef variable="T_3d" value="true" -->
+<!-- #include virtual="<$g_Templates><$plc>/world.tmpl" -->
+<!-- #endif variable="T_3d" -->
+
+
+<!-- #endif variable="T_spawn" -->
+<!-- #ifndef variable="T_spawn" value="" -->
+
+
+<!-- #include virtual="<$g_Templates><$plc>/world.tmpl" -->
+
+<!-- #endif variable="T_spawn" value="" -->
+
+
+
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- block/action_standard.tmpl -->
+<base target="_top">
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="##D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_HTMLRoot>/home/<$commid>/<$BGI>" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<!-- #include virtual="<$g_Templates>property/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="block<$g_exe>?ac=place&ID=<$ID>" target="place">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('block<$g_exe>?ac=info&ID=<$ID>')" target=_self >
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=B&KTY=ID&KEY=<$ID>&MTY=m')" target=_self >
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<a href="neighbor<$g_exe>?ID=<$neighborid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$neighborname></b></a><br>
+<!-- #endif variable="readaccess" -->
+
+<!-- #ifdef variable="writeaccess" -->
+<!-- #endif variable="writeaccess" -->
+
+<br>
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=B&KTY=ID&KEY=<$ID>&MTY=m&program=block" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="print60<$g_exe>?DTY=B&KEY=<$ID>&TPL=inb/writetoall" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupinbo.gif" BORDER=0 ALT="Group Inbox"></a><br>
+
+<a href="block<$g_exe>?ac=wizardplace&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<a href="edit<$g_exe>?KEY=&ac=list&TPL=block/plist&KFT=<$ID>&KFM=CRCCNRNCBRBC*&BID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check Images"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=B&KTY=ID&KEY=<$ID>&PLC=block&TPL=common/rights&PRI=<$DTY>">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

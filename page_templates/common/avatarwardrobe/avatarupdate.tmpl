@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+<script language="javascript">
+function reset_info(){
+ opener.parent.place.World.document.CC3D.setNodeEventIn("<$T_awname>","reset_info","true");
+}
+</script>
+
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<FONT face="Arial, Helvetica, sans-serif" size=+2 color="#00FFFF">
+<center>
+<br><br>
+<b>Update Your Avatar Wardrobe</b>
+<br><br>
+
+</font>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 ><tr><td>
+<form name="avatar_form" method="POST" action="/cgi-bin/cybertown/edit">
+<input type="hidden" name="TPL" value="common/avatarwardrobe/avatarupdate">
+
+<FONT face="Arial, Helvetica, sans-serif" size=-1 color="#00FFFF">
+
+<center>
+Avatar 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="AVT1" value="<$AVT1>" size="30"><BR>
+Avatar 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="AVT2" value="<$AVT2>" size="30"><BR>
+Avatar 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="AVT3" value="<$AVT3>" size="30"><BR>
+Avatar 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="textfield" name="AVT4" value="<$AVT4>" size="30"><BR>
+</center><br>
+
+<b><input type="submit" name="sub" value="UPDATE" onclick="reset_info();"></b>
+
+</font>
+</form>
+</td></tr></table>
+
+</center>
+</BODY>
+</HTML>

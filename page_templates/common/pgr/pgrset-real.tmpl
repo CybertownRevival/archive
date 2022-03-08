@@ -1,0 +1,41 @@
+<!-- common/pgr/pgrset -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<title><$g_title></title>
+<h3><font color=red>Cybertown: Content Control</font></h3>
+<script src="http://www.cybertown.com/cgi-bin/cybertown/pgrsetwarning" language="javascript"></script>
+<font color=red><blockquote><blockquote><p></center>We are building a new system to help further protect our younger residents from exposure to 
+unsuitable images or objects. As part of this system, Security Officers may set a certain object, home, club or storage area a PG-Rating.
+<b>If you are unauthorised to make rating changes, you risk losing your membership.</b>
+<p>By setting this rating you are confirming that:
+<p>&nbsp;1. You are an authorised Security Officer.
+<br>&nbsp;2. The content in the area of Cybertown may involve language, 
+content, material, images, objects and themes of a controversial nature that may not be considered suitable 
+for a person under 18.
+<center>
+<form name="ageform" action="/cgi-bin/cybertown/print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="common/pgr/pgrset2">
+<input type=hidden name="NNM" value="<$NNM>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="ID" value="<$ID>">
+
+<input type="Radio" name="PGR" value=""
+<!--#ifndef variable="PGR" value="DENY" -->
+checked
+<!--#endif variable="PGR" -->
+> Normal
+
+<input type="Radio" name="PGR" value="DENY" 
+<!--#ifdef variable="PGR" value="DENY" -->
+checked
+<!--#endif variable="PGR" -->
+> <b>18+ Content</b>
+
+<p><input type=submit name="submit" value="Update Status">
+<input type=button name="no" value=Cancel onClick="window.close()">
+</form>
+
+
+

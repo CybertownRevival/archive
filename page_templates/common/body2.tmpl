@@ -1,0 +1,21 @@
+<!-- common/body2.tmpl -->
+<!-- e.g. used for most templates -->
+
+<!-- #ifndef variable="ID" value="0107000000000000" -->
+<!-- #ifndef variable="ID" value="0102000000000000" -->
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$URL>" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$URL>" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0107000000000000" -->
+<BODY BACKGROUND="/home/0107000000000000/back2.jpg" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0102000000000000" -->
+<BODY BACKGROUND="/home/0102000000000000/spacebg.gif" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="ID" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<!-- end of include body2.tmpl -->

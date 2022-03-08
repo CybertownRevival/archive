@@ -1,0 +1,12 @@
+<!-- common/body1.tmpl -->
+<!-- e.g. used for all action templates -->
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<!-- end of include body1.tmpl -->

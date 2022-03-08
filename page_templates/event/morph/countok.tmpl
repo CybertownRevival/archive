@@ -1,0 +1,15 @@
+<!-- event/morph/countok.tmpl -->
+
+<!-- #ifndef variable="errtypecounter" -->
+<h3 align="center"><font color="#00FF00">CONGRATULATIONS!</font></h3>
+<!-- #include virtual="<$g_Templates>event/morph/found.tmpl" -->
+<p align=center><font color=#ffff00>
+Click here and <a href="event<$g_exe>?ac=getitem&NID=<$NID>&ITEMNID=<$ITEMNID>" target="_self"><b>capture</b></a> it NOW!
+</font></p>
+<!-- #endif variable="errtypecounter" -->
+
+<!-- #ifdef variable="errtypecounter" -->
+<h3 align="center">SORRY, <$NNM> ...</font></h3>
+
+<!-- #include virtual="<$g_Templates>event/morph/toomany.tmpl" -->
+<!-- #endif variable="errtypecounter" -->

@@ -1,0 +1,316 @@
+<!-- uploadavt/select_avt.tmpl -->
+<!--- template for avatar selection --->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Upload Avatar</title>
+
+<!--- some scripts to set the description, load the avtar in 3d or perform gestures --->
+<script language="javascript">
+curgesture=0;
+timerid = 0;
+isloadedhtml = 0;
+isloadedvrml = 0;
+
+desc = new Array()
+desci = 0;
+<!--#for loopname="AV_LOOP" loopvars="AVNO_" --> 
+<!-- #if variable="AV" != value="" -->
+desc[desci++] = "<$AV>";
+<!-- #endif variable="AV" -->
+<!-- #if variable="AV" == value="" -->
+desc[desci++] = "your_avatar_"+<$AVNOV_>;
+<!-- #endif variable="AV" -->
+<!--#endfor loopname="AV_LOOP" -->
+
+<!-- #ifdef variable="ALLOWEXT" -->
+desc[desci] = "no description for library avatars";
+<!-- #endif variable="ALLOWEXT" -->
+
+<!-- #ifdef variable="WRL" -->
+WRL = '<$WRL>';
+WRLindex = WRL.lastIndexOf(".")-1;
+<!-- #endif variable="WRL" -->
+
+curview = 0;
+viewpoints = new Array(
+"Front",
+"Right",
+"Back",
+"Left"
+);
+
+function nextview() {
+ curview++;
+ if ( curview >= viewpoints.length )
+   curview = 0;
+ document.Con3D.setNodeEventIn(viewpoints[curview],"set_bind","TRUE");
+}
+
+function prevview() {
+ curview--;
+ if ( curview < 0 )
+   curview = viewpoints.length - 1;
+ document.Con3D.setNodeEventIn(viewpoints[curview],"set_bind","TRUE");
+}
+
+function setgesture(p) {
+    sendEvent("Avatar", "set_gesture", p);
+}
+function allgesture() {
+ if (timerid)
+ {
+  clearTimeout(timerid);
+  timerid = 0;
+ }
+ else
+ {
+  s = new String(curgesture);
+  setgesture(s);
+  curgesture++;
+  if (curgesture >= 10) curgesture = 0;
+  timerid = setTimeout("onTimer()", 3000);
+ }
+}
+
+function sendEvent(node, field, value)
+{
+	document.Con3D.setNodeEventIn(node, field, value)
+}
+function setAvatar( )
+{
+<!-- #ifdef variable="WRL" -->
+<!-- #ifdef variable="avuploaded" -->
+ i = document.uploadForm.POS.selectedIndex;
+ if ( i < 0 ) { return; };
+ document.uploadForm.AVD.value = desc[i];
+ if ( document.uploadForm.POS.options[i].value == "-1" )
+ {
+   setExtAvatar();
+ }
+ else
+ {
+   if ( !document.uploadForm.EXT.value.length )
+    document.uploadForm.EXT.value = '----';
+   avatarurl = WRL.substring(0, WRLindex) + document.uploadForm.POS.options[i].value + ".wrl";
+   document.Con3D.setMyAvatarURL( avatarurl );
+ }
+<!-- #endif variable="avuploaded" -->
+<!-- #ifndef variable="avuploaded" -->
+   setExtAvatar();
+<!-- #endif variable="avuploaded" -->
+<!-- #endif variable="WRL" -->
+}
+
+function setExtAvatar( )
+{
+ if ( document.uploadForm.EXT.value.length && document.uploadForm.EXT.value.charAt(0) != '-' )
+ {
+  document.Con3D.setMyAvatarURL( document.uploadForm.EXT.value );
+ }
+ else
+ {
+  alert('Please insert a URL of your avatar.');
+  document.uploadForm.EXT.value = 'http://';
+  document.uploadForm.EXT.focus();
+ }
+}
+function changeExtAvatar( )
+{
+ setExtAvatar();
+<!-- #ifdef variable="avuploaded" -->
+ document.uploadForm.AVD.value = desc[desci];
+ document.uploadForm.POS.options[desci].selected = true;
+<!-- #endif variable="avuploaded" -->
+}
+function onTimer() {
+ s = new String(curgesture);
+ setgesture(s);
+ curgesture++;
+ if (curgesture >= 10) curgesture = 0;
+  timerid = setTimeout("onTimer()", 3000);
+}
+function loaded() 
+{ 
+ if (isloadedvrml) setAvatar();
+ isloadedhtml = 1;
+}
+function OnEvent() 
+{ 
+ if (isloadedhtml) setAvatar();
+ isloadedvrml = 1;
+}
+
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<!-- #ifndef variable="avuploaded" -->
+<!-- #ifndef variable="ALLOWEXT" -->
+<font color=red>Sorry, please upload an avatar first using blaxxun Avatar Studio.</font><br>
+<!-- #define variable="noavatar" value="1" -->
+<!-- #endif variable="ALLOWEXT" -->
+<!-- #endif variable="avuploaded" -->
+
+<h2 align="center">Avatar Wardrobe</h2>
+
+<!--- check whether an avatar is loaded already --->
+<!-- #ifndef variable="noavatar" -->
+<p>Here you can choose and update your personal avatar.
+Try the animations, look at it from all sides,
+choose the one that you want to use in chat,
+<!-- #ifdef variable="avuploaded" -->
+update the description
+<!-- #endif variable="avuploaded" -->
+or delete the avatar.
+Click <a href="javascript:setAvatar()">here</a> if your avatar isn't loaded automatically.
+<br>
+<center>
+<!-- #ifdef variable="uploadok" -->
+<script language=javascript>
+function loadplaza()
+{
+ location.href = "place<$g_exe>?ac=index3d";
+}
+</script>
+<!-- #endif variable="uploadok" -->
+<!-- #ifndef variable="uploadok" -->
+<script language=javascript>
+function loadplaza()
+{
+ window.open( 'javascript:top.location.href = "place<$g_exe>?ac=index3d";', 'top');
+	self.close();
+}
+</script>
+<!-- #endif variable="uploadok" -->
+<a href="javascript:loadplaza()" >Enter the Plaza with your new avatar</a>.
+<br>
+</center>
+
+<!-- #include virtual="<$g_Templates>uploadavt/error.tmpl" -->
+
+<!-- #ifndef variable="uplAvtError015" -->
+  <form method="post" name="uploadForm" action="<$selfurl>" enctype="multipart/form-data">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="memid" value="<$memid>">
+
+    <table border="0" align="center" cellspacing="10">
+    <tr>
+      <td align="center">
+		<OBJECT  CLASSID="CLSID:4B6E3013-6E45-11D0-9309-0020AFE05CC8" ID=Con3D WIDTH=256 HEIGHT=256>
+		<PARAM NAME="SRC" VALUE="<$g_HTMLRoot>/avatars/myavatar.wrl">
+		<PARAM NAME="VRML-DASHBOARD" VALUE="0">
+		<EMBED name=Con3D SRC="<$g_HTMLRoot>/avatars/myavatar.wrl" TYPE="application/x-blaxxunCC3D"		WIDTH=256 HEIGHT=256 VRML-DASHBOARD=FALSE>
+		</EMBED>
+		</OBJECT>
+
+		<br><br>
+	  <a href="javascript:nextview()"><IMG SRC="<$g_Images>/images/buttons/bt_prev.jpg" BORDER=0 ALT="Turn Left"></a>
+	  <a href="javascript:prevview()"><IMG SRC="<$g_Images>/images/buttons/bt_next.jpg" BORDER=0 ALT="Turn Right"></a>
+
+	<td valign=top>
+	    Your avatar<br>
+		<a href="javascript:setgesture('0')">... waves hello</a><br>
+		<a href="javascript:setgesture('1')">... likes everybody</a><br>
+		<a href="javascript:setgesture('2')">... agrees</a><br>
+		<a href="javascript:setgesture('3')">... smiles</a><br>
+		<a href="javascript:setgesture('4')">... frowns</a><br>
+		<a href="javascript:setgesture('5')">... disagrees</a><br>
+		<a href="javascript:setgesture('6')">... dislikes everybody</a><br>
+		<a href="javascript:setgesture('7')">... says good-bye</a><br>
+		<a href="javascript:setgesture('8')">... is cool</a><br>
+		<a href="javascript:setgesture('9')">... laughs</a><br>
+		<a href="javascript:allgesture()">... shows all</a><br>
+      </td>
+    </tr>
+	</table>
+   <!-- #ifdef variable="avuploaded" -->
+    <table border="0" align="center" cellspacing="10">
+    <tr>
+      <td align="right">Your Avatar:&nbsp;&nbsp;</td>
+      <td>
+        <select name="POS" width="200" onChange=setAvatar()>
+        <!--#for loopname="POS_LOOP" loopvars="AVNO_" --> 
+          <option value="<$AVNO_>" <$AVSEL_>>Avatar <$AVNOV_></option>
+        <!--#endfor loopname="POS_LOOP" -->
+<!-- #ifdef variable="ALLOWEXT" -->
+          <option value="-1" <$EXTSEL>>Library Avatar</option>
+<!-- #endif variable="ALLOWEXT" -->
+        </select>
+    <!-- #ifndef variable="adminInter" -->
+      <input type="submit" name="selectBtn" value="Choose">
+    <!-- #endif variable="adminInter" -->
+    <input type="submit" name="deleteBtn" value="Delete">
+      </td>
+    </tr>
+    <!-- #ifndef variable="adminInter" -->
+      <tr>
+        <td align="right">Description:&nbsp;&nbsp;</td>
+        <td>
+          <input type="text" name="AVD" value="<$AVD>" size="24" maxlength="64">
+          <input type="submit" name="updateBtn" value="Update">
+        </td>
+      </tr>
+	  <!-- #ifdef variable="ALLOWEXT" -->
+      <tr>
+        <td align="right">Library Avatar URL:&nbsp;&nbsp;</td>
+        <td>
+          <input type="text" name="EXT" value="<$EXT>" size="32" maxlength="64" >
+		  <input type="button" value="Show" onClick=changeExtAvatar()>
+        </td>
+      </tr>
+	  <!-- #endif variable="ALLOWEXT" -->
+    <!-- #endif variable="adminInter" -->
+    </table>
+   <!-- #endif variable="avuploaded" -->
+   <!-- #ifndef variable="avuploaded" -->
+<!-- #ifndef variable="EXT"-->
+<center><font color=red>Please specify the URL of your avatar.</font></center>
+<!-- #endif variable="EXT" -->
+    <input type="hidden" name="POS" value="-1">
+    <table border="0" align="center" cellspacing="10">
+     <tr>
+     <td align="right">Your Avatar URL:&nbsp;&nbsp;</td>
+     <td>
+     <input type="text" name="EXT" value="<$EXT>" size="40" maxlength="64" >
+     </td>
+    </tr>
+    <tr>
+     <td align="center" colspan=2>
+    <!-- #ifndef variable="adminInter" -->
+     <input type="button" value="Show" onClick=changeExtAvatar()>
+     <input type="submit" name="selectBtn" value="Choose">
+    <!-- #endif variable="adminInter" -->
+     <input type="submit" name="deleteBtn" value="Delete">
+     </td>
+    </tr>
+    </table>
+   <!-- #endif variable="avuploaded" -->
+  <br>
+  </form>
+<!-- #endif variable="uplAvtError015" -->
+<!-- #ifdef variable="avuploaded" -->
+Hint: If you just uploaded an avatar over an existing avatar, and you still see the old avatar,
+you have to restart your browser or clear the cache.
+<br>To change your avatar, select it in the list and click on "Choose".
+<!-- #ifdef variable="ALLOWEXT" -->
+<br>If you want to use an avatar from a library, type the URL and select "Library Avatar" in the select field.
+<!-- #endif variable="ALLOWEXT" -->
+
+<script language=javascript>
+loaded();
+</script>
+<!-- #endif variable="noavatar" -->
+
+<!-- #ifdef variable="BAS" -->
+<br><br>Click <a href="uploadavt<$g_exe>?ac=updkey">here
+to check your blaxxun Avatar Studio license key.
+<!-- #endif variable="BAS" -->
+<!-- #endif variable="avuploaded" -->
+
+</BODY>
+</HTML>

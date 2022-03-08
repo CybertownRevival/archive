@@ -1,0 +1,25 @@
+<!-- block/place.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<frameset rows="255,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frameset cols="*,500,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+    <frame name="dummy1" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize>
+    <!-- #if variable="T_TMOD" != value="1" -->
+      <frame name="presentation" src="block<$g_exe>?ac=present&ID=<$ID>&T_MODE=<$T_MODE>" scrolling="auto"
+        noresize marginwidth=0 marginheight=0 frameborder=0 framespacing=0>
+    <!-- #endif variable="T_TMOD" -->
+    <!-- #if variable="T_TMOD" == value="1" -->
+      <frame name="presentation" src="edit<$g_exe>?ac=list&ID=<$ID>&KFT=<$KFT>&COMID=<$COMID>&TPL=block/textlist"
+        scrolling="auto" noresize marginwidth=0 marginheight=0 frameborder=0 framespacing=0>
+    <!-- #endif variable="T_TMOD" -->
+    <frame name="dummy2" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize>
+  </frameset>
+  <frame name="chat" src="block<$g_exe>?ac=mapinfo&ID=<$ID>&T_MODE=<$T_MODE>&T_TMOD=<$T_TMOD>" scrolling="auto"
+    noresize>
+</frameset>
+</html>

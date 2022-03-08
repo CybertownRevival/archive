@@ -1,0 +1,15 @@
+<!-- club/activity -->
+<!--- displays the status of the acitity calculation --->
+
+<!-- #ifdef variable="updateok" -->
+  <!-- returncode=updateok -->
+  <html><body><h2>Acivity of the clubs successfully calculated</h2></body></html>
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="noupdate" -->
+  <!-- returncode=noupdate -->
+  <html><body><h2>No calculation necessary</h2></body></html>
+<!-- #endif variable="noupdate" -->
+<!-- #ifdef variable="noadmin" -->
+  <!-- returncode=noadmin -->
+  <html><body><h2>Sorry, you aren't administrator</h2></body></html>
+<!-- #endif variable="noadmin" -->

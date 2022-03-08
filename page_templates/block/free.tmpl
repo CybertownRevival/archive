@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Settle down here!</b>
+</p>
+
+<!-- #ifdef variable="no" -->
+<p>Sorry, <$NNM>, you have already settled down!</p>
+<!-- #endif variable="no" -->
+
+<!-- #ifndef variable="no" -->
+<form method=post action="<$selfurl>">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="ac" value="freeset">
+<input type=hidden name="ID" value="<$ID>">
+<table border=0>
+<tr>
+<td width=250>&nbsp;</td>
+<td>
+<input type=submit name="yes" value=Yes>
+<input type=submit name="no" value=No>
+</td>
+</tr>
+</table>
+
+<table border=0>
+<tr>
+<td width=150><b><$PNM> Name</b></td>
+<td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=20></td>
+</tr>
+
+<tr>
+<td><b><$PNM> Description</b></td>
+<td><INPUT NAME="TXT" VALUE="<$TXT>" MAXLENGTH=255 SIZE=32></td>
+</tr>
+
+<tr>
+<td><b>Your First Name</b></td>
+<td><INPUT NAME="FNM" VALUE="<$FNM>" MAXLENGTH=20 SIZE=20></td>
+</tr>
+
+<tr>
+<td><b>Your Last Name</b></td>
+<td><INPUT NAME="LNM" VALUE="<$LNM>" MAXLENGTH=32 SIZE=32></td>
+</tr>
+
+<tr><td heigh=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr>
+<td valign=top><b>House icons</b></td>
+<td>
+<input type="Radio" name="2DI" value="no" <$2Dcheckedno>>None<br>
+<!--#for loopname="2Dhouses" loopvars="2Dvalue" -->
+<input type="Radio" name="2DI" value="<$2Dvalue>" <$2Dchecked>>
+<img src="<$g_HTMLRoot>/home/<$community>/property/<$2TI><$2DI>.gif" border=0>
+Price: <$2DPRC>
+<!--, Cost: <$2DCST>-->
+<BR>
+<!--#endfor loopname="2Dhouses" -->
+</tr>
+
+<tr><td heigh=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr>
+<td valign=top><b>3D Houses</b></td>
+<td>
+<input type="Radio" name="3DI" value="no" checked>None<br>
+<!--#for loopname="3dhouses" loopvars="3Dvalue" -->
+<input type="Radio" name="3DI" value="<$3Dvalue>" <$3Dchecked>>
+<img src="<$g_HTMLRoot>/home/<$community>/property/<$3TI><$3DI>.gif" border=0>
+Price: <$3DPRC>
+<!--, Cost: <$3DCST>-->
+<BR>
+<!--#endfor loopname="3dhouses" -->
+</tr>
+
+</table>
+
+</form>
+
+<!-- #endif variable="no" -->
+
+<!-- #ifdef variable="error001" -->
+<font color="red">
+Data could not be stored in the database.
+</font>
+<!-- #endif variable="error001" -->
+
+<BODY>
+</HTML>

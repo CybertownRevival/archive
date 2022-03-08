@@ -1,0 +1,97 @@
+<html>
+<!-- common/errordb.tmpl -->
+<!-- error page for database problems -->
+<head>
+<title><$g_title> - Database Error</title>
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<h2 align=center><$g_CityDefName> - Database Error</h2>
+
+<!-- #ifdef variable="dberror001" -->
+<font color="red" size=+1>
+Sorry <$NNM>,
+<P>
+the following error occurred during the access to the database:<br>
+<b><$dbmessage></b>
+</font>
+<ul>
+<li>Database server: <$dbserver>:<$dbport>
+<li>Error code: <$dbrc>
+</ul>
+
+<p>Please inform the server administrator <a href="mailto:webmaster@<$g_CookieDomain>">webmaster@<$g_CookieDomain></a>
+and tell him <b>in detail</b> what you have done before.<br>
+Thanx :-)
+</p>
+<!-- #endif variable="dberror001" -->
+
+<!-- #ifdef variable="dberror002" -->
+<font color="red" size=+1>
+Sorry <$NNM>,
+<P>
+the database was not available for a short time, <b>please repeat your last action</b>.
+</font>
+
+<ul>
+<li>Database server: <$dbserver>:<$dbport>
+<li>Error code: <$dbrc>
+</ul>
+
+<p>If you still get this error message <b>after some minutes</b>, 
+please inform the server administrator
+<a href="mailto:webmaster@<$g_CookieDomain>">webmaster@<$g_CookieDomain></a>
+and tell him <b>in detail</b> what you have done before.<br>
+Thanx :-)
+</p>
+<!-- #endif variable="dberror002" -->
+
+<!-- #ifdef variable="dberror003" -->
+<font color="red" size=+1>
+Sorry <$NNM>,
+<P>
+the database server cannot fullfill your list request because
+the search pattern you entered is not specific enough.
+</font>
+<P>
+Please use a more specific pattern to match.
+<br>
+Thanx :-)
+</p>
+<center>
+<a href="javascript:history.go(-1)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+</center>
+<!-- #endif variable="dberror003" -->
+
+<!-- #ifdef variable="ticketerr001" -->
+<font color="red" size=+1>
+Sorry <$NNM>,
+<P>
+there was a problem with your request.
+</font>
+<P>
+Most likely this happened because of a script problem.
+<br>
+The script that caused the problem is <B><$selfurl></B>,
+the action that was called is <B><$ticketerrinac></B>.
+<P>
+We apologize for the inconvinience and ask you to contact
+the server administrator
+<a href="mailto:webmaster@blaxxun.com">webmaster@blaxxun.com</a>
+and tell him <b>in detail</b> what you did just before this happened.<br>
+Thanx :-)
+
+<center>
+<a href="javascript:history.go(-1)"><small><img
+src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+</center>
+<!-- #endif variable="ticketerr001" -->
+
+</body>
+</html>

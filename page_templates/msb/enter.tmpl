@@ -1,0 +1,66 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.72 [en] (Win98; U) [Netscape]">
+
+<script language="Javascript">
+
+function enter_pass(mode){
+ document.passform.force.value = mode;
+ top.document.location.href = "/cgi-bin/cybertown/place<$g_exe>?plc=founoffice&T_PASS="+document.passform.T_PASS.value+"&plc=<$place>&ID=<$ID>&TPL=founoffice/index2d";
+ document.passform.submit();
+}
+
+function validate(v){
+ bool = false;
+ return bool;
+}
+
+</script>
+
+</head>
+<body text="#00DDDD" bgcolor="#000000" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="65%" >
+<tr>
+<td>
+<center>
+<br><font face="Arial,Helvetica" size=+2><b>Meeting with Founder Hawk</b></font>
+<br><br>
+<img src="http://www.cybertown.com/dailynews2/images/Hawk_av_lgB.gif">
+<br><br><font face="Arial,Helvetica">This meeting is by invitation only.&nbsp;</font>
+<br><font face="Arial,Helvetica">
+Please enter the password you received on your invitation, then click on the button below to enter the office.
+</font>
+
+
+<!-- #include virtual="<$g_Templates>founoffice/allowhawkmeet.tmpl" -->
+
+<!-- #ifdef variable="MEETHAWK" value="1" -->
+<form name="passform" method="POST" action="http://www.cybertown.com/cgi-bin/cybertown/place"  onSubmit="return validate(this)">
+<input type="hidden" name="ac"  value="place">
+<input type="hidden" name="plc" value="founoffice">
+<input type="hidden" name="TPL" value="founoffice/index2d">
+<input type="hidden" name="force" value="s">
+<br>
+<b><font face="Arial,Helvetica">Password:<BR>
+<input type="password" name="T_PASS" value="" size="18">
+<BR><BR>
+<input type="button" name="2d" value="ENTER MEETING" onClick="enter_pass('s')">
+</font></b> 
+</form>
+<!-- #endif variable="MEETHAWK" -->
+
+<!-- #ifndef variable="MEETHAWK" value="1" -->
+<p><font face="Arial,Helvetica"><b><font color=red>Sorry <$NNM><$MEM_NNK>, you are not authorised to enter this meeting.</font></B>
+<!-- #endif variable="MEETHAWK" -->
+
+</center>
+
+</td>
+</tr>
+</table>
+</center>
+<b><font face="Arial,Helvetica"></font></b>
+</body>
+</html>

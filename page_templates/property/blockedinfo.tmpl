@@ -1,0 +1,76 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<script language=javascript>
+function lowerthem()
+
+{
+	document.blockfrm.HBL1.value = document.blockfrm.HBL1.value.toLowerCase();
+	document.blockfrm.HBL2.value = document.blockfrm.HBL2.value.toLowerCase();
+	document.blockfrm.HBL3.value = document.blockfrm.HBL3.value.toLowerCase();
+	document.blockfrm.HBL4.value = document.blockfrm.HBL4.value.toLowerCase();
+	document.blockfrm.HBL5.value = document.blockfrm.HBL5.value.toLowerCase();
+	document.blockfrm.HBL6.value = document.blockfrm.HBL6.value.toLowerCase();
+	document.blockfrm.HBL7.value = document.blockfrm.HBL7.value.toLowerCase();
+	document.blockfrm.HBL8.value = document.blockfrm.HBL8.value.toLowerCase();
+	document.blockfrm.HBL9.value = document.blockfrm.HBL9.value.toLowerCase();
+	document.blockfrm.HBL10.value = document.blockfrm.HBL10.value.toLowerCase();	
+}
+</script>
+<p align=center>
+<b>Update your <br>"Blocked from chat"</b>
+</p>
+<center>
+<form method=post action="<$selfurl>" name="blockfrm" target="place" onSubmit="lowerthem();">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<b>Citizens excluded from your home:</b>
+<BR>
+<BR>
+<b>Citizen names</b>
+<table border=0>
+<tr>
+	<td><INPUT NAME="HBL1" VALUE="<$HBL1>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="HBL2" VALUE="<$HBL2>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="HBL3" VALUE="<$HBL3>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="HBL4" VALUE="<$HBL4>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="HBL5" VALUE="<$HBL5>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="HBL6" VALUE="<$HBL6>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="HBL7" VALUE="<$HBL7>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="HBL8" VALUE="<$HBL8>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="HBL9" VALUE="<$HBL9>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="HBL10" VALUE="<$HBL10>" MAXLENGTH=16 size=20></td>
+</tr>
+</table>
+
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="property/blockedinfo">
+<input type=hidden name="ac" value="read">
+<input type=hidden name="BODYTY" value="C">
+<input type=hidden name="BODYID" value="<$BODYID>">
+<input type=hidden name="OID" value="<$OID>">
+<a name=submitbutton></a>
+<BR>
+<input type=submit name="edit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</CENTER>
+
+</form>
+
+</BODY>
+</HTML>

@@ -1,0 +1,42 @@
+<!-- admin/errormsg_inc.tmpl -->
+<!-- global error messages >
+<!-- e.g. used for most templates -->
+
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Data updated successfully.<br>
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="createok" -->
+    Object successfully created.<br>
+<!-- #endif variable="createok" -->
+<!-- #ifdef variable="adminerror001" -->
+    Insufficient access rights.<br>
+<!-- #endif variable="adminerror001" -->
+<!-- #ifdef variable="adminerror002" -->
+    No template TPL given.<br>
+<!-- #endif variable="adminerror002" -->
+<!-- #ifdef variable="adminerror003" -->
+    One of the input parameters DTY, KTY or KEY is missing.<br>
+<!-- #endif variable="adminerror003" -->
+<!-- #ifdef variable="adminerror004" -->
+    Given ID already in use!<br>
+<!-- #endif variable="adminerror004" -->
+<!-- #ifdef variable="adminerror005" -->
+    Can not create data object!<br>
+<!-- #endif variable="adminerror005" -->
+<!-- #ifdef variable="adminerror006" -->
+    One of the input parameters NAM or CONT is missing.<br>
+    Parameter NAM is missing!<br>
+<!-- #endif variable="adminerror006" -->
+<!-- #ifdef variable="adminerror007" -->
+    Can't open <$fileerror>.
+    Please check whether the file exists and whether the access rights are correct for web access!<br>
+<!-- #endif variable="adminerror007" -->
+<!-- #ifdef variable="adminerror008" -->
+    Process out of memory. Please try again later!<br>
+<!-- #endif variable="adminerror008" -->
+</font>
+
+<!-- end of include errormsg_inc.tmpl -->

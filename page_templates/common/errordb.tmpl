@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+<meta http-equiv="refresh" content="10; URL=http://www.cybertown.com/index.html">
+<BODY BGCOLOR="#00000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+
+
+<!-- Database Error
+
+<!-- #ifdef variable="dberror001" -->
+Sorry <$NNM>,
+the following error occurred during the access to the database:<br>
+<$dbmessage>
+Database server: <$dbserver>:<$dbport>
+Error code: <$dbrc>
+<!-- #endif variable="dberror001" -->
+
+<!-- #ifdef variable="dberror002" -->
+the database was not available for a short time, <b>please repeat your last action
+Database server: <$dbserver>:<$dbport>
+Error code: <$dbrc>
+<!-- #endif variable="dberror002" -->
+
+<!-- #ifdef variable="dberror003" -->
+the database server cannot fullfill your list request because
+the search pattern you entered is not specific enough.
+<!-- #endif variable="dberror003" -->
+
+<!-- #ifdef variable="ticketerr001" -->
+there was a problem with your request.
+Most likely this happened because of a script problem.
+The script that caused the problem is <$selfurl>
+the action that was called is <$ticketerrinac>
+<!-- #endif variable="ticketerr001" -->
+-->
+
+
+</BODY>
+</HTML>
+

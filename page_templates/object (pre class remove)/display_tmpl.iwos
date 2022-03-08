@@ -1,0 +1,303 @@
+<html>
+<head>
+<title>blaxxun - Object</title>
+<script language="javascript">
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</script>
+</head>
+
+<!-- object/display.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+
+<!-- These tags should be placed in the 3d category in the 468x60 size space (Placement: 1) -->
+<IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C2531|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C2531|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C2531|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C2531|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME>
+<!-- End of adMonitor v3.0 rich content tags -->
+<br>
+
+<!-- #ifdef variable="buyrequested" -->
+<h2>Object Buy</h2>
+<!-- #endif variable="buyrequested" -->
+<!-- #ifndef variable="buyrequested" -->
+<h2>Object Properties</h2>
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifdef variable="oldac" value="buy" After a buy we want to confirm it -->
+  <h2>Congratulations, the object <$NAM> is now yours!</h2>
+<!-- #endif variable="oldac" -->
+
+<!-- #ifdef variable="takerequested" -->
+  <h2>Congratulations, the object <$NAM> is now yours!</h2>
+<!-- #endif variable="takerequested" -->
+
+<!-- #ifdef variable="oldac" value="edit" After an edit we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="refill" After a refill we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+
+<table border=0>
+
+<tr>
+<!-- #ifdef variable="IMG" -->
+  <td><IMG SRC="<$IMG>"></td>
+<!-- #endif variable="IMG" -->
+<!-- #ifndef variable="IMG" -->
+  <td></td>
+<!-- #endif variable="IMG" -->
+
+<td rowspan=2>
+<!-- #ifdef variable="ZONSELF" -->
+<$NAM> is currently in your possession.<br>
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="ZONNNM" -->
+<$NAM> is currently in <$ZONNNM>'s possession.<br>
+<!-- #endif variable="ZONNNM" -->
+<!-- #ifdef variable="ZONNAM" -->
+<$NAM> is currently located in the <$ZONNAM>.<br>
+<!-- #endif variable="ZONNAM" -->
+
+<!-- #ifdef variable="CLA" -->
+It is a <a href=#class target=_self>class</a> <b><$CLA></b> object.<br>
+<!-- #endif variable="CLA" -->
+<!-- #ifndef variable="CLA" -->
+It is a <a href=#class target=_self>class</a> <b>C</b> object.<br>
+<!-- #endif variable="CLA" -->
+<!-- #ifdef variable="CNT" value="00000000"-->
+There are none available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="CNT" value="00000001"-->
+There is 1 still available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="intCNTprinted"-->
+<!-- #ifdef variable="intCNT"-->
+There are <$intCNT> still available.<br>
+<!-- #endif variable="intCNT" -->
+<!-- #endif variable="intCNTprinted" -->
+
+<!-- #ifdef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+One costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+<!-- #ifndef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+This object costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+
+<!-- #ifdef variable="CRE" -->
+The object was created by <$CRE_NNM>.<br>
+<!-- #endif variable="CRE" -->
+<$TXT>
+<!-- #ifdef variable="WRL" -->
+Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&WRL=<$WRL>">here</a> for the 3D VRML representation.
+<!-- #endif variable="WRL" -->
+
+</td>
+</tr>
+
+<tr>
+<td align=center><$NAM></td>
+</tr>
+
+</table>
+
+<!-- #ifdef variable="ALLATTR" -->
+  <tr>
+  <td>Object ID</td>
+  <td><$ID></td>
+  </tr>
+  <tr>
+  <td>Object Category</td>
+  <td><$CAT></td>
+  </tr>
+  <tr>
+  <td>Object Owner</td>
+  <td><$OWN></td>
+  </tr>
+<!-- #endif variable="ALLATTR" -->
+
+<!-- #ifdef variable="actionID0" -->
+  <tr>
+  <td><br>Actions:</td>
+  <td></td>
+  </tr>
+<!-- #endif variable="actionID0" -->
+
+<!--#for loopname="actionlist" loopvars="actionID" -->
+  <tr>
+  <td></td>
+  <td><a href="<$selfurl>?PLC=<$PLC>&ID=<$ID>&ac=<$actionID>"><$action></a></td>
+  </tr>
+<!--#endfor loopname="actionlist"  -->
+
+<p>
+</table>
+<table><tr>
+
+<!-- #ifdef variable="buyrequested" -->
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="buy">
+  <td><input type=submit name="submit" value="Buy"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+</form>
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifndef variable="buyrequested" -->
+
+<!-- #ifndef variable="editallowed" -->
+<!-- #ifdef variable="CNT" -->
+<!-- #if variable="NNM" == variable="CRE_NNM" -->
+<td colspan=3>You can increase the quantity:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="refill">
+  <tr>
+  <td>Quantity</td>
+  <td><input name="intCNT" value="<$intCNT>" maxlength=4 size=4></td>
+  </tr><tr>
+  <td><input type=submit name="submit" value="Increase"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+  <td width=64>&nbsp;</td>
+  </tr>
+</form>
+<!-- #endif variable="NNM" -->
+<!-- #if variable="NNM" != variable="CRE_NNM" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="NNM" -->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="CNT" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="CNT" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<td colspan=3>You can edit the values:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="edit">
+  <tr>
+  <td>Name</td>
+  <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+  </tr><tr>
+  <td>Price</td>
+  <td><INPUT NAME="TPR" VALUE="<$TPR>" MAXLENGTH=4 SIZE=4></td>
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+  <td>Quantity</td>
+  <td><INPUT NAME="intCNT" VALUE="<$intCNT>" MAXLENGTH=4 SIZE=4></td>
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="ZONSELF" -->
+  </tr><tr>
+  <td>Buyer</td>
+  <td><INPUT NAME="BUY" VALUE="<$BUY>" MAXLENGTH=16 SIZE=16></td>
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+  <td>Class&nbsp;&nbsp;</td>
+  <td>
+<!-- #ifdef variable="CLA" -->
+<!-- #define variable="CLA<$CLA>" value="checked"-->
+<!-- #endif variable="CLA" -->
+  A<input name="CLA" type="radio" value="A" <$CLAA> >&nbsp;
+  B<input name="CLA" type="radio" value="B" <$CLAB> >&nbsp;
+  C<input name="CLA" type="radio" value="C" <$CLAC>
+<!-- #ifndef variable="CLA" -->
+    checked
+<!-- #endif variable="CLA" -->
+    >
+  </td>
+<!-- #endif variable="CNT" -->
+  </tr><tr>
+  <td><input type=submit name="submit" value="Change"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+</form>
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="buy" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="buyallowed" -->
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="buy">
+  </tr><tr><td colspan=3>&nbsp;</td></tr><tr>
+  <td colspan=3>You can buy the object:</td>
+  </tr><tr>
+  <td colspan=3><input type=submit name="submit" value="<$buyallowed>"></td>
+</form>
+<!-- #endif variable="buyallowed" -->
+
+<!-- #endif variable="buyrequested" -->
+</tr></table>
+
+</p>
+</div>
+<h3>Description</h3>
+<a name=class></a>
+<b>Object classes:</b>
+The Mall Manager specified a class for each object,
+based on the criteria of originality (How new/unique is the idea?)
+and sophistication (How difficult was it to create the object?).
+If an object exhibits both originality and sophistication,
+it is assigned to Class A. If it only exhibits one of the
+two characteristics, it is Class B; otherwise Class C.
+Objects of Classes A and B earn their owners a premium of 20% and 10% respectively. 
+<!-- #ifndef variable="buyrequested" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifdef variable="ZONSELF" -->
+<p>
+<b>Price:</b>
+If you set a price the object can be bought from you by other
+members.
+</p>
+<p>
+<b>Buyer:</b>
+If you also set a buyer, then only the member with that nickname
+can buy it from you.
+</p>
+<!-- #endif variable="ZONSELF" -->
+<!-- #endif variable="editallowed" -->
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="buyrequested" -->
+ 
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+

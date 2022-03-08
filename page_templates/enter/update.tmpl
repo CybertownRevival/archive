@@ -1,0 +1,57 @@
+<html>
+<head>
+<title><$g_title></title>
+<!-- enter/update.tmpl -->
+<base target="_top">
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<h3 align=center>Update - News Ticker</h3>
+
+<font color="red">
+	<!-- #ifdef variable="error001" -->
+		Insufficient access rights.
+	<!-- #endif variable="error001" -->
+</font>
+
+<form method=post action="<$selfurl>" target="_self">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ac" value="updatesubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<div align=center>
+<input type=submit name="update" value="Update">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</div>
+<br>
+
+<div align=center>
+<table border=0>
+	<tr>
+		<td>Text: (mandatory)</td>
+		<td>URL: (optional)</td>
+		<td>Target: (optional)</td>
+	</tr>
+<!--#for loopname="news" loopvars="NT" -->
+	<tr>
+		<td><INPUT NAME="NT<$index>" VALUE="<$NT>" MAXLENGTH=32 SIZE=32></td>
+		<td><INPUT NAME="NU<$index>" VALUE="<$NU>" MAXLENGTH=128 SIZE=32></td>
+		<td><SELECT name="NG<$index>"><OPTION selected value ="<$NG>"><$NG>&nbsp;
+                                       <OPTION value="">&nbsp;
+                                       <OPTION value="_top">_top&nbsp;
+                                       <OPTION value="_new">_new&nbsp;
+                                       <OPTION value="place">place&nbsp;
+                                       <OPTION value="info">info&nbsp;
+		</SELECT></td>
+	</tr>
+<!--#endfor loopname="news" -->
+
+</table>
+
+</form>
+<a href="vpet<$g_exe>?ID=<$ID>"><IMG SRC="<$g_HTMLRoot>/home/images/updpet.jpg" BORDER=0 ALT="Configure Virtual Pet"><br><b>Configure Virtual Pet</b></a>
+</body>
+</html>
+

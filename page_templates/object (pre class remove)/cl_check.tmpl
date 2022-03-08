@@ -1,0 +1,81 @@
+<html>  
+<head>  
+<title>blaxxun - Object</title>
+
+<SCRIPT  language="JavaScript">  
+<!--
+ 
+
+function loadInfo(par){
+
+ fileInfo = window.open( "", "fileInfo", "toolbar=yes,location=yes,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=600,height=250");
+ 
+ 
+ fileInfo.location.href = par;
+ 
+ alert(par);
+}
+
+//-->   
+</SCRIPT>
+  
+</head>  
+  
+<!-- object/cl_check.tmpl -->  
+  
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->  
+  
+<center>  
+<h2>Advanced Object Check</h2>  
+</center>  
+ 
+  
+<CENTER> 
+  
+<!-- #ifndef variable="NAM" value="" -->  
+<td><$NAM></td>  
+<!-- #endif variable="NAM" -->  
+<!-- #ifdef variable="NAM" value="" -->  
+<!-- #ifdef variable="CAT_3NAM" -->  
+<td><$CAT_3NAM></td>  
+<!-- #endif variable="CAT_3NAM" -->  
+<!-- #endif variable="NAM" -->
+
+ 
+
+
+<BR>
+  
+<!-- #ifndef variable="WRL" value="" -->  
+<EMBED SRC="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/obj_chk&WRL=<$WRL>&mime=.wrl"  
+       VRML-DASHBOARD="false"  
+       TYPE="application/x-blaxxunCC3D"  
+       HEIGHT=300 WIDTH=650>  
+</EMBED>  
+<BR>
+
+
+  
+<A HREF="about:<$WRL>">WRL FILE</A> 
+<!-- #endif variable="WRL" -->  
+<!-- #ifdef variable="WRL" value="" -->  
+<!-- #ifdef variable="CAT_WRL" -->  
+<EMBED SRC="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/obj_chk&WRL=<$CAT_WRL>&mime=.wrl"  
+       VRML-DASHBOARD="false"  
+       TYPE="application/x-blaxxunCC3D"  
+       HEIGHT=300 WIDTH=650>  
+</EMBED>  
+<BR><BR>
+<A HREF="about:<$CAT_WRL>" TARGET="_self">WRL FILE INFO</A> 
+<!-- #endif variable="CAT_WRL" -->  
+<!-- #endif variable="WRL" --> 
+<BR><BR>
+<FONT SIZE=-1>Grid spacing = .5 meters</FONT> 
+
+</CENTER>  
+  
+</body>  
+</html>  
+  
+  
+  

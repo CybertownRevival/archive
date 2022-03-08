@@ -1,0 +1,95 @@
+<html>
+<head>
+<title><$g_title> - Library</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2>Library Link</h2>
+
+<center>
+<h2><$NAM></h2>
+<$TXT>
+
+<h3><$topsub></h3>
+<$toptxt>
+<P>
+<!-- #ifdef variable="hllconfigallowed" -->
+
+ <a href=
+   "<$selfurl>?ac=createlink&TYP=c&TOP=<$TOP>&DTY=<$DTY>&KEY=<$KEY>&TKT=<$TKT>"
+ ><IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Link"></a>
+
+<!-- #endif variable="hllconfigallowed" -->
+<!-- #ifndef variable="hllconfigallowed" -->
+
+<!-- #ifdef variable="isMember" -->
+ <a href=
+   "<$selfurl>?ac=createlink&TYP=s&TOP=<$TOP>&DTY=<$DTY>&KEY=<$KEY>&TKT=<$TKT>"
+ ><IMG SRC="<$g_Images>/images/buttons/bsuggest.gif" BORDER=0 ALT="Suggest a Link"></a>
+<!-- #endif variable="isMember" -->
+
+<!-- #endif variable="hllconfigallowed" -->
+
+<!-- #ifdef variable="hllsuggestionsexist" -->
+ <a href="<$selfurl>?ac=listlinks&TOP=<$TOP>&TYP=s&DTY=<$DTY>&KEY=<$KEY>"
+ ><IMG SRC="<$g_Images>/images/buttons/blsugg.gif" BORDER=0 ALT="List suggested links"></a>
+
+<!-- #endif variable="hllsuggestionsexist" -->
+
+<a href=
+  "<$selfurl>?DTY=<$DTY>&KEY=<$KEY>"
+ ><IMG SRC="<$g_Images>/images/buttons/btopics.gif" BORDER=0 ALT="List Topics"></a>
+
+</center>
+
+<hr>
+
+<!--#ifdef variable="OWNNNM" -->
+<center>
+
+<i>
+    Thank you for your contribution <$NNM>,<br>
+    your link has been stored in our database, however it will only become
+    visible after <$OWNNNM>, the owner of this library or one
+    of its assistant confirmed it.
+</i>
+<hr>
+</center>
+
+<!--#endif variable="OWNNNM" -->
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>, there are no links configured for this topic.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="linklist" loopvars="NUM" -->
+<table width=100%>
+<tr><td>
+<a target="_blank" href="<$URL>"><b><$sub></b></a>
+</td><td align=right>
+<!-- #ifdef variable="linkallowedit" -->
+    <a href="http://www.cybertown.com/cgi-bin/cybertown/hll?ac=updatelink&NUM=<$NUM>&TYP=c&TOP=<$TOP>&DTY=O&KEY=<$KEY>&TKT=<$TKT>"
+    ><IMG ALIGN=MIDDLE SRC="<$g_Images>/images/buttons/bedit.gif" BORDER=0 ALT="Edit the link"></a>
+<!-- #endif variable="linkallowedit" -->
+
+<!-- #ifdef variable="linkallowconfirm" -->
+    <a href="http://www.cybertown.com/cgi-bin/cybertown/hll?ac=confirmlink&NUM=<$NUM>&TYP=s&TOP=<$TOP>&DTY=O&KEY=<$KEY>&TKT=<$TKT>"
+    ><IMG ALIGN=MIDDLE SRC="<$g_Images>/images/buttons/bconfirm.gif" BORDER=0 ALT="Confirm the link"></a>
+<!-- #endif variable="linkallowconfirm" -->
+</td></tr>
+</table>
+<table>
+<tr><td>
+<$pre><$txt><$endpre>
+<br><font size=-1>
+Posted: <$DATE_DAYNAM> <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_YEAR>.
+<$DATE_AP>:<$DATE_MIN>:<$DATE_SEC> <$DATE_APM> by: <$NNM>.
+</font>
+<br></td></tr>
+</table>
+<!--#endfor loopname="linklist"  -->
+
+</body>
+</html>
+

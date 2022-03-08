@@ -1,0 +1,267 @@
+<!-- common/updchangerights.tmpl -->
+<!-- update change rights access -->
+<HTML>
+<HEAD>
+	<title><$g_title></title>
+	<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/updateok.tmpl" -->
+
+<p align=center>
+<b>Update <font color=#FFFF00>Change Rights Access</font></b>
+<!-- #ifdef variable="cht" -->
+<b>for <font color=#FFFF00>Chat</font></b>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<b>for <font color=#FFFF00><$NAM></font></b>
+<br>
+<a href="edit<$g_exe>?ac=read&DTY=I&KTY=ID&KEY=h<$KEY>&cht=1&TPL=common/updchangerights&PRI=<$PRI>" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bchataccess.gif" BORDER=0 ALT="Chat Change Rights Access"></a>
+<!-- #endif variable="cht" -->
+</p>
+
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+</div>
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+<script src="http://www.cybertown.com/cgi-bin/cybertown/warning" language="javascript"></script>
+<center>
+<form method=post action="<$selfurl>" target="detail">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="common/updchangerights">
+<!-- #ifdef variable="PRI" -->
+    <input type=hidden name="PRI" value="<$PRI>">
+<!-- #endif variable="PRI" -->
+
+<!-- #ifdef variable="cht" -->
+<input type=hidden name="cht" value="1">
+<h3>Here you define citizens, who are allowed to read and change all access rights for the chat at this place.</h3>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<h3>Here you define citizens, who are allowed to read and change all access rights for this place.</h3>
+<!-- #endif variable="cht" -->
+<p>
+If no nickname is defined and no job is checkmarked, only citizens with owner access are allowed to change the access rights!<br>
+If you want to add citizens to be allowed to change the access rights you can explicitly define them by nickname and/or by job.
+</p>
+
+<p>You can define <b><font color=#FFFF00>up to 8 citizens</font></b> with <b><font color=#FFFF00>change rights access</font></b>,
+a <b>club name</b> is an example for a group here.
+</p>
+
+<div align=center>
+<table border=0>
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="CI1TYP" TYPE="Radio" VALUE="G"<$CI1CHK_G>>Group<br>
+        <INPUT NAME="CI1TYP" TYPE="Radio" VALUE="M"<$CI1CHK_M>>Member</td>
+    <td><INPUT NAME="CI2TYP" TYPE="Radio" VALUE="G"<$CI2CHK_G>>Group<br>
+        <INPUT NAME="CI2TYP" TYPE="Radio" VALUE="M"<$CI2CHK_M>>Member</td>
+    <td><INPUT NAME="CI3TYP" TYPE="Radio" VALUE="G"<$CI3CHK_G>>Group<br>
+        <INPUT NAME="CI3TYP" TYPE="Radio" VALUE="M"<$CI3CHK_M>>Member</td>
+    <td><INPUT NAME="CI4TYP" TYPE="Radio" VALUE="G"<$CI4CHK_G>>Group<br>
+        <INPUT NAME="CI4TYP" TYPE="Radio" VALUE="M"<$CI4CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="CI1CHK_G" -->
+        <INPUT NAME="CI1TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI1CHK_G" -->
+	<!-- #ifdef variable="CI2CHK_G" -->
+        <INPUT NAME="CI2TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI2CHK_G" -->
+	<!-- #ifdef variable="CI3CHK_G" -->
+        <INPUT NAME="CI3TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI3CHK_G" -->
+	<!-- #ifdef variable="CI4CHK_G" -->
+        <INPUT NAME="CI4TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI4CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="CI1CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI1_NNM" VALUE="<$CI1_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI1_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI1CHK_G" -->
+	<!-- #ifndef variable="CI1CHK_G" -->
+	   <td><INPUT NAME="CI1_NNM" VALUE="<$CI1_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI1CHK_G" -->
+	<!-- #ifdef variable="CI2CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI2_NNM" VALUE="<$CI2_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI2_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI2CHK_G" -->
+	<!-- #ifndef variable="CI2CHK_G" -->
+	   <td><INPUT NAME="CI2_NNM" VALUE="<$CI2_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI2CHK_G" -->
+	<!-- #ifdef variable="CI3CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI3_NNM" VALUE="<$CI3_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI3_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI3CHK_G" -->
+	<!-- #ifndef variable="CI3CHK_G" -->
+	   <td><INPUT NAME="CI3_NNM" VALUE="<$CI3_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI3CHK_G" -->
+	<!-- #ifdef variable="CI4CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI4_NNM" VALUE="<$CI4_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI4_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI4CHK_G" -->
+	<!-- #ifndef variable="CI4CHK_G" -->
+	   <td><INPUT NAME="CI4_NNM" VALUE="<$CI4_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI4CHK_G" -->
+</tr>
+
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="CI5TYP" TYPE="Radio" VALUE="G"<$CI5CHK_G>>Group<br>
+        <INPUT NAME="CI5TYP" TYPE="Radio" VALUE="M"<$CI5CHK_M>>Member</td>
+    <td><INPUT NAME="CI6TYP" TYPE="Radio" VALUE="G"<$CI6CHK_G>>Group<br>
+        <INPUT NAME="CI6TYP" TYPE="Radio" VALUE="M"<$CI6CHK_M>>Member</td>
+    <td><INPUT NAME="CI7TYP" TYPE="Radio" VALUE="G"<$CI7CHK_G>>Group<br>
+        <INPUT NAME="CI7TYP" TYPE="Radio" VALUE="M"<$CI7CHK_M>>Member</td>
+    <td><INPUT NAME="CI8TYP" TYPE="Radio" VALUE="G"<$CI8CHK_G>>Group<br>
+        <INPUT NAME="CI8TYP" TYPE="Radio" VALUE="M"<$CI8CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="CI5CHK_G" -->
+        <INPUT NAME="CI5TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI5CHK_G" -->
+	<!-- #ifdef variable="CI6CHK_G" -->
+        <INPUT NAME="CI6TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI6CHK_G" -->
+	<!-- #ifdef variable="CI7CHK_G" -->
+        <INPUT NAME="CI7TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI7CHK_G" -->
+	<!-- #ifdef variable="CI8CHK_G" -->
+        <INPUT NAME="CI8TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="CI8CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="CI5CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI5_NNM" VALUE="<$CI5_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI5_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI5CHK_G" -->
+	<!-- #ifndef variable="CI5CHK_G" -->
+	   <td><INPUT NAME="CI5_NNM" VALUE="<$CI5_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI5CHK_G" -->
+	<!-- #ifdef variable="CI6CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI6_NNM" VALUE="<$CI6_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI6_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI6CHK_G" -->
+	<!-- #ifndef variable="CI6CHK_G" -->
+	   <td><INPUT NAME="CI6_NNM" VALUE="<$CI6_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI6CHK_G" -->
+	<!-- #ifdef variable="CI7CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI7_NNM" VALUE="<$CI7_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI7_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI7CHK_G" -->
+	<!-- #ifndef variable="CI7CHK_G" -->
+	   <td><INPUT NAME="CI7_NNM" VALUE="<$CI7_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI7CHK_G" -->
+	<!-- #ifdef variable="CI8CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="CI8_NNM" VALUE="<$CI8_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$CI8_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="CI8CHK_G" -->
+	<!-- #ifndef variable="CI8CHK_G" -->
+	   <td><INPUT NAME="CI8_NNM" VALUE="<$CI8_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="CI8CHK_G" -->
+</tr>
+</table>
+<small><i><u>Note:</u> If a nickname does not exist, it is ignored without notification.</i></small>
+</div>
+
+<p>Additionally all citizens having <b><font color=#FFFF00>checkmarked jobs</font></b> have
+<b><font color=#FFFF00>change rights access</font></b>, too.
+<br>
+If you want to give change rights access to all citizens, simply checkmark only 'Members' - this
+includes ALL other jobs, but not visitors.
+</p>
+
+<div align=center>
+<table border=1 cellpadding=1>
+<tr>
+<!--#for loopname="roles" loopvars="ROL_ITER_" -->
+
+    <td nowrap>
+
+<!-- #if variable="ROL_ITER_" != value="0" -->
+<!-- #if variable="ROL_ITER_" != value="1" -->
+    <input type="checkbox" align="middle"
+           name="CRO_BIT_<$ROL_ITER_>" <$CRO_BIT_>>
+<!-- #endif variable="ROL_ITER_" -->
+<!-- #if variable="ROL_ITER_" == value="0" -->
+    &nbsp; &nbsp; &nbsp;
+<!-- #endif variable="ROL_ITER_" -->
+<!-- #if variable="ROL_ITER_" == value="1" -->
+    &nbsp; &nbsp; &nbsp;
+<!-- #endif variable="ROL_ITER_" -->
+    
+    <$ROL_BIT_NAM_>
+    </td>
+
+	<input type=hidden name="ROL_BIT_ID_R_<$ROL_ITER_>" value="<$ROL_BIT_ID_R_>">
+	<input type=hidden name="ROL_BIT_ID_W_<$ROL_ITER_>" value="<$ROL_BIT_ID_W_>">
+<!-- #ifdef variable="ROL_4_" -->
+</tr><tr>
+<!-- #endif variable="ROL_4_" -->
+<!--#endfor loopname="roles" -->
+</tr>
+</table>
+	</div>
+</p>
+
+<a name=submitbutton></a>
+<BR>
+<center>
+<input type=submit name="editrolem" value=Update>
+<input type=submit name="read" value=Cancel>
+</center>
+
+</form>
+
+</BODY>
+</HTML>

@@ -1,0 +1,404 @@
+<!-- register/cregister.tmpl -->
+<!-- registration form -->
+<html>
+<head>
+<title><$g_title> - Member Immigration</title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+
+<SCRIPT language=JavaScript>
+
+var blank = new Array("-","blank");
+var friend = new Array("-","Friend/Word-of-Mouth");
+var onlinead = new Array(" -- Which Site? -- ","Web Ad","IGN.com","Web Ad -- IGN.com","artbell.com","Web Ad -- artbell.com","angelfire.com","Web Ad -- angelfire.com","SciFi.com","Web Ad -- SciFi.com","bolt.com","Web Ad -- bolt.com","Other Site","Web Ad -- Other");
+
+var otheronlinearticle = new Array("-","Online Article -- Other");
+var othertheaters = new Array("-- Where? --","Movie Screen Ad","Austin, TX","Movies -- Austin", "Baltimore, NC","Movies -- Baltimore","Raleigh/Durham, NC","Movies -- Raleigh/Durham","Santa Clara/San Jose, CA","Movies -- Santa Clara/San Jose","San Francisco, CA","Movies -- San Francisco","Seattle, WA","Movies -- Seattle","Washington, D.C","Movies -- Washington, D.C.","Denver, CO","Movies -- Denver, CO");
+var othermagarticle = new Array("-","Magazine Article");
+var magad = new Array(" -- Which Magazine? --","Mag Ad -- Other","Sci-fi Entertainment","Mag Ad -- Sci-fi Entertainment","Science Fiction Age","Mag Ad -- Science Fiction Age","Top Deck","Mag Ad -- Top Deck","Dragon","Mag Ad -- Dragon","Star Wars Insider","Mag Ad -- Star Wars Insider","Star Trek Communicator","Mag Ad -- Star Trek Communicator","Amazing Stories","Mag Ad -- Amazing Stories", "Other","Mag Ad -- Other");
+var tv = new Array(" -- Which One? --","TV -- Other","MTV","TV - MTV","Other","TV - Other");
+var search = new Array(" -- Which One? --","Search Engine -- Other","Yahoo","Search Engine -- Yahoo","AltaVista","Search Engine -- Altavista","HotBot","Search Engine -- HotBot","Lycos","Search Engine -- Lycos","Infoseek","Search Engine -- Infoseek","MSN","Search Engine -- MSN","Netscape","Search Engine -- Netscape","Excite","Search Engine -- Excite","ask.com","Search Engine -- ask.com","Webcrawler","Search Engine -- Webcrawler","Other","Search Engine -- Other");
+var link = new Array("-- Which Site? --","Link -- Other","blaxxun.com","Link -- blaxxun.com","Intel","Link -- Intel","TheFreeSite.com","Link -- TheFreeSite.com","Tomorrow.de","Link -- Tomorrow.de","TheForce.net","Link -- TheForce.net","DesktopStarships.com","Link -- DesktopStarships.com","Other","Link -- Other");
+var other = new Array("-","Other");
+var minicd = new Array("-","Mini CD-ROM");
+var postcard = new Array("-","Cybertown Postcard");
+var virt = new Array("-","Cybertown \"VIRT\" Newsletter");
+var othertradeshow = new Array("-","Trade Show");
+var othernewspaper = new Array("-","Newspaper");
+
+
+
+
+
+
+
+
+
+function swapOptions(arrayname)
+{
+
+	var my_array = eval(arrayname);
+	setOptionText(window.document.im_form.IM1, my_array);
+}
+
+function setOptionText(the_select, my_array)
+{	var i2 = 0;
+	the_select.options.length = 0;
+	the_select.options.length = my_array.length/2;
+	for (i=0; i < my_array.length; i+=2)
+	{
+		the_select.options[i2].text = my_array[i];
+		the_select.options[i2].value = my_array[i+1];
+		i2++;
+	}
+
+	the_select.selectedIndex = 0;
+}
+
+
+function checkOther(fieldvalue)
+{
+if (fieldvalue.indexOf('Other') != -1 || fieldvalue.indexOf('other') != -1) {window.document.im_form.IM3.value = ' -- Which? --';}
+else {window.document.im_form.IM3.value = '';}
+
+if (
+window.document.im_form.IMnull.options[window.document.im_form.IMnull.selectedIndex].value == 'othertheaters') {window.document.im_form.IM3.value = ' -- Which Movie? --';}
+
+if (window.document.im_form.IMnull.options[window.document.im_form.IMnull.selectedIndex].value == 'friend') {window.document.im_form.REF.focus();}
+
+}
+
+function appendValues()
+{
+
+var IM1 = window.document.im_form.IM1.options[window.document.im_form.IM1.selectedIndex].value;
+var IM3 = window.document.im_form.IM3.value;
+
+
+if (IM3.indexOf('-- Which') != -1) {
+
+var oldIM3 = IM3;
+var IM3array = new Array();
+IM3array = IM3.split("-- Which Movie? --");
+IM3 = IM3array.join(' ');
+IM3array = IM3.split("-- Which? --");
+IM3 = IM3array.join(' ');
+IM3array = IM3.split(" ");
+var IM3array2 = new Array;
+var i2 = 0;
+
+for (var i = 0;i <= IM3array.length;i++) {
+if (IM3array[i] != '' && IM3array[i] != ' ') {IM3array2.length += 1;IM3array2[i2] = IM3array[i];i2++;}
+}
+
+
+if (IM3array2.length > 0) {IM3 = IM3array2.join(' ');}
+else IM3 = '';
+
+
+}
+
+if (IM3 != '' && IM1 != '-') {IM3 = ' : ' + IM3;}
+
+if (IM1 != '-') {window.document.im_form.IM3.value = IM1 + IM3;}
+else {window.document.im_form.IM3.value = IM3;}
+window.document.im_form.IM1.options[window.document.im_form.IM1.selectedIndex].value = '.';
+window.document.im_form.IMnull.options[window.document.im_form.IMnull.selectedIndex].value = '';
+}
+
+
+function matchEmails() {
+if (window.document.im_form.EML.value != window.document.im_form.EMV.value) {
+window.document.im_form.EML.value = '';
+window.document.im_form.EMV.value = '';
+window.document.im_form.EML.focus();
+alert('The email addresses you entered do not match. Please re-enter your email address.');
+}
+}
+
+</script>
+
+
+
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<table cellpadding=8><tr><td>
+
+<div align=center><font color="#00FF00">Immigration is absolutely FREE, so join NOW!</font><br>
+<font size=+2>CYBERTOWN Immigration - New Member</font>
+<img src="<$g_HTMLRoot>/images/login/immicode.jpg" border=0 alt="Immigrate">
+<br></div>
+
+<div align=center>
+<br>
+<font color=#ffff00>*** These fields are mandatory!</font>
+
+<font color="red" size=+1>
+
+<!-- #ifdef variable="registererror001" -->
+<P>One or more required values are not filled in.
+<!-- #endif variable="registererror001" -->
+
+<!-- #ifdef variable="registererror002" -->
+<P>Sorry, your nickname cannot contain a '/'.
+<!-- #endif variable="registererror002" -->
+
+<!-- #ifdef variable="registererror003" -->
+<P>Sorry, the password and the retyped password are different.
+<!-- #endif variable="registererror003" -->
+
+<!-- #ifdef variable="registererror004" -->
+<P>	Sorry, this nickname is taken, try another one.
+<!-- #endif variable="registererror004" -->
+
+<!-- #ifdef variable="registererror005" -->
+<P>	Sorry, this email is taken, try another one.
+<!-- #endif variable="registererror005" -->
+
+<!-- #ifdef variable="registererror006" -->
+<P>	The referring member you entered is unknown, please check.
+<!-- #endif variable="registererror006" -->
+
+<!-- #ifdef variable="registererror010" -->
+<P>	Sorry, your nickname contains characters that aren't allowed.<br>
+	Allowed are [A-Z],[a-z],[0-9],'_','-','.'
+<!-- #endif variable="registererror010" -->
+
+<!-- #ifdef variable="registererror011" -->
+<P>	Sorry, your nickname must start with an alphanumeric character.
+<!-- #endif variable="registererror011" -->
+
+<!-- #ifdef variable="registererror012" -->
+<P>     Sorry, your email address is incorrect.<br>
+        Allowed characters are [A-Z],[a-z],[0-9],'_','-','.'<br>
+        and you have to specify your mail id and complete domain name.
+<!-- #endif variable="registererror012" -->
+<!-- #ifdef variable="registererror013" -->
+<P>     Sorry, your email domain is incorrect.<br>
+<!-- #endif variable="registererror013" -->
+
+</font>
+
+<form method=post action="<$selfurl>" name="im_form" onsubmit=appendValues()>
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<!-- #ifdef variable="T_IWOS" -->
+  <input type="hidden" name="CHT" value="p">
+  <input type="hidden" name="T_IWOS" value="1">
+<!-- #endif variable="T_IWOS" -->
+
+<table border=0>
+
+<tr>
+<td colspan=3><font color="#00FF00" size=+1>Create your Cybertown Nickname and Password</font></td>
+</tr>
+
+<tr>
+<td width=150 valign=top><font color=#ffff00>***</font> Your nickname:</td>
+<td width=200 valign=top><INPUT NAME="NNM" VALUE="<$NNM>" MAXLENGTH=16 SIZE=16></td>
+<td width=200 valign=top><font color="#00FF00" size="-1">
+Allowed characters are [A-Z],[a-z],[0-9],'_','-','.'</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#ffff00>***</font> Your email address:</td>
+<td valign=top><INPUT NAME="EML" VALUE="<$EML>" MAXLENGTH=64 SIZE=32 onChange='window.document.im_form.EMV.focus();'></td>
+<td valign=top rowspan=2><font color="#FF0000">Be sure that you type
+in your <b>email address correctly</b> as you will receive an <b>immigration email</b> in
+a few seconds!<br>
+And don't worry, nobody else will see your email address later!
+</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top>Please re-type your email address:</td>
+<td valign=top><INPUT NAME="EMV" VALUE="" MAXLENGTH=64 SIZE=32 onBlur='matchEmails();'></td>
+
+</tr>
+
+<tr>
+<td valign=top><font color=#ffff00>***</font> Choose a password:</td>
+<td valign=top><INPUT type=password NAME="PWD" VALUE="<$PWD>" MAXLENGTH=16 SIZE=16></td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#ffff00>***</font> Retype your password:</td>
+<td valign=top><INPUT type=password NAME="PWD2" VALUE="<$PWD2>"  MAXLENGTH=16 SIZE=16></td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan=3><hr><br><font color="#00FF00" size=+1>Set up your Personal Information</font></td>
+</tr>
+
+<tr>
+<td valign=top>Age range:</td>
+<td valign=top>
+<SELECT name = "AGE">
+<OPTION value="-"> -Select-
+<OPTION value="1"> 1-11
+<OPTION value="12"> 12-17
+<OPTION value="18"> 18-25
+<OPTION value="26"> 26-35
+<OPTION value="36"> 36-45
+<OPTION value="46"> 46+
+</SELECT>
+
+</td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+<td valign=top>Gender:</td>
+<td valign=top>
+<INPUT NAME="GND" TYPE=RADIO VALUE="male" checked> Male&nbsp;&nbsp;&nbsp;
+<INPUT NAME="GND" TYPE=RADIO VALUE="female"> Female
+</td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+<td valign=top>Zip/country code:</td>
+<td valign=top><INPUT NAME="ZIP" VALUE="<$ZIP>" MAXLENGTH=8 SIZE=6></td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+
+<td colspan=3><hr><br><font color="#00FF00" size=+1>More ...</font><br></td>
+
+</tr>
+
+
+
+<tr>
+
+<td valign=top><font color=#ffff00>***</font> How did you find out about Cybertown?</td>
+
+
+
+<td valign=top align=left colspan=2>
+
+<SELECT name=IMnull 
+      onchange=swapOptions(window.document.im_form.IMnull.options[this.selectedIndex].value);checkOther(window.document.im_form.IMnull.options[this.selectedIndex].value);> 
+        <OPTION selected value=blank>-Select-<OPTION 
+        value=friend>Friend/Word-of-Mouth<OPTION value=link>Website Link<OPTION 
+        value=onlinead>Web Ad<OPTION value=search>Search 
+        Engine<OPTION value=otheronlinearticle>Online Article<OPTION 
+        value=othertheaters>Movie Screen Ad<OPTION value=magad>Magazine 
+        Advertisement<OPTION value=othermagarticle>Magazine Article<OPTION 
+        value=tv>Television Show<OPTION value=minicd>Mini CD-ROM<OPTION 
+        value=postcard>Cybertown Postcard<OPTION value=virt>Cybertown "VIRT" 
+        Newsletter
+		<OPTION value=othertradeshow>Tradeshow/Conference<OPTION 
+        value=othernewspaper>Newspaper<OPTION value=other>Other</OPTION></SELECT> 
+&nbsp;&nbsp;
+
+<SELECT NAME="IM1" onChange=checkOther(window.document.im_form.IM1.options[selectedIndex].value);>
+<OPTION VALUE="" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+<OPTION>
+</SELECT>
+
+<br><br>
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color="#00FF00" size="-1">If you chose Online Advertisement, Article, Website Link, Magazine, TV show, Movie Screen Ad, Trade Show, or Search Engine, please tell us which one!</font>
+<br>
+<br><br>
+</td>
+
+<td valign=top><INPUT NAME="IM3" TYPE=text value="<$IM3>" MAXLENGTH=32 SIZE=32></td>
+<td></td>
+
+</tr>
+
+
+
+<tr>
+
+<td valign=top>Referral Bonus (nickname):</td>
+
+<td valign=top><INPUT NAME="REF" VALUE="<$REF>" MAXLENGTH=16 SIZE=16></td>
+
+<td valign=top><font color="#00FF00" size="-1">
+
+Enter the nickname of a friend who already immigrated into Cybertown,
+
+and he/she gets a <b>Bonus (Virtual Money)</b>!<br><br>
+
+</font>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td valign=top>Anything you'd like to tell us?</td>
+
+<td valign=top><INPUT NAME="IM2" VALUE="<$IM2>" MAXLENGTH=128 SIZE=32></td>
+
+<td valign=top>&nbsp;</td>
+
+</tr>
+
+
+</table>
+<hr>
+<INPUT TYPE="checkbox" NAME="PML" VALUE="n">&nbsp;&nbsp;&nbsp;If you
+do not wish to receive occasional mailings based on your interest in
+Cybertown, check this box.
+<p><b>Immigration or Login Problems? Here's our 
+<a href="javascript:loadInfo('<$g_HTMLRoot>/help/quickhelp.html')" target="_self">Quick Help</a>!</b>
+</p>
+
+<p>
+<font color="#00FF00"><b>
+If you have problems entering Cybertown after the registration process,
+please send email to <a href="mailto:Help@colonycity.com">Help@colonycity.com</a>.</b>
+</p>
+
+<p align=center>
+<input type=hidden name="ac" value="register">
+<input type=submit name="submit" value="Immigrate">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</p>
+</form>
+
+</td></tr></table><br clear=all><center>
+<!-- These tags should be placed in all categories in the 468x60 size space (Placement: 1) -->
+<IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME>
+<!-- End of adMonitor v3.0 rich content tags -->
+</center>
+</body>
+</html>
+

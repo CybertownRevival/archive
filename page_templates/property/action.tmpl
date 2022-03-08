@@ -1,0 +1,25 @@
+<!-- property/action.tmpl --> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html"> 
+<title><$g_title></title> 
+</head> 
+
+<center> 
+
+<!-- #ifdef variable="commid" value="0110000000000000" --> 
+<!-- #include virtual="<$g_Templates>property/action_hi-tek.tmpl" --> 
+<!-- #endif variable="commid" --> 
+
+<!-- #ifdef variable="commid" value="0105000000000000" --> 
+<!-- #include virtual="<$g_Templates>property/action_inner-realms.tmpl" --> 
+<!-- #endif variable="commid" --> 
+
+<!-- #ifndef variable="commid" value="0110000000000000" --> 
+<!-- #ifndef variable="commid" value="0105000000000000" --> 
+<!-- #include virtual="<$g_Templates>property/action_standard.tmpl" --> 
+<!-- #endif variable="commid" --> 
+<!-- #endif variable="commid" --> 
+
+</body> 
+</html>

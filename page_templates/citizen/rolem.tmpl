@@ -1,0 +1,68 @@
+<html>
+<head>
+<title><$g_title> - Citizen Directory</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<H2><font color=#80ff00>Cybertown: Citizens working as <$ROLNAM></font><br>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<a href="citizen<$g_exe>?ac=action"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a></h2>
+
+<table>
+<tr>
+	<INPUT type=hidden NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+
+	<input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+	<!--input type="hidden" name="SORT" value="<$SORT>"-->
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="ROLNAM" value="<$KFT>">
+
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+</tr>
+</table>
+
+<table border=1>
+<tr>
+	<th><font color=#80ff00>Place</font></th>
+	<th><font color=#80ff00>Nickname</font></th>
+</tr>
+
+<!--#for loopname="role" loopvars="ID_" -->
+<tr>
+	<td>&nbsp &nbsp <$ID_NAM_> &nbsp &nbsp</td>
+ 	<td>&nbsp &nbsp <A HREF="javascript:top.location.href='/home/<$NNM_>'" target=top> <$NNM_></A> &nbsp &nbsp</td>
+</tr>
+<!--#endfor loopname="role" -->
+</table>
+
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+</form>
+
+</body>
+</html>

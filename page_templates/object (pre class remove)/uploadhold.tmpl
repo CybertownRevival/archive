@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Mall - Upload Object Hold</title>
+</head>
+
+<!-- object/uploadhold.tmpl -->
+<!-- form to upload the vrml and image file for a shared object -->
+<!-- re-coded by Simioni to allow for hold uploads -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Upload Object Hold</h2>
+</div>
+<p><font color="#FF0000">
+<a href="/cgi-bin/cybertown/object?ac=uppre&TPL=object/uploadcolonyhold">Colony and City Holds - Click Here</a>
+<p>
+Before uploading, please read  and understand the <a href="/places/shopping/rules.html">Rules for Creating Objects for Cybertown</a>
+<BR>
+These are the technical rules by which your Object will be judged fit or unfit for use in Cybertown.
+<BR>
+These Rules contain very important information you need to know, plus some technical tips. 
+</font></p>
+<p>
+Use this form to "import" new objects into the community. 
+<br>
+Please read this <a href=#explain target=_self>explanation</a> of the fields in the form before filling the form in.
+</p>
+<p>
+After an upload, your Object will be reveiwed based on technical criteria.  If the Object is found to be technically correct, the Mall Manager will check your object for appropriateness and 
+specify an <a href=#class target=_self>object class</a>. 
+</p>
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Congratulations, your hold has been successfully uploaded!
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="uploaderror001" -->
+    Naming Error: Please contact a Mall Deputy for assistance
+<!-- #endif variable="uploaderror001" -->
+<!-- #ifdef variable="uploaderror002" -->
+    Sorry, you are not allowed to express a price for hold objects!
+<!-- #endif variable="uploaderror002" -->
+<!-- #ifdef variable="uploaderror003" -->
+    Sorry, the minumum quantity allowed for holds is one!
+<!-- #endif variable="uploaderror003" -->
+<!-- #ifdef variable="uploaderror004" -->
+    One or both of the required files are missing!
+<!-- #endif variable="uploaderror004" -->
+<!-- #ifdef variable="uploaderror005" -->
+    The file "<$errfile>" is the wrong type!
+<!-- #endif variable="uploaderror005" -->
+<!-- #ifdef variable="uploaderror006" -->
+    The file "<$errfile>" could not be saved!
+<!-- #endif variable="uploaderror006" -->
+<!-- #ifdef variable="uploaderror007" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_img> KB!
+<!-- #endif variable="uploaderror007" -->
+<!-- #ifdef variable="uploaderror008" -->
+    Holds Error: Not enough funds!
+<!-- #endif variable="uploaderror008" -->
+<!-- #ifdef variable="uploaderror009" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_wrl> KB!
+<!-- #endif variable="uploaderror009" -->
+</font>
+
+<form name=upload enctype="multipart/form-data" method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+    
+    <INPUT TYPE="hidden" name="ZON" value="p00000000000009ff">
+    <input type="hidden" name="NAM" value="AAHOLD for <$UPLOADER>">
+    <input type="hidden" name="TPR" value="10">
+
+    
+  <table border=0>
+    <tr> 
+      <td>Object Name:&nbsp;&nbsp;</td>
+      <td>AAHOLD for <$UPLOADER></td>
+    <tr> 
+      <td>Quantity:&nbsp;&nbsp;</td>
+      <td>
+        <select name="CNT">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td>VRML-File:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="WRL" value="<$WRL_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+    <tr> 
+      <td>Texture-File:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="TXF" value="<$TXF_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan=6>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>Thumbnail:&nbsp;&nbsp;</td>
+      <td colspan=5> 
+        <input type="file" name="IMG" value="<$IMG_FILENAME>" maxlength="255" size=32>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>
+The object that you are uploading to the virtual shop will remain your
+property. You are giving Cybertown the right, without time limit, of use
+and of distribution to other members of this community. Cybertown does
+not grant the right to demand removal of objects already distributed.
+<p>
+<div align=center>
+    <input type="submit" name="upload" value="Accept & Upload Hold" width=100>
+    <input type=button name="back" value="Close" onClick="window.close()" width=100>
+</div>
+
+</form>
+
+<a name=details></a>
+<h3>Description of Holds</h3>
+<p>
+<B>Personal Holds:</B>:The second type of hold is a personal hold. A personal hold will cost 1000 CC's per 
+instance. Up to 10 instances allowed. You do not need to put any special markings on the object thumbnail and 
+the object does not have to be used for any special purpose.<P>
+
+<B>Picking up your hold:</B> Once you have uploaded your hold, check the message board for a message from a mall 
+checker. After your objects are checked and accepted you may collect them from any member of the mall staff.<P>
+<p>
+<a name=class></a>
+<b>Object classes:</b> The Mall Manager will specify a class for each uploaded object, based on the criteria of originality (How new/unique is the idea?) and sophistication (How difficult was it to create the object?). If an object exhibits both originality and sophistication, it is assigned to Class A. If it only exhibits one of the two characteristics, it is Class B; otherwise Class C.
+
+<p>
+<a name=explain></a>Below is a brief explanation of the fields in the Object Upload form.
+<br>
+<table border=1>
+  <tr> 
+    <td>Quantity:</td>
+    <td>The number of instances of your object hold that you require, i.e. the 
+      initial "inventory." There is a maximum of 10 for personal holds.</td>
+  </tr>
+  <tr> 
+    <td>VRML file:</td>
+    <td>Name of the local VRML file that represents your object.</td>
+  </tr>
+  <tr> 
+    <td>Texture file:</td>
+    <td>Name of a file for an optional texture that can be referenced by your 
+      VRML file. For instance if your Object has a wood texture, this is the name 
+      of the wood image file. It must be under 20 KB.<br>
+      Code Example: <i>ImageTexture { url ["./texture"] }</i></td>
+  </tr>
+  <tr> 
+    <td>Thumbnail:</td>
+    <td>Name of a .jpg file showing an image of the VR Object you are uploading. 
+      This image will be displayed to 2D users. It must be under 20 KB.</td>
+  </tr>
+</table>
+<br>
+The texture file is optional; all other fields must be filled in. After
+you have filled in the fields, click on <b>Upload</b>. If you change your mind,
+click on <b>Close</b>. 
+<p></p>
+<p>
+Notes:
+<ul>
+<li>Internet Explorer 3.x doesn't support file uploads.
+<li>The maximum VRML file size is <$so_max_size_wrl> KB. The "wrl" VRML format is required and you should zip the file.
+<li>For textures and thumbnails, the maximum file size is <$so_max_size_img> KB. The files
+must be in either jpg or gif format.
+<li>Uploaded objects will be positioned at "floor level" at the world's
+origin (0, -1.75, 0).
+<li>Try to create objects of "realistic" size, i.e. a table would be perhaps
+1 x 2 x 0.8 meters.
+
+</ul></body></html>
+

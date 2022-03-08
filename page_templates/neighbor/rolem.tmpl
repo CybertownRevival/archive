@@ -1,0 +1,71 @@
+<html>
+<head>
+<title><$g_title> - Neighborhood</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<H2><font color=#80ff00>Citizens working as <$ROLNAM> in <$NNAM></font></h2>
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<a href="neighbor<$g_exe>?ac=info&ID=<$NID>">
+<img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+
+<table>
+<tr>
+	<INPUT type=hidden NAME="KFT" VALUE="<$KFT>">
+	<INPUT type=hidden NAME="KFM" VALUE="<$KFM>">
+
+	<input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+	<!--input type="hidden" name="SORT" value="<$SORT>"-->
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="ROLNAM" value="<$KFT>">
+	<input type="hidden" name="NNAM" value="<$NNAM>">
+	<input type="hidden" name="NID" value="<$NID>">
+
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+</tr>
+</table>
+
+<table border=1>
+<tr>
+	<th><font color=#80ff00>Block</font></th>
+	<th><font color=#80ff00>Nickname</font></th>
+</tr>
+
+<!--#for loopname="role" loopvars="ID_" -->
+<tr>
+	<td>&nbsp &nbsp <A HREF="javascript:top.location.href='block<$g_exe>?ID=<$ID_ID_>'" target=top> <$ID_NAM_></a> &nbsp &nbsp</td>
+ 	<td>&nbsp &nbsp <A HREF="javascript:top.location.href='/home/<$NNM_>'" target=top> <$NNM_></A> &nbsp &nbsp</td>
+</tr>
+<!--#endfor loopname="role" -->
+</table>
+
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+</form>
+
+</body>
+</html>

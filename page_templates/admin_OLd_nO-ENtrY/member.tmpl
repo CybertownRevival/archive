@@ -1,0 +1,410 @@
+<!-- admin/member.tmpl -->
+<!-- edit member attributes -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.updateForm.EML.value = document.updateForm.EMK.value.toLowerCase();
+}
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Attributes for Member <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post action="<$selfurl>" name="updateForm" onSubmit="onSubmit()">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="M">
+    <input type=hidden name="KTY" value="ID">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <input type=hidden name="ID" value="<$ID>">
+    
+    <input type=hidden name="LAE" value="<$LAE>">
+    <input type=hidden name="LAM" value="<$LAM>">
+
+    <input type=hidden name="EML" value="<$EML>">
+    <input type=hidden name="EMI" value="<$EMI>">
+
+    <input type=hidden name="HOM" value="<$HOM>">
+    <input type=hidden name="NNK" value="<$NNK>">
+
+    <table border=0>
+        <tr>
+            <td align=right>Nickname:&nbsp;&nbsp;</td>
+            <!-- #ifndef variable="create" -->
+            <td colspan=3><font color=#80ff00><$NNM> (<$NNK>)</font></td>
+            <!-- #endif variable="create" -->
+            <!-- #ifdef variable="create" -->
+            <td colspan=3>
+                <input type="text" name="NNM" value="<$NNM>">
+            </td>
+            <!-- #endif variable="create" -->
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Firstname:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="FNM" VALUE="<$FNM>" MAXLENGTH=16 SIZE=16></td>
+            <td align=right>Lastname:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="LNM" VALUE="<$LNM>" MAXLENGTH=16 SIZE=16></td>
+        </tr>
+        <tr>
+            <td align=right>Email-address:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="EMK" VALUE="<$EMK>" MAXLENGTH=64 SIZE=32></td>
+        </tr>
+        <tr>
+            <td align=right>Email-address (key):&nbsp;&nbsp;</td>
+            <td colspan=3><font color=#80ff00><$EML></font></td>
+        </tr>
+        <tr>
+            <td align=right>Immigration Email-address:&nbsp;&nbsp;</td>
+            <td colspan=3><font color=#80ff00><$EMI></font></td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Password:&nbsp;&nbsp;</td>
+            <td><INPUT type=password NAME="PWD" VALUE="<$PWD>" SIZE=16></td>
+            <td align=right>Register-Key:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="RGK" VALUE="<$RGK>" MAXLENGTH=5 SIZE=5></td>
+        </tr>
+
+       <tr>
+        <td align=right>US -Parental consent received:&nbsp;&nbsp;</td>
+        <td align=right>
+        <input type="radio" name="KID" value="US"
+                    <!--#if variable="KID" == value="US"-->
+                        checked
+                    <!--#endif variable="KID" -->
+        >_no
+        <input type="radio" name="KID" value="US _yes"
+                    <!--#if variable="KID" == value="US _yes"-->
+                        checked
+                    <!--#endif variable="KID" -->
+        >_yes
+        <input type="radio" name="KID" value=""
+                    <!--#if variable="KID" == value=""-->
+                        checked
+                    <!--#endif variable="KID" -->
+        >_n/a
+        <input type="radio" name="KID" value="US _denied"
+                    <!--#if variable="KID" == value="US _denied"-->
+                        checked
+                    <!--#endif variable="KID" -->
+        >_denied
+        :&nbsp;&nbsp;<font color=#80ff00 size=1>(KID = "<$KID>")</font></td>
+        </tr>
+
+        <tr>
+            <td align=right>Referencing Member:&nbsp;&nbsp;</td>
+            <td><$REF></td>
+            <td>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Immigration Date:&nbsp;&nbsp;</td>
+            <!--#ifdef variable="IMD_YEAR" -->
+                <td colspan=3><font color=#80ff00>
+                    <$IMD_MDAY>.<$IMD_MON>.<$IMD_YEAR>&nbsp;&nbsp;
+                    <$IMD_HOUR>:<$IMD_MIN>:<$IMD_SEC></font>
+                </td>
+            <!--#endif variable="IMD_YEAR" -->
+            <!--#ifndef variable="IMD_YEAR" -->
+                <td colspan=3>&nbsp</td>
+            <!--#endif variable="IMD_YEAR" -->
+        </tr>
+        <tr>
+            <td align=right>Description:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ID_9TXT" VALUE="<$ID_9TXT>" MAXLENGTH=255 SIZE=32>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Immigration Info 1:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="IM1" VALUE="<$IM1>" MAXLENGTH=255 SIZE=32>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Immigration Info 1 - Comment:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ID_5IM3" VALUE="<$ID_5IM3>" MAXLENGTH=255 SIZE=32>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Immigration Info 2:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="IM2" VALUE="<$IM2>" MAXLENGTH=255 SIZE=32>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Age:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ID_6AGE" VALUE="<$ID_6AGE>" MAXLENGTH=8 SIZE=8>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Gender:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ID_7GND" VALUE="<$ID_7GND>" MAXLENGTH=16 SIZE=8>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Zip/Country Code:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ID_8ZIP" VALUE="<$ID_8ZIP>" MAXLENGTH=8 SIZE=6>
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Last Access Date:&nbsp;&nbsp;</td>
+            <!--#ifdef variable="LAD_YEAR" -->
+                <td colspan=3><font color=#80ff00>
+                    <$LAD_MDAY>.<$LAD_MON>.<$LAD_YEAR>&nbsp;&nbsp;
+                    <$LAD_HOUR>:<$LAD_MIN>:<$LAD_SEC></font>
+                </td>
+            <!--#endif variable="LAD_YEAR" -->
+            <!--#ifndef variable="LAD_YEAR" -->
+                <td colspan=3>&nbsp</td>
+            <!--#endif variable="LAD_YEAR" -->
+        </tr>
+        <tr>
+            <td align=right>Temporary Exclusion (until):&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <SELECT NAME="EXD_MDAY">
+                  <OPTION>
+                  <OPTION<$S01_EXD_MDAY>> 01
+                  <OPTION<$S02_EXD_MDAY>> 02
+                  <OPTION<$S03_EXD_MDAY>> 03
+                  <OPTION<$S04_EXD_MDAY>> 04
+                  <OPTION<$S05_EXD_MDAY>> 05
+                  <OPTION<$S06_EXD_MDAY>> 06
+                  <OPTION<$S07_EXD_MDAY>> 07
+                  <OPTION<$S08_EXD_MDAY>> 08
+                  <OPTION<$S09_EXD_MDAY>> 09
+                  <OPTION<$S10_EXD_MDAY>> 10
+                  <OPTION<$S11_EXD_MDAY>> 11
+                  <OPTION<$S12_EXD_MDAY>> 12
+                  <OPTION<$S13_EXD_MDAY>> 13
+                  <OPTION<$S14_EXD_MDAY>> 14
+                  <OPTION<$S15_EXD_MDAY>> 15
+                  <OPTION<$S16_EXD_MDAY>> 16
+                  <OPTION<$S17_EXD_MDAY>> 17
+                  <OPTION<$S18_EXD_MDAY>> 18
+                  <OPTION<$S19_EXD_MDAY>> 19
+                  <OPTION<$S20_EXD_MDAY>> 20
+                  <OPTION<$S21_EXD_MDAY>> 21
+                  <OPTION<$S22_EXD_MDAY>> 22
+                  <OPTION<$S23_EXD_MDAY>> 23
+                  <OPTION<$S24_EXD_MDAY>> 24
+                  <OPTION<$S25_EXD_MDAY>> 25
+                  <OPTION<$S26_EXD_MDAY>> 26
+                  <OPTION<$S27_EXD_MDAY>> 27
+                  <OPTION<$S28_EXD_MDAY>> 28
+                  <OPTION<$S29_EXD_MDAY>> 29
+                  <OPTION<$S30_EXD_MDAY>> 30
+                  <OPTION<$S31_EXD_MDAY>> 31
+                </SELECT>
+                <SELECT NAME="EXD_MON">
+                  <OPTION>
+                  <OPTION<$S01_EXD_MON> value="01"> Jan
+                  <OPTION<$S02_EXD_MON> value="02"> Feb
+                  <OPTION<$S03_EXD_MON> value="03"> Mar
+                  <OPTION<$S04_EXD_MON> value="04"> Apr
+                  <OPTION<$S05_EXD_MON> value="05"> May
+                  <OPTION<$S06_EXD_MON> value="06"> Jun
+                  <OPTION<$S07_EXD_MON> value="07"> Jul
+                  <OPTION<$S08_EXD_MON> value="08"> Aug
+                  <OPTION<$S09_EXD_MON> value="09"> Sep
+                  <OPTION<$S10_EXD_MON> value="10"> Oct
+                  <OPTION<$S11_EXD_MON> value="11"> Nov
+                  <OPTION<$S12_EXD_MON> value="12"> Dec
+                </SELECT>
+                <SELECT NAME="EXD_YEAR">
+                  <OPTION>
+                  <OPTION<$S1999_EXD_YEAR>> 1999
+                  <OPTION<$S2000_EXD_YEAR>> 2000
+                  <OPTION<$S2001_EXD_YEAR>> 2001
+                  <OPTION<$S2002_EXD_YEAR>> 2002
+                  <OPTION<$S2003_EXD_YEAR>> 2003
+			         <OPTION<$S2004_EXD_YEAR>> 2004
+			         <OPTION<$S2005_EXD_YEAR>> 2005
+			         <OPTION<$S2006_EXD_YEAR>> 2006
+			         <OPTION<$S2007_EXD_YEAR>> 2007
+			         <OPTION<$S2008_EXD_YEAR>> 2008
+			         <OPTION<$S2009_EXD_YEAR>> 2009
+			         <OPTION<$S2010_EXD_YEAR>> 2010
+                  
+                </SELECT>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Excluded from:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="ID_3EXM" VALUE="<$ID_3EXM>" MAXLENGTH=128 SIZE=16></td>
+            <td align=right>Reason:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="ID_4EXT" VALUE="<$ID_4EXT>" MAXLENGTH=128 SIZE=16></td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Money:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="MON" VALUE="<$MON>" MAXLENGTH=8 SIZE=8></td>
+            <td align=right>Number of Objects:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="NOB" VALUE="<$NOB>" MAXLENGTH=8 SIZE=8></td>
+        </tr>
+        <tr>
+            <td align=right>Experience:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="EXP" VALUE="<$EXP>" MAXLENGTH=8 SIZE=8></td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right><$PNM_CITY>:&nbsp;&nbsp;</td>
+            <td>
+                <a HREF="admin<$g_exe>?DTY=P&KTY=ID&KEY=<$HOM>&TPL=admin/home&ac=read" target=_self><$HOM_NAM></a>
+            </td>
+            <td>
+                <!--#ifdef variable="HOM_2TYP" -->
+                    <a HREF="admin<$g_exe>?DTY=U&KTY=ID&KEY=i<$HOM>P&TPL=admin/pimage&ac=read">Personal Images</a>
+                <!-- #endif variable="HOM_2TYP" -->
+                &nbsp;
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>News Letter:&nbsp;&nbsp;</td>
+            <td>
+                <input type="radio" name="ID_BNL" value="" 
+                    <!--#if variable="ID_BNL" != value="n"-->
+                        checked
+                    <!--#endif variable="ID_BNL" -->
+                >Yes
+                <input type="radio" name="ID_BNL" value="n"
+                    <!--#if variable="ID_BNL" == value="n"-->
+                        checked
+                    <!--#endif variable="ID_BNL" -->
+                >No
+            </td>
+            <td align=right>Start Instant Message:&nbsp;&nbsp;</td>
+            <td>
+                <input type="radio" name="ID_2IMS" value="" 
+                    <!--#if variable="ID_2IMS" != value="N"-->
+                        checked
+                    <!--#endif variable="ID_2IMS" -->
+                >Yes
+                <input type="radio" name="ID_2IMS" value="N"
+                    <!--#if variable="ID_2IMS" == value="N"-->
+                        checked
+                    <!--#endif variable="ID_2IMS" -->
+                >No
+            </td>
+        </tr>
+        <!-- tr>
+            <td align=right>Account Generated:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <input type="radio" name="GEN" value="1" 
+                    <!--#if variable="GEN" == value="1"-->
+                        checked
+                    <!--#endif variable="GEN" -->
+                >Yes
+                <input type="radio" name="GEN" value=""
+                    <!--#if variable="GEN" != value="1"-->
+                        checked
+                    <!--#endif variable="GEN" -->
+                >No
+            </td>
+        </tr -->
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Chat Type:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <select name="CHT">
+                    <option value=""
+                    <!--#ifdef variable="CHT" value=""-->
+                        selected
+                    <!--#endif variable="CHT" -->
+                    <!--#ifndef variable="CHT"-->
+                        selected
+                    <!--#endif variable="CHT" -->
+                    >None</option>
+                    <option value="l"
+                    <!--#ifdef variable="CHT" value="l"-->
+                        selected
+                    <!--#endif variable="CHT" -->
+                    >blaxxun Contact (HTML)</option>
+                    <option value="s"
+                    <!--#ifdef variable="CHT" value="s"-->
+                        selected
+                    <!--#endif variable="CHT" -->
+                    >blaxxun Contact (Java)</option>
+                    <option value="p"
+                    <!--#ifdef variable="CHT" value="p"-->
+                        selected
+                    <!--#endif variable="CHT" -->
+                    >blaxxun Contact (3D plugin)</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>User's Homepage:&nbsp;&nbsp;</td>
+            <td colspan=3><INPUT NAME="HPG" VALUE="<$HPG>" MAXLENGTH=128 SIZE=32></td>
+        </tr>
+    </table>
+    <br><br>
+
+    <table border=1>
+
+    <!--#for loopname="roles" loopvars="ROL_ITER_" -->
+        <!--#ifdef variable="ROL_BIT_TYP_" -->
+            <td nowrap><$ROL_BIT_NAM_></td>
+            <td>
+                <input type="checkbox" align="middle" name="ROL_BIT_<$ROL_ITER_>" <$ROL_BIT_>>
+            </td>
+            <input type=hidden name="ROL_BIT_TYP_<$ROL_ITER_>" value="<$ROL_BIT_TYP_>">
+        <!--#endif variable="ROL_BIT_TYP_" -->
+        <!--#ifndef variable="ROL_BIT_TYP_" -->
+            <input type="hidden" name="ROL_BIT_<$ROL_ITER_>" value="<$ROL_BIT_>"></td>
+        <!--#endif variable="ROL_BIT_TYP_" -->
+            <input type=hidden name="ROL_BIT_ID_R_<$ROL_ITER_>" value="<$ROL_BIT_ID_R_>">
+            <input type=hidden name="ROL_BIT_ID_W_<$ROL_ITER_>" value="<$ROL_BIT_ID_W_>">
+    <!-- #ifdef variable="ROL_3_" -->
+        </tr>
+    <!-- #endif variable="ROL_3_" -->
+    <!--#endfor loopname="roles" -->
+
+    </table>
+<br>    
+    <a HREF="admin<$g_exe>?DTY=RM&KTY=NNK&KFT=<$NNK>&TPL=admin/jobsowned&ac=list">List all Jobs</a><br>
+<br>
+    <input type=submit name="editrolem" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

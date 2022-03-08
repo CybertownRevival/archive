@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<!-- property/info.tmpl -->
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifdef variable="TXT" -->
+<!--<pre>-->
+<$TXT>
+<!--</pre>-->
+
+<!-- #endif variable="TXT" -->
+<!-- #ifndef variable="TXT" -->
+<div align=center>
+<h2><$PNM> '<$NAM>'</h2>
+<p>Welcome to this nice home!</p>
+<p><i>This is the default information ...</i></p>
+<!-- #endif variable="TXT" -->
+
+<BODY>
+</HTML>

@@ -1,0 +1,46 @@
+<!-- property/place.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+</head>
+
+<!-- #ifdef variable="chatno" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>property/present.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</body>
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>property/present.tmpl" -->
+<div align=center>
+<!-- #define variable="isProperty" value="1" -->
+<!-- #include virtual="<$g_Templates>common/javachat.tmpl" -->
+<script language=javascript>
+var neighborid = '<$ID>';
+neighborid = neighborid.substring(0,8);
+if (neighborid == '01020206') {
+document.write('<a href="javascript:loadInfo(\'http://www.seti.org\')" target=_self><IMG SRC="<$g_Images>/images/clubs/SETI/setimainban.gif" alt="SETI Institute Online" border=0></a><br>');
+}
+</script>
+</div>
+
+<SCRIPT LANGUAGE="JavaScript">  
+showbanner();  
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+
+</body>
+<!-- #endif variable="chatstd" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>property/place3d.tmpl" -->
+<!-- #endif variable="chatpro" -->
+</html>

@@ -1,0 +1,43 @@
+<!-- #ifdef variable="msbpostallowed" -->
+<!-- #include virtual="<$g_Templates>msb/nopostpriv.tmpl" -->
+
+<!-- #ifndef variable="newallowedtopost" -->
+	<!-- #define variable="newallowedtopost" == value="1" -->		
+<!-- #endif variable="newallowedtopost" -->	
+	
+<!-- #endif variable="msbpostallowed" -->
+
+
+<!-- #ifdef variable="msbreadallowed" -->
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+<frameset rows="65%,*" border=1>
+	<frame name="overview" src="msb<$g_exe>?ac=listhdr&DTY=<$DTY>&KTY=ID&KEY=<$KEY>&MTY=i" scrolling="auto">
+	<frame name="detail" src="<$g_HTMLRoot>/blank.html" scrolling="auto">
+</frameset>
+</head>
+</html>
+<!-- #endif variable="msbreadallowed" -->
+
+<!-- #ifndef variable="msbreadallowed" -->
+
+<!-- #ifdef variable="newallowedtopost" value="1" -->
+<!-- #include virtual="<$g_Templates>inb/write.tmpl" -->
+<!-- #endif variable="newallowedtopost"-->
+
+<!-- #ifndef variable="newallowedtopost" value="1" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align=center>Inbox</h2>
+<p align=center>Sorry, <$NNM>, you are not allowed to read or post a message here ...</p>
+<!-- #endif variable="newallowedtopost"-->
+
+<!-- #endif variable="msbreadallowed" -->
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!-- msserver/cityguide.tmpl -->
+<HTML>
+<HEAD>
+<TITLE>Call a Guide</TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="javascript">
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+
+
+function onSubmit()
+
+{
+
+        document.MSG.TEXT.value = "GUIDE CALL: "+document.MSG.TEXT.value;  
+
+}
+
+//-->
+
+</SCRIPT>
+<BODY onLoad="document.MSG.TEXT.focus();" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<H3>Call a City Guide</H3>
+
+Need a Guide? Contact the online City Guides for assistance using the form below.
+<br>Please make sure that you provide the Guide with your location.<br>
+(PLEASE NOTE: abuse of this function will get you reported to Security)</b><br>
+<FORM NAME=MSG METHOD=GET ACTION="<$g_cgiRoot>/message<$g_exe>" onSubmit="onSubmit()">
+<INPUT TYPE=HIDDEN NAME="TPL" value="<$TPL>">
+<INPUT TYPE=HIDDEN NAME="TKT" value="<$TKT>">
+<INPUT TYPE=HIDDEN NAME="ac" value="postmessage">
+<INPUT TYPE=HIDDEN NAME="ROL" value="CityGuideRole">
+<INPUT NAME="TEXT" VALUE="I need a City Guide. You can find me at the..." MAXLENGTH=116 SIZE=52>
+<INPUT TYPE=SUBMIT NAME=SUBMIT value=Send>
+<INPUT TYPE=BUTTON NAME=Close VALUE=Close onClick="doClose()">
+</FORM>
+<!-- #if variable="FOUND" == value="0" -->
+There are no City Guides online. Please send an email to 
+<A HREF="mailto:help@cybertown.com">help@cybertown.com</A>
+<!-- #endif variable="FOUND" -->
+<!-- #if variable="FOUND" == value="1" -->
+1 City Guide reached.
+<!-- #endif variable="FOUND" -->
+<!-- #if variable="FOUND" >= value="2" -->
+<$FOUND> City Guides reached.
+<!-- #endif variable="FOUND" -->
+
+</BODY>
+</HTML>
+
+
+
+

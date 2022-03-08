@@ -1,0 +1,55 @@
+<!-- blackmarket/controlend.tmpl -->
+<!-- included in action.tmpl, table starts in control.tmpl -->
+</div>
+<MAP Name="bmmap">
+
+<area shape="rect" coords="31,45,73,67" href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=s" title="2D Chat" target=place>
+<area shape="rect" coords="80,45,122,67" href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=p" title="3D Chat" target=place>
+
+
+    <AREA Shape="rect" coords = "30,112,122,127"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+	<AREA Shape="rect" coords = "29,131,113,145" HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')"
+ ALT="How Do I?" target=_self>
+
+<!-- #ifndef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "29,149,104,165"  HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "29,149,104,165"  HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "30,170,112,185"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "30,170,112,185"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+<!-- #ifdef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "30,170,112,185"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="ac" -->
+<!-- #ifndef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "30,170,112,185"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="ac" -->
+<!-- #endif variable="HOM" -->
+
+<AREA Shape="rect" coords = "31,190,110,206"  HREF="javascript:loadInfo('/info/helpinfo.html')" ALT="Help/Info" target=_self>
+ 
+<!-- #ifndef variable="T_LDT" -->
+<AREA Shape="rect" coords = "29,210,111,224"  HREF="javascript:loadInfo('<$g_HTMLRoot>/cgi-bin/cybertown/cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=c')" ALT="Activities" target=_self>
+<!-- #endif variable="T_LDT" -->
+<!-- #ifdef variable="T_LDT" -->
+<AREA Shape="rect" coords = "29,210,111,224"  HREF="javascript:loadInfo('<$g_HTMLRoot>/cgi-bin/cybertown/cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=c&LDT=<$T_LDT>&LID=<$ID>')" ALT="Activities" target=_self>
+<!-- #endif variable="T_LDT" -->    
+    
+  <area shape="rect" coords="29,230,118,243" HREF="javascript:loadInfo('http://www.virtualsolarsystem.com/venus/florence')" target="_self" alt="Quick Start">
+<area shape="rect" coords="28,248,113,262" HREF="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=msb/feedback')" target="_self" alt="Feedback Board">
+
+<AREA Shape="rect" coords = "30,269,106,284"  HREF="javascript:loadCustom('<$gHTMLRoot>/tour/intro.htm',520,400)" ALT="City Tour" target=_self>
+
+	<AREA Shape="rect" coords = "29,288,106,304"  HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+</MAP>
+</form>
+<!-- end of include controlend.tmpl -->

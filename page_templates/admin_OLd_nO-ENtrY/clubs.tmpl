@@ -1,0 +1,185 @@
+<!-- admin/clubs.tmpl -->
+<!-- list clubs -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2><font color=#80ff00>Clubs defined in Database</font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    Filter for <$KTY>:&nbsp;&nbsp;
+    <INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+    <tr>
+        <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+        <!--#ifdef variable="[PREV]" -->
+            <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <td>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </td>
+
+    </tr>
+    </table>
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <!--#ifdef variable="[PREV]" -->
+        <input type="hidden" name="[PREV]" value="<$[PREV]>">
+    <!--#endif variable="[PREV]" -->
+    <!--#ifdef variable="[NEXT]" -->
+    <input type="hidden" name="[NEXT]" value="<$[NEXT]>">
+    <!--#endif variable="[NEXT]" -->
+    
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="KEY" value="<$KEY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <!--#ifndef variable="info" -->
+        <input type="hidden" name="info" value="1">
+        <input type="submit" value="Show Information Objects" >
+    <!--#endif variable="info" -->
+    <!--#ifdef variable="info" -->
+        <input type="submit" value="Hide Information Objects" >
+    <!--#endif variable="info" -->
+</form>
+<br>
+
+<table border=1>
+<tr>
+    <th><font color=#80ff00>ID</th>
+    <th><font color=#80ff00>Name</th>
+    <th><font color=#80ff00>Members</th>
+    <th><font color=#80ff00>Group</th>
+    <!--#ifdef variable="info" -->
+        <th><font color=#80ff00>Information Objects</th>
+    <!--#endif variable="info" -->
+</tr>
+<!--#for loopname="club" loopvars="ID_" -->
+<tr>
+    <td>
+        <A HREF="admin<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&TPL=admin/club&ac=read" target=_self><$ID_></a>
+    </td>
+    <td>&nbsp;
+        <!--#ifdef variable="NAM_" -->
+            <$NAM_>
+        <!--#endif variable="NAM_" -->
+    </td>   
+    <td align=right>&nbsp;&nbsp;
+        <a HREF="admin<$g_exe>?DTY=CM&KTY=ID&KFT=<$ID_>cm*&TPL=admin/clubmems&ac=list">
+            <$CNT_>&nbsp;Members
+        </a>&nbsp;&nbsp;
+    </td>
+    <td>&nbsp;
+        <a HREF="admin<$g_exe>?DTY=G&KTY=ID&KEY=<$GID_>&TPL=admin/group&ac=read"><$GID_NNM_></a>
+    </td>
+    <!--#ifdef variable="info" -->
+    <td>
+        <table>
+        <tr>
+            <td align=center nowrap width=150>
+                <!--#ifdef variable="ID_ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=m<$ID_>&TPL=admin/info&ac=read&info=msb&msb=1">Message Board</a>
+                <!--#endif variable="ID_ID_" -->
+                <!--#ifndef variable="ID_ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&TPL=admin/info&ac=showcreate&info=msb&msb=1&KLEN=0&POST=m<$ID_>&TKT=<$TKT>">Create Message Board</a>
+                <!--#endif variable="ID_ID_" -->
+            </td>
+            <td align=center nowrap width=130>
+                <!--#ifdef variable="ID_2ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=i<$ID_>&TPL=admin/info&ac=read&info=inb&inb=1">Inbox</a>
+                <!--#endif variable="ID_2ID_" -->
+                <!--#ifndef variable="ID_2ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&TPL=admin/info&ac=showcreate&info=inb&inb=1&KLEN=0&POST=i<$ID_>&TKT=<$TKT>">Create Inbox</a>
+                <!--#endif variable="ID_2ID_" -->
+            </td>
+            <td align=center nowrap rowspan=2 valign=center>
+                <!--#ifdef variable="ID_5ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=h<$ID_>&TPL=admin/info&ac=read&info=cht&cht=1">Chat</a>
+                <!--#endif variable="ID_5ID_" -->
+                <!--#ifndef variable="ID_5ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&TPL=admin/info&ac=showcreate&info=cht&cht=1&KLEN=0&POST=h<$ID_>&TKT=<$TKT>">Create Chat</a>
+                <!--#endif variable="ID_5ID_" -->
+            </td>
+        </tr>
+        <tr>
+            <td align=center nowrap>
+                <!--#ifdef variable="ID_3ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=l<$ID_>&TPL=admin/info&ac=read&info=lnk&lnk=1">Link Library</a>
+                <!--#endif variable="ID_3ID_" -->
+                <!--#ifndef variable="ID_3ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&TPL=admin/info&ac=showcreate&info=lnk&lnk=1&KLEN=0&POST=l<$ID_>&TKT=<$TKT>">Create Link Library</a>
+                <!--#endif variable="ID_3ID_" -->
+            </td>
+            <td align=center nowrap>
+                <!--#ifdef variable="ID_4ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&KEY=c<$ID_>&TPL=admin/info&ac=read&info=cal&cal=1">Calendar</a>
+                <!--#endif variable="ID_4ID_" -->
+                <!--#ifndef variable="ID_4ID_" -->
+                    <a HREF="admin<$g_exe>?DTY=I&KTY=ID&TPL=admin/info&ac=showcreate&info=cal&cal=1&KLEN=0&POST=c<$ID_>&TKT=<$TKT>">Create Calendar</a>
+                <!--#endif variable="ID_4ID_" -->
+            </td>
+        </tr>
+        </table>
+    </td>
+    <!--#endif variable="info" -->
+</tr>
+<!--#endfor loopname="club" -->
+</table>
+<br>
+Total number of clubs: <$TCN><br>
+Statistcs upbdated: <$UDD_MDAY>.<$UDD_MON>.<$UDD_YEAR> <$UDD_HOUR>:<$UDD_MIN><br>
+<br>
+</body>
+</html>

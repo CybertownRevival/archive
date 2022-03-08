@@ -1,0 +1,128 @@
+<!-- admin/sharedobj.tmpl -->
+<!-- update attributes for shared objects -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.updateForm.OWN_NNK.value 
+     = document.updateForm.OWN_NNK.value.toLowerCase();
+
+    document.updateForm.BUY_NNK.value 
+     = document.updateForm.BUY_NNK.value.toLowerCase();
+}
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for Shared Object <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new Shared Object <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+    
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form name="updateForm" method=post action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="ac" value="<$ac>">
+
+    <input type=hidden name="ID" value="<$ID>">
+
+    <table>
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32>
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>    
+            <td align=right>Categorie:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <SELECT NAME="CAT">
+                <!--#for loopname="categories" loopvars="CAT_ID_" -->
+                    <option value="<$CAT_ID_>" <$CAT_SEL_>><$CAT_NAME_></option>                    
+                <!--#endfor loopname="categories" -->
+                </SELECT>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Owner:&nbsp;&nbsp;</td>
+            <td>
+                <INPUT NAME="OWN_NNK" VALUE="<$OWN_2NNM>" MAXLENGTH=16 SIZE=16>
+            </td>
+            <td align=right>Buyer:&nbsp;&nbsp;</td>
+            <td>
+                <INPUT NAME="BUY_NNK" VALUE="<$BUY_2NNM>" MAXLENGTH=16 SIZE=16>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Number of Items:&nbsp;&nbsp;</td>
+            <td>
+                <INPUT NAME="CNT" VALUE="<$CNT>" MAXLENGTH=8 SIZE=8>
+            </td>
+            <td align=right>Price:&nbsp;&nbsp;</td>
+            <td>
+                <INPUT NAME="TPR" VALUE="<$TPR>" MAXLENGTH=10 SIZE=10>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Number of Actions:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="NAC" VALUE="<$NAC>" MAXLENGTH=8 SIZE=8>
+            </td>
+        </tr>
+        <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+        <tr>    
+            <td align=right>Zone:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="ZON" VALUE="<$ZON>" MAXLENGTH=32 SIZE=32>
+            </td>
+        </tr>
+        <tr>    
+            <td align=right>Hidden:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <INPUT NAME="HID" VALUE="<$HID>" MAXLENGTH=2 SIZE=1>
+            </td>
+        </tr>
+</table>
+<br>
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+</body>
+</html>
+

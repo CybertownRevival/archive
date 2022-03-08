@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Update Wizard for <$ENM> '<$NAM>'</b>
+</p>
+
+<p align=center><small>
+Click the <b><$BNM></b> you want to update.<br>
+Change the 
+<a href="neighbor<$g_exe>?ac=wizardimage&ID=<$ID>" target="place">background image</a>
+for this <b><$ENM></b>.
+</small></p>
+
+<p align=center>
+<b>Update Neighborhood Layout</b>
+</p>
+<table align=center border=0>
+<tr><td>
+<script language=javascript>
+function setchat()
+{
+ if( document.iform.C.checked )
+  document.iform.CHAT.value = "1";
+ else
+  document.iform.CHAT.value = "";
+}
+</script>
+<form name=iform method=post action="./print<$g_exe>" target="_self" onSubmit="setchat()">
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="ID" value="<$ID>">
+<input type=hidden name="CHAT" value="<$CHAT>">
+<input type=hidden name="TPL" value="neighbor/wizard/layout">
+
+<p>Body tag (default contains map image as background image):<br>
+  <input type="text" name="TXT2" value="<$TXT2>" size=64 maxlength=4000>
+</p>
+<p>Font color of block links (e.g. #ff0000):<br>
+  <input type="text" name="COL" value="<$COL>" size=64 maxlength=64>
+</p>
+<p>Information text below map:<br>
+  <textarea name="TXT" cols="48" rows="8" wrap=physical><$TXT></textarea>
+</p>
+<p><input type="checkbox" name="C" value=1
+<!-- #if variable="CHAT" != value="" -->
+checked
+<!-- #endif variable="CHAT" != value="" -->
+>Show Javachat
+</p>
+<input type=submit value=Update>
+</form>
+</td></tr></table>
+
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+
+<BODY>
+</HTML>

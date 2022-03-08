@@ -1,0 +1,97 @@
+<!-- admin/pimage.tmpl -->
+<!-- update personal image -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Personal Image <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form name="updateForm" method=post action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <table>
+        <tr>
+            <td>
+                <table border=0>
+                    <tr>
+                        <td align=right>Name:&nbsp;</td>
+                        <td colspan=3><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=24></td>
+                    </tr>
+                    <tr>
+                        <td align=right>Status:&nbsp;</td>
+                        <td>
+                            <SELECT NAME="STT">
+                                <option value="">unlocked</option>
+                                <option value="l"
+                                <!--#ifdef variable="STT" value="l"-->
+                                    selected
+                                <!--#endif variable="STT" -->
+                                >locked</option>
+                            </SELECT>
+                        </td>
+                        <td align=right>Owner:&nbsp;</td>
+                        <td>
+                            <A HREF="admin<$g_exe>?DTY=M&KTY=ID&KEY=<$OWN>&TPL=admin/member&ac=read" target=_self><$OWN_NNM></A>
+                        </td>
+                    </tr>
+                    <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+                    <tr>
+                        <td align=right>Filename:&nbsp;</td>
+                        <td colspan=3><INPUT NAME="FIL" VALUE="<$FIL>" MAXLENGTH=64 SIZE=24></td>
+                    </tr>
+                    <tr>
+                        <td align=right>Mime-Type:&nbsp;</td>
+                        <td colspan=3><INPUT NAME="TYP" VALUE="<$TYP>" MAXLENGTH=32 SIZE=16></td>
+                    </tr>
+                    <tr><td colspan=4><font size=-2>&nbsp;</font></td></tr>
+                </table>
+            </td>
+            <td valign=top>
+                <img src="property<$g_exe>?ac=print&ID=<$OWN_2HOM>&type=P&index=&media=i" border=0 width=150>
+            </td>
+        </tr>
+    </table>
+
+    <input type=hidden name="TXT" value="<$TXT>">
+    <input type=hidden name="PRC" value="<$PRC>">
+    <input type=hidden name="CST" value="<$CST>">
+    <input type=hidden name="NNM" value="<$NNM>">
+
+<br>
+    <input type=submit name="edit" value="Update" width=100>
+    <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

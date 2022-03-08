@@ -1,0 +1,1005 @@
+
+<!-- #if variable="ZON" !contains value="000000000044"-->
+
+<!-- #ifdef variable="T_BUY2" -->
+	<html>
+	<head>
+	<title>blaxxun - Object</title>
+	<script language="javascript">
+	function doClose()
+	{
+  	if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    	alert("Please close the window by clicking on the X in the upper right corner.");
+	  else
+    	parent.close();
+	}
+	var broughtone = 0	
+	function doBuy()
+	{
+	}
+	function Buyoneonly()
+	{
+
+	}
+	</script>
+	</head>
+	
+	<!-- object/display.tmpl -->
+	
+	<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+	<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+	
+	<div align=center>
+	<h2>Object Properties</h2>
+	
+	
+	<br>
+
+  	<h2>Congratulations, the object <$NAM> is now yours!</h2>
+
+
+	<table border=0>
+	
+	<tr>
+	<!-- #ifdef variable="IMG" -->
+  	<td><IMG SRC="<$IMG>"></td>
+	<!-- #endif variable="IMG" -->
+	<!-- #ifndef variable="IMG" -->
+	  <td></td>
+	<!-- #endif variable="IMG" -->
+	
+	<td rowspan=2>
+	<!-- #ifdef variable="ZONSELF" -->
+	<$NAM> is currently in your possession.<br>
+	<!-- #endif variable="ZONSELF" -->
+	<!-- #ifdef variable="ZONNNM" -->
+	<$NAM> is currently in <$ZONNNM>'s possession.<br>
+	<!-- #endif variable="ZONNNM" -->
+	<!-- #ifdef variable="ZONNAM" -->
+	<$NAM> is currently located in the
+	<!-- #if variable="T_OWN" != value="" -->
+	Storage Area "<$ZONNAM>" of <$T_OWN><br>
+	<!-- #else variable="T_OWN" -->
+	<$ZONNAM>.<br>
+	<!-- #endif variable="T_OWN" -->
+	<!-- #endif variable="ZONNAM" -->
+	
+	<!-- #ifdef variable="CNT" value="00000000"-->
+	There are none available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifdef variable="CNT" value="00000001"-->
+	There is 1 still available.<br>
+	<!-- #define variable="intCNTprinted" value="true"-->
+	<!-- #endif variable="CNT" -->
+	<!-- #ifndef variable="intCNTprinted"-->
+	<!-- #ifdef variable="intCNT"-->
+	There are <$intCNT> still available.<br>
+	<!-- #endif variable="intCNT" -->
+	<!-- #endif variable="intCNTprinted" -->
+	
+	<!-- #ifdef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	One costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	<!-- #ifndef variable="intCNT" -->
+	<!-- #ifdef variable="TPR" -->
+	This object costs <$TPR> CCs.<br>
+	<!-- #endif variable="TPR" -->
+	<!-- #endif variable="intCNT" -->
+	
+	<br>
+  	You have <$M_MON> CCs at the moment.<br>
+	<br>
+
+	<!-- #ifdef variable="CRE" -->
+	The object was created by <$CRE_NNM>.<br>
+	<!-- #endif variable="CRE" -->
+	<$TXT>
+	<!-- #ifdef variable="WRL" -->
+	Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&CAT=<$CAT>&ID=<$ID>">here</a> for the 3D VRML representation.
+	<!-- #endif variable="WRL" -->
+	
+	</td>
+	</tr>
+	
+	<tr>
+	<td align=center><$NAM></td>
+	</tr>
+	
+	</table>
+
+	<!-- #ifdef variable="ALLATTR" -->
+  	<tr>
+	  <td>Object ID</td>
+  	<td><$ID></td>
+	  </tr>
+  	<tr>
+	  <td>Object Category</td>
+  	<td><$CAT></td>
+	  </tr>
+  	<tr>
+	  <td>Object Owner</td>
+  	<td><$OWN></td>
+	  </tr>
+	<!-- #endif variable="ALLATTR" -->
+
+	<p>
+	</table>
+	<table><tr>
+	
+	
+	<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+	</tr></table>
+	
+	</p>
+	</div>
+	<!-- #ifdef variable="IWOS_TXT" -->
+  	<p><$IWOS_TXT></p>
+	<!-- #endif variable="IWOS_TXT" -->
+	
+	<script language=javascript>
+	focus();
+	</script>
+	</body>
+	</html>
+<!-- #endif variable="T_BUY2" -->
+<!-- #ifndef variable="T_BUY2" -->
+<!-- #ifdef variable="T_BUYIF" -->
+<!-- #ifndef variable="T_BUY99" -->
+<html>
+<head>
+<title>blaxxun - Object</title>
+<script language="javascript">
+	function doClose()
+	{
+  	if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    	alert("Please close the window by clicking on the X in the upper right corner.");
+	  else
+    	parent.close();
+	}
+	broughtone = 0;
+	bnob = <$M_NOB>;
+	function doBuy()
+	{
+			document.forms['letsbuy'].gobuy.onClick="Buyoneonly()";
+			if ( broughtone == 0) 
+			{
+				
+				broughtone = 1;
+				<!-- #if variable="oldac" != value="BUY" -->
+				parent.bottom.location.replace("object?ac=buy&ID=<$ID>&TKT=<$TKT>&PLC=<$PLC>&TPL=object/newbuy&T_BUY=yes");
+				<!-- #endif variable="oldac" -->
+				
+			}
+	}
+
+	function doBuy2()
+	{
+			document.forms['letsbuy'].gobuy2.onClick="Buyoneonly()";	
+			if ( broughtone == 0) 
+			{	
+				broughtone = 1;
+				<!-- #if variable="oldac" != value="BUY" -->
+				parent.bottom.location.replace("object?ac=buy&ID=<$ID>&TKT=<$TKT>&PLC=<$PLC>&TPL=object/newbuy&T_BUY=yes");
+				<!-- #endif variable="oldac" -->
+			}
+	}
+	
+	function Buyoneonly()
+	{
+	alert("goaway!");
+	}
+</script>
+</head>
+
+<!-- object/display.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<!-- #ifdef variable="buyrequested" -->
+<h2>Object Buy</h2>
+<!-- #endif variable="buyrequested" -->
+<!-- #ifndef variable="buyrequested" -->
+<h2>Object Properties</h2>
+
+	
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifdef variable="oldac" value="buy" After a buy we want to confirm it -->
+  <h2>Congratulations, the object <$NAM> is now yours!</h2>
+<!-- #endif variable="oldac" -->
+
+<!-- #ifdef variable="takerequested" -->
+  <h2>Congratulations, the object <$NAM> is now yours!</h2>
+<!-- #endif variable="takerequested" -->
+
+<!-- #ifdef variable="oldac" value="edit" After an edit we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="refill" After a refill we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+
+<table border=0>
+
+<tr>
+<!-- #ifdef variable="IMG" -->
+  <td><IMG SRC="<$IMG>"></td>
+<!-- #endif variable="IMG" -->
+<!-- #ifndef variable="IMG" -->
+  <td></td>
+<!-- #endif variable="IMG" -->
+
+<td rowspan=2>
+<!-- #ifdef variable="ZONSELF" -->
+<$NAM> is currently in your possession.<br>
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="ZONNNM" -->
+<$NAM> is currently in <$ZONNNM>'s possession.<br>
+<!-- #endif variable="ZONNNM" -->
+<!-- #ifdef variable="ZONNAM" -->
+<$NAM> is currently located in the
+<!-- #if variable="T_OWN" != value="" -->
+Storage Area "<$ZONNAM>" of <$T_OWN><br>
+<!-- #else variable="T_OWN" -->
+<$ZONNAM>.<br>
+<!-- #endif variable="T_OWN" -->
+<!-- #endif variable="ZONNAM" -->
+
+<!-- #ifdef variable="CNT" value="00000000"-->
+There are none available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="CNT" value="00000001"-->
+There is 1 still available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="intCNTprinted"-->
+<!-- #ifdef variable="intCNT"-->
+There are <$intCNT> still available.<br>
+<!-- #endif variable="intCNT" -->
+<!-- #endif variable="intCNTprinted" -->
+
+<!-- #ifdef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+One costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+<!-- #ifndef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+This object costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+
+<br>
+  You have <$M_MON> CCs at the moment.<br>
+<br>
+
+<!-- #ifdef variable="CRE" -->
+The object was created by <$CRE_NNM>.<br>
+<!-- #endif variable="CRE" -->
+<$TXT>
+<!-- #ifdef variable="WRL" -->
+Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&CAT=<$CAT>&ID=<$ID>">here</a> for the 3D VRML representation.
+<!-- #endif variable="WRL" -->
+
+</td>
+</tr>
+
+<tr>
+<td align=center><$NAM></td>
+</tr>
+
+</table>
+
+<!-- #ifdef variable="ALLATTR" -->
+  <tr>
+  <td>Object ID</td>
+  <td><$ID></td>
+  </tr>
+  <tr>
+  <td>Object Category</td>
+  <td><$CAT></td>
+  </tr>
+  <tr>
+  <td>Object Owner</td>
+  <td><$OWN></td>
+  </tr>
+<!-- #endif variable="ALLATTR" -->
+
+<p>
+</table>
+<table><tr>
+
+<!-- #ifdef variable="buyrequested" -->
+<!-- #ifdef variable="buyallowed" -->
+<form name="letsbuy" action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TPL" value="object/newbuy">
+  <input type="hidden" name="T_BUY" value="yes">
+  <input type="hidden" name="ac" value="buy">
+
+
+  <td><input type="button" name="gobuy" value="Buy" onClick="doBuy()"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+
+</form>
+<!-- #endif variable="buyallowed" -->
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifndef variable="buyrequested" -->
+
+<!-- #ifndef variable="editallowed" -->
+<!-- #ifdef variable="CNT" -->
+<!-- #if variable="NNM" == variable="CRE_NNM" -->
+<td colspan=3>You can increase the quantity:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="refill">
+  <input type="hidden" name="T_BUYIF" value="yes">
+  <tr>
+  <td>Quantity</td>
+  <td><input name="intCNT" value="<$intCNT>" maxlength=4 size=4></td>
+  </tr><tr>
+  <td><input type=submit name="submit" value="Increase"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+  <td width=64>&nbsp;</td>
+  </tr>
+</form>
+<!-- #endif variable="NNM" -->
+<!-- #if variable="NNM" != variable="CRE_NNM" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="NNM" -->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="CNT" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="CNT" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<td colspan=3>You can edit the values:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="edit">
+  <tr>
+  <td>Name</td>
+  <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+  </tr><tr>
+  <td>Price</td>
+  <td><INPUT NAME="TPR" VALUE="<$TPR>" MAXLENGTH=4 SIZE=8></td>
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+  <td>Quantity</td>
+  <td><INPUT NAME="intCNT" VALUE="<$intCNT>" MAXLENGTH=4 SIZE=4></td>
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="ZONSELF" -->
+  </tr><tr>
+  <td>Buyer</td>
+  <td><INPUT NAME="BUY" VALUE="<$BUY>" MAXLENGTH=16 SIZE=16></td>
+<!-- #else variable="ZONSELF" -->
+<!-- #if variable="T_OWN" != value="" -->
+  </tr><tr>
+  <td>Buyer</td>
+  <td><INPUT NAME="BUY" VALUE="<$BUY>" MAXLENGTH=16 SIZE=16></td>
+<!-- #endif variable="T_OWN" -->
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+ 
+<!-- #endif variable="CNT" -->
+  </tr><tr>
+  <td><input type="hidden" name="T_BUYIF" value="yes">
+  		<input type=submit name="submit" value="Change"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+</form>
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="buy" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="buyallowed" -->
+<!-- #if variable="T_OWN" == value="" -->
+<form name="letsbuy" action="<$selfurl>" name="method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TPL" value="object/newbuy">  
+  <input type="hidden" name="T_BUY" value="yes">
+  <input type="hidden" name="ac" value="buy">
+
+  </tr><tr><td colspan=3>&nbsp;</td></tr><tr>
+  <td colspan=3>You can buy the object:</td>
+  </tr><tr>
+  <td colspan=3><input type="button" name="gobuy2" value="Buy"  onClick="doBuy2()"></td>
+
+</form>
+<!-- #endif variable="T_OWN" == "" -->
+<!-- #endif variable="buyallowed" -->
+
+<!-- #if variable="BUY" == variable="MEM_NNM" -->
+<!-- #if variable="TPR" == value="" -->
+<!-- #ifdef variable="T_OWN" -->
+<form action="./print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="T_OWN" value="<$T_OWN>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="TPL" value="object/storagetake2bp">
+  </tr><tr><td colspan=3>&nbsp;</td></tr><tr>
+ <td colspan=3>You can take the object:</td>
+  </tr><tr>
+  <td colspan=3><input type="hidden" name="T_BUYIF" value="yes"><input type=submit name="submit" value="Take"></td>
+
+
+</form>
+<!-- #endif variable="T_OWN" == "" -->
+<!-- #endif variable="TPR" == value="" -->
+<!-- #endif variable="BUY" == value="<$MEM_ID>" -->
+
+<!-- #endif variable="buyrequested" -->
+</tr></table>
+
+</p>
+</div>
+<!-- #ifdef variable="IWOS_TXT" -->
+  <p><$IWOS_TXT></p>
+<!-- #endif variable="IWOS_TXT" -->
+
+<!-- #ifndef variable="buyrequested" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifdef variable="ZONSELF" -->
+<p>
+<b>Price:</b>
+If you set a price the object can be bought from you by other
+members.
+</p>
+<p>
+<b>Buyer:</b>
+If you also set a buyer, then only the member with that nickname
+can buy it from you.
+</p>
+<!-- #endif variable="ZONSELF" -->
+<!-- #endif variable="editallowed" -->
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="buyrequested" -->
+ 
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+<!-- #endif variable="T_BUY99" -->
+<!-- #ifdef variable="T_BUY99" -->
+<html>
+<head>
+<title>blaxxun - Object Error</title>
+</head>
+
+<!-- object/error.tmpl -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<h2>Object Error</h2>
+<$T_CKerr>
+<!-- #if variable="T_CKerr" == value="001" -->
+Sorry!
+<P>
+The shared object program was called without a valid object id.
+The ID given was "<$ID>".
+<!-- #endif variable="soerror0001" -->
+
+<!-- #if variable="T_CKerr" == value="002" -->
+Sorry!
+<P>
+You are not allowed to edit the object with ID "<$ID>".
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="003" -->
+Sorry!
+<P>
+Sorry you can only drop objects that belong to you.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="004" -->
+Sorry!
+<P>
+Sorry you do not have permission to drop objects into the place.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="005" -->
+Sorry!
+<P>
+You have to enter the place the object is in before you can buy the
+object.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="006" -->
+Sorry!
+<P>
+Sorry, you do not have enough funds to buy the object.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="007" -->
+Sorry!
+<P>
+The object is not for sale anymore.
+<!-- #endif variable="T_CKerr" -->
+
+
+<!-- #if variable="T_CKerr" == value="008" -->
+Sorry!
+<P>
+You cannot buy the object because you already have to many objects in
+your possession. Delete or Drop some of your objects and try again.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="009" -->
+Sorry!
+<P>You cannot take the object because you already have to many objects in
+your possession. Delete or Drop some of your objects and try again.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="010" -->
+Sorry!
+<P>You cannot drop the object because there are too many objects in this
+place already.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="011" -->
+Sorry!
+<P>
+You do not have permission to take objects from this place.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="012" -->
+Sorry!
+<P>
+You cannot take the object, it belongs to somebody else.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="013" -->
+Sorry <$NNM>,
+<P>
+you cannot increase the quantity for this object.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="014" -->
+Sorry <$NNM>,
+<P>
+you don't have enough money.
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="015" -->
+Sorry <$NNM>,
+<P>
+you can't decrease the qunatity.
+<P>
+<form><input type=button  value="Back" onClick="back()"></form>
+<!-- #endif variable="T_CKerr" -->
+
+<!-- #if variable="T_CKerr" == value="022" -->
+Sorry <$NNM>,
+<P>
+this price is too high.
+<!-- #endif variable="T_CKerr" -->
+
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+
+
+
+<!-- #endif variable="T_BUY99" -->
+<!-- #endif variable="T_BUYIF" -->
+<!-- #ifndef variable="T_BUYIF" -->
+<!-- #ifndef variable="T_OWN" -->
+<frameset rows="100%,*" framespacing="0">
+  <frame name="main" src="object?ac=<$oldac>&ID=<$ID>&PLC=p<$PLC>&T_BUYIF=yes" scrolling="auto" noresize border=0>
+  <frame name="bottom" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+</frameset>
+<!-- #endif variable="T_OWN" -->
+<!-- #ifdef variable="T_OWN" -->
+<frameset rows="100%,*" framespacing="0">
+  <frame name="main" src="object?ac=<$oldac>&ID=<$ID>&T_OWN=<$T_OWN>&T_BUYIF=yes" scrolling="auto" noresize border=0>
+  <frame name="bottom" src="/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+</frameset>
+<!-- #endif variable="T_OWN" -->
+<!-- #endif variable="T_BUYIF" -->
+<!-- #endif variable="T_BUY2" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #endif variable="ZON" -->
+
+<!-- #if variable="ZON" contains value="000000000044" -->
+<!-- this is for the displaying and buying of homes!!! ->
+<html>
+<head>
+<title>blaxxun - Object</title>
+<script language="javascript">
+	function doClose()
+	{
+  	if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    	alert("Please close the window by clicking on the X in the upper right corner.");
+	  else
+    	self.close();
+	}
+	broughtone = 0;
+	function doBuy()
+	{
+		document.forms['letsbuy'].gobuy.onClick="Buyoneonly()";
+		if ( broughtone == 0) 
+		{
+			
+			broughtone = 1;
+			window.location.replace("print60?ac=buy&ID=<$ID>&TKT=<$TKT>&PLC=<$PLC>&TPL=object/housebuy&T_BUY=yes");
+			
+		}
+	}
+	function doBuy2()
+	{
+		document.forms['letsbuy'].gobuy2.onClick="Buyoneonly()";
+		if ( broughtone == 0) 
+		{
+			
+			broughtone = 1;
+			window.location.replace("print60?ac=buy&ID=<$ID>&TKT=<$TKT>&PLC=<$PLC>&TPL=object/housebuy&T_BUY=yes");
+			
+		}
+	}
+	
+	function Buyoneonly()
+	{
+	alert("goaway!");
+	}
+</script>
+</head>
+
+<!-- object/display.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<!-- #ifdef variable="buyrequested" -->
+<h2>House Buy</h2>
+<!-- #endif variable="buyrequested" -->
+<!-- #ifndef variable="buyrequested" -->
+<h2>House Properties</h2>
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifdef variable="oldac" value="buy" After a buy we want to confirm it -->
+  <h2>Congratulations, the house <$NAM> is now yours!</h2>
+<!-- #endif variable="oldac" -->
+
+<!-- #ifdef variable="takerequested" -->
+  <h2>Congratulations, the house <$NAM> is now yours!</h2>
+<!-- #endif variable="takerequested" -->
+
+<!-- #ifdef variable="oldac" value="edit" After an edit we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="refill" After a refill we close the window-->
+<script>doClose();</script>   
+<!-- #endif variable="oldac" -->
+
+<table border=0>
+
+<tr>
+<!-- #ifdef variable="IMG" -->
+  <td><IMG SRC="<$IMG>"></td>
+<!-- #endif variable="IMG" -->
+<!-- #ifndef variable="IMG" -->
+  <td></td>
+<!-- #endif variable="IMG" -->
+
+<td rowspan=2>
+<!-- #ifdef variable="ZONSELF" -->
+<$NAM> is currently in your possession.<br>
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="ZONNNM" -->
+<$NAM> is currently in <$ZONNNM>'s possession.<br>
+<!-- #endif variable="ZONNNM" -->
+<!-- #ifdef variable="ZONNAM" -->
+<$NAM> is currently located in the
+<!-- #if variable="T_OWN" != value="" -->
+Storage Area "<$ZONNAM>" of <$T_OWN><br>
+<!-- #else variable="T_OWN" -->
+<$ZONNAM>.<br>
+<!-- #endif variable="T_OWN" -->
+<!-- #endif variable="ZONNAM" -->
+
+<!-- #ifdef variable="CNT" value="00000000"-->
+There are none available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="CNT" value="00000001"-->
+There is 1 house still available.<br>
+<!-- #define variable="intCNTprinted" value="true"-->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="intCNTprinted"-->
+<!-- #ifdef variable="intCNT"-->
+There are <$intCNT> houses still available.<br>
+<!-- #endif variable="intCNT" -->
+<!-- #endif variable="intCNTprinted" -->
+
+<!-- #ifdef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+This house costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+<!-- #ifndef variable="intCNT" -->
+<!-- #ifdef variable="TPR" -->
+This house costs <$TPR> CCs.<br>
+<!-- #endif variable="TPR" -->
+<!-- #endif variable="intCNT" -->
+
+<br>
+  You have <$M_MON> CCs at the moment.<br>
+<br>
+
+<!-- #ifdef variable="CRE" -->
+The house was created by <$CRE_NNM>.<br>
+<!-- #endif variable="CRE" -->
+<$TXT>
+<!-- #ifdef variable="WRL" -->
+Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=object/3d&CAT=<$CAT>&ID=<$ID>">here</a> for the 3D VRML representation.
+<!-- #endif variable="WRL" -->
+
+</td>
+</tr>
+
+<tr>
+<td align=center><$NAM></td>
+</tr>
+
+</table>
+
+<!-- #ifdef variable="IWOS_TXT" -->
+<!-- #define variable="T_NOHTML" value="1"-->
+<p>
+<b>House Description:</b> 
+<br><$IWOS_TXT>
+<!-- #endif variable="IWOS_TXT" -->
+
+<!-- #ifdef variable="ALLATTR" -->
+  <tr>
+  <td>house ID</td>
+  <td><$ID></td>
+  </tr>
+  <tr>
+  <td>house Category</td>
+  <td><$CAT></td>
+  </tr>
+  <tr>
+  <td>house Owner</td>
+  <td><$OWN></td>
+  </tr>
+<!-- #endif variable="ALLATTR" -->
+
+<p>
+</table>
+<table><tr>
+
+<!-- #ifdef variable="buyrequested" -->
+<form name="letsbuy" action="print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TPL" value="object/housebuy">
+  <input type="hidden" name="T_BUY" value="yes">
+  <input type="hidden" name="ac" value="buy">
+  <td><input type=submit name="gobuy" value="Buy"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+</form>
+<!-- #endif variable="buyrequested" -->
+
+<!-- #ifndef variable="buyrequested" -->
+
+<!-- #ifndef variable="editallowed" -->
+<!-- #ifdef variable="CNT" -->
+<!-- #if variable="NNM" == variable="CRE_NNM" -->
+<td colspan=3>You can increase the quantity:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="refill">
+  <input type="hidden" name="T_BUYIF" value="yes">
+  <tr>
+  <td>Quantity</td>
+  <td><input name="intCNT" value="<$intCNT>" maxlength=4 size=4></td>
+  </tr><tr>
+  <td><input type=submit name="submit" value="Increase"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+  <td width=64>&nbsp;</td>
+  </tr>
+</form>
+<!-- #endif variable="NNM" -->
+<!-- #if variable="NNM" != variable="CRE_NNM" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="NNM" -->
+<!-- #endif variable="CNT" -->
+<!-- #ifndef variable="CNT" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="CNT" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<td colspan=3>You can edit the values:</td>
+</tr>
+<form action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="ac" value="edit">
+  <tr>
+  <td>Name</td>
+  <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+  </tr><tr>
+  <td>Price</td>
+  <td><INPUT NAME="TPR" VALUE="<$TPR>" MAXLENGTH=4 SIZE=8></td>
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+  <td>Quantity</td>
+  <td><INPUT NAME="intCNT" VALUE="<$intCNT>" MAXLENGTH=4 SIZE=4></td>
+<!-- #endif variable="CNT" -->
+<!-- #ifdef variable="ZONSELF" -->
+  </tr><tr>
+  <td>Buyer</td>
+  <td><INPUT NAME="BUY" VALUE="<$BUY>" MAXLENGTH=16 SIZE=16></td>
+<!-- #else variable="ZONSELF" -->
+<!-- #if variable="T_OWN" != value="" -->
+  </tr><tr>
+  <td>Buyer</td>
+  <td><INPUT NAME="BUY" VALUE="<$BUY>" MAXLENGTH=16 SIZE=16></td>
+<!-- #endif variable="T_OWN" -->
+<!-- #endif variable="ZONSELF" -->
+<!-- #ifdef variable="CNT" -->
+  </tr><tr>
+ 
+<!-- #endif variable="CNT" -->
+  </tr><tr>
+  <td><input type="hidden" name="T_BUYIF" value="yes"><input type=submit name="submit" value="Change"></td>
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+</form>
+<!-- #endif variable="oldac" -->
+<!-- #ifdef variable="oldac" value="buy" -->
+<td colspan=3><form><input type="button" value="Close" onClick="doClose()"></form></td>
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="editallowed" -->
+
+<!-- #ifdef variable="buyallowed" -->
+<!-- #if variable="T_OWN" == value="" -->
+<form name="letsbuy" action="print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TPL" value="object/housebuy">
+  <input type="hidden" name="T_BUY" value="yes">
+  <input type="hidden" name="ac" value="buy">
+  </tr><tr><td colspan=3>&nbsp;</td></tr><tr>
+  <td colspan=3>You can buy the house:</td>
+  </tr><tr>
+  <td colspan=3><input type=submit name="gobuy2" value="Buy"></td>
+</form>
+<!-- #endif variable="T_OWN" == "" -->
+
+<!-- #endif variable="buyallowed" -->
+
+<!-- #if variable="BUY" == variable="MEM_NNM" -->
+<!-- #if variable="TPR" == value="" -->
+<!-- #ifdef variable="T_OWN" -->
+<form action="./print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="T_OWN" value="<$T_OWN>">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="TPL" value="object/storagetake2bp">
+  </tr><tr><td colspan=3>&nbsp;</td></tr><tr>
+  <td colspan=3>You can take the object:</td>
+  </tr><tr>
+  <td colspan=3><input type="hidden" name="T_BUYIF" value="yes"><input type=submit name="submit" value="Take"></td>
+</form>
+<!-- #endif variable="T_OWN" == "" -->
+<!-- #endif variable="TPR" == value="" -->
+<!-- #endif variable="BUY" == value="<$MEM_ID>" -->
+
+<!-- #endif variable="buyrequested" -->
+
+</tr></table>
+
+</p>
+</div>
+
+<!-- #ifndef variable="buyrequested" -->
+<!-- #ifndef variable="oldac" value="buy" -->
+<!-- #ifdef variable="editallowed" -->
+<!-- #ifdef variable="ZONSELF" -->
+<p>
+<b>Price:</b>
+If you set a price the house can be bought from you by other
+members.
+</p>
+<p>
+<b>Buyer:</b>
+If you also set a buyer, then only the member with that nickname
+can buy it from you.
+</p>
+<!-- #endif variable="ZONSELF" -->
+<!-- #endif variable="editallowed" -->
+<!-- #endif variable="oldac" -->
+<!-- #endif variable="buyrequested" -->
+ 
+<script language=javascript>
+focus();
+</script>
+
+<h3>Designer Home</h3>
+When you buy this home, it will automatically be shown as the 3D world for your house. You will <b>not</b> lose
+your objects stored in the house however <b>you will lose your existing 3D home</b>. This customised 3D will be shown
+to anyone in the home.
+</body>
+</html>
+
+<!-- #endif variable="ZON" -->
+
+

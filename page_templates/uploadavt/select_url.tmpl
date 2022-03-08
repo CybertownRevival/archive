@@ -1,0 +1,64 @@
+<HTML>
+<!-- uploadavt/select_url.tmpl -->
+<!-- distribution page for uploading avatars for several communities -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Upload Avatar</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+function changeAction()
+{
+  document.uploadForm.action 
+    = document.uploadForm.selAction.options[document.uploadForm.selAction.selectedIndex].value;
+
+  document.uploadForm.submit();
+}
+
+//-->
+</script>
+
+<!-- #include virtual="<$g_Templates>uploadavt/error.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<br><br>
+
+<form method=post name=uploadForm action="<$selfurl>">
+  <center>
+    <h2>Select the Destination of your Avatar:</h2>
+
+    <select name="selAction">
+      <option value="http://crow.blaxxun.de:1088/cgi-bin/cybertown/uploadavt">
+        Cybertown
+      </option>
+      <option value="http://crow.blaxxun.de:1088/cgi-bin/cybertown/uplo1adavt">
+        Cybertown 1
+      </option>
+      <option value="http://crow.blaxxun.de:1088/cgi-bin/cybertown/uplo2adavt">
+        Cybertown 2
+      </option>
+    </select><br>
+<br>
+    <input type="submit" name="Upload" onClick="changeAction()">
+  </center>
+
+  <input type="hidden" name="ac" value="<$ac>">
+  <input type="hidden" name="dataInc" value="<$dataInc>">
+
+  <input type="hidden" name="AVWRL_FILENAME" value="<$AVWRL_FILENAME>">
+  <input type="hidden" name="AVWRL_MIMETYPE" value="<$AVWRL_MIMETYPE>">
+
+  <input type="hidden" name="AVWRL_DATA" value="<$AVWRL_DATA>">
+
+  <input type="hidden" name="AVJPG_FILENAME" value="<$AVJPG_FILENAME>">
+  <input type="hidden" name="AVJPG_MIMETYPE" value="<$AVJPG_MIMETYPE>">
+
+  <input type="hidden" name="AVJPG_DATA" value="<$AVJPG_DATA>">
+
+</form>
+
+</BODY>
+</HTML>

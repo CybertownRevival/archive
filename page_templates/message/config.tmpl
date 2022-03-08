@@ -1,0 +1,92 @@
+<!-- msserver/config.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- config.tmpl -->
+<title><$g_title> Instant Message Center</title>
+<SCRIPT LANGUAGE="javascript">
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="document.CONFIG.BU0.focus();" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+
+<!-- #ifdef variable="UPDATEOK" -->
+<script>doClose();</script>
+<!-- #endif variable="UPDATEOK" -->
+
+<p align=center>
+<b>Update Instant Message Center Settings</b>
+</p>
+
+<FORM NAME=CONFIG ACTION="<$g_cgiRoot>/message<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="TPL" value="<$TPL>">
+<INPUT TYPE=HIDDEN NAME="ac" value="updateconfig">
+<INPUT TYPE=HIDDEN NAME="NNM" value="<$NNM>">
+
+<center>
+<table border=1 cellpadding=10>
+<tr>
+<td>
+<input type="checkbox" align="middle" name="IMS" <$IMS>>
+Hide yourself.
+</td>
+</tr>
+
+<tr>
+<td>
+<table border=0>
+<tr>
+	<td colspan=2>My Friends:</td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU0" VALUE="<$BU0>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU1" VALUE="<$BU1>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU2" VALUE="<$BU2>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU3" VALUE="<$BU3>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU4" VALUE="<$BU4>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU5" VALUE="<$BU5>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU6" VALUE="<$BU6>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU7" VALUE="<$BU7>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU8" VALUE="<$BU8>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU9" VALUE="<$BU9>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td colspan=2> </td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</center>
+
+<br>
+
+<center>
+<input type=submit name="yes" value=Update>
+<input type=button name="no" value=Cancel onClick="doClose()">
+</center>
+
+</FORM>
+
+</BODY>
+</HTML>
+
+

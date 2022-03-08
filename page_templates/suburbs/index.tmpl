@@ -1,0 +1,22 @@
+<html>
+<!-- /suburbs/index.tmpl -->
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+<title><$g_title></title>
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="place<$g_exe>?ac=menu&plc=<$place>&ID=<$ID>&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <!-- frame name="place" src="<$g_HTMLRoot>/places/suburbs/map.html" scrolling="auto" noresize border=0 -->
+  <!-- frame name="place" src="place<$g_exe>?ID=<$ID>&ac=place&plc=<$plc>&T_SUB=<$T_SUB>" scrolling="auto" noresize border=0 -->
+    <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_SUB=<$T_SUB>" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="place<$g_exe>?ac=action&plc=<$place>&ID=<$ID>" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>

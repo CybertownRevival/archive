@@ -1,0 +1,894 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<!-- vpet/vpet.tmpl -->
+<TITLE><$g_title> Virtual Pets</TITLE>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+</HEAD>
+
+<BODY onLoad="document.CONFIG.VNN.focus();" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+
+
+<a name="top"></a>
+<P ALIGN=center> <B>Virtual Pet Behaviour</B> </P>
+
+<!--#ifdef variable="VP_MISS_NICKNAME_ERROR" -->
+<P>
+<B><font color="red">Please enter Pet's Nickname.</font></B>
+</P>
+<!--#endif variable="VP_MISS_NICKNAME_ERROR" -->
+
+<!--#ifdef variable="VP_DB_STORE_ERROR" -->
+<P>
+<B><font color="red">Data not stored. Database currently unavailable, please try again later.</font></B>
+</P>
+<!--#endif variable="VP_DB_STORE_ERROR" -->
+<!--#ifdef variable="VP_DB_ERROR" -->
+<P>
+<B><font color="red">Database currently unavailable, please try again later.</font></B>
+</P>
+<!--#endif variable="VP_DB_ERROR" -->
+
+<FORM METHOD="POST" NAME=CONFIG ACTION="<$g_cgiRoot>/vpet"> 
+   <CENTER>
+      <INPUT TYPE="HIDDEN" NAME="ID" VALUE="<$ID>">
+      <INPUT TYPE="HIDDEN" NAME="TKT"VALUE="<$TKT>">
+
+
+      <TABLE WIDTH="82%" BORDER="1" CELLSPACING="3">
+         <TR> 
+            <TD WIDTH="100%" COLSPAN="2"> 
+               <TABLE>
+<!-- HERE 
+                  <TR> 
+                     <TD ALIGN="CENTER" VALIGN="MIDDLE">
+                          <a href="javascript:loadInfo('/pets/pethelp.html')">Help</a>
+                     </TD>
+                     <TD ALIGN="CENTER" VALIGN="MIDDLE"> 
+                          <a href="javascript:loadInfo('/pets/petavs.html')">Select Avatar Url</a>
+                     </TD>
+                  </TR>
+               </TABLE>
+-- HERE -->
+               <TABLE>
+                  <TR> 
+                     <TD><B>Pet's Nickname:</B></TD>
+                     <TD Colspan=3><B> 
+                        <INPUT TYPE="text" NAME="VNN" SIZE="40" MAXLENGTH="32" VALUE="<$VNN>">
+                        </B></TD>
+                     <TD ALIGN="LEFT" VALIGN="MIDDLE">
+                          <a href="javascript:loadInfo('/pets/pethelp.html')">Help</a>
+                     </TD>
+                  </TR>
+                  <TR> 
+                     <TD><B>Pet's Avatar URL: </B></TD>
+                     <TD Colspan=3><B> 
+                        <INPUT TYPE="text" NAME="VUR" SIZE="40" MAXLENGTH="160" VALUE="<$VUR>">
+                        </B></TD>
+                     <TD ALIGN="LEFT" VALIGN="MIDDLE"> 
+                          <a href="javascript:loadInfo('/pets/petavs.html')">Select Avatar Url</a>
+                     </TD>
+                  </TR>
+                  <TR> 
+                     <TD><B>Activate Pet:</B></TD>
+                     <TD>
+                           <INPUT TYPE="checkbox" NAME="VPA"  VALUE="1"
+<!--#ifdef variable="VPA" value="1"-->
+ checked
+<!--#endif variable="VPA" -->
+>
+                     </TD>
+                     <TD align=right><B>Pet's Voice Type: </B>
+                         <select name="VVT" size="1">
+                             <option value="0"
+<!--#ifdef variable="VVT" value="0"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            default male</option>
+
+                             <option value="4"
+<!--#ifdef variable="VVT" value="4"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            male</option>
+
+                             <option value="2"
+<!--#ifdef variable="VVT" value="2"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            full male</option>
+
+                             <option value="3"
+<!--#ifdef variable="VVT" value="3"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            aged male</option>
+
+                             <option value="7"
+<!--#ifdef variable="VVT" value="7"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            female</option>
+
+                             <option value="1"
+<!--#ifdef variable="VVT" value="1"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            full female</option>
+
+                             <option value="6"
+<!--#ifdef variable="VVT" value="6"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            aged female</option>
+
+                             <option value="8"
+<!--#ifdef variable="VVT" value="8"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            whispering female</option>
+
+                             <option value="5"
+<!--#ifdef variable="VVT" value="5"-->
+ selected
+<!--#endif variable="VVT" -->
+>                            child</option>
+
+                         </select>
+
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR> 
+            <TD WIDTH="100%" COLSPAN="2"> 
+               <DIV ALIGN="LEFT"><B>Behaviour</B></DIV>
+            </TD>
+         </TR>
+         <TR> 
+            <TD WIDTH="52%"> 
+               <DIV ALIGN="CENTER"><B>Input Text</B></DIV>
+            </TD>
+            <TD WIDTH="48%"> 
+               <DIV ALIGN="CENTER"><B>Say/Action</B></DIV>
+            </TD>
+         </TR>
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="30" MAXLENGTH="44" NAME="VP0" VALUE="<$VP0>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM0" VALUE="exact" 
+<!--#ifdef variable="VM0" value="exact"-->
+ checked
+<!--#endif variable="VM0" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM0" VALUE="and" 
+<!--#ifdef variable="VM0" value="and"-->
+ checked
+<!--#endif variable="VM0" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM0" VALUE="or"
+<!--#ifdef variable="VM0" value="or"-->
+ checked
+<!--#endif variable="VM0" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD0" value="1"
+<!--#ifdef variable="VD0" value="1"-->
+ checked
+<!--#endif variable="VD0" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT0" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT0></TEXTAREA><TABLE WIDTH="68%" BORDER="0">
+                  <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB0" VALUE="1"
+<!--#ifdef variable="VB0" value="1"-->
+ checked
+<!--#endif variable="VB0" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA0" VALUE="1"
+<!--#ifdef variable="VA0" value="1"-->
+ checked
+<!--#endif variable="VA0" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP1" VALUE="<$VP1>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM1" VALUE="exact" 
+<!--#ifdef variable="VM1" value="exact"-->
+ checked
+<!--#endif variable="VM1" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM1" VALUE="and"
+<!--#ifdef variable="VM1" value="and"-->
+ checked
+<!--#endif variable="VM1" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM1" VALUE="or"
+<!--#ifdef variable="VM1" value="or"-->
+ checked
+<!--#endif variable="VM1" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD1" value="1"
+<!--#ifdef variable="VD1" value="1"-->
+  checked
+<!--#endif variable="VD1" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT1" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT1></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB1" value="1"
+<!--#ifdef variable="VB1" value="1"-->
+  checked
+<!--#endif variable="VB1" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA1" VALUE="1"
+<!--#ifdef variable="VA1" value="1"-->
+ checked
+<!--#endif variable="VA1" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP2" VALUE="<$VP2>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM2" VALUE="exact" 
+<!--#ifdef variable="VM2" value="exact"-->
+ checked
+<!--#endif variable="VM2" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM2" VALUE="and"
+<!--#ifdef variable="VM2" value="and"-->
+ checked
+<!--#endif variable="VM2" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM2" VALUE="or"
+<!--#ifdef variable="VM2" value="or"-->
+ checked
+<!--#endif variable="VM2" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD2" value="1"
+<!--#ifdef variable="VD2" value="1"-->
+  checked
+<!--#endif variable="VD2" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT2" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT2></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB2" value="1"
+<!--#ifdef variable="VB2" value="1"-->
+  checked
+<!--#endif variable="VB2" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA2" VALUE="1"
+<!--#ifdef variable="VA2" value="1"-->
+ checked
+<!--#endif variable="VA2" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP3" VALUE="<$VP3>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM3" VALUE="exact" 
+<!--#ifdef variable="VM3" value="exact"-->
+ checked
+<!--#endif variable="VM3" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM3" VALUE="and"
+<!--#ifdef variable="VM3" value="and"-->
+ checked
+<!--#endif variable="VM3" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM3" VALUE="or"
+<!--#ifdef variable="VM3" value="or"-->
+ checked
+<!--#endif variable="VM3" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD3" value="1"
+<!--#ifdef variable="VD3" value="1"-->
+  checked
+<!--#endif variable="VD3" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT3" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT3></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB3" value="1"
+<!--#ifdef variable="VB3" value="1"-->
+  checked
+<!--#endif variable="VB3" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA3" VALUE="1"
+<!--#ifdef variable="VA3" value="1"-->
+ checked
+<!--#endif variable="VA3" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP4" VALUE="<$VP4>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM4" VALUE="exact" 
+<!--#ifdef variable="VM4" value="exact"-->
+ checked
+<!--#endif variable="VM4" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM4" VALUE="and"
+<!--#ifdef variable="VM4" value="and"-->
+ checked
+<!--#endif variable="VM4" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM4" VALUE="or"
+<!--#ifdef variable="VM4" value="or"-->
+ checked
+<!--#endif variable="VM4" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD4" value="1"
+<!--#ifdef variable="VD4" value="1"-->
+  checked
+<!--#endif variable="VD4" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT4" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT4></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB4" value="1"
+<!--#ifdef variable="VB4" value="1"-->
+  checked
+<!--#endif variable="VB4" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA4" VALUE="1"
+<!--#ifdef variable="VA4" value="1"-->
+ checked
+<!--#endif variable="VA4" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP5" VALUE="<$VP5>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM5" VALUE="exact" 
+<!--#ifdef variable="VM5" value="exact"-->
+ checked
+<!--#endif variable="VM5" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM5" VALUE="and"
+<!--#ifdef variable="VM5" value="and"-->
+ checked
+<!--#endif variable="VM5" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM5" VALUE="or"
+<!--#ifdef variable="VM5" value="or"-->
+ checked
+<!--#endif variable="VM5" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD5" value="1"
+<!--#ifdef variable="VD5" value="1"-->
+  checked
+<!--#endif variable="VD5" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT5" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT5></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB5" value="1"
+<!--#ifdef variable="VB5" value="1"-->
+  checked
+<!--#endif variable="VB5" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA5" VALUE="1"
+<!--#ifdef variable="VA5" value="1"-->
+ checked
+<!--#endif variable="VA5" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP6" VALUE="<$VP6>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM6" VALUE="exact" 
+<!--#ifdef variable="VM6" value="exact"-->
+ checked
+<!--#endif variable="VM6" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM6" VALUE="and"
+<!--#ifdef variable="VM6" value="and"-->
+ checked
+<!--#endif variable="VM6" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM6" VALUE="or"
+<!--#ifdef variable="VM6" value="or"-->
+ checked
+<!--#endif variable="VM6" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD6" value="1"
+<!--#ifdef variable="VD6" value="1"-->
+  checked
+<!--#endif variable="VD6" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT6" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT6></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB6" value="1"
+<!--#ifdef variable="VB6" value="1"-->
+  checked
+<!--#endif variable="VB6" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA6" VALUE="1"
+<!--#ifdef variable="VA6" value="1"-->
+ checked
+<!--#endif variable="VA6" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP7" VALUE="<$VP7>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM7" VALUE="exact" 
+<!--#ifdef variable="VM7" value="exact"-->
+ checked
+<!--#endif variable="VM7" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM7" VALUE="and"
+<!--#ifdef variable="VM7" value="and"-->
+ checked
+<!--#endif variable="VM7" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM7" VALUE="or"
+<!--#ifdef variable="VM7" value="or"-->
+ checked
+<!--#endif variable="VM7" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD7" value="1"
+<!--#ifdef variable="VD7" value="1"-->
+  checked
+<!--#endif variable="VD7" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT7" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT7></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB7" value="1"
+<!--#ifdef variable="VB7" value="1"-->
+  checked
+<!--#endif variable="VB7" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA7" VALUE="1"
+<!--#ifdef variable="VA7" value="1"-->
+ checked
+<!--#endif variable="VA7" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP8" VALUE="<$VP8>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM8" VALUE="exact" 
+<!--#ifdef variable="VM8" value="exact"-->
+ checked
+<!--#endif variable="VM8" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM8" VALUE="and"
+<!--#ifdef variable="VM8" value="and"-->
+ checked
+<!--#endif variable="VM8" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM8" VALUE="or"
+<!--#ifdef variable="VM8" value="or"-->
+ checked
+<!--#endif variable="VM8" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD8" value="1"
+<!--#ifdef variable="VD8" value="1"-->
+  checked
+<!--#endif variable="VD8" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT8" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT8></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB8" value="1"
+<!--#ifdef variable="VB8" value="1"-->
+  checked
+<!--#endif variable="VB8" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA8" VALUE="1"
+<!--#ifdef variable="VA8" value="1"-->
+ checked
+<!--#endif variable="VA8" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+<!-- next line -->
+
+         <TR> 
+            <TD VALIGN="top" WIDTH="52%"> 
+               <INPUT TYPE="text" SIZE="31" MAXLENGTH="44" NAME="VP9" VALUE="<$VP9>">
+               <TABLE BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Exact:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM9" VALUE="exact" 
+<!--#ifdef variable="VM9" value="exact"-->
+ checked
+<!--#endif variable="VM9" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">And:</FONT> 
+                           <INPUT TYPE="radio" NAME="VM9" VALUE="and"
+<!--#ifdef variable="VM9" value="and"-->
+ checked
+<!--#endif variable="VM9" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD><B><FONT SIZE="-1">Or: 
+                           <INPUT TYPE="radio" NAME="VM9" VALUE="or"
+<!--#ifdef variable="VM9" value="or"-->
+ checked
+<!--#endif variable="VM9" -->
+>
+                        </FONT></B></TD>
+                     <TD> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1"> Directly:</FONT> 
+                           <INPUT TYPE="checkbox" NAME="VD9" value="1"
+<!--#ifdef variable="VD9" value="1"-->
+  checked
+<!--#endif variable="VD9" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+            <TD VALIGN="top" WIDTH="48%"> 
+               <TEXTAREA NAME="VT9" WRAP="VIRTUAL" COLS="40" ROWS="3"><$VT9></TEXTAREA>
+               <TABLE WIDTH="68%" BORDER="1">
+                  <TR VALIGN="MIDDLE"> 
+                     <TD WIDTH="49%"> 
+                        <DIV ALIGN="LEFT"><B><FONT SIZE="-1">Beam to </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VB9" value="1"
+<!--#ifdef variable="VB9" value="1"-->
+  checked
+<!--#endif variable="VB9" -->
+>
+                           </B></DIV>
+                     </TD>
+                     <TD WIDTH="51%"> 
+                        <DIV ALIGN="LEFT"><B> <FONT SIZE="-1">Whisper </FONT> 
+                           <INPUT TYPE="checkbox" NAME="VA9" VALUE="1"
+<!--#ifdef variable="VA9" value="1"-->
+ checked
+<!--#endif variable="VA9" -->
+>
+                           </B></DIV>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+
+
+
+      </TABLE>
+   </CENTER>
+
+<BR>
+
+<CENTER>
+<INPUT TYPE=submit NAME="ac" VALUE="update">
+<INPUT TYPE=button NAME="no" VALUE="cancel" onClick="history.back()">
+</CENTER>
+
+</BODY>
+</HTML>
+
+

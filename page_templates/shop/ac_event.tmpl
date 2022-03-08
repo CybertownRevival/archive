@@ -1,0 +1,31 @@
+<a href="javascript:loadInfo('place<$g_exe>?plc=shopping&ac=info&ID=0000000000000009')" target="_self">  
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>  
+<!-- #ifdef variable="readaccess" -->  
+<a href="javascript:loadInfo('<$g_HTMLRoot>/help/objects.html')" target="_self">  
+<IMG SRC="<$g_Images>/images/buttons/bobjects.gif" BORDER=0 ALT="Shopping + Objects"></a><br>  
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000009&MTY=i')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>  
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000009&MTY=m')" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>  
+<!-- #endif variable="readaccess" -->  
+  
+<!-- #if variable="ID" == value="00000000000009fe" -->
+<!-- #ifdef variable="owneraccess" -->
+<br> 
+UPLOAD STATUS: <font color="#00FF00"><$UPL_STATUS></font><br>
+<a href="javascript:loadCustom('print60<$g_exe>?TPL=shopping/admin/malladmin',850,550)" target=_self>  
+<IMG SRC="<$g_Images>/images/buttons/bedit.gif" BORDER=0 ALT="Edit Settings"></a><br>  
+<a href="object<$g_exe>?ac=list&ZON=p00000000000009ff&actions=1" target="_blankie">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check"></a><br>
+<a href="javascript:loadCustom('print?DTY=O&ID=0000000000000009&TPL=fundbox/phase0',612,490)" target=_self>
+<IMG SRC="http://ivnwww.cybertown.com/images/buttons/bfundbox.gif" BORDER=0 ALT="Fund Box"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000010009&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bacceptlists.gif" BORDER=0 ALT="Accept Lists"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000020009&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bdroplists.gif" BORDER=0 ALT="Drop Lists"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000030009&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bremoverequests.gif" BORDER=0 ALT="Remove Requests"></a><br>
+<!-- #endif variable="owneraccess" -->
+<!-- #endif variable="ID" -->
+
+

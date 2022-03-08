@@ -1,0 +1,280 @@
+<html>
+<!-- clubdir/create.tmpl -->
+<!-- create your own club -->
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Club</title>
+<script language="JavaScript">
+function check(form){
+	CLname=form.NAM.value
+	icstring = '"_-.~`!@#$%^&*()+=|\{}[]<>/,?‘’¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ';
+	oikedoke = "0"
+	for (var i=0; i < CLname.length; i++) {
+		temp = "" + CLname.substring(i, i+1);
+		if (icstring.indexOf(temp) > -1) {
+		oikedoke = "1"	
+		}
+		}
+
+	if (oikedoke == "1")
+	{
+		alert("Your club name contains illegal characters. Please choose another");
+		form.NAM.focus();
+		return false ;
+	}
+	
+	return true;
+	
+}
+</script>
+
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<img src="<$g_HTMLRoot>/places/club/images/create_club.gif" border=0 alt="Create Club" height=100>
+
+<form name="CreateClub" method="POST" action="club<$g_exe>" onSubmit="return check(this);">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="create_MRP" value="/club_def.jpg">
+  <input type="hidden" name="create_ARP" value="/club_def.jpg">
+  <input type="hidden" name="create_GP1" value="/club_def.jpg">
+  <input type="hidden" name="create_GP2" value="/club_def.jpg">
+  <input type="hidden" name="create_GP3" value="/club_def.jpg">
+  
+  <input type="hidden" name="CAT" value="CT00000000000000">
+  
+  <input type="hidden" name="create_STM" value="0">
+  <input type="hidden" name="create_STA" value="0">
+  <input type="hidden" name="create_ST1" value="0">
+  <input type="hidden" name="create_ST2" value="0">
+  <input type="hidden" name="create_ST3" value="0">
+
+  <input type="hidden" name="WAC" value="0.000 0.200 0.000">
+  <input type="hidden" name="CEC" value="0.900 0.900 0.850">
+  <input type="hidden" name="FLC" value="0.600 0.550 0.450">
+
+    <input type=hidden name="ac" value="create">
+
+    <table CELLSPACING=5 CELLPADDING=2 border=0 align=center>
+        <tr>
+            <td align=right>Club Name:</td>
+            <td><input type="text" name="NAM" value="<$NAM>" maxlength=16 size=16></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td align=right>Club Keywords:</td>
+            <td colspan=3>
+                <select name="CK1">
+                    <!--#for loopname="keyword1List" loopvars="CK1_LIST_" -->
+                        <option value="<$CK1_LIST_>"> <$CK1_LIST_> </option>
+                    <!--#endfor loopname="keyword1List" -->
+                </select>
+                <select name="CK2">
+                    <!--#for loopname="keyword2List" loopvars="CK2_LIST_" -->
+                        <option value="<$CK2_LIST_>"> <$CK2_LIST_> </option>
+                    <!--#endfor loopname="keyword2List" -->
+                </select>
+                <input type="text" name="CK3" value="<$CK3>" maxlength=32 size=12>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Club access:</td>
+            <td>
+                <select name="CKI">
+                    <option value="O"> Open for everyone </option>
+                    <option value="I"> By Invitation </option>
+                </select>
+            </td>
+            <td align=right>Colony:</td>
+            <td>
+                <select name="PID">
+                    <!--#for loopname="placesList" loopvars="COL_ID_" -->
+                        <option value="<$COL_ID_>"> <$COL_NAM_> </option>
+                    <!--#endfor loopname="placesList" -->
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <textarea name="DES" rows=7 cols=60>Club Description.</textarea><br>
+    <br>
+    <textarea name="RUL" rows=4 cols=60>Enter here the rules for your club.</textarea><br>
+    <br>
+    <h3><a name="clubColors">Club Colors</h3>
+    <table border=0>
+    <tr>
+        <th>Background Color</th>
+        <th>Link Color</th>
+        <th>Text Color</th>
+    </tr>
+    <tr>
+        <td bgcolor="#000000">
+            <input type="radio" name="CLB" checked value="#000000">
+            <font color="#ffffff">Default
+        </td>
+        <td bgcolor="#00FF00">
+            <input type="radio" name="CLL" checked value="#00FF00">
+            <font color="#000000">Default
+        </td>
+        <td bgcolor="#D0DBF7">
+            <input type="radio" name="CLT" checked value="#D0DBF7">
+            <font color="#000000">Default
+        </td>
+    </tr>
+    <tr bgcolor="#ffffff">
+        <td><input type="radio" name="CLB" value="#ffffff">
+            <font color="#000000">White
+        </td>
+        <td><input type="radio" name="CLL" value="#ffffff">
+            <font color="#000000">White
+        </td>
+        <td><input type="radio" name="CLT" value="#ffffff">
+            <font color="#000000">White
+        </td>
+    </tr>
+    <tr bgcolor="#000000">
+        <td><input type="radio" name="CLB" value="#000000">
+            <font color="#ffffff">Black
+        </td>
+        <td><input type="radio" name="CLL" value="#000000">
+            <font color="#ffffff">Black
+        </td>
+        <td><input type="radio" name="CLT" value="#000000">
+            <font color="#ffffff">Black
+        </td>
+    </tr>
+    <tr bgcolor="#808080">
+        <td><input type="radio" name="CLB" value="#808080">
+            <font color="#000000">Charcoal Gray
+        </td>
+        <td><input type="radio" name="CLL" value="#808080">
+            <font color="#000000">Charcoal Gray
+        </td>
+        <td><input type="radio" name="CLT" value="#808080">
+            <font color="#000000">Charcoal Gray
+        </td>
+    </tr>
+    <tr bgcolor="#0080ff">
+        <td><input type="radio" name="CLB" value="#0080ff">
+            <font color="#000000">Sky Blue
+        </td>
+        <td><input type="radio" name="CLL" value="#0080ff"> 
+            <font color="#000000">Sky Blue
+        </td>
+        <td><input type="radio" name="CLT" value="#0080ff">
+            <font color="#000000">Sky Blue
+        </td>
+    </tr>
+    <tr bgcolor="#ffff00">
+        <td><input type="radio" name="CLB" value="#ffff00">
+            <font color="#000000">Lemon Yellow
+        </td>
+        <td><input type="radio" name="CLL" value="#ffff00">
+            <font color="#000000">Lemon Yellow
+        </td>
+        <td><input type="radio" name="CLT" value="#ffff00">
+            <font color="#000000">Lemon Yellow
+        </td>
+    </tr>
+    <tr bgcolor="#ff0000">
+        <td><input type="radio" name="CLB" value="#ff0000">
+            <font color="#000000">Crimson
+        </td>
+        <td><input type="radio" name="CLL" value="#ff0000">
+            <font color="#000000">Crimson
+        </td>
+        <td><input type="radio" name="CLT" value="#ff0000">
+            <font color="#000000">Crimson
+        </td>
+    </tr>
+    <tr bgcolor="#000080">
+        <td><input type="radio" name="CLB" value="#000080"> 
+            <font color="#ffffff">Royal Blue
+        </td>
+        <td><input type="radio" name="CLL" value="#000080">
+            <font color="#ffffff">Royal Blue
+        </td>
+        <td><input type="radio" name="CLT" value="#000080">
+            <font color="#ffffff">Royal Blue
+        </td>
+    </tr>
+    <tr bgcolor="#00ff00">
+        <td><input type="radio" name="CLB" value="#00ff00">
+            <font color="#000000">Vermont Green
+        </td>
+        <td><input type="radio" name="CLL" value="#00ff00">
+            <font color="#000000">Vermont Green
+        </td>
+        <td><input type="radio" name="CLT" value="#00ff00">
+            <font color="#000000">Vermont Green
+        </td>
+    </tr>
+    <tr bgcolor="#00ffff">
+        <td><input type="radio" name="CLB" value="#00ffff">
+            <font color="#000000">Sapphire
+        </td>
+        <td><input type="radio" name="CLL" value="#00ffff">
+            <font color="#000000">Sapphire
+        </td>
+        <td><input type="radio" name="CLT" value="#00ffff">
+            <font color="#000000">Sapphire
+        </td>
+    </tr>
+    <tr bgcolor="#800080">
+        <td><input type="radio" name="CLB" value="#800080">
+            <font color="#ffffff">Deep Purple
+        </td>
+        <td><input type="radio" name="CLL" value="#800080">
+            <font color="#ffffff">Deep Purple
+        </td>
+        <td><input type="radio" name="CLT" value="#800080">
+            <font color="#ffffff">Deep Purple
+        </td>
+    </tr>
+    <tr bgcolor="#ff8080">
+        <td><input type="radio" name="CLB" value="#ff8080">
+            <font color="#000000">Pink Rose
+        </td>
+        <td><input type="radio" name="CLL" value="#ff8080">
+            <font color="#000000">Pink Rose
+        </td>
+        <td><input type="radio" name="CLT" value="#ff8080">
+            <font color="#000000">Pink Rose
+        </td>
+    </tr>
+    <tr bgcolor="#800000">
+        <td><input type="radio" name="CLB" value="#800000">
+            <font color="#ffffff">Brown Derby
+        </td>
+        <td><input type="radio" name="CLL" value="#800000">
+            <font color="#ffffff">Brown Derby
+        </td>
+        <td><input type="radio" name="CLT" value="#800000">
+            <font color="#ffffff">Brown Derby
+        </td>
+    </tr>
+    <tr bgcolor="#ff8000">
+        <td><input type="radio" name="CLB" value="#ff8000">
+            <font color="#000000">Florida Orange
+        </td>
+        <td><input type="radio" name="CLL" value="#ff8000">
+            <font color="#000000">Florida Orange
+        </td>
+        <td><input type="radio" name="CLT" value="#ff8000">
+            <font color="#000000">Florida Orange
+        </td>
+    </tr>
+    </table>
+    <br>
+    <input type=submit name="createBtn" value="Create" width=160 height=15>
+    <input type=button name="cancelBtn" value="Cancel"  width=160 height=15 
+    onClick="javascrip:top.place.location.href='club<$g_exe>?ac=directory'">
+</form>
+</center>
+
+</body>
+</html>

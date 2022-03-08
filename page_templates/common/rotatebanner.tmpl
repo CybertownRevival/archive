@@ -1,0 +1,46 @@
+<!-- common/rotatebanner.tmpl -->
+<!-- functions for rotating banner -->
+
+<SCRIPT LANGUAGE="JavaScript">
+        <!--
+        banners = new Array(total_banners);
+        var current_banner = 0;
+        var stop_rotating = 0;
+	var banner_active = 0;
+
+        for (var i = 0; i < total_banners; i++)
+        {
+                banners[i] = new Image();
+                banners[i].src = banner_names[i];
+        }
+
+        function onload_page()
+        {
+        	current_banner = 0;
+		banner_active = 0;
+	}
+        function onload_banner()
+        {
+		if ( !banner_active )
+                	timerid = setTimeout("rotate_banner()", time_shown);
+		banner_active = 1;
+        }
+
+        function rotate_banner()
+        {
+		banner_active = 0;
+                if (!stop_rotating)
+                {
+                        current_banner = (current_banner + 1) % total_banners;
+                        document.banner_image.src = banner_names[current_banner];
+                }
+        }
+
+        function goto_banner()
+        {
+                location.href = banner_URL[current_banner];
+        }
+        // -->
+</SCRIPT>
+
+<!-- end of include rotatebanner.tmpl -->

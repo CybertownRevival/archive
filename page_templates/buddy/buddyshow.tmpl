@@ -1,0 +1,23 @@
+<html>
+<head>
+<title><$g_title> Instant Message Center</title>
+<!-- 
+  buddy/buddyshow.tmpl 
+-->
+<!-- #include virtual="<$g_Templates>/buddy/buddyjs.tmpl" -->
+
+<frameset rows="36,*" border=0 onLoad="top.buLoad()">                                           
+    <frame src="<$g_HTMLRoot>/buddy/blank.html" name="buF_Control" scrolling="no" noresize >           
+    <frameset cols="*,185" border=0 >
+        <frameset rows="*,80" border=0>                                           
+            <frame src="<$g_HTMLRoot>/buddy/bbmessage.html" name="buF_Messages" scrolling=auto >
+            <frame src="<$g_HTMLRoot>/buddy/blank.html" name="buF_MsgSender">
+        </frameset>                                                                                                                    
+    <frame src="<$g_HTMLRoot>/buddy/bblist.html" name="buF_BuddyList" scrolling="auto">         
+    </frameset>                                                                                                                    
+</frameset>
+
+</head>
+</html>
+
+

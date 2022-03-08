@@ -1,0 +1,26 @@
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html">  
+<title><$g_title> - Colony</title>  
+<!-- #include virtual="<$g_Templates>mothership/imsg.tmpl" -->  
+</head>  
+
+<frameset rows="100%,*,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+     <frameset cols="193,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>  
+         <frameset rows="135,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+             <frame name="date" src="<$g_cgiRoot>/edit?tpl=mothership/blank" scrolling="no" noresize border=0 marginheight=0 marginwidth=8 frameborder=0 framespacing=0>  
+             <frame name="action" src="<$g_cgiRoot>/property<$g_exe>?ac=action&ID=<$ID>&T_LDT=P" scrolling="auto" noresize border=0 marginheight=10 marginwidth=8 frameborder=0 framespacing=0>  
+         </frameset>  
+         <frameset rows="100,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+             <frame src="<$g_cgiRoot>/edit?ac=print&tpl=mothership/black" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>  
+             <frame name="place" src="<$g_cgiRoot>/property<$g_exe>?ac=place&ID=<$ID>" scrolling="auto" noresize>
+         </frameset>  
+     </frameset>  
+
+<!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->  
+
+</frameset>  
+</html>
+
+

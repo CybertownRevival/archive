@@ -1,0 +1,152 @@
+ 
+### blaxxun CCpro - place definition file  
+### ------------------------------------------  
+server                  cyber.cybertown.com  
+port                    2000 
+scene                   http://www.cybertown.com/cgi-bin/cybertown/place?plc=ne_game&pass=true&IE=x.bxx Outlands Match 1  
+
+<!-- #ifndef variable="T_style" value="CKSM." -->
+<!-- #if variable="T_pass" == variable="PASS1" -->
+3dscene                 http://www.cybertown.com/places/ne_game/vrml/ne_game_pass.wrl
+#Blue Team
+<!-- #endif variable="T_pass" -->  
+<!-- #if variable="T_pass" == variable="PASS2" -->
+3dscene                 http://www.cybertown.com/places/ne_game/vrml/ne_game_pass.wrl
+#Red Team
+<!-- #endif variable="T_pass" --> 
+ 
+<!-- #if variable="T_pass" != variable="PASS1" -->
+<!-- #if variable="T_pass" != variable="PASS2" -->
+3dscene                 http://www.cybertown.com/places/ne_game/vrml/boot.wrl
+<!-- #endif variable="T_pass" -->  
+<!-- #endif variable="T_pass" -->  
+
+<!-- #endif variable="T_style" -->  
+
+<!-- #ifdef variable="T_style" value="CKSM." -->
+3dscene                 http://www.cybertown.com/places/ne_game/vrml/ne_game_gm.wrl
+<!-- #endif variable="T_style" -->
+
+
+sname                   Outlands Match 1  
+message                 <$NNM>, you have entered Outlands Match 1.   
+
+
+### Authentication  
+authenticationid                <$M_ID>  
+authenticationpw                <$COOKIE>  
+
+nickname                        <$NNM>
+prenickname                     <$NAM>  
+postnickname                    <$EXP>
+
+protectnickname         1
+
+<!-- #ifdef variable="NNM" value="Clean" -->
+<!-- #endif variable="NNM" -->  
+
+<!-- #ifndef variable="NNM" value="Clean" -->
+protectavatarurl        1
+<!-- #endif variable="NNM" -->  
+
+<$T_pass>
+<$T_style>
+<$PASS1>
+<$PASS2>
+
+<!-- #if variable="T_pass" == variable="PASS1" -->
+<!-- #ifdef variable="T_style" value="1" -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/bluem.wrl?pass=<$T_pass>
+<!-- #endif variable="T_style" -->
+<!-- #ifdef variable="T_style" value="2" -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/bluef.wrl?pass=<$T_pass>
+<!-- #endif variable="T_style" -->
+<!-- #endif variable="T_pass" -->  
+  
+<!-- #if variable="T_pass" == variable="PASS2" -->
+<!-- #ifdef variable="T_style" value="1" -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/redm.wrl?pass=<$T_pass>
+<!-- #endif variable="T_style" --> 
+<!-- #ifdef variable="T_style" value="2" -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/redf.wrl?pass=<$T_pass>
+<!-- #endif variable="T_style" -->
+<!-- #endif variable="T_pass" -->  
+
+<!-- #ifdef variable="T_style" value="CKSM." -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/gm.wrl
+<!-- #endif variable="T_style" -->
+
+<!-- #ifndef variable="T_style" value="1" -->
+<!-- #ifndef variable="T_style" value="2" -->
+<!-- #ifndef variable="T_style" value="CKSM." -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/redm.wrl?pass=<$T_pass>
+<!-- #endif variable="T_style" -->
+<!-- #endif variable="T_style" -->
+<!-- #endif variable="T_style" -->
+
+<!-- #ifndef variable="T_style" -->
+vrmlmyavatar           http://www.cybertown.com/places/ne_game/vrml/avatars/redm.wrl
+<!-- #endif variable="T_style" -->
+
+
+
+avatarhorizon     300
+maxneighbourspp   15
+
+### JoinMessage
+joinmessage             0
+ 
+### Voice  
+voicesupport            1  
+clientvoiceenable       1  
+botvoiceenable          1  
+
+
+### Diverse  
+noblaxxunhelp           1
+noblaxxunicon           0  
+useversionserver        0 
+
+<!-- #ifdef variable="isadmin" -->
+listtabflag                             111111111  
+settingslistflag                        1111111
+<!-- #endif variable="isadmin" -->
+
+<!-- #ifdef variable="NNM" value="Clean" -->
+listtabflag                             111111111  
+settingslistflag                        1111111
+<!-- #endif variable="NNM" -->  
+
+<!-- #ifndef variable="T_style" value="CKSM." -->
+listtabflag                             111111111  
+settingslistflag                        1111111
+<!-- #endif variable="T_style" -->
+
+<!-- #ifndef variable="T_style" value="CKSM." -->
+<!-- #ifndef variable="isadmin" -->
+<!-- #ifndef variable="NNM" value="Clean" -->
+listtabflag                             100000000  
+settingslistflag                        1011111
+<!-- #endif variable="NNM" -->  
+<!-- #endif variable="isadmin" -->  
+<!-- #endif variable="T_style" -->
+
+htmlframe                               HTML  
+framesizes                              60  
+uselastscene    0  
+  
+  
+### Colors  
+logcolor        0  
+panelbackrgb            0,80,0  
+paneltextrgb            0,223,0  
+  
+### Chat colors  
+inputtextchatrgb        255,255,0  
+systemtextchatrgb       0,255,220  
+historytextchatrgb      250,250,250  
+bottextchatrgb          0,195,255  
+owntextchatrgb          255,255,0  
+othertextchatrgb        255,160,0  
+ 
+  

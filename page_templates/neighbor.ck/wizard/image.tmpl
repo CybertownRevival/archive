@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Multimedia Wizard - <$ENM></b>
+</p>
+
+<form method=post action="<$selfurl>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="wizardimagesubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<table border=0>
+
+<tr>
+<td valign=top><b>Choose a<br> background image</b></td>
+<td>
+<!--#for loopname="2dimages" loopvars="index2d" -->
+<input type="Radio" name="IM2" value="<$index2d>" <$chk2d>>
+<img src="<$g_HTMLRoot>/home/<$path>neighbor/<$prefix2d><$index2d>.gif"
+width=180 height=100 border=0 ALT="<$name2d>">
+<br>
+<!--#endfor loopname="2dimages" -->
+<!-- #ifndef variable="index2d0" -->
+No images available!
+<!-- #endif variable="index2d0" -->
+</td>
+</tr>
+
+</table>
+
+<table border=0>
+<tr>
+<td width=250>&nbsp;</td>
+<td>
+		<input type=submit name="yes" value=Ok>
+		<input type=submit name="no" value=Cancel>
+</td>
+</tr>
+</table>
+</form>
+
+<font color="red">
+<!-- #ifdef variable="wizarderror001" -->
+Data for <$PNM> '<$NAM>' could not be stored in the database.
+<!-- #endif variable="wizarderror001" -->
+</font>
+
+<BODY>
+</HTML>

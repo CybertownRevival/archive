@@ -1,0 +1,128 @@
+<!-- msg/createmessage.tmpl -->
+<!--- create new instant messages --->
+
+<html>
+<head> 
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+<title> <$g_title> </title> 
+
+<script language="javascript">
+<!-- #ifdef variable="T_popup" -->
+  var popup=1;
+<!-- #endif variable="T_popup" -->
+onlineMembersID  = new Array();
+onlineMembersNNM = new Array();
+<!--#for loopname="loopopen" loopvars="ID_" -->
+onlineMembersID[<$loopindex>]= "<$ID_>";
+onlineMembersNNM[<$loopindex>]= "<$NNM_>";
+<!--#endfor loopname="loopopen" -->
+</script>
+
+</head><body onload="javascript:msgSetFocus('TXT')" class=popup>
+
+<form name="uform" method=post action="<$g_cgiRoot>/msg<$g_exe>">
+<input type=hidden name="ac" value="create">
+<input type=hidden name="TPL" value="msg/messages">
+<input type="hidden" name="TPL_ERR" value="msg/error">
+<input type=hidden name="TYP" value="I">
+<input type=hidden name="CRE_NNM" value="<$NNM>">
+<input type=hidden name="OWN" value="<$M_ID>">
+
+<!-- #ifndef variable="T_popup" -->
+
+<!-- #else variable="T_popup" -->
+
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #endif variable="T_popup" -->
+
+<!-- #ifndef variable="T_TB" -->
+  <!-- #define variable="heading" value="Messages" -->
+  <!-- #ifndef variable="T_popup" -->
+    <!-- #include virtual="<$g_Templates>msg/buttons.tmpl" -->
+  <!-- #endif variable="T_popup" -->
+  <!-- #else variable="T_TB"-->
+  <!-- #define variable="heading" value="<$T_TB>" -->
+<!-- #endif variable="T_TB"-->
+
+<!-- #ifndef variable="hideTemplate" --> 
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<center>
+<IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>
+
+<p class=head2>
+<font face="Arial" size=3 color="#00ff00"><b>Send Instant Message</b></font>
+</p>
+
+<a href="javascript:msgGoto('inbox')" target="">
+<img src="/images/buttons60/btnopt_inbox.gif" alt="My Message Inbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('outbox')" target="">
+<img src="/images/buttons60/btnopt_outbox.gif" alt="My Message Outbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('alert')" target="">
+<img src="/images/buttons60/btnopt_alerts.gif" alt="My Alerts" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send')" target="">
+<img src="/images/buttons60/btnopt_sendmessage.gif" alt="Send New Message" border="0" vspace=1 hspace=1></a>
+
+<br>
+
+<a href="javascript:msgGoto('send','Broadcast Group','','Broadcast')" target="">
+<img src="/images/buttons60/btnopt_broadcast.gif" alt="Send Broadcast Message" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send','Security Group','','Security')" target="">
+<img src="/images/buttons60/btnopt_securityalert.gif" alt="Send Security Alert" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('buddylist')" target="">
+<img src="/images/buttons60/btnopt_buddylist.gif" alt="My Buddylist" border="0" vspace=1 hspace=1></a>
+
+<p><center>
+      <table cellspacing=1 border=0 width=100% align="center">
+        <tr>
+          <td class=thbg width="51%"> 
+            <p class=thfont>From:</p></td>
+          <td class=thbg width="34%"> 
+            <p class=thfont>To:</p></td>
+</tr>
+<tr>
+          <td width="51%"> 
+            <p class=cont><font color="#00ff00"><$MEM_NNM><$VIS_NNM></font></p></td>
+<!-- #ifndef variable="REC_NNM" -->
+          <td width="34%"> <span class=cont> 
+            <select name="REC">
+<!--#for loopname="loopopen" loopvars="ID_" -->
+<option value="<$ID_>"> <$NNM_>
+<!--#endfor loopname="loopopen" -->
+</select>
+</span>
+</td>
+<!-- #else variable="REC_NNM" -->
+          <td width="15%"> 
+            <p class=cont><$REC_NNM></p></td>
+<!-- #endif variable="REC_NNM" -->
+</tr>
+
+<tr>
+<td class=thbg colspan=2><p class=thfont>Your Message:</p></td>
+</tr>
+
+<tr>
+<td colspan=2>
+<!-- span class=cont -->
+<textarea wrap=physical cols=65 rows=4 name="TXT"><$TXT></textarea>
+<!-- /span -->
+<br><br>
+<INPUT TYPE=submit Value="Send Message">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</td>
+</tr>
+</table>
+
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+<!-- #endif variable="hideTemplate" --> 
+</center></center></form></body>
+
+</html>

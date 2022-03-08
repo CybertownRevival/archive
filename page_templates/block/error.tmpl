@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<script language="JavaScript">
+function goback()
+{
+parent.history.go(-1);
+}
+</script>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<font color="red">
+
+<h2 align=center>
+<!-- #ifdef variable="errread" -->
+<h3>Sorry <$NNM>,<br>you are not allowed to enter the <$BNM> '<$NAM>'!</h3>
+<!-- #endif variable="errread" -->
+<!-- #ifdef variable="errprint" -->
+<h3>Sorry <$NNM>,<br>this multimedia object does not exist!</h3>
+<!-- #endif variable="errprint" -->
+</h2>
+
+<p align=center>
+<a href="javascript:goback()"><i>Back</i></a>
+</p>
+</font>
+
+<BODY>
+</HTML>

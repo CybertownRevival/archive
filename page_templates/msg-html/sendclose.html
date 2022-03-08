@@ -1,0 +1,43 @@
+<!-- msg/sendclose.html -->
+<!--- close send message window --->
+
+<html>
+
+<head>
+
+<title> <$g_title> </title> 
+
+<!-- #include file="<$g_Templates>/common/browser.html" -->
+
+<script language="javascript">
+  // identify this action as popup action. see msgGoto() in msg.js
+  var popup=1;
+
+  var p_PDT = "<$T_PDT>";
+  var p_PKE = "<$T_PKE>";
+
+  if ( p_PDT == "CC" && p_PKE != "" )
+    location.replace("<$g_cgiRoot>/print<$g_exe>?TPL=ccenter/userpost&T_REQ_ID=<$T_PKE><$g_SessionID>");
+  else
+    window.setTimeout("doClose()",5000);
+</script>
+
+<!-- #include file="<$g_Templates>/msg/msg.js" -->
+
+</head>
+
+<body class=popup>
+<!-- #define variable="heading" value="Your message has been sent." -->
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<p class=note>
+<br>A copy of this message has been placed in your outbox folder.
+</p>
+
+<!-- #define variable="closebutton" value="1" -->
+<!-- #define variable="buttons" = value="cancel" -->
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+</body>
+
+</html>

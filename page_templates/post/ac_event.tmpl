@@ -1,0 +1,10 @@
+<!-- #ifdef variable="isVisitor" -->
+<a href="<$g_HTMLRoot>/places/post/visitor_mail.html" target="place"><img src="<$g_HTMLRoot>/places/post/images/freemail.gif" alt="Free E-Mail" border="0"></a>
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/post/post_visitor.html')" target="_self"><img src="<$g_HTMLRoot>/places/post/images/sendpostcard.gif" alt="Send a Postcard" border="0"></a>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<a href="http://freemail.cybertown.com" target="place"><img src="<$g_HTMLRoot>/places/post/images/freemail.gif" alt="Free E-Mail" border="0"></a>
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self"><img src="<$g_HTMLRoot>/places/post/images/sendpostcard.gif" alt="Send a Postcard" border="0"></a>
+<!-- #endif variable="isVisitor" -->
+

@@ -1,0 +1,719 @@
+<!-- /inb/Hawkwriteto.tmpl -->
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+<!--- MB editing tools script --->
+<script language="Javascript1.2"><!-- // load htmlarea
+_editor_url = "http://www.cybertown.com/htmlarea/";                     // URL to htmlarea files
+var win_ie_ver = parseFloat(navigator.appVersion.split("MSIE")[1]);
+if (navigator.userAgent.indexOf('Mac')        >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Windows CE') >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Opera')      >= 0) { win_ie_ver = 0; }
+if (win_ie_ver >= 5.5) {
+ document.write('<scr' + 'ipt src="' +_editor_url+ 'editor.js"');
+ document.write(' language="Javascript1.2"></scr' + 'ipt>');  
+} else { document.write('<scr'+'ipt>function editor_generate() { return false; }</scr'+'ipt>'); }
+// --></script> 
+<!--- End MB tools --->
+</head>
+<SCRIPT language="JavaScript">
+
+function checkmess()
+{
+  var num = 0;
+  for(i=0 ; i < 301 ; i++ )
+  {
+    var f = eval('document.poster.RSNNK_'+i);
+    if( f == null )
+      break;
+    if( f != "" )  
+    {
+	    var f1 = eval('document.poster.SNNK_'+num);
+     	 f1.value = f.value.toLowerCase();
+	    num++;
+	 }
+  }
+  if (num == 0 ) {
+  			alert("You need to enter at least one recipiant");
+  			return false; 
+  }
+  else {
+  return true; 
+  }
+}
+</SCRIPT>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #ifdef variable="DTY" value="HAWK" -->
+<div align=center>
+
+<h2>Inbox to all in in this list</h2>
+
+List of citizens (upto 300 of them!)
+
+<form name="poster" method=post action="print60" onSubmit="checkmess()">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type="hidden" name="SNNK_0" value="">
+<input type="hidden" name="SNNK_1" value="">
+<input type="hidden" name="SNNK_2" value="">
+<input type="hidden" name="SNNK_3" value="">
+<input type="hidden" name="SNNK_4" value="">
+<input type="hidden" name="SNNK_5" value="">
+<input type="hidden" name="SNNK_6" value="">
+<input type="hidden" name="SNNK_7" value="">
+<input type="hidden" name="SNNK_8" value="">
+<input type="hidden" name="SNNK_9" value="">
+<input type="hidden" name="SNNK_10" value="">
+<input type="hidden" name="SNNK_11" value="">
+<input type="hidden" name="SNNK_12" value="">
+<input type="hidden" name="SNNK_13" value="">
+<input type="hidden" name="SNNK_14" value="">
+<input type="hidden" name="SNNK_15" value="">
+<input type="hidden" name="SNNK_16" value="">
+<input type="hidden" name="SNNK_17" value="">
+<input type="hidden" name="SNNK_18" value="">
+<input type="hidden" name="SNNK_19" value="">
+<input type="hidden" name="SNNK_20" value="">
+<input type="hidden" name="SNNK_21" value="">
+<input type="hidden" name="SNNK_22" value="">
+<input type="hidden" name="SNNK_23" value="">
+<input type="hidden" name="SNNK_24" value="">
+<input type="hidden" name="SNNK_25" value="">
+<input type="hidden" name="SNNK_26" value="">
+<input type="hidden" name="SNNK_27" value="">
+<input type="hidden" name="SNNK_28" value="">
+<input type="hidden" name="SNNK_29" value="">
+<input type="hidden" name="SNNK_30" value="">
+<input type="hidden" name="SNNK_31" value="">
+<input type="hidden" name="SNNK_32" value="">
+<input type="hidden" name="SNNK_33" value="">
+<input type="hidden" name="SNNK_34" value="">
+<input type="hidden" name="SNNK_35" value="">
+<input type="hidden" name="SNNK_36" value="">
+<input type="hidden" name="SNNK_37" value="">
+<input type="hidden" name="SNNK_38" value="">
+<input type="hidden" name="SNNK_39" value="">
+<input type="hidden" name="SNNK_40" value="">
+<input type="hidden" name="SNNK_41" value="">
+<input type="hidden" name="SNNK_42" value="">
+<input type="hidden" name="SNNK_43" value="">
+<input type="hidden" name="SNNK_44" value="">
+<input type="hidden" name="SNNK_45" value="">
+<input type="hidden" name="SNNK_46" value="">
+<input type="hidden" name="SNNK_47" value="">
+<input type="hidden" name="SNNK_48" value="">
+<input type="hidden" name="SNNK_49" value="">
+<input type="hidden" name="SNNK_50" value="">
+<input type="hidden" name="SNNK_51" value="">
+<input type="hidden" name="SNNK_52" value="">
+<input type="hidden" name="SNNK_53" value="">
+<input type="hidden" name="SNNK_54" value="">
+<input type="hidden" name="SNNK_55" value="">
+<input type="hidden" name="SNNK_56" value="">
+<input type="hidden" name="SNNK_57" value="">
+<input type="hidden" name="SNNK_58" value="">
+<input type="hidden" name="SNNK_59" value="">
+<input type="hidden" name="SNNK_60" value="">
+<input type="hidden" name="SNNK_61" value="">
+<input type="hidden" name="SNNK_62" value="">
+<input type="hidden" name="SNNK_63" value="">
+<input type="hidden" name="SNNK_64" value="">
+<input type="hidden" name="SNNK_65" value="">
+<input type="hidden" name="SNNK_66" value="">
+<input type="hidden" name="SNNK_67" value="">
+<input type="hidden" name="SNNK_68" value="">
+<input type="hidden" name="SNNK_69" value="">
+<input type="hidden" name="SNNK_70" value="">
+<input type="hidden" name="SNNK_71" value="">
+<input type="hidden" name="SNNK_72" value="">
+<input type="hidden" name="SNNK_73" value="">
+<input type="hidden" name="SNNK_74" value="">
+<input type="hidden" name="SNNK_75" value="">
+<input type="hidden" name="SNNK_76" value="">
+<input type="hidden" name="SNNK_77" value="">
+<input type="hidden" name="SNNK_78" value="">
+<input type="hidden" name="SNNK_79" value="">
+<input type="hidden" name="SNNK_80" value="">
+<input type="hidden" name="SNNK_81" value="">
+<input type="hidden" name="SNNK_82" value="">
+<input type="hidden" name="SNNK_83" value="">
+<input type="hidden" name="SNNK_84" value="">
+<input type="hidden" name="SNNK_85" value="">
+<input type="hidden" name="SNNK_86" value="">
+<input type="hidden" name="SNNK_87" value="">
+<input type="hidden" name="SNNK_88" value="">
+<input type="hidden" name="SNNK_89" value="">
+<input type="hidden" name="SNNK_90" value="">
+<input type="hidden" name="SNNK_91" value="">
+<input type="hidden" name="SNNK_92" value="">
+<input type="hidden" name="SNNK_93" value="">
+<input type="hidden" name="SNNK_94" value="">
+<input type="hidden" name="SNNK_95" value="">
+<input type="hidden" name="SNNK_96" value="">
+<input type="hidden" name="SNNK_97" value="">
+<input type="hidden" name="SNNK_98" value="">
+<input type="hidden" name="SNNK_99" value="">
+<input type="hidden" name="SNNK_100" value="">
+<input type="hidden" name="SNNK_101" value="">
+<input type="hidden" name="SNNK_102" value="">
+<input type="hidden" name="SNNK_103" value="">
+<input type="hidden" name="SNNK_104" value="">
+<input type="hidden" name="SNNK_105" value="">
+<input type="hidden" name="SNNK_106" value="">
+<input type="hidden" name="SNNK_107" value="">
+<input type="hidden" name="SNNK_108" value="">
+<input type="hidden" name="SNNK_109" value="">
+<input type="hidden" name="SNNK_110" value="">
+<input type="hidden" name="SNNK_111" value="">
+<input type="hidden" name="SNNK_112" value="">
+<input type="hidden" name="SNNK_113" value="">
+<input type="hidden" name="SNNK_114" value="">
+<input type="hidden" name="SNNK_115" value="">
+<input type="hidden" name="SNNK_116" value="">
+<input type="hidden" name="SNNK_117" value="">
+<input type="hidden" name="SNNK_118" value="">
+<input type="hidden" name="SNNK_119" value="">
+<input type="hidden" name="SNNK_120" value="">
+<input type="hidden" name="SNNK_121" value="">
+<input type="hidden" name="SNNK_122" value="">
+<input type="hidden" name="SNNK_123" value="">
+<input type="hidden" name="SNNK_124" value="">
+<input type="hidden" name="SNNK_125" value="">
+<input type="hidden" name="SNNK_126" value="">
+<input type="hidden" name="SNNK_127" value="">
+<input type="hidden" name="SNNK_128" value="">
+<input type="hidden" name="SNNK_129" value="">
+<input type="hidden" name="SNNK_130" value="">
+<input type="hidden" name="SNNK_131" value="">
+<input type="hidden" name="SNNK_132" value="">
+<input type="hidden" name="SNNK_133" value="">
+<input type="hidden" name="SNNK_134" value="">
+<input type="hidden" name="SNNK_135" value="">
+<input type="hidden" name="SNNK_136" value="">
+<input type="hidden" name="SNNK_137" value="">
+<input type="hidden" name="SNNK_138" value="">
+<input type="hidden" name="SNNK_139" value="">
+<input type="hidden" name="SNNK_140" value="">
+<input type="hidden" name="SNNK_141" value="">
+<input type="hidden" name="SNNK_142" value="">
+<input type="hidden" name="SNNK_143" value="">
+<input type="hidden" name="SNNK_144" value="">
+<input type="hidden" name="SNNK_145" value="">
+<input type="hidden" name="SNNK_146" value="">
+<input type="hidden" name="SNNK_147" value="">
+<input type="hidden" name="SNNK_148" value="">
+<input type="hidden" name="SNNK_149" value="">
+<input type="hidden" name="SNNK_150" value="">
+<input type="hidden" name="SNNK_151" value="">
+<input type="hidden" name="SNNK_152" value="">
+<input type="hidden" name="SNNK_153" value="">
+<input type="hidden" name="SNNK_154" value="">
+<input type="hidden" name="SNNK_155" value="">
+<input type="hidden" name="SNNK_156" value="">
+<input type="hidden" name="SNNK_157" value="">
+<input type="hidden" name="SNNK_158" value="">
+<input type="hidden" name="SNNK_159" value="">
+<input type="hidden" name="SNNK_160" value="">
+<input type="hidden" name="SNNK_161" value="">
+<input type="hidden" name="SNNK_162" value="">
+<input type="hidden" name="SNNK_163" value="">
+<input type="hidden" name="SNNK_164" value="">
+<input type="hidden" name="SNNK_165" value="">
+<input type="hidden" name="SNNK_166" value="">
+<input type="hidden" name="SNNK_167" value="">
+<input type="hidden" name="SNNK_168" value="">
+<input type="hidden" name="SNNK_169" value="">
+<input type="hidden" name="SNNK_170" value="">
+<input type="hidden" name="SNNK_171" value="">
+<input type="hidden" name="SNNK_172" value="">
+<input type="hidden" name="SNNK_173" value="">
+<input type="hidden" name="SNNK_174" value="">
+<input type="hidden" name="SNNK_175" value="">
+<input type="hidden" name="SNNK_176" value="">
+<input type="hidden" name="SNNK_177" value="">
+<input type="hidden" name="SNNK_178" value="">
+<input type="hidden" name="SNNK_179" value="">
+<input type="hidden" name="SNNK_180" value="">
+<input type="hidden" name="SNNK_181" value="">
+<input type="hidden" name="SNNK_182" value="">
+<input type="hidden" name="SNNK_183" value="">
+<input type="hidden" name="SNNK_184" value="">
+<input type="hidden" name="SNNK_185" value="">
+<input type="hidden" name="SNNK_186" value="">
+<input type="hidden" name="SNNK_187" value="">
+<input type="hidden" name="SNNK_188" value="">
+<input type="hidden" name="SNNK_189" value="">
+<input type="hidden" name="SNNK_190" value="">
+<input type="hidden" name="SNNK_191" value="">
+<input type="hidden" name="SNNK_192" value="">
+<input type="hidden" name="SNNK_193" value="">
+<input type="hidden" name="SNNK_194" value="">
+<input type="hidden" name="SNNK_195" value="">
+<input type="hidden" name="SNNK_196" value="">
+<input type="hidden" name="SNNK_197" value="">
+<input type="hidden" name="SNNK_198" value="">
+<input type="hidden" name="SNNK_199" value="">
+<input type="hidden" name="SNNK_200" value="">
+<input type="hidden" name="SNNK_201" value="">
+<input type="hidden" name="SNNK_202" value="">
+<input type="hidden" name="SNNK_203" value="">
+<input type="hidden" name="SNNK_204" value="">
+<input type="hidden" name="SNNK_205" value="">
+<input type="hidden" name="SNNK_206" value="">
+<input type="hidden" name="SNNK_207" value="">
+<input type="hidden" name="SNNK_208" value="">
+<input type="hidden" name="SNNK_209" value="">
+<input type="hidden" name="SNNK_210" value="">
+<input type="hidden" name="SNNK_211" value="">
+<input type="hidden" name="SNNK_212" value="">
+<input type="hidden" name="SNNK_213" value="">
+<input type="hidden" name="SNNK_214" value="">
+<input type="hidden" name="SNNK_215" value="">
+<input type="hidden" name="SNNK_216" value="">
+<input type="hidden" name="SNNK_217" value="">
+<input type="hidden" name="SNNK_218" value="">
+<input type="hidden" name="SNNK_219" value="">
+<input type="hidden" name="SNNK_220" value="">
+<input type="hidden" name="SNNK_221" value="">
+<input type="hidden" name="SNNK_222" value="">
+<input type="hidden" name="SNNK_223" value="">
+<input type="hidden" name="SNNK_224" value="">
+<input type="hidden" name="SNNK_225" value="">
+<input type="hidden" name="SNNK_226" value="">
+<input type="hidden" name="SNNK_227" value="">
+<input type="hidden" name="SNNK_228" value="">
+<input type="hidden" name="SNNK_229" value="">
+<input type="hidden" name="SNNK_230" value="">
+<input type="hidden" name="SNNK_231" value="">
+<input type="hidden" name="SNNK_232" value="">
+<input type="hidden" name="SNNK_233" value="">
+<input type="hidden" name="SNNK_234" value="">
+<input type="hidden" name="SNNK_235" value="">
+<input type="hidden" name="SNNK_236" value="">
+<input type="hidden" name="SNNK_237" value="">
+<input type="hidden" name="SNNK_238" value="">
+<input type="hidden" name="SNNK_239" value="">
+<input type="hidden" name="SNNK_240" value="">
+<input type="hidden" name="SNNK_241" value="">
+<input type="hidden" name="SNNK_242" value="">
+<input type="hidden" name="SNNK_243" value="">
+<input type="hidden" name="SNNK_244" value="">
+<input type="hidden" name="SNNK_245" value="">
+<input type="hidden" name="SNNK_246" value="">
+<input type="hidden" name="SNNK_247" value="">
+<input type="hidden" name="SNNK_248" value="">
+<input type="hidden" name="SNNK_249" value="">
+<input type="hidden" name="SNNK_250" value="">
+<input type="hidden" name="SNNK_251" value="">
+<input type="hidden" name="SNNK_252" value="">
+<input type="hidden" name="SNNK_253" value="">
+<input type="hidden" name="SNNK_254" value="">
+<input type="hidden" name="SNNK_255" value="">
+<input type="hidden" name="SNNK_256" value="">
+<input type="hidden" name="SNNK_257" value="">
+<input type="hidden" name="SNNK_258" value="">
+<input type="hidden" name="SNNK_259" value="">
+<input type="hidden" name="SNNK_260" value="">
+<input type="hidden" name="SNNK_261" value="">
+<input type="hidden" name="SNNK_262" value="">
+<input type="hidden" name="SNNK_263" value="">
+<input type="hidden" name="SNNK_264" value="">
+<input type="hidden" name="SNNK_265" value="">
+<input type="hidden" name="SNNK_266" value="">
+<input type="hidden" name="SNNK_267" value="">
+<input type="hidden" name="SNNK_268" value="">
+<input type="hidden" name="SNNK_269" value="">
+<input type="hidden" name="SNNK_270" value="">
+<input type="hidden" name="SNNK_271" value="">
+<input type="hidden" name="SNNK_272" value="">
+<input type="hidden" name="SNNK_273" value="">
+<input type="hidden" name="SNNK_274" value="">
+<input type="hidden" name="SNNK_275" value="">
+<input type="hidden" name="SNNK_276" value="">
+<input type="hidden" name="SNNK_277" value="">
+<input type="hidden" name="SNNK_278" value="">
+<input type="hidden" name="SNNK_279" value="">
+<input type="hidden" name="SNNK_280" value="">
+<input type="hidden" name="SNNK_281" value="">
+<input type="hidden" name="SNNK_282" value="">
+<input type="hidden" name="SNNK_283" value="">
+<input type="hidden" name="SNNK_284" value="">
+<input type="hidden" name="SNNK_285" value="">
+<input type="hidden" name="SNNK_286" value="">
+<input type="hidden" name="SNNK_287" value="">
+<input type="hidden" name="SNNK_288" value="">
+<input type="hidden" name="SNNK_289" value="">
+<input type="hidden" name="SNNK_290" value="">
+<input type="hidden" name="SNNK_291" value="">
+<input type="hidden" name="SNNK_292" value="">
+<input type="hidden" name="SNNK_293" value="">
+<input type="hidden" name="SNNK_294" value="">
+<input type="hidden" name="SNNK_295" value="">
+<input type="hidden" name="SNNK_296" value="">
+<input type="hidden" name="SNNK_297" value="">
+<input type="hidden" name="SNNK_298" value="">
+<input type="hidden" name="SNNK_299" value="">
+<input type="hidden" name="SNNK_300" value="">
+<input name="RSNNK_0" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_1" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_2" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_3" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_4" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_5" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_6" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_7" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_8" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_9" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_10" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_11" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_12" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_13" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_14" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_15" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_16" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_17" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_18" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_19" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_20" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_21" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_22" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_23" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_24" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_25" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_26" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_27" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_28" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_29" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_30" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_31" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_32" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_33" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_34" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_35" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_36" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_37" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_38" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_39" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_40" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_41" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_42" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_43" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_44" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_45" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_46" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_47" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_48" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_49" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_50" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_51" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_52" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_53" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_54" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_55" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_56" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_57" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_58" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_59" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_60" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_61" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_62" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_63" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_64" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_65" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_66" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_67" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_68" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_69" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_70" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_71" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_72" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_73" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_74" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_75" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_76" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_77" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_78" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_79" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_80" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_81" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_82" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_83" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_84" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_85" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_86" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_87" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_88" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_89" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_90" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_91" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_92" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_93" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_94" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_95" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_96" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_97" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_98" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_99" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_100" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_101" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_102" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_103" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_104" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_105" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_106" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_107" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_108" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_109" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_110" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_111" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_112" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_113" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_114" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_115" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_116" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_117" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_118" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_119" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_120" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_121" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_122" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_123" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_124" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_125" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_126" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_127" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_128" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_129" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_130" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_131" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_132" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_133" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_134" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_135" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_136" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_137" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_138" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_139" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_140" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_141" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_142" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_143" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_144" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_145" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_146" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_147" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_148" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_149" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_150" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_151" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_152" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_153" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_154" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_155" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_156" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_157" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_158" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_159" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_160" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_161" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_162" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_163" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_164" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_165" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_166" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_167" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_168" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_169" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_170" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_171" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_172" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_173" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_174" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_175" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_176" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_177" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_178" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_179" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_180" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_181" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_182" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_183" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_184" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_185" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_186" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_187" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_188" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_189" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_190" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_191" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_192" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_193" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_194" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_195" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_196" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_197" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_198" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_199" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_200" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_201" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_202" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_203" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_204" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_205" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_206" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_207" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_208" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_209" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_210" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_211" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_212" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_213" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_214" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_215" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_216" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_217" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_218" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_219" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_220" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_221" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_222" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_223" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_224" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_225" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_226" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_227" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_228" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_229" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_230" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_231" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_232" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_233" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_234" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_235" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_236" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_237" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_238" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_239" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_240" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_241" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_242" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_243" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_244" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_245" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_246" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_247" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_248" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_249" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_250" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_251" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_252" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_253" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_254" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_255" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_256" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_257" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_258" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_259" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_260" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_261" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_262" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_263" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_264" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_265" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_266" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_267" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_268" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_269" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_270" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_271" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_272" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_273" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_274" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_275" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_276" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_277" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_278" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_279" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_280" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_281" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_282" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_283" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_284" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_285" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_286" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_287" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_288" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_289" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_290" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_291" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_292" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_293" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_294" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_295" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_296" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_297" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_298" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_299" value="" MAXLENGTH=16 SIZE=20>
+<input name="RSNNK_300" value="" MAXLENGTH=16 SIZE=20>
+<br>
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="DATE" value="<$CT_STR>">
+<input type=hidden name="ID2" value="<$COLID>">
+
+<input type=hidden name="TPL" value="inb/toall4">
+<input type=hidden name="program" value="block">
+<input type=hidden name="ac"  value="<$ac>">
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+
+<table border=0>
+<tr>
+<td>Subject:</td>
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=32 SIZE=60></td>
+</tr>
+<tr>
+<td>Text:</td>
+<td><script language="JavaScript1.2" defer>
+editor_generate('txt');
+</script>
+<TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+
+</p>
+</form>
+
+<form name="spell">
+<script>
+<!--
+function sendtext()
+	{
+	var text;
+	var semi = new RegExp("\;","g");
+	document.send.checkme.value = (document.poster.txt.value.replace(semi,"\;"));
+	document.send.form.value = "poster";
+	document.send.field.value = "txt";
+	window.open('','SpellChecker','width=480,height=360,top=150,left=150,scrollbars=1,location=true');
+	document.send.submit();
+	}
+-->
+</script>
+	<input type="button" name="SpellCheck" value="SpellCheck" onclick="sendtext()" /></p>
+</form>
+<form name="send" action="http://www.cybertown.com/cgi-bin/aspell/nspell.pl" method="POST" target="SpellChecker">
+<input type="hidden" name="checkme" />
+<input type="hidden" name="form" />
+<input type="hidden" name="field" />
+<input type="hidden" name="spell" value="check" />
+</form>
+
+
+</font>
+<!-- #endif variable="DTY" --> 
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<HTML>
+<!-- club/updaterules.tmpl -->
+<!-- enter new rules for the club -->
+<HEAD>
+<META http-equiv="Content-Type" CONTENT="text/html">
+<title><$g_title> - Club</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<CENTER>
+<!-- #ifdef variable="STC" value="0"-->
+<IMG SRC="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+<!-- #ifdef variable="STC" value="1"-->
+<IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+</CENTER>
+
+<!--#ifdef variable="updateok" -->
+<font color=red>Data successfully updated.</font><BR>
+<!--#endif variable="updateok" -->
+
+<FORM METHOD=POST ACTION="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <INPUT TYPE=hidden NAME="KEY" VALUE="<$KEY>">
+    <INPUT TYPE=hidden NAME="TPL" VALUE="<$TPL>">
+
+    <TABLE ALIGN=CENTER>
+        <TR>
+            <TD><H3><FONT COLOR=#80ff00>The Rules of the Club:</H3></TD>
+        </TR>
+        <TR>
+            <TD>
+                Please use HTML tags like '&lt;BR&gt;' etc. to format the text.<BR>
+                <TEXTAREA NAME="RUL" ROWS="9" COLS="60"><$RUL></TEXTAREA>
+            </TD>
+        </TR>
+    </TABLE>
+    <BR>
+    <CENTER><INPUT TYPE=submit NAME="edit" VALUE="Update"></CENTER>
+</FORM>
+</BODY>
+</HTML>

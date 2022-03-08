@@ -1,0 +1,43 @@
+<!-- neighbor/action.tmpl --> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html"> 
+<title><$g_title></title> 
+</head> 
+
+<center> 
+<!-- #define variable="COLID" substring="<$ID>,0,4" --> 
+<!-- #define variable="HOODID" substring="<$ID>,0,8" -->
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>neighbor/action_hi-tek.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifdef variable="COLID" value="0105" --> 
+<!-- #ifndef variable="HOODID" value="01050408" -->
+<!-- #include virtual="<$g_Templates>neighbor/action_inner-realms.tmpl" --> 
+<!-- #endif variable="HOODID" -->
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifndef variable="COLID" value="0110" --> 
+<!-- #ifndef variable="COLID" value="0105" -->
+<!-- #ifndef variable="HOODID" value="01090502" -->
+
+<!-- #include virtual="<$g_Templates>neighbor/action_standard.tmpl" -->
+
+<!-- #endif variable="HOODID" -->
+<!-- #endif variable="COLID" --> 
+<!-- #endif variable="COLID" -->
+
+
+
+
+<!-- #ifdef variable="HOODID" value="01090502" -->
+<!-- #include virtual="<$g_Templates>neighbor/action_jaggededge.tmpl" -->
+<!-- #endif variable="HOODID" -->
+
+<!-- #ifdef variable="HOODID" value="01050408" -->
+<!-- #include virtual="<$g_Templates>neighbor/action_memorylane.tmpl" -->
+<!-- #endif variable="HOODID" -->
+
+</body> 
+</html>

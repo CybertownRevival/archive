@@ -1,0 +1,55 @@
+<!-- inrlms_col/controlend.tmpl -->
+<!-- included in action.tmpl, table starts in control.tmpl -->
+</div>
+
+<MAP Name="chatselect">
+<AREA Shape="rect" coords = "16,55,61,90"  HREF="community<$g_exe>?ac=place&ID=<$ID>&force=s" target="place" ALT="2D Chat" target=_self>
+<AREA Shape="rect" coords = "93,55,141,91" HREF="place<$g_exe>?ac=place&DTY=C&ID=<$ID>&force=p" target="place" ALT="3D Chat" target=_self>
+</MAP>
+
+<MAP Name="homechatselect">
+<AREA Shape="rect" coords = "16,55,61,90"  HREF="property<$g_exe>?ac=place&ID=<$ID>&force=s" target="place" ALT="2D Chat" target=_self>
+<AREA Shape="rect" coords = "93,55,141,91" HREF="property<$g_exe>?ac=place&ID=<$ID>&force=p" target="place" ALT="3D Chat" target=_self>
+</MAP>
+
+
+<MAP Name="controlmap">
+    <AREA Shape="rect" coords = "10,29,71,46"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+	<AREA Shape="rect" coords = "10,49,81,67" HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')"
+ ALT="How Do I?" target=_self>
+
+<!-- #ifndef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "10,69,62,88"  HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "10,69,62,88"  HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "9,91,78,110"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "9,91,78,110"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+<!-- #ifdef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "9,91,78,110"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="ac" -->
+<!-- #ifndef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "9,91,78,110"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="ac" -->
+<!-- #endif variable="HOM" -->
+
+    <AREA Shape="rect" coords = "9,112,75,132"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/helpinfo.html')" ALT="Help/Info" target=_self>
+    <AREA Shape="rect" coords = "8,134,73,153"  HREF="javascript:loadInfo('http://partyline.ctcolonies.com/calendar.htm')" ALT="Activities" target=_self>
+  <area shape="rect" coords="8,156,73,174" HREF="javascript:loadInfo('http://wilshire.free.fr/florence/index.html')" target="_self" alt="Quick Start">
+<area shape="rect" coords="7,178,74,196" HREF="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=msb/feedback')" target="_self" alt="Feedback Board">
+
+<AREA Shape="rect" coords = "7,199,77,217"  HREF="javascript:loadCustom('<$gHTMLRoot>/tour/intro.htm',520,400)" ALT="City Tour" target=_self>
+
+	<AREA Shape="rect" coords = "7,220,77,238"  HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+</MAP>
+</form>
+<!-- end of include controlend.tmpl -->

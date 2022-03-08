@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>blaxxun - Object</title>
+</head>
+
+<!-- object/check.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<h2>Object Check</h2>
+</center>
+<p>
+In this form, you can check newly uploaded objects for appropriateness of content. Please also check the position, orientation and size of the object; a platform and coordinate system have been added to help you. <font color="red">NEW!</font> You can also specify object classes. See <a href=#details target=_self>below</a> for details.<br>
+
+If you accept an object, it will be added to your backpack. Later you have to drop it off in the appropriate store. 
+</p>
+
+<div align=center>
+
+<table border=0>
+
+<tr>
+<!-- #ifndef variable="NAM" value="" -->
+<td><$NAM></td>
+<!-- #endif variable="NAM" -->
+<!-- #ifdef variable="NAM" value="" -->
+<!-- #ifdef variable="CAT_3NAM" -->
+<td><$CAT_3NAM></td>
+<!-- #endif variable="CAT_3NAM" -->
+<!-- #endif variable="NAM" -->
+
+<td>
+<!-- #ifndef variable="IMG" value="" -->
+<IMG SRC="<$IMG>" HEIGHT=64>
+<!-- #endif variable="IMG" -->
+<!-- #ifdef variable="IMG" value="" -->
+<!-- #ifdef variable="CAT_2IMG" -->
+<IMG SRC="<$CAT_2IMG>" HEIGHT=64>
+<!-- #endif variable="CAT_2IMG" -->
+<!-- #endif variable="IMG" -->
+</td>
+
+<td ALIGN=CENTER ROWSPAN=4 >
+<!-- #ifndef variable="WRL" value="" -->
+<EMBED SRC="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/axis&WRL=<$WRL>&mime=.wrl"
+       VRML-DASHBOARD="false"
+       TYPE="application/x-blaxxunCC3D"
+       HEIGHT=256 WIDTH=256>
+</EMBED>
+<!-- #endif variable="WRL" -->
+<!-- #ifdef variable="WRL" value="" -->
+<!-- #ifdef variable="CAT_WRL" -->
+<EMBED SRC="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ac=print&tpl=object/axis&WRL=<$CAT_WRL>&mime=.wrl"
+       VRML-DASHBOARD="false"
+       TYPE="application/x-blaxxunCC3D"
+       HEIGHT=256 WIDTH=256>
+</EMBED>
+<!-- #endif variable="CAT_WRL" -->
+<!-- #endif variable="WRL" -->
+</td>
+</tr>
+
+<tr>
+<td>Quantity:</td>
+<td><$CNT></td>
+</tr>
+
+<tr>
+<td>Price:</td>
+<td><$TPR></td>
+</tr>
+
+<tr>
+<td>Uploaded by</td>
+<td><$CRE_NNM></td>
+</tr>
+
+<form action="object?<$g_exe>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ID" value="<$ID>">
+    <input type="hidden" name="ZON" value="<$ZON>">
+    <input type="hidden" name="ac" value="accept">
+    <input type="hidden" name="nextac" value="list">
+    <input type="hidden" name="actions" value="1">
+    <input type="hidden" name="MTYPE" value="i">
+
+<tr>
+<td ALIGN=CENTER COLSPAN=3>Specify whether this is a Class &nbsp;
+A<input name="CLS" type="radio" value="A" >&nbsp;
+B<input name="CLS" type="radio" value="B" >&nbsp;or&nbsp;
+C<input name="CLS" type="radio" value="C" checked >&nbsp;object.
+</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER COLSPAN=3>
+<table>
+<tr>
+    <td><input type=submit name="Take" value="Accept"></td>
+</form>
+<form action="edit?<$g_exe>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="KEY" value="<$ID>">
+    <input type="hidden" name="TPL" value="object/reject">
+    <td><input type=submit name="Take" value="Reject"></td>
+    <td><input type="button" value="Back" onClick="history.go(-1);"></td>
+    <td><input type="button" value="Close" onClick="window.close()"></td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+
+
+<tr>
+</table>
+
+</div>
+
+<a name=details></a>
+<p>
+Object classes: Specify an object class based on the criteria of originality (How new/unique is the idea?) and sophistication (How difficult was it to create the object?). If an object exhibits both originality and sophistication, assign it to Class A. If it only exhibits one of the two characteristics, assign it to Class B; otherwise to Class C. Objects of Classes A and B earn their owners a premium of 20% and 10% respectively.
+</p>
+
+</body>
+</html>
+
+
+

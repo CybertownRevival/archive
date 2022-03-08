@@ -1,0 +1,50 @@
+<!-- common/control.tmpl -->
+<!-- included in action.tmpl to show common control panel-->
+<!-- JUMP GATE - Navigation Bar -->
+<IMG SRC="<$g_HTMLRoot>/images/control.gif" BORDER="0" USEMAP="#controlmap" ALT="Cybertown Control Panel">
+<select name="jumpgate" size="1" onchange="jump(this.options[this.selectedIndex].value)"><option value="">JUMP GATE</option>
+<option value=""></option>  
+<option value="top community<$g_exe>?ID=0102000000000000">Sci-fi</option>
+<option value="top community<$g_exe>?ID=0104000000000000">Entertainment</option>
+<option value="top community<$g_exe>?ID=0101000000000000">Games</option>
+<option value="top community<$g_exe>?ID=0103000000000000">Virtual Worlds</option>
+<option value="top community<$g_exe>?ID=0105000000000000">Inner Realms</option>
+<option value="">-----------------------</option>
+<option value="top place<$g_exe>?plc=enter">The Plaza</option>
+<option value="top place<$g_exe>?plc=clubdir">The Clubs</option>
+<option value="top place<$g_exe>?plc=cafe">Le Caf&eacute;</option>
+<option value="top place<$g_exe>?plc=funpark">The Fun Park</option>
+<option value="top place<$g_exe>?plc=shopping">The Mall</option>
+<option value="top place<$g_exe>?plc=cityhall">City Hall</option>
+<option value="top place<$g_exe>?plc=employment">Employment</option>
+<option value="top place<$g_exe>?plc=theatre">The Theater</option>                                 
+<option value="top place<$g_exe>?plc=pool">The Pool</option>
+<option value="top place<$g_exe>?plc=stadium">The Stadium</option>     
+<option value="top place<$g_exe>?plc=suburbs">The Suburbs</option>
+<option value="place <$g_HTMLRoot>/info/portals.html">The Portals</option>
+<option value="">-----------------------</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=m">Feedback</option>
+<option value="info citizen<$g_exe>?ac=action">Citizens</option>
+<option value="info <$g_HTMLRoot>/info/controlpanel/index.html">How Do I?</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/dailynews/index.html">Daily News</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/index.html">Weekly News</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000010001&MTY=m&T_TYPE=announce">What's New?</option>
+<option value="info <$g_HTMLRoot>/info/help/index.html">FAQ/Help</option>
+<option value="info <$g_HTMLRoot>/info/VisitorCenter/VisitorCenter.html">Tourist Info</option>
+<!-- #ifndef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&plc=enter&LDT=O&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<!-- #ifdef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&LDT=<$T_LDT>&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<option value="">-----------------------</option>
+<option value="top place<$g_exe>?plc=post">Post Office</option>
+<option value="poll vote<$g_exe>?ac=vote&PLC=000000000002000d&TYP=e">Instant Polls</option>
+<option value="top place<$g_exe>?plc=library">Library</option>
+<option value="top http://www.cybertown.com/index2.html">Old Town</option>
+</select>
+<!-- #ifdef variable="ID" value="0000000000000001" -->
+<p><a href="javascript:loadInfo('http://www.colonycity.com/survey/survey5.html')" target="_self"><img src="http://www.colonycity.com/survey/wints.gif" border=0></a></p>
+<!-- #endif variable="ID" -->
+<div align=center><br>
+<!-- end of include control.tmpl -->

@@ -1,0 +1,43 @@
+<!-- msg/updatebuddy.tmpl -->
+<!--- add buddy to buddy list --->
+
+<html>
+<head>
+
+<title><$g_title></title>
+
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.css" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+<script language="javascript">
+window.setTimeout("msgGoto('<$T_LB>','<$T_ID>')",1500);
+</script>
+
+</head>
+
+<body onLoad="" class=info>
+
+<!-- #define variable="T_LB" value="<$T_LB>" -->
+<!-- #define variable="heading" value="Buddy List" -->
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<center>
+<p class=head2><font face="Arial" size=3 color="#00ff00"><b>Adding Buddy. Please wait...</p></b></font>
+
+<p class=text>
+<font face="Arial" size=3 color="#00ff00"><b><$BUD_NNM></font></b>&nbsp;
+<!-- #if variable="TYP" == value="INSERT" --> 
+has been added to your buddy list.
+<!-- #endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="DELETE" --> 
+has been removed from your buddy list.
+<!-- #endif variable="TYP" -->
+</p>
+
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+
+</body>
+</html>

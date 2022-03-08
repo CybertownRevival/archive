@@ -1,0 +1,35 @@
+<!-- common/rightstop.tmpl -->
+<!-- buttons for updating all rights -->
+<html>
+<head>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<table><tr>
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&TPL=common/updownerrights&PRI=<$DTY>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsowner.gif" BORDER=0 ALT="Owner Access"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&TPL=common/updreadrights&PRI=<$DTY>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsread.gif" BORDER=0 ALT="Read Access"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&TPL=common/updwriterights&PRI=<$DTY>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsaction.gif" BORDER=0 ALT="Action Access"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&TPL=common/updchangerights&PRI=<$DTY>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightschange.gif" BORDER=0 ALT="Change Rights"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="<$g_HTMLRoot>/info/help/rights.html"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsinfo.gif" BORDER=0 ALT="Change Rights"></a>
+</tr>
+</table>
+
+</center>
+</BODY>
+</html>

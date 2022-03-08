@@ -1,0 +1,11 @@
+<script language=javascript>
+<!-- #ifdef variable="chatpro" -->
+parent.action.location = "place<$g_exe>?ac=action&plc=<$place>&ID=<$ID>";
+<!-- #endif variable="chatpro" -->
+function stopMovie(){
+ document.embeds[0].DoStop();
+ document.embeds[0].SetSource("<$g_HTMLroot>/places/vidnetvpod/vidnetvpod.rpm");
+ document.embeds[0].DoPlay();
+}
+</script>
+<!-- #include virtual="<$g_Templates>banners/bannerscript_vdrome.tmpl" -->

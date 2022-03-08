@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+
+<!-- IMPORTANT: 
+This template might be called by redirection (/home/<nickname>),
+so it's necessary to add "<$g_cgiRoot>/" at the beginning of ALL CGI program calls !!!
+Otherwise "/home/property?ac=place ..." is called with error!
+-->
+
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frame name="top" src="<$g_cgiRoot>/place<$g_exe>?ac=menu&ID=<$ID>&type=P&CID=<$commid>&ctype=C&plc=property&home=1&T_CID=<$commid>" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+ <frameset cols="*,185" border=0>
+  <frame name="place" src="<$g_cgiRoot>/property<$g_exe>?ac=place&ID=<$ID>" scrolling="auto" noresize border=0>
+  <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+   <frame name="action" src="<$g_cgiRoot>/property<$g_exe>?ac=action&ID=<$ID>&T_LDT=P" scrolling="auto" noresize>
+  </frameset>
+ </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+<head>
+<title><$g_title> - Suburb Submission</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2>
+<img src="<$g_HTMLRoot>/places/suburbs/images/cyberspace.jpg" width="132" height="104" align="middle">
+&nbsp;Submit your World! <small>(<a href="<$g_HTMLRoot>/places/suburbs/map.html">Back</a> to Suburbs)</small></h2>
+
+<div align=center>
+
+<font color="red">
+<!-- #ifdef variable="emailerror001" -->
+Subject, from and to are are required for sending an email!
+<!-- #endif variable="emailerror001" -->
+
+<!-- #ifdef variable="emailerror002" -->
+Email could not be send!
+<!-- #endif variable="emailerror002" -->
+</font>
+
+<font color="yellow">
+<!-- #ifdef variable="emailok" -->
+Your world was submitted to the City Architect!
+<!-- #endif variable="emailok" -->
+</font>
+
+</div>
+
+<!-- #ifndef variable="emailok" -->
+<form method=post action="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+<td width=150><b>From (nickname):</b></td>
+<td width=400><$NNM></td>
+</tr>
+
+<tr>
+<td width=150><b>To:</b></td>
+<td width=400>architect@colonycity.com</td>
+</tr>
+
+<tr>
+<td><b>URL (world):</b></td>
+<td><input name="VAL0" value="http://" maxlength=128 size=48></td>
+</tr>
+
+<tr>
+<td><b>Title (world):</b></td>
+<td><input name="VAL1" value="My Suburb" maxlength=32 size=16></td>
+</tr>
+
+<tr>
+<td><b>Comments:</b></td>
+<td><textarea name="VAL2" rows=5 cols=32 wrap=off></textarea></td>
+</tr>
+</table>
+
+<input type=hidden name="BODY" 
+value="Dear City Architect!
+The following suburb world has been submitted:
+ - Nickname=<$NNM>
+ - URL=[$VAL0]
+ - Title=[$VAL1]
+ - Comments=[$VAL2]
+
+That's it!
+Your Colony City Team">
+
+<div align=center>
+<p>If your world is approved you will be contacted with further instructions.
+</p>
+
+<input type=hidden name="ac" value="email">
+<input type=hidden name="tpl" value="suburbs/submit">
+<input type=hidden name="subject" value="Colony City: Suburb Submission">
+<input type=hidden name="type" value="suburbs">
+<input type=hidden name="domain" value="colonycity.com">
+<input type=hidden name="to" value="architect@colonycity.com">
+
+<input type=submit name="submit" value="Submit">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</div>
+
+</form>
+<!-- #endif variable="emailok" -->
+
+</body>
+</html>
+

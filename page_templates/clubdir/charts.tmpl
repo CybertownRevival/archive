@@ -1,0 +1,176 @@
+<HTML>
+<!-- clubdir/postable.tmpl -->
+<!-- position table of  -->
+<HEAD>
+	<TITLE><$g_title></TITLE>
+</HEAD>
+
+
+<script language="javascript">
+<!--
+
+function allClubsFrame()
+{
+    allClubs.document.open( "text/html" );
+
+    allClubs.document.writeln( "<html>" );
+
+    <!-- #ifndef variable="CLB" -->
+        allClubs.document.writeln( "<BODY BGCOLOR=\"#000000\" LINK=\"#00FF00\" VLINK=\"#00FF00\" ALINK=\"#FFFFFF\" TEXT=\"#D0DBF7\">" );
+    <!-- #endif variable="CLB" -->
+    <!-- #ifdef variable="CLB" -->
+        allClubs.document.writeln( "<BODY BGCOLOR=\"<$CLB>\" LINK=\"<$CLL>\" VLINK=\"<$CLL>\" ALINK=\"<$CLL>\" TEXT=\"<$CLT>\">" );
+    <!-- #endif variable="CLB" -->
+    allClubs.document.writeln( "<FONT face=\"Arial, Helvetica, sans-serif\" size=-1>" );
+
+    allClubs.document.writeln( "<h3 align=center><font color=#80ff00>Club Charts</font></h3>" );
+
+    allClubs.document.writeln( "<form name=\"filterForm\" method=post target=_parent action=\"<$selfurl>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"FIRSTNO\" value=\"<$FIRSTNO>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"LASTNO\" value=\"<$LASTNO>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"KFT\" value=\"<$KFT>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"ac\" value=\"<$ac>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"DTY\" value=\"<$DTY>\">" );
+    allClubs.document.writeln( "  <input type=\"hidden\" name=\"TPL\" value=\"<$TPL>\">" );
+
+    allClubs.document.writeln( "  <center>" );
+    allClubs.document.writeln( "  Charts Category:" );
+
+    allClubs.document.writeln( "  <select name=\"KTY\" onChange=\"parent.onApply()\">" );
+    allClubs.document.writeln( "    <option value=\"CNT\" <$KTY_CNT_SEL>>Member Count</option>" );
+    allClubs.document.writeln( "    <option value=\"GRW\" <$KTY_GRW_SEL>>New Member</option>" );
+    allClubs.document.writeln( "  </select>" );
+
+    <!--#ifdef variable="KTY" value="GRW"-->
+            allClubs.document.writeln( "<br>Number of new members since <$UDD_MONNAME> <$UDD_MDAy>, <$UDD_YEAR><br>" );
+    <!--#endif variable="KTY" -->
+
+    allClubs.document.writeln( "  </center>" );
+
+    allClubs.document.writeln( "</form>" );
+
+    allClubs.document.writeln( "  <center>" );
+    <!--#ifdef variable="[PREV]" -->
+        allClubs.document.writeln( "<a href=\"club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$FIRSTNO>&prev=1\" target=_parent>&lt;&lt;</a>" );
+    <!--#endif variable="[PREV]" -->
+    <!--#for loopname="RANGESLIST" loopvars="RANGE_" -->
+        <!--#ifdef variable="RANGE_CUR_" -->
+            allClubs.document.writeln( "<$RANGE_>" );
+        <!--#endif variable="RANGE_CUR_" -->
+        <!--#ifndef variable="RANGE_CUR_" -->
+            allClubs.document.writeln( "<a href=\"club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$RANGE_FIRST_>\" target=_parent><$RANGE_></a>" );
+        <!--#endif variable="RANGE_CUR_" -->
+        <!--#ifdef variable="RANGE_NL_" -->
+            allClubs.document.writeln( "<br>" );
+        <!--#endif variable="RANGE_NL_" -->
+    <!--#endfor loopname="RANGESLIST" -->
+    <!--#ifdef variable="[NEXT]" -->
+        allClubs.document.writeln( "<a href=\"club<$g_exe>?ac=charts&TPL=<$TPL>&KTY=<$KTY>&FIRSTNO=<$FIRSTNO>&next=1\" target=_parent>&gt;&gt;</a>" );
+    <!--#endif variable="[NEXT]" -->
+    allClubs.document.writeln( "  </center>" );
+
+    allClubs.document.writeln( "<table align=\"center\" cellspacing=0 border=0 width=100%>" );
+    allClubs.document.writeln( "  <tr>" );
+    allClubs.document.writeln( "    <th width=8%><font color=#80ff00>No.</th>" );
+    allClubs.document.writeln( "    <th width=25%><font color=#80ff00>Club Name</th>" );
+    allClubs.document.writeln( "    <th width=22%><font color=#80ff00>Owner</th>" );
+    allClubs.document.writeln( "    <th width=16%><font color=#80ff00>Activity</th>" );
+    allClubs.document.writeln( "    <th width=13%><font color=#80ff00>Members</th>" );
+    allClubs.document.writeln( "    <th width=16%><font color=#80ff00>New Members</th>" );
+    allClubs.document.writeln( "  </tr>" );
+
+    <!--#for loopname="CLUBLIST" loopvars="ID_" -->
+        allClubs.document.writeln( "  <tr>" );
+        allClubs.document.writeln( "    <td align=right><$BOLD_><$NUM_>.&nbsp;&nbsp;</td>" );
+
+        <!-- #ifdef variable="isVisitor" -->
+            allClubs.document.writeln( "    <td><$BOLD_><$NAM_></td>" );
+        <!-- #endif variable="isVisitor" -->
+        <!-- #ifndef variable="isVisitor" -->
+        <!--#ifdef variable="memberaccess_" -->
+            allClubs.document.writeln( "    <td><A HREF=\"club<$g_exe>?ac=enter&clubid=<$ID_>\" target=_top><$BOLD_><$NAM_></A></td>" );
+        <!--#endif variable="memberaccess_" -->
+        <!--#ifndef variable="memberaccess_" -->
+            <!--#ifdef variable="waiting_" -->
+               allClubs.document.writeln( "    <td><$BOLD_><$NAM_></td>" );
+            <!--#endif variable="waiting_" -->
+            <!--#ifndef variable="waiting_" -->
+                allClubs.document.writeln( "    <td><A HREF=\"edit<$g_exe>?ac=read&TPL=club/showinfo&KEY=<$ID_>&join=1\" target=_parent><$BOLD_><$NAM_></A></td>" );
+            <!--#endif variable="waiting_" -->
+        <!--#endif variable="memberaccess_" -->11
+        <!-- #endif variable="isVisitor" -->
+
+        allClubs.document.writeln( "    <td><$BOLD_><$OWN_NNM_></td>" );
+        allClubs.document.writeln( "    <td align=center><$BOLD_><$ACT_> %</td>" );
+        allClubs.document.writeln( "    <td align=center><$BOLD_><$CNT_></td>" );
+        allClubs.document.writeln( "    <td align=center><$BOLD_><$GRW_></td>" );
+        allClubs.document.writeln( "  </tr>" );
+    <!--#endfor loopname="CLUBLIST" -->
+    allClubs.document.writeln( "    </table>" );
+
+    allClubs.document.writeln( "</body>" );
+    allClubs.document.writeln( "</html>" );
+
+    allClubs.document.close();
+
+<!--#ifdef variable="myClubs" -->
+    myClubs.document.open( "text/html" );
+
+    myClubs.document.writeln( "<html>" );
+    <!-- #ifndef variable="CLB" -->
+        myClubs.document.writeln( "<BODY BGCOLOR=\"#000000\" LINK=\"#00FF00\" VLINK=\"#00FF00\" ALINK=\"#FFFFFF\" TEXT=\"#D0DBF7\">" );
+    <!-- #endif variable="CLB" -->
+    <!-- #ifdef variable="CLB" -->
+        myClubs.document.writeln( "<BODY BGCOLOR=\"<$CLB>\" LINK=\"<$CLL>\" VLINK=\"<$CLL>\" ALINK=\"<$CLL>\" TEXT=\"<$CLT>\">" );
+    <!-- #endif variable="CLB" -->
+    myClubs.document.writeln( "<FONT face=\"Arial, Helvetica, sans-serif\" size=-1>" );
+
+
+    myClubs.document.writeln( "<h4 align=center><font color=#80ff00>My Clubs</h4>" );
+    myClubs.document.writeln( "<table align=\"center\" cellspacing=0 border=0 width=100%>" );
+    <!--#for loopname="OWNCLUBS" loopvars="ID_OWN_" -->
+        myClubs.document.writeln( "  <tr>" );
+        myClubs.document.writeln( "    <td width=8% align=right><$NUM_OWN_>.&nbsp;&nbsp;</td>" );
+        myClubs.document.writeln( "    <td width=25%><a href=\"club<$g_exe>?ac=enter&clubid=<$ID_OWN_>\" target=_top><$NAM_OWN_></a></td>" );
+        myClubs.document.writeln( "    <td width=22%><$OWN_NNM_OWN_></td>" );
+        myClubs.document.writeln( "    <td width=16% align=center><$ACT_OWN_> %</td>" );
+        myClubs.document.writeln( "    <td width=13% align=center><$CNT_OWN_></td>" );
+        myClubs.document.writeln( "    <td width=16% align=center><$GRW_OWN_></td>" );
+        myClubs.document.writeln( "  </tr>" );
+    <!--#endfor loopname="OWNCLUBS" -->
+    myClubs.document.writeln( "</table>" );
+
+    myClubs.document.writeln( "</body>" );
+    myClubs.document.writeln( "</html>" );
+
+    myClubs.document.close();
+<!--#endif variable="myClubs" -->
+}
+
+function onApply()
+{
+    allClubs.document.filterForm.FIRSTNO.value = "";
+    allClubs.document.filterForm.LASTNO.value = "";
+
+    allClubs.document.filterForm.submit();
+}
+
+//-->
+</script>
+
+<!--#ifdef variable="myClubs" -->
+    <frameset rows="*,130" onload="javascript:allClubsFrame()" marginheight=0 marginwidth=0 framespacing=0>
+        <frame name="allClubs" src="<$g_HTMLRoot>/blank.html">
+        <frame name="myClubs" src="<$g_HTMLRoot>/blank.html">
+    </frameset>
+<!--#endif variable="myClubs" -->
+
+<!--#ifndef variable="myClubs" -->
+    <frameset rows="*,0" onload="javascript:allClubsFrame()" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+        <frame name="allClubs" src="<$g_HTMLRoot>/blank.html">
+        <frame name="myClubs" src="<$g_HTMLRoot>/blank.html" noresize>
+    </frameset>
+<!--#endif variable="myClubs" -->
+
+<!--/body-->
+</html>

@@ -1,0 +1,74 @@
+<HTML>
+<!-- iwos/homebought.tmpl -->
+<!-- after successfully bought a iwos house -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Congratulation for new home</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+function visitHome() 
+{
+  opener.parent.parent.location.href="<$g_cgiRoot>/property<$g_Exe>?ac=myhouse&force=p";
+
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+      alert("Please close the window by clicking on the X in the upper right corner.");
+    else
+      self.close();
+
+}
+
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+<center>
+<h2>Home Bought</h2>
+
+<!-- #ifndef variable="updateok" -->
+  <!-- #ifdef variable="errused" -->
+    <font color="red">Sorry <$NNM>, there was no place left!<br></font>
+  <!-- #endif variable="errused" -->
+  <!-- #ifdef variable="erralready" -->
+    <font color="red">Sorry <$NNM>, there was no place left!<br></font>
+  <!-- #endif variable="erralready" -->
+  <!-- #ifdef variable="err2dhomeprice" -->
+    <font color="red">Sorry <$NNM>, you have not enough money for a house!<br></font>
+  <!-- #endif variable="err2dhomeprice" -->
+  <!-- #ifdef variable="err3dhomeprice" -->
+    <font color="red">Sorry <$NNM>, you have not enough money for a 3D house!<br></font>
+  <!-- #endif variable="err3dhomeprice" -->
+  <!-- #ifdef variable="errnoname" -->
+    <font color="red">Sorry <$NNM>, you have to specify a name for your home !<br></font>
+  <!-- #endif variable="errnoname" -->
+  <!-- #ifdef variable="errnorights" -->
+    <font color="red">Sorry <$NNM>, there was no place left!<br></font>
+  <!-- #endif variable="errnorights" -->
+<!-- #endif variable="updateok" -->
+
+  <!-- #ifdef variable="errormoveobj" -->
+    Sorry <$NNM>, your objects could not be moved to your backpack!<br>
+  <!-- #endif variable="errormoveobj" -->
+
+<!-- #ifdef variable="updateok" -->
+  Congratulations.<BR>
+  You are now owner of a house in Cybertown.<BR>
+  <!-- #ifndef variable="errormoveobj" -->
+    Your objects are moved to your backpack!<br>
+  <!-- #endif variable="errormoveobj" -->
+  <BR>
+  <div align="center"><img src="<$g_Images>/images/iwos//owner.gif" width="300" height="115"></div>
+
+  <a href="<$g_cgiRoot>/property<$g_Exe>?ac=myhouse&force=p" onClick="visitHome()">Visit your new Home</a>
+<!-- #endif variable="updateok" -->
+
+</center></font></BODY></HTML>
+

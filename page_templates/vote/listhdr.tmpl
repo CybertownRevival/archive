@@ -1,0 +1,109 @@
+<!-- vote/listhdr.tmpl -->
+<!-- list all the votes -->
+
+<!--#ifndef variable="elect" -->
+<html>
+<head>
+
+
+<!--#ifdef variable="votecreated" -->
+<script language=javascript>
+location.href = "vote<$g_exe>?ac=list&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>";
+</script>
+<!--#endif variable="votecreated" -->
+
+<title><$g_title> - Voting</title>
+
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<center>
+
+<h2>Votes for <$NAM></h2>
+<a href="vote<$g_exe>?ac=new&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>" target="_top"
+><IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Vote"></a>
+<hr>
+
+</center>
+
+<table border=0>
+<tr>
+<td width=55%><font color=#FFFF00><b>Topic</b></font></td>
+<td>&nbsp;&nbsp;</td>
+<td width=5%><font color=#FFFF00><b>Secret</b></font></td>
+<td>&nbsp;&nbsp;</td>
+<td width=30%><font color=#FFFF00><b>End date</b></font></td>
+<td>&nbsp;&nbsp;</td>
+<td width=5%><font color=#FFFF00><b>Creator</b></font></td>
+</tr>
+
+<!--#for loopname="loopopen" loopvars="DATE_STR,action,TOP,NNM,EDA,SEC" -->
+<tr><td><a target="detail" href="<$selfurl>?ac=<$action>&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>"><$TOP></a></td>
+<td>&nbsp;&nbsp;</td>
+<td><$SEC></td>
+<td>&nbsp;&nbsp;</td>
+<!--#ifndef variable="DATE_STR" -->
+<td>closed</td>
+<!--#endif variable="DATE_STR" -->
+<!--#ifdef variable="DATE_STR" -->
+<td><$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_AP>:<$DATE_MIN> <$DATE_APM></td>
+<!--#endif variable="DATE_STR" -->
+<td>&nbsp;&nbsp;</td>
+<td><$NNM></td>
+<!--#endfor loopname="loopopen" -->
+
+</table>
+
+</body>
+</html>
+<!--#endif variable="elect" -->
+
+<!--#ifdef variable="elect" -->
+<html>
+<head>
+
+<title><$g_title> - Polling</title>
+
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+
+<center>
+
+<h2><$g_title> - Polling</h2>
+<!-- #ifdef variable="owneraccess" -->
+<a href="vote<$g_exe>?ac=new&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>" target="_top"
+><IMG SRC="<$g_Images>/images/buttons/bpost.gif" BORDER=0 ALT="Post a Vote"></a>
+<br>
+<br>
+<!-- #endif variable="owneraccess" -->
+</center>
+<!-- #ifndef variable="ID0" -->
+Sorry, there are no previous polls.
+<!-- #endif variable="ID0" -->
+
+<table border=0>
+
+<!--#for loopname="loopopen" loopvars="DATE_STR,action,TOP,NNM,EDA,SEC" -->
+<tr><td><a href="<$selfurl>?ac=<$action>&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>"><$TOP></a></td>
+<!-- #ifdef variable="owneraccess" -->
+<td align=right>
+<a href="vote<$g_exe>?ac=delete&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")'
+><IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete"></a>
+</td>
+<!--#endif variable="owneraccess" -->
+<!-- #ifndef variable="owneraccess" -->
+<td>&nbsp;&nbsp;</td>
+<!--#endif variable="owneraccess" -->
+<!--#endfor loopname="loopopen" -->
+
+</table>
+
+<center>
+<a href="javascript:history.go(-1)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+</center>
+
+</body>
+</html>
+<!--#endif variable="elect" -->

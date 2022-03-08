@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- cityhall/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- moderation -->
+<script language="JavaScript">
+function moderate() {
+window.open('place<$g_exe>?ac=moderate&plc=<$place>&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+ }
+</script>
+<!-- end moderation -->
+
+<script language="JavaScript">
+<!-- #ifdef variable="T_mode" -->
+var mode = "<$T_mode>";
+<!-- #endif variable="T_mode" -->
+<!-- #ifndef variable="T_mode" -->
+var mode = "2D";
+<!-- #endif variable="T_mode" -->
+
+<!-- #ifdef variable="T_aud" value="" -->
+var audit = "audit";
+<!-- #endif variable="T_aud" -->
+<!-- #ifndef variable="T_aud" value="" -->
+var audit = "<$T_aud>";
+<!-- #endif variable="T_aud" -->
+
+function set_chatZone(chatZone){
+
+if(mode == "3D"){
+  bxx = "/cgi-bin/cybertown/place?plc=<$place>&DTY=<$DTY>&ID=<$ID>&ac=3D&T_aud=" + audit + "&&T_spawn=" + chatZone + "&T_refresh=false&T_pass=<$T_pass>&IE=x.bxx";
+  parent.place.World.document.CC3D.setNodeEventIn('change','set_scene',bxx);
+  u = "/cgi-bin/cybertown/place<$g_exe>?ac=action&plc=<$place>&DTY=<$DTY>&ID=<$ID>&T_aud=" + audit + "&&T_spawn=" + chatZone + "&T_pass=<$T_pass>&T_mode=3D";
+  self.location.href = u;
+}else{
+  parent.place.document.location.href = "place<$g_exe>?plc=cityhall&ac=place&ID=<$ID>&force=s&T_aud=<$T_aud>&T_spawn=" + chatZone;
+} 
+
+}
+function set_mode(v){
+ mode = v;
+}
+
+function goLobby(){
+ //opener.parent.place.document.href= "/cgi-bin/cybertown/place?plc=cityhall&ac=place&ID=0000000000000002&force=p&T_aud=audit&T_spawn=&T_3d=true&T_pass=";
+ parent.place.document.location.href= "/cgi-bin/cybertown/place?plc=cityhall&ac=place&ID=0000000000000002&force=s&T_aud=audit&T_spawn=&T_pass=";
+}
+
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM>
+<!-- #ifndef variable="T_spawn" value="" -->
+ Room <$T_spawn>
+<!-- #endif variable="T_spawn" -->
+<!-- #ifdef variable="T_spawn" value="" -->
+ Lobby
+<!-- #endif variable="T_spawn" -->
+
+</font></b></i><br>
+
+<!-- #ifdef variable="chataccess" -->
+<a href="place<$g_exe>?plc=cityhall&ac=place&ID=<$ID>&force=s&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_pass=<$T_pass>">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=cityhall&ac=place&ID=<$ID>&force=p&T_aud=<$T_aud>&T_spawn=<$T_spawn>&T_3d=true&T_pass=<$T_pass>" onClick="javascript:set_mode('3D');">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chataccess" -->
+
+<B><a href="javascript:loadInfo('/cgi-bin/cybertown/place?ac=list&tpl=cityhall/display')" target="_self">
+ENTER EVENT</a></B><br><BR>
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<a href="javascript:loadInfo('place<$g_exe>?plc=cityhall&ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a>
+<!-- #ifdef variable="readaccess" -->
+<a href="http://www.cybertown.com/townhall2.html" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bportal.gif" BORDER=0 ALT="Town Hall"></a><br><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox - private messages!"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages - public messages!"></a><br>
+<a href="place<$g_exe>?plc=employment" target="_top">
+<IMG SRC="<$g_Images>/images/buttons/bjobs.gif" BORDER=0 ALT="Employment Office"></a><br>
+<!-- #endif variable="readaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+  <br>
+  <a href="place<$g_exe>?plc=ccoffice" target="_top">
+  <IMG SRC="<$g_Images>/images/buttons/councilbut.gif" BORDER=0 ALT="City Council Office"></a><br>
+  <a href="place<$g_exe>?plc=seoffice" target="_top">
+  <IMG SRC="<$g_Images>/images/buttons/securebut.gif" BORDER=0 ALT="Security Office"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+
+
+
+<br>
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- #endif variable="writeaccess" -->
+
+
+
+
+<!-- #ifdef variable="isAdmin" -->
+<a href="javascript:loadInfo('/cgi-bin/cybertown/admin2/cityhall/nchimg.pl')" target="_self"><font size="2">
+CHANGE COUNCIL IMAGES</font></a>
+<br>
+<!-- #endif variable="isAdmin" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="javascript:moderate()" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate Chat"></a>
+<br>
+
+<a href="javascript:loadInfo('edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update Information"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=cityhall&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

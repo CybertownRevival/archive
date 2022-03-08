@@ -1,0 +1,105 @@
+<HTML>
+<!-- club/memlist.tmpl -->
+<!-- lists the member of the club -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Club</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<!-- #ifdef variable="STC" value="0" -->
+<script language="javascript">var path = "<$g_DBImages><$CLP>";
+	if (path.indexOf('dbimages/dbimages') > -1){
+	document.writeln('<img src="<$g_HTMLRoot><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+	}
+	else{
+	document.writeln('<img src="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+	}
+	</script>
+<!-- #endif variable="STC" -->
+<!-- #ifdef variable="STC" value="1"-->
+<IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+
+<H3 ALIGN=center><FONT COLOR=#80ff00>Member Directory of "<$NAM>"</FONT></H3>
+
+<CENTER>
+    Currently <$CNT> Members.
+</CENTER>
+<TABLE>
+<FORM METHOD=post TARGET=_self ACTION="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<TR>
+    <INPUT TYPE="hidden" NAME="ac" VALUE="<$ac>">
+	<INPUT TYPE="hidden" NAME="KFT" VALUE="<$KFT>">
+    <INPUT TYPE="hidden" NAME="TPL" VALUE="<$TPL>">
+	<INPUT TYPE="hidden" NAME="FIRSTKEY" VALUE="<$FIRSTKEY>">
+	<INPUT TYPE="hidden" NAME="LASTKEY" VALUE="<$LASTKEY>">
+	<INPUT TYPE="hidden" NAME="FIRSTID" VALUE="<$FIRSTID>">
+	<INPUT TYPE="hidden" NAME="LASTID" VALUE="<$LASTID>">
+	<INPUT TYPE="hidden" NAME="SORTORDER" VALUE="<$SORTORDER>">
+
+	<INPUT TYPE="hidden" NAME="clubId" VALUE="<$clubId>">
+
+    <!--#ifdef variable="owneraccess" -->
+    	<INPUT TYPE="hidden" NAME="owneraccess" VALUE="1">
+    <!--#endif variable="owneraccess" -->
+
+
+	<TD>
+        <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+        <!--#ifdef variable="[PREV]" -->
+            <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+	</TD>
+
+</TR>
+</FORM>
+</TABLE>
+
+<TABLE align="center" cellspacing="0" cellpadding="1" border="1">
+	<TR>
+		<TH width=150><font color=#80ff00>Nickname</FONT></TH>
+		<TH width=120><font color=#80ff00>Last Visit Date</FONT></TH>
+        <!--#ifdef variable="owneraccess" -->
+            <TH><font color=#80ff00>Exclude</FONT></TH>
+            <TH><font color=#80ff00>Invite</FONT></TH>
+        <!--#endif variable="owneraccess" -->
+	</TR>
+	<!--#for loopname="MEMBERLIST" loopvars="ID_" --> 
+        <!--#ifdef variable="owneraccess" -->
+		<TR>
+			<TD valign=top><$ID_NNM_></TD>
+			<TD align=center><$LVD_MONNAME_> <$LVD_MDAy_>, <$LVD_YEAR_></TD>
+                <TD>
+                    <A HREF="club<$g_exe>?ac=leave&clubid=<$clubId>&memid=<$ID_>&TKT=<$TKT>">Exclude</A>
+                </TD>
+                <TD>
+                <!--#ifdef variable="STT_" value="0" -->
+                    <A HREF="club<$g_exe>?ac=invite&clubid=<$clubId>&memid=<$ID_>&TKT=<$TKT>">Invite</A>
+                <!--#endif variable="STT_" -->
+                <!--#ifdef variable="STT_" value="1" -->
+                    &nbsp;
+                <!--#endif variable="STT_" -->
+                </TD>
+		</TR>
+        <!--#endif variable="owneraccess" -->
+        <!--#ifndef variable="owneraccess" -->
+        <!--#ifdef variable="STT_" value="1"-->
+            <TR>
+                <TD valign=top><$ID_NNM_></TD>
+                <TD align=center><$LVD_MONNAME_> <$LVD_MDAY_>, <$LVD_YEAR_></TD>
+            </TR>
+        <!--#endif variable="STT_" -->
+        <!--#endif variable="owneraccess" -->
+	<!--#endfor loopname="MEMBERLIST" -->
+</TABLE>
+
+</BODY>
+</HTML>

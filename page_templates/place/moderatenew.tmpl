@@ -1,0 +1,34 @@
+<!-- place/moderate -->
+<!--- load the chat moderation Java applet --->
+<HTML>
+
+<HEAD>
+<TITLE><$g_title> - Moderation</title>
+</HEAD>
+
+<BODY marginwidth=0 marginheight=0 >
+
+<!-- #ifdef variable="owneraccess" -->
+<!-- #define variable="mod" value="1" -->
+<!-- #endif variable="owneraccess" -->
+<!-- #ifdef variable="NNM" value="NPOModerator" -->
+<!-- #define variable="mod" value="1" -->
+<!-- #endif variable="NNM" value="NPOModerator" -->
+<!-- #ifdef variable="mod" -->
+<APPLET code="blaxxun.moderator.applet.Moderator.class" codebase="http://<$g_MdServer>:1999/commserv/community/java/mdclient"
+ archive=moderator.zip width=100% height=100% mayscript>
+ <PARAM name=modHost     value="<$g_MdServer>">
+ <PARAM name=modPort     value="<$g_MdPort>">
+ <PARAM name=modGroup    value="Public">
+ <PARAM name=modNickname value="<$MEM_NNM>">
+ <PARAM name=modScene    value="<$g_HttpServer><$g_cgiRoot>/place<$g_exe>?ID=<$ID>&plc=<$place>&ac=3D&IE=x.bxx">
+ <PARAM name=modMaxRequests  value="10000">
+ <PARAM name=modAutoDeleteRequests  value="true">
+ <PARAM name=modDebug    value="false">
+</APPLET>
+<!-- #endif variable="mod" -->
+<!-- #ifndef variable="mod" -->
+Sorry <$NNM>, you don't have the right to moderate this chat.
+<!-- #endif variable="mod" -->
+</BODY>
+</HTML>

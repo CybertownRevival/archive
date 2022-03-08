@@ -1,0 +1,108 @@
+<!-- msg/popwin.html -->
+<!--- display popup alert --->
+
+<html>
+<head> 
+
+<!-- #if variable="TYP" == value="I" --> 
+  <title>New Message from <$CRE_NNM></title> 
+<!--#endif variable="TYP" -->
+<!-- #if variable="TYP" == value="N" --> 
+  <title><$g_title> Alert</title> 
+<!--#endif variable="TYP" -->
+
+<!-- #include file="<$g_Templates>/common/browser.html" -->
+
+<script language="javascript">
+  // identify this action as popup action. see msgGoto() in msg.js
+  var popup=1;
+  var autoclose = <$g_msMessagePopupAutoClose>;
+  if ( autoclose > 0 )
+  {
+    window.setTimeout("doClose()",autoclose);
+  }
+</script>
+
+<!-- #include file="<$g_Templates>/msg/msg.js" -->
+
+</head>
+
+<body class=popup>
+
+<!-- #define variable="escapetxt" escape="<$TXT>" -->
+
+<!-- #if variable="TYP" == value="I" --> 
+  <!-- #define variable="btn_reply" value="1" -->
+  <!-- #define variable="box_title" value="Message" -->
+  <!-- #define variable="date_title" value="Received" -->
+<!--#endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="N" --> 
+  <!-- #define variable="box_title" value="Alert" -->
+  <!-- #define variable="date_title" value="Start" -->
+<!--#endif variable="TYP" -->
+
+<!-- #define variable="heading" value="<$box_title>" -->
+<!-- #define variable="div_class" value="tablepopup" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+<!-- #define variable="T_LB" value="close" -->
+
+<!-- #if variable="TYP" != value="B" -->
+
+<p class="note">&nbsp;</p>
+<table border=0 cellspacing=1 width=100%>
+  <tr class=thbg>
+    <td width="30%" nowrap><p class="thfont">From</p></td>
+    <td width="30%" nowrap><p class="thfont">To</p></td>
+    <td nowrap><p class="thfont"><$date_title></p></td>
+  </tr>
+  <tr class=tdbg>
+    <td><p class="tdfont"><$CRE_NNM>&nbsp;</p></td>
+    <td><p class="tdfont"><$MEM_NNM><$VIS_NNM>&nbsp;</p></td>
+    <td><p class="tdfont"><$SDA_YEAR>/<$SDA_MON>/<$SDA_MDAY>&nbsp;<$SDA_HOUR>:<$SDA_MIN></p></td>
+  </tr>
+</table>
+
+<p class=text>
+  <br>
+  <script language="JavaScript">
+  document.write(msgFormatText('<$escapetxt>'));
+  </script>
+</p>
+
+<!-- #if variable="O_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="O_NAM" -->
+<!-- #if variable="CL_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="CL_NAM" -->
+<!-- #if variable="H_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="H_NAM" -->
+
+<!-- #ifdef variable="NAM_OR" -->
+<p class="note">Go to <a href="javascript:load('<$plcID>')"><$O_NAM><$CL_NAM><$H_NAM></a></p>
+<script language="JavaScript">
+function load(plcID)
+{
+  acWin = getFrame("action");
+  acWin.loadPlace('',plcID,'');
+  doClose();
+}
+</script>
+<!-- #endif variable="NAM_OR" -->
+
+<!--#endif variable="TYP" -->
+
+<!-- #define variable="buttoncheck" value="msgGoto('send','<$CRE_NNM>')" -->
+<!-- #define variable="closebutton" value="1" -->
+<!-- #if variable="TYP" == value="I" --> 
+  <!-- #define variable="buttons" value="reply" -->
+<!--#else variable="TYP" -->
+  <!-- #define variable="buttons" value="cancel" -->
+<!--#endif variable="TYP" -->
+
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+</body>
+</html>

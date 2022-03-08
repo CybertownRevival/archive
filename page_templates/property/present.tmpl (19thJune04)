@@ -1,0 +1,87 @@
+<!-- property/present.tmpl -->
+<div align=center><font size=+1><b>Welcome to <$NAM></b></font></div>
+
+<table border=0 width=100%>
+<tr><td>
+
+<!-- 1. table for text data -->
+<table border=0 width=100%>
+<tr>
+<td width=130><b>Resident</b></td>
+<td><$ownername></td>
+</tr>
+
+<tr>
+<td><b>Name</b></td>
+<td><$FNM> <$LNM></td>
+</tr>
+<!-- #ifdef variable="EML" -->
+<!--#if variable="NNM" == variable="MEM_NNM" -->
+<tr>
+<td><b>Email</b></td>
+<td><$EML></td>
+</tr>
+<!--#endif variable="NNM" -->
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+<td><b>Email</b></td>
+<td><$EML></td>
+</tr>
+<tr>
+<td><b>Immigration Email</b></td>
+<td><$EMI></td>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="EML" -->
+
+<tr>
+<td><b>Immigration</b></td>
+<td><$IMD_DAYNAME>, <$IMD_MONNAME> <$IMD_MDAy> <$IMD_YEAR></td>
+</tr>
+<!-- #ifdef variable="LAD_DAYNAME" -->
+<tr>
+<td><b>Last Access</b></td>
+<td><$LAD_DAYNAME>, <$LAD_MONNAME> <$LAD_MDAy> <$LAD_YEAR></td>
+</tr>
+<!-- #endif variable="LAD_DAYNAME" -->
+<tr>
+<td><b>Experience</b></td>
+<td><$EXP></td>
+</tr>
+
+<tr>
+<!-- #ifdef variable="MON" -->
+<td><b>Money</b>
+</td>
+<td><$MON></td>
+</tr>
+<!-- #endif variable="MON" -->
+
+<tr>
+<!-- #ifdef variable="HPG" -->
+<tr>
+<td><b>Home Page</b></td>
+<td><a href="<$HPG>" target="external"><$HPG></a></td>
+</tr>
+<!-- #endif variable="HPG" -->
+</table>
+
+<!-- 2. image data -->
+<td width=150>
+<!-- #ifdef variable="exists" -->
+<img src="property<$g_exe>?ac=print&ID=<$propid>&type=P&index=&media=i" border=0 alt="">
+<!-- #endif variable="exists" -->
+<!-- #ifdef variable="medialocked" -->
+<img src="<$g_Images>/images/locked.gif" border=0 alt="Your image must be accepted by the block leader first!">
+<br><font color="FFFF00"><small>Your image must be accepted by the block leader first!</small></font>
+<!-- #endif variable="medialocked" -->
+<!-- #ifdef variable="upload" -->
+<small><i>Click Update to upload your personal image!</i></small>
+<!-- #endif variable="upload" -->
+<!-- #ifdef variable="noimage" -->
+<small><i>No image uploaded yet!</i></small>
+<!-- #endif variable="noimage" -->
+</td>
+
+</tr>
+</table>

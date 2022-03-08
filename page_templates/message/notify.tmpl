@@ -1,0 +1,25 @@
+<!-- message/notify -->
+<html>
+<head>
+<title>Notification Event</title>
+</head>
+
+<script language="javascript">
+<!--
+
+function onLoad()
+{
+  var now = new Date;
+  var url = "<$g_cgiRoot>/message<$g_exe>?TPL=message/notifyrec&ac=getmessage&TYPE=notify&TKT=<$TKT><$g_SessionID>&" + now.getTime();
+  location.replace ( url );
+}
+
+//-->
+</script>
+
+<body onLoad="onLoad();" >
+<$g_font>
+&nbsp;
+</body>
+</html>
+

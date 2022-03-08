@@ -1,0 +1,42 @@
+<html>
+<!-- club/link.tmpl -->
+<!-- the favorit links of the club -->
+<head>
+<title><$g_title> - Personal Links</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<CENTER>
+<!-- #ifdef variable="STC" value="0" -->
+<img src="<$g_HTMLRoot><$g_DBImages><$CLP>" border=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+<!-- #ifdef variable="STC" value="1"-->
+<IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+</CENTER>
+
+<div align=center>
+<H3 ALIGN=center><FONT COLOR=#80ff00>Collection of Links of <$NAM></FONT></h3>
+
+<div align=center>
+    <!--#ifdef variable="LL1" -->
+        <a href="<$LL1>" target="external"><$LD1></a><BR>
+    <!--#endif variable="LL1" -->
+    <!--#ifdef variable="LL2" -->
+        <a href="<$LL2>" target="external"><$LD2></a><BR>
+    <!--#endif variable="LL2" -->
+    <!--#ifdef variable="LL3" -->
+        <a href="<$LL3>" target="external"><$LD3></a><BR>
+    <!--#endif variable="LL3" -->
+    <!--#ifdef variable="LL4" -->
+        <a href="<$LL4>" target="external"><$LD4></a><BR>
+    <!--#endif variable="LL4" -->
+    <!--#ifdef variable="LL5" -->
+        <a href="<$LL5>" target="external"><$LD5></a><BR>
+    <!--#endif variable="LL5" -->
+</div>
+
+</body>
+</html>
+

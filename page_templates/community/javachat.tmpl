@@ -1,0 +1,70 @@
+<!-- common/javachat.tmpl -->
+<!-- included in the place.tmpl of places and properties -->
+<!-- see a description of the parameters in the Java chat documentation -->
+
+<!-- #ifdef variable="chatreadaccess" -->
+<div align=center>
+<!-- #ifdef variable="chatwriteaccess" -->
+<!-- #ifndef variable="ID" value="000000000000001b" -->
+    <small><font color="#FFFF00"><center>Visitors can only watch the chat - Type <b>'/options'</b> for special chat options</center></font></small>
+<!-- #endif variable="ID" -->
+<!-- #endif variable="chatwriteaccess" -->
+<!-- #ifndef variable="chatwriteaccess" -->
+    <small><font color="#FFFF00"><center>If you'd like to chat, click the Join Now icon in the top frame</center></font></small>
+<!-- #endif variable="chatwriteaccess" -->
+<applet codebase="<$g_JAVARoot>/java/contact"
+        archive="classes2.zip"
+        code="BXApplet.class"
+        id="chat"
+        name="blaxxun Contact"
+        alt="blaxxun Contact (Java)"
+        width=580 height=240>
+    <param name = "cabbase"         value="blaxxunContactJava.cab">
+    <param name = "paramsUrl1"         value="<$g_JAVARoot>/java/contact2/uistrings_en">
+<!-- #if variable="ENV_HTTP_USER_AGENT" contains value="MSIE" -->
+    <param name = "useTCP"         value="true">
+<!-- #endif variable="ENV_HTTP_USER_AGENT" contains "MSIE" -->
+
+<small><p><font color="#FFFF00">The 2D Chat requires Java (you must enable Java in your browser).</font><br><font color="#00FF00">&nbsp;&nbsp;Netscape 4.x: menu 'edit-preferences-advanced-enable java'<br>&nbsp;&nbsp;IE 4.x: menu 'view-internet options-advanced-enable java'</p><p><font color="#FFFF00">If you do not want to enable Java please settle down in a colony and update your personal data (chat option = no chat).</p></small>
+
+    <param name = startroom         value= "<$scenename>@<$g_SceneServer><$g_cgiRoot>/place?DTY=C&ID=<$ID>&ac=3D&IE=x.bxx">
+
+    <param name = openroomreplace   value = "ac=3D'ac=index2d'_top">
+
+    <param name = port              value = <$port>>
+    <param name = usePassword       value = true>
+    <param name = nickname          value = "<$NNM>">
+    <param name = role              value = "<$rolename>">
+    <param name = experience        value = "<$stdexp>">
+    <param name = userid            value = "<$MID>">
+    <param name = password          value = "<$COOKIE>">
+    <param name = ui                value = 31>
+    <param name = frame             value = false>
+    <param name = breakLines        value = true>
+
+<!-- #ifdef variable="chatwriteaccess" -->
+    <param name = lockInput         value = false>
+<!-- #endif variable="chatwriteaccess" -->
+
+<!-- #ifndef variable="chatwriteaccess" -->
+    <param name = lockInput         value = true>
+<!-- #endif variable="chatwriteaccess" -->
+
+    <param name = logTime           value = 10>
+    <param name = borderSize        value = 4>
+
+<!-- #ifndef variable="ID" value="0106000000000000" -->
+<!-- #include virtual="<$g_Templates>common/javachatparams.tmpl" -->
+<!-- #endif variable="ID" -->
+
+<!-- #ifdef variable="ID" value="0106000000000000" -->
+<!-- #include virtual="<$g_Templates>campus/javachatparams.tmpl" -->
+<!-- #endif variable="ID" -->
+
+</applet>
+</div>
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+    <font color="#FF0000"><center><b>Sorry <$NNM>, this place is private at this moment, visitors are not allowed to watch the Chat here:(</b></font>
+<!-- #endif variable="chatreadaccess" -->

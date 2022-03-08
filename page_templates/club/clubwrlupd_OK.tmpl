@@ -1,0 +1,98 @@
+<!-- club/clubwrlupd -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Club 3D World Selection</title>
+</head>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<BODY BACKGROUND="" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#00FF00" TEXT="#D0DBF7">
+
+<center>
+<H3>Club 3D World Selection</h3>
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+Please select the 3D world you want for your club below:
+<p>
+<form method=post action="<$selfurl>" name="WRLfrm">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="TPL" value="club/clubwrlupd">
+<table width="90%" border="0" align="center">
+    <tr>
+      <td width="36">
+		<input type="radio" name="CLUB_WRL"
+            <!--#ifdef variable="CLUB_WRL" value="1" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"--> 
+            <!--#ifdef variable="CLUB_WRL" value="" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"-->            
+        value="1">
+	  </td>
+      <td>
+	  Club Choice 1<br>
+	  <img src="http://www.cybertown.com/places/club/vrml/CLWRL1.jpg" border="0" alt="">
+	  </td></TR>
+<TR>
+      <td width="36">
+ 		<input type="radio" name="CLUB_WRL"
+            <!--#ifdef variable="CLUB_WRL" value="2" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"-->   
+        value="2">  
+	  </td>
+      <td>
+	  Club Choice 2<br>
+	  <img src="http://www.cybertown.com/places/club/vrml/CLWRL5.jpg" border="0" alt="">	  
+	  </td>  
+    </tr>
+<!--New Clubs-->
+<TR>
+<td width="36">
+		<input type="radio" name="CLUB_WRL"
+            <!--#ifdef variable="CLUB_WRL" value="3" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"--> 
+            <!--#ifdef variable="CLUB_WRL" value="" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"-->            
+        value="3">
+	  </td>
+      <td>
+	  Club Choice 3<br>
+	  <img src="http://www.cybertown.com/places/club/vrml/CLWRL2.jpg" border="0" alt="">
+	  </td></TR>
+<TR>
+      <td width="36">
+ 		<input type="radio" name="CLUB_WRL"
+            <!--#ifdef variable="CLUB_WRL" value="4" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"-->   
+        value="4">  
+	  </td>
+      <td>
+	  Club Choice 4<br>
+	  <img src="http://www.cybertown.com/places/club/vrml/CLWRL3.jpg" border="0" alt="">	  
+	  </td>  
+       </tr>
+<TR>
+<td width="36">
+ 		<input type="radio" name="CLUB_WRL"
+            <!--#ifdef variable="CLUB_WRL" value="5" --> 
+                checked 
+            <!--#endif variable="CLUB_WRL"-->   
+        value="5">  
+	  </td>
+      <td>
+	  Club Choice 5<br>
+	  <img src="http://www.cybertown.com/places/club/vrml/CLWRL4.jpg" border="0" alt="">	  
+	  </td>  
+    </tr>
+    <tr>
+    </tr>
+</table>
+<center>
+<input type=submit name="edit" value=Update>
+<input type=button name="no" value=Close onClick="window.close()">
+</center>
+</form>
+</body>
+</html>

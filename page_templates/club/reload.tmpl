@@ -1,0 +1,45 @@
+<HTML>
+<!-- club/reload.tmpl -->
+<!-- to call a cgi-program from a other cgi-program -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$g_HTMLRoot><$g_BGIP>" BGCOLOR=<$g_CLB> LINK=<$g_CLL>
+VLINK=<$g_CLV> ALINK=<$g_CLA> TEXT=<$g_CLT>>
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_HTMLRoot><$BGI>" BGCOLOR="<$CLB>" LINK="<$CLL>"
+VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<font face="<$g_Font>">
+
+<!-- #ifdef variable="updatepage" -->
+<script>top.place.location.href='club<$g_exe>?ac=showForm&TPL=club/update&clubid=<$ID><$errorMsg>';</script>
+<!-- #endif variable="updatepage" -->
+
+<!-- #ifdef variable="enterClub" -->
+<script>top.location.href='place<$g_exe>?plc=club&DTY=CL&ID=<$ID>';</script>
+<!-- #endif variable="enterClub" -->
+
+<!-- #ifdef variable="directory" -->
+<script>top.location.href='place<$g_exe>?plc=clubdir';</script>
+<!-- #endif variable="directory" -->
+
+<!-- #ifdef variable="memlist" -->
+<script>top.location.href='edit<$g_exe>?ac=list&TPL=club/memlist&KFT=<$ID>cm*&clubId=<$ID>&owneraccess=1';</script>
+<!-- #endif variable="memlist" -->
+
+<!-- #ifdef variable="closelist" -->
+<script>location.href='edit<$g_exe>?ac=list&TPL=clubdir/dellist';</script>
+<!-- #endif variable="closelist" -->
+
+
+<center>
+loading next page...
+</center>
+
+</BODY>
+</HTML>

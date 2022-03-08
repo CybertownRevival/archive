@@ -1,0 +1,26 @@
+<!-- #ifdef variable="VWW" -->
+<!-- #ifndef variable="MVW" -->
+<table>
+<tr>
+<td>You have given your votes to <$NNM>.</td>
+</tr>
+</table>
+<!-- #endif variable="MVW" -->
+<table>
+<!-- #ifdef variable="MVW" -->
+<tr>
+<td>You have </td>
+<td align=right><$MVW></td>
+<td> vote(s).</td>
+</tr>
+<!-- #endif variable="MVW" -->
+<!-- #ifdef variable="OVW" -->
+<tr>
+<td>You have </td>
+<td align=right><$OVW></td>
+<td> votes assigned from others.</td>
+</tr>
+<!-- #endif variable="OVW" -->
+</table>
+<HR>
+<!-- #endif variable="VWW" -->

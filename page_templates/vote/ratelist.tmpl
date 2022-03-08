@@ -1,0 +1,87 @@
+<html>
+<!-- vote/ratelist.tmpl -->
+<!-- display the results to rate -->
+<head>
+<title><$g_title> - Ranking</title>
+
+<SCRIPT language="JavaScript">
+function deleteVote(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2 align="center">List of Objects currently rated</h2>
+<!-- #ifdef variable="owneraccess" -->
+  <table width="100%">
+  <tr>
+    <td align=right>
+      <a href='javascript:deleteVote("vote<$g_exe>?ac=delete&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")'>
+      <IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete"></a>
+  </td>
+  </tr>
+  </table>
+<!--#endif variable="owneraccess" -->
+
+<form name=apply method="post" action="<$selfurl>">
+
+  <input type="hidden" name="ac" value="ratelist">
+
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="PLC" value="<$PLC>">
+  <input type="hidden" name="TYP" value="<$TYP>">
+  <input type="hidden" name="PAR" value="<$PAR>">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="FIRSTNO" value="<$FIRSTNO>">
+  <input type="hidden" name="LASTNO" value="<$LASTNO>">
+
+    <center>
+    <!--#ifdef variable="[PREV]" -->
+        <a href="vote?ac=ratelist&ID=<$ID>&TPL=iwos/ratelist&OBJID=<$OBJID>&OBJDTY=<$OBJDTY>&OBJKTY=<$OBJKTY>&FIRSTNO=<$FIRSTNO>&prev=1" target=_parent>&lt;&lt;</a>
+    <!--#endif variable="[PREV]" -->
+    <!--#for loopname="RANGESLIST" loopvars="RANGE_" -->
+        <!--#ifdef variable="RANGE_CUR_" -->
+            <$RANGE_>
+        <!--#endif variable="RANGE_CUR_" -->
+        <!--#ifndef variable="RANGE_CUR_" -->
+            <a href="vote?ac=ratelist&ID=<$ID>&TPL=iwos/ratelist&OBJID=<$OBJID>&OBJDTY=<$OBJDTY>&OBJKTY=<$OBJKTY>&FIRSTNO=<$RANGE_FIRST_>" target=_parent><$RANGE_></a>
+        <!--#endif variable="RANGE_CUR_" -->
+        <!--#ifdef variable="RANGE_NL_" -->
+            <br>
+        <!--#endif variable="RANGE_NL_" -->
+    <!--#endfor loopname="RANGESLIST" -->
+    <!--#ifdef variable="[NEXT]" -->
+        <a href="vote?ac=ratelist&ID=<$ID>&TPL=iwos/ratelist&OBJID=<$OBJID>&OBJDTY=<$OBJDTY>&OBJKTY=<$OBJKTY>&FIRSTNO=<$FIRSTNO>&next=1" target=_parent>&gt;&gt;</a>
+    <!--#endif variable="[NEXT]" -->
+    </center>
+
+  <input type="hidden" name="TPL" value="<$TPL>">
+  <input type="hidden" name="OBJDTY" value="<$OBJDTY>">
+  <input type="hidden" name="OBJKTY" value="<$OBJKTY>">
+</form>
+
+
+<table border="0">
+<tr>
+  <td>Object ID and Name</td>
+  <td>Points</td>
+</tr>
+
+<!--#for loopname="OBJECTLIST" loopvars="OBJID" --> 
+<tr>
+	<td>
+    <a href="<$selfurl>?ac=rate&OBJID=<$OBJID>&ID=<$ID>"><$OBJNAM></a>
+  </td>
+	<td align="center"><$POINTS></td>
+</tr>
+<!--#endfor loopname="OBJECTLIST" -->
+</table>
+
+</body>
+</html>

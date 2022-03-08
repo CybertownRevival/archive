@@ -1,0 +1,36 @@
+<!-- common/controlend.tmpl -->
+<!-- included in action.tmpl, table starts in control.tmpl -->
+</div></form>
+<MAP Name="controlmap">
+    <AREA Shape="rect" coords = "3,40,95,55"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+	<AREA Shape="rect" coords = "0,60,100,73"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+
+<!-- #ifndef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "0,77,100,94"  HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "0,77,100,94"  HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "1,99,98,113"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "1,99,98,113"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+    <AREA Shape="rect" coords = "1,99,98,113"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+
+    <AREA Shape="rect" coords = "0,118,100,132"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/helpinfo.html')" ALT="Help/Info" target=_self>
+    <AREA Shape="rect" coords = "0,138,100,152"  HREF="javascript:loadInfo('cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=c&plc=enter&LDT=O&LID=0000000000000001')" ALT="Activities" target=_self>
+  <area shape="rect" coords="0,157,101,170" HREF="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self" alt="Send a Postcard">
+<area shape="rect" coords="1,177,102,191" HREF="javascript:loadInfo('/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000001&TY=m')" target="_self" alt="Feedback Board">
+
+<!--	<AREA Shape="rect" coords = "0,196,102,209"  HREF="" ALT="coming soon: City Tour" target=_self>
+-->
+	<AREA Shape="rect" coords = "20,212,148,246"  HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+</MAP>
+<!-- end of include controlend.tmpl -->

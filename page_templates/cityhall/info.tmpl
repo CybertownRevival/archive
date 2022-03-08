@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_HTMLRoot>/places/images/<$BGI>" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<H3 align=center>Welcome to <$placename>.</H3>
+
+<form method=post action="edit<$g_exe>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+
+<p><$TXT></p>
+
+<!-- #include virtual="<$g_Templates>common/inforoles.tmpl" -->
+
+</BODY>
+</HTML>

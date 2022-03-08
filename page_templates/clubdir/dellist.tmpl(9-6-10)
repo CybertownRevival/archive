@@ -1,0 +1,111 @@
+<HTML>
+<!-- clubdir/dellist.tmpl -->
+<!-- club list for closing -->
+<HEAD>
+	<TITLE><$g_title></TITLE>
+	<BASE TARGET="place">
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.FilterForm.KFT.value = document.FilterForm.KFT.value.toLowerCase();
+
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length, document.FilterForm.KFT.value.length-1 )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+function showdate(datetochk){
+	LADyear = datetochk.substring(0,4);
+	LADmonth = datetochk.substring(4,6);
+	LADday = datetochk.substring(6,8);
+	return LADday+'/'+LADmonth+'/'+LADyear;
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H2 ALIGN=center><FONT color=#80ff00>Close Club<$ID_3NAM_0></FONT></H2>
+
+<CENTER>
+To close the club, click on the club's delete link.<br>
+To goto the club, click on the clubs 'enter' link.<br>
+To goto the owners home, click on the owners name.<br>
+DO NOT DELETE THE FIRST 'BLANK' CLUB IN THIS LIST UNTIL CONFIRMED SAFE TO DO SO<br>
+
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input TYPE="hidden" NAME="ac" value="<$ac>">
+    <input TYPE="hidden" NAME="TPL" value="<$TPL>">
+
+    Filter:&nbsp;&nbsp;<INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+</CENTER>
+
+<FORM METHOD=post TARGET=_self ACTION="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <INPUT TYPE="hidden" NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+
+    <input TYPE="hidden" NAME="FIRSTKEY" value="<$FIRSTKEY>">
+    <input TYPE="hidden" NAME="LASTKEY" value="<$LASTKEY>">
+    <input TYPE="hidden" NAME="FIRSTID" value="<$FIRSTID>">
+    <input TYPE="hidden" NAME="LASTID" value="<$LASTID>">
+
+    <input TYPE="hidden" NAME="ac" value="<$ac>">
+    <input TYPE="hidden" NAME="TPL" value="<$TPL>">
+    <input TYPE="hidden" NAME="PRI" value="<$PRI>">
+
+    <TABLE ALIGN=center>
+    <TR>
+        <td>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+            <!--#ifdef variable="[PREV]" -->
+                <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+        </td>
+    </TR>
+    </TABLE>
+</FORM>
+<center>DO NOT DELETE THE FIRST 'BLANK' CLUB IN THIS LIST UNTIL CONFIRMED SAFE TO DO SO<br></center>
+<TABLE ALIGN="center" cellspacing="0" cellpadding="1" BORDER="1">
+    <FORM method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+        <TR>
+          <TH NOWRAP WIDTH=150><font color=#80ff00>Club Name</TH>
+          <th nowrap width=50><font color=#80ff00>Enter</th>
+          <TH NOWRAP WIDTH=150><font color=#80ff00>Club Owner</TH>
+          <th nowrap width=100><font color=#80ff00>Last Access</th>
+          <TH NOWRAP><FONT COLOR=#80ff00>Members</TH>
+          <TH NOWRAP><FONT COLOR=#80ff00>Activity</TH>
+          <th nowrap width=60><font color=#80ff00>Delete?</th>
+        </TR>
+    <!--#for loopname="list" loopvars="ID_" -->
+	 <!-- #ifndef variable="ID_" value="CL00000000000000" -->    
+	 <!-- #ifndef variable="ID_" value="CT00000000000000" -->
+    	<TR>
+            <TD nowrap ALIGN=center><$NAM_></TD>
+            <TD nowrap ALIGN=center><A HREF="place<$g_exe>?plc=club&DTY=CL&ID=<$ID_>" target="_blank"><img src="http://www.cybertown.com/images/buttons/clubs/benter.gif" BORDER=0 ALT="Enter Club"></A></TD>
+            <TD nowrap ALIGN=center><A HREF="http://www.cybertown.com/home/<$OWN_NNM_>" target=_blank><$OWN_NNM_></A></TD>
+            <td nowrap align=center><script>document.write(showdate('<$OWN_2LAD_>'));</script></td>
+            <TD nowrap ALIGN=center><$CNT_></TD>
+            <TD nowrap ALIGN=center><$ACT_> %</TD>
+            <TD nowrap ALIGN=center><A HREF="club<$g_exe>?ac=delete&clubid=<$ID_>&TKT=<$TKT>" onClick="return confirm('Are you sure you want to close close this club?');" target=_self><img src="http://www.cybertown.com/images/buttons/bdelete.gif" BORDER=0 ALT="delete"></A></TD>
+            
+        </TR>
+	 <!--#endif variable="ID_" -->	
+	 <!--#endif variable="ID_" -->	      
+    <!--#endfor loopname="list" -->
+    </FORM>
+</TABLE>
+</BODY>
+</HTML>

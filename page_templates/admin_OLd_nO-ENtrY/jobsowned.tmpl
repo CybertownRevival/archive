@@ -1,0 +1,90 @@
+<!-- admin/jobs.tmpl -->
+<!-- list jobs -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Jobs owned by <$NNM_0></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self action="<$selfurl>">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+    <tr>
+
+        <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+        <!--#ifdef variable="[PREV]" -->
+            <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <td>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </td>
+    </tr>
+    </table>
+</form>
+
+<table border=1>
+<tr>
+    <th><font color=#80ff00>Job Name</th>
+    <th><font color=#80ff00>Associated Object</th>
+</tr>
+<!--#for loopname="jobs" loopvars="ID_" -->
+    <tr>
+        <td><A HREF="admin<$g_exe>?DTY=R&KTY=ID&KEY=<$ID_ID_>&ac=read&TPL=admin/job" target=_self><$ID_NAM_></A></td>
+        <td>&nbsp;&nbsp;
+            <!--#if variable="ID_2TYP_" != value="1"-->
+                <!--#if variable="ID_3NAM_" != value=""-->
+                    <a href="admin<$g_exe>?DTY=CL&KTY=ID&KEY=<$ID_3ID_>&TPL=admin/club&ac=read" target=_self><$ID_3NAM_></a>
+                <!--#endif variable="ID_3NAM_" -->
+                <!--#if variable="ID_4NAM_" != value=""-->
+                    <a href="admin<$g_exe>?DTY=O&KTY=ID&KEY=<$ID_4ID_>&TPL=admin/place&ac=read" target=_self><$ID_4NAM_></a>
+                <!--#endif variable="ID_4NAM_" -->
+                <!--#if variable="ID_5NAM_" != value=""-->
+                    <a href="admin<$g_exe>?DTY=C&KTY=ID&KEY=<$ID_5ID_>&TPL=admin/district&ac=read" target=_self><$ID_5NAM_></a>
+                <!--#endif variable="ID_5NAM_" -->
+                <!--#if variable="ID_6NAM_" != value=""-->
+                    <a href="admin<$g_exe>?DTY=N&KTY=ID&KEY=<$ID_6ID_>&TPL=admin/nhood&ac=read" target=_self><$ID_6NAM_></a>
+                <!--#endif variable="ID_6NAM_" -->
+                <!--#if variable="ID_7NAM_" != value=""-->
+                    <a href="admin<$g_exe>?DTY=B&KTY=ID&KEY=<$ID_7ID_>&TPL=admin/block&ac=read" target=_self><$ID_7NAM_></a>
+                <!--#endif variable="ID_7NAM_" -->
+            <!--#endif variable="ID_2TYP_" -->
+        &nbsp;&nbsp;</td>
+<!--#endfor loopname="jobs" -->
+</table>
+
+</body>
+</html>

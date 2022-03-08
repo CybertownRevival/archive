@@ -1,0 +1,38 @@
+<!-- banners/tags/make a name.tmpl -->
+<div align=center>
+<a href="http://www.coffeecup.com/attack/donate/" target="_top"><img src="http://www.coffeecup.com/wtc_support1.gif" width="468" height="60" border="1" alt="Donate to the American Red Cross"></a><br>
+<a href="http://www.coffeecup.com/attack/donate/" target="_top"><font face=arial size=1>Click Here to Donate to the American Red Cross</font></a>
+</div>
+<!-- end banners/tags/make a name.tmpl -->
+
+<!-- ################################################################################
+DELETE EVERYTHING IN THIS COMMENT FIELD
+#####################################################################################
+To make a banner template, create dome banner code such as this:
+
+<a href="http://www.cybertown.com" target="new"><img src="/images/banners/mybanner.jpg" border="0"></a>
+
+Banners for this location should be 468 x 60 pixels
+
+Then paste it into where the Paste Code Here is in the above template. 
+
+Renaming is the key.  The name of the template will be what you enter in the 
+banner control to make the banner appear in Cybertown.  If you save the template as
+"com_mayor1.tmpl"  you will enter "com_mayor1" into the banner control to tell the 
+control what banner to dislpay
+
+Also make sure to change the "make a name" in the comments above to the name of your
+template.  These comments show in the webpages of Cybertown and make identifying what
+templates were used to make the page
+
+Once you have your template saved, upload it to:
+
+/services/http/80/cgi-bin/cybertown/templates/banners/tags
+
+Make sure to use the bsi login
+
+Now you can goto the banner control in the admin panel and add the name of your template
+to the fields for the places in Cybertown where you want it to display.
+
+
+#################################################################################-->

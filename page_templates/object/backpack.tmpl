@@ -1,0 +1,93 @@
+<!-- object/backpack -->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language=javascript>
+
+function qsort( a, n, l, r )
+{
+  var i = l;
+  var j = r;
+  var x = Math.floor((l+r)/2);
+
+  while( i <= j )
+  {
+    while( n[a[i]] < n[a[ x ]] )
+      i++;
+    while( n[a[ x ]] < n[a[j]] )
+      j--;
+    if( i < j )
+    {
+      var y = a[i];
+      a[i] = a[j];
+      a[j] = y;
+      i++;
+      j--;
+    }
+    else if( i == j )
+    {
+      i++;
+      j--;
+    }
+  }
+  if( l < j ) 
+    qsort( a, n, l, j );
+  if( i < r ) 
+    qsort( a, n, i, r );
+}
+
+//test = new Array( 'o123', 'o567', 'o654', 'o321' )
+//var a = test;
+//qsort( 0, test.length-1 );
+//alert( test[0]+','+test[1]+','+test[2]+','+test[test.length-1])
+
+sids = new Array();
+snames = new Array();
+bids = new Array();
+bnames = new Array();
+var i = 0;
+<!-- #for loopname="objectlist" loopvars="OID_" -->
+sids[i++] = '<$OID_>';
+//<!-- #define variable="N" escape="<$NAM_>" -->
+snames['<$OID_>'] = unescape("<$N>");
+<!-- #endfor loopname="objectlist"  -->
+var i = 0;
+<!-- #for loopname="objectlist" loopvars="BID_" -->
+bids[i++] = '<$BID_>';
+//<!-- #define variable="N" escape="<$BNAM_>" -->
+bnames['<$BID_>'] = unescape("<$N>");
+<!-- #endfor loopname="objectlist"  -->
+qsort( sids, snames, 0, sids.length-1 );
+var a = bids;
+qsort( bids, bnames, 0, bids.length-1 );
+var nob = <$NOB>;
+var bnob = <$BNOB>;
+</script>
+
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<a name="backpack">
+<h2>
+Objects in backpack of <$MNNM>
+</h2>
+<!-- #if variable="BNOB" != value="" -->
+<$BNOB> objects in the backpack.
+<br>
+<table border=0 width=100%>
+<tr>
+<script language=javascript>
+document.writeln('<table border=0 width=100%><tr>');
+for( i = 0 ; i < bids.length ; i++ )
+{
+  document.writeln('<td><font size=2>');
+
+  document.writeln('<a href="javascript:loadInfo(\'./object<$g_exe>?ac=display&ID='+bids[i]+'&T_OWN=<$MNNM>\')" target=_self>'+bnames[bids[i]]+'</a>');
+  document.writeln('</font></td>');
+  if( (i+1)%3 == 0 )
+    document.writeln('</tr><tr>');
+}
+document.writeln('</tr></table>');
+</script>
+</body>
+</html>
+

@@ -1,0 +1,352 @@
+<!-- /templates/mothership/vrml_contest/vrmlcontest.tmpl -->
+
+
+
+<!-- #ifdef variable="isVisitor" -->
+<html>
+<head>
+	<title>Cybertown & Mothership | VRML Contest Sign-Up</title>
+<style type="TEXT/CSS">
+<!--
+P.headline	{font-size: 12pt;font-weight: bold;  text-align: center; font-family: arial, sans-serif }
+P.text	{font-size: 10pt; text-align: left; font-family: arial, sans-serif}
+P.textcenter{font-size: 8pt; text-align: center; font-family: arial, sans-serif}
+
+// -->
+</style>
+</head>
+<body bgcolor="#004056" text="#e3e3e3" vlink="#ffffff" alink="#ffffff" link="#ffffff">
+<CENTER>
+Sorry Visitor! To enter this contest you must Immigrate.
+<A HREF="register<$g_exe>">
+<IMG HEIGHT=14 WIDTH=85 SRC="<$g_HTMLRoot>/images/login/immigrate.gif" BORDER=0 ALT="Immigrate"></a>
+<br>
+</center>
+</body>
+</html>
+<!-- #endif variable="isVisitor" -->
+
+
+<!-- #ifndef variable="isVisitor" -->
+<html>
+<head>
+	<title>Cybertown & Mothership | VRML Contest Sign-Up</title>
+<style type="TEXT/CSS">
+
+<!--
+P.headline	{font-size: 12pt;font-weight: bold;  text-align: center; font-family: arial, sans-serif }
+P.text	{font-size: 10pt; text-align: left; font-family: arial, sans-serif}
+P.textcenter{font-size: 8pt; text-align: center; font-family: arial, sans-serif}
+
+// -->
+</style>
+</head>
+
+<body bgcolor="#004056" text="#e3e3e3" vlink="#ffffff" alink="#ffffff" link="#ffffff">
+
+<CENTER>
+<TABLE CELLSPACING="0" CELLPADDING="0"  WIDTH="500" BORDER="0">
+<form method="post" action="formmail.pl<$g_exe>">
+<input type="hidden" name="recipient" value="vanessa@cybertown.com">
+<input type="hidden" name="redirect" value="http://www.cybertown.com/cgi-bin/cybertown/place?plc=mothership">
+<TR>
+<TD WIDTH="1" HEIGHT="1"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="1"></TD>
+<TD WIDTH="10" HEIGHT="1"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10" HEIGHT="1"></TD>
+<TD WIDTH="155" HEIGHT="1"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="155" HEIGHT="1"></TD>
+<TD WIDTH="325" HEIGHT="1"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="325" HEIGHT="1"></TD>
+<TD WIDTH="10" HEIGHT="1"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10" HEIGHT="1"></TD>
+</TR>
+<!--Contest Header-->
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="center" align="middle" colSpan="4"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/contestheader.gif"><BR><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" height="20"></TD>
+</TR>
+
+
+<!-- THE MOTHERSHIP.COM COLONY'S VRML CONTEST TEXT-->
+
+	<!--WHAT IS IT?-->
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="500"COLSPAN="4" bgColor="#002430"><P CLASS="headline">What is it?</P></TD>
+		</TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2"   bgColor="#003040">
+          <P CLASS="text">Mothership.com is going to reward 8 lucky VRML artisans 
+            for their crafts. Finally, you talented folks will get the recognition 
+            you deserve! You will be rewarded with more than fame, too. We are 
+            going to be giving away <B>10,000cc</B> (city cash) to each winner, 
+            and a copy of <B>Chisel</B>, the popular VRML optimization program, 
+            or <B>blaxxun Avatar Studio</B>. <BR>
+            <BR>We may also decide to use some of the best VRML sculptures as décor in the Mothership Colony!
+		<BR><BR>AND! Pet Bots, which qualify, will be added to Cybertown’s Bot Library, and made available for every Cyber-citizen to admire and own!
+		</P></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" HEIGHT="10" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="10"></TD>
+		<TD HEIGHT="10" ></TD>
+		</TR>
+
+	<!--HOW DO I WIN?-->
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="500"COLSPAN="4" bgColor="#002430"><P CLASS="headline">How Do I Win?</P></TD>
+		</TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">The contest will run for one month, from September 18th through October 18th , the final deadline for submitting work is 12:00am CyTime, October 18th.<BR><BR>
+            There are going to be two winners in each category. One for the most 
+            detailed piece, which means that your creation would have to be 50-90kb 
+            to qualify, and one for the Best Optimized work - 50kb and under. 
+            No item should be larger then two meters square. There will be a total 
+            of 8 winners, which means great odds for you! The categories are as 
+            follows:<BR>
+            <BR>  </P></TD>
+		<TD WIDTH="10" bgColor="#003040" ROWSPAN="10"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">·  Best Shuttlecraft or transportation device</P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		
+        <TD width="500"COLSPAN="2" bgColor="#003040" align="left"> 
+          <P CLASS="text">· Best Robot</P>
+        </TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">·  Best Pet Bot</P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">·  Best Sculpture (You are free to let your imagination run wild with this one,friends!)</P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="5" bgColor="#003040"COLSPAN="4"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="5"></TD>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040">
+          <P CLASS="text">All entries are going to be rated anonymously by a panel 
+            of judges consisting of members of Mothership.com’s esteemed web-design 
+            team: Diaxiz, Adamp, and Y10k. Cybertown’s own Mayor Flyby, Founder 
+            Hawk and Scrambled_Legs will also be on the judging panel.<br>
+            <br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">All VRML work will be judged based on qualities such as, but not limited to originality, creativity, technological merit, skill within the medium, and uniqueness.  Since this is a contest of skill, the winner will be determined based on the quality of the entry received.  The decisions of the judges are final.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text"> The winners will be announced on Friday, October 27th, 2000.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040">
+          <P CLASS="text">All submissions for this contest will become the property 
+            of Cybertown, Inc. By entering, the contestant agrees that their submission 
+            may be used in whole or in part as part of any future Cybertown or 
+            blaxxun Interactive advertising campaign.</P>
+        </TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" HEIGHT="10" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="10"></TD>
+		<TD HEIGHT="10" ></TD>
+		</TR>
+
+	<!--HOW DO I ENTER?-->
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="500"COLSPAN="4" bgColor="#002430"><P CLASS="headline">How Do I Enter?</P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040">
+          <P CLASS="text">To enter the contest, just create an object in VRML, 
+            which falls under one of the cool, above-listed categories. Make certain 
+            that the item is not larger then two meters square. Once you have 
+            completed your work of art, just upload it to a server and fill out 
+            the <I>entire</I> form below. We will follow the URL that you give 
+            us to look at and rate your masterpiece<br>
+            <br></P></TD>
+		<TD WIDTH="10" bgColor="#003040" ROWSPAN="14"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">Oh yeah!  You may <B>enter as often as you’d like</B>, up until the cut-off date!<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">The winners will be notified by e-mail.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">You must be a registered citizen of Cybertown to enter this contest.  Duh!<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">You must also be a citizen of the U.S.A. or Canada (excluding Quebec) to be eligible to receive the real life prizes.  If you are the citizen of a country other than Canada or the U.S.A., then you will still be awarded the giant sum of 10,000 City Cash.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">If you are a US citizen under 13 years of age, you must have a signed <A HREF="http://www.cybertown.com/notices/parents/consent_form.html">parental consent</A> form on file in the Cybertown office in order to participate in this contest.
+		Parental Consent forms can be found at the following URL:
+		http://www.cybertown.com/notices/parents/consent_form.html <br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">There is no purchase necessary to enter or win.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">The rules and regulations are subject to change without notice.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">Void where prohibited.<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040">
+          <P CLASS="text">If you have any questions, just sling an e-mail to Scrambled_Legs 
+            at:<a href="mailto:Scrambled_Legs@lovemail.com">Scrambled_Legs@lovemail.com</a><br>
+            <br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="text">GOOD LUCK!!<br><br></P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		<TD width="480"COLSPAN="2" bgColor="#003040"><P CLASS="textcenter">Copyright (c) 2000, Cybertown, Inc. All rights reserved.</P></TD>
+		</TR>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="10"></TD>
+		
+        <TD width="480"COLSPAN="2" bgColor="#003040" ><A HREF="http://www.cybertown.com/contests/legalmothership.html"> 
+          <P CLASS="textcenter">LEGAL NOTICES</P></a></TD>
+		<TR>
+		<TD WIDTH="1" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD WIDTH="1" HEIGHT="10" bgColor="#003040"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1"></TD>
+		<TD width="480"COLSPAN="4" bgColor="#003040"></TD>
+		</TR>
+		<TR>
+		<TD HEIGHT="10"width="500" colspan="5" bgColor="#002430"></TD>
+		</TR>
+		<TR>
+		<TD HEIGHT="15" width="500" colspan="2"></TD>
+		</TR>
+
+<!--FORMS-->
+
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD bgColor="#003040" colSpan="4"><IMG height="10" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="top" align="right" bgColor="#003040" colSpan="2" WIDTH="155"><FONT face=arial,sans-serif size=1>YOUR NAME:<IMG src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" width="10"></FONT></TD>
+<TD bgColor="#003040" colSpan="2" WIDTH="325" height="20"><input type="text" name="txtName" value="" size="15"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="5"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="5"></TD>
+<TD bgColor="#003040" colSpan="4"><IMG height="5" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="top" align="right" bgColor="#003040" colSpan="2" WIDTH="155"><FONT face=arial,sans-serif size=1>CYBERTOWN ALIAS:<IMG src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" width="10"></FONT></TD>
+<TD bgColor="#003040" colSpan="2" WIDTH="325" height="20"><input type="text" name="txtAlias" value="" size="15"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="5"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="5"></TD>
+<TD bgColor="#003040" colSpan="4"><IMG height="5" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="top" align="right" bgColor="#003040" colSpan="2" WIDTH="155"><FONT face=arial,sans-serif size=1>EMAIL ADDRESS:<IMG src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" width="10"></FONT></TD>
+<TD bgColor="#003040" colSpan="2" WIDTH="325" height="20"><input type="text" name="txtEmail" value="" size="15"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="5"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="5"></TD>
+<TD bgColor="#003040" colSpan="4"><IMG height="5" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="top" align="right" bgColor="#003040" colSpan="2" WIDTH="155"><FONT face=arial,sans-serif size=1>URL OF OBJECT:<IMG src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" width="10"></FONT></TD>
+<TD bgColor="#003040" colSpan="2" WIDTH="325"><input type="text" name="txtURL" value="http://" size="15"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="5"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="5"></TD>
+<TD bgColor="#003040" colSpan="4"><IMG height="5" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="top" align="right" bgColor="#003040" colSpan="2" WIDTH="155"><FONT face=arial,sans-serif size=1>DESCRIPTION:<IMG src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" width="10"></FONT></TD>
+<TD bgColor="#003040" colSpan="2" WIDTH="325"><TEXTAREA cols="20" rows="10" name="txtDescription" wrap="soft"></TEXTAREA></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD bgColor="#003040" colSpan="4" ><IMG height="10" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+<TD WIDTH="1" HEIGHT="20"><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" WIDTH="1" HEIGHT="20"></TD>
+<TD vAlign="center" align="middle" bgColor="#002430" colSpan="4"><input type="submit" value="Submit"></TD>
+</TR>
+</form>
+</TABLE>
+</CENTER>
+</body>
+</html>
+<!-- #endif variable="isVisitor" -->
+

@@ -1,0 +1,60 @@
+<!-- uploadavt/updkey -->
+<!--- template for update avatarstudio key --->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Update blaxxun Avatar Studio Key</title>
+<script language="javascript">
+function checkKey( )
+{
+ if (document.uForm.BAS.value.length == 0)
+ {
+  if ( !confirm("Do you really want to delete your license key?\nAll your uploaded avatars will be deleted too!") )
+  { return; }
+ }
+ document.uForm.submit();
+}
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<h2 align="center">Update your blaxxun Avatar Studio license key</h2>
+
+<!-- #include virtual="<$g_Templates>uploadavt/error.tmpl" -->
+
+<!-- #ifdef variable="LICID" -->
+<br>Member with ID <$LICID> uses the key.<br>
+<!-- #endif variable="LICID" -->
+<!-- #ifdef variable="keyok" -->
+<div align=center>
+<font color=#FFFF00>Key updated successfully.</font>
+<br>
+<br>
+<a href="javascript:history.go(-2)"><img src="<$g_Images>/images/buttons/bback.gif" border=0></a>
+</div>
+<br>
+<!-- #endif variable="keyok" -->
+<center>
+  <form method="post" name="uForm" action="uploadavt<$g_exe>">
+    <input type="hidden" name="ac" value="updkey">
+    <input type="hidden" name="TKT" value="<$TKT>">
+<!-- #ifndef variable="isAdmin" -->
+    <input type="hidden" name="ID" value="<$ID>">
+<!-- #endif variable="isAdmin" -->
+<!-- #ifdef variable="isAdmin" -->
+ID:
+    <input type="text" name="ID" value="<$ID>">
+<br> <br>
+<!-- #endif variable="isAdmin" -->
+License key: 
+    <input type="text" name="BAS" value="<$BAS>" size="32">
+	<br> <br>
+    <input type="hidden" name="updateBtn" value="Update">
+    <input type="button" value="Update" onClick=checkKey()>
+    <input type=button name="no" value=Cancel onClick="history.back()">
+  </form>
+</center>
+</BODY>
+</HTML>

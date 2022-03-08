@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<script language="JavaScript">function moderate() {window.open('place<$g_exe>?ac=moderate&plc=jedge&DTY=C&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');}</script>
+<!-- neighbor/action_jaggededge.tmpl -->
+<base target="_top">
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="neighbor<$g_exe>?ac=place&ID=<$ID>" target="place">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+
+<!-- #ifdef variable="chataccess" -->
+<!-- #if variable="CHT" != value="" -->
+<!-- #ifndef variable="chatno" -->
+
+<a href="neighbor<$g_exe>?ac=place&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=jedge&ac=place&DTY=C&ID=<$ID>&force=p" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+<!-- #endif variable="chatno" -->
+<!-- #else variable="CHT" -->
+<!-- #ifndef variable="chatno" -->
+	<!-- #ifdef variable="T_force" = value="c"-->
+<!-- #else variable="T_force" -->
+		<a href="neighbor<$g_exe>?ac=present&ID=<$ID>&T_force=c" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=jedge&ac=place&DTY=C&ID=<$ID>&force=p" target="place">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+	<!-- #endif variable="T_force" -->
+<!-- #endif variable="chatno" -->
+<!-- #endif variable="CHT" -->
+<!-- #endif variable="chataccess" -->
+
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('neighbor<$g_exe>?ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+<a href="community<$g_exe>?ID=<$commid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$commname></b></a><br>
+<!-- #endif variable="readaccess" -->
+<br>
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=N&KTY=ID&KEY=<$ID>&MTY=m&program=neighbor" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="print60<$g_exe>?DTY=N&KEY=<$ID>&TPL=inb/writetoall" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupinbo.gif" BORDER=0 ALT="Group Inbox"></a><br>
+
+<a href="neighbor<$g_exe>?ac=wizardplace&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+
+<!-- #ifdef variable="isAdmin" -->
+<a href="javascript:moderate()" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate Chat"></a><br>
+<!-- #endif variable="isAdmin" -->
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&PLC=neighbor&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

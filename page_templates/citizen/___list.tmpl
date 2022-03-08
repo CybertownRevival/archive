@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_self">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<H2><font color=#80ff00>List of Citizens
+	<!--#ifdef variable="SORT" -->
+		by <$SORT>
+	<!--#endif variable="SORT" -->
+</font></H2>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+
+<table>
+    <INPUT type="hidden" NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+	<input type="hidden" name="SORT" value="<$SORT>">
+	<input type="hidden" name="SORTORDER" value="<$SORTORDER>">
+
+	<input type="hidden" name="ac" value="list">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="hist" value="<$hist>">
+<tr>
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+
+</tr>
+</table>
+
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+<tr>
+  <th width=350 nowrap align=left><font color=#80ff00>Nickname: Experience - Jobs<br>Description</th>
+  <th><font color=#80ff00>Personal<br>Image</th>
+  <th nowrap><font color=#80ff00>Info</th>
+
+	<!--#ifdef variable="CITY_WRITE" -->
+  	<th nowrap><font color=#80ff00>Excluded until</th>
+	<!--#endif variable="CITY_WRITE" -->
+
+  <th nowrap><font color=#80ff00>Immigration</th>
+  <th nowrap><font color=#80ff00>Name</th>
+</tr>
+
+<!--#for loopname="list" loopvars="ID_" -->
+<tr><td valign=top>
+<font size=+1>
+		<!--#ifdef variable="HOM_" -->
+		<a href="javascript:top.location.href='/home/<$NNM_>'" target="top"><b><$NNM_></b></a>:
+		<!--#endif variable="HOM_" -->
+		<!--#ifndef variable="HOM_" -->
+		<$NNM_>:
+		<!--#endif variable="HOM_" -->
+
+		<!--#ifdef variable="EXP_" -->
+	  	<$EXP_> -
+		<!--#endif variable="EXP_" -->
+		<!--#ifndef variable="EXP_" -->
+	  	&nbsp; -
+		<!--#endif variable="EXP_" -->
+</font>
+
+    <!--#ifdef variable="ID_2MYR_3NAM_" -->
+      <a target=_self href="edit<$g_exe>?UID=<$ID_>&MNAM=<$NNM_>&KFT=<$NNK_>&TPL=citizen/memrol&ac=list">
+        <$ID_2MYR_3NAM_></a>
+    <!--#endif variable="ID_2MYR_3NAM_" -->
+    <!--#ifndef variable="ID_2MYR_3NAM_" -->
+      <!--#ifdef variable="ROL_FIRSTBIT_NAM_" -->
+        <a target=_self href="edit<$g_exe>?UID=<$ID_>&MNAM=<$NNM_>&KFT=<$NNK_>&TPL=citizen/memrol&ac=list">
+          <$ROL_FIRSTBIT_NAM_></a>
+      <!--#endif variable="ROL_FIRSTBIT_NAM_" -->
+      <!--#ifndef variable="ROL_FIRSTBIT_NAM_" -->
+        <!--#ifdef variable="CITY_OWN" -->
+          <a target=_self href="edit<$g_exe>?KEY=<$ID_>&TPL=citizen/editrole"><IMG
+            SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Assign Jobs"></a>
+        <!--#endif variable="CITY_OWN" -->
+        <!--#ifndef variable="CITY_OWN" -->
+          &nbsp;
+        <!--#endif variable="CITY_OWN" -->
+      <!--#endif variable="ROL_FIRSTBIT_NAM_" -->
+    <!--#endif variable="ID_2MYR_3NAM_" -->
+
+<font size=-1>
+		<!--#ifdef variable="ID_TXT_" -->
+			<br><$ID_TXT_>
+		<!--#endif variable="ID_TXT_" -->
+		<!--#ifndef variable="ID_TXT_" -->
+			<br>No personal information yet ...
+		<!--#endif variable="ID_TXT_" -->
+</font>
+</td>
+
+		<!--#ifdef variable="HOM_" -->
+
+		<!--#ifndef variable="HOM_TYP_" value="" -->
+        <td nowrap align=center><a href="javascript:top.location.href='/home/<$NNM_>'" target="top">
+  <!-- #ifndef variable="HOM_2STT_" value="l"-->
+    <img src="property?ac=print&ID=<$HOM_>&type=P&media=i" border=0 ALT="Personal Image" height=50></a>
+  <!-- #endif variable="HOM_2STT_" -->
+  <!-- #ifdef variable="HOM_2STT_" value="l"-->
+    <IMG SRC="<$g_Images>/images/locked.gif" BORDER=0 ALT="Locked Personal Image" height=50></a>
+  <!-- #endif variable="HOM_2STT_" -->
+        </td>
+		<!--#endif variable="HOM_TYP_" -->
+
+        <!--#ifdef variable="HOM_TYP_" value="" -->
+			<td nowrap>&nbsp;</td>
+		<!--#endif variable="HOM_TYP_" -->
+
+        <!--#endif variable="HOM_" -->
+
+        <!--#ifndef variable="HOM_" -->
+			<td nowrap>&nbsp;</td>
+		<!--#endif variable="HOM_" -->
+
+            <td><a href="edit<$g_exe>?KEY=<$HOM_>&TPL=citizen/info" target="_self"><IMG SRC="<$g_Images>/images/buttons/binfo0.gif" BORDER=0 ALT="Info"></a></td>
+
+		<!--#ifdef variable="CITY_WRITE" -->
+		    <!--#ifdef variable="EXD_YEAR_" -->
+			<td nowrap align="center"><a target=_self href="edit<$g_exe>?KEY=<$ID_>&TPL=citizen/excl"><$EXD_MONNAME_> <$EXD_MDAY_>, <$EXD_YEAR_></a></td>
+		    <!--#endif variable="EXD_YEAR_" -->
+		    <!--#ifndef variable="EXD_YEAR_" -->
+		  	<td><a target=_self href="edit<$g_exe>?KEY=<$ID_>&TPL=citizen/excl"><IMG SRC="<$g_Images>/images/buttons/bexclude.gif" BORDER=0 ALT="Exclude"></a></td>
+		    <!--#endif variable="EXD_YEAR_" -->
+		<!--#endif variable="CITY_WRITE" -->
+
+
+		<td nowrap align="center"><$IMD_MONNAME_> <$IMD_MDAY_>, <$IMD_YEAR_></td>
+		<!--td nowrap align="center"><$IMD_MDAY_>.<$IMD_MON_> <$IMD_HOUR_>:<$IMD_MIN_>:<$IMD_SEC_></td-->
+
+		<!--#ifdef variable="FNM_" -->
+		  <td nowrap><$FNM_> <$LNM_></td>
+		<!--#endif variable="FNM_" -->
+		<!--#ifndef variable="FNM_" -->
+		  <td>&nbsp</td>
+		<!--#endif variable="FNM_" -->
+	</tr>
+
+<!--#endfor loopname="list" -->
+
+</table>
+
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+</form>
+
+</center>
+<BODY>
+</HTML>

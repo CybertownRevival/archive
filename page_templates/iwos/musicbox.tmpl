@@ -1,0 +1,129 @@
+<HTML>
+<!-- iwos/musicbox.tmpl -->
+<!-- displays musicbox content -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Musicbox</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+function submitForm( linkNumber )
+{ 
+  document.updateForm.NUMBER.value = linkNumber;
+  document.updateForm.addBtn.value = '';
+  document.updateForm.updateBtn.value = '1';
+  document.updateForm.submit();
+}
+
+function deleteSubmit( linkNumber )
+{
+  if( confirm( 'Are you sure to delete this destination?' ) )
+  {
+    document.updateForm.NUMBER.value = linkNumber;
+    document.updateForm.ac.value = 'delete';
+    document.updateForm.submit();
+    return true;
+  }
+  else
+    return;
+}
+
+function addLink()
+{
+  document.updateForm.addBtn.value = '1';
+  document.updateForm.updateBtn.value = '';
+  document.updateForm.submit();
+}
+
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/music-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/music-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1> 
+
+<center>
+<h2>Title List of <$NAM>
+<a href="<$g_HttpServer>/help/homebuilder/musicboxhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+<!-- #ifdef variable="errordest" -->
+  <font color="red">Sorry <$NNM>, you have no destination specified!<br></font>
+<!-- #endif variable="errordest" -->
+<!-- #ifdef variable="errordest" -->
+  <font color="red">Sorry <$NNM>, you have no description specified!<br></font>
+<!-- #endif variable="errordest" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The Title List was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+<!-- #ifndef variable="isOwner" -->
+<table>
+<!--#for loopname="LINKLIST" loopvars="LL" --> 
+<tr>
+  <td><a href="<$g_cgiRoot>/iwos?ID=<$ID>&NUMBER=<$NO>&ac=visit" target="HTML"><$LD></a></td>
+	<td><$LC> times visited</td>
+</tr>
+<!--#endfor loopname="LINKLIST" -->
+</table>
+<!-- #endif variable="isOwner" -->
+
+<!-- #ifdef variable="isOwner" -->
+
+<form method=post action="<$selfurl>" name="updateForm">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+  <input type="hidden" name="ac" value="update">
+
+  <input type="hidden" name="ID" value="<$ID>">
+
+  <input type="hidden" name="NUMBER" value="0">
+
+  <input type="hidden" name="addBtn" value="">
+  <input type="hidden" name="updateBtn" value="">
+
+  <table>
+  <tr>  
+    <td>Destination URL</td>
+    <td>Description</td>
+  </tr>
+  <!--#for loopname="LINKLIST" loopvars="LL" --> 
+  <tr>
+    <td><input type=text name="LL<$NO>" value="<$LL>">
+    <td><input type=text name="LD<$NO>" value="<$LD>">
+    <td><$LC> times played</td>
+    <td>
+      <a href="<$LL>">Play</a>
+    </td>
+    <td>
+      <a href="javascript:submitForm( '<$NO>' )"><img src="<$g_Images>/images/iwos/editmusic.gif" border=0 alt="Update Title"></a>
+    </td>
+    <td>
+      <a href="javascript:deleteSubmit( '<$NO>' )"><img src="<$g_Images>/images/iwos/deletemusic.gif" border=0 alt="Delete Title"></a>
+    </td>
+  </tr>
+  <!--#endfor loopname="LINKLIST" -->
+  <tr><td colspan=5>&nbsp;</td></tr>
+  <tr>
+    <td><input type=text name="LLnew" value="">
+    <td><input type=text name="LDnew" value="">
+    <td colspan=3>
+      <a href="javascript:addLink()"><img src="<$g_Images>/images/iwos/addmusic.gif" border=0 alt="Add Title"></a>
+    </td>
+  </tr>
+  </table>
+
+</form>
+
+<!-- #endif variable="isOwner" -->
+</center>
+</font>
+
+</BODY>
+</HTML>

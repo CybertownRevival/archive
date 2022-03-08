@@ -1,0 +1,77 @@
+<!-- common/event_buttons.tmpl -->
+<!-- This is now Automated - do NOT edit manually -->
+
+	<!-- Default Button Code -->
+
+<!-- #ifndef variable="EB0" value="ON" -->
+<!-- #ifndef variable="EB0" value="LE" -->
+<!-- #ifndef variable="EB0" value="TM" -->
+
+<!-- #ifdef variable="EB1" value="loadInfo" -->
+<A HREF="javascript:loadInfo('<$EB2>')"  target="<$EB3>"><IMG SRC="<$EB4>" ALT="<$EB5>" border=0></A>
+<!-- #endif variable="EB1" -->
+
+<!-- #ifdef variable="EB1" value="Place" -->
+<A HREF="<$EB2>"  target="<$EB3>"><IMG SRC="<$EB4>" ALT="<$EB5>" border=0></A> 
+<!-- #endif variable="EB1" -->
+
+<!-- #ifdef variable="EB1" value="loadCustom" -->
+<A HREF="javascript:loadCustom('<$EB2>',<$EB6>,<$EB7>)"  target="<$EB3>"><IMG SRC="<$EB4>" ALT="<$EB5>" border=0></A> 
+<!-- #endif variable="EB1" -->
+
+<!-- #endif variable="EB0" -->
+<!-- #endif variable="EB0" -->
+<!-- #endif variable="EB0" -->
+
+	<!-- End Default Button Code -->
+	
+	
+	<!-- Button 1 Code -->
+
+<!-- #ifdef variable="EB0" value="ON" -->
+
+<!-- #ifdef variable="EB8" value="loadInfo" -->
+<A HREF="javascript:loadInfo('<$EB9>')"  target="<$EB10>"><IMG SRC="<$EB11>" ALT="<$EB12>" border=0></A>
+<!-- #endif variable="EB8" -->
+
+<!-- #ifdef variable="EB8" value="Place" -->
+<A HREF="<$EB9>"  target="<$EB10>"><IMG SRC="<$EB11>" ALT="<$EB12>" border=0></A> 
+<!-- #endif variable="EB8" -->
+
+<!-- #ifdef variable="EB8" value="loadCustom" -->
+<A HREF="javascript:loadCustom('<$EB9>',<$EB13>,<$EB14>)"  target="<$EB10>"><IMG SRC="<$EB11>" ALT="<$EB12>" border=0></A> 
+<!-- #endif variable="EB8" -->
+
+	<!-- End Button 1 Code -->
+	<!-- Button 2 Code (if selected) -->
+
+<!-- #ifndef variable="EB16" value=""  -->
+<!-- #ifdef variable="EB15" value="loadInfo" -->
+<A HREF="javascript:loadInfo('<$EB16>')"  target="<$EB17>"><IMG SRC="<$EB18>" ALT="<$EB19>" border=0></A>
+<!-- #endif variable="EB15" -->
+
+<!-- #ifdef variable="EB15" value="Place" -->
+<A HREF="<$EB16>"  target="<$EB17>"><IMG SRC="<$EB18>" ALT="<$EB19>" border=0></A> 
+<!-- #endif variable="EB15" -->
+
+<!-- #ifdef variable="EB15" value="loadCustom" -->
+<A HREF="javascript:loadCustom('<$EB16>',<$EB20>,<$EB21>)"  target="<$EB17>"><IMG SRC="<$EB18>" ALT="<$EB19>" border=0></A> 
+<!-- #endif variable="EB15" -->
+<!-- #endif variable="EB16" -->
+
+	<!-- End Button 2 Code -->
+
+<!-- #endif variable="EB0" -->
+
+<!-- #ifdef variable="EB0" value="LE" -->
+<A HREF="<$EB22>"  target="_top"><IMG SRC="/images/buttons/live_event.gif" ALT="Live Event" border=0></A> 
+<!-- #endif variable="EB0" -->
+
+<!-- #ifdef variable="EB0" value="TM" -->
+<A HREF="<$EB23>"  target="_top"><IMG SRC="/images/buttons/town_meeting.gif" ALT="Town Meeting" border=0></A> 
+<!-- #endif variable="EB0" -->
+
+<!-- #endif variable="EB0" -->
+
+
+

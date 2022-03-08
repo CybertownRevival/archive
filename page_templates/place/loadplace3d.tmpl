@@ -1,0 +1,20 @@
+<!-- place/loadplace3d -->
+<!--- load a new 3d place from vrml --->
+<HTML>
+<BODY>
+<script language=JavaScript>
+ <!-- #ifndef variable="DTY" -->
+ <!-- #define variable="DTY" value="O" -->
+ <!-- #endif variable="DTY" -->
+ <!-- #ifdef variable="action" -->
+	window.open( "place<$g_exe>?DTY=<$DTY>&ID=<$ID>&plc=<$plc>&ac=action", "action" );
+ <!-- #endif variable="action" -->
+
+	<!-- #ifndef variable="action" -->
+ window.open( "javascript:loadPlace('<$DTY>', '<$ID>', '<$plc>')", "place" );
+ <!-- #endif variable="action" -->
+
+	history.back(); // to avoid reload problems
+</script>
+</BODY>
+</HTML>

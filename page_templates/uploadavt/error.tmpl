@@ -1,0 +1,96 @@
+<!-- uploadavt/error -->
+<!--- error messages for avatar upload --->
+<!-- #ifdef variable="notincluded" -->
+<html>
+<head>
+<title><$g_title> - Upload Avatar</title>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<h2 align=center>Upload Avatar</h2>
+<br>
+<!-- #endif variable="notincluded" -->
+
+<div align=center>
+  <font color="red">
+    <!-- #ifdef variable="uplAvtError001" -->
+      No data uploaded!<br>
+    <!-- #endif variable="uplAvtError001" -->
+    <!-- #ifdef variable="uplAvtError002" -->
+      <$errfile><br>
+						Sorry that mime type isn't supported.<br>
+    <!-- #endif variable="uplAvtError002" -->
+    <!-- #ifdef variable="uplAvtError003" -->
+      <$errfile> couldn't be copied to <$tmpfile>.<br>
+						Please contact the system administrator.<br>
+    <!-- #endif variable="uplAvtError003" -->
+    <!-- #ifdef variable="uplAvtError004" -->
+      <$errfile> is too big. The maximum size is 50 kBytes.<br>
+    <!-- #endif variable="uplAvtError004" -->
+    <!-- #ifdef variable="uplAvtError005" -->
+      Can not open VRML file "<$errfile>"!<br>
+    <!-- #endif variable="uplAvtError005" -->
+    <!-- #ifdef variable="uplAvtError006" -->
+      This Avatar was created with blaxxun Avatar Studio!<br>
+    <!-- #endif variable="uplAvtError006" -->
+    <!-- #ifdef variable="uplAvtError007" -->
+      This Avatar was <b>NOT</b> created with blaxxun Avatar Studio!<br>
+    <!-- #endif variable="uplAvtError007" -->
+    <!-- #ifdef variable="uplAvtError008" -->
+      VRML tag not found in "<$errfile>"!!<br>
+    <!-- #endif variable="uplAvtError008" -->
+    <!-- #ifdef variable="uplAvtError009" -->
+      Sorry, this avatar was created with blaxxun Avatar Studio!<br>
+    <!-- #endif variable="uplAvtError009" -->
+    <!-- #ifdef variable="uplAvtError010" -->
+      No File specified!<br>
+    <!-- #endif variable="uplAvtError010" -->
+    <!-- #ifdef variable="uplAvtError011" -->
+      Can not rename file <$srcfile> to <$destfile>!<br>
+    <!-- #endif variable="uplAvtError011" -->
+    <!-- #ifdef variable="uplAvtError012" -->
+      Sorry <$NNM>, but the specified license key is already used by someone else!<br>
+    <!-- #endif variable="uplAvtError012" -->
+    <!-- #ifdef variable="uplAvtError013" -->
+    <!-- #ifndef variable="ALLOWEXT" -->
+      Sorry <$NNM>, you have to upload your personal avatar first using blaxxun Avatar Studio!<br>
+    <!-- #endif variable="ALLOWEXT" -->
+    <!-- #endif variable="uplAvtError013" -->
+    <!-- #ifdef variable="uplAvtError014" -->
+      Please specify a description for the avatar, <$NNM>!<br>
+    <!-- #endif variable="uplAvtError014" -->
+    <!-- #ifdef variable="uplAvtError015" -->
+      Sorry <$NNM>, viewing avatars of other members is not permitted!<br>
+    <!-- #endif variable="uplAvtError015" -->
+    <!-- #ifdef variable="uplAvtError016" -->
+      Please specify the avatar URL that you want to use, <$NNM>!<br>
+    <!-- #endif variable="uplAvtError016" -->
+    <!-- #ifdef variable="uplAvtError017" -->
+      Sorry <$NNM>, descriptions for avatars from libraries can't be stored!<br>
+    <!-- #endif variable="uplAvtError017" -->
+    <!-- #ifdef variable="uplAvtError018" -->
+      Sorry <$NNM>, but the specified license key is wrong!<br>
+    <!-- #endif variable="uplAvtError018" -->
+    <!-- #ifdef variable="uplAvtError019" -->
+        The upload failed because your browser corrupted the VRML file.
+        <br>Please <a href=http://www.blaxxun.com/support/faq/avatarstudio/>click here</a>
+        to see the FAQ on how to update your upload program.
+        <br>Or upload <$errfile> manually using <a href="uploadavt<$g_exe>?ID=0">the upload form</a>.<br>
+    <!-- #endif variable="uplAvtError019" -->
+
+  </font>
+
+  <!-- #ifdef variable="uploadok" -->
+    <font color=#FFFF00>Avatar successfully uploaded.</font>
+  <!-- #endif variable="uploadok" -->
+  <!-- #ifdef variable="updateok" -->
+    <font color=#FFFF00>Avatar successfully updated.</font>
+  <!-- #endif variable="updateok" -->
+</div>
+
+<!-- #ifdef variable="notincluded" -->
+</BODY>
+</HTML>
+<!-- #endif variable="notincluded" -->
+<!-- end of include error.tmpl -->

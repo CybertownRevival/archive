@@ -1,0 +1,31 @@
+<!-- object/storagecreate -->
+<HTML>
+<HEAD>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- <$HOID> -->
+<h2>
+Delete storage areas of <$MNNM>
+</h2>
+<p><b>Warning:<br>
+If you delete the storage area, all objects in the area will be deleted!
+</b>
+<br><br>
+<!-- #for loopname="objectlist" loopvars="STOID_" -->
+<a href="./print60?TPL=storage/storagedelete&HOID=<$HOID>&DELID=<$STOID_>"> Delete Area <$NUM_> <$NAM_></a> with
+<!-- #if variable="NOB_" != value="" -->
+<$NOB_>
+<!-- #else variable="NOB_" != value="" -->
+0
+<!-- #endif variable="NOB_" != value="" -->
+objects<br>
+<!-- #endfor loopname="objectlist"  -->
+<p>
+<center>
+<a href="./print60?ID=<$PID>&TPL=storage/list"><img src="http://ivnwww.cybertown.com/images/buttons/bback.gif" border="0"></a>
+</center>
+</body>
+</html>
+
+
+

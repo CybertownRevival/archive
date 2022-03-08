@@ -1,0 +1,76 @@
+<!-- memberdir/listonline.tmpl -->
+<!--- list online members --->
+<HTML>
+<HEAD>
+<TITLE>Members Online</TITLE>
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/getframe.tmpl" -->
+
+<SCRIPT LANGUAGE="javascript">
+function doRefresh()
+{
+  var now = new Date();
+  var url ="<$g_cgiRoot>/print<$g_exe>?TPL=memberdir/listonline<$g_SessionID>&"  + now.getTime();
+  
+  location.href=url;
+}
+</SCRIPT>
+</HEAD>
+
+<body class=info>
+
+<!-- #define variable="heading" value="Members" -->
+<!-- #define variable="up_url" value="javascript:loadPlaceInfo()" -->
+<!-- #define variable="up_tar" value="action" -->
+
+<!-- #define variable="b_img_0" value="btnopt_bynickname.gif" -->
+<!-- #define variable="b_url_0" value="<$g_cgiRoot>/print<$g_exe>?TPL=memberdir/listalnum<$g_SessionID>" -->
+<!-- #define variable="b_alt_0" value="List members by nickname" -->
+
+<!-- #define variable="b_img_1" value="btnopt_byjob.gif" -->
+<!-- #define variable="b_url_1" value="<$g_cgiRoot>/print<$g_exe>?TPL=memberdir/listjobs<$g_SessionID>" -->
+<!-- #define variable="b_alt_1" value="List member by job" -->
+
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<p class=head2>
+Online Member
+</p>
+
+<p class=note>
+Total number of online members: <$CNT>
+</p>
+
+<$g_table>
+<tr class=thbg>
+  <td><p class=thfont>Nickname</p></td>
+  <td><p class=thfont>Location</p></td>
+</tr>
+
+<!-- #for loopname="i" loopvars="NNM_" --> 
+
+<tr class=tdbg>
+  <td><p class=tdfont
+  <!--#if variable="BID_" == value="" -->
+    class=tdfont
+  <!--#else variable="BID_" -->
+    class=tdfontfocus
+  <!--#endif variable="BID_" -->
+  ><a href="javascript:loadProfile('<$ID_>');" target=action><$NNM_></a></p></td>
+  <td><p class=tdfont><a href="javascript:loadPlace('<$DTY_>','<$PLC_>','');" target=action><$NAM_></a>&nbsp;</p></td>
+</tr>
+
+<!-- #endfor loopname="i"  -->
+
+</table>
+<!-- #include virtual="<$g_Templates>common/paging.tmpl" -->
+
+
+<!-- #define variable="buttons" value="refresh" -->
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+
+</BODY>
+</HTML>
+
+
+

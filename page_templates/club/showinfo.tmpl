@@ -1,0 +1,192 @@
+
+<!-- #ifndef variable="ID" value="CL00000000000d6a" -->
+<!-- #ifndef variable="ID" value="CL00000000000d6b" -->
+
+<HTML>
+<!-- club/showinfo.tmpl -->
+<!-- displays the information about the club -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Club</title>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<CENTER>
+<H2><FONT COLOR=#80ff00><$NAM></FONT></H2>
+
+<TABLE>
+<TR>
+    <TD>
+        <!-- #ifdef variable="STC" value="0"-->
+	<script language="javascript">var path = "<$g_DBImages><$CLP>";
+	if (path.indexOf('dbimages/dbimages') > -1){
+	document.writeln('<img src="<$g_HTMLRoot><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+	}
+	else{
+	document.writeln('<img src="<$g_HTMLRoot><$g_DBImages><$CLP>" BORDER=0 ALT="Club Image" height=100><BR>');
+	}
+	</script>            
+        <!-- #endif variable="STC" -->
+        <!-- #ifdef variable="STC" value="1"-->
+            <IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+        <!-- #endif variable="STC" -->
+    </TD>
+        <TD width=400><$ID_DES></TD>
+</TR>
+<BR>
+</TABLE>
+<HR>
+<h3>Club Information</h3>
+<table align=center cellspacing=5 border=0>
+    <tr>
+        <td valign=top>Club Keywords:</td>
+        <td>&nbsp;<b><$CK1>,<br>&nbsp;<$CK2>,<br>&nbsp;<$CK3></b></td>
+    </tr>
+    <tr>
+        <td>Number of Members:</td>
+        <td>&nbsp;<b><$CNT></b></td>
+    </tr>
+    <tr>
+        <td>Creation Date:</td>
+        <td>&nbsp;<b><$CDA_MDAy> <$CDA_MONNAME> <$CDA_YEAR></b></td>
+    </tr>
+    <tr>
+        <td>Colony:</td>
+        <td>&nbsp;<b><$PID_NAM></b></td>
+    </tr>
+    <tr>
+        <td>Activity:</td>
+        <td>&nbsp;<b><$ACT> %</b></td>
+    </tr>
+    <tr>
+        <td>Club Owner:</td>
+        <td>&nbsp;<b><$OWN_NNM></b></td>
+    </tr>
+    <tr>
+        <td valign=top>Club Deputies:</td>
+        <td>
+            <b>&nbsp;<$AS1_NNM>&nbsp;<$AS2_NNM>&nbsp;<$AS3_NNM>&nbsp;<$AS4_NNM><br>
+               &nbsp;<$AS5_NNM>&nbsp;<$AS6_NNM>&nbsp;<$AS7_NNM>&nbsp;<$AS8_NNM>
+            </b>
+        </td>
+    </tr>
+</table>
+
+<!-- #ifdef variable="join" -->
+
+<BR>
+    <A HREF="club<$g_exe>?ac=join&clubid=<$ID>&TKT=<$TKT>">
+    <IMG SRC="<$g_Images>/images/menu/join.gif" BORDER=0 ALT="Join Club"></A>
+
+<!-- #endif variable="join" -->
+
+</CENTER>
+
+</BODY>
+</HTML>
+
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+
+
+                                 
+<!-- #ifdef variable="ID" value="CL00000000000d6b" -->
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Cybertown - Loyalist Headquarters</title>
+</head>
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<CENTER>
+
+<!-- #ifdef variable="isVisitor" -->  
+<p>  
+Sorry, Visitor, but only immigrated members of Cybertown can register for, and play Morph2  
+<br>  
+But if you <a href="register<$g_exe>">join now</a> (it's FREE), you can join the fun!  
+</p>  
+<!-- #endif variable="isVisitor" -->
+<!-- #ifndef variable="isVisitor" -->  
+
+<!-- #ifndef variable="TEM" -->
+<p>Sorry. only Registered Players can enter their team's headquarters.</p>
+<p>Registration begins in a few days.  Whatch the Daily news for details.</p>
+<!-- #endif variable="TEM" -->
+<!-- #ifdef variable="TEM" value="" -->
+<p>Sorry. only Registered Players can enter their team's headquarters.</p>
+<p>Registration begins in a few days.  Whatch the Daily news for details.</p>
+<!-- #endif variable="TEM" -->
+
+<!-- #ifdef variable="TEM" value="00000002" -->
+Go away!!
+<!-- #endif variable="TEM" -->
+
+<!-- #ifdef variable="TEM" value="00000001" -->
+Welcome to Loyalist HQ
+<!-- #ifdef variable="join" -->
+<BR>
+    <A HREF="club<$g_exe>?ac=join&clubid=<$ID>&TKT=<$TKT>">
+    <IMG SRC="<$g_Images>/images/menu/join.gif" BORDER=0 ALT="Join Club"></A>
+<!-- #endif variable="join" -->
+<!-- #endif variable="TEM" -->
+<!-- #endif variable="isVisitor" -->
+
+</CENTER>
+</BODY>
+</HTML>
+<!-- endif variable="ID" -->
+
+
+<!-- #ifdef variable="ID" value="CL00000000000d6a" -->
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Cybertown - Morph Headquarters</title>
+</head>
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<CENTER>
+
+<!-- #ifdef variable="isVisitor" -->  
+<p>  
+Sorry, Visitor, but only immigrated members of Cybertown can register for, and play Morph2  
+<br>  
+But if you <a href="register<$g_exe>">join now</a> (it's FREE), you can join the fun!  
+</p>  
+<!-- #endif variable="isVisitor" -->
+<!-- #ifndef variable="isVisitor" -->  
+
+<!-- #ifndef variable="TEM" -->
+<p>Sorry. only Registered Players can enter their team's headquarters.</p>
+<p>Registration begins in a few days.  Whatch the Daily news for details.</p>
+<!-- #endif variable="TEM" -->
+<!-- #ifdef variable="TEM" value="" -->
+<p>Sorry. only Registered Players can enter their team's headquarters.</p>
+<p>Registration begins in a few days.  Whatch the Daily news for details.</p>
+<!-- #endif variable="TEM" -->
+
+<!-- #ifdef variable="TEM" value="00000001" -->
+Go away!!
+<!-- #endif variable="TEM" -->
+
+<!-- #ifdef variable="TEM" value="00000002" -->
+Welcome to Morph HQ
+<!-- #ifdef variable="join" -->
+<BR>
+    <A HREF="club<$g_exe>?ac=join&clubid=<$ID>&TKT=<$TKT>">
+    <IMG SRC="<$g_Images>/images/menu/join.gif" BORDER=0 ALT="Join Club"></A>
+<!-- #endif variable="join" -->
+<!-- #endif variable="TEM" -->
+<!-- #endif variable="isVisitor" -->
+
+</CENTER>
+</BODY>
+</HTML>
+<!-- endif variable="ID" -->
+
+
+

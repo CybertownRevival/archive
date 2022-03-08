@@ -1,0 +1,50 @@
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Immigration - Activation</h2>
+
+<p>
+<h3><font color=#ff0000><$NNM></font>,</h3>
+<p>
+	In order to activate your Immigration you have to enter the
+	Immigration Code you received by email.
+	Type the value into the form below and
+	press the <tt>Activate</tt> button.
+
+<form method=post action="register<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+	<table border=0>
+	<tr>
+		<td width=50%>Your Immigration Code:</td>
+		<td width=50%><INPUT NAME="RGK" VALUE="<$RGK>" MAXLENGTH=16 SIZE=16></td>
+	</tr>
+	</table>
+
+	<input type=hidden name="ac" value="activate">
+	<input type=hidden name="NNM" value="<$NNM>">
+	<input type=hidden name="GHDEBUG" value="1">
+	<input type=submit name="sub" value="Activate">
+<input type=button name="cancel" value="Cancel" onClick="history.back()">
+</form>
+
+
+<font color=#ff0000>
+<!-- #ifdef variable="activateerror001" -->
+	The activation code you entered is not correct.
+<!-- #endif variable="activateerror001" -->
+</font>
+
+
+<p align=center><small>
+<a HREF="register<$g_exe>?ac=resendIC&backurl=<$pbackurl>&TKT=<$TKT>">
+	Resend your Immigration Code?</a> -
+</small></p>
+
+</body>
+</html>
+

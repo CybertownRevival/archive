@@ -1,0 +1,162 @@
+<!-- register/cregister2.tmpl -->
+<!-- #ifdef variable="T_TEST" value="GOOD" -->
+<!-- #include virtual="<$g_Templates>register/success.tmpl" -->
+<!-- #endif variable="T_TEST" -->
+
+<!-- #ifndef variable="T_TEST" value="GOOD" -->
+<html>
+<head>
+<title>Cybertown</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://cyber.cybertown.com/styles.css" type="text/css">
+</head>
+<body bgcolor="#000000" text="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div class="maintext">
+
+
+<table align="center" class="maintext">
+  <tr><td colspan="3" height="20"></td></tr>
+  <tr>
+    <td colspan="3" align="center">
+      <!--<img src="http://www.cybertown.com/places/enter/images/enter.jpg">-->
+      <img src="http://www.cybertown.com/images/cyb.gif">      
+    </td>
+  </tr>
+  <tr><td colspan="3" height="20"></td></tr>
+  <tr>
+    <td colspan="3" align="center">
+      <table class="maintext" align="center" width="600">
+      <tr><td align="center">
+        <b>Sorry, our records show that no subscription fee has been paid for this nickname or it has not been activated. <br></b>
+Accordingly, you may not enter Cybertown with this nickname at this time.
+<br><br>
+
+<b>Subscribe now!</b><br>
+As a basic subscriber, for only $5 per month, you will have access to all the features of Cybertown.
+      </td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td colspan="3" height="1"></td></tr>
+  <tr>
+    <td align="center" width="100">
+      <b>Subscribe<br>
+      <a href="http://cyber.cybertown.com/cgi-bin/process.cgi">
+      <img src="http://ivnwww.cybertown.com/images/login/register.gif" border="0"></a>
+      <br>Existing Nickname</b>
+    </td>
+    <td align="center" width="450">
+      <table class="maintext" align="center" width="100%">
+      <tr><td align="center">
+        If you want to become a new member, click the <b>Immigrate</b> link to join.
+        <br><br>
+        If you have an existing Cybertown Nickname that<br>
+        is not subscribed, click the <b>Subscribe</b> link.
+        <br><br>
+        If you would like to explore Cybertown before<br>
+        Immigrating, click below to enter as a <b>Visitor</b>.
+        <br><br>
+        <font color="#EEEE00"><a href="#moreinfo">More information about Subscriptions</a></font> 
+      </td></tr>
+      </table>    
+    </td>
+    <td align="center" width="100">
+      <b>Immigrate<br>
+      <a href="http://cyber.cybertown.com/cgi-bin/register.cgi">
+      <img src="http://ivnwww.cybertown.com/images/login/register.gif" border="0"></a>
+      <br>New Member</b>
+    </td>
+  </tr>
+  <tr><td colspan="3" height="20"></td></tr>
+  <tr>
+    <td></td>
+    <td align="center">
+      <a href="http://www.cybertown.com/cgi-bin/cybertown/place?NNM=Visitor&login=true"><img src="http://ivnwww.cybertown.com/images/login/visitor.jpg" border="0"></a>
+    </td>
+    <td></td>
+  </tr>
+  <tr><td colspan="3" height="20"></td></tr>
+  <tr>
+    <td colspan="3" align="center">
+      <table class="maintext" align="center" width="600">
+      <tr><td align="center">
+<a href="http://cyber.cybertown.com/cgi-bin/activate.cgi">Click here if you have immigrated a new nickname and need to enter your Activation Code.</a>
+<br><br> 
+<table border="1" bordercolor='#EEEE00' cellspacing="0"><tr><td align="center">       
+Unsubscribed nicknames will be made available for others to use soon.<br>
+<b>Reserve your nickname now to ensure that it will be available for your use later.</b><br>
+If you are not ready to subscribe now, you may reserve one or more of your nicks in case you decide to subscribe later.
+<br><br>
+Reserve your nicks for $1 per month per nick by sending an email to:<br>
+<a href="mailto:reserve@integratedvirtualnetworks.com">reserve@integratedvirtualnetworks.com</a><br>
+Indicate in the email which nicknames you are reserving.<br>
+Go to the <a href="http://cyber.cybertown.com/cgi-bin/process.cgi">subscription</a> pages, 
+log in under the nickname you want to reserve.<br>
+Make a $1.00 donation under the reserved nickname to ensure the reservation.<br>
+A payment option for recurring monthly reservations will be coming soon.<br>
+</td></tr></table>
+      </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br><br>
+<br><br>
+<table class="maintext" align="center" width="600" border="0">
+<tr><td>
+<center>
+More Information about subscriptions
+</center>
+<br><br>
+    There are 2 ways to access Cybertown: 
+    <br><br>
+
+    <b>1) </b>You can access as a visitor and can look around and watch the chat but not chat yourself. 
+    <br><br>
+    <b>2) </b>You can become a subscribed member and have full access to all the benefits of Cybertown participation for as long as you wish.     
+
+<a name="moreinfo">
+
+<br><br>
+<table border="0" class="maintext" align="center"><tr><td></td><td>
+<b>Cybertown Subscription Fees</b>
+<font style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+<br><br>
+1.      The Basic Monthly subscription fee for one primary user ID is $5.00. 
+<br>
+2.      The Basic Annual subscription fee for one primary user ID is $49.95.
+<br>
+3.      The Family Monthly rate is $10.00 for one primary user ID and 5 family member IDs.
+<br>
+4.      The Family Annual rate is $99.95 for one primary user ID and 5 family member IDs.
+<br>
+5.      Sponsors may designate the nicknames of those whom they would like to sponsor.
+<br>
+6.      Additional nicknames are $1.00 a month each or $10.00 a year each. 
+<br>
+7.      Additional Nicknames must be purchased for the same term as your primary account.
+<br>
+8.      As an alternative, sponsors may donate to a general sponsorship pool for Cybertown or for a particular 
+        Colony, neighborhood or block of Cybertown.
+</font>
+</td></tr></table>
+<br><br>
+You can make subscription payments via PayPal or by mailing a check or money order.
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</td></tr>
+</table>
+<br><br>
+</div>
+</body>
+</html>
+
+<!-- #endif variable="T_TEST" -->
+

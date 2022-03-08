@@ -1,0 +1,172 @@
+<HTML>
+<!-- iwos/proplist.tmpl -->
+<!-- list of the intel weboutfitter houses -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Homebuilder Houses</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+function selctionChanged()
+{
+  document.filterForm.submit();
+}
+
+//-->
+</script>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h3 align="center">IWOS Property Directory</h3>
+
+<table align="center">
+<form method="post" target="_self" action="<$selfurl>" name="filterForm">
+
+  <input type="hidden" name="TKT"     value="<$TKT>">
+
+  <input type="hidden" name="ac"      value="objectlist">
+	<input type="hidden" name="BLOCKID" value="<$BLOCKID>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID"  value="<$LASTID>">
+
+  Select a Category from
+  <select name="CATEGORY" onChange="selctionChanged()">
+    <OPTION VALUE="c00100001"
+      <!-- #ifdef variable="CATEGORY" value="c00100001"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Photo Album</OPTION>
+    <OPTION VALUE="c00100002"
+      <!-- #ifdef variable="CATEGORY" value="c00100002"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Topic Book</OPTION>
+    <OPTION VALUE="c00100003"
+      <!-- #ifdef variable="CATEGORY" value="c00100003"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Guest Book</OPTION>
+    <OPTION VALUE="c00100004"
+      <!-- #ifdef variable="CATEGORY" value="c00100004"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Music Box</OPTION>
+    <OPTION VALUE="c00100005"
+      <!-- #ifdef variable="CATEGORY" value="c00100005"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Beam Station</OPTION>
+    <OPTION VALUE="c00100009"
+      <!-- #ifdef variable="CATEGORY" value="c00100009"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Picture Frame 1x1</OPTION>
+    <OPTION VALUE="c0010000a"
+      <!-- #ifdef variable="CATEGORY" value="c0010000a"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Picture Frame 4x3</OPTION>
+    <OPTION VALUE="c0010000b"
+      <!-- #ifdef variable="CATEGORY" value="c0010000b"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Picture Frame 3x4</OPTION>
+    <OPTION VALUE="c0010000c"
+      <!-- #ifdef variable="CATEGORY" value="c0010000c"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >Visit Counter</OPTION>
+    <OPTION VALUE="c0010000d"
+      <!-- #ifdef variable="CATEGORY" value="c0010000d"-->
+        selected
+      <!-- #endif variable="CATEGORY" -->
+    >auto Pictureframe</OPTION>
+  </select>
+
+
+<br>
+Last time update after
+<select name="DATE_MON">
+  <option value="">&nbsp;</option>
+  <!--#for loopname="month" loopvars="monthval,monthname,monthselected" -->
+  <option value="<$monthval>" <$monthselected>><$monthname>&nbsp;</option>
+  <!--#endfor loopname="month"  -->
+</select>
+<select name = "DATE_MDAY">
+  <option value="">&nbsp;</option>
+  <!--#for loopname="day" loopvars="dayval,dayname,dayselected" -->
+  <option value="<$dayval>" <$dayselected>><$dayname>&nbsp;</optin>
+  <!--#endfor loopname="day"  -->
+</select>
+
+<input type=hidden name="DATE_HOUR" value="00">
+<input type=hidden name="DATE_MIN" value="00">
+<input type=hidden name="DATE_SEC" value="00">
+
+
+<TR>
+	<TD>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+    <!--#ifdef variable="[PREV]" -->
+      <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+    <!--#endif variable="[PREV]" -->
+    <!--#ifdef variable="[NEXT]" -->
+      <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+    <!--#endif variable="[NEXT]" -->
+	</TD>
+</TR>
+</FORM>
+</TABLE>
+
+<TABLE align="center" cellspacing="0" cellpadding="1" border="1" width="80%">
+	<TR>
+		<th width="30%">Object Name</th>
+    <th width="20%">Owner</th>
+    <th width="30%">Last updated</th>
+	</TR>
+	<!--#for loopname="PROPLIST" loopvars="ID_" -->
+		<tr>
+			<td align="center">
+        <!-- #if variable="ID_CAT_" == value="photo"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ac=next&ID=<$ID_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="guest"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ac=next&ID=<$ID_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="topic"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ac=next&ID=<$ID_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="musicbox"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ID=<$ID_>&CAT=<$ID_CAT_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="beamstation"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ID=<$ID_>&CAT=<$ID_CAT_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="pictureframe"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ID=<$ID_>&CAT=<$ID_CAT_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+        <!-- #if variable="ID_CAT_" == value="visitcounter"-->
+          <a href="javascript:loadInfo('iwos<$g_exe>?ID=<$ID_>&CAT=<$ID_CAT_>')"><$NAM_></a>
+        <!-- #endif variable="ID_CAT_" -->
+      </td> 
+      <td align="center">
+      <a href="javascript:loadInfo('msb?DTY=P&KTY=ID&KEY=<$OWN_2HOM_>&MTY=i')"><$OWN_NNM_></a>
+      </td>
+      <td align="center">
+      <!-- #ifdef variable="ID_2UDD_MONNAME_" -->
+        <$ID_2UDD_MONNAME_> <$ID_2UDD_MDAy_>, <$ID_2UDD_YEAR_>
+      <!-- #endif variable="ID_2UDD_MONNAME_" -->
+      <!-- #ifndef variable="ID_2UDD_MONNAME_" -->
+        never updated
+      <!-- #endif variable="ID_2UDD_MONNAME_" -->
+      </td>
+		</tr>
+	<!--#endfor loopname="PROPLIST" -->
+</TABLE>
+
+</BODY>
+</HTML>

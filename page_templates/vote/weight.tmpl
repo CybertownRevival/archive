@@ -1,0 +1,52 @@
+<html>
+<head>
+<title><$g_title> - Voting</title>
+<!-- vote/weight.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+
+<h2>Personal voting data for <$NAM></h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="ac" value="weight">
+<input type="hidden" name="NAM" value="<$NAM>">
+
+<table border=0>
+<tr>
+<td><b>Number of votes:</b></td>
+<!-- #ifdef variable="owneraccess" -->
+<td><INPUT NAME="ovc" VALUE="<$ovc>" MAXLENGTH=8 SIZE=8></td>
+<!-- #endif variable="owneraccess" -->
+<!-- #ifndef variable="owneraccess" -->
+<input type="hidden" name="ovc" value=<$ovc>>
+<td><$ovc></td>
+<!-- #endif variable="owneraccess" -->
+</tr>
+<td><b>Assigned to:</b></td>
+<td><INPUT NAME="rid" VALUE="<$rid>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+</table>
+<br>
+<input type=submit name="update" value="Update">
+<input type=button name="back" value="Cancel" onClick="javascript:history.go(-1)">
+</form>
+
+<!-- #ifdef variable="errnoaccess" -->
+<h3>Sorry <$NNM>, you do not have permission to access this page.
+<!-- #endif variable="errnoaccess" -->
+<!-- #ifdef variable="errnorid" -->
+<h3>Sorry <$NNM>, this nickname doesn't exist.
+<!-- #endif variable="errnorid" -->
+<!-- #ifdef variable="errnopar" -->
+<h3>Sorry <$NNM>, there are parameters missing on this form.
+<!-- #endif variable="errnopar" -->
+<!-- #ifdef variable="errupdate" -->
+<h3>Sorry <$NNM>, updating the database failed.
+<!-- #endif variable="errupdate" -->
+</center>
+</body>
+</html>

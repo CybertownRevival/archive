@@ -1,0 +1,18 @@
+<!-- event/morph/toomany.tmpl -->
+<!-- too many event items of 1 type found -->
+
+<p align=center>
+<font color=#ffff00>
+<!-- #ifdef variable="TYP" value="1"-->
+You have already found all <$MAX_COUNT> <b>Morphs</b>!
+<!-- #endif variable="TYP" -->
+<!-- #ifdef variable="TYP" value="2" -->
+You have already found all <b>weekly prices</b>!
+<br>You can only find <$MAX_COUNT> weekly price(s) during the <$EVENTNAM>.
+<!-- #endif variable="TYP" -->
+<!-- #ifdef variable="TYP" value="3" -->
+You have already found a <b>3Dfx Card</b> before!
+<br>You can only win <$MAX_COUNT> 3Dfx Card(s) during the <$EVENTNAM>.
+<!-- #endif variable="TYP" -->
+</font>
+</p>

@@ -1,0 +1,118 @@
+<!-- memberdir/chatplaces -->
+<!--- list all chat places --->
+<!--- security gets additional links to update jobs and exclude members --->
+<HTML>
+<HEAD>
+<title><$g_title> - Member Directory</title>
+<!-- #define variable="T_NOHTML" value="1" -->
+<base target="_self">
+<script language=JavaScript>
+names = new Array();
+namesi = 0;
+<!--#for loopname="place" loopvars="NAM_" -->
+<!--#define variable="N" escape="<$NAM_>" -->
+names[namesi++] = "<$N>";
+<!--#endfor loopname="place" -->
+
+function listMembers( plc, i )
+{
+ document.listform.PLC.value = plc;
+ if ( names.length > i )
+  document.listform.T_NAM.value = unescape(names[i]);
+ else
+  document.listform.T_NAM.value = plc;
+ document.listform.submit();
+}
+
+function loadPlace( plc )
+{
+ var id = '', place = '', dty='O';
+ var i, j;
+ i = plc.indexOf("ID%3d");
+ if ( i > 0 )
+ {
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  id = plc.substring( i+5, j );
+ }
+ i = plc.indexOf("DTY%3d");
+ if ( i > 0 )
+ {
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  dty = plc.substring( i+6, j );
+ }
+ i = plc.indexOf("plc%3d");
+ if ( i > 0 )
+ {
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  place = plc.substring( i+6, j );
+ }
+ if ( place.length || id.length )
+ {
+  url = "javascript:loadPlace('" + dty + "','" + id + "','" + place + "')";
+  window.open( url, "place" );
+  self.close();
+ }
+}
+</script>
+</HEAD>
+
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+
+<div align=center>
+
+<H3>Chat Places
+</H3>
+
+<!-- #ifdef variable="error002" -->
+Failed to run command <$error>.<br>
+<!-- #endif variable="error002" -->
+<!-- #ifdef variable="error003" -->
+<$errorfont>No chat places active on this server.</font><br><br>
+<!-- #endif variable="error003" -->
+<!-- #ifdef variable="error004" -->
+<$errorfont>Timeout when connecting to server <$g_CServer>.</font><br>
+<!-- #endif variable="error004" -->
+
+<P>Total number of chat members: <$TOT>.
+<br>
+<form method=post target=_self name="listform" action="<$selfurl>"> 
+<input type="hidden" name="ac" value="list">
+<input type="hidden" name="TPL" value="memberdir/chatmembers">
+<input type="hidden" name="PLC" value="">
+<input type="hidden" name="T_NAM" value="">
+<table border=1>
+<tr>
+ <th><$font>&nbsp;Place&nbsp</font></th><th colspan=2><$font>&nbsp;Chat Members&nbsp;</font></th>
+</tr>
+ <!--#for loopname="place" loopvars="PLC_" -->
+  <tr><td><$font>
+   <!--#ifdef variable="NAM_" -->
+   <$NAM_>
+   <input type="hidden" name="NAM<$ITER_>" value="<$NAM_>">&nbsp;
+   <!--#endif variable="NAM_" -->
+   <!--#ifndef variable="NAM_" -->
+   <$PLC_>
+   <!--#endif variable="NAM_" -->
+   </font></td>
+   <td><$font>
+   <$NUM_>
+   </font></td>
+   <td><$font>
+   <a href='javascript:listMembers("<$PLC_>",<$ITER_>)'>
+   List</a>
+   </font></td>
+   </font></td>
+   </tr>
+ <!--#endfor loopname="place" -->
+</table>
+</form>
+<br>
+</center>
+</BODY>
+</HTML>

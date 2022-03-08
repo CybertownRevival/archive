@@ -1,0 +1,131 @@
+<!-- license/license.tmpl -->
+<!-- displayed after issue of avatar studio license -->
+<!-- #if variable="ac" != value="set" -->
+<HTML>
+<HEAD>
+<title>blaxxun Avatar Studio License</title>
+</HEAD>
+
+<BODY BGCOLOR="#FFFEEE" LINK="#003333" TEXT="#000000" VLINK="#4d7e22">
+<center>
+<h1>blaxxun Avatar Studio License</h1>
+</center>
+<!-- #endif variable="ac" -->
+
+<!-- #ifdef variable="error" -->
+<center>
+<P>
+<P><table align="center" cellspacing="1" border="1">
+<tr>
+<td>&nbsp;Your Order Number&nbsp;</td>
+<td>&nbsp;<$ORD>&nbsp;</td>
+</tr>
+<!-- #ifdef variable="NUM" -->
+<tr>
+<td>&nbsp;Number Of License Keys&nbsp;</td>
+<td>&nbsp;<$NUM>&nbsp;</td>
+</tr>
+<!-- #endif variable="NUM" -->
+</table>
+
+<font color=red>
+<!-- #ifdef variable="error001" -->
+<P>Sorry, your license request is invalid. <br>
+Please contact <a href=mailto:avatarstudio@blaxxun.com>avatarstudio@blaxxun.com</a>.
+<!-- #endif variable="error001" -->
+<!-- #ifdef variable="error002" -->
+<P>Sorry, the license database is unavailable right now. <br>
+Please contact <a href=mailto:avatarstudio@blaxxun.com>avatarstudio@blaxxun.com</a>
+to get the license key by mail.
+<!-- #endif variable="error002" -->
+</center>
+</font>
+<!-- #endif variable="error" -->
+
+<!-- #ifndef variable="error" -->
+
+<script language=javascript>
+function printwin()
+{
+ navagt = "none";
+ if (navigator.userAgent.length>1) {navagt = navigator.userAgent;}
+ if ( ( navigator.appName == 'Netscape' && parseFloat(navigator.appVersion) >= 4 ) || navagt.indexOf('MSIE 5') > 0 )
+ { window.print(); }
+ else 
+ { alert('Please use Ctril-P or the File/Print option to print the document.'); }
+}
+</script>
+
+<CENTER>
+<!-- #ifdef variable="error003" -->
+<font color=red>
+The email with the license couldn't be sent.
+Please save this page to store the information.
+</font>
+<P>
+<!-- #endif variable="error003" -->
+
+<!-- #if variable="ac" != value="set" -->
+  <TABLE ALIGN="CENTER" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+  <TR><TD ALIGN="CENTER"><IMG SRC="http://ww4.blaxxun.com:8888/isroot/blaxxunOnlineStore/SiteImages/topbanner.jpg" ALT="topbanner"></TD></TR>
+  <TR><TD ALIGN="CENTER"><IMG SRC="http://ww4.blaxxun.com:8888/isroot/blaxxunOnlineStore/SiteImages/header_yourbasket.jpg" ALT="yourbasket"></TD></TR>
+  </TABLE>
+<!-- #endif variable="ac" -->
+  <P>
+<!-- #ifdef variable="NNM" -->
+<P> Thank you for buying blaxxun Avatar Studio, <$NNM>.
+
+<P>Your license key has been stored in your member data. 
+<br>
+You can create now your own avatar and upload it into the community.
+<br>
+If you want to use the key for another nickname, please log in as <$NNM>
+and delete the key using 
+<a href="/cgi-bin/cybertown/uploadavt?ac=updkey&plc=1">
+http://www.cybertown.com/cgi-bin/cybertown/uploadavt?ac=updkey&plc=1</a>
+
+<!-- #endif variable="NNM" -->
+
+<!-- #ifndef variable="NNM" -->
+<P>Thank you for buying blaxxun Avatar Studio.
+<!-- #endif variable="NNM" -->
+
+<P><table align="center" cellspacing="1" border="1">
+<tr>
+<td>&nbsp;Your Order Number&nbsp;</td>
+<td>&nbsp;<$ORD>&nbsp;</td>
+</tr>
+<!-- #ifdef variable="NUM" -->
+<tr>
+<td>&nbsp;Number Of License Keys&nbsp;</td>
+<td>&nbsp;<$NUM>&nbsp;</td>
+</tr>
+<!-- #endif variable="NUM" -->
+<!--#for loopname="key" loopvars="KEY" -->
+<tr>
+<td>&nbsp;License Key&nbsp;</td>
+<td>&nbsp;<$KEY>&nbsp;</td>
+</tr>
+<!--#endfor loopname="key" -->
+</table>
+<!-- #if variable="ac" != value="set" -->
+<p>
+You will get that information also to the email address <$EML><$email>.<br>
+<!-- #if variable="ac" != value="set" -->
+If you ordered a CDrom, you'll get it as soon as possible.
+<!-- #endif variable="ac" -->
+<br>
+<!-- #endif variable="error" -->
+<P>To print out this document, <a href=javascript:printwin()>click here</a> or choose the print command from the menu.
+<br>
+<P>To return to the website, just <a href=javascript:top.close()> close this window</a>.
+<p>If you want to use this license for an evaluation version downloaded before Nov 2nd, please
+<a href=http://www.blaxxun.com/support/avatarstudio/indexcontent.html#license>click here</a>
+to see the FAQ on how to update your evaluation version.
+</center>
+<br>
+<br>
+<!-- #if variable="ac" != value="set" -->
+</BODY>
+</HTML>
+<!-- #endif variable="ac" -->

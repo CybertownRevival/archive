@@ -1,0 +1,249 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #ifdef variable="FBS" value="" -->
+<!-- fundbox/phase0.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>CityCash Transfer - Department Funds</title>
+<meta name="Author" content="Coolkama, Simioni and Halogen">
+
+</head>
+<body bgcolor="#000000" text="lime">
+
+<!-- #ifdef variable="owneraccess" -->
+<form action="print<$g_exe>" method="post" name="phase1">
+        <input type="hidden" name="TPL" value="fundbox/phase1">
+        <input type="hidden" name="TO_NNM" value="">
+        <input type="hidden" name="ID" value="<$PLACE_ID>">
+        <input type="hidden" name="PLACE_NAM" value="<$PLACE_NAM>">
+        <input type="hidden" name="PLACE_MON" value="<$MON>">
+        <input type="hidden" name="DTY" value="<$DTY>">
+      <table border="0" cellpadding="0" cellspacing="0" width="575" align="center">
+        <!-- fwtable fwsrc="confirm.png" fwbase="confirm.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="spacer.gif" width="55" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="208" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="141" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="11" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="106" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="6" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="48" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r1_c1" src="/places/fundbox/images/top.jpg" width="575" height="171" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="171" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r2_c1" src="/places/fundbox/images/left.jpg" width="55" height="182" border="0" alt=""></td>
+          <td colspan="5">
+            <p><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">Welcome</font><font face="Arial, Helvetica, sans-serif" size="-1"> 
+              <font color="#ffff00"><$NNM>, Owner/Deputy of <$PLACE_NAM></font><font color="#FFFFFF">, your department currently 
+              has</font> <font color="#ffff00"><$MON>cc</font> <font color="#FFFFFF">in 
+              its Account.</font></font></p>
+   
+            
+           <center><input type="submit" name="withdraw" value="Withdraw Funds" width=100>
+           </form>
+           <form action="print<$g_exe>" method="post" name="phase4">
+	           <input type="hidden" name="TPL" value="fundbox/phase4">
+	           <input type="hidden" name="TO_NNM" value="">
+	           <input type="hidden" name="ID" value="<$PLACE_ID>">
+	           <input type="hidden" name="PLACE_NAM" value="<$PLACE_NAM>">
+        	   <input type="hidden" name="PLACE_MON" value="<$MON>">
+           <p><input type="submit" name="deposit" value="Deposit Funds" width=100>
+           </form>
+           <p>
+           <!-- #ifdef variable="rightsaccess" -->
+	   <a href="print<$g_exe>?DTY=<$DTY>&ID=<$ID>&TPL=fundbox/phase99">
+	   <IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+	   <!-- #endif variable="rightsaccess" -->
+          </center></td>
+          <td><img name="confirm_r2_c7" src="/places/fundbox/images/right.jpg" width="48" height="182" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="182" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r3_c1" src="/places/fundbox/images/bottombar.jpg" width="575" height="21" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="21" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c1" src="/places/fundbox/images/bottomleft.jpg" width="263" height="81" border="0" alt=""></td>
+          <td><img name="confirm_r4_c3" src="/places/fundbox/images/blank.jpg" width="141" height="24" border="0" alt=""></td>
+          <td rowspan="2"><img name="confirm_r4_c4" src="/places/fundbox/images/bottomdivider.jpg" width="11" height="81" border="0" alt=""></td>
+          <td><a href="javascript:window.close();"><img name="confirm_r4_c5" src="/places/fundbox/images/cancel.jpg" width="106" height="24" border="0" alt=""></a></td>
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c6" src="/places/fundbox/images/bottomright.jpg" width="54" height="81" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="24" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r5_c3" src="/places/fundbox/images/underbuttonleft.jpg" width="141" height="57" border="0" alt=""></td>
+          <td><img name="confirm_r5_c5" src="/places/fundbox/images/underbuttonright.jpg" width="106" height="57" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="57" border="0" alt=""></td>
+        </tr>
+      </table>
+      
+    <!-- #else variable="owneraccess" -->
+    <center><br><br><br><br><br><br><br><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">
+    <h3>Fundbox Error</h3><p>
+    No Access Rights!</font>
+    <!-- #endif variable="owneraccess" -->
+</body>
+</html>
+<!-- #endif variable="FBS" -->
+
+
+
+
+
+<!-- #ifdef variable="FBS" value="ON" -->
+<!-- #if variable="FBP" == variable="T_PASS" -->	
+<!-- fundbox/phase0.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>CityCash Transfer - Department Funds</title>
+<meta name="Author" content="Coolkama, Simioni and Halogen">
+
+</head>
+<body bgcolor="#000000" text="lime">
+
+<!-- #ifdef variable="owneraccess" -->
+<form action="print<$g_exe>" method="post" name="phase1">
+        <input type="hidden" name="TPL" value="fundbox/phase1">
+        <input type="hidden" name="TO_NNM" value="">
+        <input type="hidden" name="ID" value="<$PLACE_ID>">
+        <input type="hidden" name="PLACE_NAM" value="<$PLACE_NAM>">
+        <input type="hidden" name="PLACE_MON" value="<$MON>">
+        <input type="hidden" name="DTY" value="<$DTY>">
+        <input type="hidden" name="T_PASS" value="<$T_PASS>">
+      <table border="0" cellpadding="0" cellspacing="0" width="575" align="center">
+        <!-- fwtable fwsrc="confirm.png" fwbase="confirm.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
+        <tr> 
+          <td><img src="spacer.gif" width="55" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="208" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="141" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="11" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="106" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="6" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="48" height="1" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="1" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r1_c1" src="/places/fundbox/images/top.jpg" width="575" height="171" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="171" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r2_c1" src="/places/fundbox/images/left.jpg" width="55" height="182" border="0" alt=""></td>
+          <td colspan="5">
+            <p><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">Welcome</font><font face="Arial, Helvetica, sans-serif" size="-1"> 
+              <font color="#ffff00"><$NNM>, Owner/Deputy of <$PLACE_NAM></font><font color="#FFFFFF">, your department currently 
+              has</font> <font color="#ffff00"><$MON>cc</font> <font color="#FFFFFF">in 
+              its Account.</font></font></p>
+   
+            
+           <center><input type="submit" name="withdraw" value="Withdraw Funds" width=100>
+           </form>
+           <form action="print<$g_exe>" method="post" name="phase4">
+	           <input type="hidden" name="TPL" value="fundbox/phase4">
+	           <input type="hidden" name="TO_NNM" value="">
+	           <input type="hidden" name="ID" value="<$PLACE_ID>">
+	           <input type="hidden" name="PLACE_NAM" value="<$PLACE_NAM>">
+        	   <input type="hidden" name="PLACE_MON" value="<$MON>">
+        	   <input type="hidden" name="T_PASS" value="<$T_PASS>">
+           <p><input type="submit" name="deposit" value="Deposit Funds" width=100>
+           </form>
+           <p>
+           <!-- #ifdef variable="rightsaccess" -->
+	   <a href="print<$g_exe>?DTY=<$DTY>&ID=<$ID>&TPL=fundbox/phase99">
+	   <IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+	   <!-- #endif variable="rightsaccess" -->
+          </center></td>
+          <td><img name="confirm_r2_c7" src="/places/fundbox/images/right.jpg" width="48" height="182" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="182" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td colspan="7"><img name="confirm_r3_c1" src="/places/fundbox/images/bottombar.jpg" width="575" height="21" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="21" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c1" src="/places/fundbox/images/bottomleft.jpg" width="263" height="81" border="0" alt=""></td>
+          <td><img name="confirm_r4_c3" src="/places/fundbox/images/blank.jpg" width="141" height="24" border="0" alt=""></td>
+          <td rowspan="2"><img name="confirm_r4_c4" src="/places/fundbox/images/bottomdivider.jpg" width="11" height="81" border="0" alt=""></td>
+          <td><a href="javascript:window.close();"><img name="confirm_r4_c5" src="/places/fundbox/images/cancel.jpg" width="106" height="24" border="0" alt=""></a></td>
+          <td rowspan="2" colspan="2"><img name="confirm_r4_c6" src="/places/fundbox/images/bottomright.jpg" width="54" height="81" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="24" border="0" alt=""></td>
+        </tr>
+        <tr> 
+          <td><img name="confirm_r5_c3" src="/places/fundbox/images/underbuttonleft.jpg" width="141" height="57" border="0" alt=""></td>
+          <td><img name="confirm_r5_c5" src="/places/fundbox/images/underbuttonright.jpg" width="106" height="57" border="0" alt=""></td>
+          <td><img src="spacer.gif" width="1" height="57" border="0" alt=""></td>
+        </tr>
+      </table>
+      
+    <!-- #else variable="owneraccess" -->
+    <center><br><br><br><br><br><br><br><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">
+    <h3>Fundbox Error</h3><p>
+    No Access Rights!</font>
+    <!-- #endif variable="owneraccess" -->
+</body>
+</html>
+
+<!-- #endif variable="FBP" -->
+
+<!-- #if variable="FBP" != variable="T_PASS" -->
+<body bgcolor="#000000">
+    <center><br><br><br><br><br><br><br><font face="Arial, Helvetica, sans-serif" size="-1" color="#FFFFFF">
+    <h3>Fundbox - Access Denied</h3><p>
+    Incorrect Password!</font>
+    <p><a href="javascript:history.go(-1)"><img src="/images/buttons/bback.gif" border=0 alt="Back"></a>
+<!-- #endif variable="FBP" -->
+    
+<!-- #endif variable="FBS" -->
+

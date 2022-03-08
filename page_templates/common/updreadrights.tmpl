@@ -1,0 +1,257 @@
+<!-- common/updreadrights.tmpl -->
+<!-- update read access -->
+<HTML>
+<HEAD>
+	<title><$g_title></title>
+	<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/updateok.tmpl" -->
+
+<p align=center>
+<b>Update <font color=#FFFF00>Read Access</font></b>
+<!-- #ifdef variable="cht" -->
+<b>for <font color=#FFFF00>Chat</font></b>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<b>for <font color=#FFFF00><$NAM></font></b>
+<br>
+<a href="edit<$g_exe>?ac=read&DTY=I&KTY=ID&KEY=h<$KEY>&cht=1&TPL=common/updreadrights&PRI=<$PRI>" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bchataccess.gif" BORDER=0 ALT="Chat Read Access"></a>
+<!-- #endif variable="cht" -->
+</p>
+
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+</div>
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+<script src="http://www.cybertown.com/cgi-bin/cybertown/warning" language="javascript"></script>
+<center>
+
+<form method=post action="<$selfurl>" target="detail">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="common/updreadrights">
+<!-- #ifdef variable="PRI" -->
+    <input type=hidden name="PRI" value="<$PRI>">
+<!-- #endif variable="PRI" -->
+
+<!-- #ifdef variable="cht" -->
+<input type=hidden name="cht" value="<$cht>">
+<h3>Here you define citizens, who are allowed to read the chat at this place.</h3>
+<!-- #endif variable="cht" -->
+
+<!-- #ifndef variable="cht" -->
+<h3>Here you define citizens, who are allowed to read messages, calendar events or statistics at this place.</h3>
+<!-- #endif variable="cht" -->
+<p>
+If no nickname is defined and no job is checkmarked, usually everyone is allowed to read!<br>
+If you want to change the read access you can explicitly define citizens by nickname and/or by job.
+</p>
+
+<p>You can define <b><font color=#FFFF00>up to 8 citizens</font></b> with <b><font color=#FFFF00>read access</font></b>,
+a <b>club name</b> is an example for a group here.
+</p>
+
+<div align=center>
+<table border=0>
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="RI1TYP" TYPE="Radio" VALUE="G"<$RI1CHK_G>>Group<br>
+        <INPUT NAME="RI1TYP" TYPE="Radio" VALUE="M"<$RI1CHK_M>>Member</td>
+    <td><INPUT NAME="RI2TYP" TYPE="Radio" VALUE="G"<$RI2CHK_G>>Group<br>
+        <INPUT NAME="RI2TYP" TYPE="Radio" VALUE="M"<$RI2CHK_M>>Member</td>
+    <td><INPUT NAME="RI3TYP" TYPE="Radio" VALUE="G"<$RI3CHK_G>>Group<br>
+        <INPUT NAME="RI3TYP" TYPE="Radio" VALUE="M"<$RI3CHK_M>>Member</td>
+    <td><INPUT NAME="RI4TYP" TYPE="Radio" VALUE="G"<$RI4CHK_G>>Group<br>
+        <INPUT NAME="RI4TYP" TYPE="Radio" VALUE="M"<$RI4CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="RI1CHK_G" -->
+        <INPUT NAME="RI1TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI1CHK_G" -->
+	<!-- #ifdef variable="RI2CHK_G" -->
+        <INPUT NAME="RI2TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI2CHK_G" -->
+	<!-- #ifdef variable="RI3CHK_G" -->
+        <INPUT NAME="RI3TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI3CHK_G" -->
+	<!-- #ifdef variable="RI4CHK_G" -->
+        <INPUT NAME="RI4TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI4CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="RI1CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI1_NNM" VALUE="<$RI1_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI1_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI1CHK_G" -->
+	<!-- #ifndef variable="RI1CHK_G" -->
+	   <td><INPUT NAME="RI1_NNM" VALUE="<$RI1_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI1CHK_G" -->
+	<!-- #ifdef variable="RI2CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI2_NNM" VALUE="<$RI2_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI2_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI2CHK_G" -->
+	<!-- #ifndef variable="RI2CHK_G" -->
+	   <td><INPUT NAME="RI2_NNM" VALUE="<$RI2_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI2CHK_G" -->
+	<!-- #ifdef variable="RI3CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI3_NNM" VALUE="<$RI3_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI3_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI3CHK_G" -->
+	<!-- #ifndef variable="RI3CHK_G" -->
+	   <td><INPUT NAME="RI3_NNM" VALUE="<$RI3_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI3CHK_G" -->
+	<!-- #ifdef variable="RI4CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI4_NNM" VALUE="<$RI4_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI4_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI4CHK_G" -->
+	<!-- #ifndef variable="RI4CHK_G" -->
+	   <td><INPUT NAME="RI4_NNM" VALUE="<$RI4_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI4CHK_G" -->
+</tr>
+
+<!-- #ifdef variable="isAdmin" -->
+<tr>
+    <td><INPUT NAME="RI5TYP" TYPE="Radio" VALUE="G"<$RI5CHK_G>>Group<br>
+        <INPUT NAME="RI5TYP" TYPE="Radio" VALUE="M"<$RI5CHK_M>>Member</td>
+    <td><INPUT NAME="RI6TYP" TYPE="Radio" VALUE="G"<$RI6CHK_G>>Group<br>
+        <INPUT NAME="RI6TYP" TYPE="Radio" VALUE="M"<$RI6CHK_M>>Member</td>
+    <td><INPUT NAME="RI7TYP" TYPE="Radio" VALUE="G"<$RI7CHK_G>>Group<br>
+        <INPUT NAME="RI7TYP" TYPE="Radio" VALUE="M"<$RI7CHK_M>>Member</td>
+    <td><INPUT NAME="RI8TYP" TYPE="Radio" VALUE="G"<$RI8CHK_G>>Group<br>
+        <INPUT NAME="RI8TYP" TYPE="Radio" VALUE="M"<$RI8CHK_M>>Member</d>
+</tr>
+<!-- #endif variable="isAdmin" -->
+<!-- #ifndef variable="isAdmin" -->
+	<!-- #ifdef variable="RI5CHK_G" -->
+        <INPUT NAME="RI5TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI5CHK_G" -->
+	<!-- #ifdef variable="RI6CHK_G" -->
+        <INPUT NAME="RI6TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI6CHK_G" -->
+	<!-- #ifdef variable="RI7CHK_G" -->
+        <INPUT NAME="RI7TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI7CHK_G" -->
+	<!-- #ifdef variable="RI8CHK_G" -->
+        <INPUT NAME="RI8TYP" TYPE="Hidden" VALUE="G"
+	<!-- #endif variable="RI8CHK_G" -->
+<!-- #endif variable="isAdmin" -->
+<tr>
+	<!-- #ifdef variable="RI5CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI5_NNM" VALUE="<$RI5_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI5_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI5CHK_G" -->
+	<!-- #ifndef variable="RI5CHK_G" -->
+	   <td><INPUT NAME="RI5_NNM" VALUE="<$RI5_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI5CHK_G" -->
+	<!-- #ifdef variable="RI6CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI6_NNM" VALUE="<$RI6_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI6_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI6CHK_G" -->
+	<!-- #ifndef variable="RI6CHK_G" -->
+	   <td><INPUT NAME="RI6_NNM" VALUE="<$RI6_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI6CHK_G" -->
+	<!-- #ifdef variable="RI7CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI7_NNM" VALUE="<$RI7_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI7_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI7CHK_G" -->
+	<!-- #ifndef variable="RI7CHK_G" -->
+	   <td><INPUT NAME="RI7_NNM" VALUE="<$RI7_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI7CHK_G" -->
+	<!-- #ifdef variable="RI8CHK_G" -->
+        <!-- #ifdef variable="isAdmin" -->
+            <td><INPUT NAME="RI8_NNM" VALUE="<$RI8_NNM>" MAXLENGTH=16 SIZE=16></td>
+        <!-- #endif variable="isAdmin" -->
+        <!-- #ifndef variable="isAdmin" -->
+            <td><$RI8_NNM></td>
+        <!-- #endif variable="isAdmin" -->
+	<!-- #endif variable="RI8CHK_G" -->
+	<!-- #ifndef variable="RI8CHK_G" -->
+	   <td><INPUT NAME="RI8_NNM" VALUE="<$RI8_NNM>" MAXLENGTH=16 SIZE=16></td>
+	<!-- #endif variable="RI8CHK_G" -->
+</tr>
+</table>
+<small><i><u>Note:</u> If a nickname does not exist, it is ignored without notification.</i></small>
+</div>
+
+<p>Additionally all citizens having <b><font color=#FFFF00>checkmarked jobs</font></b> have
+<b><font color=#FFFF00>read access</font></b>, too.
+<br>
+If you want to give read access to all citizens, simply checkmark only 'Members' - this
+includes ALL other jobs, but not visitors.
+</p>
+
+<div align=center>
+<table border=1 cellpadding=1>
+<tr>
+<!--#for loopname="roles" loopvars="ROL_ITER_" -->
+    <td nowrap>
+    <input type="checkbox" align="middle"
+           name="RRO_BIT_<$ROL_ITER_>" <$RRO_BIT_>>
+    
+    <$ROL_BIT_NAM_>
+    </td>
+
+	<input type=hidden name="ROL_BIT_ID_R_<$ROL_ITER_>" value="<$ROL_BIT_ID_R_>">
+	<input type=hidden name="ROL_BIT_ID_W_<$ROL_ITER_>" value="<$ROL_BIT_ID_W_>">
+<!-- #ifdef variable="ROL_4_" -->
+</tr><tr>
+<!-- #endif variable="ROL_4_" -->
+<!--#endfor loopname="roles" -->
+</tr>
+</table>
+	</div>
+</p>
+
+<a name=submitbutton></a>
+<BR>
+<center>
+<input type=submit name="editrolem" value=Update>
+<input type=submit name="read" value=Cancel>
+</center>
+
+</form>
+
+</BODY>
+</HTML>

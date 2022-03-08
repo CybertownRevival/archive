@@ -1,0 +1,162 @@
+<!-- msg/displaymessage.tmpl -->
+<!--- display single messages --->
+
+<html>
+<head> 
+<title> <$g_title> </title> 
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #define variable="T_LB" value="<$T_LB>" -->
+
+<!-- #if variable="TYP" == value="I" --> 
+<!-- #define variable="btn_reply" value="1" -->
+<!-- #define variable="box_title" value="Incoming Message" -->
+<!-- #define variable="date_title" value="Received" -->
+<!-- #define variable="forward" value="reply_and_forward" -->
+<!-- #endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="O" --> 
+<!-- #define variable="box_title" value="Outgoing Message" -->
+<!-- #define variable="date_title" value="Sent" -->
+<!-- #define variable="forward" value="forward_only" -->
+<!-- #endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="N" --> 
+<!-- #define variable="box_title" value="Alert" -->
+<!-- #define variable="date_title" value="Start" -->
+<!-- #endif variable="TYP" -->
+</head>
+
+<body class=info onload="">
+
+<!-- #include virtual="<$g_Templates>msg/buttons.tmpl" -->
+<!-- #ifndef variable="hideTemplate" --> 
+
+<!-- #define variable="heading" value="Messages" -->
+<!-- #if variable="T_LB_P1" != value="" --> 
+<!-- #define variable="up_url" value="javascript:msgGoto('<$T_LB_P1>','<$T_LB_P2>','<$T_LB_P3>')" -->
+<!-- #else variable="T_LB_P1" -->
+<!-- #define variable="up_url" value="javascript:msgGoto('<$T_LB>')" -->
+<!-- #endif variable="T_LB_P1" -->
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<center>
+<IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>
+
+<p class=head2>
+<font face="Arial" size=3 color="#00ff00"><b><$box_title></b></font>
+</p>
+
+<a href="javascript:msgGoto('inbox')" target="">
+<img src="/images/buttons60/btnopt_inbox.gif" alt="My Message Inbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('outbox')" target="">
+<img src="/images/buttons60/btnopt_outbox.gif" alt="My Message Outbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('alert')" target="">
+<img src="/images/buttons60/btnopt_alerts.gif" alt="My Alerts" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send')" target="">
+<img src="/images/buttons60/btnopt_sendmessage.gif" alt="Send New Message" border="0" vspace=1 hspace=1></a>
+
+<br>
+
+<a href="javascript:msgGoto('send','Broadcast Group','','Broadcast')" target="">
+<img src="/images/buttons60/btnopt_broadcast.gif" alt="Send Broadcast Message" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send','Security Group','','Security')" target="">
+<img src="/images/buttons60/btnopt_securityalert.gif" alt="Send Security Alert" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('buddylist')" target="">
+<img src="/images/buttons60/btnopt_buddylist.gif" alt="My Buddylist" border="0" vspace=1 hspace=1></a>
+
+
+<table cellspacing=1 border=0 width=90%>
+<tr>
+<!-- #if variable="TYP" != value="N" --> 
+<td width="30%" class=thbg><p class=thfont>From:</p></td>
+<td width="30%" class=thbg><p class=thfont>To:</p></td>
+<!-- #endif variable="TYP" -->
+<td class=thbg><p class=thfont><$date_title></p></td>
+</tr>
+
+<tr>
+<!-- #if variable="TYP" != value="N" --> 
+<td class=tdbg><p class=tdfont><$CRE_NNM></p></td>
+<td class=tdbg><p class=tdfont><$REC_NNM></p></td>
+<!-- #endif variable="TYP" -->
+<td class=tdbg><p class=tdfont><$SDA_YEAR>/<$SDA_MON>/<$SDA_MDAY>&nbsp;<$SDA_HOUR>:<$SDA_MIN></p></td>
+</tr>
+</table>
+
+<!-- #define variable="escapetxt" escape="<$TXT>" -->
+
+</center>
+Message:
+<p>
+<p class=note>
+  <script language="JavaScript">
+  document.write(msgFormatText('<$escapetxt>'));
+  </script>
+</p>
+
+<center>
+<!-- #if variable="O_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="O_NAM" -->
+<!-- #if variable="CL_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="CL_NAM" -->
+<!-- #if variable="H_NAM" != value="" -->
+  <!-- #define variable="NAM_OR" value="1" -->
+<!-- #endif variable="H_NAM" -->
+
+<!-- #ifdef variable="E_SDA_MOn" --> 
+<br>
+<p class="cont"><$E_SDA_YEAR>/<$E_SDA_MON>/<$E_SDA_MDAY>
+<!-- #if variable="E_EDA_STR" contains value="235959" -->
+  All-day
+<!-- #else variable="E_EDA_STR" -->
+  <$E_SDA_HOUR>:<$E_SDA_MIN>
+  <!-- #ifdef variable="E_EDA_DAYNAM" -->
+  - <$E_EDA_HOUr>:<$E_EDA_MIN>
+  <!-- #endif variable="E_EDA_DAYNAM" -->
+<!-- #endif variable="E_EDA_STR" -->
+
+<!-- #ifdef variable="NAM_OR" -->
+at <a href="javascript:loadPlace('','<$plcID>','')" target=action><$O_NAM><$CL_NAM><$H_NAM></a>
+<!-- #endif variable="NAM_OR" -->
+</p>
+
+<!-- #else variable="E_SDA_MOn" -->
+
+<!-- #ifdef variable="NAM_OR" -->
+<p class="note">Go to <a href="javascript:loadPlace('','<$plcID>','')" target=action><$O_NAM><$CL_NAM><$H_NAM></a></p>
+<!-- #endif variable="NAM_OR" -->
+
+<!-- #endif variable="E_SDA_MOn" -->
+
+<!-- #define variable="buttoncheck" value="msgGoto('send','<$CRE_NNM>')" -->
+<!-- #if variable="T_LB_P1" != value="" --> 
+<!-- #define variable="deletecheck" value="msgDelete('<$ID>','<$T_LB_P1>','<$T_LB>','<$T_LB_P2>','<$T_LB_P3>')" -->
+<!-- #define variable="cancelaction" value="msgGoto('<$T_LB_P1>','<$T_LB_P2>','<$T_LB_P3>')" -->
+<!-- #else variable="T_LB_P1" -->
+<!-- #define variable="deletecheck" value="msgDelete('<$ID>','<$T_LB>')" -->
+<!-- #define variable="cancelaction" value="msgGoto('<$T_LB>')" -->
+<!-- #endif variable="T_LB_P1" -->
+<!-- #define variable="forwardcheck" value="msgGoto('send','','<$ID>')" -->
+
+<!-- #if variable="TYP" == value="N" --> 
+  <!-- #define variable="buttons" value="update" -->
+  <!-- #define variable="buttoncheck" value="msgGotoUrl('<$g_cgiRoot>/calendar<$g_exe>?KEY=<$E_RID>&ac=nextrecur&DATE=<$CT_STR>&T_KEY=<$E_PKE>&TPL=calendar/msgwriteform<$g_SessionID>&T_REMIND=<$ID>&T_ac=update')" -->
+<!-- #else variable="TYP" -->
+  <!-- #define variable="buttons" value="reply" -->
+<!-- #endif variable="TYP" -->
+
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+<!-- #endif variable="hideTemplate" --> 
+
+</body>
+</html>

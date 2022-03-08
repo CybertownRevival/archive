@@ -1,0 +1,92 @@
+<!-- block/residents.tmpl -->
+<HTML>
+<HEAD>
+<TITLE><$g_title></TITLE>
+  <script language="JavaScript">
+    function pName(n) {
+      <!--#for loopname="TLIST" loopvars="ID_" -->
+        if ( "<$ID_>" == n )
+        {
+          window.status="<$NAM_>"; return;
+        }
+      <!--#endfor loopname="TLIST" -->
+    }
+  </script>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+
+<form name="listF" method=post target=_self action="edit<$g_exe>?">
+  <input type="hidden" name="ac"    value="list">
+  <INPUT TYPE="hidden" NAME="KEY"   VALUE="<$KEY>">
+  <INPUT TYPE="hidden" NAME="KFT"   VALUE="<$KFT>">
+  <INPUT TYPE="hidden" NAME="COMID" VALUE="<$COMID>">
+  <input type="hidden" name="TPL"   value="<$TPL>">
+
+  <input type="hidden" name="FIRSTKEY"  value="<$FIRSTKEY>">
+  <input type="hidden" name="LASTKEY"   value="<$LASTKEY>">
+  <input type="hidden" name="FIRSTID"   value="<$FIRSTID>">
+  <input type="hidden" name="LASTID"    value="<$LASTID>">
+  <input type="hidden" name="SORTORDER" value="<$SORTORDER>">
+
+  <!--#ifdef variable="ID_0" -->
+    <table cellspacing="0" cellpadding="0" border="1" align=center>
+      <tr>
+        <th align=center><FONT face="<$FACE>">&nbsp;</FONT></th>
+        <th align=center><FONT face="<$FACE>">Name</FONT></th>
+        <th align=center><FONT face="<$FACE>">Owner</FONT></th>
+	<th align=center><font face="<$face>">Last Access</font></th>
+      </tr>
+      <!--#for loopname="TLIST" loopvars="ID_" -->
+          <!--#if variable="PU2_" == value="P" -->
+          <tr>
+            <!--#define variable="I2" value="<$PU2_>icon2D<$IC2_>" -->
+            <td align=center><a
+              href="property<$g_exe>?ID=<$ID_>" target="_top" onMouseOver="pName('<$ID_>'); return true;"
+              onMouseOut="window.status=''; return true;"><img
+              src="<$g_HTMLRoot>/home/<$ID_MASK_>000000000000/block/<$I2>.gif" ALT="<$NAM_>" width=40 height=40
+              border=0></a></td>
+            <td nowrap align=left><FONT face="<$FACE>">&nbsp;<a href="property<$g_exe>?ID=<$ID_>" target="_top"
+              onMouseOver="pName('<$ID_>'); return true;" onMouseOut="window.status='';
+              return true;"><$NAM_></a>&nbsp;</FONT></td>
+            <td align=left><FONT face="<$FACE>">&nbsp;<$OWN_NNM_></a>&nbsp;</FONT></td>
+	    <td align=left><FONT face="<$FACE>">&nbsp;<$MEM_ID_></a>&nbsp;</FONT></td>
+          </tr>
+          <!--#endif variable="PU2_" -->
+
+          <!--#if variable="PU2_" == value="F" -->
+          <tr>
+            <!--#define variable="I2" value="<$PU2_>icon2D<$IC2_>" -->
+            <td align=center><a
+              href="property<$g_exe>?ID=<$ID_>&ac=new" target="_top"
+              onMouseOver="window.status='Free'; return true;" onMouseOut="window.status='';
+              return true;"><img src="<$g_HTMLRoot>/home/<$ID_MASK_>000000000000/block/<$I2>.gif"
+              ALT="" width=40 height=40 border=0></a></td>
+            <td align=left><FONT face="<$FACE>">&nbsp;</FONT></td>
+            <td align=left><FONT face="<$FACE>">&nbsp;</FONT></td>
+          </tr>
+          <!--#endif variable="PU2_" -->
+
+          <!--#if variable="PU2_" == value="L" -->
+          <tr>
+            <!--#define variable="I2" value="<$PU2_>icon2D<$IC2_>" -->
+            <td align=center><img
+              src="<$g_HTMLRoot>/home/<$ID_MASK_>000000000000/block/<$I2>.gif" width=40 height=40 border=0
+              onMouseOver="pName('<$ID_>'); return true;" onMouseOut="window.status=''; return true;"
+              ALT="<$NAM_>"></td>
+            <td nowrap align=left><FONT face="<$FACE>">&nbsp;<$NAM_>&nbsp;</FONT></td>
+            <td align=left><FONT face="<$FACE>">&nbsp;<$OWN_NNM_>&nbsp;</FONT></td>
+	    <td align=left><FONT face="<$FACE>">&nbsp;<$MEM_ID_></a>&nbsp;</FONT></td>
+          </tr>
+          <!--#endif variable="PU2_" -->
+      <!--#endfor loopname="TLIST" -->
+    </table>
+  <!--#endif variable="ID_0" -->
+
+  <!--#ifndef variable="ID_0" -->
+    <h2>No houses found at<br><$B_NAM>!</h2>
+  <!--#endif variable="ID_0" -->
+</form>
+
+</div></body></html>

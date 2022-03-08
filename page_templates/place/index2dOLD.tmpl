@@ -1,0 +1,60 @@
+<!-- place/index2d -->
+
+<!-- #ifdef variable="ID" value="0101000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0102000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0103000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0104000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0105000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0106000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0107000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0108000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0109000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0110000000000000" -->
+<!-- #define variable="DTY" value="C" -->
+<!-- #endif variable="ID" -->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html">
+	<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frame name="top" src="place<$g_exe>?ac=menu&plc=<$place>&ID=<$ID>&DTY=<$DTY>&home=1" scrolling="auto" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+
+<!-- #ifndef variable="DTY" value="C" -->
+    <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&ID=<$ID>&DTY=<$DTY>&force=s" scrolling="auto" noresize border=0>
+<!-- #endif variable="DTY" -->  
+<!-- #ifdef variable="DTY" value="C" -->
+      <frame name="place" src="community<$g_exe>?ac=place&ID=<$ID>&DTY=C" scrolling="auto" noresize>
+<!-- #endif variable="DTY" -->  
+
+    <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="date" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="action" src="place<$g_exe>?ac=action&plc=<$place>&ID=<$ID>&DTY=<$DTY>" scrolling="auto" noresize>
+    </frameset>
+  </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>
+

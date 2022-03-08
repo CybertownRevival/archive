@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Multimedia Wizard - <$PNM></b>
+</p>
+
+<form method=post action="<$selfurl>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="wizardsubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<table border=0>
+<tr>
+<td width=250>&nbsp;</td>
+<td>
+<!-- #ifdef variable="update" -->
+		<input type=submit name="yes" value=Ok>
+<!-- #endif variable="update" -->
+		<input type=submit name="no" value=Cancel>
+</td>
+</tr>
+</table>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<table border=0>
+<tr>
+<td valign=top><b><$PNM> usage:</b></td>
+<!-- #ifdef variable="info" -->
+<td><input type="Radio" name="<$PU2>" value="P" <$checkP>>
+is locked by user<br>
+<!-- #endif variable="info" -->
+<!-- #ifdef variable="update" -->
+<td><input type="Radio" name="<$PU2>" value="F" <$checkF>>
+free for use<br>
+<input type="Radio" name="<$PU2>" value="N" <$checkN>>
+cannot be accessed<br>
+<!-- #endif variable="update" -->
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<!-- #ifdef variable="info" -->
+<tr>
+<td width=120><b>Name</b></td>
+<td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+</tr>
+<tr>
+<td><b>Owner</b></td>
+<td><INPUT NAME="OWN" VALUE="<$OWN>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+
+<tr><td heigh=5>&nbsp;</td><td>&nbsp;</td></tr>
+<!-- #endif variable="info" -->
+
+
+</table>
+
+</form>
+
+<font color="red">
+<!-- #ifdef variable="wizarderror001" -->
+Data for <$PNM> '<$NAM>' could not be stored in the database.
+<!-- #endif variable="wizarderror001" -->
+</font>
+
+<BODY>
+</HTML>

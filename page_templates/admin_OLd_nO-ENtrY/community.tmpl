@@ -1,0 +1,131 @@
+<!-- admin/community.tmpl -->
+<!-- edit the global community information -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<script language="javascript">
+<!--
+
+function onSubmit()
+{
+<!-- #ifdef variable="create" -->
+    document.updateForm.OWN_NNK.value 
+     = document.updateForm.OWN_NNK.value.toLowerCase();
+<!-- #endif variable="create" -->
+}
+
+//-->
+</script>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Attributes for Community <font color=#80ff00>ID: <$ID></font></h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="ac" value="<$ac>">
+    <input type=hidden name="obj" value="<$obj>">
+
+    <table border=0>
+        <tr>
+            <td align=right>Community Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+        <tr><td colspan=2><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Community Owner:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="OWN_NNK" VALUE="<$OWN_2NNM>" MAXLENGTH=20 SIZE=20></td>
+        </tr>
+        <tr><td colspan=2><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Community Meta Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="CTN" VALUE="<$CTN>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+        <tr>
+            <td align=right>District Meta Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="CNM" VALUE="<$CNM>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+        <tr>
+            <td align=right>Neighborhood Meta Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="ENM" VALUE="<$ENM>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+        <tr>
+            <td align=right>Block Meta Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="BNM" VALUE="<$BNM>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+        <tr>
+            <td align=right>Home Meta Name:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="PNM" VALUE="<$PNM>" MAXLENGTH=40 SIZE=40></td>
+        </tr>
+    </table>
+<br>
+    <table border=1>
+        <th colspan=6>Citizen Counter: <$MemberCount></th>
+        <tr>
+            <td>&nbsp;&nbsp;A...<$CCA>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;B...<$CCB>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;C...<$CCC>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;D...<$CCD>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;E...<$CCE>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;F...<$CCF>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;G...<$CCG>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;H...<$CCH>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;I...<$CCI>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;J...<$CCJ>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;K...<$CCK>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;L...<$CCL>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;M...<$CCM>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;N...<$CCN>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;O...<$CCO>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;P...<$CCP>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;Q...<$CCQ>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;R...<$CCR>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;S...<$CCS>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;T...<$CCT>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;U...<$CCU>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;V...<$CCV>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;W...<$CCW>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;X...<$CCX>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;Y...<$CCY>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;Z...<$CCZ>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;0...<$CC0>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;1...<$CC1>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;2...<$CC2>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;3...<$CC3>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;4...<$CC4>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;5...<$CC5>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;6...<$CC6>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;7...<$CC7>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;8...<$CC8>&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;9...<$CC9>&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+<br>
+    <input type=submit name="edit" value=Update width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

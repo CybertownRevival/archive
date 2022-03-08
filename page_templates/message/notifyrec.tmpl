@@ -1,0 +1,51 @@
+<!-- message/notifyrec -->
+<html>
+<head>
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<title>Notification Message</title>
+</head>
+
+<script language="javascript">
+<!--
+
+function parseMessage( text )
+{ 
+  if( text=='excluded' )
+  {
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/excluded&exclude=1&NNM=<$MEM_NNM><$g_SessionID>";
+  }
+  if( text=='ejected' )
+  {
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/ejected&exclude=1&NNM=<$MEM_NNM><$g_SessionID>";
+  }
+  if( text=='ejected_perm' )
+  {
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/ejected&exclude=1&NNM=<$MEM_NNM><$g_SessionID>";
+  }
+   if( text=='parking' )
+  {
+    top.location.href = "http://www.cybertown.com/home/<$MEM_NNM><$g_SessionID>";
+  }
+   if( text=='plazakick' )
+  {
+    top.location.href = "http://www.cybertown.com/cgi-bin/cybertown/place?plc=enter&kicked=<$MEM_NNM><$g_SessionID>";
+  }
+   if( text=='jaileject' )
+  {
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/rejected&NNM=<$MEM_NNM><$g_SessionID>";
+  }
+    if( text=='fleaejected' )
+  {
+    top.location.href = "<$g_cgiRoot>/print<$g_exe>?TPL=info/fleareject&NNM=<$MEM_NNM><$g_SessionID>";
+  }
+}
+
+//-->
+</script>
+
+<body onLoad="parseMessage('<$TEXT>');">
+<$g_font>
+&nbsp;
+</body>
+</html>
+

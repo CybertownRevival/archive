@@ -1,0 +1,130 @@
+<!-- msg/listbuddy.tmpl -->
+<!--- buddy list --->
+
+<html>
+<head>
+
+<title><$g_title></title>
+
+<!-- #define variable="T_LB" value="<$T_LB>" -->
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+<script language="javascript">
+
+onlineMembersID  = new Array();
+onlineMembersNNM = new Array();
+
+<!--#for loopname="loopopen" loopvars="ID_" -->
+onlineMembersID[<$loopindex>]= "<$ID_>";
+onlineMembersNNM[<$loopindex>]= "<$NNM_>";
+<!--#endfor loopname="loopopen" -->
+
+</script>
+
+</head>
+
+<form name="uform" method=post action="">
+<body class=info onload="">
+
+<!-- #if variable="T_LB" == value="profile" -->
+  <!-- #define variable="heading" value="Profile" -->
+  <!-- #define variable="up_url" value="javascript:msgGoto('profile','<$MEM_ID>')" -->
+<!-- #else variable="T_LB" --> 
+  <!-- #define variable="heading" value="Messages" -->
+  <!-- #define variable="up_url" value="javascript:msgGoto('status')" -->
+<!-- #endif variable="T_LB" --> 
+
+<!-- #if variable="T_LB" != value="profile" -->
+
+<!-- #ifndef variable="isVisitor" --> 
+
+<center>
+<IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>
+
+<p class=head2><font face="Arial" size=3 color="#00ff00"><b><$MEM_NNM>'s Buddy List</p></b></font>
+
+
+<a href="javascript:msgGoto('inbox')" target="">
+<img src="/images/buttons60/btnopt_inbox.gif" alt="My Message Inbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('outbox')" target="">
+<img src="/images/buttons60/btnopt_outbox.gif" alt="My Message Outbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('alert')" target="">
+<img src="/images/buttons60/btnopt_alerts.gif" alt="My Alerts" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send')" target="">
+<img src="/images/buttons60/btnopt_sendmessage.gif" alt="Send New Message" border="0" vspace=1 hspace=1></a>
+
+<br>
+
+<a href="javascript:msgGoto('send','Broadcast Group','','Broadcast')" target="">
+<img src="/images/buttons60/btnopt_broadcast.gif" alt="Send Broadcast Message" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send','Security Group','','Security')" target="">
+<img src="/images/buttons60/btnopt_securityalert.gif" alt="Send Security Alert" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('buddylist')" target="">
+<img src="/images/buttons60/btnopt_buddylist.gif" alt="My Buddylist" border="0" vspace=1 hspace=1></a>
+
+
+<!-- #endif variable="isVisitor" --> 
+
+<!-- #endif variable="T_LB" --> 
+
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<table cellspacing=1 border=0 width=50%>
+
+<tr>
+<td class=thbg><p class=thfont>Buddy</p></td>
+<td class=thbg><p class=thfont>Last Access</p></td>
+<!--<td class=thbg><p class=thfont>&nbsp;</p></td>-->
+</tr>
+
+<!--#for loopname="loopopen1" loopvars="BUD_" -->
+<tr> 
+
+<td class=tdbg width="50%">
+<p class=tdfont>
+<a href="<$g_cgiRoot>/print<$g_exe>?TPL=member/info&DTY=M&ID=<$BUD_ID_><$g_SessionID>"><$BUD_NNM_></a>
+</p>
+</td>
+
+<td class=tdbg align=right><p class=tdfont>
+<$LAD_YEAR_>/<$LAD_MON_>/<$LAD_MDAY_>&nbsp;<$LAD_HOUR_>:<$LAD_MIN_>
+</p></td>
+
+<td class=tdbg align=center><p class=tdfont>
+<a href="javascript:msgDelBuddy('<$BUD_NNM_>','<$BUD_ID_>','<$T_LB>')"><img src="<$g_HTMLRoot>/images/icons/icon_del.gif" alt="Remove '<$BUD_NNM_>' from Buddy List" border=0 vspace=1 hspace=1></a>
+</p></td>
+
+</tr>
+<!--#endfor loopname="loopopen1" -->
+
+</table>
+
+<p>
+<table border=0>
+<tr><td colspan=2><p class=subj>Add new Buddy to your Buddy List</p></td></tr>
+<tr><td>
+<p class=tdfont>
+<input type=hidden name="REC_NNM" value="<$REC_NNM>">
+<!--select name="REC_NNM"-->
+<!-- span class=cont -->
+<select name="REC_SEL">
+<!--#for loopname="loopopen" loopvars="ID_" -->
+<option value="<$ID_>"> <$NNM_>
+<!--#endfor loopname="loopopen" -->
+</select>
+<!-- /span -->
+<a href="javascript:msgAddBuddy('<$T_LB>')"><img src="<$g_HTMLRoot>/images/buttons60/btnac_add.gif" alt="Add to Buddy List" border=0 align=absmiddle vspace=1 hspace=1></a>
+</p>
+</td></tr>
+</table>
+  <!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+</body>
+</form>
+</html>

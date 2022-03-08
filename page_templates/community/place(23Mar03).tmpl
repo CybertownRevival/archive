@@ -1,0 +1,20 @@
+<!-- community/place.tmpl --> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html"> 
+<title><$g_title></title> 
+</head> 
+
+<center> 
+<!-- #define variable="COLID" substring="<$ID>,0,4" --> 
+
+<!-- #ifdef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>community/place_hi-tek.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+<!-- #ifndef variable="COLID" value="0110" --> 
+<!-- #include virtual="<$g_Templates>community/place_standard.tmpl" --> 
+<!-- #endif variable="COLID" --> 
+
+</body> 
+</html>

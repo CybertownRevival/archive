@@ -1,0 +1,32 @@
+<!-- banner/sponsorbanner.tmpl -->
+<!-- called from banner/banner.tmpl for menu banners -->
+
+<td>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide from old browsers
+OPERA = (navigator.userAgent.indexOf('Opera') != -1);
+NAV3 = (((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) == 3) && !OPERA));
+NAV4 = ((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) == 4));
+NAV6 = ((navigator.appName.indexOf('Netscape') != -1) && (navigator.appVersion.substring(0,1) >= 5));
+IE = ((navigator.userAgent.indexOf('MSIE') != -1) || (navigator.userAgent == ""));
+WEBTV = (navigator.appName.indexOf('WebTV') != -1);
+now = new Date();
+random = now.getTime();
+
+// Modify to reflect site specifics
+site = "http://ads.scifi.com";
+target = "/SITE=MOTHERSHIP/AREA=COLONY/AAMSZ=468X60/ACC_RANDOM=";
+if (IE || WEBTV || NAV6){
+        document.write('<IFRAME SRC="' + site + '/hserver' + target + random + '?"');
+        document.write(' NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=468 HEIGHT=60></IFRAME>');
+} else if (NAV4){
+        document.write('<SCR' + 'IPT LANGUAGE="JavaScript1.1" SRC=' + site + '/jserver' + target + random + '">');
+        document.write('</SCR' + 'IPT>');
+} else if (OPERA || NAV3){
+        document.write('<A HREF="' + site + '/accipiter/adclick.exe' + target + random + '?">');
+        document.write('<IMG SRC="' + site + '/accipiter/nserver.exe' + target + random + '?"></A>');
+}
+// End Hide -->
+</SCRIPT>
+</td>
+

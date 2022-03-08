@@ -1,0 +1,19 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html">
+	<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>message/imsg.tmpl" -->
+</head>
+<frameset rows="70,100%,*,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frame name="top" src="place<$g_exe>?ac=menu&plc=<$place>&ID=<$ID>" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frameset cols="*,185" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+    <frame name="place" src="place<$g_exe>?ac=place&plc=<$place>&ID=<$ID>" noresize scrolling="auto" border=0>
+    <frameset rows="54,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="date" src="<$g_HTMLRoot>/blank.html" noresize scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+      <frame name="action" src="place<$g_exe>?ac=action&plc=<$place>&ID=<$ID>" noresize scrolling="auto">
+    </frameset>
+  </frameset>
+ <!-- #include virtual="<$g_Templates>common/hiddenframes.tmpl" -->
+</frameset>
+
+</html>

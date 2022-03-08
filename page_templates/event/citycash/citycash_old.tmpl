@@ -1,0 +1,116 @@
+<html>
+<!-- event/citycash/citycash.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+
+<h2 align="center"><$NAM></h2>
+
+<!-- #ifdef variable="errnolottery" -->
+<!-- #ifndef variable="lotterwinners" -->
+<center>
+  <font color="#FFFF99" size="+2">C O M I N G &nbsp;&nbsp;&nbsp; S O O N ! </font>
+</center>
+<!-- #endif variable="lotterwinners" -->
+<!-- #endif variable="errnolottery" -->
+
+<table border="0">
+<tr>
+  <td align="center">
+    <img src="<$g_Images>/images/events/citycash/citycash.jpg" alt="<$NAM>" height=180>
+  </td>
+  <td>
+    <blockquote><b>
+      Welcome to the Cybertown <$NAM>. All you have to do is enter 
+      your Cybertown nickname below and you will be automatically entered with a 
+      chance to win the weekly pool of CityCash created by everyone's entries!<br>
+    </b></blockquote>
+  </td>
+</tr>
+</table>
+
+<blockquote>
+<b>
+<br>
+Each week you can enter and your account is debited 50 cc and those 50 cc are 
+added to the pool and once a week the Cybertown Central Computer will randomly 
+choose 3 winners one of whom gets 60% of the pool, one of whom gets 30% and one 
+of whom gets 10%. Then the pool starts again.<br>
+<br>
+You can only enter <$MAX> times a week in any one week.<br>
+Also, like the Morph Hunt, those who enter 6 out of the 8 weeks that the
+<$NAM> runs get a chance to be chosen as the winner of a grand prize. 
+See the <a href="">Rules</a> here.<br>
+<br>
+
+<center>
+
+<!-- #ifdef variable="errmaxcount" -->
+<font color="red">
+  Sorry <$NNM>, but you can only enter <$MAX> times a week!<br><br>
+</font>
+<!-- #endif variable="errmaxcount" -->
+
+<!-- #ifdef variable="errnolottery" -->
+<!-- #ifndef variable="lotterwinners" -->
+<center>
+  <font color="#FFFF99" size="+2">C O M I N G &nbsp;&nbsp;&nbsp; S O O N ! </font><br><br>
+</center>
+<!-- #endif variable="lotterwinners" -->
+<!-- #endif variable="errnolottery" -->
+
+<!-- #ifdef variable="lotterwinners" -->
+<a href="<$selfurl>?NID=<$NID>&ac=showwinners" target=_self>
+  <$NAM> Winners<br>
+</a>
+<br>
+<!-- #endif variable="lotterwinners" -->
+
+<!-- #ifdef variable="buylotok" -->
+<font color="#FFFF99">You have successfully bought a ticket!</font><br><br>
+<!-- #endif variable="buylotok" -->
+
+<!-- #ifdef variable="notenoughmoney" -->
+<font color="#FFFF99">
+  Sorry <$NNM>, but you have not enough money to buy a ticket!
+</font>
+<br><br>
+<!-- #endif variable="notenoughmoney" -->
+
+<!-- #ifdef variable="buyticket" -->
+
+We are in the Lottery Week No. <$LWN>!<br>
+And there are <$JACKPOT> cc in the Jackpot!<br>
+<br>
+
+<form method=post action="<$selfurl>">
+
+  <input type=hidden name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="buyticket">
+  <input type=hidden name="NID" value="<$NID>">
+
+  <input type="submit" value="Buy a Ticket">
+
+</form>
+
+Good luck!<br>
+<br>
+
+<!-- #endif variable="buyticket" -->
+
+<!-- #ifdef variable="isAdmin" -->
+  <a href="<$selfurl>?NID=<$NID>&ac=lotstat" target=_self>
+    <$NAM> administration
+  </a>
+<!-- #endif variable="isAdmin" -->
+
+</center>
+
+</b>
+</blockquote>
+
+</body>
+</html>

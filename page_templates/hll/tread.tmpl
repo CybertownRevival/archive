@@ -1,0 +1,64 @@
+<html>
+<head>
+<title><$g_title> - Library</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- <h2>Library - Topics</h2>-->
+
+<center>
+<h2><$NAM></h2>
+<$TXT>
+<P>
+</center>
+
+<center>
+<!-- #ifdef variable="hllconfigallowed" -->
+<a href="<$selfurl>?ac=createtopic&DTY=<$DTY>&KEY=<$KEY>&TKT=<$TKT>"
+><IMG SRC="<$g_Images>/images/buttons/bctopic.gif" BORDER=0 ALT="Create a topic"></a>
+
+<a href="<$selfurl>?ac=getconf&DTY=<$DTY>&KEY=<$KEY>"
+><IMG SRC="<$g_Images>/images/buttons/bconfig.gif" BORDER=0 ALT="Configure the library"></a>
+<!-- #endif variable="hllconfigallowed" -->
+
+<!-- #ifdef variable="hlldestroyallowed" -->
+<!--
+<a href="<$selfurl>?ac=destroy&DTY=<$DTY>&KEY=<$KEY>&TKT=<$TKT>"
+>Destroy the library</a>
+-->
+<!-- #endif variable="hlldestroyallowed" -->
+
+</center>
+<hr>
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>, there are no topics configured for this library.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="TOP" -->
+
+<table width=100%>
+<tr><td>
+ <a href=
+   "<$selfurl>?ac=listlinks&TOP=<$TOP>&DTY=<$DTY>&KEY=<$KEY>"
+ ><b><$sub></b></a>
+
+</td><td align=right>
+<!-- #ifdef variable="topicallowedit" -->
+<a href="http://www.cybertown.com/cgi-bin/cybertown/hll?ac=updatetopic&TOP=<$TOP>&DTY=O&KEY=<$KEY>&TKT=<$TKT>">
+    <IMG ALIGN=MIDDLE SRC="<$g_Images>/images/buttons/bedit.gif" BORDER=0 ALT="Edit the topic"></a>
+<!-- #endif variable="topicallowedit" -->
+</td></tr>
+</table>
+<table>
+<tr><td>
+<$pre><$txt><$endpre>
+<br>
+</td></tr>
+</table>
+<!--#endfor loopname="msglist"  -->
+
+</body>
+</html>
+

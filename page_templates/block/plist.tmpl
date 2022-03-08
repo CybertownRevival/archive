@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html">
+	<title><$g_title></title>
+	<base target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<center>
+<H2><font color=#80ff00>Check Images: <$BLOCKNAM></font></H2>
+
+<form method=post target=_self action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table>
+<tr>
+	<INPUT type="hidden" NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+	<INPUT type="hidden" NAME="KFM" VALUE="<$KFM>" MAXLENGTH=32 SIZE=16>
+
+	<input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+	<input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+	<input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+	<input type="hidden" name="LASTID" value="<$LASTID>">
+
+	<input type="hidden" name="ac" value="<$ac>">
+	<input type="hidden" name="DTY" value="<$DTY>">
+	<input type="hidden" name="KTY" value="<$KTY>">
+	<input type="hidden" name="TPL" value="<$TPL>">
+	<input type="hidden" name="PRI" value="<$PRI>">
+	<input type="hidden" name="BID" value="<$BID>">
+
+	<td>
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</td>
+</tr>
+</table>
+
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+<tr>
+  <th nowrap><font color=#80ff00>Name</th>
+  <th nowrap><font color=#80ff00>Owner</th>
+  <th nowrap><font color=#80ff00>Icon</th>
+  <th nowrap><font color=#80ff00>Icon Type</th>
+  <th nowrap><font color=#80ff00>Locked</th>
+</tr>
+
+<!--#for loopname="list" loopvars="ID_" -->
+	<tr>
+		<!--#ifdef variable="NAM_" -->
+			<td nowrap><$NAM_></td>
+		<!--#endif variable="NAM_" -->
+		<!--#ifndef variable="NAM_" -->
+			<td nowrap>&nbsp</td>
+		<!--#endif variable="NAM_" -->
+
+		<!--#ifdef variable="OWN_NNM_" -->
+			<td nowrap><$OWN_NNM_></td>
+		<!--#endif variable="OWN_NNM_" -->
+		<!--#ifndef variable="OWN_NNM_" -->
+			<td nowrap>&nbsp</td>
+		<!--#endif variable="OWN_NNM_" -->
+
+        <!--#ifndef variable="ID_2TYP_" value="" -->
+        <td><A HREF="block<$g_exe>?ac=check&ID=<$ID_>&FIRSTKEY=<$FIRSTKEY>">
+            <IMG SRC="edit<$g_exe>?DTY=P&KTY=ID&KEY=<$ID_>&BTP=i&MIX=P&TPL=<$TPL>&ac=printimg" height=100 ALT="" BORDER=0></A>
+        </td>
+        <td><$ID_2TYP_></td>
+        <!--#endif variable="ID_2TYP_" -->
+        <!--#ifdef variable="ID_2TYP_" value="" -->
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <!--#endif variable="ID_2TYP_" -->
+
+        <!--#ifdef variable="ID_STT_" value="l" -->
+        <td align=center>Locked</td>
+        <!--#endif variable="ID_STT_" -->
+        <!--#ifdef variable="ID_STT_" value="" -->
+        <td align=center>&nbsp;</td>
+        <!--#endif variable="ID_STT_" -->
+		
+<!--#endfor loopname="list" -->
+
+</table>
+
+    <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+	<!--#ifdef variable="[PREV]" -->
+    <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+	<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+</form>
+
+</center>
+<BODY>
+</HTML>

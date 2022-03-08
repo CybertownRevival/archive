@@ -1,0 +1,32 @@
+<!-- object/storageaccess2-->
+<HTML>
+<HEAD>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2>
+Object storage area access <$ID>
+</h2>
+<br>
+<form name="uform" action="<$selfurl>" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type="hidden" name="doit" value="1">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="TPL" value="storage/storageaccess2">
+<input type=radio name=WI1 value=""
+<!-- #if variable="WI1" == value="" -->
+checked
+<!-- #endif variable="WI1" == value="" -->
+>everybody can see the objects<br>
+<input type=radio name=WI1 value="<$MEM_ID>"
+<!-- #if variable="WI1" != value="" -->
+checked
+<!-- #endif variable="WI1" != value="" -->
+>nobody can see the objects<br><br>
+<input type=submit name=Update value=Update>
+</form>
+</body>
+</html>
+<!--
+
+-->

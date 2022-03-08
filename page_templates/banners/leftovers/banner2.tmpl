@@ -1,0 +1,37 @@
+<!-- banners/banner2.tmpl -->
+
+<!-- <$E_BANNER> - <$T_BANNER> -->
+
+<!-- #ifdef variable="E_BANNER" value="nonemergency" -->
+
+<!-- #ifdef variable="T_BANNER" value="L90" -->
+<!-- start L90 Banner-->
+<!-- #include virtual="<$g_Templates>banners/L90banner.tmpl" -->
+<!-- end L90 Banner" -->
+<!-- #endif variable="T_BANNER" -->
+
+<!-- #ifdef variable="T_BANNER" value="Internal" -->
+<!-- start Internal Banner-->
+<!-- #include virtual="<$g_Templates>banners/internalbanner.tmpl" -->
+<!-- end Internal Banner-->
+<!-- #endif variable="T_BANNER" -->
+
+<!-- #ifndef variable="T_BANNER" value="L90" -->
+<!-- #ifndef variable="T_BANNER" value="Internal" -->
+<!-- Custom Banner-->
+<!-- start special banner is custom: <$T_BANNER> -->
+<!-- #include virtual="<$g_Templates>banners/<$T_BANNER>.tmpl" -->
+<!-- end special banner is custom: <$T_BANNER> -->
+<!-- #endif variable="T_BANNER" -->
+<!-- #endif variable="T_BANNER" -->
+
+<!-- #endif variable="E_BANNER" -->
+
+
+
+<!-- #ifndef variable="E_BANNER" value="nonemergency" -->
+<!-- start emergency mode banners -->
+<!-- #include virtual="<$g_Templates>banners/emergencybanner.tmpl" -->
+<!-- end emergency mode banners -->
+<!-- #endif variable="E_BANNER" -->
+

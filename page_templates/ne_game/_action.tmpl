@@ -1,0 +1,219 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- common/loadinfo.tmpl -->
+<!-- included in action.tmpl to load an info window and close it automatically when switching the place -->
+<script language=javascript>
+winClose = false;
+winFocus = false;
+if (navigator.appName == "Netscape")
+{
+ winClose = true;
+ winFocus = true;
+}
+else
+{
+ var i = navigator.appVersion.indexOf("MSIE");
+ if (i >= 0)
+ {
+  var ver = parseInt(navigator.appVersion.substring(i+5,i+6));
+  if ( ver > 4)
+   winClose = true;
+  if ( ver > 3 )
+   winFocus = true;
+ }
+}
+
+myInfoWin = null;
+
+function loadInfo(par)
+{
+ loadCustom( par, 620, 450 );
+}
+
+function closeInfoWin()
+{
+ if (winClose && myInfoWin && !myInfoWin.closed)
+ {
+  myInfoWin.close();
+ }
+}
+function loadCustom(par,h,v)
+{
+ closeInfoWin();
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,width=' + h + ',height=' + v;
+
+ win = window.open(par, "info",paramstring);
+ if (winFocus)
+ {
+    win.focus();
+ }
+ myInfoWin = win;
+}
+
+function loadMap(par)
+{
+ closeInfoWin();
+var paramstring = 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=no,copyhistroy=no,width=520,height=478';
+
+ win = window.open(par, "info",paramstring);
+ if (winFocus)
+ {
+    win.focus();
+ }
+ myInfoWin = win;
+}
+
+<!--begin added this reset -->
+function jumpreset( par1, par2 )
+{
+	jump( par2 );
+	par1[0].selected = true;
+}
+<!--end added this reset -->
+
+
+function jump( par )
+{
+ closeInfoWin();
+
+var parArray = new Array(4);
+parArray = par.split(" ");
+var type = parArray[0];
+var url = parArray[1];
+var h = parArray[2];
+var v = parArray[3];
+
+ if (url != '') 
+ {
+  if ( type == "top")
+  {
+   top.location.href = url;
+  }
+
+  else if ( type == "info")
+  {
+   loadInfo(url);
+  }
+
+  else if ( type == "custom")
+  {
+   loadCustom(url,h,v);
+  }
+
+  else if ( type == "place")
+  {
+   top.place.location.href = url;
+  }
+
+  else if ( type == "poll")
+  {
+   loadCustom( url, 600, 500 );
+  }
+ }
+}
+
+<!-- #ifdef variable="chatpro" -->
+function loadPlace( DTY, ID, place )
+{
+	url = "place<$g_exe>?DTY=" + DTY + "&ID=" + ID + "&plc=" + place;
+	CCpro.location.href = url + "&ac=3D&IE=x.bxx";
+	window.open( url + "&ac=action", "action" );
+}
+<!-- #endif variable="chatpro" -->
+
+<!-- #ifdef variable="chatno" -->
+function loadPlace( DTY, ID, place )
+{
+	url = "place<$g_exe>?DTY=" + DTY + "&ID=" + ID + "&plc=" + place;
+	window.open( url + "&ac=action", "action" );
+ url += "&ac=place&force=n";
+ location.href = url;
+}
+<!-- #endif variable="chatno" -->
+<!-- #ifdef variable="chatstd" -->
+function loadPlace( DTY, ID, place )
+{
+	url = "place<$g_exe>?DTY=" + DTY + "&ID=" + ID + "&plc=" + place;
+	window.open( url + "&ac=action", "action" );
+ url += "&ac=place&force=s";
+ location.href = url;
+}
+<!-- #endif variable="chatstd" -->
+
+function showMorphBanner()
+{
+}
+
+</script>
+<!-- end of include common/loadinfo.tmpl -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="/cgi-bin/cybertown/edit?tpl=ne_game/enter" target="place">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+
+
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<p><a href="javascript:loadCustom('/cgi-bin/games/neogame/score.pl',300,150)" target="_self"><b>SCORE</b></a></p>
+
+<!-- #ifdef variable="readaccess" -->
+
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+
+<!-- #endif variable="readaccess" -->
+
+
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<BR>
+<b>MAIN CONTROLS</b><BR>
+<table cellpading="0" cellspacing="0" border=1>
+<tr><td align="center">
+<font face="Arial" size=-1 color="#00FF00"><a href="javascript:loadCustom('/cgi-bin/games/neogame/score.pl?ac=admin',300,300)" target="_self"><b>RESET SCORE</b></a>
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/edit?plc=ne_game&ID=0000000000000029&force=p&T_style=1492&tpl=ne_game/place&T_pass=" target="place"><font face="Arial,Helvetica"><B>GAMEMASTER</B></font></a>
+</font></tr></td></table>
+<BR><BR>
+
+<b>MATCH CONTROLS</b><BR>
+<table cellpading="0" cellspacing="0" border=1>
+<tr><td align="center">
+<font face="Arial" size=-1 color="#00FF00">
+<a href="javascript:loadCustom('/cgi-bin/games/neogame/score1.pl',300,150)" target="_self"><b>SCORE</b></a><BR>
+<a href="javascript:loadCustom('/cgi-bin/cybertown/edit?tpl=ne_game/passupdate&T_pass=<$PASS2>',500,300)" target="_self"><b>SET PASSWORDS</b></a><BR>
+<a href="javascript:loadCustom('/cgi-bin/games/neogame/score1.pl?ac=admin',300,300)" target="_self"><b>RESET SCORE</b></a>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/edit?plc=ne_game&ID=0000000000000029&force=p&T_style=1492&tpl=ne_game/place&T_pass=GM" target="place"><font face="Arial,Helvetica"><B>GAMEMASTER</B></font></a>
+</font></tr></td></table>
+<br><br>
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=<$plc>&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

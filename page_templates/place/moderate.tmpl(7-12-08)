@@ -1,0 +1,45 @@
+<!-- place/moderate -->
+<!--- load the chat moderation Java applet --->
+<HTML>
+
+<HEAD>
+<TITLE><$g_title> - Moderation ID<$ID> NNM<$NNM> owner<$owneraccess></title>
+</HEAD>
+
+<BODY marginwidth=0 marginheight=0 >
+
+<!-- #ifdef variable="owneraccess" -->
+<!-- #define variable="mod" value="1" -->
+<!-- #endif variable="owneraccess" -->
+<!-- #ifdef variable="NNM" value="NPOModerator" -->
+<!-- #define variable="mod" value="1" -->
+<!-- #endif variable="NNM" value="NPOModerator" -->
+<!-- #ifdef variable="mod" -->
+<APPLET code="blaxxun.moderator.applet.Moderator.class" codebase=http://<$g_MdServer>/java/mdclient archive=moderator.zip width=100% height=95% mayscript>
+ <PARAM name=modHost     value="<$g_MdServer>">
+ <PARAM name=modPort     value="2030">
+ <PARAM name=modGroup    value="Public">
+ <PARAM name=modNickname value="<$MEM_NNM>">
+ <PARAM name=modPassword value="<$COOKIE>">
+<!-- #if variable="DTY" == value="O" -->
+ <PARAM name=modScene    value="http://www.cybertown.com<$g_cgiRoot>/place<$g_exe>?ID=<$ID>&plc=<$place>&ac=3D&IE=x.bxx">
+<!-- #endif variable="DTY" -->
+<!-- #if variable="DTY" == value="" -->
+ <PARAM name=modScene    value="http://www.cybertown.com<$g_cgiRoot>/place<$g_exe>?ID=<$ID>&plc=<$place>&ac=3D&IE=x.bxx">
+<!-- #endif variable="DTY" -->
+<!-- #if variable="DTY" == value="CL" -->
+ <PARAM name=modScene    value="http://www.cybertown.com<$g_cgiRoot>/place<$g_exe>?DTY=<$DTY>&ID=<$ID>&plc=club&ac=3D&IE=x.bxx">
+<!-- #endif variable="DTY" -->
+<!-- #if variable="DTY" == value="C" -->
+ <PARAM name=modScene    value="http://www.cybertown.com<$g_cgiRoot>/place<$g_exe>?DTY=<$DTY>&ID=<$ID>&ac=3D&IE=x.bxx">
+<!-- #endif variable="DTY" -->
+ <PARAM name=modMaxRequests  value="10000">
+ <PARAM name=modAutoDeleteRequests  value="true">
+ <PARAM name=modDebug    value="false">
+</APPLET>
+<!-- #endif variable="mod" -->
+<!-- #ifndef variable="mod" -->
+Sorry <$NNM>, you don't have the right to moderate this chat.
+<!-- #endif variable="mod" -->
+</BODY>
+</HTML>

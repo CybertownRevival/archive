@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>blaxxun - Shared Object</title>
+</head>
+
+<!-- object/list.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Unchecked Objects</h2>
+
+<a href="print60<$g_exe>?ID=0000aa0000000100&HOID=<$MEM_ID>&TPL=object/storagelist-mall">TEST</a>
+
+<table border=1>
+
+<!--#for loopname="objectlist" loopvars="OID,ONAM" -->
+<tr>
+<td>
+<$ONAM>
+</td>
+<td>
+<!-- #ifdef variable="OIMG" -->
+<!-- thumbnails removed by Chris topo much download <IMG SRC="<$OIMG>" HEIGHT=32> -->
+<!-- #endif variable="OIMG" -->
+</td>
+<td>
+<!--#for loopname="actionlist" loopvars="actionNAM" -->
+<!--#ifdef variable="actionNAM" value="aTAK" -->
+<a href="edit<$g_exe>?KEY=<$OID>&TPL=object/check">
+<IMG SRC="<$g_Images>/images/buttons/bcheck.gif" BORDER=0 ALT="Check"></a>
+<!--#endif variable="actionNAM" -->
+<!--#endfor loopname="actionlist"  -->
+</td>
+</tr>
+<!--#endfor loopname="objectlist"  -->
+
+</table>
+
+
+</div>
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+
+

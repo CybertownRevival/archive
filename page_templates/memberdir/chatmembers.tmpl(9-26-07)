@@ -1,0 +1,175 @@
+<!-- memberdir/chatmembers -->
+<!--- list all chat members in a place --->
+<HTML>
+<HEAD>
+<!-- #define variable="T_NOHTML" value="1" -->
+<title><$g_title> - Member Directory</title>
+<base target="_self">
+<script language=JavaScript>
+function eject(nameofnic){
+	ejectwin = window.open('http://www.cybertown.com/cgi-bin/cybertown/message<$g_exe>?ac=notify&TPL=message/member&TAG=Ejected&TKT=<$TKT>&TO='+nameofnic+'&<$CT_STR>','refresh');
+}
+
+<!-- #ifdef variable="isAdmin" -->
+
+function parking(nameofnic){
+	ejectwin = window.open('http://www.cybertown.com/cgi-bin/cybertown/message<$g_exe>?ac=notify&TPL=message/member&TAG=Parking&TKT=<$TKT>&TO='+nameofnic+'&<$CT_STR>','refresh');
+}
+
+
+<!-- #endif variable="isAdmin" -->
+
+function loadPlace( )
+{
+ var id = '', place = '', dty='O';
+ var i, j;
+ var plc = "<$PLC>";
+ i = plc.indexOf("ID%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  id = plc.substring( i+5, j );
+ } 
+ i = plc.indexOf("DTY%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  dty = plc.substring( i+6, j );
+ } 
+ i = plc.indexOf("plc%3d");
+ if ( i > 0 )
+ {       
+  j = plc.indexOf("%26", i);
+  if ( j < 0 )
+   j = plc.length;
+  place = plc.substring( i+6, j );
+ }
+ if ( place.length || id.length )
+ {
+  url = "javascript:loadPlace('" + dty + "','" + id + "','" + place + "')";
+  window.open( url, "place" );
+  self.close();
+ }
+}
+<!--#ifdef variable="CITY_OWN" -->
+function showMember( sip )
+{
+ document.listform.SIP.value = sip;
+ document.listform.submit();
+}
+function hideMember( hip )
+{
+ document.listform.HIP.value = hip;
+ document.listform.submit();
+}
+<!--#endif variable="CITY_OWN" -->
+</script>
+</HEAD>
+
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+
+<div align=center>
+
+<H3>Chat Members in Place <$T_NAM>
+</H3>
+<br>
+<!-- #ifdef variable="error001" -->
+<$errorfont>Not enough access rights.</font><br>
+<!-- #endif variable="error001" -->
+<!-- #ifdef variable="error002" -->
+Failed to run command <$error>.<br>
+<!-- #endif variable="error002" -->
+<!-- #if variable="TOT" == value="0" -->
+<$errorfont>No members active in this chat place.</font><br><br>
+<!-- #endif variable="TOT" -->
+<!-- #ifdef variable="error004" -->
+<$errorfont>Timeout when connecting to server <$g_CServer>.</font><br>
+<!-- #endif variable="error004" -->
+
+<P>
+<!-- #if variable="TOT" == value="1" -->
+<$TOT> chat member in this place.
+<!-- #endif variable="TOT" -->
+<!-- #if variable="TOT" > value="1" -->
+<$TOT> chat members in this place.
+<!-- #endif variable="TOT" -->
+<br><br>
+
+<!-- #ifdef variable="NNM_0" -->
+<table border=1 cellspacing=0>
+<tr><th><$font>&nbsp;Nickname&nbsp;</font></th>
+<th><$font>&nbsp;Chat Type&nbsp;</font></th>
+<th><$font>&nbsp;Time in Chat&nbsp;</font></th>
+<!--#ifdef variable="CITY_OWN" -->
+<th nowrap><$font>&nbsp;IP&nbsp;</font></th>
+<th nowrap><$font>&nbsp;Chat Exclusion&nbsp;</font></th>
+<th nowrap><$font>&nbsp;Avatar URL&nbsp;</font></th>
+<!--#endif variable="CITY_OWN" -->
+</tr>
+<tr><td>
+ <!--#for loopname="place" loopvars="NNM_" -->
+  <tr><td align=center><$font>
+   &nbsp;<a href="edit<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$NNM_>&SORT=Nickname&TPL=citizen/list"><$NNM_></a>&nbsp;</font>
+  </td><td align=center><$font>
+   &nbsp;<$TYP_>&nbsp;</font>
+  </td><td align=center><$font>
+   &nbsp;<$TIM_>&nbsp;</font>
+  </td>
+	<!--#ifdef variable="CITY_OWN" -->
+
+  <td align=center><$font><$IP_></font></td>
+  <td align=center><$font>
+
+	<!--#if variable="TYP_" == value="Agent" -->
+	&nbsp; Agent
+	<!--#endif variable="TYP_" -->
+	<!--#if variable="TYP_" != value="Agent" -->
+        <!--#if variable="HID_" == value="0" -->
+                <a href="javascript:hideMember('<$IP_>')">Hide</a>
+        <!--#endif variable="HID_" -->
+        <!--#if variable="HID_" != value="0" -->
+                <a href="javascript:showMember('<$IP_>')">Show</a>
+	<!--#endif variable="HID_" -->
+	<!--#endif variable="TYP_" -->
+    <!--#if variable="TYP_" == value="Agent" -->
+	&nbsp;
+	<!--#endif variable="TYP_" -->
+    <!--#if variable="TYP_" != value="Agent" -->
+	<br><A HREF="javascript:eject('<$NNM_>')">Eject</A>
+		</font>
+        <!-- #ifdef variable="isAdmin" -->
+        <br>
+        <font color=red>
+        
+        <br><A HREF="javascript:parking('<$NNM_>')">Send Home</A>
+		</font>
+        <!-- #endif variable="isAdmin" -->
+
+        </td>
+        <!--#endif variable="TYP_" -->
+  <td align=center><$font><a href="<$AVU_>" target=_blank"><$AVU_></a></font></td>
+	<!--#endif variable="CITY_OWN" -->
+</tr>
+<!--#endfor loopname="place" -->
+</table>
+<!-- #endif variable="NNM_0" -->
+<br>
+<a href="javascript:history.go(-1)">
+<img src="<$g_Images>/images//buttons/bback.gif" border=0 alt="Back"></a>
+</center>
+<!--#ifdef variable="CITY_OWN" -->
+<form method=post target=_self name="listform" action="<$selfurl>">
+<input type="hidden" name="ac" value="list">
+<input type="hidden" name="TPL" value="memberdir/chatmembers">
+<input type="hidden" name="PLC" value="<$PLC>">
+<input type="hidden" name="HIP" value="">
+<input type="hidden" name="SIP" value="">
+<input type="hidden" name="T_NAM" value="<$T_NAM>">
+</form>
+<!--#endif variable="CITY_OWN" -->
+</BODY>
+</HTML>

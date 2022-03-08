@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- ent_complex/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br><br>
+
+
+<!-- 2D and 3D buttons -->
+<!-- #ifdef variable="chataccess" -->
+<!--
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=s">
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>
+<a href="place<$g_exe>?plc=<$place>&ac=place&ID=<$ID>&force=p">
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>
+-->
+<!-- #endif variable="chataccess" -->
+<!-- end 2D 3D buttons -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<a href="javascript:loadInfo('place<$g_exe>?plc=<$place>&ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+
+<!-- #ifdef variable="readaccess" -->
+
+
+<a href="http://www.cybertown.com/entcent2.html" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bportal.gif" BORDER=0 ALT="Portal"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+
+<!-- #ifdef variable="writeaccess" -->
+
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+<br>
+<!-- #ifdef variable="owneraccess" -->
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<a href="javascript:loadCustom('print?DTY=O&ID=<$ID>&TPL=fundbox/phase0',612,490)" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bfundbox.gif" BORDER=0 ALT="Fund Box"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=waterpark&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

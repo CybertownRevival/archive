@@ -1,0 +1,97 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>blaxxun ColonyCity</title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h3>Update your Personal Image</h3>
+<font color="#FFFF00">
+<strong>Please note:</strong><br>
+IE 3.x does not support file upload, so please use another browser to upload
+your personal image! IE 5 and 6 are fine.
+</font>
+</div>
+
+<font color="red">
+<!-- #ifdef variable="err001" -->
+	You do not have permission to store the image.
+<!-- #endif variable="err001" -->
+<!-- #ifdef variable="err002" -->
+	Database error while storing image.
+<!-- #endif variable="err002" -->
+<!-- #ifdef variable="errsize" -->
+	The image is too large, maximum size is <$errsize> Bytes.
+<!-- #endif variable="errsize" -->
+</font>
+
+<form ENCTYPE="multipart/form-data" ACTION="<$selfurl>" METHOD="POST" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="updateimagesubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<!-- #ifdef variable="FIL" -->
+<table border=0>
+<tr>
+	<td width=150>Image Name</td>
+	<td><input type="text" name="NAM" value="<$NAM>" maxlength="32" size=32></td>
+</tr>
+<tr>
+	<td>Filename</td>
+	<td><$I_FILENAME></td>
+</tr>
+</table>
+<!-- #endif variable="FIL" -->
+
+
+<p align=center>
+<!-- #ifdef variable="exists" -->
+<img src="property<$g_exe>?ac=print&ID=<$ID>&type=P&index=&media=i" border=0 alt="">
+<!-- #endif variable="exists" -->
+<!-- #ifdef variable="medialocked" -->
+<font color="FFFF00">Your image must be accepted by the block leader first!</font>
+<br>
+<img src="<$g_Images>/images/locked.gif" border=0 alt="Your image must be accepted by the block leader first!">
+<!-- #endif variable="medialocked" -->
+<!-- #ifdef variable="noimage" -->
+<i>No image uploaded yet!</i>
+<!-- #endif variable="noimage" -->
+</p>
+
+
+<center><font color="#FFFF00">
+Click the browse button to upload an image from your hard disc.<br>
+The maximum image size is 15 KB.<br>
+The image format type must be "jpg" or "gif".
+<br><br>
+By clicking on Update below I hereby affirm that the image I am uploading is either an original creation by me and does not infringe upon the copyright or trademark of any other person or group or it is a public domain item available to be freely used. I also affirm that it is not an alteration of another's original creation without their express permission. 
+<br><br>
+In case of any dispute with another, I hereby agree to defend, indemnify, and hold harmless Cybertown, its officers, directors, employees and agents, from and against any claims, actions or demands, including without limitation reasonable legal and accounting fees, resulting or allegedly resulting from my uploading of this image. 
+<br><br>
+I also understand that should I be discovered to have uploaded an image that is the copyright of another that I may also be subject to other penalties per the UBP.
+</center><br>
+
+
+</font>
+<p align=center>
+<input type="file" name="I" value="<$I_FILENAME>" maxlength="255" size=40>
+</p>
+
+
+<a name=submitbutton></a>
+<p>
+<center>
+<input type=submit name="yes" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</center>
+</p>
+
+</form>
+
+</BODY>
+</HTML>

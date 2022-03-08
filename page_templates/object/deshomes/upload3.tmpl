@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Cybertown - Designer Home Upload</title>
+</head>
+
+<!-- object/deshomes/upload3.tmpl -->
+<!-- confirmation screen for resources -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Home Upload</h2>
+</div>
+
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="uploadok" -->
+    Congratulations, home and resources successfully uploaded!
+    <p><input type=button name="back" value="Close" onClick="window.close()" width=100>
+<!-- #endif variable="uploadok" -->
+
+<!-- #ifdef variable="uploaderror001" -->
+    Error during upload
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror001" -->
+<!-- #ifdef variable="uploaderror002" -->
+    Datatype, keytype or key not specified!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror002" -->
+<!-- #ifdef variable="uploaderror003" -->
+    Insufficient access rights!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror003" -->
+<!-- #ifdef variable="uploaderror004" -->
+    Directory Error: permission denied!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror004" -->
+<!-- #ifdef variable="uploaderror005" -->
+    Executables or scripts can't be uploaded!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror005" -->
+
+<!-- #ifdef variable="uploaderror006_<n>" -->
+    The file "<$errfile>" could not be saved!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror006" -->
+<!-- #ifdef variable="uploaderror007" -->
+    Forbidden access to parent directory!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror007" -->
+<!-- #ifdef variable="uploaderror008_<n>" -->
+    Failed to update database attributes!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror008" -->
+<!-- #ifdef variable="uploaderror009_<n>" -->
+    Failed to unzip file!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror009" -->
+<!-- #ifdef variable="uploaderror010_<n>" -->
+    Failed to execute script!
+    <p><input type=button name="no" value=Back onClick="history.back()">
+<!-- #endif variable="uploaderror010" -->
+
+</font>
+
+</body>
+</html>
+

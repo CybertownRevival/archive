@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<!-- #ifdef variable="chatno" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center><a href="<$g_HTMLRoot>/places/suburbs/map.html">
+<img src="<$g_HTMLRoot>/places/<$place>/<$T_SUB>/images/<$T_SUB>.jpg" border=0 ALT="Back to Suburbs"></a><br>
+<h2 align=center><$T_SUB></h2>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</body>
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center><a href="<$g_HTMLRoot>/places/suburbs/map.html">
+<img src="<$g_HTMLRoot>/places/<$place>/<$T_SUB>/images/<$T_SUB>.jpg" border=0 ALT="Back to Suburbs"></a><br>
+<h2 align=center><$T_SUB></h2>
+<!-- #include virtual="<$g_Templates>common/placehelp.tmpl" -->
+<!-- #include virtual="<$g_Templates>suburbs/javachat.tmpl" -->
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+</body>
+<!-- #endif variable="chatstd" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>suburbs/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+</html>
+
+
+
+

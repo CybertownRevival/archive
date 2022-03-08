@@ -1,0 +1,7 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+*GET M NNM <$NNM> NNM NNM CHT CHT AGE AGE
+*GET M NNM <$NNM> ROL TYPE=ROLE M_ROL

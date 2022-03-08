@@ -1,0 +1,29 @@
+<!-- hi-tek/control.tmpl -->
+<!-- included in action.tmpl to show common control panel-->
+<!-- Navigation Bar -->
+
+<IMG SRC="<$g_Images>/images/hi-tekcontx.gif" BORDER="0" USEMAP="#controlmap" ALT="Cybertown Control Panel">
+<!-- #include virtual="<$g_Templates>common/jumpgate.tmpl" -->
+
+<!-- Begin Help Flags -->
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/german/index.html')" target="_self"><img src="/info/help/german/images/germanysm.gif" border="0" alt=" Deutsche Hilfe Seiten"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/about/details/const_russian.html')" target="_self"><img src="/info/help/russian/images/russianysm.gif" border="0" alt=" Russian Help"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/spanish/faqs.html')" target="_self"><img src="/info/help/spanish/images/spainsm.gif" border="0" alt="FAQs en Espanol"></a>
+
+
+<script language=javascript>
+ var neighborid = '<$ID>';
+ neighborid = neighborid.substring(0,8);
+ if (neighborid == '01020206') {
+  document.write('<p><a href="javascript:loadCustom(\'/SETI/cyber-seti2.html\',\'640\',\'450\')" target=_self><IMG src="<$gHTMLRoot>/images/clubs/SETI/jointeamseti.gif" alt="Join Team Seti" border=0></a><br>');
+ }
+</script>
+
+<center>
+
+<!-- #include virtual="<$g_Templates>common/event_buttons.tmpl" -->
+
+
+</center>
+<!-- end of include control.tmpl -->
+

@@ -1,0 +1,124 @@
+<!-- vote/result.tmpl -->
+<!-- display the result of a vote -->
+<!-- #ifndef variable="elect" -->
+<html>
+<head>
+<title><$g_title> - Voting</title>
+<SCRIPT language="JavaScript">
+function deleteVote(url)
+{
+    parent.overview.location.href=url;
+    location.href="<$g_HTMLRoot>/blank.html";
+}
+</SCRIPT>
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<table width=100%>
+<tr><td><b>Result of the topic: <i><$TOP></i></b></td>
+
+<!-- #ifdef variable="owneraccess" -->
+<td align=right>
+<a href='javascript:deleteVote("vote<$g_exe>?ac=delete&ID=<$ID>&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>")'
+><IMG ALIGN=absbottom SRC="<$g_Images>/images/buttons/bdelete.gif" BORDER=0 ALT="Delete"></a>
+</td>
+<!--#endif variable="owneraccess" -->
+</tr>
+</table>
+
+<table>
+<tr>
+<!-- #ifndef variable="isSecret" -->
+<td width=35%><b>Choice</b></td>
+<td>&nbsp;&nbsp;</td>
+<td width=10%><b>Votes</b></td>
+<td>&nbsp;&nbsp;</td>
+<td width=55%><b>Voters</b></td>
+</tr>
+<!--#endif variable="isSecret" -->
+
+<!-- #ifdef variable="isSecret" -->
+<td width=80%><b>Choice</b></td>
+<td>&nbsp;&nbsp;</td>
+<td width=20%><b>Votes</b></td>
+</tr>
+<!--#endif variable="isSecret" -->
+<!--#for loopname="loopresult" loopvars="CHO,TOP,CNT,voters" -->
+<tr>
+
+<!-- #ifndef variable="isSecret" -->
+<td><$TOP></td>
+<td>&nbsp;&nbsp;</td>
+<td><$CNT></td>
+<td>&nbsp;&nbsp;</td>
+<td><$voters></td>
+<!--#endif variable="isSecret" -->
+<!-- #ifdef variable="isSecret" -->
+<td><$TOP></td>
+<td>&nbsp;&nbsp;</td>
+<td><$CNT></td>
+<!--#endif variable="isSecret" -->
+<!--#endfor loopname="loopresult" -->
+</tr></table>
+
+</body>
+</html>
+<!-- #endif variable="elect" -->
+
+<!--#ifdef variable="elect" -->
+<html>
+<head>
+<title><$g_title> - Polling</title>
+<base target="_self"> 
+</head>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<center>
+<table>
+<tr><td>
+<table border=1 cellpadding=5>
+<tr> <td align=center><b><$TOP></b></td>
+</tr>
+<tr><td><b><$TXT></b>
+
+<br>
+<br>
+<table width=95%>
+<!--#for loopname="loopresult" loopvars="CHO,TOP,CNT" -->
+<tr>
+<td><$TOP> (<$CNT>)</td>
+<td width=5>&nbsp;</td>
+<td width=100 align=right><i><$PERCENT> %</i></td>
+
+<!--#endfor loopname="loopresult" -->
+</tr></table>
+
+<br>
+<br>
+<center>
+<b><$TOTAL> Total Votes</b>
+<br>
+<a href="javascript:history.go(-1)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+</center>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+</center>
+</body>
+</html>
+<!--#endif variable="elect" -->

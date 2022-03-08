@@ -1,0 +1,109 @@
+<!-- common/javachat.tmpl -->
+<!-- included in the place.tmpl of places and properties -->
+<!-- see a description of the parameters in the Java chat documentation -->
+<center>
+<!-- #ifdef variable="chatreadaccess" -->
+
+
+<!-- begin 2D international chat flags -->
+<!-- #ifdef variable="ID" value="0000000000000001" --><center>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_english.gif" border="0"></a>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=German&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_german.gif" border="0"></a>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=Spanish&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_spanish.gif" border="0"></a>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=Italian&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_italian.gif" border="0"></a>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=French&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_french.gif" border="0"></a>
+
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=Japanese&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_japanese.gif" border="0"></a>
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=Hebrew&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_hebrew.gif" border="0"></a> 
+<a href="/cgi-bin/cybertown/place?plc=enter&ID=0000000000000001&ac=place&T_G=Russian&force=s" target="place">
+<img src="<$g_Images>/images/buttons/b2dchat_russian.gif" border="0"></a></center>
+<!-- #endif variable="ID" -->
+<!-- end 2D international chat flags -->
+
+
+
+<!-- #ifdef variable="chatwriteaccess" -->
+
+
+<!-- #ifndef variable="ID" value="000000000000001b" -->
+    <font color="#FFFF00" face="arial" size=-2><center>Visitors can only watch the chat - Type <b>'/options'</b> for special chat options.</center></font>
+<!-- #endif variable="ID" -->
+<!-- #endif variable="chatwriteaccess" -->
+<!-- #ifndef variable="chatwriteaccess" -->
+    <font color="#FFFF00" face="arial"><center>If you'd like to chat, click the Join Now icon in the top frame</center></font>
+<!-- #endif variable="chatwriteaccess" -->
+<applet codebase="<$g_JAVARoot>/java/contact"
+        archive="classes2.zip"
+        code="BXApplet.class"
+        id="chat"
+        name="blaxxun Contact"
+        alt="blaxxun Contact (Java)"
+        width=580 height=<$height>>
+    <param name = "cabbase"         value="blaxxunContactJava.cab">
+
+<small><p><font color="#FFFF00" face="arial">The 2D Chat requires Java (you must enable Java in your browser).</font><br><font color="#00FF00" face="arial">&nbsp;&nbsp;Netscape 4.x: menu 'edit-preferences-advanced-enable java'<br>&nbsp;&nbsp;IE 4.x: menu 'view-internet options-advanced-enable java'</p><p><font color="#FFFF00" face="arial">If you do not want to enable Java please settle down in a colony and update your personal data (chat option = no chat).</p></small>
+
+<!-- #ifdef variable="ID" value="000000000000001d" -->
+<!-- #define variable="hide" value="hide=true&" -->
+<!-- #endif variable="ID" --> 
+
+<!-- #ifndef variable="isProperty" -->
+<!-- 2D group chat --> 
+<!-- #if variable="T_G" == value="" -->
+    <param name = startroom         value =
+"<$scenename>@<$g_SceneServer><$g_cgiRoot>/place?<$hide>ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx">
+<!-- #endif variable="T_G" -->
+<!-- #if variable="T_G" != value="" -->
+    <param name = startroom     value = "<$T_G>@<$g_SceneServer><$g_cgiRoot>/place?<$hide>ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx#<$T_G>">
+<!-- #endif variable="T_G" -->
+<!-- end 2D group chat --> 
+<!-- #endif variable="isProperty" -->
+
+
+
+
+<!-- #ifdef variable="isProperty" -->
+    <param name = startroom         value = "<$scenename>@<$g_SceneServer><$g_cgiRoot>/property?ID=<$ID>&ac=3D&IE=x.bxx">
+<!-- #endif variable="isProperty" -->
+
+    <param name = openroomreplace   value = "ac=3D'ac=index2d'_top">
+
+    <param name = useTCP            value = false>
+    <param name = port              value = <$port>>
+    <param name = usePassword       value = true>
+    <param name = nickname          value = "<$NNM>">
+    <param name = role              value = "<$rolename>">
+    <param name = experience        value = "<$stdexp>">
+    <param name = userid            value = "<$MID>">
+    <param name = password          value = "<$COOKIE>">
+    <param name = ui                value = 31>
+    <param name = frame             value = false>
+    <param name = breakLines        value = true>
+
+<!-- #ifdef variable="chatwriteaccess" -->
+    <param name = lockInput         value = false>
+<!-- #endif variable="chatwriteaccess" -->
+
+<!-- #ifndef variable="chatwriteaccess" -->
+    <param name = lockInput         value = true>
+<!-- #endif variable="chatwriteaccess" -->
+
+    <param name = logTime           value = 10>
+    <param name = borderSize        value = 4>
+
+<!-- #include virtual="<$g_Templates>common/javachatparams.tmpl" -->
+
+</applet>
+</center>
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+    <font color="#FF0000" face="arial"><center><b>Sorry <$NNM>, this place is private at this moment, visitors are not allowed to watch the Chat here:(</b></font>
+<!-- #endif variable="chatreadaccess" -->

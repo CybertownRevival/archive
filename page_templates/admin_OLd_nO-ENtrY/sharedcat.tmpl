@@ -1,0 +1,254 @@
+<!-- admin/sharedcat.tmpl -->
+<!-- update attributes for shared objects -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+function onSubmit()
+{
+    document.updateForm.OWN_NNK.value 
+     = document.updateForm.OWN_NNK.value.toLowerCase();
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for Shared Object Category <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new  of Shared Object Category <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form name="updateForm" method=post action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+    <input type=hidden name="ac" value="<$ac>">
+
+    <input type=hidden name="ID" value="<$ID>">
+
+    <table>
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td colspan=7>
+                <INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>Class:&nbsp;&nbsp;</td>
+            <td>
+                <select name="CLA">
+                    <option value="A"
+                    <!-- #ifdef variable="CLA" value="A" -->
+                        selected
+                    <!-- #endif variable="CLA" -->
+                    >A</option>
+                    <option value="B"
+                    <!-- #ifdef variable="CLA" value="B" -->
+                        selected
+                    <!-- #endif variable="CLA" -->
+                    >B</option>
+                    <option value="C"
+                    <!-- #ifdef variable="CLA" value="" -->
+                        selected
+                    <!-- #endif variable="CLA" -->
+                    <!-- #ifdef variable="CLA" value="C" -->
+                        selected
+                    <!-- #endif variable="CLA" -->
+                    >C</option>
+                </select>
+            </td>
+            <td align=right>Creator:&nbsp;&nbsp;</td>
+            <td colspan=5>
+                <INPUT NAME="CRE_NNK" VALUE="<$CRE_2NNM>" MAXLENGTH=16 SIZE=16>
+            </td>
+        </tr>
+        <tr><td colspan=8><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Image:&nbsp;&nbsp;</td>
+            <td colspan=7><INPUT NAME="IMG" VALUE="<$IMG>" MAXLENGTH=256 SIZE=42></td>
+        </tr>
+        <tr>
+            <td align=right>VRML-URL:&nbsp;&nbsp;</td>
+            <td colspan=7><INPUT NAME="WRL" VALUE="<$WRL>" MAXLENGTH=256 SIZE=42></td>
+        </tr>
+         <tr>
+            <td align=right>Texture Image:&nbsp;&nbsp;</td>
+            <td colspan=7><INPUT NAME="TXF" VALUE="<$TXF>" MAXLENGTH=256 SIZE=42></td>
+        </tr>
+        <tr><td colspan=8><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td colspan=8>Actions:</td>
+        </tr>
+        <tr>
+            <td align=right>Drop:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aDRO" VALUE="<$aDRO>" MAXLENGTH=32 SIZE=16></td>
+            <td align=right>Take:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aTAK" VALUE="<$aTAK>" MAXLENGTH=32 SIZE=16></td>
+            <td align=right>Move:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aMOV" VALUE="<$aMOV>" MAXLENGTH=32 SIZE=16></td>
+        </tr>
+        <tr>
+            <td align=right>Display:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aDIS" VALUE="<$aDIS>" MAXLENGTH=32 SIZE=16></td>
+            <td align=right>Delete:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aDEL" VALUE="<$aDEL>" MAXLENGTH=32 SIZE=16></td>
+            <td align=right>Buy:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="aBUY" VALUE="<$aBUY>" MAXLENGTH=32 SIZE=16></td>
+        </tr>
+        <tr>
+            <td colspan=8>Free Actions:</td>
+        </tr>
+        <tr>
+            <td align=right>000:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a000">
+                    <option value=""></option>
+                <!--#for loopname="actions0" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL000_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions0" -->
+                </SELECT>
+            </td>
+            <td align=right>001:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a001">
+                    <option value=""></option>
+                <!--#for loopname="actions1" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL001_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions1" -->
+                </SELECT>
+            </td>
+            <td align=right>002:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a002">
+                    <option value=""></option>
+                <!--#for loopname="actions2" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL002_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions2" -->
+                </SELECT>
+            </td>
+            <td align=right>003:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a003">
+                    <option value=""></option>
+                <!--#for loopname="actions3" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL003_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions3" -->
+                </SELECT>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>004:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a004">
+                    <option value=""></option>
+                <!--#for loopname="actions4" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL004_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions4" -->
+                </SELECT>
+            </td>
+            <td align=right>005:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a005">
+                    <option value=""></option>
+                <!--#for loopname="actions5" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL005_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions5" -->
+                </SELECT>
+            </td>
+            <td align=right>006:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a006">
+                    <option value=""></option>
+                <!--#for loopname="actions6" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL006_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions6" -->
+                </SELECT>
+            </td>
+            <td align=right>007:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a007">
+                    <option value=""></option>
+                <!--#for loopname="actions7" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL007_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions7" -->
+                </SELECT>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>008:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a008">
+                    <option value=""></option>
+                <!--#for loopname="actions8" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL008_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions8" -->
+                </SELECT>
+            </td>
+            <td align=right>009:&nbsp;&nbsp;</td>
+            <td>
+                <SELECT NAME="a009">
+                    <option value=""></option>
+                <!--#for loopname="actions9" loopvars="ACT_ID_" -->
+                    <option value="<$ACT_ID_>" <$ACT_SEL009_>><$ACT_NAME_></option>                    
+                <!--#endfor loopname="actions9" -->
+                </SELECT>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=8>Free 3D Actions:</td>
+        </tr>
+        <tr>
+            <td align=right>3D0:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="a3D0" VALUE="<$a3D0>" MAXLENGTH=9 SIZE=9></td>
+            <td align=right>3D1:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="a3D0" VALUE="<$a3D0>" MAXLENGTH=9 SIZE=9></td>
+            <td align=right>3D3:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="a3D0" VALUE="<$a3D0>" MAXLENGTH=9 SIZE=9></td>
+            <td align=right>3D4:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="a3D0" VALUE="<$a3D0>" MAXLENGTH=9 SIZE=9></td>
+        </tr>
+    </table>
+<br>
+    <!-- #ifndef variable="create" -->
+        <a HREF="admin<$g_exe>?DTY=SO&KTY=CAT&KFT=<$ID>&TPL=admin/sharedobjs&ac=list">List Objects</a><br>
+    <!-- #endif variable="create" -->
+<br>
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

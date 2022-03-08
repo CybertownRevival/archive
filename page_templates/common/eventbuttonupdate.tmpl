@@ -1,0 +1,64 @@
+<html>
+<head>
+<title><$g_title></title>
+<!-- common/eventbuttonupdate.tmpl -->
+<base target="_top">
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<h3 align=center>Update - Event Buttons</h3>
+
+<font color="red">
+	<!-- #ifdef variable="error001" -->
+		Insufficient access rights.
+	<!-- #endif variable="error001" -->
+</font>
+
+<form method=post action="<$selfurl>" target="_self">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ac" value="updatesubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<div align=center>
+<input type=submit name="update" value="Update">
+<input type=button name="back" value="Cancel" onClick="history.back()">
+</div>
+<br>
+
+<div align=center>
+<table border=0>
+	<tr>
+		<td>Link Type:</td>
+		<td>URL:</td>
+	</tr>
+
+	<tr>
+		<td><SELECT name="EB1"><OPTION selected value ="<$EB1>"><$EBI>&nbsp;
+		                                       <OPTION value="">&nbsp;
+		                                       <OPTION value="loadInfo">loadInfo&nbsp;
+		                                       <OPTION value="loadCustom">loadCustom&nbsp;
+		                                       <OPTION value="Place">Place&nbsp;		                                    
+		</SELECT></td>
+	</tr>
+		<td><INPUT NAME="EB2" VALUE="<$EB2>" MAXLENGTH=32 SIZE=32></td>
+	<tr>
+		<td>Image URL:</td>
+		<td>Alt Text:</td>
+		<td>Window Size: (loadCustom)</td>
+	</tr>	
+	<tr>	
+		<td><INPUT NAME="NU<$index>" VALUE="<$NU>" MAXLENGTH=128 SIZE=32></td>
+		<td><INPUT NAME="EB2" VALUE="<$EB2>" MAXLENGTH=32 SIZE=32></td>
+		<td><INPUT NAME="NU<$index>" VALUE="<$NU>" MAXLENGTH=10 SIZE=32></td>
+		
+	</tr>
+
+
+</table>
+
+</form>
+</body>
+</html>
+

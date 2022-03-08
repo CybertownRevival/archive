@@ -1,0 +1,55 @@
+<HTML>
+<!-- iwos/guest_page.tmpl -->
+<!-- displays the pages of the book -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Guest Book Page</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<CENTER>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the page could not been updated!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The page was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+Creator: <$CREATOR><br>
+Creation Date: <$DATE_DAYNAME>, <$DATE_MONNAME> <$DATE_MDAy> <$DATE_TH> <$DATE_YEAR><br>
+
+<br>
+  <H2><$NAM>
+<a href="<$g_HttpServer>/help/homebuilder/guestbookhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+  <table height="60%">
+  <tr>
+    <td valign="top"><$CONTENT></td>
+  </tr>
+  </table>
+
+<br>
+  Page <$PAGE> out of <$PCN> pages<br>
+<br>
+
+<a href="iwos<$g_Exe>?ac=prev&ID=<$ID>&PAGE=<$PAGE>"><img src="<$g_Images>/images/iwos/bookpageback.gif" border=0 alt="previous page"></a>
+<!-- #ifdef variable="isOwner" -->
+  <a href="iwos<$g_Exe>?ac=deletepage&ID=<$ID>&PAGE=<$PAGE>&TKT=<$TKT>"><img src="<$g_Images>/images/iwos/bookdeletepage.gif" border=0 alt="delete page"></a>
+<!-- #endif variable="isOwner" -->
+<!-- #ifdef variable="NEXTPAGE" -->
+  <a href="iwos<$g_Exe>?ac=next&ID=<$ID>&PAGE=<$PAGE>"><img src="<$g_Images>/images/iwos/booknextpage.gif" border=0 alt="next page"></a>
+<!-- #endif variable="NEXTPAGE" -->
+
+</center>
+
+</BODY>
+</HTML>

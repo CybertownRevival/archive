@@ -1,0 +1,26 @@
+<!-- clubdir/clubrulesupd -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Update Club Rules</title>
+</head>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<BODY BACKGROUND="" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#00FF00" TEXT="#D0DBF7">
+
+<center>
+<H3>Update Club Rules</h3>
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+Update the main club rules below:
+<p>
+<form method=post action="<$selfurl>" name="RULESfrm">
+<input type="hidden" name="ID" value="CL00000000000000">
+<input type="hidden" name="TPL" value="clubdir/clubrulesupd">
+
+<TEXTAREA NAME="CLUB_RULES" ROWS=15 COLS=60><$CLUB_RULES></TEXTAREA>
+
+<center><p>
+<input type=submit name="edit" value=Update>
+</center>
+</form>
+</body>
+</html>

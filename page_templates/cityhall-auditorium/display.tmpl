@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<title><$g_title>Auditorium Selector</title>
+<script language="javascript">
+
+names = new Array();
+places = new Array();
+numbers = new Array();
+
+<!--#for loopname="place" loopvars="NAM_" -->
+names[names.length]     = "<$NAM_>";
+places[places.length]   = "<$PLC_>";
+numbers[numbers.length] = "<$NUM_>";
+<!--#endfor loopname="place" -->
+
+function replaceEnc(thisString,searchString,replaceString){
+  while(thisString.indexOf(searchString) > 0){
+    x = thisString.indexOf(searchString);
+    thisString = thisString.substring(0,x) + replaceString + thisString.substring(x + 3,thisString.length);
+  }
+  return thisString;
+}
+
+function writePlaces(){
+
+// for(i = 0;i < places.length;i++){
+
+//  places[i] = "http://" + places[i].substring(13,places[i].length);
+
+//  places[i] = replaceEnc(places[i],"%2f","/");
+//  places[i] = replaceEnc(places[i],"%2e",".");
+//  places[i] = replaceEnc(places[i],"%2d","-");
+//  places[i] = replaceEnc(places[i],"%3f","?");
+//  places[i] = replaceEnc(places[i],"%3d","=");
+//  places[i] = replaceEnc(places[i],"%26","&");
+//  places[i] = replaceEnc(places[i],"%5f","_");
+//
+// }
+
+
+ halls = new Array(); 
+ hallPlace = new Array();
+ hallNumbers = new Array();
+
+ for(i = 0; i <= 30; i++){
+  halls[i] = "City Hall Room " + i;
+  hallPlace[i] = "";
+  hallNumbers[i] = 0;
+
+  room = "T%5fspawn%3d" + i;
+  for(j = 0; j < places.length; j++){
+   if(places[j].indexOf(room) >= 0){ hallPlace[i] = numbers[j]; hallNumbers[i] = numbers[j];}
+  }
+  if(hallPlace[i] == ""){hallPlace[i] = "0";}
+
+ }
+
+ //document.write(names[i] + "<br>" + places[i] + "<br>" + numbers[i] + "<BR><BR>\n");
+ 
+ for(i = 1; i < halls.length; i++){
+  document.write("<TR>\n");
+  document.write("<TD><font face='arial'>" + halls[i] + "</font></TD>\n");
+  document.write("<TD><font face='arial'>" + hallPlace[i] + "</font></TD>\n");
+  document.write("<TD>\n");
+  document.write("<center>\n");     
+  if(hallNumbers[i] >= 20){
+    document.write("<font face='arial'>Full\n</font>");
+  }else{
+    document.write("<font face='arial'><a href='javascript:set_chatZone(" + i + ")' target=action>Enter</a></font>");
+  }
+  document.write("</center>\n");      
+  document.write("</TD>\n");
+  document.write("<TD>\n");
+  document.write("<center>\n");  
+  if(hallNumbers[i] >= 20){
+    document.write("<font face='arial'>Full\n</font>");
+  }else{
+    document.write("<font face='arial'><a href='http://www.cybertown.com/cgi-bin/colonycity/place?plc=cityhall&ID=0000000000000002&force=s&T_aud=audit&T_spawn=" + i + "&T_2d=true' target='new'>Enter</a></font>");
+  }
+  document.write("</center>\n");    
+  document.write("</TD>\n");
+  document.write("</TR>\n");
+ }
+
+}
+
+</script>
+
+
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<font face="arial">
+<CENTER>
+
+<table COLS=1 WIDTH="80%" ALIGN="CENTER" CELLPADDING="3" CELLSPACING="0" BORDER="0">
+<TR><TD>
+<CENTER>
+<font face="arial">
+<B>
+To enter the City Hall Auditorium for this event, find a room that is not full, and click ENTER
+
+</CENTER>
+</TR></TD>
+</table>
+
+<BR>
+<font face="arial">
+<B>
+<a href="javascript:goLobby()" target=action>Back to the Lobby</a>
+</B>
+</font>
+<BR>
+
+<br><br>
+<center>Please note : if you have problems getting into chat rooms please use the "Alternate link" to solve any problems.</center>
+<!-- <p><a href="http://www.cybertown.com/cgi-bin/colonycity/place?plc=cityhall&ID=0000000000000002&force=s&T_aud=audit&T_spawn=22&T_2d=true">If you cannot enter a room, link here</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/place?plc=cityhall&ID=0000000000000002&force=s&T_aud=audit&T_spawn=23&T_2d=true">or here</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/place?plc=cityhall&ID=0000000000000002&force=s&T_aud=audit&T_spawn=24&T_2d=true">or here</a><br>
+<br> -->
+
+
+<table BORDER COLS=3 WIDTH="80%" ALIGN="CENTER" CELLPADDING="3" CELLSPACING="0" BORDER="1">
+<TR>
+<TD VALIGN="CENTER" HEIGHT="50"><font face="arial">Chat Rooms in City Hall</font></TD>
+<TD><font face="arial">People<font color="#000000">......</font><font face="arial" size="-1"> (max 20)</font></font></TD>
+<TD><font face="arial">Status</font></TD>
+<TD><font face="arial"><center>Alternate<br>Link</center></font></TD>
+</TR>
+<SCRIPT LANGUAGE="JavaScript">writePlaces();</SCRIPT>
+</table>
+
+
+</font>
+</CENTER>
+</BODY>
+</HTML>
+

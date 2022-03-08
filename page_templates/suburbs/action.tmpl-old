@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- suburbs/action.tmpl -->
+<BASE TARGET="place">
+<!-- #include virtual="<$g_Templates>place/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language="JavaScript">
+
+function moderate() {
+
+window.open('place?plc=suburbs&T_SUB=ACCDAV99&TKT=695e478a075fb4aa&ac=moderate','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+
+}
+
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="<$g_HTMLRoot>/places/suburbs/map.html">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #ifndef variable="T_SUB" value="Harbinger_of_Spring_Maze2" -->
+<a href="javascript:loadInfo('/places/suburbs/burbshelp.html')" target=_self>
+<IMG border=0 SRC="/places/suburbs/images/faqhelp.gif"></A><br>
+
+<!-- #ifdef variable="chataccess" -->  
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&T_SUB=suburbs&force=s">  
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>  
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&T_SUB=suburbs&force=p">  
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>  
+<!-- #endif variable="chataccess" -->  
+<!-- #endif variable="T_SUB" -->
+<!-- #ifdef variable="T_SUB" value="Harbinger_of_Spring_Maze2" -->
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&T_pass=<$T_pass>&force=s">  
+<IMG SRC="<$g_Images>/images/buttons/b2dchat.gif" BORDER=0 ALT="2D Chat"></a>  
+<a href="place<$g_exe>?plc=<$plc>&ac=place&ID=<$ID>&T_SUB=<$T_SUB>&T_pass=<$T_pass>&force=p">  
+<IMG SRC="<$g_Images>/images/buttons/b3dchat.gif" BORDER=0 ALT="3D Chat"></a><br>  
+<!-- #endif variable="T_SUB" -->
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+
+
+<a href="javascript:loadInfo('place<$g_exe>?plc=suburbs&ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="javascript:loadInfo('/places/suburbs/maintenancehelp.html')" target=_self>
+<IMG border=0 SRC="/places/suburbs/images/maintenance.gif"></A><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Fun Park Messages"></a><br>
+<!-- #endif variable="readaccess" -->
+<br>
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="isAdmin" -->
+<br><a href="javascript:moderate()" target=_self><IMG SRC="/images/buttons/bmoderate.gif" BORDER=0 ALT="Moderate"></a><br>
+<a href="http://www.cybertown.com/cgi-bin/suburbs/testingkillrush.pl" target=place>
+<IMG SRC="<$g_Images>/places/suburbs/images/suburbsman.gif" BORDER=0 ALT="Suburbs Manager"></a><br>
+<!-- #endif variable="isAdmin" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="edit<$g_exe>?KEY=<$ID>&TPL=place/updateinfo&backurl=edit" target=place>
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a href="edit<$g_exe>?DTY=O&KTY=ID&KEY=<$ID>&PLC=suburbs&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+</BODY>
+</HTML>

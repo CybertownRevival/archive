@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>blaxxun - Shared Object</title>
+</head>
+
+<!-- object/upload.tmpl -->
+<!-- form to upload the vrml and image file for a shared object -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Object Upload</h2>
+</div>
+<p><font color="#FF0000">
+Before uploading, please read  and understand the <a href="/places/shopping/rules.html">Rules for Creating Objects for Cybertown</a>
+<BR>
+These are the technical rules by which your Object will be judged fit or unfit for use in Cybertown.
+<BR>
+These Rules contain very important information you need to know, plus some technical tips. 
+</p></font>
+<p>
+Use this form to "import" new objects into the community and offer them
+for sale. 
+<br>
+Please read this <a href=#explain target=_self>explaination</a> of the fields in the form before filling the form in.
+</p>
+<p>
+There is some economics (and therefore risk) involved. It will
+cost you some of your <$MEM_MON> CCs to upload an object, and you'll be hoping to earn enough from sales of your object to make a profit. The money involved here is
+the CCs you earn by being a citizen of Cybertown.
+<a href=#details target=_self>More...</a>
+</p>
+<p>
+After an upload, your Object will be reveiwed based on technical criteria.  If the Object is found to be technically correct, the Mall Manager will check your object for appropriateness and 
+specify an <a href=#class target=_self>object class</a>. Then it will be offered for sale in one of the stores. 
+</p>
+<div align=center>
+<font color="red">
+<!-- #ifdef variable="updateok" -->
+    Congratulations, data successfully uploaded!
+<!-- #endif variable="updateok" -->
+<!-- #ifdef variable="uploaderror001" -->
+    You have to specify a name for your object!
+<!-- #endif variable="uploaderror001" -->
+<!-- #ifdef variable="uploaderror002" -->
+    Sorry, we only accept objects with a price greater than 10 CCs!
+<!-- #endif variable="uploaderror002" -->
+<!-- #ifdef variable="uploaderror003" -->
+    Sorry, we need at least one object to sell!
+<!-- #endif variable="uploaderror003" -->
+<!-- #ifdef variable="uploaderror004" -->
+    One or both of the needed files are missing!
+<!-- #endif variable="uploaderror004" -->
+<!-- #ifdef variable="uploaderror005" -->
+    The file "<$errfile>" has the wrong type!
+<!-- #endif variable="uploaderror005" -->
+<!-- #ifdef variable="uploaderror006" -->
+    The file "<$errfile>" could not be saved!
+<!-- #endif variable="uploaderror006" -->
+<!-- #ifdef variable="uploaderror007" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_img> KB!
+<!-- #endif variable="uploaderror007" -->
+<!-- #ifdef variable="uploaderror008" -->
+    Sorry, you don't have enough money for uploading!
+<!-- #endif variable="uploaderror008" -->
+<!-- #ifdef variable="uploaderror009" -->
+    The file "<$errfile>" is too large, maximum size is <$so_max_size_wrl> KB!
+<!-- #endif variable="uploaderror009" -->
+</font>
+
+<form name=upload enctype="multipart/form-data" method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <INPUT TYPE="hidden" name="ZON" value="p00000000000009ff">
+
+    <table border=0>
+        <tr>
+            <td>Object Name:&nbsp;&nbsp;</td>
+            <td><input type="text" name="NAM" value="<$NAM>"></td>
+            <td>Price:&nbsp;&nbsp;</td>
+            <td><input type="text" name="TPR" value="10" maxlength="4" size=4></td>
+            <td>Quantity:&nbsp;&nbsp;</td>
+            <td><input type="text" name="CNT" value="10" maxlength="4" size=4></td>
+        </tr>
+        <tr><td colspan=6>&nbsp;</td></tr>
+        <tr>
+            <td>VRML-File:&nbsp;&nbsp;</td>
+            <td colspan=5><input type="file" name="WRL" value="<$WRL_FILENAME>" maxlength="255" size=32></td>
+        </tr>
+        <tr>
+            <td>Texture-File:&nbsp;&nbsp;</td>
+            <td colspan=5><input type="file" name="TXF" value="<$TXF_FILENAME>" maxlength="255" size=32></td>
+        </tr>
+        <tr><td colspan=6>&nbsp;</td></tr>
+        <tr>
+            <td>Thumbnail:&nbsp;&nbsp;</td>
+            <td colspan=5><input type="file" name="IMG" value="<$IMG_FILENAME>" maxlength="255" size=32></td>
+        </tr>
+    </table>
+</div>
+<p>
+The object that you are uploading to the virtual shop will remain your
+property. You are giving Cybertown the right, without time limit, of use
+and of distribution to other members of this community. Cybertown does
+not grant the right to demand removal of objects already distributed.
+<p>
+<div align=center>
+    <input type="submit" name="upload" value="Accept & Upload" width=100>
+    <input type=button name="back" value="Close" onClick="window.close()" width=100>
+</div>
+
+</form>
+
+<a name=details></a>
+<h3>Description</h3>
+<p>
+When you upload an object, you have to pay a percentage of the object's
+price for each instance of the object. The more instances you upload,
+the lower the percentage, as shown in the table below:
+<div align=center>
+<table border=1 cellpadding=0 width=40%><tr>
+<td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;Quantity   </td><td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;Percentage</td> 
+</tr><tr>
+<td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;&lt;50        </td><td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;25%      </td>    
+</tr><tr>
+<td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;&lt;100       </td><td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;20%      </td>
+</tr><tr>
+<td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;&lt;200       </td><td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;15%      </td>
+</tr><tr>
+<td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;200 or more</td><td><FONT face="Arial, Helvetica, sans-serif" size=-1>&nbsp;10%      </td> 
+</tr></table>
+</div>
+For each instance of the object that gets sold, half of the selling
+price will be credited to you.
+
+<p>
+If one of your uploaded objects sells well and you want to make more
+instances available, you can increase the number of instances in the
+object's Properties form.
+
+<p>
+<b>Example:</b> You upload 10 instances of a chair at a price of 50 CCs.
+Your cost: 10*50/4 = 125 CCs.
+For each chair sold, you earn: 50/2 = 25 CCs.
+So if you sell 5 (half) of the chairs, you earn 125 CCs and break even.
+If you sell all 10 chairs, you earn 250 CCs and double your investment.
+If your chair is deemed clever enough by the Mall Manager to earn Class B designation, then 60% of the selling price (30 CCs) will be credited to you for each chair sold. 
+</p>
+
+<p>
+<a name=class></a>
+<b>Object classes:</b> The Mall Manager will specify a class for each uploaded object, based on the criteria of originality (How new/unique is the idea?) and sophistication (How difficult was it to create the object?). If an object exhibits both originality and sophistication, it is assigned to Class A. If it only exhibits one of the two characteristics, it is Class B; otherwise Class C. Objects of Classes A and B earn their owners a premium of 20% and 10% respectively. 
+
+<p>
+<a name=explain></a>Below is a brief explanation of the fields in the Object Upload form.
+<br>
+<table border=1>
+<tr>
+<td>Name:</td>
+<td>The name of the object you're uploading, e.g. Chair.</td>
+</tr>
+<tr>
+<td>Price:</td>
+<td>The amount of CCs a buyer will have to pay for your object.</td>
+</tr>
+<tr>
+<td>Quantity:</td>
+<td>The number of instances of your object that will be available
+for purchase, i.e. the initial "inventory."</td>
+</tr>
+<tr>
+<td>VRML file:</td>
+<td>Name of the local VRML file that represents your object.</td>
+</tr>
+<tr>
+<td>Texture file:</td>
+<td>Name of a file for an optional texture that can be
+referenced by your VRML file.  For instance if your Object has a wood texture, this is the name of the wood image file.
+<br>Code Example: <i>ImageTexture { url ["./texture"] }</i></td></tr>
+<tr>
+<td>Thumbnail:</td>
+<td>Name of a 128 x 128 pixel .jpg file showing an image of the VR Object you are uploading.
+    This image will be displayed to 2D users.
+</td>
+</tr>
+</table>
+<br>
+The texture file is optional; all other fields must be filled in. After
+you have filled in the fields, click on <b>Upload</b>. If you change your mind,
+click on <b>Close</b>. 
+</p>
+<p>
+Notes:
+<ul>
+<li>Internet Explorer 3.x doesn't support file uploads.
+<li>The maximum VRML file size is <$so_max_size_wrl> KB. The "wrl" VRML format is required and you should zip the file.
+<li>For textures and thumbnails, the maximum file size is <$so_max_size_img> KB. The files
+must be in either jpg or gif format.
+<li>Uploaded objects will be positioned at "eye height" at the world's
+origin (0, 1.75, 0).
+<li>Try to create objects of "realistic" size, i.e. a table would be perhaps
+1 x 2 x 0.8 meters.
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<html>
+<head>
+<title><$g_title> - Library</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Library Access Error</h2>
+
+<font color="red">
+
+<!-- #ifdef variable="hllerror001" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to create or configure this library.
+<!-- #endif variable="hllerror001" -->
+
+<!-- #ifdef variable="hllerror002" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to configure this library.
+<!-- #endif variable="hllerror002" -->
+
+<!-- #ifdef variable="hllerror003" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to access this library.
+<!-- #endif variable="hllerror003" -->
+
+<!-- #ifdef variable="hllerror004" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to read the links.
+<!-- #endif variable="hllerror004" -->
+
+<!-- #ifdef variable="hllerror005" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to delete links from the library.
+<!-- #endif variable="hllerror005" -->
+
+<!-- #ifdef variable="hllerror006" -->
+Sorry <$NNM>,
+<P>
+You do not have permission to destroy the library.
+<!-- #endif variable="hllerror006" -->
+
+<!-- #ifdef variable="hllerror007" -->
+Sorry <$NNM>,
+<P>
+The library you wanted to access does not exist.
+Maybe its owner has deleted it.
+<!-- #endif variable="hllerror007" -->
+
+</font>
+
+</body>
+</html>
+

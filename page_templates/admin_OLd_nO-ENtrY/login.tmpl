@@ -1,0 +1,78 @@
+<!-- admin/login -->
+<!--- the login form for the administrator --->
+<HTML>
+<HEAD>
+<title><$g_title></title>
+<script language=javascript>
+function checksubmit()
+{
+ if ( document.loginform.NNM.value == "admin" && document.loginform.PWD.value == "admin" )
+  alert('Warning: You are using the default administrator password.');
+ if ( document.loginform.NNM.value.length > 0 && document.loginform.PWD.value.length > 0 )
+  document.loginform.submit();
+}
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<P><B>Please login</B><br>
+
+<p><font color="#FF0000" size=2>
+<!-- #ifdef variable="loginerror001" -->
+	<p>Login failed, please try again!</p>
+<!-- #endif variable="loginerror001" -->
+
+<!-- #ifdef variable="loginerror002" -->
+	<p>Sorry <$NNM>, the city council has excluded
+	you from the community until <$EXD_MON>/<$EXD_MDAY>/<$EXD_YEAR>.
+	<br>You cannot log in until then.
+<!-- #endif variable="loginerror002" -->
+<!-- #ifdef variable="loginerror003" -->
+        <p>Sorry <$NNM>, there are already too many members logged in.
+        <br>
+        Please try again later.
+<!-- #endif variable="loginerror003" -->
+<!-- #ifdef variable="adminerror001" -->
+    Sorry, you aren't administrator.<br>
+<!-- #endif variable="adminerror001" -->
+</font></P>
+
+<form action="admin<$g_exe>" method="POST" name=loginform>
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type="hidden" name="ac" value="<$ac>">
+<input type="HIDDEN" name="login" value="true">
+<input type="hidden" name="TPL" value="<$TPL>">
+<input type="hidden" name="DTY" value="<$DTY>">
+<input type="hidden" name="KTY" value="<$KTY>">
+<input type="hidden" name="KEY" value="<$KEY>">
+<input type="hidden" name="LOGTPL" value="<$LOGTPL>">
+<input type="hidden" name="ID" value="<$ID>">
+<input type="hidden" name="T_NS" value="<$T_NS>">
+
+	<table border="0">
+	<tr align="center">
+	<td align="center"><font size=2>Nickname</font></td>
+	<td align="center"><font size=2><input type="text" name="NNM" size="16" value="<$NNM>" maxlength="16" tabindex="1"></font></td>
+	</tr>
+	<tr align="center">
+	<td align="center"><font size=2>Password</font></td>
+	<td align="center"><font size=2>
+	<input type="password" name="PWD" size="16" value="<$PWD>" maxlength="16" tabindex="2" onchange="checksubmit()"></font>
+	</td>
+	</tr>
+	<tr align="center">
+	<td align="center" colspan=2><font size=2><input type="submit" value="Enter" tabindex="3">
+	<input type=button name="cancel" value="Cancel" onClick="history.back()"></font></td>
+	</tr>
+	</table>
+
+<br><FONT size=1>Default: admin/admin</FONT>
+
+</div>
+
+<!-- #include virtual="<$g_Templates>common/focusform.html" -->
+</BODY>
+</HTML>

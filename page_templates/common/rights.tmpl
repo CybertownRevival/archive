@@ -1,0 +1,13 @@
+<!-- common/rights.tmpl -->
+<!-- display rights frameset -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+<frameset rows="140,*" border=0>
+	<frame name="overview" src="place<$g_exe>?ac=print&tpl=common/rightstop&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&PRI=<$DTY>"
+         scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+	<frame name="detail" src="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&TPL=common/updownerrights&PRI=<$DTY>" 
+         scrolling="auto">
+</frameset>
+</html>

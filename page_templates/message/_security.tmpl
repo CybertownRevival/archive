@@ -1,0 +1,47 @@
+<!-- msserver/member.tmpl -->
+<HTML>
+<HEAD>
+<TITLE>Security Alert</TITLE>
+</HEAD>
+<SCRIPT LANGUAGE="javascript">
+function doClose()
+{
+  if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+    alert("Please close the window by clicking on the X in the upper right corner.");
+  else
+    self.close();
+}
+</SCRIPT>
+<BODY onLoad="document.MSG.TEXT.focus();" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" TEXT="#D0DBF7">
+<H3>Security Alert</H3>
+
+Please use this form ONLY in real security problem situations.
+False reports will result in a fine of 1000 City Cash being deducted from your Cybertown account.
+<P>
+Please describe the nature of the offense and where the offender is currently located:
+<FORM NAME=MSG METHOD=GET ACTION="<$g_cgiRoot>/message<$g_exe>">
+<INPUT TYPE=HIDDEN NAME="TPL" value="<$TPL>">
+<INPUT TYPE=HIDDEN NAME="TKT" value="<$TKT>">
+<INPUT TYPE=HIDDEN NAME="ac" value="postmessage">
+<INPUT TYPE=HIDDEN NAME="ROL" value="08200000600004040000000100000000">
+<INPUT NAME="TEXT" VALUE="I have a security problem. Please contact me fast." MAXLENGTH=128 SIZE=52>
+<INPUT TYPE=SUBMIT NAME=SUBMIT value=Send>
+<INPUT TYPE=BUTTON NAME=Close VALUE=Close onClick="doClose()">
+</FORM>
+<!-- #if variable="FOUND" == value="0" -->
+There is no City Security online. Please send an email to 
+<A HREF="mailto:Security@colonycity.com">Security@colonycity.com</A>
+<!-- #endif variable="FOUND" -->
+<!-- #if variable="FOUND" == value="1" -->
+1 City Security guy reached.
+<!-- #endif variable="FOUND" -->
+<!-- #if variable="FOUND" >= value="2" -->
+<$FOUND> City Security guys reached.
+<!-- #endif variable="FOUND" -->
+
+</BODY>
+</HTML>
+
+
+
+

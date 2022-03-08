@@ -1,0 +1,53 @@
+### blaxxun CCpro - place definition file
+### ------------------------------------------
+server 		        	<$cserver>
+port 		        	<$csport>
+scene                           <$g_SceneServer><$g_cgiRoot>/place?ID=<$ID>&plc=enter&ac=3D&IE=x.bxx <$scenename>
+3dscene 			<$g_HttpServer><$g_HTMLRoot>/places/enter/vrml/enter.wrl
+avatarworld         		<$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm
+sname               		City Plaza
+vrmlmyavatar			<$3Dscene>
+uselastscene			1
+
+### Authentication
+authenticationid		<$MID>
+authenticationpw		<$COOKIE>
+nickname	    		<$NNM>
+protectnickname		1
+settingslistflag		111111
+
+### Roles
+prenickname			<$NAM>
+postnickname 			<$EXP>
+
+### Joinmessage
+joinmessage		0
+
+
+### Voice
+voicesupport		1
+clientvoiceenable	1
+botvoiceenable		1
+
+### Diverse
+noblaxxunhelp		1
+useversionserver	0
+listtabflag                             110010111
+##listtabflag                           <$list_flag>
+frameset			<$frameset>
+###frameset			<$g_HttpServer><$g_cgiRoot>/<$frameset>
+htmlframe			HTML
+framesizes			60
+
+### Colors
+logcolor	0
+panelbackrgb          	0,80,0
+paneltextrgb          	0,223,0
+
+### Chat colors
+inputtextchatrgb       	255,255,0
+systemtextchatrgb      	0,255,220
+historytextchatrgb  	250,250,250
+bottextchatrgb         	0,195,255
+owntextchatrgb         	255,255,0
+othertextchatrgb       	255,160,0

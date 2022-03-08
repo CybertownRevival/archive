@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<h2>Delete Home</h2>
+
+<!-- #ifdef variable="OWN_ID" value="00000169" -->
+<p><font size=+1 color=red>
+Sorry <$NNM>, deletion of this home is not allowed. <br>Please contact a Community Technician if an explanation is required.</font>
+</p>
+<!-- #endif variable="OWN_ID" value="00000169" -->
+
+<!-- #ifndef variable="OWN_ID" value="00000169" -->
+<p>
+Do you really want to <b>destroy</b> <font size=+1><b><$NAM></b></font>?
+</p>
+
+<p><font size=+1 color=red>
+Please contact the resident before deleting his home to make sure he's not willing to 
+return to the city (he might be on a long vacation trip).</font>
+</p>
+
+<table border=0>
+<tr>
+<td width=180><b>Resident</b></td>
+<td><$ownername></td>
+</tr>
+
+<tr>
+<td><b>Experience</b></td>
+<td><$EXP></td>
+</tr>
+
+<tr>
+<td><b>Immigration</b></td>
+<td><$IMD_DAYNAME>, <$IMD_MONNAME> <$IMD_MDAy> <$IMD_YEAR></td>
+</tr>
+
+<tr>
+<td><b>Last Access</b></td>
+<!-- #ifdef variable="LAD_DAYNAME" -->
+<td><$LAD_DAYNAME>, <$LAD_MONNAME> <$LAD_MDAy> <$LAD_YEAR></td>
+<!-- #endif variable="LAD_DAYNAME" -->
+<!-- #ifndef variable="LAD_DAYNAME" -->
+<td><$IMD_DAYNAME>, <$IMD_MONNAME> <$IMD_MDAy> <$IMD_YEAR></td>
+<!-- #endif variable="LAD_DAYNAME" -->
+</tr>
+
+<!-- #ifdef variable="EXD_DAYNAME" -->
+<tr>
+<td><b>Exclusion Date</b></td>
+<td><$EXD_DAYNAME>, <$EXD_MONNAME> <$EXD_MDAy> <$EXD_YEAR></td>
+</tr>
+<!-- #endif variable="EXD_DAYNAME" -->
+</table>
+
+<p>
+<b><i><font color=yellow>
+All related information, personal images, messages, houses will be removed, too!
+<br>
+But money, experience and jobs of the citizen will remain unchanged.
+</font></i></b>
+</p>
+
+<!-- #ifdef variable="delete_allowed" -->
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="deletesubmit">
+<input type=hidden name="ID" value="<$ID>">
+
+<table align=center border=0>
+<tr align=center>
+<td width=250>&nbsp;</td>
+<td>
+</tr>
+<tr>
+<input type=submit name="yes" value=Yes>
+<input type=button name="no" value=No onClick="history.back()">
+</td>
+</tr>
+</table>
+
+</form>
+<!-- #endif variable="delete_allowed" -->
+
+<!-- #ifndef variable="delete_allowed" -->
+<p>
+<b><font color=yellow>
+The last access date is less than 4 weeks old!<br>
+So you have to wait before removing this home!
+</font></b>
+</p>
+
+<!-- #endif variable="delete_allowed" -->
+
+<!-- #endif variable="OWN_ID" value="00000169" -->
+
+</center>
+</BODY>
+</HTML>

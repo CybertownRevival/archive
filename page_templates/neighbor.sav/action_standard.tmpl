@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- neighbor/action_standard.tmpl -->
+<base target="_top">
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body1.tmpl" -->
+<!-- #include virtual="<$g_Templates>place/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<a href="neighbor<$g_exe>?ac=place&ID=<$ID>" target="place">
+<b><i><font face="Arial" size=+0 color="#00FF00"><$NAM></font></b></i></a><br>
+
+<!-- #include virtual="<$g_Templates>common/control.tmpl" -->
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('neighbor<$g_exe>?ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+<a href="community<$g_exe>?ID=<$commid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$commname></b></a><br>
+<!-- #endif variable="readaccess" -->
+<br>
+<!-- #ifdef variable="writeaccess" -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=N&KTY=ID&KEY=<$ID>&MTY=m&program=neighbor" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="neighbor<$g_exe>?ac=wizardplace&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&PLC=neighbor&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>common/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

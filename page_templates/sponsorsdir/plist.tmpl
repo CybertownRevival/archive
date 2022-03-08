@@ -1,0 +1,118 @@
+<HTML>
+<!-- clubdir/plist.tmpl -->
+<!-- club list for image check -->
+<HEAD>
+	<title><$g_title></title>
+	<base target="place">
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    document.FilterForm.KFT.value = document.FilterForm.KFT.value.toLowerCase();
+
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length, document.FilterForm.KFT.value.length-1 )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";  
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H2 align=center><font color=#80ff00>Check Images: <$ID_3NAM_0></font></H2>
+
+<CENTER>
+If a club has a locked images you can see it in the 'Status' column.<BR>
+To the club images, click on the club name.
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input TYPE="hidden" NAME="ac" value="<$ac>">
+    <input TYPE="hidden" NAME="TPL" value="<$TPL>">
+
+    Filter:&nbsp;&nbsp;<INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <TABLE ALIGN=center>
+    <TR>
+        <td>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+            <!--#ifdef variable="[PREV]" -->
+                <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+        </td>
+    </TR>
+    </TABLE>
+</form>
+
+<!--#define variable="locked" value="0"-->
+
+<table align="center" cellspacing="0" cellpadding="1" border="1">
+    <form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+        <tr>
+          <th nowrap width=150><font color=#80ff00>Club Name</th>
+          <th nowrap width=150><font color=#80ff00>Club Owner</th>
+          <th nowrap width=150><font color=#80ff00>Status</th>
+        </tr>
+
+    <!--#for loopname="list" loopvars="ID_" -->
+
+    <!--#ifdef variable="STC_" value="1"-->
+        <!--#define variable="locked" value="1"-->
+    <!--#endif variable="STC_" -->
+
+    <!--#ifdef variable="ST1_" value="1"-->
+        <!--#define variable="locked" value="1" -->
+    <!--#endif variable="ST1_" -->
+    <!--#ifdef variable="ST2_" value="1"-->
+        <!--#define variable="locked" value="1" -->
+    <!--#endif variable="ST2_" -->
+    <!--#ifdef variable="ST3_" value="1"-->
+        <!--#define variable="locked" value="1" -->
+    <!--#endif variable="ST3_" -->
+    <!--#ifdef variable="STM_" value="1"-->
+        <!--#define variable="locked" value="1" -->
+    <!--#endif variable="STM_" -->
+    <!--#ifdef variable="STA_" value="1"-->
+        <!--#define variable="locked" value="1" -->
+    <!--#endif variable="STA_" -->
+        <tr>
+            <td nowrap align=center>
+            <A HREF="edit<$g_exe>?ac=read&KEY=<$ID_>&TPL=clubdir/check&back=-1"><$NAM_></a>
+            </td>
+            <td nowrap align=center><$OWN_NNM_></td>
+            <!--#ifdef variable="locked" value="0"-->
+                <td align=center>&nbsp;</td>
+            <!--#endif variable="locked" -->
+            <!--#ifdef variable="locked" value="1"-->
+            <!--#define variable="locked" value="0" -->
+                <td align=center>Images locked</td>
+            <!--#endif variable="locked" -->
+        </tr>
+
+    <!--#endfor loopname="list" -->
+
+    </form>
+</table>
+</center>
+<BODY>
+</HTML>

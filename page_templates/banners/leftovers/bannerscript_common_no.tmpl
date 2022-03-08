@@ -1,0 +1,19 @@
+<SCRIPT LANGUAGE="JavaScript">  
+var banners = new Array(5);  
+  
+banners[0] = '<center><a href="javascript:loadCustom(\'https://www.secureorderprocess.com/blaxxun/\',\'640\',\'480\')" target=_self><img src=/places/enter/images/avafinal1.gif alt="Blaxxun Avatar Studio" height=60 width=468 border=0></a></center>';  
+banners[1] = '<center><a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=club&ID=CL00000000001b9b" target="_top"><img src="/places/enter/images/newinfo.jpg" alt="Newcomers Info" height=60 width=468 border=0></a></center>';
+banners[2] = '<center><img src="/events/patriot/patriotban01.jpg" alt="The Patriot Party" height=60 width=468 border=0></center>';
+banners[3] = '<center><img src="/events/patriot/patriotban02.jpg" alt="The Patriot Party" height=60 width=468 border=0></center>';
+banners[4] = '<center><a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0107000000000000" target="_top"><img src="/events/patriot/patriotban03.jpg" alt="The Patriot Movie Premier Party" height=60 width=468 border=0></a></center>';
+
+function getrandom() {  
+var random = Math.floor((Math.random() * 5));  
+return random;  
+}  
+function showbanner() {  
+var bannernumber = getrandom();  
+document.write(banners[bannernumber]);  
+}  
+</SCRIPT>  
+  

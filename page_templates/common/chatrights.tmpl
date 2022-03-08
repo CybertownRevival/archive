@@ -1,0 +1,13 @@
+<!-- common/chatrights.tmpl -->
+<!-- display rights frameset just for chat rights -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+<frameset rows="140,*" border=0>
+	<frame name="overview" src="place<$g_exe>?ac=print&tpl=common/chatrightstop&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&PRI=<$PRI>"
+         scrolling="no" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+	<frame name="detail" src="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&cht=1&TPL=common/updwriterights&PRI=<$PRI>" 
+         scrolling="auto">
+</frameset>
+</html>

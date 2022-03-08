@@ -1,0 +1,167 @@
+<!-- property/javachat.tmpl -->
+<!-- included in the place.tmpl of a property -->
+<!-- see a description of the parameters in the Java chat documentation -->
+
+<!-- #ifdef variable="chatreadaccess" -->
+<div align=center>
+<!-- #ifdef variable="chatwriteaccess" -->
+    <small><font color="#FFFF00"><center>Visitors can only watch the chat, they cannot talk to you! </center></font></small>
+<!-- #endif variable="chatwriteaccess" -->
+<!-- #ifndef variable="chatwriteaccess" -->
+    <small><font color="#FFFF00"><center>Sorry, you can only watch the chat!</center></font></small>
+<!-- #endif variable="chatwriteaccess" -->
+<applet codebase="<$g_JAVARoot>/java/contact"
+		archive="classes2.zip"
+		code="BXApplet.class"
+		id="chat"
+		name="blaxxun Contact"
+		width=580 height=190>
+
+    <param name = "cabbase"         value="blaxxunContactJava.cab">
+
+<small><p><font color="#FFFF00">The 2D Chat requires Java (you must enable Java in your browser).</font><br><font color="#00FF00">&nbsp;&nbsp;Netscape 4.x: menu 'edit-preferences-advanced-enable java'<br>&nbsp;&nbsp;IE 4.x: menu 'view-internet options-advanced-enable java'</p><p><font color="#FFFF00">If you do not want to enable Java please settle down in a colony and update your personal data (chat option = no chat).</p></small>
+
+    <param name=startroom	value="<$scenename>@<$g_SceneServer><$g_cgiRoot>/property?ID=<$ID>&ac=3D&IE=x.bxx">
+
+    <param name = useTCP					value = false>
+    <param name = port						value = <$port>>
+    <param name = usePassword				value = true>
+    <param name = nickname					value = "<$NNM>">
+    <param name = role						value = "<$rolename>">
+    <param name = experience				value = "<$stdexp>">
+    <param name = userid					value = "<$MID>">
+    <param name = password					value = "<$COOKIE>">
+
+    <param name = ui						value = 7>
+
+    <param name = openroomreplace			value = "ac=3D'ac=index2d'_top">
+    <param name = frame						value = false>
+    <param name = breakLines				value = true>
+
+<!-- #ifdef variable="chatwriteaccess" -->
+    <param name = lockInput					value = false>
+<!-- #endif variable="chatwriteaccess" -->
+
+<!-- #ifndef variable="chatwriteaccess" -->
+    <param name = lockInput					value = true>
+<!-- #endif variable="chatwriteaccess" -->
+
+    <param name = logTime						value = 10>
+
+    <param name = borderSize				value = 4>
+
+    <param name = appbgcolor				value = 00009200>
+    <param name = myavfgcolor				value = 00FFFF00>
+    <param name = myavfontstyle			value = PLAIN>
+
+    <param name = sysmessfgcolor  	value = 00FFFFFF>
+    <param name = sysmessfontstyle 	value = BOLD>
+
+    <param name = historyfgcolor		value = 00FFFFFF>
+    <param name = historyfontstyle	value = ITALIC>
+    <param name = whisperfgcolor		value = 0000C3FF>
+    <param name = whisperfontstyle	value = PLAIN>
+
+    <param name = chatbgcolor				value = 00004d00>
+    <param name = chatfgcolor				value = 0000df00>
+
+    <param name = ctlbgcolor				value = 00004d00>
+    <param name = ctlfgcolor				value = 0000df00>
+
+    <param name = cntl.rbg					value = 00004d00>
+    <param name = cntl.rfg					value = 00ffff00>
+
+    <param name = displayLinks                  value = true>
+    <param name = linkTerm                      value = ", ;:?!<*>">
+    <param name = linkfgcolor                   value = 00FF5000>
+    <param name = maxFontsize                   value = 30>
+    <param name = setFontsize                   value = "/+">
+
+    <param name = redImageUrl                   value = "images/redball.gif">
+    <param name = scdefImageUrl                 value = "images/sc_def.gif">
+    <param name = scmeImageUrl                  value = "images/sc_me.gif">
+    <param name = objImageUrl                   value = "images/obj_def.gif">
+
+    <param name = ignoreImageUrl                value = "images/av_mute.gif">
+    <param name = meImageUrl                    value = "images/av_me.gif">
+    <param name = CCproImageUrl                 value = "images/av_def.gif">
+    <param name = CCstd1ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd2ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd3ImageUrl                value = "images/av_invis.gif">
+    <param name = historyfgcolor                value = 00FFFFFF>
+    <param name = historyfontstyle      value = ITALIC>
+    <param name = whisperfgcolor                value = 0000C3FF>
+    <param name = whisperfontstyle      value = PLAIN>
+
+    <param name = chatbgcolor                           value = 00004d00>
+    <param name = chatfgcolor                           value = 0000df00>
+
+    <param name = ctlbgcolor                            value = 00004d00>
+    <param name = ctlfgcolor                            value = 0000df00>
+
+    <param name = cntl.rbg                                      value = 00004d00>
+    <param name = cntl.rfg                                      value = 00ffff00>
+
+    <param name = displayLinks                  value = true>
+    <param name = linkTerm                      value = ", ;:?!<*>">
+    <param name = linkfgcolor                   value = 00FF5000>
+    <param name = maxFontsize                   value = 22>
+    <param name = setFontsize                   value = "/+">
+
+    <param name = redImageUrl                   value = "images/redball.gif">
+    <param name = scdefImageUrl                 value = "images/sc_def.gif">
+    <param name = scmeImageUrl                  value = "images/sc_me.gif">
+    <param name = objImageUrl                   value = "images/obj_def.gif">
+
+    <param name = ignoreImageUrl                value = "images/av_mute.gif">
+    <param name = meImageUrl                    value = "images/av_me.gif">
+    <param name = CCproImageUrl                 value = "images/av_def.gif">
+    <param name = CCstd1ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd2ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd3ImageUrl                value = "images/av_invis.gif">
+    <param name = linkfgcolor                   value = 00FF5000>
+    <param name = maxFontsize                   value = 22>
+    <param name = setFontsize                   value = "/+">
+
+    <param name = redImageUrl                   value = "images/redball.gif">
+    <param name = scdefImageUrl                 value = "images/sc_def.gif">
+    <param name = scmeImageUrl                  value = "images/sc_me.gif">
+    <param name = objImageUrl                   value = "images/obj_def.gif">
+
+    <param name = ignoreImageUrl                value = "images/av_mute.gif">
+    <param name = meImageUrl                    value = "images/av_me.gif">
+    <param name = CCproImageUrl                 value = "images/av_def.gif">
+    <param name = CCstd1ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd2ImageUrl                value = "images/av_invis.gif">
+    <param name = CCstd3ImageUrl                value = "images/av_invis.gif">
+    <param name = CSbotsImageUrl                value = "images/av_bot.gif">
+    <param name = CSliteImageUrl                value = "images/av_invis.gif">
+
+    <param name = chatColor1                    value = "00ff5000">
+    <param name = chatColor1Name                value = "/orange">
+    <param name = chatColor2                    value = "00ff0000">
+    <param name = chatColor2Name                value = "/red">
+    <param name = chatColor3                    value = "0000c3ff">
+    <param name = chatColor3Name                value = "/blue">
+    <param name = chatColor4                    value = "00000000">
+    <param name = chatColor4Name                value = "/black">
+    <param name = chatColor5                    value = "00ffff00">
+    <param name = chatColor5Name                value = "/yellow">
+    <param name = chatColor6                    value = "00ffffff">
+    <param name = chatColor6Name                value = "/white">
+    <param name = chatColor7                    value = "0000ff00">
+    <param name = chatColor7Name                value = "/green">
+    <param name = chatColor8                    value = "00c00080">
+    <param name = chatColor8Name                value = "/purple">
+
+    <param name = chatImage1                    value = "images/smile.gif">
+    <param name = chatImage1Name                value = "smile">
+
+</applet>
+</div>
+<!-- #endif variable="chatreadaccess" -->
+
+<!-- #ifndef variable="chatreadaccess" -->
+    <font color="#FF0000"><center><b>Sorry <$NNM>, you are not allowed to watch the Chat here :(</b></font>
+<!-- #endif variable="chatreadaccess" -->
+<!-- end of include property/javachat.tmpl -->

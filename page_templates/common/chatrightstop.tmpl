@@ -1,0 +1,27 @@
+<!-- common/chatrightstop.tmpl -->
+<!-- buttons for updating only chat rights -->
+<html>
+<head>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<center>
+<table><tr>
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&cht=1&TPL=common/updreadrights&PRI=<$PRI>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsread.gif" BORDER=0 ALT="Chat Read Access"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="edit<$g_exe>?ac=read&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&cht=1&TPL=common/updwriterights&PRI=<$PRI>"
+><IMG SRC="<$g_Images>/images/buttons/icon_rightsaction.gif" BORDER=0 ALT="Chat Write Access"></a>
+
+<td width=20% align=center valign=bottom>
+<a target="detail" href="<$g_HTMLRoot>/info/help/rights.html">
+<IMG SRC="<$g_Images>/images/buttons/icon_rightsinfo.gif" BORDER=0 ALT="Change Rights"></a>
+</tr>
+</table>
+
+</center>
+</BODY>
+</html>

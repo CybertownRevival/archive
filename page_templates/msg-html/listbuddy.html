@@ -1,0 +1,132 @@
+<!-- msg/listbuddy.html -->
+<!--- buddy list --->
+
+<html>
+<head>
+
+<title><$g_title></title>
+
+<!-- #define variable="T_LB" value="<$T_LB>" -->
+<!-- #include file="<$g_Templates>/common/browser.html" -->
+<!-- #include file="<$g_Templates>/msg/msg.js" -->
+
+<script language="javascript">
+
+onlineMembersID  = new Array();
+onlineMembersNNM = new Array();
+
+<!--#for loopname="loopopen" loopvars="ID_" -->
+onlineMembersID[<$loopindex>]= "<$ID_>";
+onlineMembersNNM[<$loopindex>]= "<$NNM_>";
+<!--#endfor loopname="loopopen" -->
+
+</script>
+
+</head>
+
+<form name="uform" method=post action="">
+<body class=info onload="">
+
+<!-- #if variable="T_LB" == value="profile" -->
+  <!-- #define variable="heading" value="Profile" -->
+  <!-- #define variable="up_url" value="javascript:msgGoto('profile','<$MEM_ID>')" -->
+<!-- #else variable="T_LB" --> 
+  <!-- #define variable="heading" value="Messages" -->
+  <!-- #define variable="up_url" value="javascript:msgGoto('status')" -->
+<!-- #endif variable="T_LB" --> 
+
+<!-- #if variable="T_LB" != value="profile" -->
+
+<!-- #ifndef variable="isVisitor" --> 
+
+<!-- #define variable="b_img_0" value="btnopt_inbox.gif" -->
+<!-- #define variable="b_url_0" value="javascript:msgGoto('inbox')" -->
+<!-- #define variable="b_alt_0" value="My Message Inbox" -->
+
+<!-- #define variable="b_img_1" value="btnopt_outbox.gif" -->
+<!-- #define variable="b_url_1" value="javascript:msgGoto('outbox')" -->
+<!-- #define variable="b_alt_1" value="My Message Outbox" -->
+
+<!-- #define variable="b_img_2" value="btnopt_alerts.gif" -->
+<!-- #define variable="b_url_2" value="javascript:msgGoto('alert')" -->
+<!-- #define variable="b_alt_2" value="My Alerts" -->
+<!-- #define variable="b_br_2"  value="1" -->
+
+<!-- #define variable="b_img_3" value="btnopt_sendmessage.gif" -->
+<!-- #define variable="b_url_3" value="javascript:msgGoto('send')" -->
+<!-- #define variable="b_alt_3" value="Send New Message" -->
+  
+<!-- #define variable="b_img_4" value="btnopt_buddylist.gif" -->
+<!-- #define variable="b_url_4" value="javascript:msgGoto('buddylist')" -->
+<!-- #define variable="b_alt_4" value="My Buddylist" -->
+<!-- #define variable="b_br_4"  value="1" -->
+
+<!-- #define variable="b_img_5" value="btnopt_securityalert.gif" -->
+<!-- #define variable="b_url_5" value="javascript:msgGoto('send','Security Group','','Security')" -->
+<!-- #define variable="b_alt_5" value="Send Security Alert" -->
+
+<!-- #define variable="b_img_6" value="btnopt_broadcast.gif" -->
+<!-- #define variable="b_url_6" value="javascript:msgGoto('send','Broadcast Group','','Broadcast')" -->
+<!-- #define variable="b_alt_6" value="Send Broadcast Message" -->
+
+<!-- #endif variable="isVisitor" --> 
+
+<!-- #endif variable="T_LB" --> 
+
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<p class=head2>
+Buddy List
+</p>
+
+<$g_table>
+
+<tr>
+<td class=thbg><p class=thfont>Buddy</p></td>
+<td class=thbg><p class=thfont>Last Access</p></td>
+<td class=thbg><p class=thfont>&nbsp;</p></td>
+</tr>
+
+<!--#for loopname="loopopen1" loopvars="BUD_" -->
+<tr> 
+
+<td class=tdbg width="80%">
+<p class=tdfont>
+<a href="<$g_cgiRoot>/print<$g_exe>?TPL=member/info&DTY=M&ID=<$BUD_ID_><$g_SessionID>"><$BUD_NNM_></a>
+</p>
+</td>
+
+<td class=tdbg align=right><p class=tdfont>
+<$LAD_YEAR_>/<$LAD_MON_>/<$LAD_MDAY_>&nbsp;<$LAD_HOUR_>:<$LAD_MIN_>
+</p></td>
+
+<td class=tdbg align=center><p class=tdfont>
+<a href="javascript:msgDelBuddy('<$BUD_NNM_>','<$BUD_ID_>','<$T_LB>')"><img src="<$g_HTMLRoot>/images/icons/icon_del.gif" alt="Remove '<$BUD_NNM_>' from Buddy List" border=0 vspace=1 hspace=1></a>
+</p></td>
+
+</tr>
+<!--#endfor loopname="loopopen1" -->
+
+</table>
+
+<table border=0>
+<tr><td colspan=2><p class=subj>Add new Buddy to your Buddy List</p></td></tr>
+<tr><td>
+<p class=tdfont>
+<input type=hidden name="REC_NNM" value="<$REC_NNM>">
+<!--select name="REC_NNM"-->
+<!-- span class=cont -->
+<select name="REC_SEL">
+<!--#for loopname="loopopen" loopvars="ID_" -->
+<option value="<$ID_>"> <$NNM_>
+<!--#endfor loopname="loopopen" -->
+</select>
+<!-- /span -->
+<a href="javascript:msgAddBuddy('<$T_LB>')"><img src="<$g_HTMLRoot>/images/buttons/btnac_add.gif" alt="Add to Buddy List" border=0 align=absmiddle vspace=1 hspace=1></a>
+</p>
+</td></tr>
+</table>
+  <!-- #include file="<$g_Templates>/common/infobottom.html" -->
+</body>
+</form>
+</html>

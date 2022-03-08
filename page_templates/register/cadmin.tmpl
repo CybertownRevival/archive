@@ -1,0 +1,111 @@
+<html>
+<head>
+<title><$g_title> - Member Registration</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00"
+      ALINK="#FFFFFF" TEXT="#FFFF00">
+
+<table valign=top cellspacing=0 cellpadding=0 border=0 width=100%> <tr> <td height=10 width=15> </td></tr>
+<td> </td>
+<td>
+
+<center>
+<font size=+2>Registration - New Member</font>
+<img src="<$g_Images>/images/login/immicode.jpg" border=0 alt="Register">
+<br>
+<br>
+
+<font color="red">
+<font size=+1>
+
+<!-- #ifdef variable="registererror001" -->
+Name and passwords are required.
+<!-- #endif variable="registererror001" -->
+
+<!-- #ifdef variable="registererror002" -->
+Sorry, the nickname cannot contain a '/'.
+<!-- #endif variable="registererror002" -->
+
+<!-- #ifdef variable="registererror003" -->
+Sorry, the password and the retyped password are different.
+<!-- #endif variable="registererror003" -->
+
+<!-- #ifdef variable="registererror004" -->
+	Sorry, this nickname is taken, try another one.
+<!-- #endif variable="registererror004" -->
+
+<!-- #ifdef variable="registererror005" -->
+	Sorry, this email is taken, try another one.
+<!-- #endif variable="registererror005" -->
+
+<!-- #ifdef variable="registererror006" -->
+	The referring member you entered is unknown, please check.
+<!-- #endif variable="registererror006" -->
+
+<!-- #ifdef variable="registererror010" -->
+	Sorry, the nickname contains not allowed characters.<br>
+	Allowed are [A-Z],[a-z],[0-9],'_','-','.'
+<!-- #endif variable="registererror010" -->
+
+<!-- #ifdef variable="registererror011" -->
+	Sorry, the nickname must start with an alphanumeric character.
+<!-- #endif variable="registererror011" -->
+
+<!-- #ifdef variable="registererror012" -->
+	Sorry, the email address contains not allowed characters.<br>
+	Allowed are [A-Z],[a-z],[0-9],'_','-','.'
+<!-- #endif variable="registererror012" -->
+
+<!-- #ifdef variable="registererror012" -->
+	OK!
+<!-- #endif variable="registererror012" -->
+
+<!-- #ifdef variable="registererror020" -->
+	Sorry, you don't have the right to register new members.
+<!-- #endif variable="registererror020" -->
+</center>
+
+</td></tr><tr><td height=100> </td><tr><td> </td><td>
+
+<form method=post action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+<td width=50%>Name:</td>
+<td width=50%><INPUT NAME="NNM" VALUE="<$NNM>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+<tr>
+<td>Email address:</td>
+<td><INPUT NAME="EML" VALUE="<$EML>" MAXLENGTH=64 SIZE=32></td>
+</tr>
+
+<tr>
+<td>Choose a password:</td>
+<td><INPUT type=password NAME="PWD" VALUE="<$PWD>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+<tr>
+<td>Retype the password:</td>
+<td><INPUT type=password NAME="PWD2" VALUE="<$PWD2>"  MAXLENGTH=16 SIZE=16></td>
+</tr>
+</table>
+<div align = center>
+<br>
+<br>
+<p>
+<input type=hidden name="ac" value="admin">
+<input type=hidden name="tpl" value="cadmin">
+<input type=hidden name="tpl2" value="cadmin2">
+<input type=hidden name="backurl" value="<$pbackurl>">
+<input type=submit name="submit" value="Register">
+<input type=submit name="cancel1" value="Cancel">
+</p>
+
+</form>
+
+</td></tr></table>
+</body>
+</html>
+

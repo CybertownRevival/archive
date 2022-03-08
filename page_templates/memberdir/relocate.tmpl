@@ -1,0 +1,52 @@
+<!-- memberdir/relocate -->
+<!--- list all chat members in a place --->
+<HTML>
+<HEAD>
+<!-- #define variable="T_NOHTML" value="1" -->
+<title><$g_title> - Member Directory</title>
+<base target="_self">
+<script language=JavaScript>
+function eject(nameofnic){
+	ejectwin = window.open('http://www.cybertown.com/cgi-bin/cybertown/message<$g_exe>?ac=notify&TPL=message/member&TAG=Ejected&TKT=<$TKT>&TO='+nameofnic+'&<$CT_STR>','refresh');
+}
+
+<!-- #ifdef variable="isAdmin" -->
+
+function parking(relocate){
+	ejectwin = window.open('http://www.cybertown.com/cgi-bin/cybertown/message<$g_exe>?ac=notify&RELOCATE='+relocate+'&TPL=message/member&TAG=Parking&TKT=<$TKT>&TO=<$NNM_>&<$CT_STR>','refresh');
+}
+
+
+<!-- #endif variable="isAdmin" -->
+</script>
+</head>
+
+<!-- #define variable="T_NOHTML" value="1"-->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifdef variable="isAdmin" -->
+
+<font color=lime face=tahoma>
+
+<center><h1> Relocate <$NNM_> </h1></center>
+<p>
+<blockquote>
+
+Where shall you send <$NNM_> ?
+<br>
+<i>Please note clicking one of the links below will instantly transport <$NNM_> to the destination you have chosen</i><br>
+<a href="javascript:parking('Plaza')">City Plaza</a>
+<br>
+<a href="javascript:parking('Home')">Home</a>
+<br>
+<a href="javascript:parking('Jail')">Jail</a>
+
+
+<!-- #endif variable="isAdmin" -->
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+
+</BODY>
+</HTML>

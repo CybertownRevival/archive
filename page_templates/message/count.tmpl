@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>Member Count</TITLE>
+<BODY BACKGROUND='http://www.cybertown.com/images/back.gif' BGCOLOR="#002020" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<DIV align=center><IMG SRC="http://www.cybertown.com/images/ctlogo.gif" BORDER=0>
+<br><FONT size=-1 color="#33CCCC">City Time <$Ap>:<$MIN> <$APM><BR>
+</FONT>
+<FONT size=-1>
+<!-- #if variable="NNM" == value="Visitor" --> 
+<!-- #if variable="NUM" <= value="1"-->
+Citizens Online
+<!-- #endif variable="NUM" -->
+<!-- #if variable="NUM" >= value="2"-->
+Citizens Online
+<!-- #endif variable="NUM" -->
+<!-- #endif variable="NNM" >
+<!-- #if variable="NNM" != value="Visitor" --> 
+<!-- #if variable="NUM" <= value="1"-->
+<A HREF="javascript:parent.list('<$g_cgiRoot>/message<$g_exe>?TPL=message/list&ac=list&NNM=<$NNM>&TIME=<$CT_STR>')">Citizen Online</A>
+<!-- #endif variable="NUM" -->
+<!-- #if variable="NUM" >= value="2"-->
+<A HREF="javascript:parent.list('<$g_cgiRoot>/message<$g_exe>?TPL=message/list&ac=list&NNM=<$NNM>&TIME=<$CT_STR>')">Citizens Online</A>
+<!-- #endif variable="NUM" -->
+<!-- #endif variable="NNM" >
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+<!-- common/browser -->
+<!--- check the browser and select suitable CSS file, include this template in any templates --->
+<!-- #if variable="ENV_HTTP_USER_AGENT" contains value="MSIE" -->
+<!-- browser ist IE -->
+<link rel=stylesheet type="text/css" href="<$g_HTMLRoot>/css/ie.css">
+<!-- #endif variable="ENV_HTTP_USER_AGENT" -->
+
+<!-- #if variable="ENV_HTTP_USER_AGENT" !contains value="MSIE" -->
+<!-- browser ist NN -->
+<link rel=stylesheet type="text/css" href="<$g_HTMLRoot>/css/nn.css">
+<!-- #endif variable="ENV_HTTP_USER_AGENT" -->

@@ -1,0 +1,84 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<BASE target="place">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<script language=javascript>
+function lowerthem()
+
+{
+	document.deshomefrm.HTR3.value = document.deshomefrm.HTR3.value.toLowerCase();	
+}
+</script>
+<font face="Arial">
+<p align=center>
+<b>Sell your Designer Home</b>
+</p>
+
+<!-- #ifdef variable="T_RESULT" value="ok" -->
+<font color="#00FF00"><center><i><$NNM>, your home sale data has been updated successfully.</i></font>
+<!-- #endif variable="T_RESULT" -->
+
+<center>
+<form method=post action="<$selfurl>" name="deshomefrm" target="place" onSubmit="lowerthem();">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+Below you can enter the settings which you wish to use to sell your designer home. 
+<br>Please note that this is a beta feature and as such Cybertown does not accept responsibility for any failed 
+transfers.
+<BR>
+<BR>
+<center>
+<input type="Radio" name="HTR1" value="YES" 
+<!--#ifdef variable="HTR1" value="YES" -->
+checked
+<!--#endif variable="HTR1" -->
+> For Sale &nbsp;
+	
+<input type="Radio" name="HTR1" value=""
+<!--#ifndef variable="HTR1" value="YES" -->
+checked
+<!--#endif variable="HTR1" -->
+> Not For Sale
+<BR><BR>
+Price:&nbsp;<INPUT NAME="HTR2" VALUE="<$HTR2>" MAXLENGTH=32 SIZE=20>
+<BR><BR>
+Buyer:&nbsp;<INPUT NAME="HTR3" VALUE="<$HTR3>" MAXLENGTH=32 SIZE=20>
+<BR><BR>
+<center>
+<input type="Radio" name="HTR4" value="WITH" 
+<!--#ifndef variable="HTR4" value="WITHOUT" -->
+checked
+<!--#endif variable="HTR4" -->
+> With Objects &nbsp;
+	
+<input type="Radio" name="HTR4" value="WITHOUT"
+<!--#ifdef variable="HTR4" value="WITHOUT" -->
+checked
+<!--#endif variable="HTR4" -->
+> Without Objects
+
+<p>
+
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="property/deshometrade">
+<input type=hidden name="ac" value="read">
+<input type=hidden name="BODYTY" value="C">
+<input type=hidden name="BODYID" value="<$BODYID>">
+<input type=hidden name="OID" value="<$OID>">
+<input type=hidden name="T_RESULT" value="ok">
+<a name=submitbutton></a>
+<BR>
+<input type=submit name="edit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</CENTER>
+
+</form>
+
+</BODY>
+</HTML>

@@ -1,0 +1,30 @@
+<!-- community/action.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</head>
+
+<center>
+<!-- #ifndef variable="ID" value="0110000000000000" -->
+<!-- #ifndef variable="ID" value="0105000000000000" -->
+<!-- #ifndef variable="ID" value="0111000000000000" -->
+<!-- #include virtual="<$g_Templates>community/action_standard.tmpl" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0110000000000000" -->
+<!-- #include virtual="<$g_Templates>community/action_hi-tek.tmpl" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0105000000000000" -->
+<!-- #include virtual="<$g_Templates>community/action_inner-realms.tmpl" -->
+<!-- #endif variable="ID" -->
+<!-- #ifdef variable="ID" value="0111000000000000" -->
+<!-- #include virtual="<$g_Templates>community/action_imagery.tmpl" -->
+<!-- #endif variable="ID" -->
+
+</body>
+</html>
+
+
+

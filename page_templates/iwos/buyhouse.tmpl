@@ -1,0 +1,155 @@
+<html>
+<!-- iwos/buyhouse.tmpl -->
+<!-- buying a iwos house -->
+<head>
+<title>blaxxun - Intel<sup>&reg;</sup> WebOutfitter<sup>(SM)</sup> 3D Homes</title>
+<script language="javascript">
+
+  function doClose()
+  {
+    if ( navigator.userAgent.indexOf('MSIE 3') > 0 )
+      alert("Please close the window by clicking on the X in the upper right corner.");
+    else
+      self.close();
+  }
+
+</script>
+</head>
+
+<!-- #define variable="URL" value="<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/homebg.gif"-->
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/homesearch.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<center>
+
+<h2>Intel<sup>&reg;</sup> WebOutfitter<sup>(SM)</sup> Service<br> 3D Homes</h2>
+<table border="0">
+  <tr>
+    <td>
+      <IMG SRC="<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/home.gif" width="250">
+    </td>
+    <td rowspan="2">
+      <!-- #ifdef variable="CNT" value="00000000"-->
+        There are none available.<br>
+        <!-- #define variable="CNTprinted" value="true"-->
+      <!-- #endif variable="CNT" -->
+      <!-- #ifdef variable="CNT" value="00000001"-->
+        There is 1 still available.<br>
+        <!-- #define variable="CNTprinted" value="true"-->
+      <!-- #endif variable="CNT" -->
+      <!-- #ifndef variable="CNTprinted"-->
+        <!-- #ifdef variable="CNT"-->
+        There are <$CNT> still available.<br>
+      <!-- #endif variable="CNT" -->
+      <!-- #endif variable="CNTprinted" -->
+
+      <!-- #ifdef variable="CNT" -->
+        <!-- #ifdef variable="TPR" -->
+          One costs <$TPR> CCs.<br>
+        <!-- #endif variable="TPR" -->
+      <!-- #endif variable="CNT" -->
+      <!-- #ifndef variable="CNT" -->
+        <!-- #ifdef variable="TPR" -->
+          This object costs <$TPR> CCs.<br>
+        <!-- #endif variable="TPR" -->
+      <!-- #endif variable="CNT" -->
+      <br>
+        You have <$M_MON> CCs at the moment.<br>
+      <br>
+        Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=iwos/3d&WRL=<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/outside.wrl">here</a>
+        for a outside view of the house.<br>
+        Click <a href="place<$g_exe>?obj=3d&ac=print&tpl=iwos/3d&WRL=<$g_HTMLRoot>/home/0101000000000000/property/vrml/<$WR3>/home.wrl">here</a>
+        to visit the rooms of the house.<br>
+      <br>
+        Since you are choosing a new 3D VRML house,
+        the price for your current 3D VRML house
+        will be paid back to you. 
+    </td>
+  </tr>
+  <tr>
+    <td align=center><$NAM></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr align="left" valign="top"> 
+    <td colspan="2">
+      <!-- #ifdef variable="WR3" value="101"-->
+        A well designed modern house, 2000 square metres on two 
+        floors, 4 hexagonal rooms with hypermodern pipe corridors, which connects 
+        the first and the second floor. Beautiful garden around the house.<br>
+        Great benefit of this house is the possibility to select your individual 
+        colors and materials for all floors, ceilings, window frames, doors and 
+        walls.  
+      <!-- #endif variable="WR3" -->
+      <!-- #ifdef variable="WR3" value="102"-->
+        A spacious avant-garde building, 2500 square metres, 1 tremendous 
+        room where you can meet hundreds of AVA's, 3 hexagonal rooms, connected 
+        by pipe corridors. Beautiful garden around the house.<br>
+        Great benefit of this house is the possibility to select your individual 
+        colors and materials for all floors, ceilings, window frames, doors and 
+        walls. 
+      <!-- #endif variable="WR3" -->
+      <!-- #ifdef variable="WR3" value="103"-->
+        A futuristic avant-garde building, 3000 square metres, 3 
+        hexagonal rooms and 2 tremendous halls with hypermodern selfilluminated 
+        pipe corridors. Beautiful garden around the house.<br>
+        Great benefit of this house is the possibility to select your individual 
+        colors and materials for all floors, ceilings, window frames, doors and 
+        walls. 
+      <!-- #endif variable="WR3" -->
+    </td>
+  </tr>
+</table>
+
+
+<!-- #if variable="M_HOM" != value="" -->
+  <!--#define variable="settled" value="1" -->
+<!-- #endif variable="M_HOM" -->
+
+<!-- #ifdef variable="settled" -->
+<form action="<$g_cgiRoot>/iwos<$g_Exe>" method="POST">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="updatehome">
+
+  <input type=hidden name="ID" value="<$M_HOM>">
+  <input type=hidden name="IC2" value="<$P_IC2>">
+  <input type=hidden name="NAM" value="<$P_NAM>">
+  <input type=hidden name="IC3" value="<$WR3>">
+
+<!-- #ifndef variable="isVisitor" --> 
+  <td><input type=submit name="buyBtn" value="Buy"></td>
+<!-- #endif variable="isVisitor" -->
+  <td><input type="button" value="Close" onClick="doClose()"></td>
+
+</form>
+<!-- #endif variable="settled" -->
+
+
+<!-- #ifndef variable="settled" -->
+<form action="<$g_cgiRoot>/iwos<$g_Exe>" method="POST">
+
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="findhome">
+
+  <input type=hidden name="IC3" value="<$WR3>">
+
+<!-- #ifndef variable="isVisitor" --> 
+  <td><input type=submit name="buyBtn" value="Buy"></td>
+<!-- #endif variable="isVisitor" -->
+  <td><input type="button" name="cancelBtn" value="Cancel" onClick="doClose()"></td>
+
+</form>
+<!-- #endif variable="settled" -->
+
+</body>
+</html>
+

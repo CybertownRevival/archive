@@ -1,0 +1,331 @@
+<!-- msg/listmessages.tmpl -->
+<!--- list received messages messages for current member --->
+
+<html>
+<head>
+<title> <$g_title> </title>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifndef variable="THREAD" --> 
+
+  <!-- #if variable="TYP" == value="I" --> 
+  <!-- #define variable="box_title" value="'s Inbox (<$MAXITER>)" -->
+  <!-- #define variable="date_title" value="Received" -->
+  <!-- #define variable="box_header_1" value="From" -->
+  <!-- #define variable="T_LB" value="inbox" -->
+  <!-- #endif variable="TYP" -->
+
+  <!-- #if variable="TYP" == value="O" --> 
+  <!-- #define variable="box_title" value="'s Outbox (<$MAXITER>)" -->
+  <!-- #define variable="date_title" value="Sent" -->
+  <!-- #define variable="box_header_1" value="To" -->
+  <!-- #define variable="T_LB" value="outbox" -->
+  <!-- #endif variable="TYP" -->
+
+  <!-- #if variable="TYP" == value="N" --> 
+  <!-- #define variable="box_title" value="'s Alerts (<$MAXITER>)" -->
+  <!-- #define variable="date_title" value="Start" -->
+  <!-- #define variable="T_LB" value="alert" -->
+  <!-- #endif variable="TYP" -->
+
+<!-- #else variable="THREAD" --> 
+
+<!-- #define variable="count_msg_str" value="" -->
+<!--#for loopname="loopopen" loopvars="ID_" -->
+  <!-- #if variable="TYP_" == value="I" -->
+  <!-- #define variable="compare" value="<$CRE_NNM_>" -->
+  <!-- #if variable="compare" == variable="T_TNAM" -->
+    <!-- #define variable="count_msg_str" value="X<$count_msg_str>" -->
+  <!-- #endif variable="compare" --> 
+  <!-- #else variable="TYP_" -->
+  <!-- #define variable="compare" value="<$REC_NNM_>" -->
+  <!-- #if variable="compare" == variable="T_TNAM" -->
+    <!-- #define variable="count_msg_str" value="X<$count_msg_str>" -->
+  <!-- #endif variable="compare" --> 
+  <!-- #endif variable="TYP_" --> 
+<!--#endfor loopname="loopopen" -->
+
+  <!-- #define variable="box_title" value="'s Message Thread (<script language='JavaScript'> document.write('<$count_msg_str>'.length); </script>)" -->
+
+  <!-- #define variable="date_title" value="Time" -->
+  <!-- #define variable="box_header_1" value="&nbsp;" -->
+  <!-- #define variable="T_LB" value="<$T_LB>" -->
+
+<!-- #endif variable="THREAD" -->
+
+<!-- #include virtual="<$g_Templates>common/browser.tmpl" -->
+<!-- #include virtual="<$g_Templates>msg/msg.js" -->
+
+</head>
+
+<form name="uform">
+<body class=info onload="javascript:msgNotifyMessageOff()">
+
+<!-- #include virtual="<$g_Templates>msg/buttons.tmpl" -->
+<!-- #ifndef variable="hideTemplate" --> 
+
+<!-- #ifdef variable="FILTER" --> 
+  <!-- #define variable="up_url" value="javascript:msgGoto('<$T_LB>')" -->
+<!-- #else variable="FILTER" -->
+<!-- #ifdef variable="THREAD" --> 
+  <!-- #define variable="up_url" value="javascript:msgGoto('<$T_LB>')" -->
+<!-- #else variable="THREAD" -->
+  <!-- #define variable="up_url" value="javascript:msgGoto('status')" -->
+<!-- #endif variable="THREAD" -->
+<!-- #endif variable="FILTER" -->
+
+<!-- #define variable="heading" value="Messages" -->
+<!-- #include virtual="<$g_Templates>common/infohead.tmpl" -->
+
+<center>
+<IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>
+
+<p class=head2><font face="Arial" size=3 color="#00ff00"><b><$MEM_NNM><$VIS_NNM><$box_title></p></b></font>
+
+
+<a href="javascript:msgGoto('inbox')" target="">
+<img src="/images/buttons60/btnopt_inbox.gif" alt="My Message Inbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('outbox')" target="">
+<img src="/images/buttons60/btnopt_outbox.gif" alt="My Message Outbox" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('alert')" target="">
+<img src="/images/buttons60/btnopt_alerts.gif" alt="My Alerts" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send')" target="">
+<img src="/images/buttons60/btnopt_sendmessage.gif" alt="Send New Message" border="0" vspace=1 hspace=1></a>
+
+<br>
+
+<a href="javascript:msgGoto('send','Broadcast Group','','Broadcast')" target="">
+<img src="/images/buttons60/btnopt_broadcast.gif" alt="Send Broadcast Message" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('send','Security Group','','Security')" target="">
+<img src="/images/buttons60/btnopt_securityalert.gif" alt="Send Security Alert" border="0" vspace=1 hspace=1></a>
+
+<a href="javascript:msgGoto('buddylist')" target="">
+<img src="/images/buttons60/btnopt_buddylist.gif" alt="My Buddylist" border="0" vspace=1 hspace=1></a>
+
+<!-- #define variable="colspan" value="2" -->
+
+<!-- #ifdef variable="FILTER" --> 
+  <!-- #define variable="box_header_1" value="&nbsp;" -->
+  <!-- #define variable="colspan" value="1" -->
+  <!-- #if variable="TYP" == value="I" --> 
+  <!-- #define variable="msg_icon_nam" value="icon_received.gif" -->
+  <!-- #define variable="msg_icon_alt" value="Received message" -->
+  <!-- #define variable="T_LB_P1" value="filter" -->
+  <!-- #define variable="T_LB_P2" value="<$CRE>" -->
+  <!-- #define variable="T_LB_P3" value="<$TYP>" -->
+  <p class=note>&nbsp;messages received from:&nbsp;<a 
+    href="<$g_cgiRoot>/edit<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$CRE>&SORT=Nickname&TPL=citizen/list"><$CRE_NNM></a></p>
+  <!--#endif variable="TYP" -->
+  <!-- #if variable="TYP" == value="O" --> 
+  <!-- #define variable="msg_icon_nam" value="icon_sent.gif" -->
+  <!-- #define variable="msg_icon_alt" value="Sent message" -->
+  <!-- #define variable="T_LB_P1" value="filter" -->
+  <!-- #define variable="T_LB_P2" value="<$REC>" -->
+  <!-- #define variable="T_LB_P3" value="<$TYP>" -->
+  <p class=note>&nbsp;messages sent to:&nbsp;<a 
+    href="<$g_cgiRoot>/print<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$REC_NNM_>&SORT=Nickname&TPL=citizen/list"><$REC_NNM></a>
+  <!--#endif variable="TYP" -->
+<!-- #endif variable="FILTER" -->
+
+
+<!-- #ifdef variable="THREAD" --> 
+  <!-- #define variable="colspan" value="1" -->
+  <!-- #define variable="T_LB_P1" value="thread" -->
+  <!-- #define variable="T_LB_P2" value="<$T_TNAM>" -->
+  <!-- #define variable="T_LB_P3" value="<$T_LB>" -->
+  <p class=note>&nbsp;with:&nbsp;<a 
+    href="<$g_cgiRoot>/edit<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$T_TNAM>&SORT=Nickname&TPL=citizen/list"><$T_TNAM></a>
+<!-- #endif variable="THREAD" -->
+
+<table cellspacing=1 border=0 width=80%>
+
+<tr >
+  <!-- #if variable="TYP" != value="N" --> 
+  <td class=thbg colspan=<$colspan>><p class=thfont><$box_header_1></p></td>
+  <td class=thbg><p class=thfont>Message</p></td>
+  <td class=thbg><p class=thfont><$date_title></p></td>
+  <!-- #else variable="TYP" --> 
+  <td class=thbg><p class=thfont>Message</p></td>
+  <td class=thbg><p class=thfont><$date_title></p></td>
+  <!--#endif variable="TYP" -->
+<td align=right class=thbg ><input type=checkbox name="DEL_SEL" value="" onclick="javascript:msgSelectList('<$ITER>')"></td>
+</tr>
+
+<!--#for loopname="loopopen" loopvars="ID_" -->
+
+<!-- #define variable="print_msg" value="true" -->
+
+<!-- #ifdef variable="THREAD" --> 
+<!-- #define variable="print_msg" value="false" -->
+<!-- #if variable="TYP_" == value="I" -->
+<!-- #define variable="compare" value="<$CRE_NNM_>" -->
+<!-- #if variable="compare" == variable="T_TNAM" -->
+  <!-- #define variable="print_msg" value="true" -->
+  <!-- #define variable="msg_icon_nam" value="icon_received.gif" -->
+  <!-- #define variable="msg_icon_alt" value="Received message" -->
+<!-- #endif variable="compare" --> 
+<!-- #else variable="TYP_" -->
+<!-- #define variable="compare" value="<$REC_NNM_>" -->
+<!-- #if variable="compare" == variable="T_TNAM" -->
+  <!-- #define variable="print_msg" value="true" -->
+  <!-- #define variable="msg_icon_nam" value="icon_sent.gif" -->
+  <!-- #define variable="msg_icon_alt" value="Sent message" -->
+<!-- #endif variable="compare" --> 
+<!-- #endif variable="TYP_" --> 
+<!-- #endif variable="THREAD" -->
+
+<!-- #if variable="print_msg" == value="true" -->
+<tr>
+
+<!-- #if variable="CFL_" == value="0" -->
+  <!-- #define variable="bold" value="focus" -->
+<!-- #else variable="CFL_" --> 
+  <!-- #define variable="bold" value="" -->
+<!-- #endif variable="CFL_" --> 
+
+<!-- #if variable="TYP" == value="N" --> 
+  <!-- #define variable="notifications" value="1" -->
+<!--#endif variable="TYP" -->
+
+<!-- #ifndef variable="notifications" --> 
+
+<td class=tdbg>
+<p class=tdfont<$bold>>
+
+<!-- #ifndef variable="FILTER" --> 
+  <!-- #if variable="TYP" == value="I" --> 
+  <a href="<$g_cgiRoot>/edit<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$CRE_NNM_>&SORT=Nickname&TPL=citizen/list"><$NNM_></a>
+  <!--#endif variable="TYP" -->
+  <!-- #if variable="TYP" == value="O" --> 
+  <a href="<$g_cgiRoot>/edit<$g_exe>?ac=list&DTY=M&KTY=NNM&KFT=<$REC_NNM_>&SORT=Nickname&TPL=citizen/list"><$NNM_></a>
+  <!--#endif variable="TYP" -->
+  <!-- #ifdef variable="THREAD" -->
+  <img src="<$g_HTMLRoot>/images/icons/<$msg_icon_nam>" alt="<$msg_icon_alt>" border=0 vspace=1 hspace=1>
+  <!-- #endif variable="THREAD" -->
+<!-- #else variable="FILTER" --> 
+  <img src="<$g_HTMLRoot>/images/icons/<$msg_icon_nam>" alt="<$msg_icon_alt>" border=0 vspace=1 hspace=1>
+<!-- #endif variable="FILTER" -->
+
+</p>
+</td>
+
+<!-- #if variable="colspan" == value="2" --> 
+<td class=tdbg align=center nowrap>
+<p class=tdfont>
+
+  <!-- #if variable="TYP" == value="I" --> 
+  <a href="javascript:msgGoto('filter','<$CRE_>','I')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_lupe.gif" alt="Show messages received from '<$NNM_>'" 
+    border=0 vspace=1 hspace=1></a>
+
+  <a href="javascript:msgGoto('thread','<$NNM_>','inbox')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_thread.gif" alt="Show message thread with '<$NNM_>'" 
+    border=0 vspace=1 hspace=1></a>
+  <!--#endif variable="TYP" -->
+
+  <!-- #if variable="TYP" == value="O" --> 
+  <a href="javascript:msgGoto('filter','<$REC_>','O')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_lupe.gif" alt="Show messages sent to '<$NNM_>'"
+    border=0 vspace=1 hspace=1></a>
+
+  <a href="javascript:msgGoto('thread','<$NNM_>','outbox')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_thread.gif" alt="Show messages thread with '<$NNM_>'"
+    border=0 vspace=1 hspace=1></a>
+  <!--#endif variable="TYP" -->
+
+</p>
+</td>
+<!-- #endif variable="colspan" -->
+
+<!--#endif variable="notifications" -->
+
+<!--- the subject of a club invitation contains the club ID, don't display this subject --->
+<!-- #if variable="SUB_" contains value="Club Invitation: " --> 
+  <!-- #define variable="sub" == value="" -->
+  <!-- #define variable="plcID" == substring="<$SUB_>,17," -->
+<!-- #else variable="SUB_" -->
+  <!-- #define variable="sub" == value="<$SUB_>" -->
+  <!-- #define variable="plcID" == value="" -->
+<!-- #endif variable="SUB_" -->
+
+<!-- #if variable="sub" != value="" --> 
+  <!-- #define variable="subject" substring="<$SUB_>,0,15"  -->
+  <!-- #define variable="submore" substring="<$SUB_>,15,16"  -->
+<!-- #else variable="sub" --> 
+  <!-- #define variable="subject" substring="<$TXT_>,0,15"  -->
+  <!-- #define variable="submore" substring="<$TXT_>,15,16"  -->
+<!-- #endif variable="sub" -->
+
+<!-- #define variable="escapetxt" escape="<$subject>" -->
+
+<td class=tdbg width="90%">
+<p class=tdfont<$bold>>
+<!-- #if variable="submore" != value="" --> 
+  <a href="<$g_cgiRoot>/print<$g_exe>?TPL=msg/displaymessage&ID=<$ID_>&T_LB=<$T_LB>&T_LB_P1=<$T_LB_P1>&T_LB_P2=<$T_LB_P2>&T_LB_P3=<$T_LB_P3>&plcID=<$plcID><$g_SessionID>"
+    ><script language="javascript">document.write(msgFormatText('<$escapetxt>',true));</script>&nbsp;...</a>
+<!-- #else variable="submore" --> 
+  <a href="<$g_cgiRoot>/print<$g_exe>?TPL=msg/displaymessage&ID=<$ID_>&T_LB=<$T_LB>&T_LB_P1=<$T_LB_P1>&T_LB_P2=<$T_LB_P2>&T_LB_P3=<$T_LB_P3>&plcID=<$plcID><$g_SessionID>"
+    ><script language="javascript">document.write(msgFormatText('<$escapetxt>',true));</script></a>
+<!--#endif variable="submore" -->
+</p>
+</td>
+
+<td class=tdbg align=right>
+<p class=tdfont<$bold>>
+<$SDA_MON_>/<$SDA_MDAY_>&nbsp;<$SDA_HOUR_>:<$SDA_MIN_></p>
+</td>
+
+<td class=tdbg align=center nowrap>
+<!-- #if variable="T_LB_P1" != value="" --> 
+  <a href="javascript:msgDelete('<$ID_>','<$T_LB_P1>','<$T_LB>','<$T_LB_P2>','<$T_LB_P3>','<$ITER>')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_del.gif" alt="Delete this message" 
+    border=0 vspace=1 hspace=1></a>
+<!-- #else variable="T_LB_P1" -->
+  <a href="javascript:msgDelete('<$ID_>','<$T_LB>','','','','<$ITER>','<$loopindex>')"><img 
+    src="<$g_HTMLRoot>/images/icons/icon_del.gif" alt="Delete this message" 
+    border=0 vspace=1 hspace=1></a>
+<!-- #endif variable="T_LB_P1" -->
+<input type=checkbox name="DEL<$loopindex>" value="<$ID_>">
+</td>
+
+</tr>
+<!-- #endif variable="print_msg" -->
+<!--#endfor loopname="loopopen" -->
+</table>
+
+<!-- #ifdef variable="FILTER" --> 
+  <!-- #define variable="refreshcheck" value="msgGoto('filter','<$T_LB_P2>','<$T_LB_P3>')" -->
+<!-- #else variable="FILTER" -->
+<!-- #ifdef variable="THREAD" --> 
+  <!-- #define variable="refreshcheck" value="msgGoto('thread','<$T_TNAM>','<$T_LB>')" -->
+<!-- #else variable="THREAD" -->
+  <!-- #define variable="refreshcheck" value="msgGoto('<$T_LB>')" -->
+<!-- #endif variable="THREAD" -->
+<!-- #endif variable="FILTER" -->
+
+<p>
+<!-- #if variable="TYP" == value="I" --> 
+<a href="javascript:msgGoto('inbox')">
+<!-- #endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="O" --> 
+<a href="javascript:msgGoto('outbox')">
+<!-- #endif variable="TYP" -->
+
+<!-- #if variable="TYP" == value="N" --> 
+<a href="javascript:msgGoto('alert')">
+<!-- #endif variable="TYP" -->
+
+<img alt="Refresh" src="/images/buttons60/btnac_refresh.gif" border=0 vspace=1 hspace=1></a>
+
+<!-- #include virtual="<$g_Templates>common/infobottom.tmpl" -->
+<!-- #endif variable="hideTemplate" --> 
+
+</body>
+</form>
+</html>

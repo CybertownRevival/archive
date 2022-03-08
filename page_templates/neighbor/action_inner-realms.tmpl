@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- neighbor/action_inner-realms.tmpl ### -->
+<base target="_top">
+<!-- #include virtual="<$g_Templates>property/timehead.tmpl" -->
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language="JavaScript">
+
+function moderate() {
+window.open('place<$g_exe>?ac=moderate&ID=<$ID>&DTY=C&TKT=<$TKT>','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');
+}
+
+</script>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="##D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY onUnload="closeInfoWin()" BACKGROUND="<$g_HTMLRoot>/home/0110000000000000/<$BGI>" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<!-- #include virtual="<$g_Templates>property/timebody.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/controlbegin.tmpl" -->
+<div align=center>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/irlogo.gif" BORDER=0><br>
+<a href="neighbor<$g_exe>?ac=place&ID=<$ID>" target="place">
+<b><i><font face="Arial" size=+0 color="#D2B480"><$NAM></font></b></i></a><br>
+
+<!-- #include virtual="<$g_Templates>inrlms_col/control.tmpl" -->
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('neighbor<$g_exe>?ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/binfo.gif" BORDER=0 ALT="Info"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=i')" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/binbox.gif" BORDER=0 ALT="Inbox"></a><br>
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bmesa.gif" BORDER=0 ALT="Messages"></a><br>
+
+<!-- #ifdef variable="writeaccess" -->
+<a href="javascript:loadInfo('vote<$g_exe>?ac=list&TPL=vote/list&PLC=<$ID>&TYP=a')" target="_self">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bvote.gif" BORDER=0 ALT="Vote"></a><br>
+<!-- <a href="javascript:loadInfo('vote<$g_exe>?ac=list&PLC=<$ID>&TYP=e')" target="_self">
+<IMG SRC="<$g_Images>/images/buttons/belect.gif" BORDER=0 ALT="Elect"></a><br> -->
+<!-- #endif variable="writeaccess" -->
+<a href="community<$g_exe>?ID=<$commid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$commname></b></a><br>
+<!-- #endif variable="readaccess" -->
+<br>
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=N&KTY=ID&KEY=<$ID>&MTY=m&program=neighbor" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bgroupmesa.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="print60<$g_exe>?DTY=N&KEY=<$ID>&TPL=inb/writetoall" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bgroupinbo.jpg" BORDER=0 ALT="Group Inbox"></a><br>
+<a href="neighbor<$g_exe>?ac=wizardplace&ID=<$ID>" target="place">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/bupdate.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&PLC=neighbor&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_Images>/places/inrlms_col/images/buttons/baccess.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<!-- #include virtual="<$g_Templates>inrlms_col/controlend.tmpl" -->
+</div>
+
+</BODY>
+</HTML>

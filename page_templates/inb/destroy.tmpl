@@ -1,0 +1,38 @@
+<html>
+<head>
+<title><$g_title> - Inbox</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<h2>Inbox - Destroy</h2>
+
+Hello <$NNM>,
+
+<!-- #ifndef variable="destroyed" -->
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<P>
+Do you really want to completely delete the inbox and
+all its messages?
+
+<p>
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="ac"  value="destroy">
+<input type=submit name="Ok"  value="Ok">
+<input type=submit name="Cancel"  value="Cancel">
+</p>
+</form>
+<!-- #endif variable="destroyed" -->
+
+<!-- #ifdef variable="destroyed" -->
+<P>
+The inbox has been destroyed.
+<!-- #endif variable="destroyed" -->
+
+</body>
+</html>
+

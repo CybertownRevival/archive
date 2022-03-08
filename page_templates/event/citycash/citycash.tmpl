@@ -1,0 +1,166 @@
+<html>
+<!-- event/citycash/citycash.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+<!-- #ifndef variable="buylotok" -->
+<h2 align="center"><$NAM></h2>
+
+<!-- #ifdef variable="errnolottery" -->
+<!-- #ifndef variable="lotterwinners" -->
+<center>
+  <font color="#FFFF99" size="+2">C O M I N G &nbsp;&nbsp;&nbsp; S O O N ! </font>
+</center>
+<!-- #endif variable="lotterwinners" -->
+<!-- #endif variable="errnolottery" -->
+
+<table border="0">
+<tr>
+  <td align="center">
+    <img src="<$g_Images>/images/events/citycash/citycash.jpg" alt="<$NAM>" height=180>
+  </td>
+  <td>
+    <blockquote><b>
+      Welcome to the Cybertown <$NAM>. All you have to do to enter is buy a ticket below and you will be automatically entered with a 
+      chance to win the weekly pool of CityCash created by everyone's entries!<br>
+    </b></blockquote>
+  </td>
+</tr>
+</table>
+
+<blockquote>
+<b>
+<center>See the Rules and prize details and how to win even more <a href="<$g_HTMLRoot>/events/citycash/rules.html">here</a>.</center><br>
+
+<center>
+
+<!-- #ifdef variable="errmaxcount" -->
+<font color="red">
+  Sorry <$NNM>, but you can only enter 10 times a week!<br><br>
+</font>
+<!-- #endif variable="errmaxcount" -->
+
+<!-- #ifdef variable="erradmin" -->
+<font color="red">
+  Sorry <$NNM>, but you have not the rights for the operation!<br><br>
+</font>
+<!-- #endif variable="erradmin" -->
+
+<!-- #ifdef variable="errnolottery" -->
+<!-- #ifndef variable="lotterwinners" -->
+<center>
+  <font color="#FFFF99" size="+2">C O M I N G &nbsp;&nbsp;&nbsp; S O O N ! </font><br><br>
+</center>
+<!-- #endif variable="lotterwinners" -->
+<!-- #endif variable="errnolottery" -->
+
+<!-- #ifdef variable="lotterwinners" -->
+<a href="<$selfurl>?NID=<$NID>&ac=showwinners" target=_self>
+  <$NAM> Winners<br>
+</a>
+<br>
+<!-- #endif variable="lotterwinners" -->
+
+
+
+<!-- #ifdef variable="notenoughmoney" -->
+<font color="#FFFF99">
+  Sorry <$NNM>, but you have not enough money to buy a ticket!
+</font>
+<br><br>
+<!-- #endif variable="notenoughmoney" -->
+
+<!-- #ifdef variable="buyticket" -->
+
+We are in Lottery Week No. <$LWN><br>
+<FONT color="#FFFF00">And there are <$JACKPOT> cc in the Jackpot!</font><br>
+(double if you introduce friends to Cybertown!)<br>
+<br>
+
+<form method=post action="<$selfurl>">
+
+  <input type=hidden name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="buyticket">
+  <input type=hidden name="NID" value="<$NID>">
+
+  <input type="submit" value="Buy a Ticket">
+
+</form>
+
+Good luck!<br>
+<br>
+
+<!-- #endif variable="buyticket" -->
+
+<!-- #ifdef variable="isAdmin" -->
+  <a href="<$selfurl>?NID=<$NID>&ac=lotstat" target=_self>
+    <$NAM> administration
+  </a>
+<!-- #endif variable="isAdmin" -->
+
+</center>
+
+</b>
+</blockquote>
+
+<!-- #endif variable="buylotok" -->
+
+<!-- #ifdef variable="buylotok" -->
+<BR><BR>
+<font color="#00FF00"><center><h2><$NNM> - You have successfully bought a ticket!<br>
+There are now <$JACKPOT> cc in the Jackpot!</h2></center>
+
+<BLOCKQUOTE>
+<FONT face="Arial, Helvetica, sans-serif" SIZE=-1>
+<BR>
+<center><FONT SIZE=+1 color="#FFFF00"><i>Tell your friends about Cybertown<br>
+and increase your chances to win <br>even more CityCash (double)!</i></FONT><BR>
+<HR COLOR="#336633" SIZE=1 WIDTH=150"></center>
+<BLOCKQUOTE>
+<FORM METHOD=POST ACTION="/cgi-bin/cybertown/vm/vm.pl">
+<INPUT TYPE="hidden" NAME="config" VALUE="message.cfg">
+<INPUT TYPE="hidden" NAME="ok_filename" VALUE="/vm/vm_ok.html">
+<INPUT TYPE="hidden" NAME="error_filename" VALUE="/vm/vm_error.html">
+<INPUT TYPE="hidden" NAME="max_recipients" VALUE="10">
+<INPUT TYPE="hidden" NAME="form_url" VALUE="/vm/index.html">
+
+
+Your name:<br>
+<INPUT TYPE="text" NAME="name" size=25><br><br>
+Your e-mail address:<br>
+<INPUT TYPE="text" NAME="email" SIZE=25><br><br>
+
+Message:<br>
+<TEXTAREA NAME="message" ROWS="5" COLS="35">Please type a brief message here . . .</TEXTAREA><br><br>
+
+List the e-mail addresses of friends you'd like to  <br>
+introduce to Cybertown and they will be sent your  <br>message above from you. Use one address per line.<br>
+<TEXTAREA NAME="recipients" ROWS="5" COLS="35"></TEXTAREA>
+<br><font size=5>&nbsp;</font><br>
+
+
+<INPUT TYPE="submit" VALUE="Send Messages"> <INPUT TYPE="reset" VALUE="Clear Form">
+</FORM>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+
+
+</FONT>
+</BLOCKQUOTE>
+
+
+</FONT>
+<!-- #endif variable="buylotok" -->
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<HTML>
+<!-- clubsplaza/middle.tmpl -->
+<!-- contains the clubs search code -->
+<HEAD>
+</HEAD>
+
+<div align=center>
+
+<!-- clubs search code begin -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function SubmitForm1()
+{
+    if( document.filterForm2!=null )
+    {
+        document.filterForm1.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.filterForm1.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }
+}
+
+function SubmitForm2()
+{
+    document.filterForm2.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.filterForm2.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.filterForm2.MYC.value = "on";
+    else
+        document.filterForm2.MYC.value = "";
+}
+
+function SubmitPagerForm()
+{
+    document.pagerForm.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.pagerForm.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.pagerForm.MYC.value = "on";
+    else
+        document.pagerForm.MYC.value = "";
+
+    if( document.filterForm2!=null )
+    {
+        document.pagerForm.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.pagerForm.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }  
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<FORM NAME="filterForm1" METHOD=GET TARGET=_self ACTION="/cgi-bin/cybertown/club?"
+onSubmit="SubmitForm1()">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <INPUT TYPE="hidden" NAME="ac" VALUE="directory">
+    <INPUT TYPE="hidden" NAME="PLC" VALUE="<$PLC>">
+    <INPUT TYPE="hidden" NAME="KEY" VALUE="<$KEY>">
+
+
+    <INPUT TYPE="hidden" NAME="KFT_LIST" VALUE="<$KFT_LIST>">
+    <INPUT TYPE="hidden" NAME="KFT_TEXT" VALUE="<$KFT_TEXT>">
+
+
+    <TABLE ALIGN=center>
+    <TR>
+        <TD valign=top>
+            <TABLE>
+            <TR>
+                <TD align=right>Ordered by:</TD>
+                <TD>
+                    <SELECT NAME="KTY" width=136>
+                       <OPTION VALUE="NAK"
+                        <!--#ifdef variable="KTY" value="NAK" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Club Name </OPTION>
+                        <OPTION VALUE="KK1"
+                        <!--#ifdef variable="KTY" value="KK1" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Keyword </OPTION>
+                        <OPTION VALUE="CDA"
+                        <!--#ifdef variable="KTY" value="CDA" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Creation Date </OPTION>
+                        <OPTION VALUE="CNT"
+                        <!--#ifdef variable="KTY" value="CNT" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Members </OPTION>
+                    </SELECT>
+                </TD>
+                <TD>&nbsp;&nbsp;
+                    <INPUT TYPE="checkbox" NAME="MYC"
+                    <!--#ifdef variable="MYC" value="on" -->
+                    checked
+                    <!--#endif variable="MYC" -->
+                    >My Clubs</INPUT>
+                </TD>
+            </TR>
+            <TR>
+                <TD align=right>Club Name:&nbsp;&nbsp;</TD>
+                <TD>
+                    <INPUT TYPE="text" NAME="KFT_NAM" VALUE="<$KFT_NAM>" MAXLENGTH=32 SIZE=16>
+                </TD>
+                <TD><INPUT TYPE="submit" NAME="SORT_BTN" VALUE="Apply"></TD>
+            </TR>
+            <TR>
+                <TD><center>There are <$TCN> clubs at the moment.</center></TD>
+     
+            </TR>
+        
+            <TR>
+            
+            </TR>
+           </TABLE>
+       </TABLE>
+</FORM>
+
+<!-- clubs search code end -->
+
+<!-- button to clubdir --->
+<a href="club<$g_exe>?ac=directory&T_level=top" target=place>
+<b><i><font face="Arial" color="#00FF00">Clubs Directory</font></b></i></a><br>
+
+</div>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+

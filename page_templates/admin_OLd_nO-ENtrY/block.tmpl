@@ -1,0 +1,199 @@
+<!-- admin/block.tmpl -->
+<!-- update block attributes -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onLoadFunction()
+{
+<!-- #ifdef variable="create" -->
+    document.updateForm.OWR.selectedIndex = 30;
+
+    document.updateForm.ASR.selectedIndex = 54;
+<!-- #endif variable="create" -->
+}
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+function onSubmit()
+{
+<!-- #ifdef variable="create" -->
+    document.updateForm.OWN_NNK.value 
+     = document.updateForm.OWN_NNK.value.toLowerCase();
+<!-- #endif variable="create" -->
+}
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/bodyload_inc.tmpl" -->
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for <$BNM_CITY> <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new <$BNM_CITY></h2>
+<!-- #endif variable="create" -->
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post name="updateForm" action="<$selfurl>" onSubmit="onSubmit()">
+
+    <input type=hidden name="TKT" value="<$TKT>">
+    <input type=hidden name="DTY" value="<$DTY>">
+    <input type=hidden name="KTY" value="<$KTY>">
+    <input type=hidden name="KEY" value="<$KEY>">
+    <input type=hidden name="TPL" value="<$TPL>">
+
+    <input type=hidden name="ac" value="read">
+
+    <table border=0>
+        <!-- #ifdef variable="create" -->
+            <tr>
+                <td align=right>ID:&nbsp;&nbsp;</td>
+                <td colspan=5>
+                    <INPUT NAME="ID" VALUE="<$ID>" MAXLENGTH=16 SIZE=16>
+                </td>
+            </tr>
+        <!-- #endif variable="create" -->
+        <tr>
+            <td align=right>Name:&nbsp;&nbsp;</td>
+            <td colspan=5>
+                <INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32>
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Owner:&nbsp;&nbsp;</td>
+            <td colspan=5>
+            <!-- #ifndef variable="create" -->
+                <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">&nbsp;<$OWN_2NNM>&nbsp;</A><br>
+            <!-- #endif variable="create" -->
+            <!-- #ifdef variable="create" -->
+                <input name="OWN_NNK" value="<$OWN_NNK>" maxlength=16 size=16>
+            <!-- #endif variable="create" -->
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>Owner Job:&nbsp;&nbsp;</td>
+            <td>
+                <!-- #ifndef variable="create" -->
+                    <font color=#80ff00><$OWR_NAM></font>
+                <!-- #endif variable="create" -->
+                <!-- #ifdef variable="create" -->
+                    <select name="OWR">
+                        <option value=""></option>
+                        <!--#for loopname="owrRoles" loopvars="ROL_ITER_" -->
+                            <option value="<$ROL_BIT_ID_W_>"><$ROL_BIT_NAM_></option>                    
+                        <!--#endfor loopname="owrRoles" -->
+                    </select>
+                <!-- #endif variable="create" -->
+            </td>
+            <td align=right>Assistant Job:&nbsp;&nbsp;</td>
+            <td colspan=3>
+                <!-- #ifndef variable="create" -->
+                    <font color=#80ff00><$ASR_NAM></font>
+                <!-- #endif variable="create" -->
+                <!-- #ifdef variable="create" -->
+                    <select name="ASR">
+                        <option value=""></option>
+                        <!--#for loopname="asrRoles" loopvars="ROL_ITER_" -->
+                            <option value="<$ROL_BIT_ID_W_>"><$ROL_BIT_NAM_></option>                    
+                        <!--#endfor loopname="asrRoles" -->
+                    </select>
+                <!-- #endif variable="create" -->
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right>2D Place Usage:&nbsp;&nbsp;</td>
+            <td>
+                <select name="PU2">
+                    <option value="N"
+                    <!--#ifdef variable="PU2" value="N"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Not usable</option>
+                    <option value="F"
+                    <!--#ifdef variable="PU2" value="F"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Free</option>
+                    <option value="P"
+                    <!--#ifdef variable="PU2" value="P"-->
+                        selected
+                    <!--#endif variable="PU2" -->
+                    >Place</option>
+                    <!--option value="L">Landscape</option-->
+                    <!--option value="C">Communal</option-->
+                </select>
+            </td>
+            <td align=right>Block Icon:&nbsp;&nbsp;</td>
+            <td>
+                <select name="IC2">
+                    <!--#for loopname="symbolLoop" loopvars="BLS_INDEX_" -->
+                        <option value="<$BLS_INDEX_>" <$BLS_SEL_>><$BLS_INDEX_></option>
+                    <!--#endfor loopname="symbolLoop" -->
+                </select>
+            </td>
+            <td align=right>Block Map:&nbsp;&nbsp;</td>
+            <td>
+                <select name="IM2">
+                    <!--#for loopname="imageLoop" loopvars="BLM_INDEX_" -->
+                        <option value="<$BLM_INDEX_>" <$BLM_SEL_>><$BLM_INDEX_></option>
+                    <!--#endfor loopname="imageLoop" -->
+                </select>
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+        <tr>
+            <td align=right valign=top>Description:&nbsp;&nbsp;</td>
+            <td colspan=5>
+                <TEXTAREA NAME="TXT" ROWS="4" COLS="60"><$TXT></TEXTAREA>
+            </td>
+        </tr>
+        <tr><td colspan=6><font size=-2>&nbsp;</font></td></tr>
+
+        <!-- #ifdef variable="create" -->
+            <!-- #include virtual="<$g_Templates>admin/infoobj_inc.tmpl" -->
+        <!-- #endif variable="create" -->
+
+    </table>
+
+    <input type=hidden name="PRC" value="<$PRC>">
+    <input type=hidden name="CST" value="<$CST>">
+    <input type=hidden name="MON" value="<$MON>">
+    <input type=hidden name="CMX" value="<$CMX>">
+
+<!-- #ifndef variable="create" -->
+<br>
+    <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">Access Rights...</A><br>
+<!-- #endif variable="create" -->
+<br>
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

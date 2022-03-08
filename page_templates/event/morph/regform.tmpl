@@ -1,0 +1,465 @@
+<!-- event/morph/regform.tmpl -->
+<table cellpadding=8 width=100% border=0>
+<tr>
+<td>
+<div align=center>
+
+<p>
+<!--
+<b>Registration count</b>: <font color=red><$CNT> citizens</font> registered!
+<br>
+-->
+<i><small>
+Earn experience points and CityCash$ just by registering for The Morph Hunt. 
+See <a href="<$g_HTMLRoot>/events/morph/reward-REG.html">Rewards</a> page for details.
+</small></i>
+</div>
+
+<!--#ifdef variable="errexist"-->
+<p align=center><font color=red>
+Sorry - you are already registered for '<$NAM>'. 
+</font></p>
+<!--#endif variable="errexist" -->
+
+<!--#ifdef variable="errdatabase"-->
+<p align=center><font color=red>
+The registration could no be inserted into the database, 
+please try it again and inform the <a href="mailto:support@blaxxun.com">support of blaxxun</a>!
+</font></p>
+<!--#endif variable="errdatabase" -->
+
+<!--#ifndef variable="errexist"-->
+<!--form method=post name=regform action="<$selfurl>"-->
+<form method=post name=regform action="event<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="ac"    value="register">
+<input type=hidden name="NID"   value="<$NID>">
+
+<table border=0>
+<tr>
+  <td colspan=2><font color="#00FF00" size=+1>Enter your Personal Data</font></td>
+</tr>
+<tr>
+  <td width=150 valign=top>Your nickname:</td>
+  <td width=200 valign=top><$NNM></td>
+</tr>
+<tr>
+  <td width=150 valign=top>Your email:</td>
+  <td width=200 valign=top><$EML></td>
+</tr>
+<tr>
+  <td valign=top>Your first name:</td>
+  <td valign=top><INPUT NAME="FNM" VALUE="<$FNM>" MAXLENGTH=20 SIZE=20></td>
+</tr>
+<tr>
+  <td valign=top>Your last name:</td>
+  <td valign=top><INPUT NAME="LNM" VALUE="<$LNM>" MAXLENGTH=32 SIZE=20></td>
+</tr>
+<tr>
+  <td valign=top>Date of Birth:</td>
+  <td valign=top>
+    <INPUT NAME="AGEMM" VALUE="<$AGEMM>" MAXLENGTH=2 SIZE=2>
+    <INPUT NAME="AGEDD" VALUE="<$AGEDD>" MAXLENGTH=2 SIZE=2>
+    <INPUT NAME="AGEYY" VALUE="<$AGEYY>" MAXLENGTH=2 SIZE=2>
+    (MM DD YY)
+  </td>
+</tr>
+<tr>
+  <td valign=top>Gender:</td>
+  <td valign=top>
+    <INPUT NAME="GND" TYPE=RADIO VALUE="male"
+    <!--#ifdef variable="GND" value="male"-->
+      checked
+    <!--#endif variable="GND" -->
+    > Male&nbsp;&nbsp;&nbsp;
+    <INPUT NAME="GND" TYPE=RADIO VALUE="female"
+    <!--#ifdef variable="GND" value="female"-->
+      checked
+    <!--#endif variable="GND" -->
+    > Female
+  </td>
+</tr>
+
+<tr>
+  <td colspan=2><hr><font color="#00FF00" size=+1>More ...</font><br>
+    <font color="#FFFF00"><i>The questions below allow us at Cybertown to understand
+    your tastes so that we can better produce fun events for our members.</i></font></td>
+</tr>
+<tr>
+<td valign=top>How did you hear about this contest?</td>
+<td valign=top>
+<SELECT name = "EHW">
+<OPTION value=""
+<!--#ifdef variable="EHW" value=""-->
+selected
+<!--#endif variable="EHW" -->
+> 
+<OPTION value="cybertown"
+<!--#ifdef variable="EHW" value="cybertown"-->
+selected
+<!--#endif variable="EHW" -->
+> Around Cybertown
+<OPTION value="VIRT"
+<!--#ifdef variable="EHW" value="VIRT"-->
+selected
+<!--#endif variable="EHW" -->
+> VIRT - CT Newsletter
+<OPTION value="blaxxun"
+<!--#ifdef variable="EHW" value="blaxxun"-->
+selected
+<!--#endif variable="EHW" -->
+> Blaxxun newsletter
+<OPTION value="online"
+<!--#ifdef variable="EHW" value="online"-->
+selected
+<!--#endif variable="EHW" -->
+> Online ad
+<OPTION value="magazine"
+<!--#ifdef variable="EHW" value="magazine"-->
+selected
+<!--#endif variable="EHW" -->
+> Magazine ad
+<OPTION value="friend"
+<!--#ifdef variable="EHW" value="friend"-->
+selected
+<!--#endif variable="EHW" -->
+> A friend
+<OPTION value="article"
+<!--#ifdef variable="EHW" value="article"-->
+selected
+<!--#endif variable="EHW" -->
+> An article
+<OPTION value="search"
+<!--#ifdef variable="EHW" value="search"-->
+selected
+<!--#endif variable="EHW" -->
+> Search engine
+<OPTION value="other"
+<!--#ifdef variable="EHW" value="other"-->
+selected
+<!--#endif variable="EHW" -->
+> Other
+<OPTION value="noopinion"
+<!--#ifdef variable="EHW" value="noopinion"-->
+selected
+<!--#endif variable="EHW" -->
+> No opinion
+</SELECT>
+<br><font color="#FFFF00">other:</font> <INPUT NAME="EHWO" VALUE="<$EHWO>" MAXLENGTH=64 SIZE=32>
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td></tr>
+
+<tr>
+<td valign=top>I like to spend money on:</td>
+<td valign=top>
+<SELECT name = "EMN">
+<OPTION value=""
+<!--#ifdef variable="EMN" value=""-->
+selected
+<!--#endif variable="EMN" -->
+> 
+<OPTION value="movies"
+<!--#ifdef variable="EMN" value="movies"-->
+selected
+<!--#endif variable="EMN" -->
+> Movies
+<OPTION value="music"
+<!--#ifdef variable="EMN" value="music"-->
+selected
+<!--#endif variable="EMN" -->
+> Music
+<OPTION value="computers"
+<!--#ifdef variable="EMN" value="computers"-->
+selected
+<!--#endif variable="EMN" -->
+> Computers & accessories
+<OPTION value="electronics"
+<!--#ifdef variable="EMN" value="electronics"-->
+selected
+<!--#endif variable="EMN" -->
+> Electronics equipment other than computer related
+<OPTION value="games"
+<!--#ifdef variable="EMN" value="games"-->
+selected
+<!--#endif variable="EMN" -->
+> Games
+<OPTION value="reading"
+<!--#ifdef variable="EMN" value="reading"-->
+selected
+<!--#endif variable="EMN" -->
+> Reading materials
+<OPTION value="vacations"
+<!--#ifdef variable="EMN" value="vacations"-->
+selected
+<!--#endif variable="EMN" -->
+> Vacations
+<OPTION value="home"
+<!--#ifdef variable="EMN" value="home"-->
+selected
+<!--#endif variable="EMN" -->
+> Home improvement
+<OPTION value="clothes"
+<!--#ifdef variable="EMN" value="clothes"-->
+selected
+<!--#endif variable="EMN" -->
+> Clothes/Fashion
+<OPTION value="other"
+<!--#ifdef variable="EMN" value="other"-->
+selected
+<!--#endif variable="EMN" -->
+> Other
+<OPTION value="noopinion"
+<!--#ifdef variable="EMN" value="noopinion"-->
+selected
+<!--#endif variable="EMN" -->
+> No opinion
+</SELECT>
+<br><font color="#FFFF00">other:</font> <INPUT NAME="EMNO" VALUE="<$EMNO>" MAXLENGTH=64 SIZE=32>
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td></tr>
+
+<tr>
+<td valign=top>I would rather spend my free time:</td>
+<td valign=top>
+<SELECT name = "ETI">
+<OPTION value=""
+<!--#ifdef variable="ETI" value=""-->
+selected
+<!--#endif variable="ETI" -->
+> 
+<OPTION value="Internet"
+<!--#ifdef variable="ETI" value="Internet"-->
+selected
+<!--#endif variable="ETI" -->
+> On the Internet
+<OPTION value="TV"
+<!--#ifdef variable="ETI" value="TV"-->
+selected
+<!--#endif variable="ETI" -->
+> Watching TV
+<OPTION value="Reading"
+<!--#ifdef variable="ETI" value="Reading"-->
+selected
+<!--#endif variable="ETI" -->
+> Reading
+<OPTION value="Playing"
+<!--#ifdef variable="ETI" value="Playing"-->
+selected
+<!--#endif variable="ETI" -->
+> Playing Games
+<OPTION value="Outdoor"
+<!--#ifdef variable="ETI" value="Outdoor"-->
+selected
+<!--#endif variable="ETI" -->
+> Outdoor Activities
+<OPTION value="Live"
+<!--#ifdef variable="ETI" value="Live"-->
+selected
+<!--#endif variable="ETI" -->
+> Live Performances
+<OPTION value="Cultural"
+<!--#ifdef variable="ETI" value="Cultural"-->
+selected
+<!--#endif variable="ETI" -->
+> Cultural Activities
+<OPTION value="Travel"
+<!--#ifdef variable="ETI" value="Travel"-->
+selected
+<!--#endif variable="ETI" -->
+> Travel
+<OPTION value="hobbies"
+<!--#ifdef variable="ETI" value="hobbies"-->
+selected
+<!--#endif variable="ETI" -->
+> Hobbies
+<OPTION value="other"
+<!--#ifdef variable="ETI" value="other"-->
+selected
+<!--#endif variable="ETI" -->
+> Other
+<OPTION value="noopinion"
+<!--#ifdef variable="ETI" value="noopinion"-->
+selected
+<!--#endif variable="ETI" -->
+> No opinion
+</SELECT>
+<br><font color="#FFFF00">other:</font> <INPUT NAME="ETIO" VALUE="<$ETIO>" MAXLENGTH=64 SIZE=32>
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td></tr>
+
+<tr>
+<td valign=top>I would like to see Cybertown produce more online activities and events such as:</td>
+<td valign=top>
+<SELECT name = "EFE">
+<OPTION value=""
+<!--#ifdef variable="EFE" value=""-->
+selected
+<!--#endif variable="EFE" -->
+> 
+<OPTION value="Games"
+<!--#ifdef variable="EFE" value="Games"-->
+selected
+<!--#endif variable="EFE" -->
+> Games
+<OPTION value="Contests"
+<!--#ifdef variable="EFE" value="Contests"-->
+selected
+<!--#endif variable="EFE" -->
+> Contests
+<OPTION value="Speakers"
+<!--#ifdef variable="EFE" value="Speakers"-->
+selected
+<!--#endif variable="EFE" -->
+> Speakers Series
+<OPTION value="Celebrity"
+<!--#ifdef variable="EFE" value="Celebrity"-->
+selected
+<!--#endif variable="EFE" -->
+> Celebrity Chat
+<OPTION value="Book"
+<!--#ifdef variable="EFE" value="Book"-->
+selected
+<!--#endif variable="EFE" -->
+> Book Groups
+<OPTION value="Discussion"
+<!--#ifdef variable="EFE" value="Discussion"-->
+selected
+<!--#endif variable="EFE" -->
+> Discussion Groups
+<OPTION value="Parties"
+<!--#ifdef variable="EFE" value="Parties"-->
+selected
+<!--#endif variable="EFE" -->
+> Parties
+<OPTION value="Performances"
+<!--#ifdef variable="EFE" value="Performances"-->
+selected
+<!--#endif variable="EFE" -->
+> Performances such as live concerts
+<OPTION value="Movies"
+<!--#ifdef variable="EFE" value="Movies"-->
+selected
+<!--#endif variable="EFE" -->
+> Movies
+<OPTION value="Webcam"
+<!--#ifdef variable="EFE" value="Webcam"-->
+selected
+<!--#endif variable="EFE" -->
+> Live Roving Webcam events
+<OPTION value="3D"
+<!--#ifdef variable="EFE" value="3D"-->
+selected
+<!--#endif variable="EFE" -->
+> 3D Instructional Programs/Technology Presentations
+<OPTION value="Conventions"
+<!--#ifdef variable="EFE" value="Conventions"-->
+selected
+<!--#endif variable="EFE" -->
+> Live coverage of Conventions such as Sci-fi, comics, etc.
+<OPTION value="Holiday"
+<!--#ifdef variable="EFE" value="Holiday"-->
+selected
+<!--#endif variable="EFE" -->
+> Holiday Events
+<OPTION value="other"
+<!--#ifdef variable="EFE" value="other"-->
+selected
+<!--#endif variable="EFE" -->
+> Other
+<OPTION value="noopinion"
+<!--#ifdef variable="EFE" value="noopinion"-->
+selected
+<!--#endif variable="EFE" -->
+> No opinion
+</SELECT>
+<br><font color="#FFFF00">other:</font> <INPUT NAME="EFEO" VALUE="<$EFEO>" MAXLENGTH=64 SIZE=32>
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td></tr>
+
+<tr>
+<td valign=top>My favorite area of interest is:</td>
+<td valign=top>
+<SELECT name = "EFI">
+<OPTION value=""
+<!--#ifdef variable="EFI" value=""-->
+selected
+<!--#endif variable="EFI" -->
+> 
+<OPTION value="Science"
+<!--#ifdef variable="EFI" value="Science"-->
+selected
+<!--#endif variable="EFI" -->
+> Science Fiction
+<OPTION value="Fantasy"
+<!--#ifdef variable="EFI" value="Fantasy"-->
+selected
+<!--#endif variable="EFI" -->
+> Fantasy
+<OPTION value="Games"
+<!--#ifdef variable="EFI" value="Games"-->
+selected
+<!--#endif variable="EFI" -->
+> Games
+<OPTION value="Role"
+<!--#ifdef variable="EFI" value="Role"-->
+selected
+<!--#endif variable="EFI" -->
+> Role Playing
+<OPTION value="Chatting"
+<!--#ifdef variable="EFI" value="Chatting"-->
+selected
+<!--#endif variable="EFI" -->
+> Chatting & Meeting People
+<OPTION value="Community"
+<!--#ifdef variable="EFI" value="Community"-->
+selected
+<!--#endif variable="EFI" -->
+> Community Activities
+<OPTION value="other"
+<!--#ifdef variable="EFI" value="other"-->
+selected
+<!--#endif variable="EFI" -->
+> Other
+<OPTION value="noopinion"
+<!--#ifdef variable="EFI" value="noopinion"-->
+selected
+<!--#endif variable="EFI" -->
+> No opinion
+</SELECT>
+<br><font color="#FFFF00">other:</font> <INPUT NAME="EFIO" VALUE="<$EFIO>" MAXLENGTH=64 SIZE=32>
+</td>
+</tr>
+
+</table>
+<hr>
+
+<p align=center><b>Make sure to read the
+  <a href="<$g_HTMLRoot>/events/morph/rules-REG_page.html" target="morphrules">contest rules</a>!</b></p>
+
+<p align=center>
+  <font color="#00FF00"><b>Participation is absolutely FREE, so join NOW!<br>
+  If you have problems during the registration process,
+  please send email to <a href="mailto:contest@colonycity.com">contest@colonycity.com</a>.</b></font>
+</p>
+
+<div align=center>
+<b>With the submission of this form, contestant confirms that he/she has read all contest rules
+  and agrees to abide by these rules.</b>
+<p>
+<input type=button name="register" value="Submit" onClick="checkInput()">
+<input type=button name="cancel"   value="Cancel" onClick="history.back()">
+</p>
+</div>
+</form>
+
+<!--#endif variable="errexist" -->
+</td></tr></table>
+</p>

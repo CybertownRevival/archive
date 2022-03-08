@@ -1,0 +1,204 @@
+<!-- /templates/mothership/login.tmpl -->
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<script language=javascript>
+function checksubmit()
+{
+ if ( document.loginform.NNM.value.length > 0 && document.loginform.PWD.value.length > 0 )
+  document.loginform.submit();
+
+}
+</script>
+</HEAD>
+
+<body text="#F8F8F8" bgcolor="#000000" link="#66FFFF" vlink="#00C1EA" alink="#FFFFFF" background="<$g_HTMLRoot>/places/mothership/immigrate/back.jpg">
+<basefont face="Arial,Helvetica">
+<div align=center>
+
+
+<table border=0 width=90%><tr>
+<td width=150 align=left>
+<!-- #ifndef variable="imm" -->
+<!-- #ifdef variable="ID" -->
+                                <A HREF="<$selfurl>?NNM=Visitor&login=true&ID=<$ID>&ac=<$ac>">
+<!-- #endif variable="ID" -->
+<!-- #ifndef variable="ID" -->
+<!-- #ifdef variable="plc" -->
+                                <A HREF="<$selfurl>?NNM=Visitor&login=true&plc=<$plc>&ac=<$ac>">
+<!-- #endif variable="plc" -->
+<!-- #ifndef variable="plc" -->
+                                <A HREF="place<$g_exe>?NNM=Visitor&login=true&ac=<$ac>">
+<!-- #endif variable="plc" -->
+<!-- #endif variable="ID" -->
+<IMG HEIGHT=55 WIDTH=98 SRC="<$g_Images>/images/login/visitor.jpg"  BORDER=0  ALT="Visitor"></A>
+                <!-- #endif variable="imm" -->
+</td>
+<td align=center>
+<!--
+<h2>Enter Colony City!</h2>
+<P ALIGN="CENTER"><FONT COLOR="#80FF00" SIZE="+2">E</FONT><FONT COLOR="#80FF00" SIZE="+1">NTER</FONT><FONT COLOR="#80FF00" SIZE="+2"> C</FONT><FONT COLOR="#80FF00" SIZE="+1">YBERTOWN</FONT>
+<br>
+<img src="<$g_HTMLRoot>/places/enter/images/enter.jpg" width=381 height=139 border=0 alt="Enter Now!"></td>
+-->
+
+<p>
+<img src="<$g_HTMLRoot>/places/mothership/immigrate/msimmigrate.gif" border="0">
+</p>
+
+
+<td width=150 align=right>
+<!-- #ifndef variable="imm" -->
+<!--A HREF="register<$g_exe>"-->
+<IMG HEIGHT=14 WIDTH=85 SRC="<$g_Images>/images/login/immigrate.gif" BORDER=0 ALT="Immigrate"><!--/a-->
+<br>
+<!-- #ifdef variable="T_IWOS" -->
+  <A HREF="register<$g_exe>?T_IWOS=1">
+<!-- #endif variable="T_IWOS" -->
+<!-- #ifndef variable="T_IWOS" -->
+  <A HREF="register<$g_exe>">
+<!-- #endif variable="T_IWOS" -->
+<IMG HEIGHT=83 WIDTH=84 SRC="<$g_Images>/images/login/register.gif" BORDER=0 ALT="Immigrate Today!"></a>
+<!-- #endif variable="imm" -->
+</td>
+</tr></table>
+
+<form action="<$selfurl>" method="POST" target="<$TARGET>" name=loginform>
+<input type="hidden" name="TKT" value="<$TKT>">
+        <input type="HIDDEN" name="ID" value="0107000000000000">
+        <input type="HIDDEN" name="plc" value="mothership">
+
+<input type="HIDDEN" name="ac" value="<$ac>">
+<input type="HIDDEN" name="imm" value="1">
+<input type="HIDDEN" name="T_MCO" value="mothership">
+
+<table border="0" width=100%>
+        <tr align="center">
+                
+<td align="center" width=100 valign=top><INPUT NAME="forgot" TYPE="Image" SRC="<$g_Images>/images/login/resend.jpg"
+                ALT="forgot your password" align="middle" border=0></INPUT>
+        </td>
+        <td width=120 align="left" valign=top><small>
+                If you forgot your Password,
+                click <A HREF="register<$g_exe>?ac=forgot">here</a> and we will
+          <A HREF="register<$g_exe>?ac=forgot">email</A> it to you.</small>
+        </td>
+<td width=30>&nbsp;</td>
+<td>
+<table border="0">
+<tr align="center">
+<td align="center">Nickname</td>
+<td align="center"><input type="text" name="NNM" size="16" value="<$NNM>" maxlength="16" tabindex="1"></td>
+</tr>
+<tr align="center">
+<td align="center">Password</td>
+<td align="center">
+<input type="password" name="PWD" size="16" value="<$PWD>" maxlength="16" tabindex="2"
+onchange="checksubmit()">
+</td>
+<tr align=center>
+<td align="center" colspan=2><input type="submit" value="Enter " tabindex="3"> <input type=submit name="cancel3" value="Cancel">
+</td>
+</tr>
+</table>
+
+</td>
+<td width=30>&nbsp;</td>
+        <td width=120 align="right" valign=top><small>
+                If you want to
+                <A HREF="register<$g_exe>?ac=chpass">change</a> your Password,
+                click <A HREF="register<$g_exe>?ac=chpass">here</a>.</small>
+        </td>
+        <td align="center" width=100 valign=top><INPUT NAME="chpass" TYPE="Image" SRC="<$g_Images>/images/login/change_enter.jpg"
+                ALT="change password" align="middle" border=0></INPUT>
+        </td>
+                
+        </tr>
+
+</table>
+
+<br>
+<!-- #ifdef variable="loginerror001" -->
+        <blockquote><font color="#FF0000"><p>Login failed, please try again!</p></font></blockquote>
+<!-- #endif variable="loginerror001" -->
+
+<!-- #ifdef variable="loginerror002" -->
+        <blockquote><font color="#FF0000"><p>Sorry <$NNM>, the city council has excluded
+        you from the community until <$EXD_MON>/<$EXD_MDAY>/<$EXD_YEAR>.</font></blockquote>
+        <br>You cannot log in until then.
+<!-- #endif variable="loginerror002" -->
+<!-- #ifdef variable="loginerror003" -->
+        <blockquote><font color="#FF0000"><p>Sorry <$NNM>, there are already too many members loged in
+        in the community.
+        <br>
+        Please try again later.</font></blockquote>
+<!-- #endif variable="loginerror003" -->
+
+
+
+        <input type="hidden" name="backurl" value="<$pbackurl>">
+</form>
+</p>
+
+<form method=post action="register<$g_exe>">
+<input type="hidden" name="TKT" value="<$TKT>">
+        <input type=hidden name="backurl" value="<$pbackurl>">
+        <input type=hidden name="NNM" value="<$NNM>">
+        <input type=hidden name="GHDEBUG" value="1">
+        <!--input type=submit name="forgot" value="Resend">
+        <input type=submit name="chpass" value="Change"-->
+
+
+        
+
+   
+
+
+
+<font color=#ff0000>
+<!-- #ifdef variable="forgotok001" -->
+        Your Password has been sent to your email address.
+<!-- #endif variable="forgotok001" -->
+</font>
+
+</form>
+
+
+
+
+<p>
+<b>Immigration or Login Problems?</b> Check the
+<a href="javascript:loadInfo('<$g_HTMLRoot>/places/mothership/immigrate/quickhelp.html')" target="_self">Quick Help</a>!<br><br>
+<font size=+1 color="#FFFF00">
+<strong>Please note:</strong>
+to enter the site your browser must accept cookies. 
+</font>
+<small>
+<font color="#FFFF00">
+<br>Netscape 4.x: menu 'edit-preferences-advanced-accept cookies' IE 4.x: menu 'view-internet options-advanced-accept cookies'
+</font>
+</small>
+</p>
+
+
+
+<!-- These tags should be placed in all categories in the 468x60 size space (Placement: 1) -->
+<IFRAME NORESIZE="NORESIZE" FRAMEBORDER="0" WIDTH=468 HEIGHT=60 MARGINWIDTH="0"
+MARGINHEIGHT="0" SCROLLING="NO" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|iframe|C|||_admonitor|">
+<SCRIPT LANGUAGE="JavaScript" SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|jscript|C|||_admonitor|">
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="http://ads.admonitor.net/clicktrack.cgi?F240|1001|1|image2|C|||" TARGET=_admonitor>
+<IMG SRC="http://ads.admonitor.net/adengine.cgi?F240|1001|1|image2|C|||" BORDER=0 WIDTH=468 HEIGHT=60></A>
+</NOSCRIPT>
+</IFRAME>
+<!-- End of adMonitor v3.0 rich content tags -->
+
+</div>
+
+<!-- #include virtual="<$g_Templates>common/focusform.tmpl" -->
+</BODY>
+</HTML>
+

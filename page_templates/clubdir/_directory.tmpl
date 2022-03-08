@@ -1,0 +1,326 @@
+<HTML>
+<!-- clubdir/directory.tmpl -->
+<!-- the club directory main frame -->
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html">
+<TITLE><$g_title> - Club Directory</TITLE>
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function SubmitForm1()
+{
+    if( document.filterForm2!=null )
+    {
+        document.filterForm1.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.filterForm1.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }
+}
+
+function SubmitForm2()
+{
+    document.filterForm2.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.filterForm2.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.filterForm2.MYC.value = "on";
+    else
+        document.filterForm2.MYC.value = "";
+}
+
+function SubmitPagerForm()
+{
+    document.pagerForm.KTY.value 
+     = document.filterForm1.KTY.options[document.filterForm1.KTY.selectedIndex].value;
+    document.pagerForm.KFT_NAM.value
+     = document.filterForm1.KFT_NAM.value;
+
+    if( document.filterForm1.MYC.checked )
+        document.pagerForm.MYC.value = "on";
+    else
+        document.pagerForm.MYC.value = "";
+
+    if( document.filterForm2!=null )
+    {
+        document.pagerForm.KFT_LIST.value
+         = document.filterForm2.KFT_LIST.options[document.filterForm2.KFT_LIST.selectedIndex].value;
+        document.pagerForm.KFT_TEXT.value
+         = document.filterForm2.KFT_TEXT.value;
+    }  
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<A NAME="topAnchor">
+
+<FORM NAME="filterForm1" METHOD=GET TARGET=_self ACTION="<$selfurl>"
+onSubmit="SubmitForm1()">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <INPUT TYPE="hidden" NAME="ac" VALUE="directory">
+    <INPUT TYPE="hidden" NAME="PLC" VALUE="<$PLC>">
+    <INPUT TYPE="hidden" NAME="KEY" VALUE="<$KEY>">
+
+
+    <INPUT TYPE="hidden" NAME="KFT_LIST" VALUE="<$KFT_LIST>">
+    <INPUT TYPE="hidden" NAME="KFT_TEXT" VALUE="<$KFT_TEXT>">
+
+
+    <TABLE ALIGN=center>
+    <TR>
+        <TD><IMG SRC="<$g_HTMLRoot>/places/clubdir/images/clubdir.jpg" BORDER=0></TD>
+        <TD valign=top>
+            <TABLE>
+            <TR>
+                <TD align=right>Ordered by:</TD>
+                <TD>
+                    <SELECT NAME="KTY" width=136>
+                       <OPTION VALUE="NAK"
+                        <!--#ifdef variable="KTY" value="NAK" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Club Name </OPTION>
+                        <OPTION VALUE="KK1"
+                        <!--#ifdef variable="KTY" value="KK1" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Keyword </OPTION>
+                        <OPTION VALUE="CDA"
+                        <!--#ifdef variable="KTY" value="CDA" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Creation Date </OPTION>
+                        <OPTION VALUE="CNT"
+                        <!--#ifdef variable="KTY" value="CNT" -->
+                        SELECTED
+                        <!--#endif variable="KTY" -->
+                        > Members </OPTION>
+                    </SELECT><BR>
+                </TD>
+                <TD>&nbsp;&nbsp;
+                    <INPUT TYPE="checkbox" NAME="MYC"
+                    <!--#ifdef variable="MYC" value="on" -->
+                    checked
+                    <!--#endif variable="MYC" -->
+                    >My Clubs</INPUT>
+                </TD>
+            </TR>
+            <TR>
+                <TD align=right>Club Name:&nbsp;&nbsp;</TD>
+                <TD>
+                    <INPUT TYPE="text" NAME="KFT_NAM" VALUE="<$KFT_NAM>" MAXLENGTH=32 SIZE=16>
+                </TD>
+                <TD><INPUT TYPE="submit" NAME="SORT_BTN" VALUE="Apply"></TD>
+            </TR>
+            <TR>
+                <TD>&nbsp;</TD>
+                <TD><A HREF="#moreAnchor">Search by keywords...</A></TD>
+            </TR>
+            <TR>
+                <TD colspan=3 align=center><br>
+                    There are <$TCN> clubs at the moment.
+                </TD>
+            </TR>
+           </TABLE>
+       </TABLE>
+</FORM>
+
+<FORM NAME="pagerForm" METHOD=post TARGET=_self ACTION="<$selfurl>" onSubmit="SubmitPagerForm()">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <INPUT TYPE="hidden" NAME="ac" VALUE="directory">
+    <INPUT TYPE="hidden" NAME="PLC" VALUE="<$PLC>">
+
+    <INPUT TYPE="hidden" NAME="MYC" VALUE="<$MYC>">
+    <INPUT TYPE="hidden" NAME="KTY" VALUE="<$KTY>">
+    <INPUT TYPE="hidden" NAME="KEY" VALUE="<$KEY>">
+
+    <INPUT TYPE="hidden" NAME="KFT_NAM" VALUE="<$KFT_NAM>">
+    <INPUT TYPE="hidden" NAME="KFT_LIST" VALUE="<$KFT_LIST>">
+    <INPUT TYPE="hidden" NAME="KFT_TEXT" VALUE="<$KFT_TEXT>">
+
+    <INPUT TYPE="hidden" NAME="FIRSTKEY" VALUE="<$FIRSTKEY>">
+    <INPUT TYPE="hidden" NAME="LASTKEY" VALUE="<$LASTKEY>">
+    <INPUT TYPE="hidden" NAME="FIRSTID" VALUE="<$FIRSTID>">
+    <INPUT TYPE="hidden" NAME="LASTID" VALUE="<$LASTID>">
+
+    <INPUT TYPE="hidden" NAME="FIRSTNO" VALUE="<$FIRSTNO>">
+    <INPUT TYPE="hidden" NAME="LASTNO" VALUE="<$LASTNO>">
+
+    <TABLE ALIGN=center>
+    <TR>
+        <td>
+            <a href="club<$g_exe>?ac=directory&TPL=clubdir/dirtext" target=place><IMG SRC="<$g_Images>/images/buttons/btextlist.gif" BORDER=0 ALT="Text Only List"></a>
+            <a href="club<$g_exe>?ac=charts&TPL=clubdir/charts&KTY=CNT&DTY=CL" target="place"><IMG SRC="<$g_Images>/images/buttons/bcharts.gif" BORDER=0 ALT="Top Clubs"></a>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+            <!--#ifdef variable="[PREV]" -->
+                <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+        </td>
+    </TR>
+    </TABLE>
+
+    <TABLE ALIGN="center" border="1">
+        <TR>
+            <TH><FONT COLOR=#80ff00>No</FONT></TH>
+            <TH><FONT COLOR=#80ff00><B>Club Name</B><BR>Owner</FONT></TH>
+            <TH><FONT COLOR=#80ff00>Keywords</FONT></TH>
+            <TH><FONT COLOR=#80ff00>Club Image</FONT></TH>
+            <TH><FONT COLOR=#80ff00>Info</FONT></TH>
+    <!-- #ifndef variable="isVisitor" -->
+            <TH><FONT COLOR=#80ff00>Status</FONT></TH>
+    <!-- #endif variable="isVisitor" -->
+            <TH><FONT COLOR=#80ff00>Members</FONT></TH>
+            <TH><FONT COLOR=#80ff00>Creation Date</FONT></TH>
+        </TR>
+
+<!-- #ifdef variable="T_level" value="top" -->
+<!-- #include virtual="<$g_Templates>clubdir/sponsorclubs.tmpl" -->
+<!-- #endif variable="T_level" -->>
+
+
+
+
+
+    <!--#for loopname="CLUBLIST" loopvars="ID_" -->
+        <TR>
+            <TD align=center><$NUM_></TD>
+            <TD align=center nowrap>
+            <!-- #ifdef variable="isVisitor" -->
+                <B><$NAM_></B>
+            <!-- #endif variable="isVisitor" -->
+            <!-- #ifndef variable="isVisitor" -->
+            <!--#ifdef variable="memberaccess_" -->
+                <A HREF="club<$g_exe>?ac=enter&clubid=<$ID_>" target="_top"><B><$NAM_></B></A>
+            <!--#endif variable="memberaccess_" -->
+            <!--#ifndef variable="memberaccess_" -->
+                <!--#ifdef variable="waiting_" -->
+                    <B><$NAM_></B>
+                <!--#endif variable="waiting_" -->
+                <!--#ifndef variable="waiting_" -->
+                    <A HREF="edit<$g_exe>?ac=read&TPL=club/showinfo&KEY=<$ID_>&join=1">
+                    <B><$NAM_></B></A>
+                <!--#endif variable="waiting_" -->
+            <!--#endif variable="memberaccess_" -->
+            <!-- #endif variable="isVisitor" -->
+            <BR>
+            <$OWN_NNM_>
+            </TD>
+            <TD> <$CK1_>, <$CK2_>, <$CK3_> </TD>
+            <TD align=center> 
+                <!-- #ifdef variable="STC_" value="0"-->
+                    <img src="<$g_HTMLRoot><$g_DBImages><$CLP_>" border=0 ALT="Club Image" height=70>
+                <!-- #endif variable="STC_" -->
+                <!-- #ifdef variable="STC_" value="1"-->
+                    <IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=70>
+                <!-- #endif variable="STC_" -->
+             </TD>
+            <TD align=center>
+                <A HREF="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/showinfo&KEY=<$ID_>')">
+                <IMG SRC="<$g_Images>/images/buttons/binfo0.gif" BORDER=0 ALT="Club Info"></A>
+                <BR>
+                <a href="javascript:loadInfo('edit<$g_exe>?ac=read&TPL=club/showrules&KEY=<$ID_>')">
+                <IMG SRC="<$g_Images>/images/buttons/bcrules.gif" BORDER=0 ALT="Club Rules"></a>
+            </TD>
+            <!-- #ifndef variable="isVisitor" -->
+                <TD align=center>
+                <!--#ifdef variable="memberaccess_" -->
+                    Member
+                <!--#endif variable="memberaccess_" -->
+                <!--#ifndef variable="memberaccess_" -->
+                    <!--#ifdef variable="waiting_" -->
+                        waiting for invitation
+                    <!--#endif variable="waiting_" -->
+                    <!--#ifndef variable="waiting_" -->
+                        Not Member
+                    <!--#endif variable="waiting_" -->
+                <!--#endif variable="memberaccess_" -->
+                </TD>
+            <!-- #endif variable="isVisitor" -->
+            <TD align=center><BR><$CNT_></TD>
+            <TD align=center><$CDA_MONNAM_>&nbsp;<$CDA_MDAy_>,&nbsp;<$CDA_YEAR_></TD>
+        </TR>
+    <!--#endfor loopname="CLUBLIST" -->
+    </TABLE>
+    <BR>
+
+    <TABLE ALIGN=center>
+    <TR>
+        <td>
+            <a href="club<$g_exe>?ac=directory&TPL=clubdir/dirtext" target=place><IMG SRC="<$g_Images>/images/buttons/btextlist.gif" BORDER=0 ALT="Text Only List"></a>
+            <a href="club<$g_exe>?ac=charts&TPL=clubdir/charts&KTY=CNT&DTY=CL" target="place"><IMG SRC="<$g_Images>/images/buttons/bcharts.gif" BORDER=0 ALT="Top Clubs"></a>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" border=0></INPUT>
+            <!--#ifdef variable="[PREV]" -->
+            <INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" border=0></INPUT>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+        </td>
+    </TR>
+    </TABLE>
+</FORM>
+
+<FORM NAME="filterForm2" METHOD=POST TARGET=_self ACTION="<$selfurl>" onSubmit="SubmitForm2()">
+<input type="hidden" name="TKT" value="<$TKT>">
+  
+    <INPUT TYPE="hidden" NAME="ac" VALUE="directory">
+    <INPUT TYPE="hidden" NAME="PLC" VALUE="<$PLC>">
+    <INPUT TYPE="hidden" NAME="KEY" VALUE="<$KEY>">
+    <INPUT TYPE="hidden" NAME="KTY" VALUE="<$KTY>">
+
+    <INPUT TYPE="hidden" NAME="MYC" VALUE="<$MYC>">
+    <INPUT TYPE="hidden" NAME="KFT_NAM" VALUE="<$KFT_NAM>">
+
+    <TABLE ALIGN=center>
+        <TR>
+            <TD valign=center>
+                Select a keyword from the list <b>or</b> input free words for search.<br>
+                Clubs are searched which matches one or more of the given words.<br>
+                You can also quote the words to search for a whole sentence
+            </TD>
+            <TD valign=center>
+                <SELECT NAME="KFT_LIST" width=200>
+                    <OPTION VALUE="EMPTY"></OPTION>
+                     <!--#for loopname="keyword1List" loopvars="CK1_LIST_" -->
+                       <OPTION VALUE="<$CK1_LIST_>"
+                        <!--#ifdef variable="CK1_SEL_" -->
+                            SELECTED
+                        <!--#endif variable="CK1_SEL_"-->
+                        > <$CK1_LIST_> </OPTION>
+                    <!--#endfor loopname="keyword1List" -->
+                    <!--#for loopname="keyword2List" loopvars="CK2_LIST_" -->
+                        <OPTION VALUE="<$CK2_LIST_>"
+                        <!--#ifdef variable="CK2_SEL_" -->
+                            SELECTED
+                        <!--#endif variable="CK2_SEL_"-->
+                        > <$CK2_LIST_> </OPTION>
+                    <!--#endfor loopname="keyword2List" -->
+                </SELECT><br>
+                <INPUT TYPE="text" NAME="KFT_TEXT" VALUE="<$KFT_TEXT>" SIZE=24>
+            </TD>
+            <TD valign=center>
+                <INPUT TYPE="submit" NAME="SORT_BTN" VALUE="Apply">
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>
+<CENTER>
+<A HREF="#topAnchor">Top...</A><br>
+</CENTER>
+<A NAME="moreAnchor">
+</BODY>
+</HTML>

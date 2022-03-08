@@ -1,0 +1,118 @@
+<!-- admin/job.tmpl -->
+<!-- edit job attributes -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for Job <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new Job</h2>
+<!-- #endif variable="create" -->
+    
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<br><br>
+<form name="updateForm" method=post action="<$selfurl>">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="<$TPL>">
+<input type=hidden name="ac" value="<$ac>">
+
+<table border=0>
+    <!-- #ifdef variable="create" -->
+        <tr>
+            <td align=right>ID:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="ID" VALUE="<$ID>" MAXLENGTH=2 SIZE=2><font color=ff0000 size=2> &nbsp;&nbsp;<b>insert no jobs greater than 80(hex)!</b></font></td>
+        </tr>
+    <!-- #endif variable="create" -->
+    <tr>
+        <td align=right>Name:&nbsp;&nbsp;</td>
+        <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+    </tr>
+    <tr>
+        <td align=right>Email:&nbsp;&nbsp;</td>
+        <td><INPUT NAME=EML VALUE="<$EML>" MAXLENGTH=32 SIZE=32></td>
+    </tr>
+    <tr><td colspan=2>&nbsp;</td></tr>
+    <tr>
+        <td align=right>Min. Experience:&nbsp;&nbsp;</td>
+        <td><INPUT NAME=EXP VALUE="<$EXP>" MAXLENGTH=16 SIZE=16></td>
+    </tr>
+    <tr>
+        <td align=right>Type:&nbsp;&nbsp;</td>
+        <td>
+            <select name="TYP">
+                <option value="">associated with place</option>
+                <option value="1"
+                <!--#ifdef variable="TYP" value="1"-->
+                    selected
+                <!--#endif variable="TYP" -->
+                >general job</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td align=right>Symbol:&nbsp;&nbsp;</td>
+        <td><INPUT NAME="SYM" VALUE="<$SYM>" SIZE=32></td>
+    </tr>
+    <tr><td colspan=2>&nbsp;</td></tr>
+    <tr>
+        <td align=right>Income Money:&nbsp;&nbsp;</td>
+        <td><INPUT NAME=INC VALUE="<$INC>" MAXLENGTH=16 SIZE=16></td>
+    </tr>
+    <tr>
+        <td align=right>Income Experience:&nbsp;&nbsp;</td>
+        <td><INPUT NAME=IEP VALUE="<$IEP>" MAXLENGTH=16 SIZE=16></td>
+    </tr>
+<!-- #ifndef variable="create" -->
+    <tr><td colspan=2>&nbsp;</td></tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <a HREF="admin<$g_exe>?DTY=RM&KTY=ID&KFT=<$ID>*&TPL=admin/jobowner&ac=list">Job Owner</a>
+        </td>
+    </tr>
+<!-- #endif variable="create" -->
+</table>
+
+<br><br>
+
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

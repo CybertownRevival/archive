@@ -1,0 +1,61 @@
+<!-- community/place2.tmpl -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>community/world.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifdef variable="chatno" -->
+<div align=center>
+<!-- #include virtual="<$g_Templates>community/present.tmpl" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<small>Click a Neighborhood on the Colony map to get your home</small><br>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<small>Become a member ('JOIN NOW') to get your own home, click 'MAP' to enter other places</small><br>
+<!-- #endif variable="isVisitor" -->
+
+
+<!-- #ifndef variable="adurl" value=""-->
+<a href="<$adurl>" target="external">
+<IMG SRC="<$adimg>" ALIGN="center" BORDER="0"></a>
+<!-- #endif variable="adurl" -->
+
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<div align=center>
+<!-- #include virtual="<$g_Templates>community/present.tmpl" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<small>Click a <$ENM> on the <$CNM> map to get your home</small><br>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<small>Become a member ('JOIN NOW') to get your own home, click 'MAP' to enter other places</small><br>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #include virtual="<$g_Templates>community/javachat.tmpl" -->
+
+<!-- #ifndef variable="adurl" value=""-->
+<a href="<$adurl>" target="external">
+<IMG SRC="<$adimg>" ALIGN="center" BORDER="0"></a>
+<!-- #endif variable="adurl" -->
+
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<!-- #endif variable="chatstd" -->
+
+</body>
+</html>

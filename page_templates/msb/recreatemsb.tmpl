@@ -1,0 +1,27 @@
+<html>
+<head>
+<title><$g_title> - Message Board</title>
+</head>
+
+<!-- recreatemsb.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<script>
+	doodah = document.recreate.submit();
+</script>
+<form name="recreate" method=post action="<$selfurl>">
+<input type=hidden name="TKT" value="<$TKT>">
+<INPUT type=hidden NAME="NAM" VALUE="<$NAM>">
+<INPUT type=hidden NAME="URL" VALUE="<$URL>">
+<INPUT type=hidden NAME="TXT" VALUE="<$TXT>">
+<INPUT type=hidden name="HTM" VALUE="<$HTM>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="ac"  value="setconf">
+<input type=hidden name="T_TYPE"  value="<$T_TYPE>">
+</form>
+</body>
+</html>
+

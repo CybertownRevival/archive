@@ -1,0 +1,76 @@
+<!-- /templates/mothership/vrml_contest/vrmlcontest.tmpl -->
+
+
+
+<!-- #ifdef variable="isVisitor" -->
+<html>
+<head>
+	<title>Cybertown & Mothership | VRML Contest Sign-Up</title>
+<style type="TEXT/CSS">
+<!--
+P.headline	{font-size: 12pt;font-weight: bold;  text-align: center; font-family: arial, sans-serif }
+P.text	{font-size: 10pt; text-align: left; font-family: arial, sans-serif}
+P.textcenter{font-size: 8pt; text-align: center; font-family: arial, sans-serif}
+
+// -->
+</style>
+</head>
+<body bgcolor="#004056" text="#e3e3e3" vlink="#ffffff" alink="#ffffff" link="#ffffff">
+<CENTER>
+Sorry Visitor! To enter this contest you must Immigrate.<br><br>
+<A HREF="register<$g_exe>">
+<IMG HEIGHT=14 WIDTH=85 SRC="<$g_Images>/images/login/immigrate.gif" BORDER=0 ALT="Immigrate"></a>
+<br>
+</center>
+</body>
+</html>
+<!-- #endif variable="isVisitor" -->
+
+
+<!-- #ifndef variable="isVisitor" -->
+<html>
+<head>
+	<title>The VRML contest has ended</title>
+
+<style type="TEXT/CSS">
+
+<!--
+P.headline	{font-size: 12pt;font-weight: bold;   text-align: center; font-family: arial, sans-serif }
+P.text	{font-size: 10pt; text-align: center; font-family: arial, sans-serif}
+P.textcenter{font-size: 8pt; text-align: center; font-family: arial, sans-serif}
+
+// -->
+</style>
+
+
+</head>
+
+<body bgcolor="#004056" text="#e3e3e3">
+
+<CENTER>
+<TABLE CELLSPACING="0" CELLPADDING="3"  WIDTH="500" BORDER="0">
+
+
+<TR>
+<TD vAlign="center" align="middle" ><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/contestheader.gif"><BR><IMG SRC="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif" height="20"></TD>
+</TR>
+<TR>
+<TD vAlign="center" align="middle" bgColor="#002430"  HEIGHT="20"><p class="headline">The VRML contest has ended</p></TD>
+</TR>
+<TR>
+<TD bgColor="#003040" WIDTH="500"><P CLASS="text">Entries are no longer being accepted.
+Winners will be announced on<br> Friday, October 27, 2000, so be sure to check back!</P>
+</TD>
+</TR>
+<TR>
+<TD bgColor="#003040" ><IMG height="5" src="<$g_HTMLRoot>/places/mothership/vrml_contest/images/x.gif"></TD>
+</TR>
+<TR>
+ <TD vAlign="center" align="middle" bgColor="#002430" HEIGHT="15"></TD>
+</TR>
+</TABLE>
+</CENTER>
+</body>
+</html>
+<!-- #endif variable="isVisitor" -->
+

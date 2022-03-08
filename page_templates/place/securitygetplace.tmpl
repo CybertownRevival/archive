@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<script language="javascript">
+
+
+var PLC = "<$PLC>";
+
+function print_link(){
+
+  if(PLC.substring(0,2) == ""){
+    document.writeln("NOT FOUND");
+    return;
+  }
+  
+  if(PLC.substring(0,2) != "CL" && PLC.substring(0,1) != "0"){
+    document.writeln("<a href=\"http://www.cybertown.com/cgi-bin/cybertown/place?plc=suburbs&T_SUB="+ PLC +"\" target=\"_new\">Place: SUBURB_<$PLC></a>");
+    return;
+  }
+  if(PLC.substring(0,2) == "CL"){
+    document.writeln("<a href=\"http://www.cybertown.com/cgi-bin/cybertown/place?plc=club&ID="+ PLC +"\" target=\"_new\">Place: CLUB_<$CNAM></a>");
+    return;
+  }
+  if(PLC.substring(4,10) != "000000" ){
+    document.writeln("<a href=\"http://www.cybertown.com/cgi-bin/cybertown/property?ID="+ PLC +"\" target=\"_new\">Place: HOME_<$HNAM></a>");
+    return;
+  }  
+  document.writeln("<a href=\"http://www.cybertown.com/cgi-bin/cybertown/place?ID="+ PLC +"\" target=\"_new\">Place: <$NAM></a>");  
+}
+
+</script>
+</head>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<font face="arial" size=+1>
+<center>
+<br><br>
+Citizen "<$T_NIC>" last entered chat in:
+
+<br><br>
+<B>
+<script> print_link(); </script>
+</B>
+</center>
+</body>
+</html>

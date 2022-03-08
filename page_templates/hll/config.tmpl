@@ -1,0 +1,63 @@
+<html>
+<head>
+<title><$g_title> - Library</title>
+</head>
+
+<!-- config.tmpl -->
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Library - Configuration</h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="ac"  value="setconf">
+
+<table border=0>
+<tr>
+<td>The name of the library:</td>
+</tr>
+<td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=60 SIZE=60></td>
+<tr>
+<td>The introduction text of the library.</td>
+</tr>
+</table>
+<TEXTAREA NAME="TXT" ROWS=15 COLS=60><$TXT></TEXTAREA>
+<P>
+The introduction text you specified above can contain HTML tags,
+like &lt;P&gt; etc,
+<br>
+please make sure you do not create any
+syntax errors.
+<br>
+It is <U>YOUR library <$NNM></U>.
+<P>
+<P>
+Should posting of HTML tags be allowed in messages of the library?
+<SELECT  name = "HTM">
+<OPTION <$htmnoselected> value = "no">no&nbsp;
+<OPTION <$htmyesselected> value = "yes">yes&nbsp;
+</SELECT>
+<p>
+
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+</form>
+
+<!-- #ifdef variable="hllmsg001" -->
+The values have been set.
+<!-- #endif variable="hllmsg001" -->
+
+<font color="red">
+
+<!-- #ifdef variable="hllseterror001" -->
+Sorry <$NNM>, the lengths of the values you wanted to set are too big.
+<!-- #endif variable="hllseterror001" -->
+</font>
+
+</body>
+</html>
+

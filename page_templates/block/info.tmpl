@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+</HEAD>
+
+<form method=post action="edit<$g_exe>" target="place">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H3 align=center>Welcome to the <$BNM> '<$NAM>'</H3>
+
+<p>
+<!-- #ifdef variable="TXT" -->
+<$TXT>
+<!-- #endif variable="TXT" -->
+<!-- #ifndef variable="TXT" -->
+<!-- #endif variable="TXT" -->
+</p>
+
+<script language=javascript>
+ var neighborid = '<$ID>';
+ neighborid = neighborid.substring(0,8);
+ if (neighborid == '01020503') {
+  document.write('<p><a href="http://www.liquidwww.com" target=_blank><IMG src="<$gHTMLRoot>/home/0102000000000000/generations/buttonlogo.jpg" alt="Visit our Sponsor" border=0></a><br>Sponsored by AgMAY Inc.<br><br>');
+ }
+</script>
+
+<!-- #include virtual="<$g_Templates>common/inforoles.tmpl" -->
+
+</BODY>
+</HTML>

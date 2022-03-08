@@ -1,0 +1,87 @@
+<script language=javascript>
+//<$ID>
+pluginUpdate = 1;
+timerid = setTimeout( 'init()', 1000 );
+cityTime = new Date();
+<!-- #ifdef variable="CT_HOUR" -->
+cityTime.setHours(<$CT_HOUR>);
+cityTime.setMinutes (<$CT_MIn>);
+cityTime.setSeconds (<$CT_SEc>);
+<!-- #endif variable="CT_HOUR" -->
+<!-- #ifndef variable="CT_HOUR" -->
+cityTime.setHours(cityTime.getHours+cityTime.getTimezoneOffset()<$g_TimeZone>);
+<!-- #endif variable="CT_HOUR" -->
+cityTimeOffset = cityTime.getTime() - (new Date()).getTime();
+function init()
+{
+    // we need to call the server otherwise the cookie is not set if an http proxy is used
+    if ( top.refresh )
+    {
+        refreshTimer();
+    }
+    else
+    {
+        timerid = setTimeout( 'init()', 100 );
+    }
+}
+function printDate(timeString,count,time)
+{
+    if ( count > 1 )
+        text = "Citizens Online";
+    else if ( count == 1 )
+        text = "Citizen Online";
+    else if ( count == -1 )
+        text = "Citizens Online";
+<!-- #if variable="NNM" != value="Visitor" -->
+    text = "<A HREF='javascript:parent.list(\"<$g_MessageServer>/list.tmpl?ac=list&TIME="+time+"\")'>" + text + "</A>"
+<!-- #endif variable="NNM" -->
+    if ( top.date )
+    {
+        top.date.document.open("text/html");
+        top.date.document.writeln("<HTML><BODY BACKGROUND='http://www.cybertown.com/images/back.gif' BGCOLOR=#002020 LINK=#FFFF00 VLINK=#FFFF00 ALINK=#FFFFFF TEXT=#D0DBF7>");
+        top.date.document.writeln("<div align=center><IMG SRC='http://www.cybertown.com/images/ctlogo.gif' BORDER=0>");
+        top.date.document.writeln("<br><FONT size=-1 color=#33CCCC>City Time " + timeString);
+        top.date.document.writeln("</font>");
+        top.date.document.writeln("<FONT size=-1>");
+        top.date.document.writeln(text);
+        top.date.document.writeln("</font>");
+        top.date.document.writeln("</body></html>");
+        top.date.document.close();
+    }
+}
+function refreshTimer()
+{
+    if ( top.place.World==null && top.place.document.applets.length==0 ) // no plugin active
+    {
+        if ( top.refresh )
+        {
+            top.refresh.location.href = "<$g_MessageServer>/refresh.tmpl?ac=check";
+        }
+    }
+	now = new Date();
+	cityTime.setTime(now.getTime()+cityTimeOffset);
+	ampm = " AM";
+	if (cityTime.getHours() >= 12) { ampm = " PM"; }
+	hour = cityTime.getHours();
+	if (hour > 12) { hour -= 12; }
+	timeString = hour + ":";
+	if (cityTime.getMinutes() < 10) { timeString += "0"; }
+	timeString += cityTime.getMinutes() + ampm + "<BR>";
+	printDate( timeString, -1, cityTime.getTime() );
+    timerid = setTimeout( 'refreshTimer()', <$g_MsRefresh>*1000 );
+}
+function update(timeString,count,time)
+{
+    //printDate(timeString,count,time);
+}
+listWin = 0;
+function list(url)
+{
+  listWin = window.open(url, "list", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=200,height=450");
+}
+receiveWin = 0;
+function messageReceived()
+{
+  receiveWin = window.open("<$g_MessageServer>/receive.tmpl?ac=getmessage&<$TIME>", "receive", "toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250");
+}
+</script>

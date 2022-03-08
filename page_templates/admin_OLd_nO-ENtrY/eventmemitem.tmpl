@@ -1,0 +1,140 @@
+<!-- admin/eventmem.tmpl -->
+<!-- edit event attributes -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function confirmDelete()
+{
+    if( confirm( 'Are you sure to delete this object from Database?' ) )
+    {
+        document.updateForm.ac.value = 'delete';
+        document.updateForm.submit();
+    }
+    else
+        return false;
+}
+
+//-->
+</SCRIPT>
+
+<div align=center>
+<!-- #ifndef variable="create" -->
+    <h2>Change Attributes for Event Member Item <font color=#80ff00>ID: <$ID></font></h2>
+<!-- #endif variable="create" -->
+<!-- #ifdef variable="create" -->
+    <h2>Create new Event Member Item</h2>
+<!-- #endif variable="create" -->
+    
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<br><br>
+<form name="updateForm" method=post action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="TPL" value="<$TPL>">
+<input type=hidden name="ac" value="<$ac>">
+
+<table border=0>
+    <!-- #ifdef variable="create" -->
+        <tr>
+            <td align=right>ID <b>("ie" + 7 digits + 7 digits + lowercase nickname, e.g. "ie00000010000006power")</b>:&nbsp;&nbsp;</td>
+            <td><INPUT NAME="ID" VALUE="<$ID>" MAXLENGTH=32 SIZE=32></td>
+        </tr>
+    <!-- #endif variable="create" -->
+    <tr>
+        <td align=right>Creation Date:&nbsp;&nbsp;</td>
+        <td>
+                <SELECT NAME="CDA_MDAY">
+                  <OPTION>
+                  <OPTION<$S01_CDA_MDAY>> 01
+                  <OPTION<$S02_CDA_MDAY>> 02
+                  <OPTION<$S03_CDA_MDAY>> 03
+                  <OPTION<$S04_CDA_MDAY>> 04
+                  <OPTION<$S05_CDA_MDAY>> 05
+                  <OPTION<$S06_CDA_MDAY>> 06
+                  <OPTION<$S07_CDA_MDAY>> 07
+                  <OPTION<$S08_CDA_MDAY>> 08
+                  <OPTION<$S09_CDA_MDAY>> 09
+                  <OPTION<$S10_CDA_MDAY>> 10
+                  <OPTION<$S11_CDA_MDAY>> 11
+                  <OPTION<$S12_CDA_MDAY>> 12
+                  <OPTION<$S13_CDA_MDAY>> 13
+                  <OPTION<$S14_CDA_MDAY>> 14
+                  <OPTION<$S15_CDA_MDAY>> 15
+                  <OPTION<$S16_CDA_MDAY>> 16
+                  <OPTION<$S17_CDA_MDAY>> 17
+                  <OPTION<$S18_CDA_MDAY>> 18
+                  <OPTION<$S19_CDA_MDAY>> 19
+                  <OPTION<$S20_CDA_MDAY>> 20
+                  <OPTION<$S21_CDA_MDAY>> 21
+                  <OPTION<$S22_CDA_MDAY>> 22
+                  <OPTION<$S23_CDA_MDAY>> 23
+                  <OPTION<$S24_CDA_MDAY>> 24
+                  <OPTION<$S25_CDA_MDAY>> 25
+                  <OPTION<$S26_CDA_MDAY>> 26
+                  <OPTION<$S27_CDA_MDAY>> 27
+                  <OPTION<$S28_CDA_MDAY>> 28
+                  <OPTION<$S29_CDA_MDAY>> 29
+                  <OPTION<$S30_CDA_MDAY>> 30
+                  <OPTION<$S31_CDA_MDAY>> 31
+                </SELECT>
+                <SELECT NAME="CDA_MON">
+                  <OPTION>
+                  <OPTION<$S01_CDA_MON> value="01"> Jan
+                  <OPTION<$S02_CDA_MON> value="02"> Feb
+                  <OPTION<$S03_CDA_MON> value="03"> Mar
+                  <OPTION<$S04_CDA_MON> value="04"> Apr
+                  <OPTION<$S05_CDA_MON> value="05"> May
+                  <OPTION<$S06_CDA_MON> value="06"> Jun
+                  <OPTION<$S07_CDA_MON> value="07"> Jul
+                  <OPTION<$S08_CDA_MON> value="08"> Aug
+                  <OPTION<$S09_CDA_MON> value="09"> Sep
+                  <OPTION<$S10_CDA_MON> value="10"> Oct
+                  <OPTION<$S11_CDA_MON> value="11"> Nov
+                  <OPTION<$S12_CDA_MON> value="12"> Dec
+                </SELECT>
+                <SELECT NAME="CDA_YEAR">
+                  <OPTION>
+                  <OPTION<$S1999_CDA_YEAR>> 1999
+                  <OPTION<$S2000_CDA_YEAR>> 2000
+                  <OPTION<$S2001_CDA_YEAR>> 2001
+                </SELECT>
+        </td>
+    </tr>
+    <tr>
+        <td align=right>Counter for this event member item:&nbsp;&nbsp;</td>
+        <td><INPUT NAME=CNT VALUE="<$CNT>" MAXLENGTH=8 SIZE=8></td>
+    </tr>
+
+</table>
+
+<!-- #ifndef variable="create" -->
+<br>
+    <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID>&TPL=common/rights&ac=readrole">Access Rights...</A><br>
+<!-- #endif variable="create" -->
+
+<br><br>
+
+    <!-- #ifndef variable="create" -->
+        <input type=submit name="edit" value="Update" width=100>
+        <input type=button name="delete" value="Delete" onClick="confirmDelete()" width=100>
+    <!-- #endif variable="create" -->
+    <!-- #ifdef variable="create" -->
+        <input type=submit name="insert" value="Create" width=100>
+    <!-- #endif variable="create" -->
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>
+

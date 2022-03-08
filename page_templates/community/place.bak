@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifdef variable="chatno" -->
+<div align=center>
+<!-- #include virtual="<$g_Templates>community/present.tmpl" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<small>Click a Neighborhood on the Colony map to get your home</small><br>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<small>Become a member ('JOIN NOW') to get your own home, click 'MAP' to enter other places</small><br>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="ID" value="0102000000000000"-->
+<!-- Starwars ad, linked to 3 message boards -->
+<p align=center><a href="javascript:loadInfo('<$g_HTMLRoot>/events/starwars/index.html')" target=_self>
+<IMG SRC="<$g_HTMLRoot>/ad/starwars.jpg" ALIGN="center" BORDER="0" width="480" height="60"></a>
+</p>
+<!-- #endif variable="ID" -->
+
+<!-- #ifndef variable="adurl" value=""-->
+<a href="<$adurl>" target="external">
+<IMG SRC="<$adimg>" ALIGN="center" BORDER="0"></a>
+<!-- #endif variable="adurl" -->
+
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<!-- #endif variable="chatno" -->
+
+<!-- #ifdef variable="chatstd" -->
+<div align=center>
+<!-- #include virtual="<$g_Templates>community/present.tmpl" -->
+
+<!-- #ifndef variable="isVisitor" -->
+<small>Click a <$ENM> on the <$CNM> map to get your home</small><br>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<small>Become a member ('JOIN NOW') to get your own home, click 'MAP' to enter other places</small><br>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #include virtual="<$g_Templates>common/javachat.tmpl" -->
+
+<!-- #ifndef variable="adurl" value=""-->
+<a href="<$adurl>" target="external">
+<IMG SRC="<$adimg>" ALIGN="center" BORDER="0"></a>
+<!-- #endif variable="adurl" -->
+
+<!-- #ifdef variable="ID" value="0102000000000000"-->
+<!-- Starwars ad, linked to 3 message boards -->
+<p align=center><a href="javascript:loadInfo('<$g_HTMLRoot>/events/starwars/index.html')" target=_self>
+<IMG SRC="<$g_HTMLRoot>/ad/starwars.jpg" ALIGN="center" BORDER="0" width="480" height="60"></a>
+</p>
+<!-- #endif variable="ID" -->
+
+</div>
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<!-- #endif variable="chatstd" -->
+
+<!-- #ifdef variable="chatpro" -->
+<!-- #include virtual="<$g_Templates>community/present.tmpl" -->
+<!-- #endif variable="chatpro" -->
+
+</body>
+</html>

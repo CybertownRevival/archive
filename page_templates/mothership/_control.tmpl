@@ -1,0 +1,142 @@
+<!-- Custom Control Panel --> 
+
+<TR><TD ALIGN="CENTER" BGCOLOR="#003040">
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menudirectory.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuhow.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- #ifndef variable="isVisitor" -->
+<A HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumyinfo.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+ <A HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+ <A HREF="javascript:void(0)" onClick="javascript:win=window.open('<$g_HTMLRoot>/info/controlpanel/index.html','info','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=500')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+ <A href="javascript:void(0)" onClick="javascript:win=window.open('<$g_HTMLRoot>/info/controlpanel/index.html','info','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=620,height=500')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumyhouse.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/info/helpinfo.html')" ALT="Help/Info" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuhelp.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadCustom('/cgi-bin/calweb/calweb.cgi',720,450)" ALT="Activities" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menuactivities.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('<$g_HTMLRoot>/places/post/post.html')" target="_self" alt="Send a Postcard">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menupostcards.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<A HREF="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=msb/feedback')" target="_self" alt="Feedback Board">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menufeedback.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<!-- <A HREF="" ALT="coming soon: City Tour" target=_self> -->
+
+<A HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/menumap.gif" WIDTH="156" HEIGHT="20" BORDER="0"></A><BR>
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="15" BORDER="0"><BR>
+
+
+
+<TABLE CELLSPACING="0" CELLPADDING="0" BORDER="0"><TR><TD>  <!-- This table is here to reduce padding around form -->
+
+
+<!-- JUMPGATE -->
+
+<form name="navbar">
+
+<select name="jumpgate" size="1" onchange="jump(this.options[this.selectedIndex].value)">
+
+<option value="" selected>JUMP GATE</option>
+<option value=""></option>  
+<option value="">COLONIES:</option>
+<option value="top community<$g_exe>?ID=0102000000000000">Sci-fi</option>
+<option value="top community<$g_exe>?ID=0104000000000000">Entertainment</option>
+<option value="top community<$g_exe>?ID=0101000000000000">Games</option>
+<option value="top community<$g_exe>?ID=0103000000000000">Virtual Worlds</option>
+<option value="top community<$g_exe>?ID=0108000000000000">Cyberhood</option>
+<option value="top community<$g_exe>?ID=0105000000000000">Inner Realms</option>
+<option value="top community<$g_exe>?ID=0106000000000000">Teens</option>
+<option value="top community<$g_exe>?ID=0107000000000000">Mothership</option>
+<option value="">-----------------------</option>
+<option value="top place<$g_exe>?plc=enter">The Plaza</option>
+<option value="top place<$g_exe>?plc=ent_complex">ePlex</option>
+<option value="top place<$g_exe>?plc=clubdir&T_level=top">The
+Clubs</option>
+<option value="top place<$g_exe>?plc=fleamarket">Flea Market</option>
+<option value="top place<$g_exe>?plc=shopping">The Mall</option>
+<option value="custom /homebuilder 784 480">Homebuilder</option>
+<option value="top place<$g_exe>?plc=employment">Employment</option>
+<option value="top place<$g_exe>?plc=club&ID=CL00000000001b9b">Newcomers Club</option>
+<option value="top place<$g_exe>?plc=ne_game">Outlands (the Game)</option>
+<option value="top place<$g_exe>?plc=cafe">Le Caf&eacute;</option>
+<option value="top place<$g_exe>?plc=library">Library</option>
+<option value="top place<$g_exe>?plc=jail">Jail</option>
+<option value="top place<$g_exe>?plc=beach">Sunset Beach</option>
+<option value="top place<$g_exe>?plc=funpark">Fun Park</option>
+<option value="top place<$g_exe>?plc=waterpark">Water Park</option>
+<option value="top place<$g_exe>?plc=themepark">Theme Park</option>
+<option value="top place<$g_exe>?plc=cityhall">City Hall</option>
+<option value="top place<$g_exe>?plc=theatre">PerformingArtsCenter</option>                                 
+<option value="top place<$g_exe>?plc=pool">The Pool</option>
+<option value="top place<$g_exe>?plc=stadium">The Stadium</option>     
+<option value="top place<$g_exe>?plc=suburbs&T_SUB=suburbs">The Suburbs</option>
+<option value="top place<$g_exe>?plc=post">Post Office</option>
+<option value="place <$g_HTMLRoot>/info/portals.html">The Portals</option>
+
+<option value="">-----------------------</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000001&MTY=m">Feedback</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000012&MTY=m">City Council</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000013&MTY=i">Security In-box</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000007&MTY=m">Guides Board</option>
+<option value="poll /wallpaper/ctpaper.html">Free Wallpaper</option>
+<option value="info citizen<$g_exe>?ac=action">Citizens List</option>
+<option value="info <$g_HTMLRoot>/info/controlpanel/index.html">How Do I?</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/dailynews/index.html">Daily News</option>
+<option value="info <$g_HTMLRoot>/places/news/magazine/index.html">Weekly News</option>
+<option value="info msb<$g_exe>?DTY=O&KTY=ID&KEY=0000000000010001&MTY=m&T_TYPE=announce">What's New?</option>
+<option value="info <$g_HTMLRoot>/info/help/index.html">FAQ/Help</option>
+<option value="info <$g_HTMLRoot>/info/VisitorCenter/VisitorCenter.html">Tourist Info</option>
+<!-- #ifndef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&plc=enter&LDT=O&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<!-- #ifdef variable="T_LDT" -->
+<option value="info cal<$g_exe>?DTY=O&KTY=ID&KEY=0000000000000002&MTY=c&LDT=<$T_LDT>&LID=<$ID>">Calendar</option>
+<!-- #endif variable="T_LDT" -->
+<option value="poll <$g_HTMLRoot>/info/about/urge.html">Press Room</option>
+<option value="">-----------------------</option>
+<option value="poll <$g_HTMLRoot>/places/post/post.html">Send Postcard</option>
+<option value="poll /friends/tellfriends.html">Win Prizes!</option>
+<option value="custom minisurvey/minisurvey.pl?NNM=<$NNM> 600 500">Instant Polls</option>
+<option value="top /index2.html">Old Town</option>
+</select>
+
+</form>
+
+
+<!-- End JUMPGATE -->
+</TD></TR></TABLE>  <!-- End form table -->
+</TD></TR>
+<TR><TD BGCOLOR="#000000"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="10" BORDER="0"></TD></TR>
+<TR><TD BGCOLOR="#003040">
+<A HREF="javascript:confirmLink('http://www.mothership.com/store')" target="_self"><IMG SRC="/places/mothership/images/action/lowmenustore.gif" WIDTH="156" HEIGHT="45" BORDER="0"></A><BR>
+<A HREF="javascript:confirmLink('http://www.mothership.com/games')" target="_self"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/lowmenugaming.gif" WIDTH="156" HEIGHT="40" BORDER="0"></A><BR>
+<A HREF="javascript:confirmLink('http://www.mothership.com')" target="_self"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/lowmenumagazine.gif" WIDTH="156" HEIGHT="40" BORDER="0"></A><BR>
+</TD></TR>
+<TR><TD BGCOLOR="#000000"><IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="10" BORDER="0"></TD></TR>
+<TR><TD BGCOLOR="#003040">
+
+<!-- End Custom Control Panel -->
+

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+
+<div align=center>
+<h2><font color=#80ff00>Update Jobs of <$NNM></font></h2>
+<a href="javascript:history.go(-<$hist>)"><small><img src="<$g_Images>/images/buttons/bback.gif" border=0></small></a><br>
+
+<font color="red">
+<!-- #ifdef variable="editerror001" -->
+	One of DTY, KTY, KEY keywords missing.
+<!-- #endif variable="editerror001" -->
+<!-- #ifdef variable="editerror002" -->
+	No template TPL given.
+<!-- #endif variable="editerror002" -->
+<!-- #ifdef variable="editerror003" -->
+	Insufficient access rights.
+<!-- #endif variable="editerror003" -->
+</font>
+</div>
+
+<div align=center>
+<form method=post action="edit<$g_exe>">
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="KEY" value="<$ID_HEX>">
+<input type=hidden name="NNM" value="<$NNM>">
+<input type=hidden name="TPL" value="citizen/editrole">
+<input type=hidden name="hist" value="<$hist>">
+
+<table border=1 cellpadding=1>
+<!--#for loopname="roles" loopvars="ROL_ITER_" -->
+<!--tr-->
+<!--#ifdef variable="ROL_BIT_TYP_" -->
+    <td nowrap>
+    <input type="checkbox" align="middle"
+           name="ROL_BIT_<$ROL_ITER_>" <$ROL_BIT_>>
+    <input type=hidden name="ROL_BIT_TYP_<$ROL_ITER_>" value="<$ROL_BIT_TYP_>">
+    <$ROL_BIT_NAM_>
+    </td>
+<!--#endif variable="ROL_BIT_TYP_" -->
+<!--#ifndef variable="ROL_BIT_TYP_" -->
+        <input type="hidden" name="ROL_BIT_<$ROL_ITER_>" value="<$ROL_BIT_>"></td>
+<!--#endif variable="ROL_BIT_TYP_" -->
+
+        <input type=hidden name="ROL_BIT_ID_R_<$ROL_ITER_>" value="<$ROL_BIT_ID_R_>">
+        <input type=hidden name="ROL_BIT_ID_W_<$ROL_ITER_>" value="<$ROL_BIT_ID_W_>">
+<!-- #ifdef variable="ROL_4_" -->
+        </tr>
+<!-- #endif variable="ROL_4_" -->
+<!--#endfor loopname="roles" -->
+</table>
+
+<br>
+<p>
+<input type=submit name="editrolem" value="Update">
+<!--
+<input type=button name="back" value="Back" onClick="history.go(-<$hist>)">
+-->
+</p>
+</form>
+
+</body>
+</html>
+

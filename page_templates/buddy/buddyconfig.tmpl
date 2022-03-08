@@ -1,0 +1,84 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<!-- buddy/buddyconfig.tmpl -->
+<title><$g_title> Instant Message Center</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<!-- #ifdef variable="UPDATEOK" -->
+<script>self.close();</script>
+<!-- #endif variable="UPDATEOK" -->
+
+<p align=center>
+<b>Update Instant Message Center Settings</b>
+</p>
+
+<form method=post action="buddy">
+
+<input type=hidden name="ac" value="updateconfig">
+
+<!-- #include virtual="<$g_Templates>common/updbutton.tmpl" -->
+
+<center>
+<table border=1 cellpadding=10>
+<tr>
+<td>
+<input type="checkbox" align="middle" name="IMS" <$IMS>>
+Start Instant Message Center after login.
+</td>
+</tr>
+
+<tr>
+<td>
+<table border=0>
+<tr>
+	<td colspan=2>My Friends:</td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU0" VALUE="<$BU0>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU1" VALUE="<$BU1>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU2" VALUE="<$BU2>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU3" VALUE="<$BU3>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU4" VALUE="<$BU4>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU5" VALUE="<$BU5>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU6" VALUE="<$BU6>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU7" VALUE="<$BU7>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="BU8" VALUE="<$BU8>" MAXLENGTH=32 size=20></td>
+	<td><INPUT NAME="BU9" VALUE="<$BU9>" MAXLENGTH=32 size=20></td>
+</tr>
+<tr>
+	<td colspan=2> </td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</center>
+
+<br>
+
+<a name=submitbutton></a>
+<center>
+<input type=submit name="yes" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</center>
+
+</form>
+
+</BODY>
+</HTML>
+
+

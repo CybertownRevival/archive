@@ -1,0 +1,8 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+*GET P ID <$ID> OWN OWN_ID
+*GET M ID <$OWN_ID> RGK OWN_RGK FTR OWN_FTR
+*GET M NNM <$NNM> ROL TYPE=ROLE ROL

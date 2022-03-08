@@ -1,0 +1,43 @@
+<!-- hi-tek/controlend.tmpl -->
+<!-- included in action.tmpl, table starts in control.tmpl -->
+</div>
+<MAP Name="controlmap">
+    <AREA Shape="rect" coords = "40,35,120,48"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/directory.html')" ALT="Directory" target=_self>
+	<AREA Shape="rect" coords = "40,55,120,68" HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')"
+ ALT="How Do I?" target=_self>
+
+<!-- #ifndef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "50,72,120,87"  HREF="javascript:loadInfo('edit?KEY=<$NNM>&TPL=property/mydata&ac=read')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+<!-- #ifdef variable="isVisitor" -->
+	<AREA Shape="rect" coords = "50,72,120,87"  HREF="javascript:loadInfo('<$g_HTMLRoot>/help/myinfo.html')" ALT="My Info" target=_self>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifdef variable="HOM" -->
+<!-- #ifndef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "40,94,120,108"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="HOM" -->
+<!-- #ifdef variable="HOM" value="" -->
+    <AREA Shape="rect" coords = "40,94,120,108"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="HOM" -->
+<!-- #endif variable="HOM" -->
+<!-- #ifndef variable="HOM" -->
+<!-- #ifdef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "40,94,120,108"  HREF="property<$g_exe>?ac=myhouse" ALT="My Home" target=_top>
+<!-- #endif variable="ac" -->
+<!-- #ifndef variable="ac" value="print" -->
+    <AREA Shape="rect" coords = "40,94,120,108"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/controlpanel/index.html')" ALT="How Do I?" target=_self>
+<!-- #endif variable="ac" -->
+<!-- #endif variable="HOM" -->
+
+    <AREA Shape="rect" coords = "40,113,120,127"  HREF="javascript:loadInfo('<$g_HTMLRoot>/info/helpinfo.html')" ALT="Help/Info" target=_self>
+    <AREA Shape="rect" coords = "40,133,120,147"  HREF="javascript:loadInfo('http://partyline.ctcolonies.com/calendar.htm')" ALT="Activities" target=_self>
+  <area shape="rect" coords="40,152,120,165" HREF="javascript:loadInfo('http://wilshire.free.fr/florence/index.html')" target="_self" alt="Quick Start">
+<area shape="rect" coords="40,172,120,186" HREF="javascript:loadInfo('/cgi-bin/cybertown/edit?TPL=msb/feedback')" target="_self" alt="Feedback Board">
+
+<AREA Shape="rect" coords = "40,191,120,204"  HREF="javascript:loadCustom('<$gHTMLRoot>/tour/intro.htm',520,400)" ALT="City Tour" target=_self>
+
+	<AREA Shape="rect" coords = "50,212,120,226"  HREF="javascript:loadMap('place<$g_exe>?ac=print&tpl=enter/mapcity')" ALT="City Map" target=_self>
+</MAP>
+</form>
+<!-- end of include controlend.tmpl -->

@@ -1,0 +1,161 @@
+<html>
+<head>
+<title><$g_title> - Inbox Management</title>
+<SCRIPT language="JavaScript">
+function deleteMessage(url)
+{
+    parent.location.href=url;
+}
+
+function checkmess()
+{
+  var num = 0;
+  for(i=0 ; i < 257 ; i++ )
+  {
+    var f = eval('document.bform.C_'+i);
+    if( f == null )
+      break;
+    if( f.checked )
+    {
+      var f1 = eval('document.bform.MANID_'+num);
+      f1.value = f.value;
+      num++;
+    }
+  }
+  if (num == 0 ) {
+  			alert("You need to select a message to delete first!");
+  			return false; 
+  }
+  else {
+  return true; 
+  }
+}
+
+function checkall()
+{
+  var num = 0;
+  for(i=0 ; i < 257 ; i++ )
+  {
+    var f = eval('document.bform.C_'+i);
+    if( f == null )
+    {
+      break;
+    }
+    else {
+    		f.checked= true;
+    }
+  }
+  return false;
+}
+
+function decheckall()
+{
+  var num = 0;
+  for(i=0 ; i < 257 ; i++ )
+  {
+    var f = eval('document.bform.C_'+i);
+    if( f == null )
+    {
+      break;
+    }
+    else {
+    		f.checked= false;
+    }
+  }
+  return false;
+}
+
+</SCRIPT>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body4.tmpl" -->
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<!--#ifndef variable="listmsg" -->
+
+<center>
+
+
+
+
+<a href="./msb?DTY=<$DTY>&KTY=ID&KEY=<$KEY>&MTY=<$MTY>">
+
+<img src="/images/buttons/bback.gif" border=0 alt="Back"></a>
+<br>
+<font size=+2><b>Inbox Management</b></font>
+<!-- #ifndef variable="msbconfigallowed" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!--#endif variable="msbconfigallowed" -->
+
+<!-- #ifdef variable="msbconfigallowed" -->
+<!-- #ifdef variable="T_MANOK" value="0" -->
+<br><center><font color=red>Messages deleted successfully.</font></Center>
+<!-- #endif variable="T_MANOK" -->
+<!-- #ifdef variable="T_MANOK" value="" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!-- #endif variable="T_MANOK" -->
+<!-- #define variable="T_MANOK" value="1" -->
+  <p>Please select the messages that you wish to delete using the checkbox next 
+    to each message. To confirm the deletion, press the "Delete Selection" button 
+    below. 
+  <p> 
+    <input type="submit" name="SelectAll" value="Select all" OnClick="checkall()">
+    <input type="submit" name="DeselectAll" value="Deselect All" OnClick="decheckall()">
+
+  
+<form name="bform" action="/cgi-bin/cybertown/print60" method="POST" onSubmit="return checkmess()">
+  
+<input type="hidden" name="ac" value="delete">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type="hidden" name="DTY" value="<$DTY>">
+
+<input type="hidden" name="KEY" value="<$KEY>">
+
+<input type="hidden" name="MTY" value="<$MTY>">
+  
+<input type="hidden" name="TPL" value="inb/manage2">
+
+    <input type="submit" name="Submit" value="Delete Selection">
+
+</center>
+
+<p>
+
+<hr>
+<!-- #endif variable="listmsg" -->
+
+<!--#ifndef variable="DATE_STR0" -->
+Sorry <$NNM>,there are no message to show.
+<!--#endif variable="DATE_STR0" -->
+
+<!--#for loopname="msglist" loopvars="DATE_STR" -->
+
+<!--#ifndef variable="listmsg" -->
+<table>
+<tr>
+<td width=5%>
+<input type="checkbox" name="C_<$loopindex>" value="i<$KEY><$KEY_DATE>">
+<input type=hidden name="MANID_<$loopindex>" value="" 
+</td>
+
+    <td> <a href="javascript:loadCustom('/cgi-bin/cybertown/msb?ac=getmsg&DATE=<$KEY_DATE>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>',600,250)"
+><$DATE_DAYNAM>, <$DATE_MONNAM> <$DATE_MDAy> <$DATE_TH>, <$DATE_AP>:<$DATE_MIN> 
+      <$DATE_APM></a>, </td>
+<td>
+From: <$NNM>,Subject:
+<!--#ifdef variable="REPLY" -->
+Re:
+<!--#endif variable="REPLY" -->
+<$sub>
+</td>
+</tr>
+</table>
+<!--#endif variable="listmsg" -->
+<!--#endif variable="msbconfigallowed" -->
+</body>
+</html>
+
+

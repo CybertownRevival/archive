@@ -1,0 +1,41 @@
+<html>
+<head>
+<TITLE>Get Spazz3D Discount</TITLE>
+</head>
+
+<!-- login.tmpl -->
+
+
+<!--#if variable="MON" > value="500" --> 
+<body bgcolor="#000000" onLoad="document.form1.submit();">
+
+
+<form action=edit method=POST name=form1>
+<input type=hidden name=ac value=edit>
+<input type=hidden name=KEY value='<$NNM>'>
+<input type=hidden name=DTY value=M>
+<input type=hidden name=KTY value=NNM>
+<input type=hidden name=TPL value=spazz3d/discount>
+<input type=hidden name=TKT value=<$TKT>>
+
+<SCRIPT LANGUAGE="JavaScript">
+var MON = <$MON>;
+
+MON-=500;
+
+document.write('<input type=hidden name=MON value='+MON+'>');
+
+</SCRIPT>
+<!-- #endif variable="MON" -->
+
+<!-- #if variable="MON" < value="500" --> 
+<body bgcolor="#000000" text="#FFFF00" link="#FFFFFF" alink="#FFFFFF" vlink="#FFFFFF">
+<center><h1>I'm Sorry, <$NNM>, you have only <$MON>cc in your account.</h1><h2>You need 500cc to purchase Spazz3D at a discount.</h2><br><br><br>
+<a href=http://www.spazz3d.com/gotoauth.html target=_top>Click here</a> to purchase Spazz3D at the regular price.<br><br>
+</center>
+<!-- #endif variable="MON" -->
+
+
+</body>
+</html>
+

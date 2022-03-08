@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Multimedia Wizard - <$BNM></b>
+</p>
+
+<form method=post action="<$selfurl>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<input type=hidden name="ac" value="wizardsubmit">
+<input type=hidden name="ID" value="<$ID>">
+<input type=hidden name="parenttype" value="<$parenttype>">
+
+<font color="red">
+<!-- #ifdef variable="wizarderror001" -->
+Data for <$BNM> '<$NAM>' could not be stored in the database.
+<!-- #endif variable="wizarderror001" -->
+<!-- #ifdef variable="wizarderror002" -->
+Invalid request. A name has to be given!!!
+<!-- #endif variable="wizarderror002" -->
+<!-- #ifdef variable="wizarderror003" -->
+Invalid request. A 2D icon has to be selected!!!
+<!-- #endif variable="wizarderror003" -->
+</font>
+
+<table border=0>
+<tr>
+<td width=250>&nbsp;</td>
+<td>
+		<input type=submit name="yes" value=Ok>
+		<input type=submit name="no" value=Cancel>
+</td>
+</tr>
+</table>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<table border=0>
+<tr>
+<td valign=top><b><$BNM> usage:</b></td>
+<td><input type="Radio" name="<$PU2>" value="P" <$checkP>>
+free for use<br>
+<input type="Radio" name="<$PU2>" value="N" <$checkN>>
+cannot be accessed<br>
+</td>
+</tr>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr>
+<td width=120><b>Name</b></td>
+<td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=32 SIZE=32></td>
+</tr>
+<tr>
+<td><b>Owner</b></td>
+<td><INPUT NAME="OWN" VALUE="<$OWN>" MAXLENGTH=16 SIZE=16></td>
+</tr>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr>
+<td valign=top><b>Choose a<br>2D icon</b></td>
+<td>
+<!--#for loopname="2dicons" loopvars="index2i" -->
+<input type="Radio" name="IC2" value="<$index2i>" <$chk2i>>
+<img src="<$g_HTMLRoot>/home/<$path>neighbor/<$prefix2i><$index2i>.gif"
+border=0 ALT="<$name2i>">
+<br>
+<!--#endfor loopname="2dicons" -->
+<!-- #ifndef variable="index2i0" -->
+No icons available!
+<!-- #endif variable="index2i0" -->
+</tr>
+
+<tr><td height=5>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+
+<table border=0>
+<tr>
+<td width=250>&nbsp;</td>
+<td>
+		<input type=submit name="yes" value=Ok>
+		<input type=submit name="no" value=Cancel>
+</td>
+</tr>
+</table>
+</form>
+
+<BODY>
+</HTML>

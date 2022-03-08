@@ -1,0 +1,194 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>Designer Homes - Admin Tools</title>
+
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<script language=javascript>
+function lowerthem()
+
+{
+	document.blockfrm.UBL1.value = document.blockfrm.UBL1.value.toLowerCase();
+	document.blockfrm.UBL2.value = document.blockfrm.UBL2.value.toLowerCase();
+	document.blockfrm.UBL3.value = document.blockfrm.UBL3.value.toLowerCase();
+	document.blockfrm.UBL4.value = document.blockfrm.UBL4.value.toLowerCase();
+	document.blockfrm.UBL5.value = document.blockfrm.UBL5.value.toLowerCase();
+	document.blockfrm.UBL6.value = document.blockfrm.UBL6.value.toLowerCase();
+	document.blockfrm.UBL7.value = document.blockfrm.UBL7.value.toLowerCase();
+	document.blockfrm.UBL8.value = document.blockfrm.UBL8.value.toLowerCase();
+	document.blockfrm.UBL9.value = document.blockfrm.UBL9.value.toLowerCase();
+	document.blockfrm.UBL10.value = document.blockfrm.UBL10.value.toLowerCase();
+	document.blockfrm.UBL11.value = document.blockfrm.UBL11.value.toLowerCase();
+	document.blockfrm.UBL12.value = document.blockfrm.UBL12.value.toLowerCase();
+	document.blockfrm.UBL13.value = document.blockfrm.UBL13.value.toLowerCase();
+	document.blockfrm.UBL14.value = document.blockfrm.UBL14.value.toLowerCase();
+	document.blockfrm.UBL15.value = document.blockfrm.UBL15.value.toLowerCase();
+	document.blockfrm.UBL16.value = document.blockfrm.UBL16.value.toLowerCase();
+	document.blockfrm.UBL17.value = document.blockfrm.UBL17.value.toLowerCase();
+	document.blockfrm.UBL18.value = document.blockfrm.UBL18.value.toLowerCase();
+	document.blockfrm.UBL19.value = document.blockfrm.UBL19.value.toLowerCase();
+	document.blockfrm.UBL20.value = document.blockfrm.UBL20.value.toLowerCase();
+	document.blockfrm.UBL21.value = document.blockfrm.UBL21.value.toLowerCase();
+	document.blockfrm.UBL22.value = document.blockfrm.UBL22.value.toLowerCase();
+	document.blockfrm.UBL23.value = document.blockfrm.UBL23.value.toLowerCase();
+	document.blockfrm.UBL24.value = document.blockfrm.UBL24.value.toLowerCase();
+	document.blockfrm.UBL25.value = document.blockfrm.UBL25.value.toLowerCase();
+	document.blockfrm.UBL26.value = document.blockfrm.UBL26.value.toLowerCase();
+	document.blockfrm.UBL27.value = document.blockfrm.UBL27.value.toLowerCase();
+	document.blockfrm.UBL28.value = document.blockfrm.UBL28.value.toLowerCase();
+	document.blockfrm.UBL29.value = document.blockfrm.UBL29.value.toLowerCase();
+	document.blockfrm.UBL30.value = document.blockfrm.UBL30.value.toLowerCase();
+	document.blockfrm.UBL31.value = document.blockfrm.UBL31.value.toLowerCase();
+	document.blockfrm.UBL32.value = document.blockfrm.UBL32.value.toLowerCase();
+	document.blockfrm.UBL33.value = document.blockfrm.UBL33.value.toLowerCase();
+	document.blockfrm.UBL34.value = document.blockfrm.UBL34.value.toLowerCase();
+	document.blockfrm.UBL35.value = document.blockfrm.UBL35.value.toLowerCase();
+	document.blockfrm.UBL36.value = document.blockfrm.UBL36.value.toLowerCase();
+	document.blockfrm.UBL37.value = document.blockfrm.UBL37.value.toLowerCase();
+	document.blockfrm.UBL38.value = document.blockfrm.UBL38.value.toLowerCase();
+	document.blockfrm.UBL39.value = document.blockfrm.UBL39.value.toLowerCase();
+	document.blockfrm.UBL40.value = document.blockfrm.UBL40.value.toLowerCase();
+	document.blockfrm.UBL41.value = document.blockfrm.UBL41.value.toLowerCase();
+	document.blockfrm.UBL42.value = document.blockfrm.UBL42.value.toLowerCase();
+	document.blockfrm.UBL43.value = document.blockfrm.UBL43.value.toLowerCase();
+	document.blockfrm.UBL44.value = document.blockfrm.UBL44.value.toLowerCase();
+	document.blockfrm.UBL45.value = document.blockfrm.UBL45.value.toLowerCase();
+	document.blockfrm.UBL46.value = document.blockfrm.UBL46.value.toLowerCase();
+	document.blockfrm.UBL47.value = document.blockfrm.UBL47.value.toLowerCase();
+	document.blockfrm.UBL48.value = document.blockfrm.UBL48.value.toLowerCase();
+	document.blockfrm.UBL49.value = document.blockfrm.UBL49.value.toLowerCase();
+	document.blockfrm.UBL50.value = document.blockfrm.UBL50.value.toLowerCase();
+}
+</script>
+<p align=center>
+<font face="arial" size=3><b>Designer Homes Administration</b>
+<center>
+<p><b>Uploading On/Off</b>
+
+<form name="blockfrm" action="/cgi-bin/cybertown/print60" method="POST" onSubmit="lowerthem();">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+  
+<input type=hidden name="TPL" value="deshomes/admin/deshomesadmin2">
+
+Set Status of Uploading: 
+
+<INPUT NAME="UPL_STATUS" TYPE=RADIO VALUE="ON" 
+<!--#ifndef variable="UPL_STATUS" value="OFF" -->
+checked
+<!--#endif variable="UPL_STATUS" -->
+> ON&nbsp;&nbsp;&nbsp;
+
+<INPUT NAME="UPL_STATUS" TYPE=RADIO VALUE="OFF" 
+<!--#ifdef variable="UPL_STATUS" value="OFF" -->
+checked
+<!--#endif variable="UPL_STATUS" -->
+> OFF
+
+<p><b>Banned from Uploading</b>
+</p>
+<!-- #ifndef variable="owneraccess" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!--#endif variable="owneraccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<!-- #ifdef variable="T_PREFOK" value="0" -->
+<br><center><font color=red>Settings updated successfully.</font></Center>
+<!-- #endif variable="T_PREFOK" -->
+<!-- #ifdef variable="T_PREFOK" value="" -->
+<br><center><font color=red>Insufficient Access rights.</font></Center>
+<!-- #endif variable="T_PREFOK" -->
+<!-- #define variable="T_PREFOK" value="1" -->
+
+
+Please Note: Those on this list will see a message stating they are banned on the Upload pages.
+<BR>
+<BR>
+<table border=0>
+<tr>
+	<td><INPUT NAME="UBL1" VALUE="<$UBL1>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL2" VALUE="<$UBL2>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL3" VALUE="<$UBL3>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL4" VALUE="<$UBL4>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL5" VALUE="<$UBL5>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL6" VALUE="<$UBL6>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL7" VALUE="<$UBL7>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL8" VALUE="<$UBL8>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL9" VALUE="<$UBL9>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL10" VALUE="<$UBL10>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL11" VALUE="<$UBL11>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL12" VALUE="<$UBL12>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL13" VALUE="<$UBL13>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL14" VALUE="<$UBL14>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL15" VALUE="<$UBL15>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL16" VALUE="<$UBL16>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL17" VALUE="<$UBL17>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL18" VALUE="<$UBL18>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL19" VALUE="<$UBL19>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL20" VALUE="<$UBL20>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL21" VALUE="<$UBL21>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL22" VALUE="<$UBL22>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL23" VALUE="<$UBL23>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL24" VALUE="<$UBL24>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL25" VALUE="<$UBL25>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL26" VALUE="<$UBL26>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL27" VALUE="<$UBL27>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL28" VALUE="<$UBL28>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL29" VALUE="<$UBL29>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL30" VALUE="<$UBL30>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL31" VALUE="<$UBL31>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL32" VALUE="<$UBL32>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL33" VALUE="<$UBL33>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL34" VALUE="<$UBL34>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL35" VALUE="<$UBL35>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL36" VALUE="<$UBL36>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL37" VALUE="<$UBL37>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL38" VALUE="<$UBL38>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL39" VALUE="<$UBL39>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL40" VALUE="<$UBL40>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL41" VALUE="<$UBL41>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL42" VALUE="<$UBL42>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL43" VALUE="<$UBL43>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL44" VALUE="<$UBL44>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL45" VALUE="<$UBL45>" MAXLENGTH=16 size=20></td>
+</tr>
+<tr>
+	<td><INPUT NAME="UBL46" VALUE="<$UBL46>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL47" VALUE="<$UBL47>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL48" VALUE="<$UBL48>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL49" VALUE="<$UBL49>" MAXLENGTH=16 size=20></td>
+	<td><INPUT NAME="UBL50" VALUE="<$UBL50>" MAXLENGTH=16 size=20></td>
+</tr>
+</table>
+<!---<a name=submitbutton></a>--->
+<BR>
+<input type=submit name="submit" value=Update>
+<input type=button name="no" value=Cancel onClick="history.back()">
+</CENTER>
+
+</form>
+
+<!--#endif variable="owneraccess" -->
+
+</BODY>
+</HTML>

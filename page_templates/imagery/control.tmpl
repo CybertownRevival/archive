@@ -1,0 +1,33 @@
+<!-- common/control.tmpl -->
+<!-- included in action.tmpl to show common control panel-->
+<!-- Navigation Bar -->
+
+<IMG SRC="<$g_Images>/places/imagery/images/finalcontx.gif" BORDER="0" USEMAP="#controlmap" ALT="Imagery Control Panel">
+<!-- #include virtual="<$g_Templates>common/jumpgate.tmpl" -->
+
+<!-- Begin Help Flags -->
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/german/index.html')" target="_self"><img src="/info/help/german/images/germanysm.gif" border="0" alt=" Deutsche Hilfe Seiten"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/about/details/const_russian.html')" target="_self"><img src="/info/help/russian/images/russianysm.gif" border="0" alt=" Russian Help"></a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:loadInfo('<$g_HTMLRoot>/info/help/spanish/faqs.html')" target="_self"><img src="/info/help/spanish/images/spainsm.gif" border="0" alt="FAQs en Espanol"></a>
+
+<center>
+<!-- #include virtual="<$g_Templates>common/event_buttons.tmpl" -->
+</center>
+
+<script language=javascript>
+ var neighborid = '<$ID>';
+ neighborid = neighborid.substring(0,8);
+ if (neighborid == '01020206') {
+  document.write('<p><a href="javascript:loadCustom(\'/SETI/cyber-seti2.html\',\'640\',\'450\')" target=_self><IMG src="<$gHTMLRoot>/images/clubs/SETI/jointeamseti.gif" alt="Join Team Seti" border=0></a><br>');
+ }
+</script>
+<script language=javascript>
+ var neighborid = '<$ID>';
+ neighborid = neighborid.substring(0,8);
+ if (neighborid == '01020503') {
+  document.write('<p><a href="javascript:loadCustom(\'http://www.liquidwww.com\',\'700\',\'600\')" target=_self><IMG src="<$gHTMLRoot>/home/0102000000000000/generations/buttonlogo.jpg" alt="Visit our Sponsor" border=0></a><br><br>');
+ }
+</script>
+
+<!-- end of include control.tmpl -->
+

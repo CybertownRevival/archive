@@ -1,0 +1,110 @@
+<!-- common/chatthemes.tmpl -->
+
+ 
+   
+
+
+
+<!-- #ifdef variable="TCS" value="" -->
+<!-- CT Default Style -->
+
+    <param name = appbgcolor        value = 00009200>
+    <param name = myavfgcolor       value = 00FFFF00>
+    <param name = myavfontstyle     value = PLAIN>
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+    <param name = sysmessfontstyle  value = BOLD>
+    <param name = historyfgcolor    value = 00FFFFFF>
+    <param name = historyfontstyle  value = ITALIC>
+    <param name = whisperfgcolor    value = 0000C3FF>
+    <param name = whisperfontstyle  value = PLAIN>
+    <param name = chatbgcolor       value = 00004d00>
+    <param name = chatfgcolor       value = 0000df00>
+    <param name = ctlbgcolor        value = 00004d00>
+    <param name = ctlfgcolor        value = 0000df00>
+    <param name = cntl.rbg          value = 00004d00>
+    <param name = cntl.rfg          value = 00ffff00>
+    
+<!-- #endif variable="TCS" -->
+
+
+
+<!-- #ifdef variable="TCS" value="0" -->
+<!-- CT Default Style -->
+
+    <param name = appbgcolor        value = 00009200>
+    <param name = myavfgcolor       value = 00FFFF00>
+    <param name = myavfontstyle     value = PLAIN>
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+    <param name = sysmessfontstyle  value = BOLD>
+    <param name = historyfgcolor    value = 00FFFFFF>
+    <param name = historyfontstyle  value = ITALIC>
+    <param name = whisperfgcolor    value = 0000C3FF>
+    <param name = whisperfontstyle  value = PLAIN>
+    <param name = chatbgcolor       value = 00004d00>
+    <param name = chatfgcolor       value = 0000df00>
+    <param name = ctlbgcolor        value = 00004d00>
+    <param name = ctlfgcolor        value = 0000df00>
+    <param name = cntl.rbg          value = 00004d00>
+    <param name = cntl.rfg          value = 00ffff00>
+    
+<!-- #endif variable="TCS" -->
+
+<!-- #ifdef variable="TCS" value="1" -->
+<!-- Hi-Tek Style -->
+    <param name = appbgcolor        value = 00333333>
+    <param name = myavfgcolor       value = 00ffcc99>
+    <param name = myavfontstyle     value = PLAIN>
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+    <param name = sysmessfontstyle  value = BOLD>
+    <param name = historyfgcolor    value = 00FFFFFF>
+    <param name = historyfontstyle  value = ITALIC>
+    <param name = whisperfgcolor    value = 00fff2f2>
+    <param name = whisperfontstyle  value = PLAIN>
+    <param name = chatbgcolor       value = 00000000>
+    <param name = chatfgcolor       value = 00FFFF00>
+    <param name = ctlbgcolor        value = 00000000>
+    <param name = ctlfgcolor        value = 00FFFFFF>
+    <param name = cntl.rbg          value = 00000000>
+    <param name = cntl.rfg          value = 00FFFFFF>
+<!-- #endif variable="TCS" -->
+
+<!-- #ifdef variable="TCS" value="2" -->
+<!-- Games Style -->
+
+    <param name = appbgcolor        value = 00603B81>
+    <param name = myavfgcolor       value = 00ffcc99>
+    <param name = myavfontstyle     value = PLAIN>
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+    <param name = sysmessfontstyle  value = BOLD>
+    <param name = historyfgcolor    value = 00FFFFFF>
+    <param name = historyfontstyle  value = ITALIC>
+    <param name = whisperfgcolor    value = 00fff2f2>
+    <param name = whisperfontstyle  value = PLAIN>
+    <param name = chatbgcolor       value = 0065538D>
+    <param name = chatfgcolor       value = 00FFFF00>
+    <param name = ctlbgcolor        value = 0065538D>
+    <param name = ctlfgcolor        value = 00FFFFFF>
+    <param name = cntl.rbg          value = 0065538D>
+    <param name = cntl.rfg          value = 00FFFFFF>
+<!-- #endif variable="TCS" -->
+
+<!-- #ifdef variable="TCS" value="3" -->
+<!-- Campus Style -->
+    
+    <param name = appbgcolor        value = 00D60000>
+    <param name = myavfgcolor       value = 00FFFFFF>
+    <param name = myavfontstyle     value = PLAIN>
+    <param name = sysmessfgcolor    value = 00FFFFFF>
+    <param name = sysmessfontstyle  value = BOLD>
+    <param name = historyfgcolor    value = 00E0E0E0>
+    <param name = historyfontstyle  value = ITALIC>
+    <param name = whisperfgcolor    value = 00BFBFBF>
+    <param name = whisperfontstyle  value = PLAIN>
+    <param name = chatbgcolor       value = 00630000>
+    <param name = chatfgcolor       value = 00FF6666>
+    <param name = ctlbgcolor        value = 00630000>
+    <param name = ctlfgcolor        value = 00FFFFFF>
+    <param name = cntl.rbg          value = 00630000>
+    <param name = cntl.rfg          value = 00FFFFFF>
+    
+<!-- #endif variable="TCS" -->

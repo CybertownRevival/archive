@@ -1,0 +1,201 @@
+<HTML>
+<!-- iwos/photo_cover.tmpl -->
+<!-- displays the book cover of the photo album-->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Photo Album Cover Edition</title>
+</HEAD>
+
+<script language="javascript">
+<!--
+
+colorValue = new Array();
+
+colorValue[0] = '1 1 1';
+colorValue[1] = '1 1 0.8';
+colorValue[2] = '1 0.8 0.2';
+colorValue[3] = '1 0.6 0.2';
+colorValue[4] = '1 0 0';
+colorValue[5] = '0.6 0 0';
+colorValue[6] = '0.4 0 0';
+colorValue[7] = '0.8 1 0.6';
+colorValue[8] = '0.6 1 0.2';
+colorValue[9] = '0.4 0.8 0';
+colorValue[10] = '0.4 0.6 0';
+colorValue[11] = '0 0.4 0';
+colorValue[12] = '0 0.2 0';
+colorValue[13] = '0.6 0.8 1';
+colorValue[14] = '0.2 0.8 1';
+colorValue[15] = '0.2 0.6 1';
+colorValue[16] = '0.2 0.2 1';
+colorValue[17] = '0.2 0 0.8';
+colorValue[18] = '0.2 0.4 0';
+colorValue[19] = '0 0 0.2';
+colorValue[20] = '0 0 0';
+
+colorImage = new Array();
+
+for( i=1; i<=21; i++ ) 
+{
+   colorImage[i-1] = new Image()
+   colorImage[i-1].src = "<$g_Images>/images/iwos/col" + i + ".gif"
+}
+
+  function onLoad()
+  {
+    for( i=0; i<21; i++ ) 
+    {
+      if( colorValue[i]=='<$CLC>' )
+      { 
+        document.colImg1.src = colorImage[i].src;
+      }
+      
+      if( colorValue[i]=='<$CLT>' )
+        document.colImg2.src = colorImage[i].src;
+    }
+  }
+
+  function setColorCover( colValue, imgIndex )
+  {
+    document.updateForm.CLC.value = colValue;
+    document.colImg1.src = colorImage[imgIndex].src;
+  }
+
+  function setColorTitle( colValue, imgIndex )
+  {
+    document.updateForm.CLT.value = colValue;
+    document.colImg2.src = colorImage[imgIndex].src;
+  }
+
+  function submitForm()
+  {
+    document.updateForm.submit();
+  }
+
+//-->
+</script>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/photo-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<center>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the cover could not been updated!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The cover was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+<form method=post action="<$selfurl>" name="updateForm">
+
+  <input type="hidden" name="ac" value="updatecover">
+  <input type="hidden" name="ID" value="<$ID>">
+  <input type="hidden" name="TKT" value="<$TKT>">
+
+  <input type="hidden" name="CLT" value="<$CLT>">
+  <input type="hidden" name="CLC" value="<$CLC>">
+
+<br>
+  <H2><input type="text" name="NAM" value="<$NAM>" size=12 maxlength=12>
+<a href="<$g_HttpServer>/help/homebuilder/photoalbumhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+  <textarea name="DES" rows="4" cols="40"><$DES></textarea><br>
+<br>
+  The following <$MAX_MEM> have opened the book last:<br>
+<br>
+  <$LM0_NNM><br>
+  <$LM1_NNM><br>
+  <$LM2_NNM><br>
+  <$LM3_NNM><br>
+  <$LM4_NNM><br>
+<br>
+  Book was last updated on <$UDD_DAYNAME> <$UDD_MONNAME> <$UDD_MDAy> <$UDD_YEAR><br>
+<br>
+  The Book was <$CNT> times opened!<br>
+<br>
+  <table>
+  <tr>
+  	<td align="center">
+      Select Color of Cover
+      <img name="colorselection" src="<$g_Images>/images/iwos/bookcolor.gif" border="0" alt="color selection for the cover" usemap="#colorlistCover">
+    </td>
+  	<td align="center" border=1>
+      Select Color of Title
+      <img name="colorselection" src="<$g_Images>/images/iwos/bookcolor.gif" border="0" alt="color selection for the title" usemap="#colorlistTitle">
+    </td>
+  </tr>
+  <tr valign="center">
+    <td align="center">
+      Currently selected
+      <img src="<$g_Images>/images/iwos/col1.gif" border=0 alt="current selected" name="colImg1" width="15" height="15" border="1">
+    </td>
+    <td align="center">
+      Currently selected
+      <img src="<$g_Images>/images/iwos/col1.gif" border=0 alt="current selected" name="colImg2" width="15" height="15" border="1">
+    </td>
+  </tr>
+  </table>
+<br>
+  <a href="javascript:submitForm()"><img src="<$g_Images>/images/iwos/update.gif" border=0 alt="update"></a>
+  <a href="javascript:history.back()"><img src="<$g_Images>/images/iwos/cancel.gif" border=0 alt="cancel"></a>
+</form>
+
+</center>
+</font>
+
+<map name="colorlistCover">
+  <area shape="rect" coords="222,1,231,11" href="javascript:setColorCover( '0 0 0', 20 )" alt="RGB 0 0 0">
+  <area shape="rect" coords="209,0,220,11" href="javascript:setColorCover( '0 0 0.2', 19 )" alt="RGB 0 0 51">
+  <area shape="rect" coords="197,0,207,11" href="javascript:setColorCover( '0.2 0.4 0', 18 )" alt="RGB 51 102 0">
+  <area shape="rect" coords="187,0,196,11" href="javascript:setColorCover( '0.2 0 0.8', 17 )" alt="RGB 51 0 204">
+  <area shape="rect" coords="176,0,186,11" href="javascript:setColorCover( '0.2 0.2 1', 16 )" alt="RGB 51 51 255">
+  <area shape="rect" coords="166,0,175,11" href="javascript:setColorCover( '0.2 0.6 1', 15 )" alt="RGB 102 153 255">
+  <area shape="rect" coords="156,0,164,11" href="javascript:setColorCover( '0.2 0.8 1', 14 )" alt="RGB 51 204 255">
+  <area shape="rect" coords="143,1,153,11" href="javascript:setColorCover( '0.6 0.8 1', 13 )" alt="RGB 153 204 255">
+  <area shape="rect" coords="132,0,142,11" href="javascript:setColorCover( '0 0.2 0', 12 )" alt="RGB 0 51 0">
+  <area shape="rect" coords="121,0,131,11" href="javascript:setColorCover( '0 0.4 0', 11 )" alt="RGB 0 102 0">
+  <area shape="rect" coords="110,0,120,10" href="javascript:setColorCover( '0.4 0.6 0', 10 )" alt="RGB 102 153 0">
+  <area shape="rect" coords="100,0,109,11" href="javascript:setColorCover( '0.4 0.8 0', 9 )" alt="RGB 102 204 0">
+  <area shape="rect" coords="89,1,98,11" href="javascript:setColorCover( '0.6 1 0.2', 8 )" alt="RGB 153 255 51">
+  <area shape="rect" coords="78,1,87,11" href="javascript:setColorCover( '0.8 1 0.6', 7 )" alt="RGB 204 255 153">
+  <area shape="rect" coords="66,0,76,11" href="javascript:setColorCover( '0.4 0 0', 6 )" alt="RGB 102 0 0">
+  <area shape="rect" coords="54,0,64,11" href="javascript:setColorCover( '0.6 0 0', 5 )" alt="RGB 153 0 0">
+  <area shape="rect" coords="44,0,53,11" href="javascript:setColorCover( '1 0 0', 4 )" alt="RGB 255 0 0">
+  <area shape="rect" coords="33,0,43,11" href="javascript:setColorCover( '1 0.6 0.2', 3 )" alt="RGB 255 152 51">
+  <area shape="rect" coords="23,0,32,10" href="javascript:setColorCover( '1 0.8 0.2', 2 )" alt="RGB 255 204 51">
+  <area shape="rect" coords="11,0,21,11" href="javascript:setColorCover( '1 1 0.8', 1 )" alt="RGB 255 255 51">
+  <area shape="rect" coords="1,1,10,10" href="javascript:setColorCover( '1 1 1', 0 )" alt="RGB 255 255 255">
+</map>
+<map name="colorlistTitle">
+  <area shape="rect" coords="222,1,231,11" href="javascript:setColorTitle( '0 0 0', 20 )" alt="RGB 0 0 0">
+  <area shape="rect" coords="209,0,220,11" href="javascript:setColorTitle( '0 0 0.2', 19 )" alt="RGB 0 0 51">
+  <area shape="rect" coords="197,0,207,11" href="javascript:setColorTitle( '0.2 0.4 0', 18 )" alt="RGB 51 102 0">
+  <area shape="rect" coords="187,0,196,11" href="javascript:setColorTitle( '0.2 0 0.8', 17 )" alt="RGB 51 0 204">
+  <area shape="rect" coords="176,0,186,11" href="javascript:setColorTitle( '0.2 0.2 1', 16 )" alt="RGB 51 51 255">
+  <area shape="rect" coords="166,0,175,11" href="javascript:setColorTitle( '0.2 0.6 1', 15 )" alt="RGB 102 153 255">
+  <area shape="rect" coords="156,0,164,11" href="javascript:setColorTitle( '0.2 0.8 1', 14 )" alt="RGB 51 204 255">
+  <area shape="rect" coords="143,1,153,11" href="javascript:setColorTitle( '0.6 0.8 1', 13 )" alt="RGB 153 204 255">
+  <area shape="rect" coords="132,0,142,11" href="javascript:setColorTitle( '0 0.2 0', 12 )" alt="RGB 0 51 0">
+  <area shape="rect" coords="121,0,131,11" href="javascript:setColorTitle( '0 0.4 0', 11 )" alt="RGB 0 102 0">
+  <area shape="rect" coords="110,0,120,10" href="javascript:setColorTitle( '0.4 0.6 0', 10 )" alt="RGB 102 153 0">
+  <area shape="rect" coords="100,0,109,11" href="javascript:setColorTitle( '0.4 0.8 0', 9 )" alt="RGB 102 204 0">
+  <area shape="rect" coords="89,1,98,11" href="javascript:setColorTitle( '0.6 1 0.2', 8 )" alt="RGB 153 255 51">
+  <area shape="rect" coords="78,1,87,11" href="javascript:setColorTitle( '0.8 1 0.6', 7 )" alt="RGB 204 255 153">
+  <area shape="rect" coords="66,0,76,11" href="javascript:setColorTitle( '0.4 0 0', 6 )" alt="RGB 102 0 0">
+  <area shape="rect" coords="54,0,64,11" href="javascript:setColorTitle( '0.6 0 0', 5 )" alt="RGB 153 0 0">
+  <area shape="rect" coords="44,0,53,11" href="javascript:setColorTitle( '1 0 0', 4 )" alt="RGB 255 0 0">
+  <area shape="rect" coords="33,0,43,11" href="javascript:setColorTitle( '1 0.6 0.2', 3 )" alt="RGB 255 152 51">
+  <area shape="rect" coords="23,0,32,10" href="javascript:setColorTitle( '1 0.8 0.2', 2 )" alt="RGB 255 204 51">
+  <area shape="rect" coords="11,0,21,11" href="javascript:setColorTitle( '1 1 0.8', 1 )" alt="RGB 255 255 51">
+  <area shape="rect" coords="1,1,10,10" href="javascript:setColorTitle( '1 1 1', 0 )" alt="RGB 255 255 255">
+</map>
+
+</BODY>
+</HTML>

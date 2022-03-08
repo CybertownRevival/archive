@@ -1,0 +1,84 @@
+<html>
+<!-- club/updatelink.tmpl -->
+<!-- enter links for the club -->
+<SCRIPT  language="JavaScript">
+<!--
+function gotoLocation( val )
+{
+    if( val.substring(0,7)=='http://' )
+        window.open( val, 'LinkTest' );
+    else if( val!='' )
+        window.open( 'http://'+ val, 'LinkTest' );
+}
+//-->
+</SCRIPT>
+
+<head>
+<title><$g_title> - <$NAM> Links</title>
+<!-- property/link.tmpl -->
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<CENTER>
+<!-- #ifdef variable="STC" value="0" -->
+<img src="<$g_HTMLRoot><$g_DBImages><$CLP>" border=0 height=100>
+<!-- #endif variable="STC" -->
+<!-- #ifdef variable="STC" value="1"-->
+<IMG SRC="<$g_HTMLRoot>/places/club/images/locked.gif" BORDER=0 ALT="Club Image" height=100>
+<!-- #endif variable="STC" -->
+</CENTER>
+
+<H3 ALIGN=center><FONT COLOR=#80ff00>Collection of Links of <$NAM></FONT></H3>
+
+<!--#ifdef variable="updateok" -->
+<FONT COLOR=lightgreen>Links successfully updated.</FONT>
+<!--#endif variable="updateok" -->
+
+<form method=post name=updateForm action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <INPUT TYPE=hidden NAME="KEY" VALUE="<$KEY>">
+    <INPUT TYPE=hidden NAME="TPL" VALUE="<$TPL>">
+
+
+    <div align=center>
+    <table border=0>
+    <tr>
+        <td><b>Description</b></td>
+        <td><b>URL</b></td>
+    </tr>
+    <tr>
+        <td><INPUT TYPE="text" NAME="LD1" VALUE="<$LD1>" MAXLENGTH=64 size=16></td>
+        <td><INPUT TYPE="text" NAME="LL1" VALUE="<$LL1>" MAXLENGTH=64 size=30></td>
+        <td><INPUT TYPE=button onclick="gotoLocation( updateForm.LL1.value )" VALUE="Test Link"></td>
+    </tr>
+    <tr>
+        <td><INPUT TYPE="text" NAME="LD2" VALUE="<$LD2>" MAXLENGTH=64 size=16></td>
+        <td><INPUT TYPE="text" NAME="LL2" VALUE="<$LL2>" MAXLENGTH=64 size=30></td>
+        <td><INPUT TYPE=button onclick="gotoLocation( updateForm.LL2.value )" VALUE="Test Link"></td>
+    </tr>
+    <tr>
+        <td><INPUT TYPE="text" NAME="LD3" VALUE="<$LD3>" MAXLENGTH=64 size=16></td>
+        <td><INPUT TYPE="text" NAME="LL3" VALUE="<$LL3>" MAXLENGTH=64 size=30></td>
+        <td><INPUT TYPE=button ONCLICK="gotoLocation( updateForm.LL3.value )" VALUE="Test Link"></td>
+    </tr>
+    <tr>
+        <td><INPUT TYPE="text" NAME="LD4" VALUE="<$LD4>" MAXLENGTH=64 size=16></td>
+        <td><INPUT TYPE="text" NAME="LL4" VALUE="<$LL4>" MAXLENGTH=64 size=30></td>
+        <td><INPUT TYPE=button ONCLICK="gotoLocation( updateForm.LL4.value )" VALUE="Test Link"></td>
+    </tr>
+    <tr>
+        <td><INPUT TYPE="text" NAME="LD5" VALUE="<$LD5>" MAXLENGTH=64 size=16></td>
+        <td><INPUT TYPE="text" NAME="LL5" VALUE="<$LL5>" MAXLENGTH=64 size=30></td>
+        <td><INPUT TYPE=button ONCLICK="gotoLocation( updateForm.LL5.value )" VALUE="Test Link"></td>
+    </tr>
+    </table>
+
+    <BR>
+    <INPUT TYPE=submit NAME="edit" VALUE="Update">
+</form>
+
+</body>
+</html>
+

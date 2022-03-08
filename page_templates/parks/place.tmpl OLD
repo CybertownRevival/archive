@@ -1,0 +1,34 @@
+<!-- parks/place.tmpl -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+<!-- #include virtual="<$g_Templates>banners/bannerscript_common.tmpl" -->
+
+<script language="JavaScript">
+function realplayerwin() {
+myRealWin=window.open('http://www.real.com/products/player/index.html?src=hp_butn,990809home_2&hp=yes','real',"toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=620,height=450");
+myRealWin.focus();
+}
+</script>
+</head>
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+<div align=center>
+<img src="<$g_HTMLRoot>/places/<$place>/images/<$place>.jpg" border=0 USEMAP="#parksmap">
+</div>
+
+<SCRIPT LANGUAGE="JavaScript">  
+//showbanner();  
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+<map name="parksmap">
+<AREA SHAPE=RECT COORDS="68,184,223,210" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=ne_0')" ALT="">
+<AREA SHAPE=RECT COORDS="390,154,483,196" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=beach')" ALT="">
+<AREA SHAPE=RECT COORDS="162,248,265,280" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=funpark')" ALT="">
+<AREA SHAPE=RECT COORDS="290,231,413,263" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=waterpark')" ALT="">
+<AREA SHAPE=RECT COORDS="411,266,534,292" HREF="javascript:jump('top /cgi-bin/cybertown/place?plc=themepark')" ALT="">
+</map>
+
+</body>
+</html>

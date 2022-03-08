@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<!-- place/colonies.tmpl -->
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<img src="<$g_Images>/images/colonies.gif" width="275" height="102" border=0>
+<p>
+Choose which Colony you want to live in by clicking on
+one of the images below. Cybertown offers you your own
+private chat, message center, 3DVR home (and ways to
+decorate it ) and much more. A Real Estate Office is in the
+works, meanwhile happy house-hunting :)
+</p>
+
+<form method=post target=_self action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="<$ac>">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+    <tr>
+        <td>
+            <INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT>
+        </td>
+        <!--#ifdef variable="[PREV]" -->
+            <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifndef variable="[PREV]" -->
+            <td>
+        <!--#endif variable="[PREV]" -->
+        <!--#ifdef variable="[NEXT]" -->
+            <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+        <!--#endif variable="[NEXT]" -->
+        </td>
+    </tr>
+</table>
+</form>
+<br>
+<table border=0>
+<!--#for loopname="object" loopvars="ID_" -->
+<tr>
+
+<td>
+<!--#ifdef variable="NAM_" -->
+<a href="javascript:top.location.href='community<$g_exe>?ID=<$ID_>'" target="top"><b><$NAM_></b></a>
+<br>
+Find a <a href="<$g_HTMLRoot>/home/<$ID_>/find.html">free home</a>!
+<!--#endif variable="NAM_" -->
+</td>
+
+<td>
+<a href="javascript:top.location.href='community<$g_exe>?ID=<$ID_>'" target="top">
+<IMG SRC="<$g_HTMLRoot>/home/<$ID_>/icon.jpg" ALIGN="center" BORDER="0"></a>
+</td>
+
+</tr>
+    <!--#endfor loopname="object" -->
+</table>
+
+</div>
+
+</BODY>
+</HTML>

@@ -1,0 +1,78 @@
+<html>
+<head>
+<title><$g_title> - Library</title>
+</head>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<div align=center>
+<h2>Library Topic Create</h2>
+
+<form method=post action="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<table border=0>
+<tr>
+<td>Topic:</td>
+<td><INPUT NAME="sub" VALUE="<$sub>" MAXLENGTH=256 SIZE=60></td>
+</tr>
+<tr>
+<td>Text:</td>
+<td><TEXTAREA NAME="txt" ROWS=15 COLS=60><$txt></TEXTAREA></td>
+</tr>
+</table>
+<p>
+<input type=hidden name="DTY" value="<$DTY>">
+<input type=hidden name="KTY" value="<$KTY>">
+<input type=hidden name="KEY" value="<$KEY>">
+<input type=hidden name="MTY" value="<$MTY>">
+<input type=hidden name="TOP" value="<$TOP>">
+<input type=hidden name="update" value="<$update>">
+<input type=hidden name="ac"     value="createtopic">
+<input type=submit name="Submit" value="Post">
+<input type=submit name="Cancel" value="Cancel">
+</p>
+</form>
+
+<!-- #ifdef variable="topicallowdelete" -->
+<a href="<$selfurl>?ac=deletetopic&TOP=<$TOP>&DTY=<$DTY>&KTY=<$KTY>&KEY=<$KEY>&MTY=<$MTY>&TKT=<$TKT>"
+>Delete the Topic</a>
+<!-- #endif variable="topicallowdelete" -->
+
+<!-- #ifdef variable="hllallowhtm" -->
+<P>
+Post of HTML tags is required on this library.<br>
+Please put at least "&lt;P&gt;" tags if you want to start new
+paragraphs in your post.
+<P>
+<!-- #endif variable="hllallowhtm" -->
+
+<!-- #ifndef variable="hllallowhtm" -->
+<P>
+Post of HTML tags is not allowed on this board.<br>
+Please do not post any HTML tags like "&lt;P&gt;", etc.
+<P>
+<!-- #endif variable="hllallowhtm" -->
+
+<!-- #ifdef variable="hllmsg001" -->
+The topic has been created.
+<!-- #endif variable="hllmsg001" -->
+
+<font color="red">
+<!-- #ifdef variable="hllerror001" -->
+Sorry <$NNM>, you do not have permission to create a topic.
+<!-- #endif variable="hllerror001" -->
+
+<!-- #ifdef variable="hllerror002" -->
+Sorry <$NNM>, the length of the input you gave is too big.
+<!-- #endif variable="hllerror002" -->
+
+<!-- #ifdef variable="hllerror003" -->
+Sorry <$NNM>, the update of the topic in the database failed.
+<!-- #endif variable="hllerror003" -->
+
+</font>
+
+</body>
+</html>
+

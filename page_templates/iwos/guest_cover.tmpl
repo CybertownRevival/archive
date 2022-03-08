@@ -1,0 +1,62 @@
+<HTML>
+<!-- iwos/guest_cover.tmpl -->
+<!-- displays the book cover -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Guest Book Cover</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/guest-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1>
+
+<CENTER>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the cover could not been updated!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The cover was succesfully updated!<br></font>
+<!-- #endif variable="updateok" -->
+
+<br>
+  <H2><$NAM>
+<a href="<$g_HttpServer>/help/homebuilder/guestbookhelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></H2>
+
+  <table height="10%">
+    <tr>
+      <td><$DES></td>
+    </tr>
+  </table>
+
+<br>
+  The following <$MAX_MEM> have opened the book last:<br><br>
+  <$LM0_NNM><br>
+  <$LM1_NNM><br>
+  <$LM2_NNM><br>
+  <$LM3_NNM><br>
+  <$LM4_NNM><br>
+<br>
+  Book was last updated on <$UDD_DAYNAME> <$UDD_MONNAME> <$UDD_MDAy> <$UDD_YEAR><br>
+<br>
+  The Book was <$CNT> times opened!<br>
+<br>
+
+<!-- #ifndef variable="isOwner" -->
+  <a href="iwos<$g_Exe>?ID=<$ID>&CAT=guest&ac=dispnew"><img src="<$g_Images>/images/iwos/booknewpage.gif" border=0 alt="new page"></a>
+<!-- #endif variable="isOwner" -->
+<!-- #ifdef variable="isOwner" -->
+  <a href="iwos<$g_Exe>?ID=<$ID>&CAT=guest&ac=editcover"><img src="<$g_Images>/images/iwos/bookeditpage.gif" border=0 alt="edit page"></a>
+<!-- #endif variable="isOwner" -->
+<!-- #ifdef variable="NEXTPAGE" -->
+  <a href="iwos<$g_Exe>?ac=next&ID=<$ID>"><img src="<$g_Images>/images/iwos/booknextpage.gif" border=0 alt="next page"></a>
+<!-- #endif variable="NEXTPAGE" -->
+
+</font>
+</BODY>
+</HTML>

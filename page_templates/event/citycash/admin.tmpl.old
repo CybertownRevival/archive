@@ -1,0 +1,105 @@
+<html>
+<!-- event/citycash/admin.tmpl -->
+<head>
+<title>Cybertown - <$NAM></title>
+</head>
+
+<body bgcolor="#000000" text="#CCCCCC" link="#00FF00" vlink="#00FF00">
+
+<script language="javascript">
+<!--
+
+
+function radioBtnOff( strValue )
+{
+  for( i=0; i<document.cityChashForm.week.length; i++ )
+  {
+    if( document.cityChashForm.week[i].checked )
+    {
+      if( document.cityChashForm.activeWeek.value
+        ==document.cityChashForm.week[i].value )
+      {
+        document.cityChashForm.week[i].checked = false;
+        document.cityChashForm.activeWeek.value = '';
+      }
+      else
+        document.cityChashForm.activeWeek.value 
+          = document.cityChashForm.week[i].value;
+    }
+  }
+}
+
+//-->
+</script>
+
+
+<h2 align="center"><$NAM></h2>
+
+<center>
+<!-- #ifdef variable="lotupdateok" -->
+<font color="red">Update successfull!<br><br></font>
+<!-- #endif variable="lotupdateok" -->
+
+<!-- #ifdef variable="errnolottery" -->
+<font color="red">Sorry <$NNM>, but there is no active week!<br><br></font>
+<!-- #endif variable="errnolottery" -->
+
+<!-- #ifdef variable="activatefail" -->
+<font color="red">Sorry <$NNM>, but there is no active/deactive week!<br><br></font>
+<!-- #endif variable="activatefail" -->
+
+<!-- #ifdef variable="nomembers" -->
+<font color="red">Sorry <$NNM>, but there are no members for the actual week!<br><br></font>
+<!-- #endif variable="nomembers" -->
+
+<form method=post action="<$selfurl>" name="cityChashForm">
+
+  <input type=hidden name="TKT" value="<$TKT>">
+
+  <input type=hidden name="ac" value="lotadmin">
+  <input type=hidden name="NID" value="<$NID>">
+
+  <input type=hidden name="activeWeek" value="<$activeWeek>">
+
+  <table border="1">
+  <tr>
+    <th>Status</th>
+    <th>Description</th>
+    <th>Sold<br> Lots</th>
+    <th>First<br> Price</th>
+    <th>Second<br> Price</th>
+    <th>Third<br> Price</th>
+  </tr>
+
+  <!--#for loopname="weekloop" loopvars="week_" --> 
+  <tr>
+    <td>
+      <input type=radio name="week" value="<$week_>" <$wchecked_> onClick="radioBtnOff( '<$week_>' )">
+    </td>
+    <td><$wtxt_></td>
+    <td align="right"><$wlots_>&nbsp;&nbsp;</td>
+    <td align="right"><$wprc_1_>&nbsp;&nbsp;</td>
+    <td align="right"><$wprc_2_>&nbsp;&nbsp;</td>
+    <td align="right"><$wprc_3_>&nbsp;&nbsp;</td>
+  </tr>
+  <!--#endfor loopname="weekloop" -->
+
+  <tr>
+    <td colspan=2><b>Total</b></td>
+    <td align="right"><$totallots>&nbsp;&nbsp;</td>
+    <td align="right"><$totalprize_1>&nbsp;&nbsp;</td>
+    <td align="right"><$totalprize_2>&nbsp;&nbsp;</td>
+    <td align="right"><$totalprize_3>&nbsp;&nbsp;</td>
+  </tr>
+  </table>
+<br> 
+  <input type="submit" value="Update">
+  <input type="button" name="goback" value="Go back" OnClick="history.back()">
+</form>
+<br>
+<a href="<$selfurl>?ac=drawing&NID=<$NID>&TKT=<$TKT>">Drawing of Lots</a><br>
+<br>
+<a href="<$selfurl>?ac=drawbigprize&NID=<$NID>&TKT=<$TKT>">Big Prize</a>
+
+</body>
+</html>

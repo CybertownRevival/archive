@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<script language="JavaScript1.1">
+<!--
+var image="";
+var banners=0;
+function cycle() {
+  if (++banners > 10) banners=1;
+    loadbanners();
+    document.banner1.src = image;
+    window.setTimeout('cycle();',15000);
+  }
+function loadbanners() {
+   if (banners==1)
+      {
+      image="http://www.cybertown.com/comtech/tellfriends.jpg";
+      }
+   if (banners==2)
+      {
+      image="http://www.cybertown.com/comtech/mhbanner.gif";
+      }
+   if (banners==3)
+      {
+      image="http://www.cybertown.com/comtech/forumsbanner.jpg";
+      }
+   if (banners==4)
+      {
+      image="http://www.cybertown.com/comtech/banner5.jpg";
+      }
+   if (banners==5)
+      {
+      image="http://www.cybertown.com/comtech/ctposter1.gif";
+      }
+   if (banners==6)
+      {
+      image="http://www.cybertown.com/comtech/affiliate_banner1.jpg";
+      }
+if (banners==7)
+      {
+      image="http://www.cybertown.com/comtech/freebanner3.jpg";
+      }
+if (banners==8)
+      {
+      image="http://www.cybertown.com/comtech/SilPre2.jpg";
+     
+      }
+if (banners==9)
+      {
+      image="http://www.cybertown.com/comtech/cotm.gif";
+     
+      }
+   }
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+var link = "http://www.cybertown.com/cgi-bin/cybertown/register"
+function urlswitch() {
+if (banners==1)
+{
+link = "javascript:void(open('http://www.cybertown.com/friends/tellfriends.html','3','scrollbars=yes,width=620,height=450'))";
+}
+if (banners==2)
+{
+link = "javascript:void(open('http://www.moon-hosting.com','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==3)
+{
+link = "javascript:void(open('http://www.ctcolonies.com/ctforums/index.php','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==4)
+{
+link = "javascript:void(open('http://www.drugsandyourmind.com','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==5)
+{
+link = "javascript:void(open('http://www.cybertown.com/CTPoster.pdf','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==6)
+{
+link = "javascript:void(open('http://www.cybertown.com/affiliates/index.html','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==7)
+{
+link = "javascript:void(open('http://www.cybertown.com/FreeCT.html','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==8)
+{
+link = "javascript:void(open('http://www.cybertown.com/Surveyhtml/silprereg2.html','3','scrollbars=yes,width=800,height=600'))";
+}
+if (banners==9)
+{
+link = "javascript:void(open('http://www.cybertown.com/cgi-bin/cybertown/community?ID=0101000000000000','3','scrollbars=yes,width=800,height=600'))";
+}
+return link;
+}
+//-->
+</script>
+
+<meta http-equiv="Content-Type" content="text/html">
+<!-- enter/menu.tmpl -->
+<title><$g_title></title>
+<base target="_top">
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" 
+ALINK="#FFFFFF" TEXT="##D0DBF7" border=0 marginheight=0 marginwidth=0>
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BACKGROUND="<$g_Images>/images/back.gif" BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" 
+ALINK="<$CLL>" TEXT="<$CLT>" border=0 marginheight=0 marginwidth=0>
+<!-- #endif variable="CLB" -->
+
+<body onLoad="window.setTimeout('cycle();',10000);(loadbanners());(urlswitch());">
+
+<table border=0 width=100% cellpadding=0 cellspacing=0>
+<tr>
+
+<!-- show the join now or win a t-shirt icons at the left side -->
+
+<!-- #ifdef variable="isVisitor" -->
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=left width=70><a href="register<$g_exe>"><img src="<$g_Images>/images/menu/join.gif" border=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+<!-- #endif variable="isVisitor" -->
+
+<!-- #ifndef variable="isVisitor" -->
+
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=left width=70><a href="javascript:void(0)" onClick="javascript:win=window.open('http://www.integratedvirtualnetworks.com/index1.php?is_ct=1','IVN','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,width=732,height=580');" target="_self"><IMG SRC="<$g_HTMLRoot>/images/ban_ivn128-2_small.gif" BORDER=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+
+<!-- #endif variable="isVisitor" -->
+
+<!-- end of left side icons -->
+
+<!-- These tags should be placed in the meeting  places category in the 468x60 size space (Placement: 1)-->
+<!-- <td align=center><a href="http://sfc.me.uk/survey/mall1.php"><IMG border=0 src="/places/flyby/images/mall01.jpg"></a> -->
+<!-- <td align=center> <a href="javascript:loadInfo('http://www.cybertown.com/friends/tellfriends.html')" target="_self"><IMG border=0 src="/comtech/tellfriends.jpg"></a></td> -->
+
+<td align=center>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/register" onclick="this.href=urlswitch()">
+<img width="468" height="60" border="0" src="http://www.cybertown.com/comtech/ctMinaBanner2.gif" name="banner1"></a>
+</td>
+
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+
+<td width=260><APPLET CODE='TickerTape.class' codebase='<$g_HTMLRoot>/java' WIDTH=260 HEIGHT=30>
+<!-- #ifdef variable="NNO" -->
+<PARAM NAME=count VALUE="<$NNO>">
+<!--#for loopname="news" loopvars="NT" -->
+<PARAM NAME="text<$index>" VALUE=" + <$NT> +">
+<PARAM NAME="url<$index>"  VALUE="<$NU>">
+<PARAM NAME="target<$index>"  VALUE="<$NG>">
+<!--#endfor loopname="news" -->
+<!-- #endif variable="NNO" -->
+
+<!-- #ifndef variable="NNO" -->
+<PARAM NAME=count VALUE=2><PARAM NAME=text0 VALUE=" + Latest News from Cybertown +"><PARAM NAME=url0  VALUE="news<$g_exe>"><PARAM NAME=text1 VALUE=" + Want a job? - Check the News Magazine +"><PARAM NAME=url1  VALUE="news<$g_exe>">
+<!-- #endif variable="NNO" -->
+<PARAM NAME=delay VALUE=40><PARAM NAME=step VALUE=2><PARAM NAME=font VALUE=Arial><PARAM NAME=fstyle VALUE=0><PARAM NAME=size  VALUE=20>
+<!-- possible values are: 
+black,blue,cyan,darkgrey,gray,green,lightgray,magenta,orange,pink,red,white,yellow -->
+<PARAM NAME=fgcolor VALUE=green><PARAM NAME=bgcolor VALUE=black></APPLET></td>
+<td align=right width=83>
+<table align=right border=0 cellspacing=0 cellpadding=0><tr>
+<td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td><td align=right width=63><a href="javascript:loadInfo('<$g_HTMLRoot>/places/news/magazine/dailynews/index.html')" target=_self><IMG SRC="<$g_Images>/images/menu/news.gif" BORDER=0></a></td><td width=7><IMG SRC="<$g_Images>/images/menu/tinyimage.gif" BORDER=0 width=7></td>
+</tr></table></td>
+
+</tr>
+</table>
+
+</BODY>
+</HTML>
+

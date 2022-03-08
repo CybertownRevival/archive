@@ -1,0 +1,67 @@
+<!-- admin/updatt.tmpl -->
+<!-- edit any database attributes -->
+
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+    <h2>Change Database Attributes </h2>
+
+<!-- #if variable="ac" != value="show" -->
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+<!-- #endif variable="ac" -->
+
+<br><br>
+<!-- #ifndef variable="KEY" -->
+<font color=red>Please check the <a href=admin<$g_exe>?ac=getfile&TPL=admin/updfile&NAM=admin/updatt>configuration file</a> for the name of the attribute that you're going to read!</font>
+<!-- #endif variable="KEY" -->
+<!-- #ifdef variable="KEY" -->
+<font color=red>Please check the <a href=admin<$g_exe>?ac=getfile&TPL=admin/updfile&NAM=admin/updatt>configuration file</a> for the name of the attribute that is updated here!</font>
+<!-- #endif variable="KEY" -->
+<br>
+
+<form name="updateForm" method=post action="<$selfurl>">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="<$TPL>">
+<input type=hidden name="ac" value="update">
+
+<table border=0>
+    <tr>
+        <td align=right>Datatype (e.g. M):&nbsp;&nbsp;</td>
+        <td><INPUT NAME="DTY" VALUE="<$DTY>" MAXLENGTH=2 SIZE=2></td>
+    </tr>
+    <tr>
+        <td align=right>Keytype (e.g. ID):&nbsp;&nbsp;</td>
+        <td><INPUT NAME="KTY" VALUE="<$KTY>" MAXLENGTH=3 SIZE=3></td>
+    </tr>
+    <tr>
+        <td align=right>Key:&nbsp;&nbsp;</td>
+        <td><INPUT NAME="KEY" VALUE="<$KEY>" MAXLENGTH=32 SIZE=16></td>
+    </tr>
+<!-- #ifdef variable="KEY" -->
+    <tr>
+        <td align=right>Attribut1:&nbsp;&nbsp;</td>
+        <td><TEXTAREA NAME="ATT1" ROWS="10" COLS="64"><$ATT1></TEXTAREA></td>
+    </tr>
+<!-- #endif variable="KEY" -->
+</table>
+
+<br><br>
+<!-- #ifdef variable="KEY" -->
+    <input type=submit name="edit" value="Update" width=100>
+<!-- #endif variable="KEY" -->
+
+<!-- #ifndef variable="KEY" -->
+    <input type=submit value="Get" width=100>
+<!-- #endif variable="KEY" -->
+
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+
+</body>
+</html>

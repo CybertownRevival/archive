@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</head>
+
+<frameset rows="300,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+  <frameset cols="*,540,*" border=0 marginheight=0 marginwidth=0 frameborder=0 framespacing=0>
+    <frame name="dummy1" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize>
+      <frame name="presentation" src="neighbor<$g_exe>?ac=present&ID=<$ID>" scrolling="no" noresize marginwidth=0
+        marginheight=16>
+    <frame name="dummy2" src="<$g_HTMLRoot>/blank.html" scrolling="no" noresize>
+  </frameset>
+  <frame name="chat" src="neighbor<$g_exe>?ac=mapinfo&ID=<$ID>&T_TMOD=<$T_TMOD>" scrolling="auto" noresize>
+</frameset>
+</html>

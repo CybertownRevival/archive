@@ -1,0 +1,490 @@
+<!-- clubdir/create -->
+<!--- form for creating a club --->
+<html>
+<head>
+<title><$g_title> - Create Your Own Club</title>
+</head>
+
+<script language="javascript">
+<!--
+
+colorValue = new Array();
+
+colorValue[0]  = '#ffffff';
+colorValue[1]  = '#ffff33';
+colorValue[2]  = '#ffcc33';
+colorValue[3]  = '#ff9933';
+colorValue[4]  = '#ff0000';
+colorValue[5]  = '#990000';
+colorValue[6]  = '#660000';
+colorValue[7]  = '#ccff99';
+colorValue[8]  = '#99ff33';
+colorValue[9]  = '#66cc00';
+colorValue[10] = '#669900';
+colorValue[11] = '#006600';
+colorValue[12] = '#003300';
+colorValue[13] = '#99ccff';
+colorValue[14] = '#33ccff';
+colorValue[15] = '#3399ff';
+colorValue[16] = '#3333ff';
+colorValue[17] = '#3300cc';
+colorValue[18] = '#003366';
+colorValue[19] = '#000066';
+colorValue[20] = '#000000';
+
+function Category( id, realid, name, depth, parent )
+{
+   this.id     = id;
+   this.realid = realid;
+   this.name   = name;
+   this.depth  = depth;
+   this.parent = parent;
+}
+
+var depth0Array = new Array();
+var depth1Array = new Array();
+var depth2Array = new Array();
+var depth3Array = new Array();
+var depth4Array = new Array();
+
+var iDepth1 = 0;
+var iDepth2 = 0;
+var iDepth3 = 0;
+var iDepth4 = 0;
+
+<!--#for loopname="categoryloop" loopvars="CAT_ID_" -->
+  <!-- #if variable="CAT_DEPTH_" == value="0"-->
+    depth0Array[0] = new Category( "<$CAT_ID_>", "<$CAT_REALID_>", "<$CAT_NAM_> <$CAT_LINK_>", "<$CAT_DEPTH_>", 0 );
+  <!-- #endif variable="CAT_DEPTH_" -->
+  <!-- #if variable="CAT_DEPTH_" == value="1"-->
+    depth1Array[iDepth1++] = new Category( "<$CAT_ID_>", "<$CAT_REALID_>", "<$CAT_NAM_> <$CAT_LINK_>", "<$CAT_DEPTH_>", 0 );
+  <!-- #endif variable="CAT_DEPTH_" -->
+  <!-- #if variable="CAT_DEPTH_" == value="2"-->
+    depth2Array[iDepth2++] = new Category( "<$CAT_ID_>", "<$CAT_REALID_>", "<$CAT_NAM_> <$CAT_LINK_>", "<$CAT_DEPTH_>", iDepth1-1 );
+  <!-- #endif variable="CAT_DEPTH_" -->
+  <!-- #if variable="CAT_DEPTH_" == value="3"-->
+    depth3Array[iDepth3++] = new Category( "<$CAT_ID_>", "<$CAT_REALID_>", "<$CAT_NAM_> <$CAT_LINK_>", "<$CAT_DEPTH_>", iDepth2-1 );
+  <!-- #endif variable="CAT_DEPTH_" -->
+  <!-- #if variable="CAT_DEPTH_" == value="4"-->
+    depth4Array[iDepth4++] = new Category( "<$CAT_ID_>", "<$CAT_REALID_>", "<$CAT_NAM_> <$CAT_LINK_>", "<$CAT_DEPTH_>", iDepth3-1 );
+  <!-- #endif variable="CAT_DEPTH_" -->
+<!--#endfor loopname="categoryloop" -->
+
+var colorImage = new Array();
+
+for( i=1; i<=21; i++ )
+{
+   colorImage[i-1] = new Image();
+   colorImage[i-1].src = "<$g_HTMLRoot>/images/club/club_col" + i + ".gif";
+}
+
+function setBackground( colValue, imgIndex )
+{
+  document.createClub.CLB.value = colValue;
+  document.selColorBg.src = colorImage[imgIndex].src;
+}
+
+function setTextColor( colValue, imgIndex )
+{
+  document.createClub.CLT.value = colValue;
+  document.selColorText.src = colorImage[imgIndex].src;
+}
+
+function setLinkColor( colValue, imgIndex )
+{
+  document.createClub.CLL.value = colValue;
+  document.selColorLink.src = colorImage[imgIndex].src;
+}
+
+<!-- #ifdef variable="CAT_ID_1" -->
+  function onSelect()
+  {
+    var iDepth1Sel = -1;
+    var iDepth2Sel = -1;
+    var iDepth3Sel = -1;
+    var iDepth4Sel = -1;
+
+    var iSelCat = document.createClub.CAT.selectedIndex;
+    selId = document.createClub.CAT.options[iSelCat].value;
+
+    for( i=0; i<depth1Array.length; i++ )
+    {
+      if( depth1Array[i].realid.substring(0,4)==selId.substring(0,4) )
+      {
+        iDepth1Sel = i;
+        break;
+      }
+    }
+
+    for( i=0; i<depth2Array.length; i++ )
+    {
+      if( depth2Array[i].realid.substring(0,8)==selId.substring(0,8) )
+      {
+        iDepth2Sel = i;
+        break;
+      }
+    }
+
+    for( i=0; i<depth3Array.length; i++ )
+    {
+      if( depth3Array[i].realid.substring(0,12)==selId.substring(0,12) )
+      {
+        iDepth3Sel = i;
+        break;
+      }
+    }
+
+    for( i=0; i<depth4Array.length; i++ )
+    {
+      if( depth4Array[i].realid==selId )
+      {
+        iDepth4Sel = i;
+        break;
+      }
+    }
+
+    var iOpt = 0;
+
+    if( iDepth4Sel==-1 )
+    {
+      while(document.createClub.CAT.length>0)
+        document.createClub.CAT.options[0] = null;
+
+      <!-- #if variable="CAT_ID_0" != variable="CAT"-->
+        document.createClub.CAT.options[iOpt++] = new Option( " - Select a category - ", "" );
+      <!-- #else variable="CAT_ID_0" -->
+        if( depth0Array.length>0 )
+          document.createClub.CAT.options[iOpt++] = new Option( depth0Array[0].name, depth0Array[0].id );
+      <!-- #endif variable="CAT_ID_0" -->
+        
+      if( iDepth1Sel!=-1 )
+      {
+        for( i=0; i<=iDepth1Sel; i++ )
+        {
+          document.createClub.CAT.options[iOpt++] = new Option( depth1Array[i].name, depth1Array[i].id );
+        }
+
+        if( iDepth2Sel!=-1 )
+        {
+          document.createClub.CAT.options[iOpt++] = new Option( " - " + depth2Array[iDepth2Sel].name, depth2Array[iDepth2Sel].id );
+
+          if( iDepth3Sel!=-1 )
+          {
+            document.createClub.CAT.options[iOpt++] = new Option( " -- " + depth3Array[iDepth3Sel].name, depth3Array[iDepth3Sel].id );
+
+            iSelCat = iOpt-1;
+
+            for( i=0; i<depth4Array.length; i++ )
+            {
+              if( depth4Array[i].parent==iDepth3Sel )
+              {
+                if( depth4Array[i].id==selId )
+                  iSelCat = iOpt;
+
+                document.createClub.CAT.options[iOpt++] = new Option( " --- " + depth4Array[i].name, depth4Array[i].id );
+              }
+            }
+          }
+          else
+          {
+            iSelCat = iOpt-1;
+
+            for( i=0; i<depth3Array.length; i++ )
+            {
+              if( depth3Array[i].parent==iDepth2Sel )
+                document.createClub.CAT.options[iOpt++] = new Option( " -- " + depth3Array[i].name, depth3Array[i].id );
+            }
+          }
+        }
+        else
+        {
+          iSelCat = iOpt-1;
+
+          for( i=0; i<depth2Array.length; i++ )
+          {
+            if( depth2Array[i].parent==iDepth1Sel )
+              document.createClub.CAT.options[iOpt++] = new Option( " - " + depth2Array[i].name, depth2Array[i].id );
+          }
+        }
+
+        for( i=iDepth1Sel+1; i<depth1Array.length; i++ )
+        {
+          document.createClub.CAT.options[iOpt++] = new Option( depth1Array[i].name, depth1Array[i].id );
+        }
+      }
+      else
+      {
+        for( i=0; i<depth1Array.length; i++ )
+        {
+          document.createClub.CAT.options[iOpt++] = new Option( depth1Array[i].name, depth1Array[i].id );
+        }
+
+        iSelCat = 0;
+      }
+
+      if( navigator.appName.toLowerCase().indexOf( "netscape" ) >= 0 )
+        history.go(0);
+
+      document.createClub.CAT.selectedIndex = iSelCat;
+    }
+  }
+<!-- #endif variable="CAT_ID_1" -->
+
+function checkCreate()
+{
+  var clubName = document.createClub.NAM.value;
+  var protClubName = "";
+  var startIndex = 0;
+  var stopIndex = 0;
+
+<!-- #ifdef variable="CAT_ID_1" -->
+
+  if( document.createClub.CAT.options[document.createClub.CAT.selectedIndex].value=="" )
+  {
+    alert( "Sorry <$NNM>, you have to specify a category for the new club" );
+  }
+  else
+<!-- #endif variable="CAT_ID_1" -->
+  {
+    while( (stopIndex=clubName.indexOf( ' ', startIndex ))>=0 )
+    {
+      protClubName = protClubName + clubName.substring( startIndex, stopIndex )  + "%20";
+      startIndex = stopIndex+1;
+    }
+
+    protClubName = protClubName + clubName.substring( startIndex, clubName.length );
+
+    document.createClub.T_BNAM.value = protClubName+"%20Board";
+
+    document.createClub.submit();
+  }
+}
+
+//-->
+</script>
+
+<body <$g_body1>
+<$g_font1>
+
+<!-- #define variable="headerimage" value="clubdirinfo.gif" -->
+<!-- #include file="<$g_Templates>/common/infohead.html" -->
+
+<table "width=100%" border="0" cellpadding="0" cellspacing="0" valign="top" align="center">
+<tr <$g_bgcolor5>>
+  <td>
+    <a href="javascript:history.go(-1)"><img
+      src="<$g_HTMLRoot>/images/buttons/backbtn.gif" alt="Back" border="0" align="left" vspace="0" hspace="0"></a>
+  </td>
+</tr>
+<tr <$g_bgcolor5>>
+  <td align="center" width=280>
+
+    <!-- #ifdef variable="createok" -->
+
+      <!-- #include script="message<$g_exe>?ac=toc&ID=<$ID>&ADD=1" -->
+      <!-- #include script="./msboard<$g_exe>?TPL=msboard/blank&ac=create&PDT=CL&PKT=ID&PKE=<$ID>&SUB=<$T_BNAM>&TKT=<$TKT><$g_SessionID>" -->
+
+      <script language=javascript>
+        setTimeout( "location.href='<$g_cgiRoot>/club<$g_exe>?ac=clubdir&CAT=<$CAT>&KTY=CNT<$g_SessionID>'", 2000 );
+      </script>
+      <br>Club was created successfully.
+    <!-- #endif variable="createok" -->
+
+    <form name="createClub" method="post" action="<$g_cgiRoot>/club<$g_exe>" target="_self">
+
+      <input type="hidden" name="TKT" value="<$TKT>">
+      <input type="hidden" name="SID" value="<$SID>">
+
+      <input type=hidden name="ac" value="create">
+ 
+      <input type="hidden" name="CLB" value="<$CLB>">
+      <input type="hidden" name="CLL" value="<$CLB>">
+      <input type="hidden" name="CLT" value="<$CLB>">
+
+      <input type="hidden" name="T_BNAM" value="">
+
+      <input type="hidden" name="TPL" value="<$TPL>">
+
+      <table border="0" cellpadding="1" cellspacing="5" width="280" >
+      <tr><td colspan="2"><$g_font1><b>Create Club<b></font></td></tr>
+      <tr>
+        <td>
+          <table cellspacing="0" cellpadding="0" border="0" align="center">
+          <tr>
+            <td align="left"><$g_font1>Club Name:&nbsp;</font></td>
+            <td><$g_font1><input type="text" name="NAM" value="<$NAM>" maxlength="16" size="16"></font></td>
+          </tr>
+          <tr><td colspan="2">&nbsp;</td></tr>
+          <tr>
+            <td align="left" valign="top"><$g_font1>Category:&nbsp;</font></td>
+            <td valign="top"><$g_font1>
+              <!-- #ifdef variable="CAT_ID_1" -->
+                <select name="CAT" onChange="onSelect()">
+                  <!-- #if variable="CAT_ID_0" == variable="CAT"-->
+                    <option value="<$CAT_ID_0>"><$CAT_NAM_0> <$CAT_LINK_0></option>
+                    <!-- #define variable="PREFIX" value=" - "-->
+                    <!-- #if variable="CAT_DEPTH_0" == value="0"-->
+                      <!-- #define variable="SHOW_DEPTH" value="1"-->
+                    <!-- #else variable="CAT_DEPTH_0" -->
+                      <!-- #define variable="SHOW_DEPTH" value="2"-->
+                    <!-- #endif variable="CAT_DEPTH_0" -->
+                  <!-- #else variable="CAT_ID_0" -->
+                    <option value=""> - Select a category - </option>
+                    <!-- #define variable="PREFIX" value=""-->
+                    <!-- #define variable="SHOW_DEPTH" value="1"-->
+                  <!-- #endif variable="CAT_ID_0" -->
+                  <!--#for loopname="categoryloop" loopvars="CAT_ID_" -->
+                    <!-- #if variable="CAT_DEPTH_" == variable="SHOW_DEPTH"-->
+                      <option value="<$CAT_ID_>"><$PREFIX><$CAT_NAM_> <$CAT_LINK_></option>
+                    <!-- #endif variable="CAT_DEPTH_" -->
+                  <!--#endfor loopname="categoryloop" -->
+                </select></font>
+              <!-- #else variable="CAT_ID_1" -->
+                <$CAT_NAM_0></font>
+                <input type="hidden" name="CAT" value="<$CAT_ID_0>">
+              <!-- #endif variable="CAT_ID_1" -->
+            </td>
+          </tr>
+          <tr><td colspan="2">&nbsp;</td></tr>
+          <tr>
+            <td align="left" valign=top><$g_font1>New Members:&nbsp;</font></td>
+            <td><$g_font1>
+              <input type="radio" name="CKI" value="O" checked>Open for everyone</input><br>
+              <input type="radio" name="CKI" value="I">By Invitation</input><br>
+              <input type="radio" name="CKI" value="P">Private</input></font>
+            </td>
+          </tr>
+          <tr><td colspan="2">&nbsp;</td></tr>
+          <tr>
+            <td colspan="2" align="center"><$g_font1>
+              <!-- #if variable="DES" == value=""-->
+                <!-- #define variable="DESC" value="Here you can enter a short description of your club..."-->
+              <!-- #else variable="DES" -->
+                <!-- #define variable="DESC" value="<$DES>"-->
+              <!-- #endif variable="DES" -->
+              <textarea name="DES" rows="7" cols="35" maxlength=35><$DESC></textarea></font>
+            </td>
+          </tr>
+          <tr><td colspan="2">&nbsp;</td></tr>
+          <tr>
+            <td colspan="2" align="center"><$g_font1>
+              <!-- #if variable="RUL" == value=""-->
+                <!-- #define variable="RULES" value="Enter here the rules for your club."-->
+              <!-- #else variable="RUL" -->
+                <!-- #define variable="RULES" value="<$RUL>"-->
+              <!-- #endif variable="RUL" -->
+              <textarea name="RUL" rows="4" cols="35" maxlength=35><$RULES></textarea></font>
+            </td>
+          </tr>
+          <tr><td colspan="2" align="center"><$g_font1><b><br>Club Colors</b></font></td></tr>
+          <tr valign="top">
+            <td><$g_font1>Background Color:</font></td>
+            <td colspan=1>
+              <img src="<$g_HTMLRoot>/images/club/club_col1.gif" name="selColorBg" alt="Current Selected" width="10" height="10" border="1">
+              <img name="colorselection" src="<$g_HTMLRoot>/images/club/clubcolor_sel.gif" border="0"
+                alt="Select Background Color" usemap="#colorBackground">
+            </td>
+          </tr>
+          <tr valign="top">
+            <td><$g_font1>Link Color:</font></td>
+            <td colspan="2">
+              <img src="<$g_HTMLRoot>/images/club/club_col1.gif" name="selColorLink" alt="Current Selected" width="10" height="10" border="1">
+              <img name="colorselection" src="<$g_HTMLRoot>/images/club/clubcolor_sel.gif" border="0"
+                alt="Select Background Color" usemap="#colorLink">
+            </td>
+          </tr>
+          <tr valign="top">
+            <td><$g_font1>Text Color:</font></td>
+            <td colspan="2">
+              <img src="<$g_HTMLRoot>/images/club/club_col1.gif" name="selColorText" alt="Current Selected" width="10" height="10" border="1">
+              <img name="colorselection" src="<$g_HTMLRoot>/images/club/clubcolor_sel.gif" border="0"
+                alt="Select Background Color" usemap="#colorText">
+            </td>
+          </tr>
+          </table>
+        </td>
+      </tr>
+      </table>
+    </form>
+  </td>
+</tr>
+</table>
+<!-- #define variable="buttoncheck" value="checkCreate()"-->
+<!-- #define variable="buttons" value="create" -->
+<!-- #include file="<$g_Templates>/common/infobottom.html" -->
+
+
+<map name="colorBackground">
+  <area shape="rect" coords="  1, 0, 10, 11" href="javascript:setBackground( '#ffffff', 0 )">
+  <area shape="rect" coords=" 11, 0, 21, 11" href="javascript:setBackground( '#ffff33', 1 )">
+  <area shape="rect" coords=" 23, 0, 32, 11" href="javascript:setBackground( '#ffcc33', 2 )">
+  <area shape="rect" coords=" 33, 0, 43, 11" href="javascript:setBackground( '#ff9933', 3 )">
+  <area shape="rect" coords=" 44, 0, 53, 11" href="javascript:setBackground( '#ff0000', 4 )">
+  <area shape="rect" coords=" 54, 0, 64, 11" href="javascript:setBackground( '#990000', 5 )">
+  <area shape="rect" coords=" 66, 0, 76, 11" href="javascript:setBackground( '#660000', 6 )">
+  <area shape="rect" coords=" 78, 0, 87, 11" href="javascript:setBackground( '#ccff99', 7 )">
+  <area shape="rect" coords=" 89, 0, 98, 11" href="javascript:setBackground( '#99ff33', 8 )">
+  <area shape="rect" coords="100, 0,109, 11" href="javascript:setBackground( '#66cc00', 9 )">
+  <area shape="rect" coords="110, 0,120, 11" href="javascript:setBackground( '#669900', 10 )">
+  <area shape="rect" coords="121, 0,131, 11" href="javascript:setBackground( '#006600', 11 )">
+  <area shape="rect" coords="132, 0,142, 11" href="javascript:setBackground( '#003300', 12 )">
+  <area shape="rect" coords="143, 0,153, 11" href="javascript:setBackground( '#99ccff', 13 )">
+  <area shape="rect" coords="156, 0,164, 11" href="javascript:setBackground( '#33ccff', 14 )">
+  <area shape="rect" coords="166, 0,175, 11" href="javascript:setBackground( '#3399ff', 15 )">
+  <area shape="rect" coords="176, 0,186, 11" href="javascript:setBackground( '#3333ff', 16 )">
+  <area shape="rect" coords="187, 0,196, 11" href="javascript:setBackground( '#3300cc', 17 )">
+  <area shape="rect" coords="197, 0,207, 11" href="javascript:setBackground( '#003366', 18 )">
+  <area shape="rect" coords="209, 0,220, 11" href="javascript:setBackground( '#000066', 19 )">
+  <area shape="rect" coords="222, 0,231, 11" href="javascript:setBackground( '#000000', 20 )">
+</map>
+
+<map name="colorLink">
+  <area shape="rect" coords="  1, 0, 10, 11" href="javascript:setLinkColor( '#ffffff', 0 )">
+  <area shape="rect" coords=" 11, 0, 21, 11" href="javascript:setLinkColor( '#ffff33', 1 )">
+  <area shape="rect" coords=" 23, 0, 32, 11" href="javascript:setLinkColor( '#ffcc33', 2 )">
+  <area shape="rect" coords=" 33, 0, 43, 11" href="javascript:setLinkColor( '#ff9933', 3 )">
+  <area shape="rect" coords=" 44, 0, 53, 11" href="javascript:setLinkColor( '#ff0000', 4 )">
+  <area shape="rect" coords=" 54, 0, 64, 11" href="javascript:setLinkColor( '#990000', 5 )">
+  <area shape="rect" coords=" 66, 0, 76, 11" href="javascript:setLinkColor( '#660000', 6 )">
+  <area shape="rect" coords=" 78, 0, 87, 11" href="javascript:setLinkColor( '#ccff99', 7 )">
+  <area shape="rect" coords=" 89, 0, 98, 11" href="javascript:setLinkColor( '#99ff33', 8 )">
+  <area shape="rect" coords="100, 0,109, 11" href="javascript:setLinkColor( '#66cc00', 9 )">
+  <area shape="rect" coords="110, 0,120, 11" href="javascript:setLinkColor( '#669900', 10 )">
+  <area shape="rect" coords="121, 0,131, 11" href="javascript:setLinkColor( '#006600', 11 )">
+  <area shape="rect" coords="132, 0,142, 11" href="javascript:setLinkColor( '#003300', 12 )">
+  <area shape="rect" coords="143, 0,153, 11" href="javascript:setLinkColor( '#99ccff', 13 )">
+  <area shape="rect" coords="156, 0,164, 11" href="javascript:setLinkColor( '#33ccff', 14 )">
+  <area shape="rect" coords="166, 0,175, 11" href="javascript:setLinkColor( '#3399ff', 15 )">
+  <area shape="rect" coords="176, 0,186, 11" href="javascript:setLinkColor( '#3333ff', 16 )">
+  <area shape="rect" coords="187, 0,196, 11" href="javascript:setLinkColor( '#3300cc', 17 )">
+  <area shape="rect" coords="197, 0,207, 11" href="javascript:setLinkColor( '#003366', 18 )">
+  <area shape="rect" coords="209, 0,220, 11" href="javascript:setLinkColor( '#000066', 19 )">
+  <area shape="rect" coords="222, 0,231, 11" href="javascript:setLinkColor( '#000000', 20 )">
+</map>
+
+<map name="colorText">
+  <area shape="rect" coords="  1, 0, 10, 11" href="javascript:setTextColor( '#ffffff', 0 )">
+  <area shape="rect" coords=" 11, 0, 21, 11" href="javascript:setTextColor( '#ffff33', 1 )">
+  <area shape="rect" coords=" 23, 0, 32, 11" href="javascript:setTextColor( '#ffcc33', 2 )">
+  <area shape="rect" coords=" 33, 0, 43, 11" href="javascript:setTextColor( '#ff9933', 3 )">
+  <area shape="rect" coords=" 44, 0, 53, 11" href="javascript:setTextColor( '#ff0000', 4 )">
+  <area shape="rect" coords=" 54, 0, 64, 11" href="javascript:setTextColor( '#990000', 5 )">
+  <area shape="rect" coords=" 66, 0, 76, 11" href="javascript:setTextColor( '#660000', 6 )">
+  <area shape="rect" coords=" 78, 0, 87, 11" href="javascript:setTextColor( '#ccff99', 7 )">
+  <area shape="rect" coords=" 89, 0, 98, 11" href="javascript:setTextColor( '#99ff33', 8 )">
+  <area shape="rect" coords="100, 0,109, 11" href="javascript:setTextColor( '#66cc00', 9 )">
+  <area shape="rect" coords="110, 0,120, 11" href="javascript:setTextColor( '#669900', 10 )">
+  <area shape="rect" coords="121, 0,131, 11" href="javascript:setTextColor( '#006600', 11 )">
+  <area shape="rect" coords="132, 0,142, 11" href="javascript:setTextColor( '#003300', 12 )">
+  <area shape="rect" coords="143, 0,153, 11" href="javascript:setTextColor( '#99ccff', 13 )">
+  <area shape="rect" coords="156, 0,164, 11" href="javascript:setTextColor( '#33ccff', 14 )">
+  <area shape="rect" coords="166, 0,175, 11" href="javascript:setTextColor( '#3399ff', 15 )">
+  <area shape="rect" coords="176, 0,186, 11" href="javascript:setTextColor( '#3333ff', 16 )">
+  <area shape="rect" coords="187, 0,196, 11" href="javascript:setTextColor( '#3300cc', 17 )">
+  <area shape="rect" coords="197, 0,207, 11" href="javascript:setTextColor( '#003366', 18 )">
+  <area shape="rect" coords="209, 0,220, 11" href="javascript:setTextColor( '#000066', 19 )">
+  <area shape="rect" coords="222, 0,231, 11" href="javascript:setTextColor( '#000000', 20 )">
+</map>
+
+</body>
+</html>

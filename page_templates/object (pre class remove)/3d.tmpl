@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>blaxxun - Object 3D</title>
+</head>
+
+<!-- object/3d.tmpl -->
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#000000" LINK="#FFFF00" VLINK="#FFFF00" ALINK="#FFFFFF" TEXT="#80FF00">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+
+<div align=center>
+<h2>Object 3D</h2>
+
+<script language="javascript">var path = "<$WRL>";
+if (path.indexOf('http://www1.cybertown.com/') > -1){path = path.substring(25, path.length);}
+document.writeln('<EMBED SRC="'+path+'"');
+document.writeln('VRML-DASHBOARD="false"');
+document.writeln('TYPE="application/x-blaxxunCC3D"');
+document.writeln('HEIGHT=70% WIDTH=90%');
+document.writeln('</EMBED>');
+</script>
+
+
+
+<table border=0>
+
+<form>
+<tr>
+  <td><input type=button name="back" value=Back onClick="history.back()"></td>
+  <td><input type="button" value="Close" onClick="window.close()"></td>
+</form>
+</tr>
+
+</table>
+</div>
+
+<script language=javascript>
+focus();
+</script>
+</body>
+</html>
+

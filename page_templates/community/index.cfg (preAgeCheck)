@@ -1,0 +1,6 @@
+#
+# This file contains the entries to be read from database
+# before displaying the template.
+#
+
+*GET M NNM <$NNM> CHT CHT

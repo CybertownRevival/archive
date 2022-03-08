@@ -1,0 +1,88 @@
+<HTML>
+<!-- iwos/showpict.tmpl -->
+<!-- page for uploading or displaying the content of a picture frame -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Show Picture</title>
+</HEAD>
+
+<!-- #ifndef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/picture-bg.gif" BGCOLOR="#000000" LINK="#FFCC00" VLINK="#FFCC00" ALINK="#FFCC00" TEXT="#FFFFFF">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+  <BODY BACKGROUND="<$g_Images>/images/iwos/picture-bg.gif" BGCOLOR="<$CLB>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+<FONT face="Arial, Helvetica, sans-serif" size=-1> 
+
+<!-- #ifdef variable="uploadNoFile" -->
+  <font color="red">No File <$errfile>!<br></font>
+<!-- #endif variable="uploadNoFile" -->
+<!-- #ifdef variable="uploadWrongMime" -->
+  <font color="red">Wrong Mime <$errfile>!<br></font>
+<!-- #endif variable="uploadWrongMime" -->
+<!-- #ifdef variable="uploadFailCreate" -->
+  <font color="red">Create Failed <$errfile>!<br></font>
+<!-- #endif variable="uploadFailCreate" -->
+<!-- #ifdef variable="uploadOversized" -->
+  <font color="red">Oversized <$errfile>!<br></font>
+<!-- #endif variable="uploadOversized" -->
+
+
+
+<center>
+
+<!-- #ifdef variable="errorupdate" -->
+  <font color="red">Sorry <$NNM>, the picture could not been uploaded!<br></font>
+<!-- #endif variable="errorupdate" -->
+<!-- #ifdef variable="updateok" -->
+  <font color="red">The picture was succesfully uploaded!<br></font>
+<!-- #endif variable="updateok" -->
+
+<!-- #ifdef variable="isOwner" -->
+  <h2>Upload Picture for <$NAM>
+<!-- #endif variable="isOwner" -->
+
+<!-- #ifndef variable="isOwner" -->
+  <h2>Close look at Picture for <$NAM>
+<!-- #endif variable="isOwner" -->
+  <a href="<$g_HttpServer>/help/homebuilder/picturehelp.html" target="_self">
+  <img name="hbhelp" src="<$g_Images>/images/homebuilder/hbhelp.gif" width="30" height="28" border="0" alt="help"></a></h2>
+
+<img src="<$g_HTMLRoot><$imagePath>/<$Image>" border=0 alt="Picture">
+
+<!-- #ifdef variable="isOwner" -->
+  <form method=post action="<$selfurl>" enctype="multipart/form-data">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="uploadpict">
+
+    <input type="hidden" name="ID" value="<$ID>">
+
+    Picture shown in 3D<br>
+    <input type="file" name="3DIMG" value="<$3DIMG>" maxlength="64" size=16><br>
+    Picture shown on this page<br>
+    <input type="file" name="IMAGE" value="<$IMAGE>" maxlength="64" size=16><br>
+
+  <br>
+</center>
+<p>
+  <b>Note:</b><br>
+  For performance reasons, we had to change the functionality of the
+  picture frame. Now you can upload up to two pictures.<br>
+  The first picture is for the 3D picture frame and is limited to 10 KB.
+  The second picture will be shown on the picture frame page when a user
+  clicks on the object.<br>
+  If you upload only one picture, this is limited to 10 KB and the picture
+  is shown in 3D and on the picture frame page.
+</p>
+<center>
+  <br>
+    <input type="submit" name="uploadBtn" value="Upload">
+
+  </form>
+<!-- #endif variable="isOwner" -->
+</center>
+</font>
+
+</BODY>
+</HTML>

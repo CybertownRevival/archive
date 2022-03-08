@@ -1,0 +1,132 @@
+<HTML>
+<!-- clubdir/topactivity.tmpl -->
+<!-- calculates the activity and lists the club by it -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function citeria()
+{
+    ktyValue = document.cirteriaForm.criteriaSelection.options[document.cirteriaForm.criteriaSelection.selectedIndex].value;
+
+    if( ktyValue!='GRO' )
+        location.href = 'edit<$g_exe>?ac=list&TPL=clubdir/topactivity&SORTORDER=-&KTY=' + ktyValue;
+    else
+        location.href = 'club<$g_exe>?ac=growing&TKT=<$TKT>';
+}
+
+//-->
+</SCRIPT>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title>blaxxun ColonyCity - Club</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<FORM METHOD=POST ACTION="" NAME="cirteriaForm">
+<input type="hidden" name="TKT" value="<$TKT>">
+    <CENTER>
+    <H2><FONT COLOR=#80ff00>Clubs Top 20 of</FONT>
+    <SELECT NAME="criteriaSelection" onChange='citeria()'>
+        <OPTION VALUE="ACT"
+        <!-- #ifdef variable="KTY" value="ACT"-->
+        SELECTED
+        <!-- #endif variable="KTY" -->
+        >Activity</OPTION>
+        <OPTION VALUE="CNT"
+        <!-- #ifdef variable="KTY" value="CNT"-->
+        SELECTED
+        <!-- #endif variable="KTY" -->
+        >Members</OPTION>
+        <OPTION VALUE="GRO"
+        <!-- #ifdef variable="KTY" value="GRO"-->
+        SELECTED
+        <!-- #endif variable="KTY" -->
+        >New Members</OPTION>
+    </SELECT>
+    </H2>
+    </CENTER>
+</FORM>
+
+<!-- #ifdef variable="KTY" value="ACT"-->
+<CENTER>
+The club activity is the percentage of members who visited the club in the last week.<BR>
+Status <$ID_UDD_MONNAME_0> <$ID_UDD_MDAy_0>, <$ID_UDD_YEAR_0>
+<BR>
+</CENTER>
+<TABLE align="center">
+	<TR>
+        <TH width=25><font color=#80ff00>No.</TH>
+		<TH width=150><font color=#80ff00>Club Name</TH>
+        <TH width=100><font color=#80ff00>Owner</TH>
+        <TH width=100><font color=#80ff00>Activity</TH>
+		<TH width=80><font color=#80ff00>Members</TH>
+	</TR>
+    
+	<!--#for loopname="CLUBLIST" loopvars="ID_" --> 
+    <TR>
+        <TD align=center><$ITER_>.</TD>
+    	<TD><$NAM_></TD>
+    	<TD><$OWN_NNM_></TD>
+    	<TD align=center nowrap><$ACT_> %</TD>
+    	<TD align=center><$CNT_></TD>
+    </TR>
+	<!--#endfor loopname="CLUBLIST" -->
+    </TABLE>    
+<!-- #endif variable="KTY" -->
+
+<!-- #ifdef variable="KTY" value="CNT"-->
+<CENTER>
+Total number of members<BR>
+<BR>
+</CENTER>
+<TABLE align="center">
+	<TR>
+        <TH width=25><font color=#80ff00>No.</TH>
+		<TH width=150><font color=#80ff00>Club Name</TH>
+        <TH width=100><font color=#80ff00>Owner</TH>
+        <TH width=100><font color=#80ff00>Activity</TH>
+		<TH width=80><font color=#80ff00>Members</TH>
+	</TR>
+    
+	<!--#for loopname="CLUBLIST" loopvars="ID_" --> 
+    <TR>
+        <TD align=center><$ITER_>.</TD>
+    	<TD><$NAM_></TD>
+    	<TD><$OWN_NNM_></TD>
+    	<TD align=center nowrap><$ACT_> %</TD>
+    	<TD align=center><$CNT_></TD>
+    </TR>
+	<!--#endfor loopname="CLUBLIST" -->
+    </TABLE>    
+<!-- #endif variable="KTY" -->
+
+<!-- #ifdef variable="KTY" value="GRO"-->
+<CENTER>
+Number of new members since <$UDD_MONNAME> <$UDD_MDAy>, <$UDD_YEAR><BR>
+<BR>
+</CENTER>
+<TABLE align="center">
+	<TR>
+        <TH width=25><font color=#80ff00>No.</TH>
+		<TH width=150><font color=#80ff00>Club Name</TH>
+        <TH width=100><font color=#80ff00>Owner</TH>
+		<TH width=100><font color=#80ff00>New Members</TH>
+		<TH width=80><font color=#80ff00>Members</TH>
+    </TR>
+    
+	<!--#for loopname="CLUBLIST" loopvars="ITER_" --> 
+    <TR>
+        <TD align=center><$ITER_>.</TD>
+    	<TD><$NAM_></TD>
+        <TD><$OWN_></TD>
+    	<TD align=center><$GRO_></TD>
+        <TD align=center><$CNT_></TD>
+    </TR>
+	<!--#endfor loopname="CLUBLIST" -->
+    </TABLE>    
+<!-- #endif variable="KTY" -->
+</BODY>
+</HTML>

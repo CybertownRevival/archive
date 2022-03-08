@@ -1,0 +1,187 @@
+<!-- admin/members.tmpl -->
+<!-- list members -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    if( document.FilterForm.KTY.selectedIndex != 6 )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value.toLowerCase();
+
+    if( document.FilterForm.KFT.value.substring( document.FilterForm.KFT.value.length-1, document.FilterForm.KFT.value.length )!='*' )
+        document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";  
+
+}
+
+//-->
+</SCRIPT>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<div align=center>
+<h2>Members defined in Database</h2>
+
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<form method=post target=_self action="<$selfurl>" name="FilterForm" onSubmit="onSubmit()">
+
+    <input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+<table border=0>
+<tr>
+    <td align=right>Ordered by:&nbsp;&nbsp;</td>
+    <td>
+        <select name="KTY">
+            <option value="NNK"
+                <!--#ifdef variable="KTY" value="NNK"-->
+                    selected
+                <!--#endif variable="KTY" -->
+            >Nickname</option>
+            <option value="ID"
+                <!--#ifdef variable="KTY" value="ID"-->
+                    selected
+                <!--#endif variable="KTY" -->
+            >Member ID</option>
+            <option value="EML"
+                <!--#ifdef variable="KTY" value="EML">
+                    selected
+                <!--#endif variable="KTY" -->
+            >Email</option>
+            <option value="IMD"
+                <!--#ifdef variable="KTY" value="IMD">
+                    selected
+                <!--#endif variable="KTY" -->
+            >Immigration</option>
+            <option value="EXP"
+                <!--#ifdef variable="KTY" value="EXP">
+                    selected
+                <!--#endif variable="KTY" -->
+            >Experience</option>
+            <option value="MON"
+                <!--#ifdef variable="KTY" value="MON">
+                    selected
+                <!--#endif variable="KTY" -->
+            >Money</option>
+            <option value="LNM"
+                <!--#ifdef variable="KTY" value="LNM">
+                    selected
+                <!--#endif variable="KTY" -->
+            >Last name</option>
+        </select>
+        <SELECT NAME="SORTORDER">
+            <option value="+"
+                <!--#ifdef variable="SORTORDER" value="+">
+                    selected
+                <!--#endif variable="SORTORDER" -->
+            >ascending</option>
+            <option value="-"
+                <!--#ifdef variable="SORTORDER" value="-">
+                    selected
+                <!--#endif variable="SORTORDER" -->
+            >descending</option>
+        </SELECT>
+    </td>
+</tr>
+<tr>
+    <td align=right>Filter:&nbsp;&nbsp;</td>
+    <td>
+        <INPUT NAME="KFT" VALUE="<$KFT>" MAXLENGTH=32 SIZE=16>
+        <INPUT TYPE="submit" value="Apply">
+    </td>
+</tr>
+<tr>
+    <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+
+    <!--#ifdef variable="[PREV]" -->
+        <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT>
+    <!--#endif variable="[PREV]" -->
+    <!--#ifndef variable="[PREV]" -->
+        <td>
+    <!--#endif variable="[PREV]" -->
+    <!--#ifdef variable="[NEXT]" -->
+        <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+    <!--#endif variable="[NEXT]" -->
+    </td>
+</tr>
+</table>
+
+</form>
+
+
+<table border=1>
+    <tr>
+        <th><font color=#80ff00>ID</th>
+        <th><font color=#80ff00>Nickname</th>
+        <th width=70><font color=#80ff00>Money</th>
+        <th width=70><font color=#80ff00>Exper.</th>
+        <th><font color=#80ff00>Email</th>
+        <th width=100><font color=#80ff00>Immigration</th>
+        <th width=100><font color=#80ff00>Last access</th>
+        <th><font color=#80ff00>Name</th>
+    </tr>
+    <!--#for loopname="member" loopvars="ID_" -->
+        <tr>
+            <td>
+                <A HREF="admin<$g_exe>?DTY=M&KTY=ID&KEY=<$ID_>&TPL=admin/member&ac=read" target=_self><$ID_></A>
+            </td>
+            <td>
+                <A HREF="admin<$g_exe>?DTY=M&KTY=ID&KEY=<$ID_>&TPL=admin/member&ac=read" target=_self><$NNM_></A>
+            </td>
+            <td align=right>
+                <!--#ifdef variable="MON_" -->
+                    <$MON_>
+                <!--#endif variable="MON_" -->
+                &nbsp;
+            </td>
+            <td align=right>
+                <!--#ifdef variable="EXP_" -->
+                    <$EXP_>
+                <!--#endif variable="EXP_" -->
+                &nbsp;
+            </td>
+            <td>
+                <$EML_>
+            </td>
+            <td nowrap>&nbsp;
+                <!--#ifdef variable="IMD_MON_" -->
+                    <$IMD_MON_>/<$IMD_MDAY_>/<$IMD_YEAR_>
+                <!--#endif variable="IMD_MON_" -->
+                &nbsp;
+            </td>
+            <td nowrap>&nbsp;
+                <!--#ifdef variable="LAD_MON_" -->
+                    <$LAD_MON_>/<$LAD_MDAY_>/<$LAD_YEAR_>
+                <!--#endif variable="LAD_MON_" -->
+                &nbsp;
+            </td>
+            <td nowrap>
+                <!--#ifdef variable="LNM_" -->
+                    <$LNM_>,
+                <!--#endif variable="LNM_" -->
+                <!--#ifdef variable="FNM_" -->
+                    <$FNM_>
+                <!--#endif variable="FNM_" -->
+                &nbsp;
+            </td>
+        </tr>
+    <!--#endfor loopname="member" -->
+</table>
+<br>
+    <!--A HREF="admin<$g_exe>?DTY=M&KTY=ID&TPL=admin/member&ac=showcreate&KLEN=8&TKT=<$TKT>" target=_self>New Member</A-->
+    <A HREF="register<$g_exe>?ac=admin&tpl=cadmin&backurl=<$g_HTMLRoot>/admin/index.html" target=_self>New Member</A>
+</body>
+</html>
+

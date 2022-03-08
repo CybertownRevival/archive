@@ -1,0 +1,20 @@
+<html>
+<head>
+<!-- #ifndef variable="TYP" value="e"-->
+<title><$g_title> - Voting</title>
+<!-- vote/list.tmpl -->
+</head>
+<frameset rows="65%,*" border=1>
+	<frame name="overview" src="<$selfurl>?ac=listhdr&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>" scrolling="auto">
+	<frame name="detail" src="<$g_HTMLRoot>/blank.html" scrolling="auto">
+</frameset>
+<!-- #endif variable="TYP" -->
+<!-- #ifdef variable="TYP" value="e"-->
+<BODY>
+<SCRIPT language="JavaScript">
+    location.href="<$selfurl>?ac=vote&PLC=<$PLC>&TYP=<$TYP>&PAR=<$PAR>&TKT=<$TKT>";
+</SCRIPT>
+<!-- #endif variable="TYP" -->
+</html>
+
+

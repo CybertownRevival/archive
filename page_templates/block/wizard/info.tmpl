@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title></title>
+<base target="_top">
+<script language="JavaScript">
+function submitit()
+{
+parent.presentation.submitit();
+}
+</script>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<p align=center>
+<b>Update Wizard for <$BNM> '<$NAM>'</b>
+</p>
+
+<div align=center><small>
+Checkmark the <b><$PNM></b> where you want members to settle down.
+</small>
+<br>
+<table align=center>
+<tr><td>
+<FORM>
+<INPUT type=button onClick="submitit()" value="Update">
+</FORM>
+</td>
+<td><form method=post action="block<$g_exe>?ac=place&ID=<$ID>" target="place">
+<input type="hidden" name="TKT" value="<$TKT>">
+<input type=submit value=Cancel></form></td></tr>
+</table>
+</div>
+
+<div align=center><small>
+Change the 
+<a href="block<$g_exe>?ac=wizardimage&ID=<$ID>" target="place">background image</a>
+for this <b><$BNM></b>.
+</small>
+</div>
+</p>
+</form>
+
+<!-- #include virtual="<$g_Templates>common/placefooter.tmpl" -->
+
+</BODY>
+</HTML>

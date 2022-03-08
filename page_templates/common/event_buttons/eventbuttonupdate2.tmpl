@@ -1,0 +1,18 @@
+<!-- object/storagecreate -->
+<HTML>
+<HEAD>
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+</HEAD>
+</body>
+<form name="bform" action="/cgi-bin/cybertown/print60" method="POST">
+<input type="hidden" name="TKT" value="<$TKT>"> 
+<input type="hidden" name="TPL" value="common/event_buttons/eventbuttonupdate">
+<!-- #ifdef variable="prefok" --> 
+<input type="hidden" name="T_PREFOK" value="0"> 
+<!-- #endif variable="prefok" --> 
+</form>
+<script language=javascript>
+document.bform.submit();
+</script>
+
+</html>

@@ -1,0 +1,80 @@
+<HTML>  
+<HEAD>  
+<meta http-equiv="Content-Type" content="text/html">  
+<title><$g_title></title>  
+<!-- community/action.tmpl -->  
+<base target="_top">  
+
+<!-- #include virtual="<$g_Templates>common/loadinfo.tmpl" -->
+
+<script language="JavaScript">  
+  
+function moderate() {  
+  window.open('place?ID=0107000000000000&ac=moderate&TKT=695e478a075fb4aa','Moderator', 'toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=800,height=600');  
+}  
+
+function confirmLink(url){
+  if(confirm("This link will take you to the Mothership, but you will leave the Colony.  Do you want to continue?")){
+	top.location.href = url;
+  }
+  else return;
+}
+  
+</script>  
+</HEAD>  
+  
+<BODY onUnload="closeInfoWin()" BGCOLOR="#000000" LINK="#66EEEE" VLINK="#66EEEE" ALINK="#FFFFFF" TEXT="##D0DBF7">  
+
+  
+<!-- This table is for the menu frame -->
+<TABLE WIDTH="156" CELLSPACING="0" CELLPADDING="0" BORDER="0">
+<!-- The two graphics on the next line need to be on the same line to avoid table breakage -->
+    <!-- ifdef variable="chataccess"  
+      <TR><TD BGCOLOR="#003040"><a href="<$g_cgiRoot>/property?ac=place&ID=<$ID>&force=s" target="place"><IMG SRC="2d.gif" WIDTH="78" HEIGHT="70" BORDER="0"></A><a href="<$g_cgiRoot>/property?ac=place&ID=<$ID>&force=p" target="place"><IMG SRC="3d.gif" WIDTH="78" HEIGHT="70" BORDER="0"></A></TD></TR>
+      <TR><TD BGCOLOR="#000000"><IMG SRC="X.gif" HEIGHT="10" BORDER="0"></TD></TR>
+      endif variable="chataccess" 
+    --> 
+  
+<!-- #include virtual="<$g_Templates>mothership/control.tmpl" -->
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="5" BORDER="0"><BR>
+
+<!-- #ifdef variable="readaccess" -->
+<a href="javascript:loadInfo('msb<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&MTY=m')" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/buttons/messages.gif" BORDER=0 ALT="Messages"></a><br>
+<a href="javascript:loadInfo('neighbor<$g_exe>?ac=info&ID=<$ID>')" target=_self>
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/buttons/information.gif" BORDER=0 ALT="Info"></a><br>
+<!-- #endif variable="readaccess" -->
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="7" BORDER="0"><BR>
+<a href="community<$g_exe>?ID=<$commid>"><img src="<$g_Images>/images/buttons/up.gif" BORDER=0>&nbsp;<b><$commname></b></a><br>
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="7" BORDER="0"><BR>
+
+<!-- #ifdef variable="writeaccess" -->
+<!-- #endif variable="writeaccess" -->
+
+<!-- #ifdef variable="owneraccess" -->
+<a href="msb<$g_exe>?ac=writegroup&DTY=N&KTY=ID&KEY=<$ID>&MTY=m&TPL=msb/backurl&program=neighbor" target="place">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/buttons/messagetoall.gif" BORDER=0 ALT="Group Message"></a><br>
+<a href="neighbor<$g_exe>?ac=wizardplace&ID=<$ID>" target="place">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/buttons/update.gif" BORDER=0 ALT="Update"></a><br>
+<!-- #endif variable="owneraccess" -->
+
+<!-- #ifdef variable="rightsaccess" -->
+<a target=place href="edit<$g_exe>?DTY=N&KTY=ID&KEY=<$ID>&PLC=neighbor&TPL=common/rights&ac=readrole">
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/buttons/accessrights.gif" BORDER=0 ALT="Access Rights"></a><br>
+<!-- #endif variable="rightsaccess" -->
+
+<IMG SRC="<$g_HTMLRoot>/places/mothership/images/action/X.gif" HEIGHT="10" BORDER="0"><BR>
+
+</TD></TR>
+</TABLE>
+<!-- End menu frame table -->
+
+</BODY>
+</HTML>  
+
+
+
+

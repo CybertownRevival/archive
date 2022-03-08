@@ -1,0 +1,82 @@
+<!-- admin/updtpl.tmpl -->
+<!-- update template -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<!-- #include virtual="<$g_Templates>admin/body_inc.tmpl" -->
+
+<!-- #ifndef variable="NAM" -->
+<div align=center>
+    <h2>Update Template or Configuration File</h2>
+    
+<br><br>
+Please specify the template name or configuration file name without extension, e.g.
+register/cregister or global. The database access file that is associated with templates
+(*.cfg file) can be updated together with the the template.
+<br>
+<form name="updateForm" method=post action="<$selfurl>">
+
+<input type=hidden name="TKT" value="<$TKT>">
+<input type=hidden name="TPL" value="admin/updfile">
+<input type=hidden name="ac" value="getfile">
+
+<table border=0>
+    <tr>
+        <td align=right>File name:&nbsp;&nbsp;</td>
+        <td><INPUT NAME="NAM" VALUE="<$NAM>" MAXLENGTH=64 SIZE=32></td>
+    </tr>
+    <tr>
+        <td align=right>File type:&nbsp;&nbsp;</td>
+        <td><SELECT name=TYP><option selected value="tmpl">Template
+		<option value="cfg">Configuration</select></td>
+    </tr>
+</table>
+
+<br><br>
+    <input type=submit value="Update" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+<!-- #endif variable="NAM" -->
+
+<!-- #ifdef variable="NAM" -->
+<div align=center>
+<!-- #if variable="TYP" != value="cfg" -->
+    <h2>Update Template <$NAM></font></h2>
+<!-- #endif variable="TYP" -->
+<!-- #if variable="TYP" == value="cfg" -->
+    <h2>Update Configuration File <$NAM></font></h2>
+<!-- #endif variable="TYP" -->
+    
+<!-- #include virtual="<$g_Templates>admin/errormsg_inc.tmpl" -->
+
+<br><br>
+<form name="updateForm" method=post action="<$selfurl>">
+
+<input type=hidden name="TPL" value="admin/updfile">
+<input type=hidden name="NAM" value="<$NAM>">
+<input type=hidden name="TYP" value="<$TYP>">
+<input type=hidden name="ac" value="updfile">
+
+<TEXTAREA NAME="CONT" ROWS="30" COLS="80">
+<$CONT>
+</TEXTAREA>
+<!-- #ifdef variable="CFG" -->
+<br><br>Database Access (.cfg):
+<br>
+<TEXTAREA NAME="CFG" ROWS="10" COLS="80">
+<$CFG>
+</TEXTAREA>
+<!-- #endif variable="CFG" -->
+
+<br><br>
+
+    <input type=submit value="Update" width=100>
+    <input type=button name="back" value="Back" onClick="history.back()" width=100>
+</form>
+<!-- #endif variable="NAM" -->
+
+</body>
+</html>
+

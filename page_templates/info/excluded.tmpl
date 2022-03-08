@@ -1,0 +1,30 @@
+<!-- info/excluded -->
+<!--- information for a member if he is excluded --->
+<html>
+<head>
+<title>Cybertown Exclusion</title>
+</head>
+
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#00ff00">
+<font color="#00FF00" face="Arial, Helvetica, sans-serif">
+
+
+<table width="90%" height="90%">
+<tr valign="middle">
+	<td align="center"><$g_font><font size="3"><b>
+    <!-- #ifdef variable="isMember" -->
+      <$NNM>, security has excluded you<br>
+      from Cybertown until <$EXD_MON>/<$EXD_MDAY>/<$EXD_YEAR>.<br>
+      <br>You cannot log in until then.</b></font>
+    <!-- #endif variable="isMember" -->
+    <!-- #ifdef variable="isVisitor" -->
+      Visitor, security has excluded you<br>
+      from the community!</b></font>
+    <!-- #endif variable="isVisitor" -->
+  </td>
+</tr>
+</table>
+
+</BODY>
+</HTML>
+

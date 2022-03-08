@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<title><$g_title> - Member Directory</title>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #ifdef variable="error002" -->
+Failed to run command <$error>.<br>
+<!-- #endif variable="error002" -->
+<!-- #ifdef variable="error003" -->
+<$errorfont>No chat places active on this server.</font><br><br>
+<!-- #endif variable="error003" -->
+<!-- #ifdef variable="error004" -->
+<$errorfont>Timeout when connecting to server <$g_CServer>.</font><br>
+<!-- #endif variable="error004" -->
+
+<!--#for loopname="place" loopvars="NAM_" -->
+<!--#ifdef variable="NAM_" value="City Hall" -->
+<!--#define variable="foo" value="<$NUM_>" -->
+<!--#endif variable="NAM_" -->
+<!--#endfor loopname="place" -->
+
+This Value <$foo><br><br>
+<!-- #if variable="foo" < value="15" --> 
+Still room<br>
+<!-- #endif variable="foo" -->
+<!-- #if variable="foo" >= value="15" --> 
+No room<br>
+<!-- #endif variable="foo" -->
+<br>
+
+chatreadaccess
+<!-- #ifdef variable="chatreadaccess" --> 
+true
+<!-- #endif variable="chatreadaccess" -->
+<br>
+
+chatwriteaccess 
+<!-- #ifdef variable="chatwriteaccess" --> 
+true
+<!-- #endif variable="chatwriteaccess" -->
+<br>
+
+isVisitor
+<!-- #ifdef variable="isVisitor" --> 
+true
+<!-- #endif variable="isVisitor" -->
+<br>
+
+<br>server                  www3.cybertown.com  
+<br>port                    2000 
+<br>scene                   <$g_SceneServer><$g_cgiRoot>/place?ID=<$ID>&plc=<$plc>&ac=3D&IE=x.bxx
+<br>3dscene                 <$g_HttpServer><$g_HTMLRoot>/places/<$plc>/vrml/<$plc>.wrl
+<br>
+<br>avatarworld             <$g_HttpServer><$g_HTMLRoot>/avatars/pro_vrml.htm  
+<br>sname                   <$scenename>  
+  
+<br>message                 <$NNM>, welcome to <$scenename>. Please note that visitors can only watch the chat!   
+<br>
+
+<br>authenticationid        <$MEM_ID>  
+<br>authenticationpw        <$COOKIE>  
+<br>nickname                <$NNM>  
+  
+<br>isMember                <$isMember>
+
+<br>vrmlmyavatar		       <$AVU>
+
+
+<br>interests               <$INT>
+<br>prenickname             <$ROLENAM>  
+<br>postnickname            <$EXP>  
+
+<br>frameset                <$g_HttpServer><$g_cgiRoot>/<$frameset>  
+
+</BODY>
+</HTML>
+

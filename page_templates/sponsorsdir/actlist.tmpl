@@ -1,0 +1,65 @@
+<HTML>
+<!-- clubdir/actlist.tmpl -->
+<!-- calculates the activity and lists the club by it -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html">
+<title><$g_title> - Club</title>
+</HEAD>
+
+<!-- #include virtual="<$g_Templates>common/body2.tmpl" -->
+
+<H2 align=center><FONT COLOR=#80ff00>Club Activity List</FONT></H2>
+
+<CENTER>
+This list displays the percentage of the club members,
+who visited the club last week.
+</CENTER>
+
+<TABLE ALIGN=center>
+<FORM METHOD=post TARGET=_self ACTION="<$selfurl>">
+<input type="hidden" name="TKT" value="<$TKT>">
+
+<TR>
+    <INPUT TYPE="hidden" NAME="ac" VALUE="<$ac>">
+	<INPUT TYPE="hidden" NAME="KFT" VALUE="<$KFT>">
+    <INPUT TYPE="hidden" NAME="TPL" VALUE="<$TPL>">
+	<INPUT TYPE="hidden" NAME="FIRSTKEY" VALUE="<$FIRSTKEY>">
+	<INPUT TYPE="hidden" NAME="LASTKEY" VALUE="<$LASTKEY>">
+	<INPUT TYPE="hidden" NAME="FIRSTID" VALUE="<$FIRSTID>">
+	<INPUT TYPE="hidden" NAME="LASTID" VALUE="<$LASTID>">
+	<INPUT TYPE="hidden" NAME="SORTORDER" VALUE="<$SORTORDER>">
+
+	<TD><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" ALIGN="middle" border=0></INPUT></TD>
+
+	<!--#ifdef variable="[PREV]" -->
+		<TD><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" ALIGN="middle" border=0></INPUT><br>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifndef variable="[PREV]" -->
+		<TD>
+	<!--#endif variable="[PREV]" -->
+	<!--#ifdef variable="[NEXT]" -->
+		<INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" ALIGN="middle" border=0></INPUT>
+	<!--#endif variable="[NEXT]" -->
+	</TD>
+
+</TR>
+</FORM>
+</TABLE>
+
+<TABLE align="center" cellspacing="0" cellpadding="1" border="1">
+	<TR>
+		<TH width=150><font color=#80ff00>Club Name</TH>
+		<TH width=120><font color=#80ff00>Member Count</TH>
+        <TH width=120><font color=#80ff00>Activity</TH>
+	</TR>
+	<!--#for loopname="CLUBLIST" loopvars="ID_" -->
+    <TR>
+        <TD><$NAM_></TD>
+        <TD align=center><$CNT_></TD>
+        <TD align=center><$ACT_> % </TD>
+    </TR>
+	<!--#endfor loopname="CLUBLIST" -->
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,155 @@
+<!-- admin/pimages.tmpl -->
+<!-- list media objects -->
+<html>
+<head>
+<title><$g_title></title>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function onSubmit()
+{
+    tmpStr = "<$KFT>";
+
+    if( tmpStr.length==18 )
+    {
+        if( document.FilterForm.KFT.value.length>18 )
+            document.FilterForm.KFT.value = document.FilterForm.KFT.value.substring( 0,18 );
+
+        if( document.FilterForm.KFT.value[document.FilterForm.KFT.value.length-1]=='*' )
+            document.FilterForm.KFT.value = document.FilterForm.KFT.value
+             = document.FilterForm.KFT.value.substring( 0, document.FilterForm.KFT.value.length-1 );
+
+        while( document.FilterForm.KFT.value.length<17)
+            document.FilterForm.KFT.value = document.FilterForm.KFT.value+'?';
+
+        if( document.FilterForm.KFT.value.length<18 )
+            document.FilterForm.KFT.value = document.FilterForm.KFT.value+tmpStr[17];
+    }
+    else
+    {
+        if( document.FilterForm.KFT.value[document.FilterForm.KFT.value.length-1]!='*' )
+            document.FilterForm.KFT.value = document.FilterForm.KFT.value+"*";  
+    }
+}
+
+//-->
+</SCRIPT>
+
+
+<!-- #ifndef variable="CLB" -->
+<BODY BGCOLOR="#002020" LINK="#00FF00" VLINK="#00FF00" ALINK="#FFFFFF" TEXT="#D0DBF7">
+<!-- #endif variable="CLB" -->
+<!-- #ifdef variable="CLB" -->
+<BODY BGCOLOR="<$CLA>" LINK="<$CLL>" VLINK="<$CLL>" ALINK="<$CLL>" TEXT="<$CLT>">
+<!-- #endif variable="CLB" -->
+
+<div align=center>
+<h2>Images defined in Database</h2>
+
+<font color=#ff0000>
+    <!-- #ifdef variable="editerror003" -->
+        Insufficient access rights.
+    <!-- #endif variable="editerror003" -->
+</font>
+
+<form method=post target=_self name="FilterForm" action="<$selfurl>"  onSubmit="onSubmit()"> 
+
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    Filter:&nbsp;&nbsp;
+    <select name="KTY">
+        <option value="ID"
+        <!--#ifdef variable="KTY" value="ID"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >ID</option>
+        <option value="NAM"
+        <!--#ifdef variable="KTY" value="NAM"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >Name</option>
+        <option value="OWN"
+        <!--#ifdef variable="KTY" value="OWN"-->
+            SELECTED
+        <!--#endif variable="KTY" -->
+        >Owner ID</option>
+    </select>
+
+    <INPUT type="text" name="KFT" value="<$KFT>">
+</form>
+
+<form method=post target=_self action="<$selfurl>">
+
+<input type="hidden" name="TKT" value="<$TKT>">
+    <input type="hidden" name="FIRSTKEY" value="<$FIRSTKEY>">
+    <input type="hidden" name="LASTKEY" value="<$LASTKEY>">
+    <input type="hidden" name="FIRSTID" value="<$FIRSTID>">
+    <input type="hidden" name="LASTID" value="<$LASTID>">
+
+    <input type="hidden" name="ac" value="list">
+    <input type="hidden" name="DTY" value="<$DTY>">
+    <input type="hidden" name="KTY" value="<$KTY>">
+    <input type="hidden" name="KFT" value="<$KFT>">
+    <input type="hidden" name="TPL" value="<$TPL>">
+
+    <table>
+        <tr>
+            <td><INPUT NAME="list" TYPE="Image" SRC="<$g_Images>/images/buttons/btop.gif" align="middle" border=0></INPUT></td>
+            <!--#ifdef variable="[PREV]" -->
+                <td><INPUT NAME="prev" TYPE="Image" SRC="<$g_Images>/images/buttons/bpageup.gif" align="middle" border=0></INPUT><br>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifndef variable="[PREV]" -->
+                <td>
+            <!--#endif variable="[PREV]" -->
+            <!--#ifdef variable="[NEXT]" -->
+                <INPUT NAME="next" TYPE="Image" SRC="<$g_Images>/images/buttons/bpagedown.gif" align="middle" border=0></INPUT>
+            <!--#endif variable="[NEXT]" -->
+            </td>
+        </tr>
+    </table>
+</form>
+
+<table border=1>
+    <tr>
+        <th><font color=#80ff00>ID</th>
+        <th><font color=#80ff00>Name</th>
+        <th width=70><font color=#80ff00>Status</th>
+        <th><font color=#80ff00>Owner</th>
+        <th><font color=#80ff00>Mime-Typ</th>
+    </tr>
+    <!--#for loopname="object" loopvars="ID_" -->
+        <tr>
+            <td>&nbsp;&nbsp;
+                <A HREF="edit<$g_exe>?DTY=<$DTY>&KTY=ID&KEY=<$ID_>&TPL=admin/image&ac=read" target=_self><$ID_></A>
+            </td>&nbsp;&nbsp;
+            <td>&nbsp;
+                <!--#ifdef variable="NAM_" -->
+                    <$NAM_>
+                <!--#endif variable="NAM_" -->
+            </td>
+            <td align=center>&nbsp;
+                <!--#ifdef variable="STT_" value="l"-->
+                    locked
+                <!--#endif variable="STT_" -->
+            </td>
+            <td>&nbsp;
+                <!--#ifdef variable="OWN_NNM_" -->
+                    <A HREF="edit<$g_exe>?DTY=M&KTY=ID&KEY=<$OWN_>&TPL=admin/member&ac=read" target=_self><$OWN_NNM_></A>
+                <!--#endif variable="OWN_NNM_" -->
+            </td>
+            <td>&nbsp;
+                <!--#ifdef variable="TYP_" -->
+                    <$TYP_>
+                <!--#endif variable="TYP_" -->
+            </td>
+        </tr>
+    <!--#endfor loopname="object" -->
+</table>
+
+</body>
+</html>
