@@ -1,0 +1,33 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=skyblue><font size=3>
+<P>Font Size<br><font color=coral>
+There are two ways to change your font size. SPECIFY THE ACTUAL FONT SIZE <font color=yellow>< font size="n" > <font color=coral>where "n" is a number from 1 to 7.
+Remember to always close with the<font color=yellow> < /font > <font color=coral>tag.<br>
+<font color=purple>
+<Font size="1">Hi<font>
+<Font size="2">Hi</font>
+<Font size="3">Hi</font>
+<Font size="4">Hi</font>
+<Font size="5">Hi</font>
+<Font size="6">Hi</font>
+<Font size="7">Hi</font></p><br>
+<font color=skyblue><font size=3>
+<P>Relative Font Size<br><font color=coral>Specifying the relative font size.<font color=yellow> < font size="+n" > or < font size="-n" >.<font color=coral>
+Basically, you are specifying how many sizes larger or how many sizes smaller than the preset font size.<br>
+<font color=pink>
+<Font size="-2">Bye</font><br>
+<Font size="-1">Bye</font><br>
+<Font size="+1">Bye</font><br>
+<Font size="+2">Bye</font><br>
+<Font size="+3">Bye</font><br>
+<Font size="+4">Bye</font><br><br>
+<font color=yellow><font size=3>
+<P>< font size="+3" ><font color=coral>to make it larger,or<font color=yellow>
+< font size="-2" ><font color=coral>to make it smaller </font></p>
+</center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

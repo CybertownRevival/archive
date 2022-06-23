@@ -1,0 +1,27 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:
+gold;scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr><th><center>
+  <h1>Step Five</h1>
+  <p>By now you should have the basic bot commands down pat.</p>
+  <p>But you can also have your bot whisper to someone and to beam to them when a certain word is typed:</p>
+  <p><img src="http://dannydking.org/games/Bot/6.jpg" width="253" height="50"></p>
+  <P>Just click "Beam To" if you want your bot to beam to the person that typed the catch word, or cick on whisper if you want the bot to whisper a response to that person.</P>
+  <P></P>
+  <P>IF your bot is an avatar, you can also program his gestures in. Just add the gesture number in brackets at the end of your response. Like this:</P>
+  <P><img src="http://dannydking.org/games/Bot/11.jpg" width="782" height="457"></P>
+  <P>And last but not least, you can set up how your bot perceives the key words. If you look below each key word window, you will see the following:</P>
+    <P><img src="http://dannydking.org/games/Bot/5.jpg" width="258" height="35"></P>
+	<P>What this means is the following:</p></center></center></table>
+	<b>Exact</b> - This means the words you enter must be exactly what the visitor to your house types in order for the Pet to respond. In other words, if you enter, "What are you?" (without the quotes), the visitor would have to type exactly "What are you?" in order to have the Pet respond.<p>
+<b>And</b> - This means that what the visitor types must contain all the words that you entered. As an example, if you entered, "party your house" and the visitor typed "Can I have a party in your house?", then the Pet would respond. The order of the words you enter is not important.<p>
+<b>Or</b> - This means that what the visitor types may contain any of the words that you entered. As an example, if you entered, "Where your owner" and the visitor typed "Where is everybody?" or "Are you the owner?", then the Pet would respond.<p>
+<b>Directly</b> - This means that the text is said directly to the Pet, i.e. either:<br>
+- somebody typed the Pet's nickname in the text<br>
+- somebody whispered to the Pet<br>
+- somebody has a private chat with the Pet.<p>
+<p><center><p>When you are happy with all your commands and responses, click the UPDATE button:</p></center>
+<center><P><img src="http://dannydking.org/games/Bot/7.jpg" width="151" height="47"></P></center>
+<P>And this concludes our bot help book. If you have any comments or suggestions, just leave them in my inbox. :) DannyKing</b></P></table></center></td></table><center>
+<br><br><center><a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691660&CAT=topic><b>Main</b></a></center>

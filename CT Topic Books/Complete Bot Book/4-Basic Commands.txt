@@ -1,0 +1,14 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:
+gold;scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr><th><center>
+  <h1>Step Four</h1>
+  <p>Now that our bot has a name, a body, and a voice, we can enter the commands that will make him different than anyone else's.</p>
+  <p>If you want your bot to speak to someone as soon as they enter a room, use the very FIRST command box and leave it blank. Like this:</p>
+  <p><img src="http://dannydking.org/games/Bot/4.jpg" width="668" height="147"></p>
+  <P>The above also shows how to have your bot talk to someone by name. Just use the %nickname% command</P>
+  <P>After filling in all the command lines, your pet screen should look similiar to this:</P>
+  <P><img src="http://dannydking.org/games/Bot/10.jpg" width="782" height="457"></P>
+  <P>In the next section, we will tell how to get your bot to move and whisper</P></center></table></td></tr></table>
+<br><br><center><a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691660&CAT=topic><b>Main</b></a></center>

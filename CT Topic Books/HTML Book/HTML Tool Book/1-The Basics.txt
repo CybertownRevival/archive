@@ -1,0 +1,38 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center>
+<font color=skyblue size=3><P>HTML Basics</p></font>
+<font color=white>*Brackets*</font><br>
+<font color=coral>All HTML tags are enclosed within</font>
+<font color=yellow><  ></font>
+<font color=coral> brackets. Anything that is written between the</font>
+<font color=yellow><   ></font>
+<font color=coral>brackets will be invisible, and not appear on your page.</font></p>
+<P></P><br><font color=white>*Case Sensitive*</font><br>
+<font color=coral>HTML tags are NOT case sensitive. So,</font>
+<font color=yellow>< center ></font>
+<font color=coral>is also the same as</font>
+<font color=yellow>< CENTER ></font>
+<font color=coral>is also the same as</font>
+<font color=yellow>< Center >.</font></p>
+<P><font color=lime>EXCEPT: image filenames! ... the filename should be written exactly as it appears. Example:</font>
+<font color= skyblue>< img src=(url)"spookie.gif" ></font>
+<font color=coral>is not the same as</font>
+<font color=skyblue>< img src=(url) "spookie.GIF" ></font></p>
+<P></P><br><font color=white>*Opening & Closing Tags*</font>
+<br><font color=coral>Almost all HTML commands have an opening and a closing tag. For example, the opening
+ tag,</font>
+<font color=yellow>< center ></font>
+<font color=coral>causes all text and graphics that appear after the tag to be centered in the page. 
+Everything will remain centered until the closing tag</font>
+<font color=yellow>< /center ></font>
+<font color=coral> is used. The</font>
+<font color=yellow> / </font>
+<font color=coral>is the command to close that particular function.</font></p>
+</center></td></tr></table>
+<BR><BR><BR><center>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>
+*MENU*</font></a></center>

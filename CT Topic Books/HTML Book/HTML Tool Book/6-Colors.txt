@@ -1,0 +1,58 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center>
+<font color=white size=3>*Colors*</font>
+<br><font color=coral>There are two ways to specify colors within your webpage ... using </font>
+<font color=yellow>Hexadecimal</font>
+<font color=coral> numbers or </font>
+<font color=yellow>Color</font>
+<font color=coral> names.</font></p>
+<P></P><font color=lime>Important note! ... whenever you specify color in an HTML document, the word color 
+MUST be spelt color. The English spelling, colour will not work!</font></p>
+<P></P><font color=skyblue>Hexedecimal Codes</font>
+<br><font color=coral>Colors are defined by a </font>
+<font color=yellow>hexadecimal number or code,</font>
+<font color=coral>where the overall color is determined by its proportion of red, green, and blue.</font></p>
+<P><font color=coral>Some examples of hexadecimal codes are:</font><br> 
+<font color=#66FF00>#66FF00</font><br>
+<font color=#FF0000>#FF0000</font><br>
+<font color=#FF3300>#FF3300</font><br>
+<font color=#0D0080>#0D0080</font><br>
+<font color=#8B008B>#8B008B</font><br>
+<br><font color=lime>Note:</font>
+<font color=coral>that the 0 is the number 0 and NOT the letter O.</font></p>
+<P></P><font color=skyblue>Color Names</font>
+<br><font color=coral>Some examples of font color names are:</font><br>
+<font color=white>White,</font>
+<font color=yellow>Yellow,</font>
+<font color=tan>Tan,</font>
+<font color=red>Red,</font>
+<font color=blue>Blue,</font>
+<font color=aqua>Aqua,</font>
+<font color=green>Green,</font>
+<font color=orange>Orange.</font></p>
+<P></P><font color=coral>The link to a </font>
+<font color=yellow>Color Picker</font>
+<font color=coral> is below.You can use this to pick different colors.</font>
+<br><font color=coral>It also shows you how different colored fonts look on different colored backgrounds. </font></p><br>
+<a href="http://dannydking.org/GCEC/Colorchart.html" target="_blank"><h2>Color Picker</h2></a><br><br>
+<P></P><font color=skyblue>Font Colors</font>
+<br><font color=coral>You can vary your colors at any time within your document by using this code:</font>
+<br><font color=yellow>< font color= (what you chose) ></font>
+<br><font color=coral>You can use Hex Numbers or Color Names</font></p>
+<P><font color=coral>Remember to use the </font>
+<font color=yellow>< /font ></font>
+<font color=coral> to close the color change or it will remain the same.</font></p>
+<P></P><font color=skyblue>Background Color</font>
+<br><font color=coral>The code is as follows:</font>
+<br><font color=yellow>bgcolor=" #xxxxxx ".</font>
+<br><font color=coral>This code sets the background color for your page. If you have a background image, 
+you can still select a background color for your page. This background color will show until the image file 
+has loaded. It is a good idea to select a background color that is similar to your background image. That 
+way, if for some reason the background image does not load, your page will still look "nearly" right!</font></p>
+</center></td></tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

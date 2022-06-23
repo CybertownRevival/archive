@@ -1,0 +1,181 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br><table height="60%">
+<tr>
+<td valign="top"><center><h1>Public MB's</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a>
+<p>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<font color=yellow><b>PLEASE REMEMBER</b> that many Places only allow related messages on their MBs.</font><br>
+However, to be safe you better look before you post. To find out whether or not you may post general messages or ads on a MB, you will need to check the MB header. <br><br>
+<p><table border="1"><tr><td>
+Activities
+<a href="http://www.cybertown.com/cgi-bin/cybertown/cal?DTY=O&KTY=ID&KEY=0000000000000001&MTY=c"
+target="_Blank">Read</a>
+</td><td>
+Creating Help
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=6" Target="_Blank">Help</a>
+</td></tr><tr><td>
+Bank
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000041&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Bank
+<a href="http://www.cybertown.com/places/bank/info.html" Target="_Blank">View Info</a>
+</td><td>
+Bank
+<a href="http://www.cybertown.com/cgi-bin/cybertown/print?TPL=bank/phase1" Target="_Blank">Transfer Cash</a>
+</td><td>
+Black Market
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000034&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Le Café
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000006&MTY=m" Target="_Blank">Read</a>
+</td><td>
+City Council
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000012&MTY=m" Target="_Blank">Read</a>
+</td><td>
+City Hall
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000002&MTY=m" Target="_Blank">Read</a>
+</td><td>
+The Clubs
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=000000000000000e&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+EO Job Offers
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000001000c&MTY=m" Target="_Blank">Read</a>
+</td><td>
+EO Job Requests
+<a href="http://eo.ctcolonies.com/EOChiefJessie32/JobOffers/EOJobOffers.html" Target="_Blank">Read</a>
+</td><td>
+EO regular MB
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000000000c&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+E-Plex General
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000017&MTY=m" Target="_Blank">Read</a>
+</td><td>
+E-Plex Arcade
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000019&MTY=m" TArget="_Blank">Read</a>
+</td><td>
+E-Plex Arena
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000037&MTY=m" target="_Blank">Read</a>
+</td><td>
+E-Plex Art Gallery
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=000000000000001a&MTY=m" target="_Blank">Read</a>
+</td></tr><tr><td>
+E-Plex Black Sun Club
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=000000000000001c&MTY=m" target="_Blank">Read</a>
+</td><td>
+E-Plex Casino
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000018&MTY=m" target="_Blank">Read</a>
+</td><td>
+E-Plex vDrome
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=000000000000001b&MTY=m" target="_Blank">Read</a>
+</td></tr><tr><td>
+Feedback - 3D/Objects
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=9903000000000000&MTY=m" Target="_Blank">Read</a>
+</td><td>
+FB - Announcements
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9901000000000000" Target="_Blank">Read</a>
+</td><td>
+FB - General
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9902000000000000" Target="_Blank">Read</a>
+</td><td>
+FB - City Events
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=9905000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Feedback - Tech Support
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=9904000000000000&MTY=m" Target="_Blank">Read</a>
+</td><td>
+FB - Town Politics
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=9906000000000000&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Flea Market
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000016&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Fun Park
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000000000a&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Flyby's Park
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o002f9c0a&PAGE=15" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Guides Board
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000007&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Homebuilder
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=00000000000009f1&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Designer Homes
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000044&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Jail
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000033&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Library
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000005&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+The Mall
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000009&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Mall Accepted list
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000010009&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Mall Drop List
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000020009&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Mall Object Scale
+<a href="http://mall.ctcolonies.com/scale.shtml" Target="_Blank">Scale</a>
+</td></tr><tr><td>
+Museum
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000045&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Newcomers Club
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=CL&KTY=ID&KEY=CL00000000001b9b&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Outlands
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000029&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Performing Arts
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000008&MTY=m" Target="_Blank">Read</a>
+</td><td>
+The Pool
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000000000b&MTY=m" Target="_Blank">Read</a>
+</td><td>
+The Portal
+<a href="http://www.cybertown.com/info/portals.html" Target="_Blank">Visit</a>
+</td><td>
+Post Office
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000010&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Stadium
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000000000d&MTY=m" Target="_Blank">Read</a>
+</td><td>
+The Suburbs
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=000000000000000f&MTY=m" Target="_Blank">Read</a>
+</td><td>
+Sunset Beach
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000031&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Theme Park
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000015&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+Water Park
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=N&KTY=ID&KEY=0000000000000014&MTY=m" Target="_Blank">Read</a>
+</td><td>
+<a 
+href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fb8&CAT=topic" target=_new> 
+ALL Block Message Boards</a> </td></tr></table></center></td></tr>
+</table>
+</center>
+<center><h1>Inboxes</h1>
+<p>
+<p><table border="1"><tr><td>
+<center>Caretaker
+<a href=http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000004&MTY=i" Target="_Blank">Inbox</a>
+</center></td><td>
+C.E.R.B
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000039&MTY=i" Target="_Blank">Inbox</a>
+</td><td>
+Security
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000013&MTY=i" Target="_Blank">Inbox</a>
+</td></tr>
+</table>
+<br></center>

@@ -1,0 +1,19 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"CD Reports"</font></strong></a></p>
+<font size="3">
+<P>The CL expects a brief summary of events in your hoods<BR>
+and your area of Colony work, if you have one. This should<BR>
+be done monthly just prior to the colony meetings. Speak to<BR>
+the CL DannyKing to ask him where to send them. Some of this<BR>
+information will come out at the Colony meetings however the<BR>
+report is still needed to highlight any specific issues you<BR>
+are dealing with is needed to avoid mishaps in communication.<BR>
+The important thing is that we build our team on openness and<BR>
+good communication so that we can support one another and<BR>
+develop the Colony. <BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

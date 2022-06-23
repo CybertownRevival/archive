@@ -1,0 +1,40 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}
+</style>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="75%"" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+The Transition # List</b></font>
+</td></tr></table>
+<table width="75%"" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+0 - Shrinking Box Changes Screen<BR>
+1 - Growing Box Changes Screen<BR>
+2 - Shrinking Circle Changes Screen<BR>
+3 - Growing Circle Changes Screen<BR>
+4 - Wipes Up to Clear Screen<BR>
+5 - Wipes Down to Clear Screen<BR>
+6 - Wipes Right to Clear Screen<BR>
+7 - Wipes Left to Clear Screen<BR>
+8 - Right Moving Stripes Clear Screen<BR>
+9 - Downward Moving Stripes Clear Screen<BR>
+10 - Right Moving Boxes Clear Screen<BR>
+11 - Downward Moving Boxes Clear Screen<BR>
+12 - Pixels "Dissolve" Screen<BR>
+13 - Horizontal Curtain Closing<BR>
+14 - Horizontal Curtain Opening<BR>
+15 - Vertical Curtian Closing<BR>
+16 - Vertical Curtian Opening<BR>
+17 - Strips away previous screen going Left-Down<BR>
+18 - Strips away previous screen going Left-Up<BR>
+19 - Strips away previous screen going Right-Down<BR>
+20 - Strips away previous screen going Right-Up<BR>
+21 - Horizontal Bars "Dissolve" Screen<BR>
+22 - Vertical Bars "Dissolve" Screen<BR>
+23 - Random Effect<BR><p></p>
+</b></font>
+A full example: <P><font color="#33FFFF">
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"><META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> </font></td></tr></table>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063#trans">Back</a></center></P>

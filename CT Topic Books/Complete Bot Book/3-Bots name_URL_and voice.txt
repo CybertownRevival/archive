@@ -1,0 +1,13 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;
+scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr><th><center>
+  <h1>Step Three</h1>
+  <p>Now that we actually have a bot, we can start programming it.</p>
+  <p>Here is the screen where you put the bots name, URL, and voice type:</p>
+  <p><img src="http://dannydking.org/games/Bot/8.jpg" width="436" height="106"></p>
+  <P>Clicking on "Voice Type" will bring up the following menu where you can pick your bot's voice type:</P>
+  <P><img src="http://dannydking.org/games/Bot/9.jpg" width="148" height="181"></P>
+  <P>For right now just click on any voice to select it.</P></center></table></td></table>
+<br><br><center><a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691660&CAT=topic><b>Main</b></a></center>

@@ -1,0 +1,18 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:
+gold;scrollbar-shadow-color:gold}</style>
+<center>Many residents in CyberTown have a bot.<br>But very few people really know how to program it.<br>
+Thats what this book will attempt to teach you. :).<BR><BR><BR><BR><BR>
+<table height="60%"><table border="1">
+<tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691660">Preparing to get a bot</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691660&PAGE=1">Getting a bot</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691660&PAGE=2">Bots Name, URL and voice</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691660&PAGE=3">Basic Commands</a>
+</th></tr>
+<tr><th><a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691660&PAGE=4>Advanced Commands</a>
+</table></center></td></tr></table>

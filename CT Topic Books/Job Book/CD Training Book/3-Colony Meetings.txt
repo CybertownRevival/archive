@@ -1,0 +1,42 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Colony Meetings"</font></strong></a></p>
+<font size="3">
+<P>Colony meetings will be held once a month and will be<BR>
+announced through email to all CD's and NL's of the colony.<BR>
+As of today, the meetings will be the first Sunday of each<BR>
+month in the home of vgbank. GamesRUs club must be joined first.<BR>
+If you are unable to be in attendance, please let the CL<BR>
+know as soon as possible. Make sure that the NL's of your<BR>
+assigned neighborhoods know that if they cannot attend the<BR>
+meeting, an ND should try to attend in their place. If the<BR>
+NL or the ND's of your assigned neighborhoods are unable to<BR>
+attend, the NL must give their neighborhood's report to you<BR>
+to report at the meeting. The neighborhood information that<BR>
+needs to be reported at colony meetings is included below.<BR>
+The colony meeting agenda is as follows unless otherwise posted.<BR>
+<P><center><B><U><font color=yellow>Colony Meeting Agenda</font></U></b><BR>
+<P>1. Welcomes & Apologies<BR>
+2. Congratulations to new colony staff<BR>
+3. Neighborhood Reports<BR>
+4. Colony events<BR>
+5. Security Issues<BR>
+6. HTML report<BR>
+7. Training<BR>
+8. CERB update<BR>
+9. Colony Paper<BR>
+10. Any Other Business (AOB)<BR></center>
+<P>
+<P><center><B><U><font color=yellow>Neighborhood Report Information for Colony Meetings</font></U></b><BR>
+<P>1. Number of ND's removed from access<BR>
+2. Number of new ND's<BR>
+3. New activities, contests, parties, new clubs, ideas, etc.<BR>
+4. Security issues needing discussion<BR>
+5. Number of residents living in the Neighborhood<BR>
+     (Found in the "find a home" at the Colony Level")<BR>
+6. Neighborhood Stats percentage<BR></center> 
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

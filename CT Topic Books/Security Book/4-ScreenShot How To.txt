@@ -1,0 +1,15 @@
+<table height="60%"><tr><td><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<H2>ScreenShot How To</H2><b>
+Some residents and staff do not know how to take screen shots. This is a very<BR>
+simple procedure. Press “Prt Scrn” or whatever your key for Print Screen is. Some<BR>
+keyboards have different abbreviations. Then open up your Paint program.<BR>
+This can be Microsoft Paint, Paint Shop Pro, Adobe PhotoShop and several others.<BR>
+Right click on your work area and then select paste. This should put a copy of your<BR>
+screenshot into your paint program. Then click on file and “save as” and save it<BR>
+as a JPG file.<BR><P>
+If this seems too complicated for you, you can get a freeware program called<BR><a href=http://www.gadwin.com/printscreen/ target=_blank><font color="green">Gadwin PrintScreen.</font></a> This is a FREE program and is very easy to use.<BR>
+Here is the URL: Gadwin PrintScreen program. http://www.gadwin.com/printscreen/ <BR>or just click on the green link above.
+
+<BR><BR><P></table>
+
+<center>Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c697c6f&CAT=topic>Main</a></center>

@@ -1,0 +1,33 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr>
+<td valign="top"><center>
+<font color=white size=3>Basic E-mail Tag</font>
+<br><font color=yellow>< a href="mailto:youremail@wherever.com">Email me!< /a ></font>
+<font color=lime>Email me!</font>
+</p><br><P></P><font color=skyblue>E-mail Icon</font>
+<br><font color=coral>Want to use an email icon instead of words?Here is the code:</font>
+<br><font color=yellow>< a href="mailto:youremail@wherever.com">< img src="yourimage.gif" >< /a ></font>
+<br><font color=coral>(but put the REAL name of your graphic instead of "yourimage.gif" !)</font></p>
+<P><br><font color=coral>What's that line around the icon? Because the image is being used as a link to 
+your email, a narrow "link line" appears around your image. To get rid of it, simply add </font>
+<font color=yellow>border=0</font>
+<font color=coral> to the image tag:</font>
+<font color=yellow>< a href="mailto:youremail@wherever.com" >< img src="yourimage.gif" border=0 >< /a ></font>
+</p><br><P></P><font color=skyblue>Adding A Subject Line</font>
+<br><font color=coral>You can make it so that a subject automatically appears in the subject line of your 
+email. Simply add</font>
+<font color=yellow> ?subject=whatever you want it to say</font>
+<font color=coral> at the end of your email address.</font><br>
+<font color=lime>(Note: NO gap between the .com and the ?)</font>
+<br><font color=yellow>< a href="mailto:youremail@wherever.com?subject=whatever you want it to say" >< img src="yourimage.gif" border=0 >< /a ></font>
+</p><br><P></P><font color=skyblue>Multiple Recipients</font>
+<br><font color=coral>You can code your email tag so that it automatically sends the email to several 
+people. Simply add the extra email addresses, separated by a</font>
+<font color=yellow> ,(comma)</font><br> 
+<font color=yellow>< a href="mailto:youremail@wherever.com, hisemail@thatplace.com, ouremail@home.net?subject=Whatever you want it to say" ></font>
+<font color=yellow>< img src="filename.gif" border=0 >< /a ></font></center></td>
+</tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

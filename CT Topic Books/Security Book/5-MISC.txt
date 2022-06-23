@@ -1,0 +1,6 @@
+<table height="60%">
+<tr>
+<td><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<H2>Security Guide Book</H2>
+<BR><BR><P></table>
+<center>Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c697c6f&CAT=topic>Main</a></center>

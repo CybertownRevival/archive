@@ -1,0 +1,157 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>SAMPLE BLOCK REPORTS</strong></font></p>
+<p align="left"> </p>
+<p align="left"><font face="Arial">Although verbal communication between staff already happens, often
+ something in </font>
+<font color="#EAE7A6" face="Arial">written form can be a quick reminder or reference</font>
+<font face="Arial"> when needed. They are an optional tool that can assist staff in their communication.</font></p>
+<p align="left"><font face="Arial">Whether or not BL's use such a report is </font>
+<font color="#EAE7A6" face="Arial">up to the NL</font>
+<font face="Arial">, as is the timing of submission and format. BL's could email their report to their
+ assigned ND or upload it as a webpage, ideally perhaps every 2 weeks (maybe up to 4 weeks).</font></p>
+<p align="left"><font face="Arial">A </font>
+<font color="#EAE7A6" face="Arial">sample block report </font>
+<font face="Arial">is provided below and can be used, or modified, for BL's to report on </font>
+<font color="#EAE7A6" face="Arial">how their block is progressing.</font></p>
+<p align="left"><font face="Arial">Also provided is a </font>
+<font color="#EAE7A6" face="Arial">sample responsibility list</font>
+<font face="Arial"> that shows the </font>
+<font color="#EAE7A6" face="Arial">assignment of tasks</font>
+<font face="Arial"> to BL's & BD's . Although often most share the tasks, to actually have one person
+ <u>responsible</u> for a task, minimizes the "thinking someone else is doing it and hence no one does"
+  possibility. Plus, also fosters the delegation and sharing of duties hence increasing BD participation & training.</font></p>
+<p><hr></p>
+<p align="center"><font color="#8FF2FA" size="4" face="Arial"><strong>BLOCK NAME<br>
+Block Report</strong></font></p>
+<p align="center"><font size="3" face="Arial"><strong>Submitted by </strong>(the BL name here)<strong><br>
+for week ending </strong>(date here)</font></p>
+<p><hr></p>
+<p><font color="#8FF2FA" face="Arial"><strong>STAFF</strong></font></p>
+<p><font face="Arial"><strong>BL : </strong>(type BL name here)<strong><br>
+BD(s): </strong>(type BD's names here)</font></p>
+<p><font face="Arial"><strong>Any staffing changes / problems :</strong></font></p>
+<p><hr></p>
+<p><font color="#8FF2FA" face="Arial"><strong>HOMESITES</strong></font></p>
+<p><font face="Arial"><strong>Maximum number of homes for the
+block :<br>
+Occupied:<br>
+Free:<br>
+Reserved:</strong></font></p>
+<p><font face="Arial"><strong>Changes over the last two weeks -<br>
+Deleted:<br>
+Moved:</strong></font></p>
+<p><hr></p>
+<p><font color="#8FF2FA" face="Arial"><strong>BLOCK LIST</strong></font></p>
+<table border="1" width="95%">
+    <tr>
+        <td width="25%"><font face="Arial">House Name</font></td>
+        <td width="25%"><font face="Arial">Resident</font></td>
+        <td width="25%"><font face="Arial">Last Access</font></td>
+        <td width="25%"><font face="Arial">Exp Points</font></td>
+    </tr>
+    <tr>
+        <td width="25%">  </td>
+        <td width="25%">   </td>
+        <td width="25%">   </td>
+        <td width="25%">   </td>
+    </tr>
+</table>
+<p><hr></p>
+<p><font color="#8FF2FA" face="Arial"><strong>PROBLEMS / PROJECTS</strong></font></p>
+<p><font face="Arial">Any concerns being addressed, projects planned etc.</font></p>
+<p><hr></p>
+<p><em><strong>( It often helps if all BL's are submitting reports at the same time.)</strong></em></p>
+<p></p><p><hr></p><p></p>
+<p align="center"><font color="#8FF2FA" size="4" face="Arial"><strong>Block Responsibility List <br>
+for <br>
+TYPE NAME OF BLOCK</strong></font></p>
+<div align="center"><center>
+<table border="1" width="50%">
+    <tr>
+        <td width="50%"><font face="Arial">Assigned ND</font></td>
+        <td width="50%">   </td>
+    </tr>
+    <tr>
+        <td width="50%"><font face="Arial">Block Leader</font></td>
+        <td width="50%">   </td>
+    </tr>
+    <tr>
+        <td width="50%"><font face="Arial">Block Deputies</font></td>
+        <td width="50%">   </td>
+    </tr>
+    <tr>
+        <td>   </td>
+        <td>   </td>
+    </tr>
+</table>
+</center></div>
+<p> </p>
+<table border="1" width="95%">
+    <tr>
+        <td align="center" width="10%"><p align="center"><font
+        color="#8FF2FA" face="Arial"><strong>Position</strong></font></p>
+        </td>
+        <td align="center" width="34%"><p align="center"><font
+        color="#8FF2FA" face="Arial"><strong>Name</strong></font></p>
+        </td>
+        <td width="33%"><p align="center"><font color="#8FF2FA"
+        face="Arial"><strong>Is responsible for the task of ...</strong></font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="10%"><font face="Arial">BL</font></td>
+        <td align="center" width="34%">   </td>
+        <td width="33%"><font face="Arial">Check of resident MB's & Inboxes</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%"><font face="Arial">BL</font></td>
+        <td align="center">   </td>
+        <td><font face="Arial">Making free sites</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">   </td>
+        <td><font face="Arial">Checking home names</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Monitoring block MB</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Creating block HP</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Updating block HP</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Greeting new residents through
+        inbox</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Announcing new residents through
+        message to all</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Reminder messages to all</font></td>
+    </tr>
+    <tr>
+        <td align="center" width="10%">  </td>
+        <td align="center">  </td>
+        <td><font face="Arial">Image approvals</font></td>
+    </tr></table>
+<p><b><BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>

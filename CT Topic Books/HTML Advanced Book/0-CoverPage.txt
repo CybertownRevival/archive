@@ -1,0 +1,100 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<br>
+<table width="100%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr>
+    <td width="50%"><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063#form"><font color="#c71585" size="2" face="verdana"><b>Form Buttons</b></font></a></td>
+    <td width="50%"><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b#rolling"><font color="#c71585" size="2" face="verdana"><b>Rolling Credits</b></font></a></td></tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063#trans"><font color="#c71585" size="2" face="verdana"><b>IE Transitions</b></font></a></td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b#internalsame"><font color="#c71585" size="2" face="verdana"><b>Internal Link/Same Page</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063#icon"><font color="#c71585" size="2" face="verdana"><b>Favorite Icon</b></font></a></td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b#internalnew"><font color="#c71585" size="2" face="verdana"><b>Internal Link/New Page</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=1#fixed"><font color="#c71585" size="2" face="verdana"><b>IE Fixed Background</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#meta"><font color="#c71585" size="2" face="verdana"><b>Meta Refresh</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=1#email"><font color="#c71585" size="2" face="verdana"><b>Email Link Pre Filled</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#face"><font color="#c71585" size="2" face="verdana"><b>Font Faces</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=1#border"><font color="#c71585" size="2" face="verdana"><b>Border="0" Lesson</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#special"><font color="#c71585" size="2" face="verdana"><b>Spê¢ìäl Lêttèrs</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=1#link"><font color="#c71585" size="2" face="verdana"><b>Override Link Colors</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#tricks"><font color="#c71585" size="2" face="verdana"><b>Table Tricks</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=2#htmlcodes"><font color="#c71585" size="2" face="verdana"><b>Showing Html Codes</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#easycss"><font color="#c71585" size="2" face="verdana"><b>Easy CSS Tricks</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=2#newwindow"><font color="#c71585" size="2" face="verdana"><b>Open A New Window</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=1#margin"><font color="#c71585" size="2" face="verdana"><b>No Margins</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=2#marquee"><font color="#c71585" size="2" face="verdana"><b>Marquee Lesson</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=2#comment"><font color="#c71585" size="2" face="verdana"><b>Comment Tags</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=2#filters"><font color="#c71585" size="2" face="verdana"><b>Wild IE Visual Filters</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=2#embed"><font color="#c71585" size="2" face="verdana"><b>Embeding A Video</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#textarea"><font color="#c71585" size="2" face="verdana"><b>Textarea Box For Codes</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=2#bust"><font color="#c71585" size="2" face="verdana"><b>Bust Out Of Frames</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#tabletalk"><font color="#c71585" size="2" face="verdana"><b>Table Talk !</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=2#targets"><font color="#c71585" size="2" face="verdana"><b>Frames - Targets</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#indent"><font color="#c71585" size="2" face="verdana"><b>Indenting Text</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=3#colored"><font color="#c71585" size="2" face="verdana"><b>Colored Lines</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#close"><font color="#c71585" size="2" face="verdana"><b>Close Window</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=3#fieldset"><font color="#c71585" size="2" face="verdana"><b>Fieldset/Legend</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#reload"><font color="#c71585" size="2" face="verdana"><b>Back/Reload Button</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=3#thumbnail"><font color="#c71585" size="2" face="verdana"><b>Thumbnail Images</b></font></a>
+</td>
+  </tr>
+  <tr>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=3#basefont"><font color="#c71585" size="2" face="verdana"><b>Setting A BaseFont</b></font></a>
+</td>
+    <td><li><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c5dcd6b&PAGE=3#iframe"><font color="#c71585" size="2" face="verdana"><b>IFRAMES For IE</b></font></a></td>
+</table>

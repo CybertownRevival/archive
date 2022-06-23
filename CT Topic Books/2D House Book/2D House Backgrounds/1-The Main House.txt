@@ -1,0 +1,24 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://www.angelfire.com/hi5/dannyking00/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center><P>
+<font color=white size=3>2d Home Decorating</font><br>
+<font color=skyblue>The Main House</font><br>
+<font color=coral>Click onto the</font> <font color=yellow> MY Info </font><font color=coral>section in the
+ </font><font color=yellow> Control Panel</font><font color=coral> to your right while you are at your home.</font>
+ </p><img src="http://ivnwww.cybertown.com/images/finalcontx.gif"><br>
+<P>This will take you to a section that looks like this:<br>
+<img src="http://ivnwww.cybertown.com/images/buttons/icon_myinfo.jpg"><br>
+<font color=lime green size=3>Personal Info</font></p><P>
+<font color=coral>Click onto the </font><font color=lime green>Personal Info</font>
+<font color=coral> line at your home and you will be redirected to this section:</font>
+</p><img src="http://www.gamescolony.org/neighborhoods/HtmlGuide/pi.JPG"><P>
+<font color=yellow>RIGHT CLICK onto any black area of this section and click onto </font>
+<font color=white>View Source.</font><font color=yellow>You will see something like this:</font>
+</p><P>Please continue to the next page in this manual.</p></center>
+</td></tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691664&CAT=topic"><font color=yellow>*MENU*</font></a></center></td>
+</tr></table>

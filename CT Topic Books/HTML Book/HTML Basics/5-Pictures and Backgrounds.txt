@@ -1,0 +1,56 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><hr>
+Lesson #7 -  Add Pictures & Backgrounds  <br>
+<hr>
+Adding a picture to your message is easy.  First you <br>
+need to know the pictures location. If you have <br>
+imported a picture into a picture frame or into <br>
+a photo book in Cybertown then it is simply a matter <br>
+of opening the photo book or picture frame.  Then <br>
+right click on the picture you want in your message. <br>
+I choose 'copy image location' to get an address <br>
+for the location of the picture file. Diferent browsers <br>
+give you diferent choices. Or you can use a picture <br>
+you have uploaded to your own web site. <p>
+Here is the basic code needed to get a picture on <br>
+your page. Put your art's address inbetween the quotes. <br>
+<XMP><img src="here"></XMP><P>
+<XMP><img src="http://www.cybertown.com/dbimages/BK/o0/01/a7/10/a/pic_6_2.gif"></XMP><p>
+<img src="http://www.cybertown.com/dbimages/BK/o0/01/a7/10/a/pic_6_2.gif"><P>
+<b>Very Important Note:</b><p>
+Linking to someone elses picture on their web site <br>
+without their permission is not a good thing to do. <br>
+#1) When they make page changes to their web <br>
+site your link to their art gets broken. <br>
+#2) When they change their art on their web site, <br>
+again your link to their art gets broken. All of <br>
+which makes your web page look bad. <br>
+#3) Not to mention using someone elses bandwidth <br>
+is uncool and slows down the loading of your webpage. <br>
+Plus it can get you in a heap of trouble $ wise. <p>
+<hr>
+Backgrounds<br>
+<hr>
+Backgrounds are done much the same way. The code <br>
+is a little different, but still simple. Here is the code. <br>
+Remember to replace my art's address with your <br>
+art's address inbetween the quotes. <br>
+<XMP><body background="here"></XMP><p>
+<XMP><body background="http://www.cybertown.com/dbimages/BK/o0/01/a7/10/a/pic_7_1.jpg"></XMP><p>
+<body background="http://www.cybertown.com/dbimages/BK/o0/01/a7/10/a/pic_7_4.gif">
+<img src="http://www.cybertown.com/dbimages/BK/o0/01/a7/10/a/pic_7_1.jpg"><p>
+TIP: Changing your backgrounds in a topic book is a little <br>
+tricky sense they already have a predefined background. <br>
+Messing with that code may not be a good idea. I have <br>
+broken a few topic books and had to delete them by <br>
+using unacceptable code. So making a large picture <br>
+with writing on it can make it seem as if you have a <br> 
+different back ground. Keep the file size as small as you <br>
+can so it loads fast. Happy HTMLing In Cybertown!!! <br>
+Regards Feather 4 
+</center></font><P>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Tools 
+Home</A><BR></td></td>
+</tr>
+</table>

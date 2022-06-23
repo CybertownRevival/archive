@@ -1,0 +1,22 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<br><font color=coral><P>While at your home,go to the area that says:<font color=yellow>"Object Storage Areas".<br><font color=coral>Click onto the <font color=yellow>"EDIT"<font color=coral> button.</p>
+<P>Here you can add a storage area,re-name a storage area and even add an image  file to your bins!</p>We will be adding an image file to your bins to "jazz" them up.Add the following code in one of the white empty areas(Storage Area ) for a test and see what it looks like at your home....then remove it please.Dont's forget to <font color=yellow>UPDATE.<font color=white>Here is the coding for that:</p>
+<font color=silver>
+< font color=silver >< img src=http://www.gamescolony.org/neighborhoods/dannyking/AniHoliday.gif border=0> Art Items<br><br>
+<font color=white>
+<P>As you can see,my storage bins each has a different gif file next to all of them and also my bin names have sparkles.</p>Take a quick trip to my home to see the bins and also the full 2d Home Decor:</p>
+<a href="http://www.cybertown.com/home/DannyKing" target=_"new">Danny's Home</a><br><br>
+<font color=skyblue>
+<P>Remember to keep the filesize down when adding an image file to your bins...too large a file will make your 2d Home area to cluttered looking.A smaller file will look organized.You can also use different images files for each bin to snazz it up.</p>
+<P>Holiday's is the time I like as can have fun decorating all over again!</p>
+<font color=yellow>
+<P>SAVE YOUR CODING so after you decorate for the holidays,you can put the code back!</p><font color=white>
+<P>Thank you for taking the time to read this manual.I wish you the best and happy 2D Home Decorating!</p>
+<P></p>
+</center></font></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

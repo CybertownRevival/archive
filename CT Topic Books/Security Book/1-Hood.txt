@@ -1,0 +1,8 @@
+<table height="60%"><tr><td><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<H2>Hood Security</H2>
+<b>On the owner page only City Mayor, City Council, and Com. Tech should be checked.<BR>
+Only the names of the staff for that block or hood should be listed unless someone<BR>
+is working in the block.  All other Access Pages should be totally unchecked.<BR><P>
+On the Hood and Block message boards all links should be checked for content.<BR>
+This also includes any messages posted.</b><BR><BR><P></table>
+<center>Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c697c6f&CAT=topic>Main</a>

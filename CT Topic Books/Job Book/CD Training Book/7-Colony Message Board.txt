@@ -1,0 +1,26 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Colony Message Board"</font></strong></a></p>
+<font size="3">
+<P>Read the Colony Message Board as often as possible to keep<BR>
+up with events and answer any questions or suggestions that<BR>
+have been posted. If you read a message that you feel is<BR>
+inappropriate, copy the message and save it for future reference<BR>
+(if needed), delete the message from the message board and put a<BR>
+letter of warning in the inbox of the citizen that posted the message.<BR>
+If necessary, give the citizen the information they need to point them<BR>
+in the right direction. Example: If the citizen has posted a message of<BR>
+complaint about a staff member, point them to the complaint form linked<BR>
+in the message board or ask them to leave a message in the inbox of that<BR>
+staff members superior. It is requested that each CD delete old mesages<BR>
+to help with the daily flow of messages. Each time you read the Colony<BR>
+Message Board, please try to delete 10 ( or more) old messages from the<BR>
+bottom of the message board if possible. If you notice messages that are<BR>
+duplicated, you can delete the older message. Try to keep the message board<BR>
+trimmed to just 5 weeks worth of messages, unless they are important,<BR>
+then let them scroll off.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

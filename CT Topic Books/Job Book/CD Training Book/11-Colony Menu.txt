@@ -1,0 +1,32 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center><img src="http://dannydking.org/GCEC/cdblockmenu.jpg" width="140"
+height="327" alt="recruit"></center></p>
+<p><a name="w18"><strong><font size="3">"Colony Menu"</font></strong></a></p>
+<font size="3">
+<P>The <B><font color=yellow>Infomation</font></B> button is a very useful tool, it shows<BR>
+who is in CL and CD access.<BR>
+<P>The <B><font color=yellow>Portal</font></B> button shows a list of related online games<BR>
+links.<BR>
+<P><B><font color=yellow>Find Home</font></B> tells you how many homes in each hood and how<BR>
+many are free.<BR>
+<P><B><font color=yellow>Statistics</font></B> tell you lots of details about the hood and the<BR>
+colony.<BR>
+<P><B><font color=yellow>Inbox</font></B> is for people to contact the Games "C" level staff and<BR>
+the staff can also use it to communicate.<BR>
+<P>The <B><font color=yellow>Messages</font></B> button opens the message board where you can post<BR>
+and view messages.<BR>
+<P>The <B><font color=yellow>Vote</font></B> button brings up the colony voting board, you can<BR>
+vote and start votes there.<BR>
+<P>The <B><font color=yellow>Moderate</font></B> button is for when there is a big event going on<BR>
+and you need to accept everything that is said.<BR>
+<P>The <B><font color=yellow>Inbox to All</font></B> button sends an inbox to every inbox in the colony.<BR>
+<P>The <B><font color=yellow>Message to All</font></B> sends messages to the hoods message boards.<BR>
+<P><B><font color=yellow>Update</font></B> changes the information page. Only the CL and CDL should<BR>
+use this.<BR>
+<P>The <B><font color=yellow>Fund Box</font></B> button is where the colony funds are stored. You can<BR>
+put money in but only the CL and DCL can take money out.<BR>
+<P><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a></center><BR></td>
+</tr></table>

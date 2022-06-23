@@ -1,0 +1,19 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Links<br><font color=skyblue>
+<P>Creating A Link<br><font color=coral><br>To create a link, insert the following tag:<font color=yellow>
+< a href="filename.html"><font color=skyblue>NAME of FILE </a><br><font color=coral>For example,<font color=yellow> 
+< a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=clubsplaza"target=_"blank"><font color=skyblue>The Clubs </a> <font color=coral><br>is the tag I used to link to The Clubs section of Cybertown.<br><br>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=clubsplaza" target=_"blank"><font color=lime>The Clubs Area</a><br>
+<font color=coral><P>The tag  <font color=yellow>target=_"new" <font color=coral>tells the browser to open the page in a new window.The tag  <font color=yellow>target=_"blank" <font color=coral>tells the browser to open the link in the same window.</p><font color=skyblue>
+<P>Link By Image</p><font color=coral><br>You can also use an image as a link.Here is an example:<br><br><font color=yellow>
+< a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=clubsplaza"target="_blank" >< img src="http://dannydking.org/images/clubsplaza.jpg" ></a><br>This tag will give you the following link:<br><br><a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=clubsplaza"target="_new"><img src="http://dannydking.org/images/clubsplaza.jpg"></a><br><br><font color=coral>Notice that the image has a yellow border around it?To remove the border,use the following:<br><font color=yellow>< a href="http://cybertownbank.com/ctcolonies/games/"target=_"blank" >< img src="http://dannydking.org/images/clubsplaza.jpg" border= "0" ></a><font color=coral><br>This will give you an image without a border link the one below.</p><br>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=clubsplaza"target=_"blank"><img src="http://dannydking.org/images/clubsplaza.jpg"border="0"></a></p>
+<P>You can also change the <font color=white>Size <font color=coral> of the border by replacing the <font color=white>0 (zero)<font color=coral>with a <font color=white>"1","2","3"...etc.</p>
+</center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

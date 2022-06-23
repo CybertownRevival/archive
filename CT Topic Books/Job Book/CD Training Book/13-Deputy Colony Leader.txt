@@ -1,0 +1,25 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Deputy Colony Leader (DCL)"</font></strong></a></p>
+<font size="3">
+<P>
+This position is given at the discretion of the CL, and is usually a C-staff<BR>
+member of seniority and has been with the C-staff for an extended period of time and<BR>
+is aware of the duties and challenges entailed with working at the colony level<BR>
+(as it is a very demanding position). In the event that the CL is not present for<BR>
+an extended period of time the DCL will be given the authority to make any critical<BR>
+decisions that need to be made during that timeframe. This position will also be<BR>
+given owner/moderator access on all egroups as well as other information concerning<BR>
+the colony, this is done so that should access need to be added or removed in<BR>
+a timely manner it can be done even if the CL is not available. One of the main duties<BR>
+for the DCL is to prepare the house deletion list in a timely manner and present it<BR>
+to IVN. The DCL can also do BackGround Checks and can also fill in for other CDs<BR>
+wherever needed. The DCL will also be the one who is in charge of the Colony while the<BR>
+Colony Leader is absent (ie:vaction)<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=3">Return
+to Specified Duties</a><BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

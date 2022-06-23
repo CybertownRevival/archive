@@ -1,0 +1,58 @@
+<CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><TITLE>Message Board Book List</title>
+<center>
+          <H2>Message Board Book List</H2>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<center><img src=http://www.cybertown.com/java/contact/chatimg/caution.gif><font size=4 face="Arial">
+This is the list of Message Board related books that we have available.<br>These have anything and everything to do with posting messages on about EVERY message board in CT.</font>
+<img src=http://www.cybertown.com/java/contact/chatimg/caution.gif><br>
+<font size=3 face="Arial">
+Please inbox requests for changes etc to DannyKing. </font></center>
+<br>
+<font face="Arial" size=3><br>Copies of this Master Master Book BooK are available at <a 
+href=http://www.cybertown.com/home/justmyself target=new>
+Games Colony Educational Center</a>.<br>
+Voluntary donations are welcome. Please buy as many books as you wish! Or if you want extra<br>
+copies, feel free to copy the code, buy a 10CC Topic Book at Homebuilders and create your own<br>
+additional BooK. Thank you!<br>
+</font>
+<p><center>
+	      <table border="1">
+            <tr> 
+              <td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic" target=_new>Message 
+                  Board Book</a></strong></div></td>
+            </tr>
+            <tr> 
+              <td><div align="center"><strong><a 
+href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fb8&CAT=topic" target=_new> 
+                  Block Message Board</a> </strong></div></td>
+            </tr>
+            <tr> 
+              <td><div align="center"><strong><a 
+href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691662&PAGE=7" target=_new> 
+                  Fixing Books</a> </strong></div></td>
+            </tr>
+            <tr> 
+              <td><div align="center"><strong>FUTURE USE</strong></div></td>
+            </tr>
+            <tr> 
+              <td><div align="center"><strong>FUTURE USE</strong></div></td>
+            </tr>
+            <tr> 
+              <td><div align="center"><strong>FUTURE USE</strong></div></td>
+            </tr>
+          </table>
+		 </center><BR>
+Please report any changes or mistakes to <a href=/home/DannyKing>DannyKing</a>.<br>
+Thank you and have fun!
+</td></td></td>
+</tr>
+</table></table>
+<BR>
+<a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691662&CAT=topic><b>Main</b></a><BR>

@@ -1,0 +1,124 @@
+<table height="60%">
+<tr><td valign="top"><h3><a name="w1">Block Deputy Welcome Wagon Team</a></h3>
+<P><a href="#w2">Welcome New Resident!</a><BR>
+<a href="#w3">Announcing New Residents!</a><BR>
+<a href="#w4">Greetings Friends  :o)</a><BR>
+<a href="#w5">Turn on HTML Tags</a><BR>
+<a href="#w6">Where is the Mirror?</a><BR>
+<a href="#w7">How to Buy and Sell Things?</a><BR>
+<a href="#w8">Configuring Your Bot</a><BR>
+<a href="#w9">2D House Images</a><BR>
+<P><strong>The Welcome Message</strong><BR>
+One of the most important task to be done is <BR>
+welcoming new residents. Currently policy is that all <BR>
+new residents need to be sent a "Welcome Message" <BR>
+within and no later than 48 hours of moving to your <BR>
+block. Introduce yourself, make them feel at home. <BR>
+of some of the things you want to consider in your <BR>
+messages. You may also write your own.
+<P>Keep your messages brief but informative. Always <BR>
+teach them a little something in each message if you <BR>
+can. Put your message in their Inbox and their Message <BR>
+Board so you can tell you messaged them and so can <BR>
+your BL and ND. And most importantly your new resident <BR>
+might find it and know that you care.
+<P><a name="w2"><strong>Subject: Welcome New Resident!</strong></a><BR>
+Hello (New Resident Nickname), <BR>
+Welcome to our Block I am your Block Deputy. Please <BR>
+come to my houses and write me an inbox message any <BR>
+time you need anything. We are all here to help you <BR>
+enjoy your stay in our block and in Cybertown. There <BR>
+are some great resources available to you on our <BR>
+Block Message board and other Message boards around <BR>
+Cybertown, in the Colony and in the Neighborhood. <BR>
+Your Welcome Wagon BD,<BR>
+Nickname(BD)
+<P><a name="w3"><strong>Subject: Announcing New Residents!</strong></a><P>
+This message goes in the 'Message to all' at block level.<BR>
+ <P>Hello and Welcome <BR>
+A Big Warm Welcome! To some new residents that just <BR>
+moved it to our block. A big Welcome to you all:<BR>
+list names and houses here<BR>
+list names and houses here<BR>
+Virtually Yours,<BR>
+Nickname(BD) 
+<P><a name="w4"><strong>Subject: Greetings Friends :o)</strong></a> <BR>
+Hello there ____ :o) Just stopping by the block to say <BR>
+"Hi" to everyone. It's always nice to see a block full <BR>
+of life with people living here and having fun :o) <BR>
+Thanks for having your Virtual Home in our block. I <BR>
+am here if you need anything.<BR>
+Happy Regards,<BR>
+Nickname (BD)
+<P><a name="w5"><strong>Subject: Turn on HTML Tags</strong></a><BR>
+Ahoy! There Mates!<BR>
+This week lets catch some fish. Oh! Yea! This is for <BR>
+all of you who haven't activated HTML tags... if you <BR>
+see a P in between the 2 fish then you need to activate <BR>
+your HTML tags... <º')))>{ <img
+src="http://www.cybertown.com/dbimages/BK/o0/00/b6/49/f/pic_5_3.jpg" width="29"
+height="20" alt="pic_5_3.jpg (981 bytes)"> }<((('º> you will need to click on the <BR>
+configure button at the top of the Inbox and Message <BR>
+boards. Look for the check box at the bottom select <BR>
+it to turn on your HTML tags! Now you will be able <BR>
+to read what people are writing to you. If you need <BR>
+help just inbox me. Thank You Ship Mates,<BR>
+Nickname(BD) 
+<P><a name="w6"><strong>Subject: Where is the Mirror?</strong></a><BR>
+Hi All,<BR>
+So many new people this week it takes me back to <BR>
+when I first entered Cybertown and was looking for a <BR>
+mirror so I could view my Avatar. LOL!!! And I was <BR>
+serious!!  A great guy told me that I did not need <BR>
+a mirror. That if I right clicked on the screen and chose <BR>
+view Avatar I could see my Avatar. Well, I felt much <BR>
+better after all the work I went to get one.  Oh! <BR>
+Just use the My Info button for that and choose <BR>
+Avatar or you can use the right left scroll buttons <BR>
+when in 3D chat and move all the way to the right <BR>
+and find the Avatar thing there.<BR>
+Happy Blue Avatars to Ya!  :o)<BR>
+Nickname(BD)
+<P><a name="w7"><strong>Subject: How to Buy and Sell Things.</strong></a><BR>
+Hi All, :o) <BR>
+Say! What ya doing these days? My favorite place in <BR>
+Cybertown is The Flea Market what is yours? I make <BR>
+CCs = City Cash just buying and selling things at the <BR>
+Flea Market. It is easy to buy things from a person at <BR>
+the Flea Market find their Nick Name in list of people <BR>
+click on their Nick and choose Objects then choose Buy <BR>
+or Properties to view and Buy if you like it.<BR>
+Have a Happy Flea, :o) <BR>
+Nick Name(BD)
+<P><strong><a name="w8">Subject: Configuring Your Bot</a>   </strong><img
+src="http://www.cybertown.com/dbimages/BK/o0/00/b6/49/f/pic_3_4.jpg" width="73"
+height="80" alt="pic_3_4.jpg (6843 bytes)"><BR>
+Hello Neighbor, <BR>
+I got the coolest! Information for you this week.  Did <BR>
+you know?  You can configure your Bot/Pet by using <BR>
+the [Update] button then select [Configure Virtual Pet] <BR>
+then fill in the blanks. The ones on the left are what you <BR>
+say and on the right is what the Bot/Pet says or does. <BR>
+Try all the different things here and see what they do.  <BR>
+Then select an Avatar URL for your pet. Put an [x] in <BR>
+the box to activate your pet then you must [Update] to <BR>
+save the information then you can go back to your <BR>
+house and try out your new pet.<BR>
+Have fun with your Pet,<BR>
+Nickname (title)
+<P><a name="w9"><strong>Subject: 2D House Images</strong></a><BR>
+Hi All,<BR>
+Hey this week we are working on those 2D house images, <BR>
+so lets upload a new image to your 2D house. Here is <BR>
+how to upload yours. Look for that [update] button, <BR>
+then perss the [Image] link. You need to find a .GIF <BR>
+or a .JPG file that you like, on your hard drive and <BR>
+Upload it.  When you have uploaded a picture we will <BR>
+be glad to check it for you soon as we come on line. <BR>
+The BL ans us BDs are all here to help you with images.<BR>
+Happy Graphics,<BR>
+Nickname(Title)
+<P><a href="#w1">Back to top</a><BR>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return
+to Start</a><br></td>
+</tr></table>

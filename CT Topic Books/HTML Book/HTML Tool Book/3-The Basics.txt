@@ -1,0 +1,39 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center>
+<font color=white>*Spacing*</font><br>
+<font color=coral>HTML documents take no notice of any line breaks or paragraphs that you type into your 
+text. You have to write a specific command.</font></center></p><br>
+<p></p><font color=skyblue>LINE BREAKS:</font>
+<font color =yellow>< br ></font>
+<font color=coral>This starts a new line. NO closing tag is needed.</font></p><br>
+<p></p><font color=skyblue>PARAGRAPHS:</font>
+<font color=yellow>< p ></font>
+<font color=coral>This misses one line and starts a new line. NO closing tag is needed. Note: In some 
+documents you will see the closing tag </font>
+<font color=yellow>< /p ></font>
+<font color=coral> used. You do not need to use it.</font></p>
+<font color=coral>If you add </font><font color=yellow>< p align=right ></font>
+<font color=coral>to the tag, then it will make the text form on the right hand side of the page.</font></p><br> 
+<font color=coral>For example,</font>
+<font color=yellow> < p align=right ></font>
+<font color=coral> See, this text is over here!!!
+Will appear as</font>
+<p align=right><font color=yellow> 
+See, this text is over here!!!</font></p><br>
+<P></P><font color=skyblue>Empty Spacing:</font>
+<font color=yellow>& nbsp </font>
+<font color=coral>This is a non-breaking space tag. If you use five of these in a row,</font>
+<font color=yellow>--->     <---</font><font color=coral>Then you will get a space this wide.</font></p>
+<center><P><font color=coral>The only problem with this tag is that some on-line editors will always convert that 
+into no space at all when you next go to edit any page where it is used. It means you will always have to 
+remember to put them back in </font>
+<font color=yellow>EVERY</font>
+<font color=coral> time you edit that page!</font><br>
+<font color=coral>If you create your pages off-line and FTP them, then the tag will work just fine for you.</font></p> 
+</center></td>
+</tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

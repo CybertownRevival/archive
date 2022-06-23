@@ -1,0 +1,40 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:
+gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>CREATING NEW BLOCKS</strong></font></p>
+<p></p><p align="left"><font size="3" face="Arial">As per Games Colony Guidelines, </font>
+<font color="#EAE7A6" size="3" face="Arial">ONLY</font><font size="3" face="Arial"> the </font>
+<font color="#EAE7A6" size="3" face="Arial">NL and up</font><font face="Arial"> can </font>
+<font color="#EAE7A6" face="Arial">CREATE A NEW BLOCK</font>
+<font face="Arial">. However, before doing so, approval must be sought by </font>
+<font color="#EAE7A6" face="Arial"><strong><u>PROPOSING THE NAME OF THE NEW BLOCK TO THE CL</u></strong>.</font>
+<font face="Arial"> Once approval has been given, the NL may open the block, assign a block leader,
+ announce it's opening etc, as she or he sees fit.</font></p>
+<p><font face="Arial">Block names should keep within the theme of the neighborhood and suggestions can be
+ received from the CL, competitions, word of mouth, etc as the NL sees fit, subject of course, to CL
+ approval.</font></p>
+<p><font face="Arial">In order to add a new block, whilst at the neighborhood level, the NL clicks in the
+ grid where the new block is to appear.</font></p>
+<p align="center"><font face="Arial"><img src="http://dannydking.org/games/guides/hoodmap1.jpg" width="535" height="300"></font></p>
+<p><font face="Arial">Upon doing so a </font>
+<font color="#EAE7A6" face="Arial">Block Wizard</font>
+<font face="Arial"> replace the view that </font>
+<font color="#EAE7A6" face="Arial">allows the locking or unlocking </font>
+<font face="Arial">of blocks. It is in this same space that the NL might </font>
+<font color="#EAE7A6" face="Arial">rename the block</font>
+<font face="Arial"> or </font>
+<font color="#EAE7A6" face="Arial">change the 2D icon</font>
+<font face="Arial"> that represents it (changing the icon does not necessarily change the map of the block).</font></p>
+<p align="center"><font face="Arial"><img src="http://dannydking.org/games/guides/hoodmap2.jpg" width="502" height="511"></font></p>
+<p><font face="Arial">Until the flag for Block Usage is changed to </font>
+<font color="#EAE7A6" face="Arial">free for access</font>
+<font face="Arial">, the block will not be shown on the Neighborhood Map.  The block name </font>
+<font color="#EAE7A6" face="Arial">approved by the CL</font>
+<font face="Arial"> is entered in the Name Field.  The block will always require a name listed as Block
+ Owner. Initially it may say the NL's name, however this will be replaced by the incoming BL name when
+ appropriate.</font></p>
+<p><font face="Arial">The Colony Leader has final approval of all block names, additions or removals.
+ Under no circumstances should unauthorized changing of block names, additions or removals occur.</font></p>
+<BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>

@@ -1,0 +1,13 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;
+scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr><th><center>
+  <h1>Step Two</h1>
+  <p>The next step is actually getting the bot.</p>
+  <p>After you click on "Configure Virtual Pet", you will get this screen:</p>
+  <p><img src="http://dannydking.org/games/Bot/3.jpg" width="782" height="457"></p>
+  <P>Clicking on "Select Avatar URL" will bring up the following web site: </P>
+  <P><img src="http://dannydking.org/games/Bot/3a.jpg" width="670" height="461"></P>
+  <P>For right now just click on any pet to select it.</P></center></table></td></tr></table>
+<br><br><center><a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691660&CAT=topic><b>Main</b></a></center>

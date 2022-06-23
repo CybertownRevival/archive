@@ -1,0 +1,55 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Checking your assigned hoods"</font></strong></a></p>
+<font size="3">
+<P>In your assigned neighborhoods, you should make sure to<BR>
+perform certain tasks to ensure that each neghborhood is being<BR>
+cared for and in good order. Checking the following things will<BR>
+indicate whether or not the Neighborhood Leader and the<BR>
+neighborhood staff are performing their duties:<BR><BR><BR>
+<P><center><B><U><font color=yellow>Access Rights</font></U></b><BR></center>
+<P>At least once a month check access rights to make sure that<BR>
+no one is in access in blocks that should not be there<BR>
+(i.e. staff that no longer live or work in the block, ND's in<BR>
+block access, etc.) You can check more often if you have discovered<BR>
+problems such as ND's leaving themselves in block access. Also, when<BR>
+you perform random block scans in your assigned neightborhood, while<BR>
+you are in block access, check to make sure there are no ticks in<BR>
+the access boxes for that block. Ticks are jobs checked in access rights<BR><BR><BR>
+<P><center><B><U><font color=yellow>Message Boards</font></U></b><BR></center>
+<P>Check your neighborhoods message boards at least once a<BR>
+week, or as often as you feel necessary to make sure that there<BR>
+are no inappropriate messages and that the messages boards are<BR>
+in good order and active.<BR><BR><BR>
+<P><center><B><U><font color=yellow>Random Block Scans</font></U></b><BR></center>
+<P>You should randomly scan blocks in your assigned neighborhood<BR>
+to see if the staff is doing their jobs. If a block is in bad<BR>
+order, you need to inform the NL of anything you have found or<BR>
+done in the blocks. The NL, once informed, can give warning<BR>
+letters to the staff of that block.<BR><BR><BR>
+<P><center><B><U><font color=yellow>NL Communications</font></U></b><BR></center>
+<P>Make yourself available as much as possible to help with any<BR>
+neighborhood problems that may arise. Speak with your NL<BR>
+frequently to see if they have any questions or problems, need<BR>
+help or advice and to find out how things in the neighborhood are<BR>
+going. Try to attend their neighborhood staff meetings if possible<BR>
+to help with any questions they might have and to give suggestions<BR>
+that might help improve neighborhood performance.<BR><BR><BR>
+<P><center><B><U><font color=yellow>NL Reports</font></U></b><BR></center>
+<P>Neighborhood reports are required to be given by NL's<BR>
+or ND's at the colony meetings. For CD's to keep informed of<BR>
+neighborhood changes, it would be a good idea to require a weekly or<BR>
+bi-monthly NL report. Ideally, if you are going to require an<BR>
+NL report, have the report due a few days before a colony meeting.<BR>
+If the colony meeting is normally held on Sunday, have you NL reports<BR>
+due on Thursday so that you are informed of what is going on in the<BR>
+neighborhood. If no staff member of that neighborhood attends the<BR>
+meeting, you will be prepared to report for them. You should<BR>
+require in the NL report at least what is expected to be reported<BR>
+at the colony meetings and add anything you deem necessary to know<BR>
+that the neighborhood is in good repair.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

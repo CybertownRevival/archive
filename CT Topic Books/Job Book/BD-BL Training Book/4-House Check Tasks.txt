@@ -1,0 +1,95 @@
+<table height="60%">
+<tr><td valign="top"><h2><a>House Check Tasks <img src="http://www.cybertown.com/dbimages/BK/o0/00/b6/49/f/pic_3_1.gif" width="74"
+height="79" alt="pic_3_1.gif (8859 bytes)"></a></h2>
+<p>The best little trick!  When you are making your rounds a <br>
+lot of time is wasted waiting for the chat programs to load. <br>
+If you turn off the chat modes in your house you will also <br>
+turn off the the chat mode for yourself. Now when you go <br>
+to a site in CT the chats will not load. To do this you click <br>
+on the My Info button and choose Personal. Click on the <br>
+radio button marked no chat. Remember you and house are <br>
+in the same mode so don't go on a no chat round while you <br>
+wait for people to show up for your party. Don't forget to <br>
+change your setting back to the setting you want afterwards. <br>
+<br><strong>2D House Picture</strong><br>
+<br>You should check to see if a picture is interfering with the <br>
+other parts of the page by way of size or shape. If there <br>
+is a problem with the picture try to make a constructive <br>
+suggestion. If it is a picture that is not allowed in Cybertown. <br>
+Then message the resident to please choose a better <br>
+picture. But do not unlock it.<br>
+<br><strong>Links</strong><br>
+<br>Links can be found in several places on the page. First <br>
+the active links. The home owner home page URL is right <br>
+underneath their experience. Often people forget to put <br>
+the http:// in front and the browser tries to open up the a <br>
+page on the CT server and doesn't find it. This is true for <br>
+all active links. Links to other CT 3D pages are not a good <br>
+idea as the server does not allow more than one 3D chat <br>
+connection on a browser with netscape. The Links button <br>
+exposes more active links. You can find active links is in <br>
+the Information Box and the Message Boxes. The HTML <br>
+is involved which you can't see directly so just check the <br>
+links and if their is problem tell the owner. Make an offer <br>
+to find help if that is appropriate. Inactive links are a little <br>
+harder to check as you have to type the address into your <br>
+browser. Always copy and paste it is important check the <br>
+owner's spelling not yours. </p>
+<p>Be sure to message the resident about any link problems <br>
+or say you saw their web page and it was nice. Always <br>
+compliment your residents and staff when ever possible. <br>
+It is always appreciated.<br>
+<br><strong>House Name</strong><br>
+<br>House names make it easier to find peoples houses. Ever <br>
+try to send some one to a house that has only a space for <br>
+a name or a . it is not easy.  It makes a big difference to <br>
+BLs and BDs in keepping track of residents. If you miss a <br>
+house its usually a house without a name. Encourage the use <br>
+of names. Of course certain names are not allowed. This is <br>
+serious as you can't lock out the name short of deleting the <br>
+house. Take immediate action. Report it to your BL or ND <br>
+for imediate deletion if its really bad. <br>
+<br><strong>Information Box</strong><br>
+<br>Probably the most under used resource in CT. Its the only <br>
+place you can let your personality show through. This is a bit <br>
+much for new comers just trying to get their house in order <br>
+but encouraging the better use of this facility later on is a good<br>
+idea. They may need help with the HTML. If something is <br>
+wrong here the owner probably knows about it so offer help. <br>
+<br><strong>Message Boxes</strong><br>
+<br>The Message boxes need to be set to accept HTML. The <br>
+dates and number of the messages tells you something <br>
+about the actively of the resident.  Some times the content <br>
+will tell you if a BD or BL is at work or has been slacking. <br>
+Or if someone is on vacation and when they will return.<p>
+<strong>Last Access and Experience</strong><p>
+The last access line is something that the Block Officers see <br>
+when they enter a house. If you take the exp. points subtract <br>
+50 then divide by five you get the number of visits the <br>
+resident has made. Looking at the time past from when the <br>
+resident immigrated to when he/she last accessed tells the <br>
+rate of actively of the resident. <p>
+<img src="http://www.cybertown.com/dbimages/BK/o0/00/b6/49/f/pic_3_1.gif" width="74"
+height="79" alt="pic_3_1.gif (8859 bytes)">
+<strong>Checking Inside the House</strong><p>
+Cybertown is a family Chat in houses and out. It would not be <br>
+good for a young child to come to a house where the Bot says <br>
+nasty words or with nude pictures hanginig all over the walls. <br>
+An adult BD or BL should be asigned to the task of in house <br>
+checking. If you don't have one, ask your ND or NL for help. <br>
+1. The Bot should be checked with normal speach, residents <br>
+ name, hello, hi, bye, bots name, love, hate or whatever. <br>
+2. In house pictures need checked. <br>
+3. Topic books can be opened when in the house. So check <br>
+them they are web sites that could have anything in them. <br>
+4. Photo books can have many pages of 4 pictures each. <br>
+5. Guest book also needs checked. <br>
+6. Music box can also be checked.  <br>
+7. Visit Counter needs checked. Yes it can be altered.<br>
+If you find Bad pictures or a nasty web site link you need to <br>
+contact your BL right away do not delay. It is important that <br>
+the house and contents be destroyed thus destroying the bad <br>
+objects inside.<br>
+<p><a href="#bm5">Return to top of page</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return to Start</a><br></td>
+</tr></table>

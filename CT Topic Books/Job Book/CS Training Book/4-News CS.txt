@@ -1,0 +1,22 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1>CS Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"News CS Training"</font></strong></a></p>
+<font size="3">
+<P>The News CS will work for the Communication CD.<BR>
+<P>The News CS will assist the Communication CD over the making of the<BR>
+GCN Paper and the content in the paper.<BR>
+<P>The News CS should keep up with latest colony happenings as they<BR>
+should alert colonists about upcoming events or to warn them about<BR>
+serious issues such as hacker alerts.<BR>
+<P>Many hoods do not have ND's incharge of news, but they still should<BR>
+liase with the NL's to find out which hoods have a news ND so that they<BR>
+can assit them with anything relating to hood news.<BR>
+<P>The News CS is also required to perform any other tasks that the<BR>
+Communication CD asks you to do as long as it does not break Cybertown<BR>
+nor Colony rules<BR>
+and bylaws.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c63a96a&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

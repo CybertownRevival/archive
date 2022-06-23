@@ -1,0 +1,94 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<br>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="form">Form Buttons</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Here is the code for a clickable button. It can be set to click to web pages, images, & sounds. The "value" is the text on the button.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+Note: If the "method" of "get" is not allowed on your server or with your browser , try <u>method="post"</u>.
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Copy & Paste The Code:
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+<form action="put url here" method="get"><br>
+<input type="submit" value="Click Me"><br>
+</form>
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Here is a sample button.
+</b></font>
+<p>
+<form action="http://www.angelfire.com/hi5/dannyking00/GCEC/chessbg.jpg" method="get">
+<input type="submit" value="Click Me">
+</form>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Internet Explorer users, <a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd76&CAT=topic" target=_new>Click Here</a> to add a bit of color to your form buttons.
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="trans">IE Transitions (IE4+ Only)</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Internet Explorer users might have noticed the cool transitions comimg to this Html Extra's page. This code is very simple to do. Just place this meta code between the <head> & </head> tags.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+<META http-equiv="Page-Enter"<br>
+content="revealTrans(Duration=#,Transition=#)">
+</b></font>
+<p>
+<font size="2" color="#0066ff"  face="verdana"><b>
+You will need to change two parts of this code. First, you will need to change the # after Duration to the number of seconds that you want the transition to take. Then, you will need to change the # after Transition to the number of the type of transition that you want.
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=4">
+Click here for a list of the transitions and their corresponding number value.</a>
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="icon">Favorite Icon (IE 5.0+)</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+This is an Internet Explorer 5.0+ code, it will not work with Netscape.
+<p>
+Ever save a web page and see an icon displayed in your favorites ?
+<p> 
+This can be achieved by first creating a 16X16 icon, you can look for icon software at <a href="http://www.download.com/" target="_window">Download.Com</a>. 
+After you have created your icon, name it whatever you would like, just be sure to have the .ico extension.
+Then upload your icon to the same directory that the web page is in.
+<p>
+The final step is to add the code below between the <head> and </head> tags of your html document.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+<link rel="shortcut icon" href="http://whatever.com/myicon.ico"> 
+</b></font>
+<p>
+<font size="2" face="verdana" color="#0066ff"><b>
+This will also display an icon in the URL address bar once the web page has been saved in your favorites.
+<p>
+For more on the favorite icon and an icon editor visit <a href="http://www.favicon.com/" target="_winow">Favicon.Com</a> 
+</b></font>
+</td></tr></table>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c69a063&CAT=topic">Main</a></center></P>

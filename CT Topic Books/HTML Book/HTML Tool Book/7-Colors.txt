@@ -1,0 +1,44 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center>
+<font color=skyblue>Body Colors</font>
+<br><font color=coral>Body colors are those that are set as the basic colors for your page. They cover the 
+colors of the background, text, links, visited links and activated links.</font></p>
+<P><font color=coral>The body colors are not written individually, but are all set within one body tag.For 
+example ... here is a sample body tag:</font>
+<br><font color=yellow>< body bgcolor="#99CCCC" text="#000000" link="#C0D9D9" vlink="#663399" alink="#ffcc99" ></font>
+<font color=coral><br> or</font>
+<br><font color=yellow> < body bgcolor="white" text="MidnightBlue" link="DarkMagenta" vlink="MediumOrchid" alink="DeepPink" ></font>
+</p><P></P><font color=lime>NOTE:</font>
+<font color=coral>You must only ever have ONE BODY TAG on your page, and it should be immediately after 
+your</font>
+<font color=yellow> < /head ></font>
+<font color=coral> tag.</font>
+<br><font color=coral>If you have more than one body tag, or you have it in the wrong part of your page, 
+then the page may not load correctly with some browsers!</font></p>
+<P><font color=coral>You can change various pieces of text within your page to different colors as the need 
+arises, but the body colors remain the major colors that you have selected for the rest of your page.</font></p>
+<P><font color=coral>In the following examples,</font>
+<font color=yellow>" #xxxxxx "</font>
+<font color=coral> is either the hexadecimal code, or the "colorname" for your chosen color.</font>
+</p><br><br>
+<P></P><font color=skyblue>Link Colors</font>
+<br><br><font color=white>Link color:</font>
+<br><font color=yellow>link="# xxxxxx "</font>
+<font color=coral>This code sets the color for your links. Links appear as an underlined, different colored 
+part of the text.</font>
+</p><P></P><font color=white>Visited link color:</font>
+<br><font color=yellow>vlink="# xxxxxx "</font>
+<font color=coral>This code sets the color for viewed links. It is useful for links which have been viewed 
+to change to another color.</font>
+<br><br>
+<font color=white>Activated link color:</font>
+<br><font color=yellow>alink=" #xxxxxx "</font>
+<font color=coral> This code sets the color for activated links. It simply means it flashes another color 
+when clicked.</font></p>
+</center></td></tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

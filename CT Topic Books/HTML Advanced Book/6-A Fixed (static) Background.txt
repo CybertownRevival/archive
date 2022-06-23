@@ -1,0 +1,38 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<br>
+<CENTER>
+<p>
+<p>
+<font size="4" color="white"><b>
+A Fixed (static) Background (IE only)</b></font>
+<p>
+<font color="white" size="7"><pre><b>
+For Internet Explorer users !
+
+You should be seeing
+
+this text scroll
+
+and the background
+
+image stand still !!
+
+This is a very simple
+
+code to add to your
+
+web pages to create
+
+a very cool effect !!
+
+Try it on a web page
+
+with your favorite
+
+background image.
+
+You will amaze your
+
+friends with this trick.</b></font>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c63a969&PAGE=1#fixed">Back</a></center></P>

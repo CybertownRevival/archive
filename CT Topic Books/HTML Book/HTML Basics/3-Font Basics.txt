@@ -1,0 +1,35 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><hr>
+<b>Lesson #4 - Bold, Italic & Underlined</b><br>
+<hr>
+<p>
+To make the font bold:<P>
+<XMP><B>This will be in bold</B></XMP>
+<B>This will be in bold</B><p>
+To make the font italic:<p>
+<XMP><I>This will be italic</I></XMP>
+<I>This will be italic</I><p>
+To underline your font:<p>
+<XMP><U>This will be underlined</U></XMP>
+<U>This will be underlined</U><p>
+NOTE: Always close every code you open.<p>
+<hr>
+<b>Lesson #5 - Different Fonts</b><br>
+<hr>
+<p>
+To make your font different, you must type <br>
+the exact name of the font.<p>
+<XMP><font face="Comic Sans MS">Type Text Here.</font></XMP>
+<font face="Comic Sans MS">Type Text Here.</font><p>
+NOTE: If someone doesn't have the font you <br>
+choose on their computer they will not see that <br>
+pretty font change. So don't get too exotic. <br>
+Stick with some pretty basic fonts. Always<br> 
+close your /font codes when you finish typing.<p>
+I am so forgetful I sometimes type the open and <br>
+the /close then start my typing in between.<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics 
+Home</A><BR></td>
+</tr>
+</table>

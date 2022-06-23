@@ -1,0 +1,25 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Vacations and/or Leave Of Absence"</font></strong></a></p>
+<font size="3">
+<P>If you are going to be away for vacation or an extended<BR>
+leave of absence for any reason, you must contact the CL as<BR>
+soon as possible giving the beginning date of leave and the<BR>
+date of return. Speak with other CD's and try to find someone<BR>
+to cover your assigned neighborhoods while you are away and<BR>
+inform the CL of which CD will be covering for you. Make sure<BR>
+that the NL's of your assigned neighborhoods know the dates<BR>
+that you will leave and return and who will be covering the<BR>
+neighborhoods so that they know whom to contact for<BR>
+assistance. Please add (VAC until date) to the end of your<BR>
+house name so that resident and other staff know that you are<BR>
+away and can look elsewhere for assistance if needed,<BR>
+(example: (VAC until 9-01)). It would also be a good idea to<BR>
+put a message in your personal message board with the subject<BR>
+"Vacation" and in the body of the message, give the date of<BR>
+your return and who will be covering for you.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

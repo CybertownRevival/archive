@@ -1,0 +1,25 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Image Tag<br><font color=yellow> 
+< img src="http://filename" ><font color=coral>This tag places the image on your page. NO closing tag is needed.
+For example,<font color=yellow> 
+< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif" > is the tag for:<br>
+<img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"></p></center>
+<font color=skyblue><p>Aligning the Image<br><font color=coral> 
+When you enter the tag for an image, you need to use attributes or tags to define where you want the image to appear.<br>
+If you have a line of text, and then an image on the same line, that is where it will appear. 
+For example,<br> 
+The image goes here<font color=yellow> < img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif" ><font color=coral> will appear as:
+The image goes here<img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"></p>
+<P>If you place the image on its own line, it will automatically default to the left hand margin.<br><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"><br> 
+If you want it centered on the page, simply use the <font color=yellow> < center > and < /center ><font color=coral> tags.
+For example,<font color=yellow> < center >< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif" >< /center ><font color=coral> will appear as:<br><center><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"></center><br>
+If you want it aligned at the right hand margin, use the tag<font color=yellow>
+< img src=" url filename"align=right ><font color=coral><br>
+For example, <font color=yellow>< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"align=right ><font color=coral> will appear as:<font color=yellow><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/alien13.gif"align=right></p></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

@@ -1,0 +1,25 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1>CS Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Training CS Training"</font></strong></a></p>
+<font size="3">
+<P>The Training CS will work for the Training CD.<BR>
+<P>The training CS will work with the training CD to update the training<BR>
+website and to work out new colony policies to be submited to DannyKing (CL).<BR>
+<P>The training CS should liase with the NL's and any training ND's to help<BR>
+with training staff and if that hood has a training website to make sure<BR>
+that is does not contradict the colony training website.<BR>
+<P>The training CS will be required to help the training CD with training<BR>
+new staff, the training CD used to train 60% of the staff and the CS 40%<BR>
+but that has changed. It is no longer a requirement that all staff members<BR>
+must be trained by the Training CD, but the NLs may choose to train their<BR>
+own staff. ALL NEW NLs should be trained by the Training CD though.The<BR>
+training CD will either inbox or email the training CS asking them to train<BR>
+a particular person which should be done within 48 hours.<BR>
+<P>The training CS is required to perform any tasks that the training CD<BR>
+asks them to do as long as it does not break Cybertown nor Colony rules<BR>.
+and bylaws.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c63a96a&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

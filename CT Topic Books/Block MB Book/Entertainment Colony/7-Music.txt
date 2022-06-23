@@ -1,0 +1,103 @@
+<CENTER><table height="60%"><tr>
+<td valign="top"><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><TITLE>Hood Block MB's</title>
+<center>
+          <h1>Music Hood Block MB's</h1>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<font color=yellow><b>PLEASE REMEMBER</b> that some Colonies only allow related messages on 
+their Block MBs.</font><br>
+To find out whether or not you may post event ads on a Hood or Block MB, you will need to 
+check the MB header.<br><br><br>
+In case you didn´t know, it is <b>COMMON COURTESY</b> not to post job ads or job related 
+events e.g. Job Fair)<br>on boards of competing Places.<p>
+For example if you recruit residents or staff for a Block in Games Colony you may post your
+ ad on the Games Colony MB,<br>on your Hood and on your Block MB. You should 
+not post your ad on any other Colony, Hood or Block MB.<p>
+<p align="center">Click on a Block name to begin reading the block Message Boards</p>
+	      <table border="1">
+            <tr> 
+              <th>Music Hood</th>
+            </tr>
+            <tr> 
+              <td><a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040302020000&MTY=m" Target="_Blank">Classic 
+                Rock</a></td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040305010000&MTY=m" Target="_Blank">Progressive 
+                Rock</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040303010000&MTY=m" Target="_Blank">Heavy 
+                Metal</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040303020000&MTY=m" Target="_Blank">Hip 
+                Hop & RAP</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040305020000&MTY=m" Target="_Blank">Punk 
+                Rock</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040304010000&MTY=m" Target="_Blank">Rock 
+                'n' Roll</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040302050000&MTY=m" Target="_Blank">Oldies</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040304050000&MTY=m" Target="_Blank">Jazz</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040302040000&MTY=m" Target="_Blank">Musicland</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040302060000&MTY=m" Target="_Blank">Blues</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040304060000&MTY=m" Target="_Blank">Gothic</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040302030000&MTY=m" Target="_Blank">Woodstock</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040304030000&MTY=m" Target="_Blank"><NNM>'s Recording Studio</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040304040000&MTY=m" Target="_Blank">Worldmusic</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040303030000&MTY=m" Target="_Blank">Country</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0104040301010000&MTY=m" Target="_Blank">The 
+                Music Mall</a> </td>
+            </tr>
+          </table>
+		  <p align="center"><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fbc&CAT=topic">Return to Main</a></p>
+		 </center>

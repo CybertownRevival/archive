@@ -1,0 +1,41 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<CENTER><H2>HTML Book List</H2>
+<table height="10%">
+<tr>
+<td><font size=4 face="Arial">
+<center><img src=http://www.cybertown.com/java/contact/chatimg/caution.gif>
+This is the list of HTML related books that we have available.<br>These have anything and everything to do with using HTML in your MBs, 2D House, etc.
+<img src=http://www.cybertown.com/java/contact/chatimg/caution.gif><br></font>
+<font size=3 face="Arial">
+Please inbox requests for changes etc to DannyKing. </font></center>
+<br>
+<font face="Arial" size=3><br>Copies of this Master Master Book BooK are available at <a 
+href=http://www.cybertown.com/home/justmyself target=new>
+Games Colony Educational Center</a>. Voluntary donations are welcome.
+Please buy as many books as you wish! Or if you want extra
+copies, feel free to copy the code, buy a 10CC Topic Book at Homebuilders
+and create your own additional BooK. Thank you!<br>
+</font><p><center>
+<table height="60%"><table border="1">
+<tr><th>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic" target=_new>HTML Tool Book</a>
+</td></tr><tr><th>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic" target=_new>HTML Basics Book</a>
+</th></tr><tr><th>
+FUTURE USE
+</th></tr><tr><th>
+FUTURE USE
+</th></tr><tr><th>
+FUTURE USE
+</th></tr><tr><th>
+FUTURE USE
+</th></tr><tr><th>
+FUTURE USE
+</table></center></td></tr></table><BR>
+Please report any changes or mistakes to <a href=/home/DannyKing>DannyKing</a>.<br>
+Thank you and have fun!
+</td></td></td>
+</tr>
+</table></table>
+<BR>
+<a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691662&CAT=topic><b>Main</b></a><BR>

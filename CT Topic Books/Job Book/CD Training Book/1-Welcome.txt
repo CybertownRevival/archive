@@ -1,0 +1,28 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Welcome"</font></strong></a></p>
+<font size="3">
+<P>Welcome to Games Colony and congratulations on your new<BR>
+position here.  This training guide is here to help you learn<BR>
+your new role as Colony Deputy.  Hopefully this guide will<BR>
+also make the transition from Neighborhood Leader to Colony<BR>
+Deputy smoother and less confusing for you. Sometimes the<BR>
+line between NL and CD can be hard to establish because you<BR>
+are now giving the NL duties that you have performed for so<BR>
+long. You have worked hard in your neighborhood as NL and have<BR>
+put a lot of time and effort into getting the neighborhood to<BR>
+run smoothly and definitely deserve your new promotion.<BR>
+<P>When you first became an NL, you brought your own ideas and<BR>
+creativity into the neighborhood where you were working. Now<BR>
+that you are a Colony Deputy, you need to remember that each NL<BR>
+should be given the opportunity that you were given, to try new<BR>
+things and implement some of their own ideas. Listen to their<BR>
+ideas, you may learn something new. You can give them advice<BR>
+and suggestions that will help guide them in the right direction<BR>
+but let your NL's do their jobs. You are there to train, help<BR>
+and guide them, not to perform their duties for them<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

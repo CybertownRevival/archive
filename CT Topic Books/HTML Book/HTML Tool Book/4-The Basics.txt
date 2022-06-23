@@ -1,0 +1,29 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr>
+<td valign="top"><center>
+<p></p><font color=white size=3>*Centering*</font><br></center>
+<font color=yellow>< center ></font>
+<font color=coral>This command will cause whatever follows to be centered in the next line in the page. You
+ must always close with the</font>
+<font color=yellow>< /center ></font>
+<font color=coral>tag.For example:</font>
+<font color=yellow>< center >This text is centered</font>
+<font color=yellow> < /center ></font>
+<font color=coral>will appear as:</font>
+<P></P><center><font color=skyblue>This text is centered</font>
+<P><font color=coral>Images can also be centered as well. Basically, anything can be centered.</font></p>
+<P></P><br><font color=white>*Bold Letters*<br></font>
+<font color=yellow>< b ></font>
+<font color=coral><br>This tag causes the letters to be bold. You must always close with the</font>
+<font color=yellow>< /b ></font>
+<font color=coral> tag.</font></p>
+<P></P><BR><font color=white>*Italics*</font>
+<br><font color=yellow>< i ></font>
+<font color=coral><br>This tag causes the letters to be italicised. You must always close with the</font>
+<font color=yellow>< /i > tag.</font></p>  
+</center></td></tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

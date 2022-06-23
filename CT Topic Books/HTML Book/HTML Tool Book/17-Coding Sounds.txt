@@ -1,0 +1,22 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Music<br><font color=skyblue>Coding Sounds<br><font color=coral><br>The embed code is for users of Netscape while the bgsound code is for Internet Explorer.<br>It is best to use both in your coding to allow for both of those browsers.<br>Since we cannot use the <font color=yellow>EMBED <font color=coral>tag in topic books,I will go ahead and use the code here without the <font color=yellow>E for embed.</p>
+<center>
+<font color=yellow><font size=3>
+   mbed src="http://www.gamescolony.org/neighborhoods/sea2d/voiceofenigma.mid" ><br><br>
+< bgsound=http://www.gamescolony.org/neighborhoods/sea2d/voiceofenigma.mid >
+<P>Or ,in all its glory:</p>
+   mbed src="http://www.gamescolony.org/neighborhoods/sea2d/voiceofenigma.mid" autostart= true loop=true height=25 width =75 ><br><br>
+< bgsound="http://www.gamescolony.org/neighborhoods/sea2d/voiceofenigma.mid" ><br><br>
+  mbed src="http://www.gamescolony.org/neighborhoods/sea2d/voiceofenigma.mid" autostart=false loop=false height=25 width=75>
+<font color=skyblue>
+<P>The "autostart command" can be either True or False.<br><br>The "Loop command" can be 0-(any number of times you wish to repeat the sound by "looping it)EX:Loop=3....the sound will play 3 times then stop.<br>If you have Loop="true",the sound will play until someone shuts it off with the player.</p>
+<P>The <font color=white>height and width command <font color=skyblue>allows you to make the "player"any size you want</p>
+<P>Click onto the link below to see the results and also full coding</p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?ac=listhdr&DTY=CL&KTY=ID&KEY=CL00000000008f2e&MTY=m" target=_"new">Sound Codes</a></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

@@ -1,0 +1,32 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="##33FF00" size="4" face="Arial"><strong>CHANGING THE BLOCK MAP</strong></font></p>
+<p> </p>
+<p><font size="3" face="Arial">There are a </font>
+<font color="#EAE7A6" size="3" face="Arial">variety of block maps available</font>
+<font size="3" face="Arial"> and each vary in the number of homesites it can accommodate. Block maps can be changed at any time </font>
+<font color="#EAE7A6" size="3" face="Arial">HOWEVER</font>
+<font size="3" face="Arial"> doing so </font>
+<font color="#EAE7A6" size="3" face="Arial">can cause side affects</font>
+<font size="3" face="Arial"> that may not be desirable. A block map should <u>NOT</u> be changed unless the </font>
+<font color="#EAE7A6" size="3" face="Arial">NL has been consulted and approval sought.</font>
+<font size="3" face="Arial"> </font></p>
+<p align="center"><img src="http://dannydking.org/games/guides/mapaccss2.jpg" width="494"
+height="501"></p>
+<p><font size="3" face="Arial">Access to maps available occurs through the UPDATE button. At the bottom is
+ the link to change the </font>
+<font color="#EAE7A6" size="3" face="Arial">background image</font>
+<font size="3" face="Arial"> (ie. block map).</font></p>
+<p align="center"><font size="3" face="Arial">
+<img src="http://dannydking.org/games/guides/mapaccss1.jpg" width="316" height="129"></font></p>
+<p><font size="3" face="Arial">The biggest repercussion for changing the map is that </font>
+<font color="#EAE7A6" size="3" face="Arial">existing homes may end up being placed on roads, pipes, landmarks etc</font>
+<font size="3" face="Arial"> on the new map which of course is NOT desirable. Careful consideration should
+ be given when a block is </font><font color="#EAE7A6" size="3" face="Arial">initially created</font>
+ <font size="3" face="Arial">.  While it is obviously possible to change the map at a later date, it is a
+ little more complicated to accommodate. </font></p><BR>
+ <P><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>
+</body></html>

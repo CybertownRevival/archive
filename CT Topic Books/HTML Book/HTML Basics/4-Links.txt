@@ -1,0 +1,32 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><hr>
+<b>Lesson #6 - How to make a link</b><br>
+<hr>
+<p>
+To make a link to another web page you have <br>
+to have the correct URL for the page you want <br>
+to hyperlink to. Normally the link will show in <br>
+your browser go to URL window when you are <br>
+on that web page.<p>
+<XMP><A HREF="http://www.horse-feathers.com">Art</A></XMP>
+<A HREF="http://www.horse-feathers.com">Art</A><p>
+When people click on <u>Art</u>, the link goes <br>
+directly to the web site. Remember to include <br>
+the quotes, or it won't work. The <XMP></A></XMP> <br>
+is the closing for all links. Please do not forget it. <br>
+This link will open directly inside the message board. <p>
+If we want the new link to open another browser <br>
+window so the viewer will stay connected to <br>
+Cybertown. The Target="new" command will <br>
+open a new browser window. You have to put <br>
+the new address in between the first quotes <br>
+replacing http://horse-feathers.com be sure to <br>
+include including all the quotes.<br>
+<XMP><a href="http://horse-feathers.com" target="new">Art</a></XMP> 
+<a href="http://horse-feathers.com" target="new">Art</a>
+<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics 
+Home</A><BR></td>
+</tr>
+</table>

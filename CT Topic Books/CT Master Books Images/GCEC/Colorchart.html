@@ -1,0 +1,1684 @@
+<html>
+
+<!--  Created with the CoffeeCup HTML Editor  -->
+
+<!--         http://www.coffeecup.com         -->
+
+<!--       Brewed on 5/10/03 2:45:08 PM       -->
+
+<head>
+
+  <title>Color Picker of Named Colors</title>
+
+
+
+<style type="text/css">
+
+<!--
+
+
+
+#colors {background-color: #00FFFF; font-weight: 700; font-size: smaller;}
+
+
+
+-->
+
+</style>
+
+
+
+<script language="javascript">
+
+<!--
+
+
+
+var freeze = 0;
+
+var delayReset = 0;
+
+
+
+function toggleFreeze( MyStyle ) {
+
+	if ( freeze == 0 ){
+
+		freeze = 1;
+
+		MyStyle.color = document.all.colors.style.backgroundColor;
+
+		MyStyle.backgroundColor="";
+
+		delayReset = 1;
+
+		return MyStyle;
+
+	}
+
+	else freeze = 0;
+
+}
+
+
+
+function changeColors( MyStyle,bgColor ){
+
+
+
+	if ( freeze == 0 ){
+
+		colors.style.backgroundColor = bgColor ;
+
+		MyStyle.color = "black";
+
+		MyStyle.backgroundColor = "white";
+
+	}
+
+	return MyStyle;
+
+}
+
+
+
+function resetColors( MyStyle ){
+
+	if ( freeze == 0 & delayReset == 0 ){
+
+		MyStyle.color = document.all.colors.style.backgroundColor;
+
+		MyStyle.backgroundColor = "";
+
+	}
+
+	if ( delayReset == 1 & freeze == 0 ){
+
+		delayReset = 0;
+
+	}
+
+	return MyStyle;
+
+}
+
+
+
+-->
+
+</script>
+
+
+
+</head>
+
+
+
+<body bgcolor="#330099" text="#FFFF00" topmargin="0" bottommargin="0" rightmargin="0"  link="#FF3333" vlink="#FFCC99" alink="#33CCFF">
+
+
+
+<center><h1><font color="#FFFFFF">Color Picker With Named Colors</font></h1></center>
+
+<center>
+
+
+
+<p>First pick a background color by putting you mouse cursor over it. The table background will change as you go over each color. When you find a good color click on it this will freeze the background on that color so you can scroll to see what all the colors look like with that background. Unfreeze the background by clicking on any color. </p>
+
+
+
+<table id="colors" cellspacing="2" cellpadding="2" border="2">
+
+  <tr><!-- Row 1 -->
+
+    <td style="color: AliceBlue;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'AliceBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">AliceBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F0F8FF</td>
+
+    <td style="color: AntiqueWhite;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'AntiqueWhite');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">AntiqueWhite</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FAEBD7</td>
+
+    <td style="color: Aqua;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Aqua');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Aqua</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00FFFF</td>
+
+    <td style="color: Aquamarine;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Aquamarine');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Aquamarine</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#7FFFD4</td>
+
+  </tr>
+
+  <tr><!-- Row 2 -->
+
+    <td style="color: Azure;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Azure');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Azure</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F0FFFF</td>
+
+    <td style="color: Beige;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Beige');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Beige</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F5F5DC</td>
+
+    <td style="color: Bisque;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Bisque');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Bisque</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFE4C4</td>
+
+    <td style="color: Black;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Black');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Black</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#000000</td>
+
+	</tr>
+
+  <tr><!-- Row 3 -->
+
+    <td style="color: BlanchedAlmond;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'BlanchedAlmond');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">BlanchedAlmond</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFEBCD</td>
+
+    <td style="color: Blue;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Blue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Blue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#0000FF</td>
+
+    <td style="color: BlueViolet;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'BlueViolet');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">BlueViolet</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#8A2BE2</td>
+
+    <td style="color: Brown;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Brown');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Brown</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#A52A2A</td>
+
+  </tr>
+
+  <tr><!-- Row 4 -->
+
+    <td style="color: BurlyWood;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'BurlyWood');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">BurlyWood</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DEB887</td>
+
+    <td style="color: CadetBlue;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'CadetBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">CadetBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#5F9EA0</td>
+
+    <td style="color: Chartreuse;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Chartreuse');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Chartreuse</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#7FFF00</td>
+
+    <td style="color: Chocolate;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Chocolate');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Chocolate</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#D2691E</td>
+
+  </tr>
+
+  <tr><!-- Row 5 -->
+
+    <td style="color: Coral;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Coral');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Coral</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF7F50</td>
+
+    <td style="color: CornflowerBlue;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'CornflowerBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">CornflowerBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#6495ED</td>
+
+    <td style="color: Cornsilk;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Cornsilk');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Cornsilk</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFF8DC</td>
+
+    <td style="color: Crimson;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Crimson');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Crimson</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DC143C</td>
+
+  </tr>
+
+  <tr><!-- Row 6 -->
+
+    <td style="color: Cyan;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Cyan');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Cyan</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00FFFF</td>
+
+    <td style="color: DarkBlue;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00008B</td>
+
+    <td style="color: DarkCyan;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkCyan');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkCyan</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#008B8B;</td>
+
+    <td style="color: DarkGoldenRod;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkGoldenRod');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkGoldenRod</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#B8860B</td>
+
+  </tr>
+
+  <tr><!-- Row 7 -->
+
+    <td style="color: DarkGray;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkGray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkGray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#A9A9A9</td>
+
+    <td style="color: DarkGreen;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#006400</td>
+
+    <td style="color: DarkKhaki;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkKhaki');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkKhaki</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#BDB76B</td>
+
+    <td style="color: DarkMagenta;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkMagenta');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkMagenta</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#8B008B</td>
+
+  </tr>
+
+  <tr><!-- Row 8 -->
+
+    <td style="color: DarkOliveGreen;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkOliveGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkOliveGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#556B2F</td>
+
+    <td style="color: Darkorange;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Darkorange');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Darkorange</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF8C00</td>
+
+    <td style="color: DarkOrchid;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkOrchid');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkOrchid</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#9932CC</td>
+
+    <td style="color: DarkRed;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkRed');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkRed</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#8B0000</td>
+
+  </tr>
+
+  <tr><!-- Row 9 -->
+
+    <td style="color: DarkSalmon;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkSalmon');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkSalmon</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#E9967A</td>
+
+    <td style="color: DarkSeaGreen;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkSeaGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkSeaGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#8FBC8F</td>
+
+    <td style="color: DarkSlateBlue;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkSlateBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkSlateBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#483D8B</td>
+
+    <td style="color: DarkSlateGray;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkSlateGray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkSlateGray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#2F4F4F</td>
+
+  </tr>
+
+  <tr><!-- Row 10 -->
+
+    <td style="color: DarkTurquoise;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkTurquoise');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkTurquoise</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00CED1</td>
+
+    <td style="color: DarkViolet;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'DarkViolet');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DarkViolet</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#9400D3</td>
+
+    <td style="color: DeepPink;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'DeepPink');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DeepPink</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF1493</td>
+
+    <td style="color: DeepSkyBlue;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'DeepSkyBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DeepSkyBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00BFFF</td>
+
+  </tr>
+
+  <tr><!-- Row 11 -->
+
+    <td style="color: DimGray;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'DimGray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DimGray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#696969</td>
+
+    <td style="color: DodgerBlue;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'DodgerBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">DodgerBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#1E90FF</td>
+
+    <td style="color: FireBrick;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'FireBrick');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">FireBrick</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#B22222</td>
+
+    <td style="color: FloralWhite;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'FloralWhite');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">FloralWhite</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFAF0</td>
+
+  </tr>
+
+  <tr><!-- Row 12 -->
+
+    <td style="color: ForestGreen;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'ForestGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">ForestGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#228B22</td>
+
+    <td style="color: Fuchsia;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Fuchsia');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Fuchsia</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF00FF</td>
+
+    <td style="color: Gainsboro;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Gainsboro');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Gainsboro</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DCDCDC</td>
+
+    <td style="color: GhostWhite;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'GhostWhite');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">GhostWhite</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F8F8FF</td>
+
+	</tr>
+
+  <tr><!-- Row 13 -->
+
+    <td style="color: Gold;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Gold');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Gold</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFD700</td>
+
+    <td style="color: GoldenRod;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'GoldenRod');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">GoldenRod</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DAA520</td>
+
+    <td style="color: Gray;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Gray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Gray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#808080</td>
+
+    <td style="color: Green;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Green');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Green</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#008000</td>
+
+  </tr>
+
+  <tr><!-- Row 14 -->
+
+    <td style="color: GreenYellow;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'GreenYellow');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">GreenYellow</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#ADFF2F</td>
+
+    <td style="color: HoneyDew;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'HoneyDew');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">HoneyDew</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F0FFF0</td>
+
+    <td style="color: HotPink;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'HotPink');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">HotPink</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF69B4</td>
+
+    <td style="color: IndianRed;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'IndianRed');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">IndianRed</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#CD5C5C</td>
+
+  </tr>
+
+  <tr><!-- Row 15 -->
+
+    <td style="color: Indigo;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Indigo');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Indigo</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#4B0082</td>
+
+    <td style="color: Ivory;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Ivory');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Ivory</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFFF0</td>
+
+    <td style="color: Khaki;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Khaki');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Khaki</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F0E68C</td>
+
+    <td style="color: Lavender;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Lavender');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Lavender</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#E6E6FA</td>
+
+  </tr>
+
+  <tr><!-- Row 16 -->
+
+    <td style="color: LavenderBlush;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'LavenderBlush');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LavenderBlush</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFF0F5</td>
+
+    <td style="color: LawnGreen;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'LawnGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LawnGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#7CFC00</td>
+
+    <td style="color: LemonChiffon;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'LemonChiffon');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LemonChiffon</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFACD</td>
+
+    <td style="color: LightBlue;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#ADD8E6</td>
+
+  </tr>
+
+  <tr><!-- Row 17 -->
+
+    <td style="color: LightCoral;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightCoral');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightCoral</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F08080</td>
+
+    <td style="color: LightCyan;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightCyan');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightCyan</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#E0FFFF</td>
+
+    <td style="color: LightGoldenRodYellow;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightGoldenRodYellow');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightGoldenRodYellow</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FAFAD2</td>
+
+    <td style="color: LightGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#90EE90</td>
+
+  </tr>
+
+  <tr><!-- Row 18 -->
+
+    <td style="color: LightGrey;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightGrey');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightGrey</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#D3D3D3</td>
+
+    <td style="color: LightPink;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightPink');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightPink</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFB6C1</td>
+
+    <td style="color: LightSalmon;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightSalmon');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightSalmon</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFA07A</td>
+
+    <td style="color: LightSeaGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightSeaGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightSeaGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#20B2AA</td>
+
+  </tr>
+
+  <tr><!-- Row 19 -->
+
+    <td style="color: LightSkyBlue;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightSkyBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightSkyBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#87CEFA;</td>
+
+    <td style="color: LightSlateGray;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightSlateGray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightSlateGray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#778899</td>
+
+    <td style="color: LightSteelBlue;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightSteelBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightSteelBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#B0C4DE</td>
+
+    <td style="color: LightYellow;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'LightYellow');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LightYellow</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFFE0</td>
+
+  </tr>
+
+  <tr><!-- Row 20 -->
+
+    <td style="color: Lime;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Lime');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Lime</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00FF00</td>
+
+    <td style="color: LimeGreen;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'LimeGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">LimeGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#32CD32</td>
+
+    <td style="color: Linen;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Linen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Linen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FAF0E6</td>
+
+    <td style="color: Magenta;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Magenta');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Magenta</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF00FF</td>
+
+  </tr>
+
+  <tr><!-- Row 21 -->
+
+    <td style="color: Maroon;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Maroon');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Maroon</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#800000</td>
+
+    <td style="color: MediumAquaMarine;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumAquaMarine');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumAquaMarine</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#66CDAA;</td>
+
+    <td style="color: MediumBlue;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#0000CD</td>
+
+    <td style="color: MediumOrchid;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumOrchid');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumOrchid</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#BA55D3</td>
+
+  </tr>
+
+  <tr><!-- Row 22 -->
+
+    <td style="color: MediumPurple;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumPurple');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumPurple</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#9370D8</td>
+
+    <td style="color: MediumSeaGreen;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumSeaGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumSeaGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#3CB371</td>
+
+    <td style="color: MediumSlateBlue;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumSlateBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumSlateBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#7B68EE</td>
+
+    <td style="color: MediumSpringGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumSpringGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumSpringGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00FA9A</td>
+
+	</tr>
+
+  <tr><!-- Row 23 -->
+
+    <td style="color: MediumTurquoise;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumTurquoise');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumTurquoise</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#48D1CC</td>
+
+    <td style="color: MediumVioletRed;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'MediumVioletRed');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MediumVioletRed</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#C71585</td>
+
+    <td style="color: MidnightBlue;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'MidnightBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MidnightBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#191970</td>
+
+    <td style="color: MintCream;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'MintCream');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MintCream</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F5FFFA</td>
+
+  </tr>
+
+  <tr><!-- Row 24 -->
+
+    <td style="color: MistyRose;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'MistyRose');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">MistyRose</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFE4E1</td>
+
+    <td style="color: Moccasin;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Moccasin');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Moccasin</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFE4B5</td>
+
+    <td style="color: NavajoWhite;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'NavajoWhite');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">NavajoWhite</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFDEAD</td>
+
+    <td style="color: Navy;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Navy');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Navy</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#000080</td>
+
+  </tr>
+
+  <tr><!-- Row 25 -->
+
+    <td style="color: OldLace;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'OldLace');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">OldLace</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FDF5E6</td>
+
+    <td style="color: Olive;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Olive');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Olive</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#808000</td>
+
+    <td style="color: OliveDrab;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'OliveDrab');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">OliveDrab</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#6B8E23</td>
+
+    <td style="color: Orange;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Orange');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Orange</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFA500</td>
+
+  </tr>
+
+  <tr><!-- Row 26 -->
+
+    <td style="color: OrangeRed;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'OrangeRed');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">OrangeRed</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF4500</td>
+
+    <td style="color: Orchid;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Orchid');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Orchid</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DA70D6</td>
+
+    <td style="color: PaleGoldenRod;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'PaleGoldenRod');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PaleGoldenRod</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#EEE8AA</td>
+
+    <td style="color: PaleGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'PaleGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PaleGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#98FB98</td>
+
+  </tr>
+
+  <tr><!-- Row 27 -->
+
+    <td style="color: PaleTurquoise;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'PaleTurquoise');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PaleTurquoise</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#AFEEEE</td>
+
+    <td style="color: PaleVioletRed;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'PaleVioletRed');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PaleVioletRed</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#D87093</td>
+
+    <td style="color: PapayaWhip;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'PapayaWhip');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PapayaWhip</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFEFD5</td>
+
+    <td style="color: PeachPuff;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'PeachPuff');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PeachPuff</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFDAB9</td>
+
+  </tr>
+
+  <tr><!-- Row 28 -->
+
+    <td style="color: Peru;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Peru');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Peru</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#CD853F</td>
+
+    <td style="color: Pink;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Pink');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Pink</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFC0CB</td>
+
+    <td style="color: Plum;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Plum');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Plum</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#DDA0DD</td>
+
+    <td style="color: PowderBlue;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'PowderBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">PowderBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#B0E0E6</td>
+
+  </tr>
+
+  <tr><!-- Row 29 -->
+
+    <td style="color: Purple;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Purple');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Purple</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#800080</td>
+
+    <td style="color: Red;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Red');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Red</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF0000</td>
+
+    <td style="color: RosyBrown;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'RosyBrown');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">RosyBrown</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#BC8F8F</td>
+
+    <td style="color: RoyalBlue;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'RoyalBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">RoyalBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#4169E1</td>
+
+  </tr>
+
+  <tr><!-- Row 30 -->
+
+    <td style="color: SaddleBrown;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'SaddleBrown');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SaddleBrown</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#8B4513</td>
+
+    <td style="color: Salmon;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Salmon');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Salmon</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FA8072</td>
+
+    <td style="color: SandyBrown;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'SandyBrown');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SandyBrown</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F4A460</td>
+
+    <td style="color: SeaGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'SeaGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SeaGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#2E8B57</td>
+
+  </tr>
+
+  <tr><!-- Row 31 -->
+
+    <td style="color: SeaShell;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'SeaShell');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SeaShell</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFF5EE</td>
+
+    <td style="color: Sienna;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Sienna');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Sienna</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#A0522D</td>
+
+    <td style="color: Silver;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Silver');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Silver</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#C0C0C0</td>
+
+    <td style="color: SkyBlue;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'SkyBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SkyBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#87CEEB</td>
+
+  </tr>
+
+  <tr><!-- Row 32 -->
+
+    <td style="color: SlateBlue;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'SlateBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SlateBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#6A5ACD</td>
+
+    <td style="color: SlateGray;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'SlateGray');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SlateGray</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#708090</td>
+
+    <td style="color: Snow;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Snow');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Snow</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFAFA</td>
+
+    <td style="color: SpringGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'SpringGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SpringGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#00FF7F</td>
+
+	</tr>
+
+  <tr><!-- Row 33 -->
+
+    <td style="color: SteelBlue;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'SteelBlue');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">SteelBlue</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#4682B4</td>
+
+    <td style="color: Tan;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Tan');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Tan</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#D2B48C</td>
+
+    <td style="color: Teal;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Teal');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Teal</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#008080</td>
+
+    <td style="color: Thistle;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Thistle');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Thistle</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#D8BFD8</td>
+
+  </tr>
+
+  <tr><!-- Row 34 -->
+
+    <td style="color: Tomato;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'Tomato');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Tomato</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FF6347</td>
+
+    <td style="color: Turquoise;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'Turquoise');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Turquoise</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#40E0D0</td>
+
+    <td style="color: Violet;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Violet');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Violet</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#EE82EE</td>
+
+    <td style="color: Wheat;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'Wheat');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Wheat</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F5DEB3</td>
+
+  </tr>
+
+  <tr><!-- Row 35 -->
+
+    <td style="color: White;" width=130><!-- Color 1 -->
+
+		<div  onmouseover = "changeColors(this.style,'White');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">White</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFFFF</td>
+
+    <td style="color: WhiteSmoke;" width=130><!-- Color 2 -->
+
+		<div  onmouseover = "changeColors(this.style,'WhiteSmoke');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">WhiteSmoke</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#F5F5F5</td>
+
+    <td style="color: Yellow;" width=130><!-- Color 3 -->
+
+		<div  onmouseover = "changeColors(this.style,'Yellow');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">Yellow</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#FFFF00</td>
+
+    <td style="color: YellowGreen;" width=130><!-- Color 4 -->
+
+		<div  onmouseover = "changeColors(this.style,'YellowGreen');"
+
+		onmouseout = "resetColors(this.style);"
+
+		onclick = "toggleFreeze(this.style);">YellowGreen</div></td>
+
+    <td align="center" bgcolor="#008000" width=50>#9ACD32</td>
+
+  </tr>
+
+
+
+</table></center><center><BR><BR><BR><h1>Brought to you by Games Colony</h1></center><BR><BR><BR>
+
+
+
+</body>
+
+</html>
+
+
+

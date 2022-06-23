@@ -1,0 +1,39 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Security Tools"</font></strong></a></p>
+<font size="3">
+<P>After you have had security training, you will be given<BR>
+security tools that will help you perform certain tasks in<BR>
+the colony. Make sure that you keep up with any updated<BR>
+Cybertown policies regarding security issues. Familiarize<BR>
+yourself with the Unified Ban Policy (UBP) so that you<BR>
+know the current standards on Banning & Gagging. Your<BR>
+security tools will be used for the following reasons:<BR><BR><BR>
+<P><a name="w18"><strong><font size="3" color=yellow>"Banning and Gagging"</font></strong></a></p>
+<P>When you "Ban" or "Gag" a Cybertown citizen, make<BR>
+sure to keep copies of any information such as screen shots,<BR>
+logs, emails, etc. that gives the needed proof that the<BR>
+citizen was disobeying Cybertown Policy or Law so that it<BR>
+may be submitted to CT Security or CERB if requested.<BR><BR><BR>
+<p><a name="w18"><strong><font size="3" color=yellow>"Background Checks"</font></strong></a></p> 
+<P>Background Checks, (BCG's) must be done on any<BR>
+perspective colony staff member from the rank of<BR>
+Neighborhood Deputy and up for security reasons. The NL<BR>
+in your assigned neighborhoods should request a security<BR>
+check from you before hiring an ND. If you are away, an<BR>
+NL may request a security check from another CD in the colony.<BR><BR><BR> 
+<p><a name="w18"><strong><font size="3" color=yellow>"Deleting Homes with Inappropriate Material"</font></strong></a></p>
+<P>Occasionally you will need to delete homes with<BR>
+inappropriate material such as house names, inappropriate<BR>
+images, bot/pet conduct, links, etc.  With Security Tools,<BR>
+you can have the option to delete resident homes before the<BR>
+31-day inactivity rule. It is a good idea to keep records of<BR>
+all homes you need to delete due to inappropriate material.<BR>
+Keep information such as, which neighborhood/block, house name,<BR>
+resident name, what inappropriate material was found and any<BR>
+other information you feel is necessary.<BR> 
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

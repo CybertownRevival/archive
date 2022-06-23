@@ -1,0 +1,160 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}
+</style>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="textarea">Textarea Box For Codes</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+A nice way to show HTML codes on your web site is to place the HTML codes into a Textarea Box. This will show the HTML codes and make them easy to copy and paste.</b> 
+<p><b>
+Here is the code to create a Textarea Box. I have added some HTML code within the box in my example code here to show you where it goes.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;FORM&gt;</b></font><br>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;TEXTAREA COLS="48" ROWS="3"&gt;</b></font><br>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;a href="http://www.games.com/"&gt;</b></font><br>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;img src="http://www.games.com/banner1.gif"&gt;&lt;/a&gt;</b></font><br>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;/TEXTAREA&gt;</b></font><br>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;/FORM&gt;</b></font><br>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Here is the result of that code above.<br>
+Adjust the COLS and ROWS to suit your needs.
+</b></font>
+<p>
+<FORM>
+<TEXTAREA COLS="48" ROWS="3">
+<a href="http://www.games.com/">
+<img src="http://www.games.com/banner1.gif"></a>
+</TEXTAREA>
+</FORM>
+<font size="2" color="#0066ff" face="verdana"><b>
+Internet Explorer users, <a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd76&CAT=topic" target=_blank>Click Here</a> to add a bit of color to your textarea boxes.
+</b></font>
+</td></tr></table><br>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="tabletalk">Table Talk!</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Let's Talk Tables ! This section will have everything tables.<br>
+From getting started to mini lessons on what tables can do.
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd75&CAT=topic" target=_blank>Click Here For The Table Talk</a>
+</b></font>
+</td></tr></table><br>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="indent">Indenting Text</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+You can indent text by using a single spacer code, each one of these codes is equal to a hit on the spacebar. 
+Here is the code</b></font> <font size="2" color="#c71585" face="verdana"><b>&ampnbsp;</b></font> <font size="2" color="#0066ff" face="verdana"><b>and here is how to use it in a paragraph.</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&ampnbsp;&ampnbsp;&ampnbsp;&ampnbsp;This line of text will be indented.&lt;br&gt;<br>
+The rest of your paragraph will go&lt;br&gt;<br>
+on as usual, this is an easy way to&lt;br&gt;<br>
+indent a single line in a paragraph.
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+You can use the single spacer code any place that requires<br>
+a little horizontal space. Perhaps between two images or<br>
+between an image and some text. It's a handy code to have around.
+<p>
+You can also indent text using CSS, visit <a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd76&CAT=topic" target=_blank>Easy CSS Tricks</a>.
+</b></font>
+</td></tr></table><br>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="close">Close Window</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+So, you have created a new window and would like a button (or text link) to allow the viewer to close it.
+Below is the code to close a window with either a button or a text link.
+<p>
+Close Window Button:
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;form&gt;<br>
+&lt;input type="button" value="Close Window" onClick="self.close()"&gt;<br>
+&lt;/form&gt;
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Close Window Text Link:
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;a href="Javascript:self.close();"&gt;Close Window&lt;/a&gt;
+</b></font>
+</td></tr></table><br>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="reload">Back/Reload Button</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Add a button to your web page that will take the viewer back to the previous page. This code can be adjusted to go back more than one page, just change the (-1) to the number of pages you would like to go back to. To use this code to make a "forward" button remove the minus sign and just use a number value (1). To use this button as a "reload" button, just change the (-1) to the number (0).
+<p>
+Go Back Button:
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;form&gt;<br>
+&lt;input type="button" value="Go Back" onClick="history.go(-1)"&gt;<br>
+&lt;/form&gt;
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Go Back Text Link:
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;a href="Javascript:history.go(-1);"&gt;Go Back&lt;/a&gt;
+</b></font>
+</td></tr></table><br>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="basefont">Setting A BaseFont</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+If most your text on a web page is going to be the same size and/or have the same font face, then use this little code to set the default text size and/or font face. Place this code right after your &lt;body&gt; line of code and set whatever values you would like for your default text size and/or font face.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+&lt;basefont size="2" face="verdana"&gt;
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+All the text on your web page will be in that size and/or face unless you override this code by adding the size and face to some specific text on your web page.
+</b></font>
+</td></tr></table><br>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c69a063&CAT=topic">Main</a></center></P>

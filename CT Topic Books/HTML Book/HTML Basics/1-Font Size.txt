@@ -1,0 +1,32 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><hr>
+Lesson #2 - Font Size<br>
+<hr>
+Font Size Codes for Messages.<p> 
+H = Headline you can also do headlines<p>
+NOTE: Short code is best for Message <br>
+Boards, as there space is limited.<br>
+The code is a little shorter for headlines <br>
+then the font code so compare them.<p>  
+<XMP><H1>Enter Headline 1 Here</h1></XMP>
+<H1>Enter Headline 1 Here</h1><br>
+<XMP><H2>Enter Headline 2 Here</h2></XMP>
+<H2>Enter Headline 2 Here</h2><br>
+<XMP><H3>Enter Headline 3 Here</h3></XMP>
+<H3>Enter Headline 3 Here</h3><br>
+<XMP><H4>Enter Headline 4 Here</h4></XMP><p>
+<H4>Enter Headline 4 Here</h4><p>
+Another way to make a font larger,<br> 
+is by using font tags.<p>
+<XMP><font size=+4>Font +4 Text</font></XMP>
+<font size=+4>Font +4 Text</font><br>
+<XMP><font size=+3>Font +3 Text</font></XMP>
+<font size=+3>Font +3 Text</font><br>
+<XMP><font size=+2>Enter Font +2 Text Here</font></XMP>
+<font size=+2>Enter Font +2 Text Here</font><br>
+<XMP><font size=+1>Enter Font +1 Text Here</font></XMP>
+<font size=+1>Enter Font +1 Text Here</font><p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics Home</A><BR></td>
+</tr>
+</table>

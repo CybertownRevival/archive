@@ -1,0 +1,35 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<P><center>I hope this guide is helpful to you.Have fun and enjoy!</center></p>
+<P><br><center><table height="60%"><table border="1">
+<tr><th>
+<P><font color=gold size=3>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6a&PAGE=2">The Basics</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6a&PAGE=7">
+Adding Colors</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=7">
+E-Mail</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=8">
+Fonts</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=10">Graphics</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=13">Links</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=14">Marquee's</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6a&PAGE=17">Music</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c5dcd6a&PAGE=17">2D Home Decorating</a>
+</td></tr></font>
+</table>
+<font color=skyblue>
+<P>Hood MB's and Block MB's will be taught seperatly.</p>
+<P>Home MB's and IN-BOXES will be taught at seperatly as well.</p>
+<P>Please inbox me at my home for assistance in these areas.Thank you</p>
+</center></font>

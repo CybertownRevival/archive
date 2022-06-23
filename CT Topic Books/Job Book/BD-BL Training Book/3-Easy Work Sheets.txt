@@ -1,0 +1,80 @@
+<table height="60%">
+<tr><td valign="top"><h2><a name="bm4">Easy Work Sheets for Block Runs</a></h2>
+Checking resident's status is done at the block level<BR>
+in 2D mode. The fastest way to do this is to change modes.<BR>
+Go to the control Panel in the menu on the right.<BR>
+1. Before you start, you press your [My Info] button.<BR>
+2. Then press the [Personal Info] Button Guy.<BR>
+3. Scroll down to Chat default and Choose (x)None<BR>
+(x) None<BR>
+( ) Blaxxun Contact (Jave)<BR>
+( ) Blaxxun Contact (3D Plugin)<BR>
+4. Then select the [update] button.<P>
+Now you can go from house to house zip-a-de-do-da<BR> 
+Then you can change it back when you are done.<BR>
+Blaxxun Contact (Jave) is the default, choose it <BR>
+if you are checking for bad pictures.<P>
+<h3>Fast Work Sheets</h3><p>
+Scroll down from your home at the block level and select<BR>
+your resident's house list and copy it to make your work<BR>
+sheet. You can visit any house in your block from that<BR>
+list. The Last Access dates of your residents should <BR>
+ be added to your report. You select the <BR>
+whole list as i said then right click on it choose <BR>
+[copy]. Open note pad or word pad on your computer and <BR>
+select [edit] and choose [paste] you now have your work <BR>
+sheet. This will help you when it comes time to do your <BR>
+report<p>
+<h3>Sample Work Sheet</h3><p>
+<p>Your important information here is House Name which<br>
+you already have it your list. Then the Last Access Date<br>
+and nic. These three things will tell you all you<br>
+really need to know about your resident. When you find a<br>
+resident with 60+ exp note the Resident's Name these<br>
+residents you will hope to meet as you move around the<br>
+block later. But right now you are on a block run<br>
+grabbing information and speed gets the job done fast so<br>
+you can have fun later. My list looks like this. I put a dot <br>
+by each house as I check it so I know where I am if I am <br>
+interrupted. <p>
+<h3>The Work Sheet</h3><p>
+Name of Block Work Sheet Date 06/06/00 <br>
+(Message at 21days - Add to Delete List at 60days)<br>
+<h4>Last<br>
+Access<br> 
+DATE - EXP. - 2D PIC - HOUSE ---- NICK NAME</h4><p>
+5/08 - 65 - P - Tektonic Home --- Tekk<br>
+5/12 - 80 - P - join up  ------- Como<br>
+6/14 - 70 - 0 - thebrood -------- Roody<br>
+5/20 - 60 - P - Questinia ------- Trinia<br>
+6/20 - 570 - 0 - Chop Chop ------ Sammo<br>
+6/26 - 834 - 0 - Dropzone  ------ JoJO<br>
+6/28 - 50 - P - Cool Home ------- Zcool - new<br>
+5/02 - 50 - P - Dragon Wing ----- Winger<br>
+6/27 - 50 - 0 - troper scoper - Scooppdoo - new<br>
+6/06 - 55 - P - tactics home ---- TicTac - new<br>
+5/09 - 55 - P - Sharks Place ---- Da.Fish
+<p>m = message sent wm = welcome message <BR>
+P = 2D Picture <BR>
+0 = no 2D picture. Use your own short cuts.
+<p>
+<strong>NOTE: </strong>I make a list down here of the oldest houses<BR>
+This is a huge time saver when Real Life gets busy.<BR> 
+I can message  and check images and see if Free spaces <BR>
+need updated and be done in 5 minutes. Next time I <BR>
+might check for new people.<p>
+I always keep a record of every thing I do then I have it <br>
+ready for reports when I need it.It is simply a cut and paste or count.<p>
+I don't have to worry about reports I can pop a report in <br>
+a couple of minutes and now so can you. Try it!<br>
+<P>Most hoods require that the BL fill out a block report at a set day<BR>
+given each week. They usually consist of: new resident count, upcoming<BR>
+and ongoing events, questions concernes etc. Although BL Reports vary<BR>
+from hood to hood, it is still imperative that you complete and send<BR>
+them in, so that your ND knows how good of a job you do, and so that<BR>
+they have a nice organized record of the ongoings of your block.<BR>
+<p>
+<a href="interest2.htm#bm4">Return to top of page</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return
+to Start</a><br></td>
+</tr></table>

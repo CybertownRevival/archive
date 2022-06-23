@@ -1,0 +1,164 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br><table height="60%">
+<tr>
+<td valign="top"><center><h1>Find Home, Statistics, Vote & Information</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a>
+<p><table border="1"><tr><td>
+<b>Adventure</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0109000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0109000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0109000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0109000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0109000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Cyberhood</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0108000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0108000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0108000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0108000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0108000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Entertainment</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0104000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0104000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0104000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0104000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0104000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Games</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0101000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0101000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0101000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0101000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0101000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Inner Realms</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0105000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0105000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0105000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0105000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0105000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Sci-Fi</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0102000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0102000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0102000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0102000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0102000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>The Campus</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0106000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0106000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0106000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0106000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0106000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Virtual Worlds</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0103000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0103000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0103000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0103000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0103000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>9th Dimension</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0107000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0107000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0107000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0107000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0107000000000000" Target="_Blank">Read</a>
+</td></tr><tr><td></td></tr><tr><td>
+<b>Hi Tek</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ID=0110000000000000" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Find Home
+<a href="http://www.cybertown.com/home/0110000000000000/find.html" Target="_Blank">Read</a>
+</td><td>
+Statistics
+<a href="http://www.cybertown.com/home/0110000000000000/stats.html" Target="_Blank">Read</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=listhdr&PLC=0110000000000000&TYP=a&PAR=0&TKT=7dae050718f7d136" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/community?ac=info&ID=0110000000000000" Target="_Blank">Read</a>
+</td></tr>
+</table>
+</center></td>
+</tr>
+</table>
+<br>
+</BODY>
+</HTML>

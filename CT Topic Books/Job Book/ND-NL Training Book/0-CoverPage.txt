@@ -1,0 +1,41 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;scrollbar-highlight-color:gold;
+scrollbar-shadow-color:gold}</style>
+<center><p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="60"></p>
+<table height="10%">
+<tr><td width="429"><h2><a name="nd1"><center>Neighborhood Deputy & Neighborhood Leader<br>
+ ~ Tools Menu ~ </center></a></h2>
+<p align="left"><a href="#bm1">Page 0. Introduction</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685ef2&CAT">Page 1. Changing the Block Map</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&CAT&PAGE=1#bm3">Page 2. Creating New Blocks</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&CAT&PAGE=2#bm4">Page 3. Neighbourhood Message Boards</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&CAT&PAGE=3#bm5">Page 4. Access Rights</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&CAT&PAGE=4#D1">Page 5. ND Assignments</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&CAT&PAGE=5#blt1">Page 6. Sample Block Reports</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&&ID=o0c685ef2&PAGE=6#w1">Page 7. Sample BL/BD Guidelines</a><br>
+<p><h2><center>Neighborhood Deputy & Neighborhood Leader Tools</center></h2>
+<p><p align="center"><font color="#8FF2FA" size="5" face="Arial"><strong>INTRODUCTION</strong></font></p>
+<p><font face="Arial">Welcome to the ND/NL Tool Book. It is expected that you will have </font>
+<font color="#EAE7A6" face="Arial">read the BD/BL Tool Book</font>
+<font face="Arial"> and have had BD and/or BL experience before.</font></p>
+<p><font face="Arial">At present the ND/NL Tool Book is </font>
+<font color="#EAE7A6" face="Arial">ideally aimed at providing BL's, ND's& NL's</font>
+<font face="Arial"> with some block/hood level information not covered in the BD/BL Tool Books.
+ Options and information provided is often presented as an alternative, which is </font>
+ <font color="#EAE7A6" face="Arial">not compulsory</font>
+ <font face="Arial"> unless otherwise stated. </font></p>
+<p><font face="Arial">The tool book is divided into several parts and at this point in time you are free
+ to go through each as you need and at your own pace. Should the occasion arise that you need to implement
+ any practical skills it is best to discuss it directly with your NL or CD.</font></p>
+<p><font face="Arial">Also, as a reminder, you should regularly refer to the <a href="http://www.gamescolony.org/" target=_new>
+Games Colony Guidelines </a> for updates and comprehensive reference.</font></p>
+<p><a href="#nd1">Return to top of page</a>
+<p>NOTE: A Master book [m] can be updated as needed. A <BR> 
+Slave book [s] can not be easily changed. Slave books <BR> 
+are linked to the master book. DannyKing holds the <BR> 
+Master ND & NL Tools book. If you have new or better <BR> 
+information and need to make changes to the book <BR>
+please inbox DannyKing. <P>
+More books available at <a href="http://www.cybertown.com/home/justmyself" target=_new>Games Colony Educational Center</a>  in Games Colony<br></td>
+</tr></table></center>

@@ -1,0 +1,33 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center>
+<font color=white size=3><P>*Format*</P></font><br></center>
+<font color=coral>All HTML documents should follow the same basic format - otherwise some commands may not
+ function properly. The basic format for all HTML documents should be:</font></p>
+<font color=yellow><P><center>
+< html ><br>
+< head ><br>
+< title ><br>
+< /title ><br>
+< /head ><br>
+< body ><br>
+< /body ><br>
+< /html ></center></p><br></font>
+<P></P><font color=skyblue>Head: </font>
+<font color=coral>Head tags surround the title and the introductory text.</font></p>
+<P></P><font color=skyblue>Title: </font>
+<font color=coral>This should describe the content of the page. It should be descriptive, but less than 64 
+characters. Bookmarks pick up on your page title. An example of a poor title would be "Cats". A better 
+title would be "Long-haired Cats and Kittens".</font></p>
+<P></P><font color=skyblue>Body: </font>
+<font color=coral>The main part of your page goes between the</font>
+<font color=yellow>< body > & < /body ></font>
+<font color=coral> tags.</font></p>
+<P></P><font color =skyblue>Closing tags: </font>
+<font color=coral>You must remember your closing tags. In some browsers, the document will still function 
+without some of them. With others, it will not.</font></p></td>
+</tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

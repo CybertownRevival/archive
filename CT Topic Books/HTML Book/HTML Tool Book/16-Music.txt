@@ -1,0 +1,18 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Music<br><font color=skyblue>Saving Tunes<br><font color=coral>To use a music file, you must first save the file to your computer in the same way as you would a graphics file.<br>
+Right click on the link to the music. 
+Select<font color=yellow> "Save link as" (Netscape) <font color=coral>or <font color=yellow>"Save target as" (Internet Explorer)<font color=coral> from the pop up menu.<br><br> 
+This will bring up the folders on your desktop. Select where you want to store the file.<br> 
+At this stage, you can also re-name the file. In the <font color=yellow>"Filename" <font color=coral>box, type in the name you wish to use.<br><br>
+Click <font color=yellow>"SAVE"<font color=coral> 
+Then upload the saved files to your homepage or to your server.<br><font color=white> 
+DO NOT Link <font color=coral>directly to the music file in the collection where you found it.This causes problems for their site,as well as problems for you if they delete or rename the music.</p><br><br>
+<font color=skyblue><P>Filenames<br><br><font color=coral>Music file names are case sensitive.This means that when you enter the filename, you must use the<font color=yellow> EXACT <font color=coral>name of the music file.<br><br><font color=yellow> faraway.mid is NOT the same as Faraway.mid or faraway.MID.<font color=coral><br>You must always use the filename correctly, otherwise your music will not play!</p><br><br><font color=white>
+<P>In the examples I will show you next,I will not have them linking directly to my server as it slows down my bandwidth.However,the coding will work if a correct filename is used.</p></center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

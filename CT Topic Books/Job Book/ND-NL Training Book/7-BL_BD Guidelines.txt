@@ -1,0 +1,93 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>SAMPLE BL / BD GUIDELINES</strong></font></p>
+<p align="left"> </p>
+<p align="left"><font size="3" face="Arial">Below is an </font>
+<font color="#EAE7A6" size="3" face="Arial">example</font>
+<font size="3" face="Arial"> of some sample guidelines that were developed to meet a particular
+ neighborhoods requirements of how they wanted things done. Their training site hadn't been developed,
+ so the guidelines served as a temporary information base. </font>
+<font color="#EAE7A6" size="3" face="Arial">It is offered here as a resource to pick & choose from and can
+ be used, adapted, modified or totally forgotten about :-)</font></p>
+<p align="center"> </p>
+<p align="center"><font color="#8FF2FA" size="4" face="Arial"><b>BLOCK LEADER & BLOCK DEPUTY <br>
+GUIDELINES</b></font></p>
+<p align="center"><font size="3" face="Arial"><b>These Guidelines are to be used in conjunction with <br>
+Cybertown and Colony Guidelines.</b></font></p>
+<p><hr></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>ADMINISTRATIVE DUTIES</b></font></p>
+<ul>
+<li><font size="3" face="Arial">Block Leaders (BL) are responsible for making sure ALL NEW RESIDENTS TO THE
+BLOCK are welcomed by way of "Message to All", their inbox , and if you would like the block Message board.</font></li>
+<li><font size="3" face="Arial">BL's are responsible for submitting a Block Report every two weeks to their
+assigned ND (dates confirmed with them). The report format should follow the guideline given.</font></li>
+<li><font size="3" face="Arial">BL's are responsible for maintaining and updating the Block Responsibility
+ List and submitting it to their assigned ND upon changes of task allocation.</font></li>
+</ul>
+<blockquote>
+    <p><font size="3" face="Arial">It is recommended that at least one other BD knows these procedures in
+	 case the BL is not available to do these two reports.</font></p>
+</blockquote>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>EMPLOYMENT & TRAINING</b></font></p>
+<ul>
+<li><font size="3" face="Arial">BL's are responsible for hiring, firing & training their BD’s. Assigned
+ND's should be consulted on this whenever possible.</font></li>
+<li><font size="3" face="Arial">All staff must read through Colony Guidelines and the training section from
+ the Games Colony Training Guides.</font></li>
+<li><font size="3" face="Arial">It is the BL's responsibility to ensure tasks are allocated to and completed
+ by BD's (see Block Responsibility List).</font></li>
+<li><font size="3" face="Arial">It is asked that BD's give at least 48 hrs notice for resignation or
+ promotion to their BL.</font></li>
+<li><font size="3" face="Arial">It is asked that BL's give at least 7 days notice for resignation o
+r promotion to their assigned ND.</font></li>
+</ul>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>COMMUNICATION</b></font></p>
+<ul>
+<li><font size="3" face="Arial">BL's & BD's should communicate frequently.</font></li>
+<li><font size="3" face="Arial">BL's must submit their email contact details (suitable for distribution to
+ NL / ND's and CT use) to the Records ND (see ND Admin List if unsure).</font></li>
+<li><font size="3" face="Arial">BL's should have email contact details of their BD's and vice versa.</font></li>
+</ul>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>ABSENCE</b></font></p>
+<ul>
+<li><font size="3" face="Arial">If for any reason a BL is going to be absent for up to 3 days they should
+ inform a BD. Any longer than 3 days then please report it to your assigned ND (so we know that you have to
+ be gone and can help care for your block).</font></li>
+<li><font size="3" face="Arial">Only the DCL is to delete homes and free home sites (unless alternative
+ arrangement has been approved by the CL).</font></li>
+</ul>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>STAFF HOMES</b></font></p>
+<ul>
+<li><font size="3" face="Arial">All staff need to have (BL) or (BD) on house name.</font></li>
+<li><font size="3" face="Arial">Wherever possible BL should be first home on the block list followed by
+ BD's.</font></li>
+<li><font size="3" face="Arial">All staff need to have an image on their home.</font></li>
+<li><font size="3" face="Arial">All staff should have a decorated message board and inbox.</font></li>
+</ul>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>HTML</b></font></p>
+<ul>
+<li><font size="3" face="Arial">Staff should encourage the use of accepting HTML by residents on message
+ boards but must remember when sending messages to all that many don't have this set, as such, especially
+ new residents who are not familiar with it.</font></li>
+<li><font size="3" face="Arial">Each block should have a decorated block MB (in keeping with the theme of
+ the block name). Assistance is available.</font></li>
+<li><font size="3" face="Arial">It is preferred if blocks have a suitable web page - perhaps help topics,
+ details of staff, links, etc. Although the MB may address such ideas instead.</font></li>
+</ul>
+<p><hr></b></p>
+<p><font color="#8FF2FA" size="3" face="Arial"><b>FUN</b></font></p>
+<p><font size="3" face="Arial">FUN now this is a very important part of this job…If you can’t or won’t have
+ fun you will be punished. Remember I DO have a cattle prod.. :).</font></p>
+<p><font size="3" face="Arial">But seriously, this is ALL supposed to be fun. Everyone has a real life,
+ everyone has enough pressures and problems in them, and to many this is their escape. If you're not having fun or there is a problem to be overcome (be
+it requiring leave of absence for Real Life reasons or whatever) then please let us know. </font></p>
+<p><font color="#EAE7A6" size="3" face="Arial">We are all part of a team and family and are here for each other!!</font></p>
+<BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>

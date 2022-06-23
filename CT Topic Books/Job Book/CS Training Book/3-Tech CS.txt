@@ -1,0 +1,23 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1>CS Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Tech CS Training"</font></strong></a></p>
+<font size="3">
+<P>The Tech CS will work for the Tech CD.<BR>
+<P>The tech CS will assist the tech CD with the colony website<BR>
+and any other colony tech work, the tech CS will also try and<BR>
+resolve technical colony problems.<BR>
+<P>The tech CS is the only member of non CD staff that have access<BR>
+to the colony server via ftp as they will need to work on the<BR>
+website and images etc.<BR>
+<P>The tech CS will liase with the tech CD to plan new looks for<BR>
+the website and the colony and to discuss current technical issues.<BR>
+<P>The tech CS should liase with the NL's and tech ND's to help<BR>
+the hoods with their message boards and their websites.<BR>
+<P>The tech CS should perform any other tasks that the tech CD asks<BR>
+them to do as long as it does not break Cybertown nor Colony rules<BR>
+and bylaws.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c63a96a&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

@@ -1,0 +1,19 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Events CD"</font></strong></a></p>
+<font size="3">
+<P>
+The Events Colony Deputy will be in charge of organizing all the events that will<BR>
+be happening with in Games Colony. They will help with all hood events, advertising<BR>
+for upcoming events as well as plan events for the Colony itself. The Events Colony Deputy<BR>
+will also be in charge of the colony calendar and calendars with in the C-staff<BR>
+and N-staff group. Organizational skills are a requirement for this particular<BR>
+job. The Events Colony Deputy is the "Motivation Specialist" to get the rest of the<BR>
+Colony to participate.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=3">Return
+to Specified Duties</a><BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

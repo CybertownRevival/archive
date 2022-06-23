@@ -1,0 +1,14 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:
+gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;
+scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><th><center>
+  <h1>Step One</h1>
+  <p>The first step in setting up your bot, is to prepare to get a bot.</p>
+  <p>To do this, find the UPDATE button on the right hand panel. It looks like this:</p>
+  <p><img src="http://dannydking.org/games/Bot/1.jpg" width="130" height="216"></p>
+  <P>After you click on the update button, you will get this window: </P>
+  <P><img src="http://dannydking.org/games/Bot/2.jpg" width="577" height="445"></P>
+  <P>Click on "Configure Virtual Pet".</center></table></td></tr></table>
+<br><br><center><a href=http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691660&CAT=topic><b>Main</b></a></center>

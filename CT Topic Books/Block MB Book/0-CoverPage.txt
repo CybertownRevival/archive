@@ -1,0 +1,45 @@
+<CENTER><table height="60%"><tr><td valign="top"><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><TITLE>Colony Block MB's</title>
+<center><h1>Colony Block MB's</h1>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<font color=yellow><b>PLEASE REMEMBER</b> that some Colonies only allow related messages on their Block MBs.</font><br>
+To find out whether or not you may post event ads on a Hood or Block MB, you will need to check the MB header.<br><br><br>
+In case you didn´t know, it is <b>COMMON COURTESY</b> not to post job ads or job related events e.g. Job Fair)<br>on boards of competing Places.<p>
+For example if you recruit residents or staff for a Block in Games Colony you may post your ad on the Games Colony MB,<br>on your Hood and on your Block MB. You should not post your ad on any other Colony, Hood or Block MB.<p>
+<p align="center">Click on a Colony name to begin choosing the block Message Boards</p>
+<table border="1">
+<tr> 
+<th width="150"><div align="center"><strong><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c699fc4&CAT=topic" Target="_Block">Games Colony</a></strong></div></th>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c699fb4&CAT=topic" Target="_Block">Adventure Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fc6&CAT=topic" Target="_Block">Cyberhood Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fbc&CAT=topic" Target="_Block">Entertainment Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fb5&CAT=topic" Target="_Block">Sci-fi Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fb6&CAT=topic" Target="_Block">Virtual Worlds Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fc3&CAT=topic" Target="_Block">The Campus Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c6a329b&CAT=topic" Target="_Block">Hi Tek Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fbb&CAT=topic" Target="_Block">9th Dimension Colony</a></strong></div></td>
+</tr>
+<tr> 
+<td><div align="center"><strong><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fc2&CAT=topic" Target="_Block">Inner Realms Colony</a></strong></div></td>
+</tr>
+</table>
+</center>

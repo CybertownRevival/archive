@@ -1,0 +1,50 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><Table align="center" width="60%">
+<tr>
+<td>
+<hr>
+<b>Lesson #8 - Lists, Horizontal Ruled Lines</b><br>
+<hr><p>
+Lists are very useful for identifying parts of a subject that are important. Lists are made up of 2 main types:
+<UL>
+<LI>ORDERED LISTS <XMP><OL>...</OL></XMP>
+<LI>UNORDERED LISTS<XMP><UL>...</UL></XMP>
+</UL>
+The actual items are identified by the Line Item tag. <XMP><LI></XMP> so an ordered list would look like this:
+<OL>
+<LI>Item 1
+<LI>Item 2
+<LI>Item 3
+</OL>
+and would be coded like this:
+<XMP>
+<OL>
+<LI>Item 1
+<LI>Item 2
+<LI>Item 3
+</OL>
+</XMP>
+An unordered list would look like this:
+<UL>
+<LI>Item 1
+<LI>Item 2
+<LI>Item 3
+</UL>
+and would be coded like this:
+<XMP>
+<OL>
+<LI>Item 1
+<LI>Item 2
+<LI>Item 3
+</OL>
+</XMP>
+<hr>
+ <XMP><HR> = Horizontal Ruled Line </XMP> it is illustrated by the lines both above and below this text. <BR><HR>The HR tag does not need a close HR tag. It operates on it's own but there are other details about it you can control.
+<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics Home</A>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>

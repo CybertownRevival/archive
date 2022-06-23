@@ -1,0 +1,18 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Hood CD"</font></strong></a></p>
+<font size="3">
+<P>
+Hood Colony Deputy is a very pertinent job. They are assigned to liason with the<BR>
+Neighborhood Leaders to help assist them in things necessary to help run the hoods.<BR>
+Hood Colony Deputies are asked to have at least two hoods and have had prior Neighborhood<BR>
+Leadership positions with in the colony. Human Resources (communication)<BR>
+is very pertinant to this position, they must be able to get along with all people,<BR>
+make timely decisions and be able to give instruction to those that require.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=3">Return
+to Specified Duties</a><BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

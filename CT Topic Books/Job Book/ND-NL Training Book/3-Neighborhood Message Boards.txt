@@ -1,0 +1,29 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:
+gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:
+green;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>NEIGHBORHOOD MESSAGE BOARDS</strong></font></p>
+<p> </p><p><font size="3" face="Arial">Neighborhood message boards </font>
+<font color="#EAE7A6" size="3" face="Arial">work essentially the same as block and personal message boards</font>
+<font size="3" face="Arial">. Again graphics / sounds etc need to be linked to an external server. We have
+ plenty of space on the colony server and ALL NLs are welcome to use it. You can contact your CD to get
+ permission to use it. The configuration should be set to accept HTML tags. Also, as at the block level,
+ a "message to all" blocks does not post to the neighborhood "messages" board. Those messages posted to
+ all at a colony level will appear automatically on this board (but are not posted to block boards). </font></p>
+<p><font size="3" face="Arial">The </font>
+<font color="#EAE7A6" size="3" face="Arial">board should reflect the theme and spirit of the </font>
+<font color="#EAE7A6" size="3" face="Arial">neighborhood</font>
+<font size="3" face="Arial">. It can be changed as regularly as the NL sees fit but it is important that
+ any links be maintained and kept up to date.</font></p>
+<p align="center"><font color="#EAE7A6" size="3" face="Arial"><strong>As per <a href="http://www.gamescolony.org/" target=_new>
+Games Colony Guidelines</a>, neighborhood message boards <u>should</u> contain a link to the
+ Games Colony Website.</strong></font></p>
+<p><font size="3" face="Arial">Neighborhood boards are an </font>
+<font color="#EAE7A6" size="3" face="Arial">excellent communication tool for publicizing block and
+ neighborhood events</font>
+ <font size="3" face="Arial">. It provides the medium for linking the separate blocks within a hood and
+ can promote & encourage the team spirit needed for a successful neighborhood. It is the ideal place for
+ announcing new block leaders & deputy promotions and keeping all neighborhood residents up to date of
+ current block and neighborhood activities.</font></p>
+<BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>

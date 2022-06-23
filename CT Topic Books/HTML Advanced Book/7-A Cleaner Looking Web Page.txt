@@ -1,0 +1,48 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="75%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#ffffff" face="verdana,arial,helvetica,sans-serif"><b>A Cleaner Looking Web Page</b></font>
+</td></tr></table>
+<table width="75%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+A sometimes forgotten attribute when creating<br>
+a clickable image is the <u>border="0"</u> attribute.<br>
+When this is not added to the image code, a<br> 
+"highlight box" will form around the clickable image.<p>
+Computer users may see this "highlight box" but<br>
+don't know how easy it is to make it disappear.</b></font>
+<p>
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+Here is a screen capture of this "highlight box" <br>
+around a clickable image when <u>border="0"</u> is not used.<br>
+Note the code also, lacking the <u>border="0"</u> attribute.
+</b></font>
+<p><img src="http://dannydking.org/images/vine.jpg" width="260" height="59" border="1" alt="without border equals zero example"><br>
+<br>
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+&lt;a href="http://yoursite/image.jpg" &gt;&lt;br&gt;
+&lt;img src="image.jpg" width="260" height="59" alt="logo"&gt;&lt;/a&gt;
+</b></font>
+<p>
+<FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b>
+To make this "hightlight box" disappear, simply<br> 
+add the <u>border="0"</u> attribute to the image code.
+</b></font>
+<p>
+<font color="#c71585" size="2" face="verdana"><b>
+Notice the code now under the next image.<br> 
+It's simple enough to do and will create a<br> 
+cleaner look to your web pages.
+</b></font>
+<p>
+<img src="http://dannydking.org/images/vine.jpg" width="260" height="59" border="0" alt="with border equals zero example">
+<br>
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+&lt;a href="http://yoursite/image.jpg/"&gt;&lt;br&gt;
+&lt;img src="image.jpg" width="260" height="59" border="0" alt="logo"&gt;&lt;/a&gt;
+</b></font>
+</td></tr></table>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c63a969&PAGE=1#border">Back</a></center></P>

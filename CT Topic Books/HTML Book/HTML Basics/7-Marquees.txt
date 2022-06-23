@@ -1,0 +1,25 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><table align="center" width="60%">
+<tr>
+<td>
+<hr>
+<b>Lesson #9 Marquees</b>
+<hr>
+<XMP><marquee>Announcement or message</marquee></xmp>
+<marquee>This is a marquee... </marquee>
+Additionally you can set align=, scrollamount=, scrolldelay=, bgcolor= and Loop= as well as many more precise adjustments.<p>
+<marquee Scrolldelay="3" bgcolor="Green">this message is moving at a delay of 3 with a background color of green.</marquee>
+<p>
+<xmp><marquee Scrolldelay="3" bgcolor="Green">this message is moving 
+at a delay of 3 with a background color of green.</marquee>
+</xmp><p>
+This element tends to be more of a annoyance used in excess, use it wisely you will keep people coming 
+back to find out whats new.
+<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics Home</A>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>

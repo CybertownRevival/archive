@@ -1,0 +1,21 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Height and Width<br><font color=coral> 
+For faster page loading,it is a good idea to specify the height and width attributes for each image on a page.<br> That way, the browser sets aside a defined area for the pic to load into. Height and width are expressed in pixels.<br>
+Example:<font color=yellow>< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif"width=50 height=50 ><font color=coral>will appear as:<br><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif"width=50 height=50></p>
+<P>By inserting a<font color=yellow> "width" tag, <font color=coral>you can change the overall size, while keeping the same proportions.<br>
+For example,
+This is the actual size of this image:<br><font color=yellow>< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" ><br><br><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif"
+<br> 
+< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" width=25 ><font color=coral> will appear as:<img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" width=25><br><br><font color=yellow> 
+< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif"width=100 ><font color=coral>will appear as:<br><br>
+<img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" width=100><br><br>
+<P>The height can be adjusted as well.For example:<br><font color=yellow>< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" height=200 ><font color=coral>would appear as:<br><br><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" height=200><br><br>
+<P>You can also combine both attributes like the next example:<br><font color=yellow>< img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" width=150 height=50 ><font color=coral>The image would then look like this:<br><br><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/face4.gif" width=150 height=50></p><br>
+<P>By changing the width and height,this example gave you a chubby cheeks man!</p></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

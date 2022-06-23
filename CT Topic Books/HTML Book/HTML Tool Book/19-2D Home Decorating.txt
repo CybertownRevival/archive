@@ -1,0 +1,40 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>2d Home Decorating<br><font color=skyblue>The Coding</p>
+<P>This is what is now facing you:
+< HTML >
+< HEAD >
+< meta http-equiv="Content-Type" content="text/html" >
+< !-- #define variable="T_NOHTML" value="1"-- >
+< title >Cybertown - Civilization for the Virtual Age </title>
+< BASE target="_self" >
+  SCRIPT LANGUAGE="JavaScript" >
+<!--
+function   Submit()
+{
+    document.updateForm.EML.value = document.updateForm.EMK.value.toLowerCase();
+}<br><font color=white>and so forth an so on....scrolldown to until you see this section in the coding:<br><font color=yellow> < form method=post name="updateForm" action="/cgi-bin/cybertown/edit"   Submit="  Submit()" ><br><br>
+Right after <font color=skyblue>action="<font color=white>add this<br>
+http://www.cybertown.com<br><br>
+The code that you edited will now look like this:<br>
+action="<font color=yellow>http://www.cybertown.com<font color=white>/cgi-bin/cybertown/edit"    Submit=".....etc etc.<br><br>Continue to scroll down after you have edited this code and go to this section of the coding:<br><font color=yellow>
+< td >< b > Home Page < /b >< /td >
+< td >< INPUT NAME="HPG" VALUE=" "<br><font color=white>In-between the two " " after VALUE= is where you are going to place your Home 2D Code.</p><font color=coral>The example link below shows  the coding which I sometimes use at my home now.<font color=red><br>**As you can see, you have to delete the >>MAXIMUM SIZE = <<<SECTION in order to do your coding)**<font color=coral>Please do not use the same files for your 2D Home.Thank you.</p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?ac=listhdr&DTY=CL&KTY=ID&KEY=CL00000000008f2e&MTY=i" target=_"new">2D Home Code</a><br>
+<font color=coral><p>***Please be extremely careful when changing your coding as it can effect your home and at times "DELETE" everything in 2d. and the CT Com Tech's have to come and fix it for you!****<br><font color=white>If you would like me to assist yiou in doing your home,just let me know and I will be happy to.</p>
+<font color=coral>When you have completed the coding you would like to use,click onto <br><font color=white>
+FILE Save AS....and save it as 2Dhome.txt.</p><br>
+<P>Now open the same file (2dhome.txt)and do the File Save as again....this time...save it as <font color=yellow>2dhome.html</p><font color=coral>
+<P>By saving the files both ways,you can edit the .txt file and/or the .html file if you have a program that will allow for html editing.I use Notepad as it is easy.</p>
+<P>Now open the <font color=yellow>2Dhome.html file<font color=coral> you just saved.It will look like your Personal Info file.....scroll down to the UPDATE Button....click it,close it,and refresh your browser.<font color=red><P>YOU MUST BE AT YOUR HOME TO DO THIS AND BE IN 2D JAVA CHAT!<font color=coral></p><img src="http://cybertownbank.com/ctcolonies/games/neighborhoods/HtmlGuide/pi2.JPG"><br><br>
+<P>Congratulations!Your 2D Home is now decorated the way you like it!If it didn't come out right,redo the steps making sure every little dot,dash etc is in place.</p>
+<P>If you run into problems,remove all the coding you did in the <font color=white>HOME PAGE section <font color=coral> and then UPDATE and  refresh browser...it should take you back to where you were b4 coding took place.If need help just shout!</p>
+<font color=skyblue>
+<P>The next and last page of this manual will show you how to decorate your storage areas at your home!Turn the page and lets have some fun!</p>
+</center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

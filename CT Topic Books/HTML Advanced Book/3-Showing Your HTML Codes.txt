@@ -1,0 +1,125 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}
+</style>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="htmlcodes">Showing Your Html Codes</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Sometimes there is a need to show some actual html coding on your web page. Perhaps to show the code to use to link to a banner on your site. Or maybe to show codes that you are teaching on your site very much like I do here at Games Colony.</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+In order to show the "greater than" > and "less than" < signs you must use a code to show them on your web
+page, or the code will be activated.</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Here are the codes for these signs:</b>
+</font>
+<font size="3" color="#c71585" face="verdana"><b>
+<PRE>
+
+SIGN         CODES        DESCRIPTION
+
+<            <         Less than sign
+
+>            >         Greater than sign
+
+</PRE>
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+Note: Use lower case for these codes, not capital letters.<br>
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Here is a sample using these codes to show the "greater than" and "less than" signs on your web page without activating them.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+<a href="URL here"><br>
+<img src="URL of image" height="?" width="?" border="0" alt="text here"><br>
+</a>
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+The above code will be display as the code below on your web site, showing the "greater than" and "less than" signs.
+</b></font>
+<p>
+<font size="2" color="#c71585" face="verdana"><b>
+<a href="URL here"><br>
+<img src="URL of image" height="?" width="?" border="0" alt="text here"><br>
+</a>
+</b></font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+For More "Special Characters" </b></font><a href="http://www.ctcolonies.com/games/Books/special2.html">
+<font size="2" color="#c71585" face="verdana"><b>
+Click Here</b></font></a>
+<p>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="newwindow">Open New Window With A Link</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Computer users, ever click on a link and it opens a whole new browser window for you ?</b></font>
+<p>
+<FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b>
+This can be done simply with a "target" placed within the link itself.</b></font></B>
+        <p> <FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b> You can use this code with a</b></font> <a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd72&CAT=topic" target=_blank><FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>frames</b></font></a> 
+          <FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b>page or on a regular html document. When used in a "frames" page, it will break the link free of the frames page. </b></font><FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b>
+<p> Here is the code to open a new window. </b></font> 
+<p>
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+<a href="URL of page" target="_blank">Click Here</a>
+</b></font>
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd72&CAT=topic/" target="_blank">
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+Click Here To Try It</b></font></a>
+<p>
+<FONT SIZE="2" COLOR="#0066ff" face="verdana,helvetica,sans-serif"><b>
+You can also use Javascript to open a new window with a text link.
+<p>
+Here is the Javascript code to open a new window.
+</b></font>
+<p>
+<FONT SIZE="2" COLOR="#c71585" face="verdana,helvetica,sans-serif"><b>
+<a href="URL HERE"   click="window.open(this.href);return false;">Click Here</a>
+</b></font>
+</TD></TR></TABLE><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b></b>
+<a name="marquee">Marquee Lesson</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Want to get your text scrolling on your web page ? Use the marquee tag and set your text in motion. Marquees work with IE and MSNTV, not Netscape.
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=8">Click Here For The Lesson</a>
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="filters">Wild IE Visual Filters</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+The filters ONLY WORK WITH IE. They will not work with Netscape or MSNTV. Create wild looking text and images with
+the IE Filters. Brighten up your site, get wild..:+) 
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c61f082&CAT=topic" target=_blank>Click Here For The Lesson</a>
+</b></font>
+</td></tr></table>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c69a063&CAT=topic">Main</a></center></P>

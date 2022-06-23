@@ -1,0 +1,57 @@
+<table height="10%"><tr><td><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg1.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:red;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<H2>Security Guide Book</H2>
+<table height="10%">
+<tr>
+<td><font size=4 face="Arial">
+<center><img src=http://www.cybertown.com/java/contact/chatimg/caution.gif>
+This is the Security Guide Book. This guide will hopefully cover every security<BR>
+issue that you will have to deal with during your stay here in Games Colony..<BR>
+If there is wrong information included in this book, then please let us know.
+<img src=http://www.cybertown.com/java/contact/chatimg/caution.gif><br></font>
+<font size=3 face="Arial">
+Please inbox requests for changes etc to DannyKing. </font><br>
+<font face="Arial" size=3><br>Copies of this Security Guide BooK are available at<BR>
+<a 
+href=http://www.cybertown.com/home/justmyself target=new>
+Games Colony Educational Center</a>. Voluntary donations<BR>
+are welcome.
+Please buy as many books as you wish! Or if you<BR>
+want extra copies, feel free to copy the code, buy a 10CC Topic Book at Homebuilders<BR>
+and create your own additional BooK. Thank you!<br><br>
+This guide is split into several different sections, <b>HOOD, HOME, PUBLIC CHAT.</b><br>
+The <b>HOOD</b> section deals with all the security issues you would encounter<BR>
+at the <b>HOOD</b> level.
+The <b>HOME</b> section deals with all the security<BR>
+issues you would encounter at the <b>HOME</b> level.
+The <b>PUBLIC CHAT</b><BR>
+section deals with all the security issues you would encounter during any <b>CHAT</b>.<BR><P>
+I also have a section on taking Screenshots just in case some people don't remember how.<BR>And it also includes the link to a free screenshot program<BR>
+
+</font><p><center>
+<table height="60%"><table border="1">
+<tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f
+"><b>HOOD</b></a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=1">HOME</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=2">CHAT AREAS</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=3">SCREENSHOTS</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=4">MISC</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=5">MISC</a>
+</th></tr><tr><th>
+<a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c697c6f&PAGE=6>MISC</a>
+</table></center></td></tr></table><BR>Please report any changes or mistakes to <a href=/home/DannyKing>DannyKing</a>.<br>
+Thank you and have fun!
+<br>
+<p>
+</td></td></td>
+</tr>
+</table></td>
+
+    </tr>
+
+  </table>

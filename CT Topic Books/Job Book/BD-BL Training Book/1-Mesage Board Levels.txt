@@ -1,0 +1,144 @@
+<table height="60%">
+<tr><td valign="top"><h2><a name="bm2">Message Board Levels</a></h2>
+<p><img SRC="http://www.cybertown.com/images/buttons/binfo.gif" ALT="Information"
+width="116" height="16">  <img
+SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="116"
+height="16"><br>
+An effective Block Deputy or Block Leader makes effective<BR>
+use of the different levels of Message Boards s/he finds <BR>
+around Cybertown. Communication is the key to effective <BR>
+leader ship. The message boards are very effective in <BR>
+keeping citizens informed of special events. Use the <br>
+Message boards to welcome, introduce, educate and inform<br>
+residents. You will also find them full of lots of useful<BR>
+information. So visit them often and use them effectively. <P>
+<h3>Colony Level  </h3>
+<P>There is a <img src="http://www.cybertown.com/images/buttons/b2dchat.gif" width="44"
+height="31" alt="b2dchat.gif (505 bytes)"> and <img
+src="http://www.cybertown.com/images/buttons/b3dchat.gif" width="44" height="31"
+alt="b3dchat.gif (630 bytes)"> meeting place and <br>
+chat area here where you can meet new people or <br>
+new BDs and take them too the block to find a home <br>
+and a map of the different neighborhoods.
+<p><img SRC="http://www.cybertown.com/images/buttons/binfo.gif" ALT="Information"
+width="116" height="16"> Information button - is where you will <br>
+find a list that contains the Colony Leader (CL), Colony <br>
+Deputy's (CD), Neighborhood Leaders (NL), and <br>
+Neighborhood Deputies (ND). 
+<p><img src="http://www.cybertown.com/images/buttons/bportal.gif" width="116" height="16"
+alt="bportal.gif (284 bytes)"> Portal button - holds special links.<BR>
+When available some Colonies don't have this button.<BR>
+<p><img src="http://www.cybertown.com/images/buttons/bfindhome.gif" width="116" height="16"
+alt="bfindhome.gif (277 bytes)"> Find Home button - Shows you total <br>
+homes and homes available in the neighborhoods.
+<p><img src="http://www.cybertown.com/images/buttons/bstats.gif" width="116" height="16"
+alt="bstats.gif (303 bytes)"> Statistics button - gives you a lot of <br>
+usefull information.  A list of Neighborhoods with the <br>
+number of Homes, Money and average Experience <br>
+levals and the Activity Levels of the Neighborhoods.
+<p><img SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="116"
+height="16"> Messages button - Here you can read <BR>
+and post messages that pertain to all of the <BR>
+Neighborhoods in the Colony. Important Information <BR>
+links are also found on the Message Boards 
+<p><img src="http://www.cybertown.com/images/buttons/bvote.gif" width="116" height="16"
+alt="bvote.gif (270 bytes)"> Vote button - here you can get <br>
+involved in your Hood.<p>
+<h3>Neighborhood Level </h3>
+<p><img SRC="http://www.cybertown.com/images/buttons/binfo.gif" ALT="Information"
+width="116" height="16"> Information button - is a list of the <br>
+Neighborhood Leader, Neighborhood Deputy's, Block <BR>
+Leaders, and Block Deputys.
+<p><img SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="115"
+height="16"> Messages button - you will find <br>
+messages that should pertain to all of the blocks in your <br>
+neighborhood. This is the hood board where you can <br>
+read and post messages.  Never abuse your privilage to <br>
+post messages on any of these boards. There is a lot of <br>
+good information here for you to read lots of tools and tips. <br>
+Check them out. There is also a hood map here. NDs and <br>
+NLs will also see a Message to All button here.<p>
+<h3>Block Level </h3><p>
+<img SRC="http://www.cybertown.com/images/buttons/binfo.gif" ALT="Information"
+width="116" height="16"> Information button - lists Block Leader <br>
+and Block Deputys.  
+<p><img SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="116"
+height="16"> Messages button - Block Leader and <br>
+Block Deputy's this is your Block Board where you can <br>
+read and post messages that pertain to your block. Here <br>
+is where you can put your important links as well. 
+<p><img SRC="http://www.cybertown.com/images/buttons/bconfig.gif" ALT="Configure" width="116"
+height="16"> Configure button - is what the Block <BR>
+Leader and Block Deputies will see when they open the <BR>
+Message board button it can be configured by the <BR>
+Block Leader or Block Deputies with the permission <BR>
+of the Block Leader. Everyone sees the post button.
+<p><img src="http://www.cybertown.com/images/buttons/bgroupmesa.gif" width="116" height="16"
+alt="bgroupmesa.gif (334 bytes)"> Massage To All button lets <br>
+you message all the residents at once.
+<p><img SRC="http://www.cybertown.com/images/buttons/bupdate.gif"
+ALT="Update" width="116" height="16">  Update button - is used by the<BR> Block Leader and Block Deputies with Block Leader's<BR>permission.
+<P><img SRC="http://www.cybertown.com/images/buttons/bcheck.gif" ALT="Check" width="116"
+height="16"> Check button<br>
+Check button is used to check resident's 2D images.
+<p><strong>NOTE: </strong>There are some new buttons here that are <BR>
+explained in detail on the next page. 
+<P><h3>House Level</h3><p>
+<img SRC="http://www.cybertown.com/images/buttons/binfo.gif" ALT="Information"
+width="116" height="16"> Information button. Here you can <br>
+say something about yourself or what you like.  The <br>
+Information button is configured at the [Update] button. 
+<p><img SRC="http://www.cybertown.com/images/buttons/binbox.gif" ALT="Inbox" width="116"
+height="16"> Inbox button - for private meaasges. <br>
+You can't check the Inbox it is private. 
+<p><strong>Checking Residents Message Boards:</strong><br>
+<img SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="116"
+height="16">  Messages button - is for public <br>
+messages and is used to post individual messages, by <br>
+the resident or by someone to the resident. These <br>
+boards can be read by anyone, and should be <br>
+checked periodically for any unacceptable language. <br>
+Click on the Message button to the right. <p>
+<strong>Checking Resident's Links:</strong><br>
+<img SRC="http://www.cybertown.com/images/buttons/blinks.gif" ALT="Links" width="116"
+height="16">  Links button - is for your favorite <br>
+links. It is configured at the [Update] button select <br>
+[Information] and scroll down to links. The task here is <br>
+to check the links. Also at the 2D house you need to <br>
+check the residents home page and house name. <br>
+Check all of these for any questionable content or <br>
+offensive language or anything not with in the <br>
+guidelines of the Cybertown Constitution. If you find <br>
+anything worng. Message the resident then report it <br>
+to the CL, NL or BL ASAP. 
+<p><img SRC="http://www.cybertown.com/images/buttons/bconfig.gif" ALT="Configure" width="116"
+height="16">  Configure button - found is in your <BR>
+Inbox and Message buttons on your House Level. This <BR>
+is where you can make HTML changes to your Inbox and <BR>
+Message boards. So learn how to pretty up your message <BR>
+board so you can help your residents learn how as well.<BR> 
+Ask your resdents to turn on their HTML in their <BR>
+Message board and Inbox.
+<p><img SRC="http://www.cybertown.com/images/buttons/bupdate.gif" ALT="Update" width="116"
+height="16">  Update button - When you are at<BR>
+your house you can make changes to your home, change<BR>
+access rights, update your information, and upload<BR>
+a new image to your 2D house. You need to find a<BR>
+.GIF or a .JPG file on your harddrive that you like<BR>
+and press the update button link. You can configure<BR> 
+your Bot/Pet here as well. Select <strong>[Configure Virtual Pet]</strong><BR> Then fill in the blanks. On the left is<BR> 
+what you say and on the right is what the Bot says or does.<BR>
+ Try all the different things here and see what they do. <BR> 
+Then select an Avatar URL for your bot. Put an [x] in the<BR> 
+box to activate your pet then you must [Update] to save<BR> 
+the information then you can go back to your house and <BR>
+try out your new pet. If you have also uploaded a picture <BR>
+it will have to be checked at the block level.
+<p><img SRC="http://www.cybertown.com/images/buttons/bdelete.gif" ALT="Delete" width="116"
+height="16">  Delete button - will now apear at each<BR>
+house in your Block. The Delete button is used by<BR>
+both the CL and the DCL with the CLs aproval. See <BR>House Deletions on Page 5 for more information. <P> 
+<a href="#bm2">Return to top of page</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return
+to Start Menu</a><br></td>
+</tr></table>

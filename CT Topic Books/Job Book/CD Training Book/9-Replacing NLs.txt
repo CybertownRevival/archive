@@ -1,0 +1,36 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Replacing NLs"</font></strong></a></p>
+<font size="3">
+<P> Unless a serious infraction had occured (something that<BR>
+would require banishment from Cybertown), you should try to<BR>
+give 3 warnings when their duties have been neglected. Obviously,<BR>
+depending on the circumstance, this cannot always be done, but<BR>
+you should always consult with your CL on problems with an NL.<BR>
+When giving an NL a warning, keep a copy of the warning for future<BR>
+reference or use. After 2 warnings and a third infraction, speak<BR>
+with the CL with your concern on why the NL needs to be replaced<BR>
+for the CL's input. Forward to the CL any warnings you have given<BR>
+to the NL. Once it has been determined to replace the NL, email or<BR>
+inbox the NL and cc to the CL. After an NL has been replaced, make<BR>
+sure that they are removed from any access in the neighborhood<BR>
+including the block access rights and the Change Rights Access.<BR>
+<P>To hire a new NL, first check within the neighborhood for<BR>
+deserving promotions within the ND staff. If there isn't an ND that<BR>
+can be considred, you can speak with other NL's in Games for<BR>
+recommendations of ND's within the Colony that may be deserving of<BR>
+promotion and have them fill out applications. When you receive an<BR>
+application from a perspective NL, speak with their current or<BR>
+previous supervisor for input. When an NL has been selected, make<BR>
+sure that they give sufficient notice to their previous job and that<BR>
+their last supervisor is satisfied with this notice. Get with a<BR>
+tooled CD or announce in the CD group that you need a BGC. Once a<BR>
+clear BGC is received, you can proceed to hire the NL and put him in<BR>
+access. Once a new NL is put in access, announce them on the<BR>
+Games Colony Message Board and in the Neighborhood Message Board<BR>
+where they will be working.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

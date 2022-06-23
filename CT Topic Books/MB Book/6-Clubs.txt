@@ -1,0 +1,36 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br><table height="60%">
+<tr>
+<td valign="top"><center><h1>Clubs</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a>
+<p><table border="1"><tr><td>
+Games Events Club
+<a href=http://www.cybertown.com/cgi-bin/cybertown/place?plc=club&DTY=CL&ID=CL0000000000fab0 target=new>Visit</a></td></tr>
+<tr><td>
+
+Games Colony Educational Center
+<a href=http://www.cybertown.com/home/JustMyself target=new>Visit</a></td></tr>
+<tr><td>
+Games Colony Educational Center
+<a href=http://www.angelfire.com/hi5/dannyking00/GCEC/jobs/index.html target=new>Read Job Ads</a></td></tr>
+<tr><td>
+Games Colony Educational Center MB
+<a href=http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=P&KTY=ID&KEY=0101050403030409&MTY=m target=new>Read</a></td></tr>
+<tr><td>
+Games Colony Web Site
+<a href=http://www.gamescolony.org/ target=new>Visit</a></td></tr>
+
+<tr><td>
+Flea Market Lost and Found
+<a href=http://www.cybertown.com/cgi-bin/cybertown/place?plc=club&DTY=CL&ID=CL0000000000e768 target=new>Visit</a></td></tr>
+
+<tr><td>
+Black Market Discount Store
+<a href=http://www.cybertown.com/cgi-bin/cybertown/property?ID=0108030503060205&T_MODE= target=new>Visit</a></td></tr>
+
+</table></center></td></tr>
+</table>
+<br>
+</center>
+</BODY>

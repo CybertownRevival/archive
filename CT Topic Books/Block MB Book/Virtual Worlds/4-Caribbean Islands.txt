@@ -1,0 +1,58 @@
+<CENTER><table height="60%"><tr>
+<td valign="top"><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><TITLE>Hood Block MB's</title>
+<center>
+          <h1>Caribbean Islands Hood Block MB's</h1>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<font color=yellow><b>PLEASE REMEMBER</b> that some Colonies only allow related messages on 
+their Block MBs.</font><br>
+To find out whether or not you may post event ads on a Hood or Block MB, you will need to 
+check the MB header.<br><br><br>
+In case you didn´t know, it is <b>COMMON COURTESY</b> not to post job ads or job related 
+events e.g. Job Fair)<br>on boards of competing Places.<p>
+For example if you recruit residents or staff for a Block in Games Colony you may post your
+ ad on the Games Colony MB,<br>on your Hood and on your Block MB. You should 
+not post your ad on any other Colony, Hood or Block MB.<p>
+<p align="center">Click on a Block name to begin reading the block Message Boards</p>
+	      <table border="1">
+            <tr> 
+              <th>Caribbean Islands Hood</th>
+            </tr>
+            <tr> 
+              <td><a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040201020000&MTY=m" Target="_Blank">Coastal Rainforest</a></td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040205060000&MTY=m" Target="_Blank">Blooming Bay</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040204050000&MTY=m" Target="_Blank">Eyepatch Island</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040204020000&MTY=m" Target="_Blank">Coconut Beach</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040201050000&MTY=m" Target="_Blank">Mermaid Castle</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040205030000&MTY=m" Target="_Blank">Tropical Sanctuary</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040204060000&MTY=m" Target="_Blank">Dolphin Waterfall</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0103040201060000&MTY=m" Target="_Blank">Tiki Hut City</a> 
+              </td>
+            </tr>
+          </table>
+		  <p align="center"><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fb6&CAT=topic">Return to Main</a></p>
+		 </center>

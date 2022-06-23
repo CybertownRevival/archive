@@ -1,0 +1,46 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Specified Duties"</font></strong></a></p>
+<font size="3">
+<P>You, as a Colony Deputy, may be given specific tasks or<BR>
+jobs within the colony.  These duties are things such as<BR>
+HTML, Training, Organization, Events, etc. and may be<BR>
+assigned according to talent and availablity. These specific<BR>
+duties will be outlined in this training guide. The CL may<BR>
+assign extra tasks according to your talents and will inform<BR>
+you what is expected of you with respect to any specific<BR>
+duties that you have been assigned to perform.<BR><BR><BR>
+<table height="60%"><table border="1">
+    <tr><th>
+<font color=gold><font size=3>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=13">Communications CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=14">
+Deputy Colony Leader (DCL)</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=15">
+Events CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=16">
+Hood CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=17">Tech CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=18">Training CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=19">VRML CD</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=20">FUTURE CD JOB</a>
+</td></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=21">FUTURE CD JOB</a>
+</td>
+    </tr>
+
+  </table>
+
+
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

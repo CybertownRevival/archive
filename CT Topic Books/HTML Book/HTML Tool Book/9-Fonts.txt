@@ -1,0 +1,28 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white>
+<P>Fonts</p>
+<font color=coral>
+<P>The font attributes are face, size and color.<br>
+To change any of the font attributes at any time within your page, simply use the<font color=yellow> < font > tag. The text that follows will remain changed until you close with the<font color=yellow> < /font > <font color=coral>tag.<br>
+You can change any or all of the font attributes at the one time, by including all the required changes within the one<font color=yellow> < font > <font color=coral>tag.</p>
+<font color=yellow>< font face="Comic Sans MS" color="#CC33FF" size="+2" >
+Changing the font face, color and size.</font> 
+<font face="Comic Sans MS" color="#CC33FF" size="+2">
+<font color=coral>Changing the font face, color and size.</font> 
+Will appear as Changing the font face, color and size.</font></p><br>
+<font color=skyblue><font size=3>
+<P>Font Face<br><font color=yellow> 
+< font face="fontname" ><font color=coral>
+Remember to always close with the<font color=yellow> < /font > <font color=coral>tag.<br>
+There are many interesting fonts available for you to use.Some font faces are not compatable with all browsers and are not installed on all computers.</p><br><font color=skyblue>
+<P>Alternate Font Faces<br><font color=coral> 
+Now, we know that your visitor will only be able to see your font if they have that font installed on their computer. So, it is possible to specify two or more font face alternatives by listing the font face names, separated by a <font color=yellow>comma.<br> 
+< font face="arial,helvetica" >
+< font face="Lucida Calligraphy,Comic Sans MS,Lucida Console,Times New Roman" > <br><font color=coral>
+When your page is loaded, their browser will display the first font face that it has available. If none of your selections are installed....then it will display the default font face.</p></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

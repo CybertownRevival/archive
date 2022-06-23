@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Object Help</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br><table height="60%">
+<tr>
+<td valign="top"><center><h1>Object Help</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a></center>
+<p>
+<strong><center>VRML File Sizes</center></strong>
+<ul><li>The maximum size for the (Gzipped) VRML file is 55 kB.</li>
+<li>You may only upload one texture with your item. File size must be less than 40kb.</li>
+<li>You may include up to 2 Universal Media textures in your object. When using Universal Media, a maximum of three textures (in total) may be used and total file size (textures + item, but not thumbnail) must not exceed 150 KB.</li>
+<li>All thumbnails must be 450x450 or smaller in image size and smaller than 40kb in file size.</li></ul>
+    <p>
+    <p>
+    <p>
+<p></P></P><BR><strong><center>WORLD INFORMATION</center></strong>
+<ul><li>Object Name</li>
+<li>Your CT name and the name of any other Creator that works jointly on an object.</li>
+<li>Upload Date.</li>
+<li>Your limit amount or unlimited.</li>
+<li>The original upload price (example: 2000cc’s) for personal and city holds.</li>
+<li>If it is a colony/city event hold the event will be required too.</li></ul>
+</body>
+</html>

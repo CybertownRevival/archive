@@ -1,0 +1,64 @@
+<table height="60%">
+<tr><td valign="top"><h2><a name="D1">Demolition</a></h2>    
+<p><a href="#D2">Welcome New Residents!</a><br><a href="#D6">Block Heroes or Block Security</a><p>
+<img SRC="http://www.cybertown.com/images/buttons/bdelete.gif" ALT="Delete" width="116"
+height="16">  Delete button - will now appear at each<BR>
+house in your Block. The Delete button is off limits<BR>
+ONLY the CL or DCL<BR>
+may use it <BR>
+
+<P><a name="D2"><strong>Subject:  Welcome New Residents!</strong></a><br>
+Hi New Residents,<br>
+I see we have lots of new residents this week. Welcome <br>
+to our block. We are proud to say that we have a very <br>
+active Block So make friends and invite your friends to <br>
+our block. Come in often so you can earn exp points and <br>
+CC = City Cash! 
+Nickname (BD)<br>
+<P><img SRC="http://www.cybertown.com/images/buttons/binbox.gif" ALT="Inbox" width="116"
+height="16"> Inbox <img SRC="http://www.cybertown.com/images/buttons/bmesa.gif" ALT="Messages" width="116"
+height="16"> Messages<br>
+<p>
+<h3><a name="D6">Block Heroes or Block Security</a></h3><p>
+ICQ has proven to be a fast form of communication for <BR>
+staff members and most of the CT staff have it. You are<BR>
+the protectors of the block so residents will look to <BR>
+you as a leader to help them when they have a problem. <BR>
+You may be asked to come to a home where an intruder is<br>
+causing problems. You need to be able to<br>instruct the people involved as to what to do. Or to go<br>into 3D mode yourself and save the chat and call Security<br>as you try to calm the situation. <br>
+<br>If you keep a cool head you can handle the situation <br>
+easily and will be their Hero. <br>
+<br>Here is what should you do if some one is using bad <br>
+language or flooding? I will list the chain of events in <br>
+order so that you could you have a good useable chat <br>
+log ready to send to security when security arrives on <br>
+the scene.<br>
+<br>1. Clear your Public Chat Log at the first sign <br>
+of trouble or before you enter a room in 3D.<p>
+2. Get the person to talk about himself as much as <br>
+possible. Always be polite and ask the person to stop <br>
+three times.<p>3. Now prepare to call Security.  Undock the public <br>
+chat window and set scroll lock to off. Go to the <br>
+Security Inbox is found at Jump Gate. Briefly tell <br>
+Security the intruders nicknane and what is wrong. <br>
+Give your nickname and location or if at a home <br>
+give the complete address in 2 ways: <br>
+The Colony/Neighborhood/Block/House name and <br>
+http://www.Cybertown.com/home/nickname of <br>
+person's house where the disturbance is taking place.<p>
+4. Now copy and paste all relevant text to a text file <br>
+then start copying the chat logs and pasting it to the <br>
+security inbox. Use the same name on all logs you <br>
+send. <p>
+5. When security arrives you already have what you <br>
+need to catch him fast. Believe me action will be taken <br>
+and you will be the hero of the block.<p>
+Get ICQ or Learn where the staff people of your Colony <BR>
+gather. Then you can just go there and ask for an<BR>
+ND or CD or NL to get the help you need.<P>
+<a href="#D1">Back to the top</a>
+<img src="http://www.cybertown.com/dbimages/BK/o0/00/b6/49/f/pic_2_2.gif" width="71"
+height="100" alt="pic_2_2.gif (16495 bytes)"><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return
+to Start</a>  <br></td>
+</tr></table>

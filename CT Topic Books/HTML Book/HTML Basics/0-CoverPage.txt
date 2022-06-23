@@ -1,0 +1,40 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style> <table height="10%">
+<tr>
+<td><hr>
+<b>HTML Basics for Messages & boards</b>
+<hr><p>
+Please try Lesson #1 your messages will look better <br>
+using only a little easy HTML code. If you only use <br>
+lesson #1 everyone will love reading your messages. <br>
+You can also use these codes in your information box,<br>
+inbox & your message box.<br>  Feather4 <p>
+<b><A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&&CAT=topic">Lesson #1 - BR, P & Center</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&">Lesson #2 - Font Size</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=1">Lesson #3 - Font Colors</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=2">Lesson #4 - Bold, Italic & Underline</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=2">Lesson #5 - Different Fonts</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=3">Lesson #6 - How to make a link</A><BR>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=4">Lesson #7 - Add pictures & Backgrounds</A><br>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=5">Lesson #8 - Lists, Horizontal Ruled Lines</a><br>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=6">Lesson #9 - Marquees</a>
+<br>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c63a96b&&PAGE=7">Lesson #10 - Tables</a>
+</b><p>
+<hr>
+<b>Lesson #1 Line Break, Paragraph & Center</b>
+<hr>
+ <XMP><BR> = Line Break</XMP> 
+Use this tag at the end of a line to make a line break.<br> 
+This moves the text to the next line in your message.<p>
+<XMP><P> = Paragraph</XMP><br>
+Use this tag to make a new paragraph or <br> 
+put a space between lines.<p>
+<XMP><center> = To center your typing.</XMP>
+<XMP><center>Text goes here</center></XMP>
+Write a message you want centered between the <br>
+open center and the closed /center.<p>
+NOTE: Line Break and Paragraph code don't need <br>
+to be closed. But you can close them if you want.<br> 
+All other code once opened must always be /closed.<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&&CAT=topic">HTML Basics Home</A><p></td>
+</tr></table>

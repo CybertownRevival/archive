@@ -1,0 +1,18 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1>CS Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Event CS Training"</font></strong></a></p>
+<font size="3">
+<P>The Event CS will work for the current Event CD<BR>
+<P>An event CS will work with the event CD to plan colony<BR>
+events and other activties that would benifit the colony.<BR>
+<P>They should also liase with the NL's and event ND's to<BR>
+try and boost hood and block events which will increase<BR>
+activity all over the colony.<BR>
+<P>You are also required to do any tasks that the event<BR>
+CD asks you to perform as long as it does not break<BR>
+Cybertown nor Colony rules and bylaws.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c63a96a&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

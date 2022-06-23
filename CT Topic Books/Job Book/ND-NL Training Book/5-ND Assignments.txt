@@ -1,0 +1,234 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>ND ASSIGNMENTS</strong></font></p>
+<p align="left"></p><p align="left"><font face="Arial">As a neighborhood grows it can become increasingly
+ difficult to keep up with staff changes, training requirements, organizing social events and so on. To
+help assist in this, some neighborhoods </font>
+<font color="#EAE7A6" face="Arial">assign areas of responsibility</font>
+<font face="Arial"> to ND's. Although it is generally accepted that </font>
+<font color="#EAE7A6" face="Arial">ALL</font>
+<font face="Arial"> are available to help each other, to actually give a name as </font>
+<font color="#EAE7A6" face="Arial">another point of contact and reference</font>
+<font face="Arial"> can reassure that tasks are actually addressed and that support is available. To what
+ extent this is all done is entirely up to the NL and how they wish to run their hood. </font>
+ <font color="#EAE7A6" face="Arial"><strong>The following information is suggestion only.</strong></font></p>
+<p align="left"><font face="Arial">Some neighborhoods </font>
+<font color="#EAE7A6" face="Arial">cross reference their assignments</font>
+<font face="Arial">. For example, an ND takes on a particular column, row, or group of blocks and therefore
+ is responsible for </font>
+<font color="#EAE7A6" face="Arial">coordinating those blocks.</font>
+<font face="Arial"> The assigned ND becomes a particular point of reference & contact for those BL's. This
+ gives the BL a contact who is familiar with the block and who has a special interest in the success of the block.</font></p>
+<p align="left"><font face="Arial">In addition to taking care of a particular group of blocks, the ND might
+ have an </font>
+<font color="#EAE7A6" face="Arial">area of responsibility</font>
+<font face="Arial"> also such as Recruiting or Training or Tech or Events and so on. Again, this provides an </font>
+<font color="#EAE7A6" face="Arial">additional point of reference.</font></p>
+<p align="left"><font color="#EAE7A6" face="Arial"><strong>An example </strong></font>
+<font face="Arial">of a breakdown of such ND Assignments is shown below. Again, this is simply an
+ alternative / option that may be used or adapted to suit personal hood needs.  Not all neighborhoods will
+ use this format and the Neighborhood Leader may make any changes to the format she or he may desire.</font></p>
+<p align="left"></p>
+<p align="center"><font color="#8FF2FA" size="4" face="Arial"><strong>ND Assignments & Details</strong></font></p>
+<hr>
+<p><font face="Arial">The following table outlines ND's and their areas of responsibility. BL's should
+ email their block report to their respective ND every two weeks. Although any ND & the NL are available
+ to assist you with any issue, please refer to the following information to help guide your queries.</font></p>
+<table border="1" width="95%">
+    <tr>
+        <td align="center" width="14%"><p align="center"><font
+        color="#8FF2FA" face="Arial"><strong>ND</strong></font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">ND<br>
+        Name</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">ND<br>
+        Name</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">ND<br>
+        Name </font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">ND<br>
+        Name</font></p>
+        </td>
+        <td align="center" width="15%"><p align="center"><font
+        face="Arial">ND<br>
+        Name</font></p>
+        </td>
+        <td align="center" width="15%"><p align="center"><font
+        face="Arial">ND<br>
+        Name</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">ND<br>
+        Name<br>
+        (Senior)</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="14%"><p align="center"><font
+        color="#8FF2FA" face="Arial"><strong>Column</strong></font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">A</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">B</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">C</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">D</font></p>
+        </td>
+        <td align="center" width="15%"><p align="center"><font
+        face="Arial">E</font></p>
+        </td>
+        <td align="center" width="15%"><p align="center"><font
+        face="Arial">F</font></p>
+        </td>
+        <td align="center" width="14%"><p align="center"><font
+        face="Arial">Relief</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p align="center"><font color="#8FF2FA" face="Arial"><strong>Speciality</strong></font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Tech ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Records ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Recruiting ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Events ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Guardian ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Training ND</font></p>
+        </td>
+        <td><p align="center"><font face="Arial">Senior ND</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font color="#8FF2FA" size="4" face="Arial"><strong>Area
+Details</strong></font></p>
+
+<table border="1" width="95%">
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA" face="Arial">Records</font></td>
+        <td width="50%"><font face="Arial">All BL's and ND's
+        should email the Records ND with an email address suitable for circulation to other hood ND's &
+        the NL.</font><p><font face="Arial">The email should
+        include their Block Name, CT Nickname, email address, and
+        ICQ if available for CT use. The ND responsible for this
+        list will keep the records list up to date and
+        circulate it to the other ND's & the NL.</font></p>
+        <p><font face="Arial">The Records ND and the Events ND should liaise with each other to ensure
+        all activities are promoted as widely as possible
+        throughout the neighborhood, colony and city.</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA"
+        face="Arial">Guardian</font></td>
+        <td width="50%"><font face="Arial">In conjunction with the Deputy Colony Leader, the Guardian ND shall liaise with CT Security with respect to any security
+        matters involving the neighborhood. </font><p><font
+        face="Arial">Should any residents encounter security
+        issues (eg harassment, inappropriate behaviors, etc)
+        from within our neighborhood, the Guardian ND should
+        be advised, as well as the Games DCL, CL, and CT Security, 
+        with the ND to follow up and ensure the matter is resolved. </font></p>
+        <p><font face="Arial">The Guardian ND will also make
+        periodic checks of MB's & Inboxes in the neighborhood and offensive material should be referred
+        to this ND.</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA"
+        face="Arial">Training</font></td>
+        <td><font face="Arial">In conjunction with the Colony
+        Training Center and the Games Training CD,
+        the Training ND will liaise with Colony directives and
+        over see any training issues that arise. </font><p><font
+        face="Arial">It will be expected that BD's are trained by
+        their BL. That BL's would be trained and monitored by
+        their assigned ND, in consultation with the Training ND. </font></p>
+        <p><font face="Arial">BL's will employ BD's in
+        consultation with their assigned ND's, ND's will employ
+        BL's for their
+        column in consultation with the NL. Dismissals will
+        follow the same process. Wherever possible internal hiring will be considered
+        favorably however submitted
+        job forms are also available for perusal from the NL.</font></p>
+        <p><font face="Arial">The Training ND may also create /
+        maintain a neighborhood training site to be linked from
+        the Games Training Center which will cater to the hood's
+        own personal, additional requirements.</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA"
+        face="Arial">Tech</font></td>
+        <td><font face="Arial">The Tech ND will be
+        responsible for the creation, maintenance and update of
+        the Hood Message Board and Web Site. Colony support is available
+          through Games Tech CD.</font><p><font
+        face="Arial">They will liaise with the NL, BL's and other
+        colony staff as the need arises. </font></p>The Tech ND will also be
+        responsible for assisting neighborhood residents with
+        their message boards, inboxes and house pictures.
+        <p>The Guardian ND and Tech ND should liaise with each other to monitor message
+        boards and inboxes through out the neighborhood<font face="Arial"></font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA"
+        face="Arial">Recruiting</font></td>
+        <td><font face="Arial">The Recruiting ND goes out and finds staff to fill open slots. At no time is the Recruting ND to "poach" from another Colony. To poach a staff member means to try to hire a person who you know has a job in another Colony. Games Colony neither condones nor tolerates poaching. Poaching will be grounds for IMMEDIATE dismissal.</font><p><font
+        face="Arial">The Recruiting ND may use the Games Colony Employment Center to place an ad for staff. The Recruiting ND may also use the Employment Office.</font></p>
+        <p><font face="Arial">.</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="20%"><font color="#8FF2FA"
+        face="Arial">Events</font></td>
+        <td><font face="Arial">The Events ND will liaise with various staff, as needed, to assist with the
+          organization and implementation of events within
+        the neighborhood. They will encourage BL's & BD's
+        with their block activities and assist when ever
+        possible.  Colony support from the Events CD is also available.</font><p><font face="Arial">The Events ND will also be responsible for the instigation, organization and communication of
+          neighborhood activities. </font></p>
+        <p><font face="Arial">The Events ND will also liaise with other Colony Staff for inter-hood activities.</font></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p align="center"><font color="#8FF2FA" face="Arial">Senior
+        ND</font></p>
+        </td>
+        <td><font face="Arial">Should ND's require time away from
+        CT due to personal reasons, vacation, exams etc they may
+        ask the NL to be relieved of their duties for a
+        negotiated time. The Senior ND will take over their
+        column and area of responsibility for that period of
+        time.</font><p><font face="Arial">Also should a temporary
+        BL be required by an ND (due to firing of staff, unexpected absence etc), the Senior ND may take on
+        that block at the ND's request (NL to be advised).</font></p>
+        <p><font face="Arial">As Senior ND, should it be
+        required, they will fill in whilst the NL is on leave or
+        absent for a specified period of time. They will also
+        assist the NL with their duties as requested.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p align="center"><font color="#8FF2FA" face="Arial"><b></b></font> </p>
+<BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return
+to Start</a></center>

@@ -1,0 +1,102 @@
+<META http-equiv="Page-Enter" content="revealTrans(Duration=5,Transition=23)"> 
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}
+</style>
+<BODY bgcolor="#000000" TEXT="#0066ff" link="red" vlink="green" alink="yellow">
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="fixed">Fixed Background (IE Only)</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+This small bit of code will "fix" a background so it remains still, while the contents of the web page scroll over the top if it.</b></font>
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=5"><b>Click Here To See It In Action</b></a>
+<p>
+<font size="2" color="#0066FF" face="verdana"><b>
+Here is the short code to add to your "body" line.</b></font>
+<p>
+</b></font> 
+<font color="#c71585" size="2" face="verdana"><b>
+bgproperties="fixed"
+</b></font>
+<p>
+<font color="#0066ff" size="2" face="verdana"><b>
+Sample "body" line with the code in it.
+</b></font>
+<p>
+<font color="#c71585" size="2" face="verdana"><b>
+<BODY BACKGROUND="starb.gif" bgproperties="fixed" TEXT="#000000" LINK="violet" VLINK="violet" ALINK="#ff0000">
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="email">Email With Subject/Message</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+Here is a cool code to send an email with the subject line and a message already filled in by you. Works with MSNTV or Computers !
+<p>
+One application for this is a "Send This Page To A Friend" link on your web page.
+<p>
+Check it out click on the link below.<p>
+<A href="mailto:?subject=HTML Advanced Guide&body=Check out the GREAT job that DannyKing did on this fantastic HTML Advanced Guide">
+Send This Page To A Friend</A>
+</b></font>
+<p>
+<font size="1" color="#0066ff" face="verdana,arial,sans_serif"><b>
+(don't be shy send this page while you test the link...:+)</b>
+</font>
+<p>
+<font size="2" color="#0066ff" face="verdana"><b>
+Here is the code, edit to your needs.
+</b></font>
+<p>
+<font color="#c71585" face="verdana" size="2"><b>
+<A HREF="mailto:?subject=PUT SUBJECT LINE HERE&body=PUT EMAIL MESSAGE HERE">Send This Page To A Friend</A>
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="border">The Border="0" Lesson</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+A sometimes forgotten attribute. A simple way to create a much cleaner look to your web site.
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=6">Click Here For The Lesson</a>
+</b></font>
+</td></tr></table><P></P>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+  <tr> 
+    <td align="center" bgcolor="#0052E7"><font size="5"> </font><font size="3" color="#000000" face="verdana,arial,helvetica,sans-serif"><b>
+<a name="link">Overriding The Link Colors</a></b></font>
+</td></tr></table>
+<table width="50%" border="1" cellspacing="1" cellpadding="0" align="center" bordercolor="#0066FF">
+<TR><TD align="left" valign="middle" bgcolor="#000000">
+<font size="2" color="#0066FF" face="verdana"><b>
+As you know the colors of your clickable links are determined by the colors you set in the <BODY>  line of code.
+<p>
+You can override these colors you set in the <BODY> line of code, by placing a font color between the anchors tags.
+</b></font>
+<p>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ac=next&ID=o0c69a063&PAGE=1">
+<font color="#9400d3" size="2" face="verdana">
+<b>This Is A Purple Sample Link</b></font></a>
+<p>
+<font color="#0066ff" size="2" face="verdana"><b>
+Here is the code I used to color the above link.
+</b></font>
+<p>
+<font color="#c71585"  size="2" face="verdana"><b>
+<a href="http://www.gamescolony.com/"><br>
+<font color="#9400d3"><b><br>
+This Is A Purple Sample Link</b></font></a>
+</b></font>
+</td></tr></table></P>
+<P><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c69a063&CAT=topic">Main</a></center></P>

@@ -1,0 +1,65 @@
+<table height="60%">
+<tr><td valign="top"><H1>Functions of the Block Menu</H1>
+<center><img src="http://dannydking.org/games/bdblockmenu.jpg" width="133"
+height="167" alt="BlockMenu"></center></p>
+<p><a name="w18"><strong><font size="3">How to use the "Block Menu"</font></strong></a></p>
+<font size="3">
+<P>This is the <B><font color=yellow>Block Menu</font></B>. It will appear at the right<BR>
+side of your screen each time you go to the block in which<BR>
+you are now BD, or BL. Now we will break each function down.<BR> 
+<P>The <B><font color=yellow>information</font></B> button.  It is a very usefull tool for all<BR>
+residents.  When you click this button it will show you who <BR>
+the Block Leader and all persons listed as Block Deputy.<BR>
+<P>The <B><font color=yellow>Messages</font></B> button.  When you click this button it will<BR>
+bring up the block message board.  Here you will find all<BR>
+the messages posted by the Block Leader and other residents.<BR>
+Also you will find announcements about current events, and<BR>
+other special activities going on in the block.<BR> 
+<P><B><font color=yellow>Extreme Games</font></B> link will take you up to the neighborhood<BR>
+level.  The link will not always say Extreme Games.<BR>
+This is just one of the Hood's in Games Colony.<BR> 
+<P>The <B><font color=yellow>Message to All</font></B> button.   Once you have recieved<BR>
+your access rights as a Block Deputy or Block Leader<BR>
+you will have access to this function.  You can use<BR>
+this function to send a message to all residents of the<BR>
+block. Simply click on this button, type your message,<BR>
+click send and rest assured that your message will be<BR>
+delivered to every residents personal message board.<BR>
+This button is similar to the Inbox to All button except<BR>
+the Inbox to All button sends a message to everyones inbox<BR>
+in the block<BR>
+<P>The <B><font color=yellow>Update</font></B> button. This function is use to open free spaces<BR>
+on the block map. This function is used mainly by the Block Leader,<BR>
+and higher levels to set up the block layout of homes. IMPORTANT as<BR>
+a BD you should never use this button without first consulting your<BR>
+Block Leader. When you delete a house you will need to come back<BR>
+here and update the Block Map. Close the Free spaces up and<BR>
+leave only 3 or 4 available for new residents, depending on your<BR>
+BL, ND, or NL's instruction. If you leave too many Free spaces<BR>
+they will fill up with one timers. You want residents that<BR>
+keep coming back and who want to have fun in the block. Also<BR>
+never leave Free spaces on roads or the scenery. You don't want<BR>
+houses on roads, rivers, or trees. Blocks are to keep one or two<BR>
+spots as reserve spots. Sometimes the need to bring in more staff<BR>
+becomes necessary and having a couple of closed spaces assures that<BR>
+this can happen.<BR> 
+<P>The <B><font color=yellow>Check</font></b> button.  Check is used to check resident's 2D images.<BR>
+This is one of the easiest jobs and most forgotten jobs, and it only<BR>
+takes a few seconds to make your new residents very happy to see their<BR>
+picture. If the image is waiting approval, there will be a check mark<BR>
+in the locked box. If everything is ok simply unlock the image by<BR>
+clicking on the check box. Images should be checked daily. To check<BR>
+images you need to be at the block level. Images must not be<BR>
+offensive, they must be in gif or jpg or jpeg format and if the<BR>
+image is too big it won't be allowed to upload. At the block level you<BR>
+click on the button and then page up and down to view the pictures.<BR>
+<P>The <B><font color=yellow>Access Rights</font></B> button.This is one of the most important button's<BR>
+on the block menu. The BL or above are the only one's that are allowed<BR>
+to alter access rights. Anyone found altering access rights without<BR>
+authorization will be immediatly fired and held up to the highest<BR>
+consequences by the colony. Note that your BDs do not have access to<BR>
+this button.<BR>
+<BR><P><a href="#w1">Back to top</a><BR>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

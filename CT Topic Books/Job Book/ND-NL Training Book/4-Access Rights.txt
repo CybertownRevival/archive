@@ -1,0 +1,65 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:green;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<p align="center"><img src="http://dannydking.org/games/guides/GCLogo2.jpg" width="423" height="39"></p>
+<p align="center"><font color="#33FF00" size="4" face="Arial"><strong>ACCESS RIGHTS</strong></font></p>
+<p> </p><p><font size="3" face="Arial">Jobs / Titles are enabled by the </font>
+<font color="#EAE7A6" size="3" face="Arial">granting of access rights</font>
+<font size="3" face="Arial">. The access rights button become </font>
+<font size="3" face="Arial">visible when you are granted rights to the tool yourself. It is </font>
+<font color="#EAE7A6" size="3" face="Arial">EXTREMELY IMPORTANT</font>
+<font size="3" face="Arial"> when adding others to access rights that you make sure the</font>
+<font color="#EAE7A6" size="3" face="Arial">EXACT  </font>
+<font size="3" face="Arial">spelling of nicknames are entered. </font></p>
+<center><img src="http://dannydking.org/games/guides/blockaccess.jpg" width="147" height="223"></center>
+<p><font size="3" face="Arial">As per </font>
+<font color="#EAE7A6" size="3" face="Arial"><a href="http://www.gamescolony.org/" target=_new>Games Colony Guidelines</a></font>
+<font size="3" face="Arial">, the following Access Rights Details should be adhered to:</font></p>
+<h3><a name="BAccess"><font color="#8FF2FA" size="3" face="Arial">Block Level Access Rights:</font></a></h3>
+<p><font face="Arial">1.- Block Leaders should list first their actual deputies (BD's) in the space provided
+ beginning <u>TOP LEFT</u>. The Neighborhood Leader's name should </font>
+<font color="#EAE7A6" face="Arial">NOT </font>
+<font face="Arial">appear on the list. </font>
+<font color="#EAE7A6" face="Arial">NO OTHER NAMES SHOULD BE LISTED</font>
+<font face="Arial"> (including CD's or CL).</font></p>
+<center><img src="http://dannydking.org/games/guides/blockdeputies.jpg" width="711" height="130"></center>
+<p><font face="Arial">2.- Neighborhood Deputies' (NDs) names </font>
+<font color="#EAE7A6" face="Arial">MAY</font>
+<font face="Arial"> be listed in the Block Leader Section if the block has no block leader. If the ND needs
+ to access the block, and the block has a Block Leader, he or she will either put themself in a blank spot
+ or remove one of the BD nicknames, perform the duties and replace the nickname when complete. Under NO
+ circumstances should any staff member be in access unless they work there</font></p>
+<p><font face="Arial">3.- In the access panel you should check the Com Tech and City Council job positions
+ only. </font>
+ <font color="#EAE7A6" face="Arial"><u>NO OTHER POSITION SHOULD BE CHECKED.</u></font></p>
+<center><img src="http://dannydking.org/games/guides/accesspanel.jpg" width="794" height="402"></center>
+<p><font face="Arial">4.- Note that there are several different pages of Access Rights. Normally, </font>
+<font color="#EAE7A6"> you should never need to change the information</font> on pages other than the Owner
+Access Rights.  However, often we find that these other pages have been changed and we need to correct the
+ entries.</p>
+<p>There are a total of <font color="#EAE7A6" face="Arial">7 different Access Rights Pages</font>
+<font face="Arial">. The 4 main pages are the Owner, Read, Action and Change Pages.  The Owner Rights page
+ is the one that is displayed when you first open the Access Rights. This is the screen where you list the
+ Block Deputies, and checkmark the 3 jobs listed above.</font></p>
+<p>As mentioned above, there are a total of 7 Access Rights Screens. There are the 4 primary ones, and on
+ the Read, Action and Change Screens, there are 
+<font color="#EAE7A6" face="Arial">Chat Access Rights</font>
+<font face="Arial"> which can be set also.  As you can see in the image below, under the Update Access
+ title, there is a Chat Access button. Clicking this button will bring up the secondary Chat Access rights
+ pages, on the Read, Action and Change Screens.</font>
+<font color="#EAE7A6" face="Arial">There should be no names listed or titles checked on any access rights 
+pages other than the Owner's Rights page.</font></p>
+<p><center><img src="http://dannydking.org/games/guides/accessscreen.jpg" width="815" height="470"></center></p>
+<p align="center"></p><p></p>
+<h3><a name="NAccess"><font color="#8FF2FA" size="3" face="Arial">Neighborhood Level Access Rights:</font></a></h3>
+<p><font face="Arial">1.- Neighborhood Leaders need only list their deputies.  It is not necessary to list
+ the CL or CDs on this page.</font></p>
+<p><font face="Arial">2.- As in the Block level access, the positions of Com Tech and City Council job
+ positions </font>
+<font color="#EAE7A6" face="Arial">ONLY </font>
+<font face="Arial">should be checked.</font></p>
+<center><img src="http://dannydking.org/games/guides/update.jpg" width="805" height="229"></center>
+<p><font face="Arial">3.- ALWAYS click on the UPDATE button, </font><font color="#EAE7A6"
+face="Arial">NEVER </font><font face="Arial">hit the ENTER key.</font></p>
+<BR><center><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c685ef2&CAT=topic#nd1">Return to Start</a></center>

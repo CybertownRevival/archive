@@ -1,0 +1,29 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><hr>
+<b>Lesson #3 - Font Colors</b><br>
+<hr>
+Color HTML Codes for Messages - Here are a<br>
+few basic color names to make the font <br>
+a different color like: <p>
+"blue", "red", "yellow", <br>
+"green", "purple", "orange", <br>
+"aqua", "pink", "brown", "black", <br>
+"white", "grey",<p>
+Or use the exact color code the list is <br>
+to long to list here. I will use blue as <br>
+the example.<p>
+<XMP><font color="blue">Type Here</font></XMP>
+<font color="blue">Type Here</font><p>
+NOTE: Make sure you can read the font on <br>
+the background you are putting it on. <br>
+Example: Black is a poor choice for a <br>
+message to all as some people are still <br>
+using a black background. and they will <br>
+think that there is no message there.  <br>
+You can put any color in. Make sure you <br>
+always close your /font codes at the end <br>
+of the colored area.<P>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics Home</A><BR></td>
+</tr>
+</table>

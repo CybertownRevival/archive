@@ -1,0 +1,22 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"NL Training"</font></strong></a></p>
+<font size="3">
+<P>For ease, you can make an NL information text file and save<BR>
+it on your computer. When a new NL is hired or promoted, you can<BR>
+then copy and paste the text in an email to them so that they know<BR>
+exactly what is expected of them in their new position. You should<BR>
+also inform them of the monthly colony meetings and what needs to<BR>
+be reported at the meetings. Let the NL know that if they cannot<BR>
+attend the meeting, they should ask an ND to attend in their place.<BR>
+If an ND is not available, they should send you a report prior to<BR>
+the meeting so that you can report for the neighborhood. Make sure<BR>
+your NL is aware of the Colony Guidelines (you should also<BR>
+familiarize yourself with these guidelines). Also be sure that the<BR>
+NL inboxes the Training CD to setup a time to be trained. ALL NLs<BR>
+should be trained within days after being hired.<BR> 
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

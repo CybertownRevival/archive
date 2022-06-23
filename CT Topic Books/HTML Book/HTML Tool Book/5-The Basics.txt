@@ -1,0 +1,38 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%"><tr>
+<td valign="top"><center>
+<font color=white size=3>*HORIZONTAL LINES*</font>
+<br><font color=yellow><br>< hr ></font>
+<font color=coral>This tag makes a very fine shaded horizontal line. NO closing tag is needed.</font></p> 
+<p><font color=coral>You can also control the thickness, length and alignment of the line, by combining the 
+following attributes: </font><br>
+<font color=coral>Width is expressed as a</font>
+<font color=yellow> % </font>
+<font color=coral> of the width of the page. Example:</font>
+<font color=yellow>< hr width=50% ></font>
+<hr width=50%></p>
+<font color=lime>
+<p>--------------------------------------------------------------------------------</p></font>
+<P></P><font color=skyblue>Size:</font>
+<font color=coral> is (thickness) expressed as a number (of pixels). For example,</font>
+<font color=yellow>< hr width=50% size10 ></font>
+<hr width=50% size=10>
+<font color=lime>
+<P>--------------------------------------------------------------------------------</p></font>
+<P></P><font color=skyblue>Align:</font>
+<font color=coral>can be left or right. If not specified, it will default to the center.</font><br>
+<font color=coral>Example:</font>
+<font color=yellow>< hr width=50% size 10 align right ></font>
+<hr width=50% size=10 align=right>
+<font color=lime>
+<P>--------------------------------------------------------------------------------</p></font>
+<P></P><font color=skyblue>Noshade:</font>
+<font color=coral>You can make the line dark by specifying noshade.</font><BR>
+<font color=coral>Example:</font>
+<font color=yellow>< hr width=50% size 10 align right noshade ></font>
+<hr width=50% size=10 align=right noshade></td>
+</tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

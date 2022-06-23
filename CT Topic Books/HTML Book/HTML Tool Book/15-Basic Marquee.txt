@@ -1,0 +1,24 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Basic Marquee<br><font color=skyblue><br>
+<font color=yellow>< marquee ><font color=skyblue>Then your text <font color=yellow>< /marquee><br><font color=coral> 
+This is the basic tag for a marquee. You must always close with <font color=yellow>< /marquee >.</p><font color=pink>
+<marquee>
+<P>I am a scrolling marquee!</p></marquee><br><br>
+<font color=white><P>Behavior<br><font color=yellow><br>
+< marquee behavior="alternate" ><font color=skyblue> Then your text<font color=yellow>< /marquee><br><font color=coral>The text will now bounce back and forth continously like below.<br>
+<font color=silver><marquee behavior="alternate">Hi!I am bouncing left to right!</marquee><br><br>
+<font color=white><P>Direction<br><br><font color=yellow>< marquee direction="right" ><font color=skyblue>Then your text<font color=yellow>< /marquee><br><br>
+<font color=tan>
+<marquee direction="right"> 
+<P>The text will scroll from left to right.</p></marquee><br><br>
+<font color=coral>The next example will show you a scrolling UP marquee.<br><br><font color=yellow>
+< marquee direction="up" ><font color=skyblue>Then your text<font color=yellow>< /marquee><br><br>
+<font color=seagreen><marquee direction="up"><P>I am going upwards!</p></marquee><br><br><font color=coral>You can also use the <font color=yellow>down<font color=coral> command in place of the <font color=yellow>up <font color=coral> command to have the text scroll from top to bottom instead.</p>
+</center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

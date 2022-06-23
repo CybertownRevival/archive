@@ -1,0 +1,72 @@
+<CENTER><table height="60%"><tr>
+<td valign="top"><style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<table height="60%">
+<tr>
+<td valign="top"><TITLE>Hood Block MB's</title>
+<center>
+          <h1>Divination Hood Block MB's</h1>
+<p style="text-margin-left:1cm;margin-right:0.5cm">
+<font color=yellow><b>PLEASE REMEMBER</b> that some Colonies only allow related messages on 
+their Block MBs.</font><br>
+To find out whether or not you may post event ads on a Hood or Block MB, you will need to 
+check the MB header.<br><br><br>
+In case you didn´t know, it is <b>COMMON COURTESY</b> not to post job ads or job related 
+events e.g. Job Fair)<br>on boards of competing Places.<p>
+For example if you recruit residents or staff for a Block in Games Colony you may post your
+ ad on the Games Colony MB,<br>on your Hood and on your Block MB. You should 
+not post your ad on any other Colony, Hood or Block MB.<p>
+<p align="center">Click on a Block name to begin reading the block Message Boards</p>
+	      <table border="1">
+            <tr> 
+              <th>Divination Hood</th>
+            </tr>
+            <tr> 
+              <td><a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030601030000&MTY=m" Target="_Blank">The Zodiac</a></td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030603030000&MTY=m" Target="_Blank">Astrology</a> </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030601040000&MTY=m" Target="_Blank">Tarot</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030604040000&MTY=m" Target="_Blank">Oracles</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030605040000&MTY=m" Target="_Blank">Runes</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030604050000&MTY=m" Target="_Blank">Vision Quest</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030605050000&MTY=m" Target="_Blank">Channeling</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030601060000&MTY=m" Target="_Blank">Crystal Ball</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030602060000&MTY=m" Target="_Blank">Dreams</a> 
+              </td>
+            </tr>
+            <tr> 
+              <td><a 
+href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=B&KTY=ID&KEY=0105030604060000&MTY=m" Target="_Blank">Numerology</a> 
+              </td>
+            </tr>
+          </table>
+		  <p align="center"><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c699fc2&CAT=topic">Return to Main</a></p>
+		 </center>

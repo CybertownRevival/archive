@@ -1,0 +1,53 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg3.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:purple;scrollbar-highlight-color:violet;scrollbar-shadow-color:blue}</style><table height="60%">
+<tr>
+<td valign="top"><table align="center" width="60%">
+<tr>
+<td>
+<hr>
+<b>Lesson #10 Tables</b>
+<hr>
+all the forms you enter HTML into are tables to begin with in CT. It's <br>important to be able to control what goes where and what color is the content especially if a picture is involved.<p>
+<TABLE align="center">
+<TR>
+<TD BGCOLOR="red">Cell 1</TD><TD BGCOLOR="gray">Cell 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="BLUE">Cell 3</TD><TD BGCOLOR="GREEN">Cell 4</TD>
+</TR>
+</TABLE>
+ <XMP><TABLE align="center">
+<TR>
+<TD BGCOLOR="red">Cell 1</TD><TD BGCOLOR="gray">Cell 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="BLUE">Cell 3</TD><TD BGCOLOR="GREEN">Cell 4</TD>
+</TR>
+</TABLE></xmp>
+additionally you could set table widths too.<p>
+<TABLE align="center" width="50%">
+<TR>
+<TD BGCOLOR="red">Cell 1</TD><TD BGCOLOR="gray">Cell 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="BLUE">Cell 3</TD><TD BGCOLOR="GREEN">Cell 4</TD>
+</TR>
+</TABLE>
+<xmp>
+<TABLE align="center" width="50%">
+<TR>
+<TD BGCOLOR="red">Cell 1</TD><TD BGCOLOR="gray">Cell 2</TD>
+</TR>
+<TR>
+<TD BGCOLOR="BLUE">Cell 3</TD><TD BGCOLOR="GREEN">Cell 4</TD>
+</TR>
+</TABLE>
+</XMP>
+This is a great way to break up a page into smaller more precise parts.
+You will want to read as much as possible on tables because it will be your most useful tool in page design in CT.
+<p>
+<A HREF="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c63a96b&CAT=topic">HTML Basics Home</A>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>

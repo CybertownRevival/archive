@@ -1,0 +1,67 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br>
+<table height="60%">
+<tr>
+<td valign="top"><center><h1>Link Collection</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a>
+<p><table border="1"><tr><td>
+Daily News
+<a href="http://www.cybertown.com/places/news/magazine/dailynews/index.html" Target="_Blank">Read</a>
+</td><td>
+Weekly News
+<a href="http://www.cybertown.com/places/news/magazine/index.html" Target="_Blank">Read</a>
+</td><td>
+Games Colony Employment Center
+<a 
+href="http://www.cybertown.com/home/JustMyself" Target="_Block">Visit</a>
+</td></tr><tr><td>
+Ambassadors
+<a href="http://clik.to/Ambassador" Target="_Blank">Visit</a>
+</td><td>
+C.E.R.B
+<a href="http://www.phazite.com/cerb/intro.htm" Target="_Blank">Visit</a>
+</td><td>
+City Council
+<a href="http://www.adventurecove.net/council" Target="_Blank">Visit</a>
+</td></tr><tr><td>
+Chat Options
+<a href="http://www.cybertown.com/java/contact/chatimg/options.html" Target="_Blank">View</a>
+</td><td>
+CT Macros
+<a href="http://www.cybertown.com/info/controlpanel/macros.html" Target="_Blank">View</a>
+</td><td>
+CT Org Chart
+<a href="http://www.cybertown.com/orgchart2.html" Target="_Blank">View</a>
+</td></tr><tr><td>
+CYBERTOWN STRATEGIC GUIDANCE
+<a href="http://trockx.com/Cybertown/ctstrat.html" Target="_Blank">Visit</a>
+</td><td>
+Ziekerdanziek´s <a href="http://www.ziekerdanziek.tk/" Target="_Blank">Visit</a></td>
+<td> IVN customer service<br>
+1-888-557-5611 & 1-888-557-2500</td>
+</tr>
+<tr>
+<td>Mr. Phillip's Spazz Tutorials <a href="http://www.philliphansel.org/toc.htm" Target="_Blank">Visit</a></td>
+<td> </td>
+<td>The Wall <a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o000ca531&CAT=topic" Target="_Blank">Read</a> </td>
+<td> </td>
+</tr>
+<tr>
+<td> IVN Cancel Membership<br> <a href=mailto:cancel@integratedvirtualnetworks.com>eMail</a>
+</td><td>
+IVN Help<br>
+<a href=mailto:help@integratedvirtualnetworks.com>eMail</a>
+</td><td>
+IVN Account Questions<br>
+<a href=mailto:billing@integratedvirtualnetworks.com>eMail</a>
+</td><td>
+IVN Disputed Charges<br>
+<a href=mailto:charges@integratedvirtualnetworks>eMail</a>
+</td></tr>
+</table></center></td>
+</tr>
+</table>
+</center>
+</BODY>
+</HTML>

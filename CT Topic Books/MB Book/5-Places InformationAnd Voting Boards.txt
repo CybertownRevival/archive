@@ -1,0 +1,324 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br><table height="60%">
+<tr>
+<td valign="top"><center><h1>Places InformationAnd Voting Boards</h1>
+<p>
+Back to <a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ID=o0c685bec&CAT=topic>Master Book</a>
+<p><table border="1"><tr><td>
+<b>The Bank</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000041&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=bank&ac=info&ID=0000000000000041" Target="_Blank">Read</a>
+</td></tr><tr><td>
+<b>The Black Market</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000034&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=blackmarket&ac=info&ID=0000000000000034" Target="_Blank">Read</a>
+</td></tr><tr><td>
+<b>City Cafe</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000006&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=cafe&ac=info&ID=0000000000000006" Target="_Blank">Read</a>
+</td></tr><tr><td>
+<b>City Hall</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000002&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=cityhall&ac=info&ID=0000000000000002" Target="_Blank">Read</a>
+</td></tr><tr><td>
+<b>Designer Homes</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000044&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=deshomes&ac=info&ID=0000000000000044" Target="_Blank">Read</a>
+</td></tr><tr><td>
+<b>Employment Office</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000000c&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=employment&ac=info&ID=000000000000000c" Target="_Blank">Read</a>
+</td></tr><tr><td>
+</td>  <td>
+<b>ePlex Complex</b>
+</td></tr><tr><td>
+<b>ePlex</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000017&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=ent_complex&ac=info&ID=0000000000000017" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Black Sun Club</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000001c&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=nightclub&ac=info&ID=000000000000001c" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Vdrome</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000001b&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=movies&ac=info&ID=000000000000001b" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Arena</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000037&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=arena&ac=info&ID=0000000000000037" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Art Gallery</b>
+<a href="http://www.cybertown.com/places/gallery/gallery.html" Target="_Blank">Pics</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000001a&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=gallery&ac=info&ID=000000000000001a" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Arcade </b>
+<a href="http://www.cybertown.com/places/arcade/games/games.html" Target="_Blank">Games</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000019&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=arcade&ac=info&ID=0000000000000019" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Casino</b>
+<a href="http://www.cybertown.com/places/casino/games.html" Target="_Blank">Games</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&PLC=0000000000000018&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=casino&ac=info&ID=0000000000000018" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Lobby</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000038&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=e_lobby&ac=info&ID=0000000000000038" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Flea Market</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000016&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=fleamarket&ac=info&ID=0000000000000016" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Flyby's Park</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000028&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=flyby&ac=info&ID=0000000000000028" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Fun Park</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000000a&T
+YP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=funpark&ac=info&ID=000000000000000a" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Homebuilder</b>
+</td><td> 
+
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=shopping&ac=info&ID=00000000000009f1
+" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Jail</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000033&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=jail&ac=info&ID=0000000000000033" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+</td>  <td>
+<b>The Library</b>
+</td></tr><tr><td>
+
+<b>Main Library</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000005&TYP=a
+" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=library&ac=info&ID=0000000000000005" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Reading Room</b>
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=readingroom" Target="_Blank">Visit</a>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000024&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=readingroom&ac=info&ID=0000000000000024" Target="_Blank">Read</a>
+</td><td>
+Messages
+<a href="http://www.cybertown.com/cgi-bin/cybertown/msb?DTY=O&KTY=ID&KEY=0000000000000024&MTY=m" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Mall</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000009&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=shopping&ac=info&ID=0000000000000009" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Museum</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000045&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=museum&ac=info&ID=0000000000000045" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Outlands</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000029&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=outlands&ac=info&ID=0000000000000029" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Performing Arts Center</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000008&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=theatre&ac=info&ID=0000000000000008" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Pool</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000000b&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=pool&ac=info&ID=000000000000000b" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Post Office</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000010&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=post&ac=info&ID=0000000000000010" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Stadium</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000000d&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/places/stadium/vrml/instruct.html" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Suburbs</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=000000000000000f&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=suburbs&ac=info&ID=000000000000000f" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Sunset Beach</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000031&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=beach&ac=info&ID=0000000000000031" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>Theme Park</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000015&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=themepark&ac=info&ID=0000000000000015" Target="_Blank">Read</a>
+</td></tr><tr><td>
+
+<b>The Water Park</b>
+</td><td>
+Vote
+<a href="http://www.cybertown.com/cgi-bin/cybertown/vote?ac=list&TPL=vote/list&PLC=0000000000000014&TYP=a" Target="_Blank">Vote</a>
+</td><td>
+Information
+<a href="http://www.cybertown.com/cgi-bin/cybertown/place?plc=waterpark&ac=info&ID=0000000000000014" Target="_Blank">Read</a>
+</td></tr>
+</table>
+</center></td>
+</tr>
+</table>
+<br>
+</BODY>
+</HTML>

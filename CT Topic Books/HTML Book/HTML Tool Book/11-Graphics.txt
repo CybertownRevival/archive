@@ -1,0 +1,22 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr>
+<td valign="top"><center>
+<font color=white><font size=3>
+<P>Graphics<br><font color=skyblue>
+<P>Saving Graphic Files<br><font color=coral>
+There are hundreds of graphics collections on the Internet - many of them offering graphics free for the taking. They usually only request that you create a link back to their page. To put graphics onto your page, you must first save the file to your computer.<br>
+<font color=yellow>Right click<font color=coral> on the link to the graphic. 
+Select<font color=yellow>"Save link as" (Netscape) or "Save target as" (Internet Explorer) from the pop up menu.<font color=coral><br> 
+This will bring up the folders on your desktop. Select where you want to store the file.<br> 
+At this stage, you can also re-name the file. In the<font color=yellow>"Filename"<font color=coral>box,type in the name you wish to use.<br> 
+Click<font color=yellow>"SAVE"<font color=coral.Then upload the saved files to your file directory.<br><font color=red>
+DO NOT <font color=coral>link directly to the image in the graphic collection where you found it.This causes problems for their site, as well as problems for you if they delete or rename the image.It is also know as stealing "bandwidth".</p><font color=skyblue>
+<P>File Names<br><font color=coral> 
+Graphics file names are case sensitive. This means that when you enter the filename, you must use the<font color=yellow> EXACT <font color=coral>name of the image.<br> <font color=yellow>alien.gif <font color=coral>is NOT the same as<font color=yellow> Alien.gif or alien.GIF<br><font color=coral> You must always use the filename correctly, otherwise your image will not show up!</p>
+<P>The link below will direct you to a site that will allow you to use their files by downloading from their website.Please do not link directly to their site as this is called "bandwidth stealing".</p>
+<a href="http://harrythecat.com/dorret/index.php?option=com_frontpage&Itemid=64"target=_"new">Gif's and Animation</a>
+</center></td>
+</tr>
+</table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c5dcd6a&CAT=topic"><font color=yellow>*MENU*</font></a></center>

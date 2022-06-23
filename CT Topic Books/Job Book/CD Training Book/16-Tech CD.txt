@@ -1,0 +1,19 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><H1><center>CD Training</H1>
+<center></p>
+<p><a name="w18"><strong><font size="3" color=yellow>"Tech CD"</font></strong></a></p>
+<font size="3">
+<P>
+The Tech Colony Deputy is in charge of maintenance and upkeep of the website, message<BR>
+board and information board within the Colony. They are to assist the Colony Leader<BR>
+in programming of applications, proposals, or other technicalities which may<BR>
+be deemed necessary. The Tech Colony Deputy will not have a hood, as maintenance<BR>
+of technical issues are being dealt with at all times and does not allow the proper<BR>
+time to devote fairly to a hood, but they will be available to assist if needed in<BR>
+the absence of a Hood CD.<BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=prev&ID=o0c5dcd6e&PAGE=3">Return
+to Specified Duties</a><BR>
+<P><a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c5dcd6e&CAT=topic#bm1">Return
+to Start</a><BR></td>
+</tr></table>

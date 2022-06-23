@@ -1,0 +1,55 @@
+<style>{color:gold;}{color:gold;}body{background-image: url(http://dannydking.org/GCEC/chessbg.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style><CENTER>
+<br>
+<H2>MB Master BooK</H2>
+<table height="10%">
+<tr>
+<td><font size=4 face="Arial">
+<center><img src=http://www.cybertown.com/java/contact/chatimg/caution.gif>
+The MB Master BooK has a new Master!! <b>DannyKing</b> will take care of the BooK for as long as I'm gone.
+<img src=http://www.cybertown.com/java/contact/chatimg/caution.gif><br></font>
+<font size=3 face="Arial">
+Please inbox or eMail requests for changes etc to DannyKing. My inbox will not be read anymore.</font>
+<font size=2 color=grey>Cymry</font></center>
+<br><br>
+<font size=3 face="Arial" color=yellow>Funny and helpful sidenote:</font><font face="Arial"  size=3><br>
+This version of the Message Board Book has totally been re-done. ALL message boards now point to the READ URL. This is a feature that many people have asked for.<br>
+<br><br>
+Copies of this MB BooK are available at <a 
+href=http://www.cybertown.com/cgi-bin/cybertown/place?plc=club&DTY=CL&ID=CL0000000000f54b target=new>
+The MB Book Club</a>. Voluntary donations are welcome.
+Please buy as many books as you wish! Or if you want extra
+copies, feel free to copy the code, buy a 10CC Topic Book at Homebuilders
+and create your own additional BooK. Thank you!<br><br>
+You can add extra pages to the copy you own. You can copy the code from the MASTER BooK or create tables with links, e.g. to Block MBs in your Neighborhood. Feel free to send me the code and I will add it to the MASTER BooK. :)
+<br><br>
+</font><p><center>
+<table height="60%"><table border="1">
+<tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec
+">Colony and Neighborhood MBs</a>
+</td></tr><tr><th>
+<a 
+href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=1">Public 
+MBs & Inboxes</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=2">Link 
+Collection</a>
+</th></tr><tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=3">Find 
+Home, Statistics, Vote & Information</a>
+</th></tr>
+<tr><th>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=4">Places Information and Voteing Board</a>
+</th></tr>
+<tr><th><a 
+href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c685bec&PAGE=5>Clubs</a>
+</table></center></td></tr></table>
+Please report any changes or mistakes to <a href=/home/DannyKing>DannyKing</a>.<br>
+Thank you and have fun!
+<p><i>This MB BooK was extensively updated by tinas, original creator unknown.</i><br>
+<p>
+</td></td></td>
+</tr>
+</table>
+<br><center><h1>This MB Book is sponsored by:</h1>
+<img src="http://dannydking.org/Events/1.gif"><br><h1>Games Colony Bubblegum Bingo</h1></center>

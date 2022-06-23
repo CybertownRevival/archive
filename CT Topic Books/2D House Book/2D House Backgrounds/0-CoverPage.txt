@@ -1,0 +1,7 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://dannydking.org/GCEC/chessbg2.jpg);background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<center>So many people have been having problems with putting a 2D background on their house.<BR>
+I decided to create this little help guide to make this process as painless as possible.<BR>
+<BR><BR><BR><BR>
+<table height="60%"><table border="1">
+<tr><th><a href=http://www.cybertown.com/cgi-bin/colonycity/iwos?ac=next&ID=o0c691664>2D House Backgrounds</a>
+</table></center></td></tr></table>

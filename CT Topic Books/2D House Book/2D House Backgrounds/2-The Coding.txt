@@ -1,0 +1,66 @@
+<style>{color:gold;}{color:gold;}body{background-image:url(http://www.angelfire.com/hi5/dannyking00/GCEC/chessbg2.jpg);
+background-attachment:fixed;scrollbar-3dlight-color:gold;scrollbar-arrow-color:gold;
+scrollbar-base-color:gold;scrollbar-darkshadow-color:gold;scrollbar-face-color:blue;
+scrollbar-highlight-color:gold;scrollbar-shadow-color:gold}</style>
+<table height="60%">
+<tr><td valign="top"><center><P>
+<font color=white size=3>2d Home Decorating</font><br>
+<font color=skyblue>The Coding</font>
+</p></center><P>Well not quit finished yet. Seems like CT has changed the way they do things and thus it
+ has changed the way we can add backgrounds to our 2D house. Please use the following to do backgrounds now.:<br>
+Before we go any further, I can not stress enough that, what you do with your 2D house is at your own risk!
+ This tutorial is for teaching HTML only!<br>
+Print out this instruction, or copy paste it to notepad so you can go through all the steps. Once you start,
+ this window may close (unless this document opened in a new window).<br>
+This Page has 2 parts. 1) How to modify your 2D house. and 2) How to fix your personal info<br>
+<center><h2>How to modify your 2D house</h2></center>
+Click the My Info button on the right above the Control Panel. Click the Personal Info button. Use your
+ right-mouse button to click inside this window, and select View Source. A Textpad will open with the
+  configuration/HTML of that window. Scroll down until you find a line that looks like this:
+   <font color=yellow>action="/cgi-bin/cybertown/edit"</font> 
+Change it to look like this: <font color=yellow>action="http://www.cybertown.com/cgi-bin/cybertown/edit"</font>
+ So add the <font color=white>http://www.cybertown.com part.</font><br>
+Then find the Home Page section that says:<font color=yellow> < INPUT NAME="HPG" VALUE="" MAXLENGTH=128 size=38 ></font> 
+Between the "" after ..VALUE= you add the HTML for your 2D page.
+(example:<br><br><center><font color=yellow>< INPUT NAME="HPG" VALUE="<br>
+< style >< !--td{color:#80FF00 ;}div{color:#FF008;}<br>body{background-image: url(http://dannydking.com/background.jpg); <br>
+scrollbar-3dlight-color: #FF008;<br>
+scrollbar-arrow-color: #FF008;<br>
+scrollbar-base-color:#FF008;<br>
+scrollbar-darkshadow-color: #FF008;<BR>
+scrollbar-face-color:#000000;<br>
+scrollbar-highlight-color: #FF008;<br>
+scrollbar-shadow-color: #FF008}-- >> < /style >" MAXLENGTH=128 size=38 > )</font></center><br><br>
+This code is to put a background picture up, change the color of your text and change the color of the scrollbars.<br>
+If you would like to add music, the code for that is:<br><br><font color=yellow><center>
+< E mbed src="http://dannydking.com/music/kite.mid" autostart="false" controls="console" height="60" width="144" ></center></font><br><br>
+Now click Save As... and save the file to your C: drive and call it "modify" (make sure to use the "" signs,
+ or it won't work)<BR> 
+Find the file icon you just saved, and drag it to the still open Personal Info window. (click the file ones
+ and hold down your left-mouse button while you drag it into the open window).<BR> Then let go of the mouse
+  and the new fixed code is there.<BR> 
+Click Update. If you receive no errors, all went well. If it gives you an error, remove the code from your
+ Homepage URL box in your Personal Info window and update. Not all HTML will be accepted anymore. Also make
+  sure you added the <font color=white>http://www.cybertown.com</font> in front of the
+   <font color=yellow>"/cgi-bin/cybertown/edit"</font> line.  
+Don't close the Personal Info window yet, but click the 2D button to refresh your home and check if you did
+ it correct.<BR><BR><BR><center>
+<h2>How to fix your personal info</h2> (you did not listen and messed up...told ya not to do it)</center><BR><BR>
+Click the My Info button on the right above the Control Panel. Click the Personal Info button.<br><br>
+Use your right-mouse button to click inside this window, and select View Source.<br><br>
+Scroll down until you find a line that looks like this: <font color=yellow>action="/cgi-bin/cybertown/edit"</font>
+ and change it to look like this: <font color=yellow>action="http://www.cybertown.com/cgi-bin/cybertown/edit"</font>
+ So add the <font color=white>http://www.cybertown.com</font> part.<br><br>Then find the Home Page section
+ that starts with: NAME="HPG" VALUE=... and remove the bad code between the "". The correct code should be:
+ <font color=yellow>< INPUT NAME="HPG" VALUE="" MAXLENGTH=128 size=38 ></font><br><br>Now click Save As...
+ and save the file to your C: drive and call it "fixinfo" (make sure to use the "" signs, or it won't work)<br><br>
+ Find the file icon you just saved, and drag it to the still open Personal Info window. (click the file ones
+ and hold down your left-mouse button while you drag it into the open window). Then let go of the mouse and
+ the new fixed code is there.<br><br>Click Update. If you receive no errors, all went well. If it still
+ gives you an error, make sure you didn't remove much code from your HPG VALUE and make sure you added the
+ <font color=white>http://www.cybertown.com</font> in front of the <font color=yellow>"/cgi-bin/cybertown/edit"</font>
+ line.<br><br>Don't close the Personal Info window yet, but click the 2D button to refresh your home and
+ check if you did it correct.</p></center></td>
+ </tr></table>
+<BR><BR><BR><center><a href="http://www.cybertown.com/cgi-bin/cybertown/iwos?ID=o0c691664&CAT=topic"><font color=yellow>*MENU*</font></a></center></td>
+</tr></table>

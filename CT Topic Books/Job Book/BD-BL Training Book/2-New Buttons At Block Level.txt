@@ -1,0 +1,125 @@
+<table height="60%">
+<tr><td valign="top"><blockquote>
+<blockquote>
+<h2 align="left"><a name="bm3">New Buttons At Block Level</a></h2>
+<P><img SRC="http://www.cybertown.com/images/buttons/bconfig.gif" ALT="Configure" width="116" height="16"> Configure button - is what the Block <br>
+Leader will see in the Message boards. It can be used <br>
+by the Block Leader. The Block Leader needs to make <br>
+sure the graphic links used here are connected to <br>
+the Colony website and not to other web sites. As Block<BR>Leader you could come in one day and find the Message <br>
+board graphics broken or gone.  You can capture the <br>
+graphics by right clicking on them and saving them to <br>
+your hard drive, as a Gif or Jpg. Then upload them <br>
+into a Photo Book to get them into Cybertown and <br>
+copy the new link that was created by the Photo <br>
+Book to your message board, in place of the old link. <br> 
+You can find Photo Book at the Homebuildres.<p>
+<img SRC="http://www.cybertown.com/images/buttons/bgroupmesa.gif"
+ALT="Message To ALL" width="116" height="16"> Messages To All button. Here <BR>you can post new messages or forward messages to <BR>
+all the residents of your block, one of your first <BR>
+tasks is to introduce yourself, and the Message <BR>
+to All button is perfect for that. You should also post <BR>
+to the block board a copy of what you post to all. 
+<p><img SRC="http://www.cybertown.com/images/buttons/bupdate.gif"
+ALT="Update" width="116" height="16">  Update button - is used by the<BR> Block Leader and Block Deputies with Block Leader's <br>
+aproval. The special features of the Update button <BR>
+are used by the Neighborhood Leader or Colony Deputy <BR>
+to set up the original block layout of homes. Block <BR>
+Deputies are restricted to resetting the Free spaces <BR>
+as needed.If you leave too many open they will fill up <BR>
+with one timers. You want to keep <B>2-3</B> free spaces only <BR>
+per block. You want residents that keep coming back <BR>
+and who want to have fun on the block.  Also, add<br>
+ a little personality... spread them out and show your<BR>
+ BL and even the ND your dedication.<BR>
+<br>Never leave Free spaces on roads or the scenery. <br>
+You don't want houses on roads rivers or trees.  You <br>
+are to keep one or two clear spots as reserve spaces.  <br>
+Sometimes it is necessary to bring in more staff and <br>
+having a couple of closed spaces assures that this can <br>
+happen quickly in an emergency situation.<br>
+<br>Here I count the total number of residents and the <br>
+number of  free spaces, and put that in my notes. <br>
+With all of the necessary information in hand when <BR>
+it is time to fill out the Weekly Report. It is not <BR>
+hard at all just a matter of cut and paste and add <BR>
+a few notes as needed. <br>
+<br><img SRC="http://www.cybertown.com/images/buttons/bcheck.gif" ALT="Check" width="116"
+height="16">  Check button - is used to check<BR>resident's 2D images. This is one of the easiest jobs and<BR>most forgotten jobs. And it takes only a few seconds to <BR>
+make your new residents very happy to see their picture. <BR>
+If the image is waiting approval, there will be a check <BR>
+mark in the locked box. If everything is ok simply <BR>
+unlock the image by clicking on the image then the <BR>
+check box to remove the check mark. Images should <BR>
+be checked daily. To check images you need to be <BR>
+at the block level. Images must not be offensive, <BR>
+they must be gif, jpg or jpeg format. If the image <BR>
+is too big won't upload. At the block level you <BR>
+click on the button and then page up and down to <BR>
+view the pictures. <p>
+</blockquote>
+</blockquote>
+<div align="center"><center>
+<table border="1" width="75%">
+<tr><td width="20%"><small>Name</small></td>
+<td width="20%"><small>Owner</small></td>
+<td width="15%"><small>Icon</small></td>
+<td width="17%"><small>Icon Type</small></td>
+<td width="13%"><small>Locked</small></td>
+</tr><tr>
+<td width="20%"><small>King's Korners</small></td>
+<td width="20%"><small>DannyKing</small></td>
+<td width="15%"><img SRC="http://dannydking.org/images/bkg3.gif"
+ALT="Delete" width="76" height="59"><br>
+</td><td width="17%">gif</td>
+<td width="13%"> </td>
+</tr><tr>
+<td width="20%"><small>Games Colony Educational Center</small></td>
+<td width="20%"><small>JustMyself</small></td>
+<td width="15%"><img SRC="http://dannydking.org/images/bkg4.gif"
+ALT="Delete" width="76" height="59"></td>
+<td width="17%">gif</td>
+<td width="13%"><small>Locked</small></td>
+</tr></table>
+</center></div>
+<blockquote>
+<blockquote>
+<p align="left">Name:   Games Colony Educational Center<br>
+Owner:  JustMyself<br>
+Icon              
+<img SRC="http://dannydking.org/images/bkg4.gif"
+ALT="Delete" width="76" height="59"><br>
+un check in the        [x]
+Locked      <br>
+box to unlock it       [Update] [Cancel] <br>
+then update to save your action.<br></center>
+<p><img src="http://www.cybertown.com/images/buttons/baccess.gif" width="116" height="16"
+alt="baccess.gif (701 bytes)"> Access Rights button - is not <BR>
+visable to Block Deputies. The Access Rights button <BR>
+is for Block Leaders only. The Block Leader should <BR>
+make sure that there are no boxes in the lower table <BR>
+that are checked unless the Neighborhood Leader <BR>
+specifys otherwise. Checking one of these boxes might <BR>
+allow access by people outside of the block staff. So <BR>
+don't check or uncheck them without orders to do so.<BR>
+In Access Rights the Block Leader should check to be <BR>
+sure only those authorized officials are listed. Access <BR>
+Rights can be dangerous if misused. Be careful <BR>
+that BDs do not have access to this function. Never <BR>
+add a name without permission from a ND or NL <BR>
+Neighborhood Deputy or Neighborhood Leader. 
+<P>If you are the Block Leader and are adding a new BD, <BR>
+please notify the Neighborhood Leader or your Block's <BR> 
+Neighborhood Deputy. Give the nickname of the new<BR>BD and other information such as email and ICQ addresses. <BR>
+Also the perspective BD needs to have filled out a job <BR>
+application form, have been interviewed and OKed for <BR>
+hire. In most Colonys BLs have the right to hire and <BR>
+train their own BD Staff but they should communicate <BR>
+with the Neighborhood Deputy or Neighborhood Leader <BR>
+prior to hiring. 
+<P><p align="left"><a href="#bm3">Return to top of Page</a><br>
+<a href="http://www.cybertown.com/cgi-bin/colonycity/iwos?&ID=o0c6143d0&CAT=topic#bm1">Return to Start Menu</a><br>
+  </blockquote>
+</blockquote>
+</p></td>
+</tr></table>
